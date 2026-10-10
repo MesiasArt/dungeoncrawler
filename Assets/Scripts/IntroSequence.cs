@@ -65,6 +65,11 @@ namespace VirtualDungeon
         public IntroLine Current { get { return Active && !Waiting ? lines[index] : null; } }
         public IntroSequence(GameStartKind kind) { Active = kind == GameStartKind.NewGame; }
 
+        public void Skip()
+        {
+            Active=false; pauseRemaining=0;
+        }
+
         // Time only ends pauses. Each visible line always needs a fresh confirmation.
         // A press made during a pause is discarded, including on its final frame.
         public void Tick(float elapsed, bool confirm)
