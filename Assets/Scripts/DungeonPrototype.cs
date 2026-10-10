@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
+using VirtualDungeon;
 
 // The first playable slice. Launch any scene to explore the prototype.
 public class DungeonPrototype : MonoBehaviour
@@ -20,7 +21,58 @@ public class DungeonPrototype : MonoBehaviour
     string message = "Explora. Los enemigos están en el mapa: puedes evitarlos.";
     float glitch;
     Material wall, floor, pink, blue;
+    IntroSequence introduction;
+    InputAction interact, submit;
+    bool enabledInteract, enabledSubmit, introductionCompleted;
+    bool IntroductionActive { get { return introduction != null && introduction.Active; } }
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void ResetGameStart() { GameStartContext.PrepareNewGame(); }
+
+    void StartIntroduction()
+    {
+        introduction = new IntroSequence(GameStartContext.Consume());
+        if (!introduction.Active) return;
+        interact = InputSystem.actions?.FindAction("Player/Interact");
+        submit = InputSystem.actions?.FindAction("UI/Submit");
+        enabledInteract = interact != null && !interact.enabled;
+        enabledSubmit = submit != null && !submit.enabled;
+        if (enabledInteract) interact.Enable();
+        if (enabledSubmit) submit.Enable();
+    }
+    bool ConfirmPressed()
+    {
+        if ((interact != null && interact.WasPressedThisFrame()) ||
+            (submit != null && submit.WasPressedThisFrame())) return true;
+        // Fallback only when the project's action asset is unavailable.
+        if (interact == null && submit == null)
+            return (Keyboard.current != null && (Keyboard.current.eKey.wasPressedThisFrame || Keyboard.current.enterKey.wasPressedThisFrame)) ||
+                (Gamepad.current != null && (Gamepad.current.buttonNorth.wasPressedThisFrame || Gamepad.current.buttonSouth.wasPressedThisFrame));
+        return false;
+    }
+    void ReleaseIntroductionInput()
+    {
+        if (enabledInteract) interact.Disable();
+        if (enabledSubmit) submit.Disable();
+        enabledInteract = enabledSubmit = false;
+    }
+    void OnDisable() { ReleaseIntroductionInput(); }
+    void RestartNewGame()
+    {
+        GameStartContext.PrepareNewGame();
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+    }
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    static void RegisterSceneLaunch()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    static void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+    {
+        Launch();
+    }
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static void Launch()
     {
@@ -65,6 +117,7 @@ public class DungeonPrototype : MonoBehaviour
         RenderSettings.fog = true; RenderSettings.fogColor = view.backgroundColor; RenderSettings.fogDensity = .035f;
         Light lamp = new GameObject("Player light").AddComponent<Light>();
         lamp.transform.SetParent(view.transform,false); lamp.type=LightType.Point; lamp.range=12; lamp.intensity=2; lamp.color=new Color(.45f,.4f,1);
+        StartIntroduction();
     }
     Material Surface(string path,Color tint)
     {
@@ -97,6 +150,13 @@ public class DungeonPrototype : MonoBehaviour
         glitch=Mathf.Max(0,glitch-Time.deltaTime);
         if(view==null) return;
         foreach(GameObject enemy in enemyObjects) if(enemy!=null) enemy.transform.LookAt(new Vector3(view.transform.position.x,enemy.transform.position.y,view.transform.position.z));
+        if (IntroductionActive)
+        {
+            introduction.Tick(Time.unscaledDeltaTime, ConfirmPressed());
+            if (introduction.Interference) glitch = .1f;
+            if (!introduction.Active) { introductionCompleted = true; ReleaseIntroductionInput(); }
+            return; // The last confirmation cannot also move or act in the same frame.
+        }
         if(moving||battle||lost||Keyboard.current==null) return;
         var k=Keyboard.current;
         if(k.aKey.wasPressedThisFrame||k.leftArrowKey.wasPressedThisFrame) StartCoroutine(Move(0,-1));
@@ -106,6 +166,7 @@ public class DungeonPrototype : MonoBehaviour
     }
     IEnumerator Move(int step,int turn)
     {
+        if (IntroductionActive) yield break;
         Vector2Int next=position+directions[heading]*step;
         if(step!=0&&!Open(next)) yield break;
         moving=true; heading=(heading+turn+4)%4;
@@ -115,7 +176,7 @@ public class DungeonPrototype : MonoBehaviour
         for(int i=0;i<enemies.Count;i++) if(enemyObjects[i]!=null&&(enemies[i]-position).sqrMagnitude<=1)
         { activeEnemy=i; enemyHP=20; battle=true; view.transform.LookAt(World(enemies[i])); glitch=.45f; message="¡Apareció un sentinela! Elige una acción."; break; }
     }
-    void Action(int action) { if(!busy&&!lost) StartCoroutine(Turn(action)); }
+    void Action(int action) { if(!IntroductionActive&&!busy&&!lost) StartCoroutine(Turn(action)); }
     IEnumerator Turn(int action)
     {
         busy=true;
@@ -143,22 +204,27 @@ public class DungeonPrototype : MonoBehaviour
         GUI.color=Color.magenta;
         for(int i=0;i<enemies.Count;i++) if(enemyObjects[i]!=null) GUI.DrawTexture(new Rect(mx+16+enemies[i].x*17,59+(map.Length-1-enemies[i].y)*17,8,8),Texture2D.whiteTexture);
         GUI.color=Color.white; GUI.Label(new Rect(mx+12+position.x*17,51+(map.Length-1-position.y)*17,25,25),new[]{"▲","▶","▼","◀"}[heading]);
-        GUI.Box(new Rect(310,height-100,width-330,80),message);
+        // Reuse the existing message rectangle, colors, font and box style.
+        if (IntroductionActive)
+        {
+            IntroLine line = introduction.Current;
+            GUI.Box(new Rect(310,height-100,width-330,80), line == null ? "..." : line.Speaker + "\n" + line.Text);
+        }
+        else if (!introductionCompleted || battle || lost || victories > 0)
+            GUI.Box(new Rect(310,height-100,width-330,80),message);
         if(battle)
         {
             GUI.Box(new Rect(width/2-160,25,320,65),"SENTINELA\nHP "+Mathf.Max(0,enemyHP)+" / 20");
-            GUI.enabled=!busy&&!lost;
+            GUI.enabled=!IntroductionActive&&!busy&&!lost;
             string[] labels={"ATACAR","HABILIDAD","POCIÓN","HUIR"};
             for(int i=0;i<4;i++) if(GUI.Button(new Rect(20,height-225+i*48,260,42),labels[i])) Action(i);
             GUI.enabled=true;
         }
         else GUI.Box(new Rect(20,height-100,270,80),"W/S: avanzar / retroceder\nA/D: girar\nTambién: flechas");
-        if(lost&&GUI.Button(new Rect(width/2-100,height/2,200,50),"Reiniciar")) UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+        if(lost&&!IntroductionActive&&GUI.Button(new Rect(width/2-100,height/2,200,50),"Reiniciar")) RestartNewGame();
         GUI.color=new Color(0,0,0,.12f);
         for(int y=0;y<height;y+=4) GUI.DrawTexture(new Rect(0,y,width,1),Texture2D.whiteTexture);
         if(glitch>0) { GUI.color=new Color(1,0,.5f,.25f); for(int i=0;i<12;i++) GUI.DrawTexture(new Rect(0,(i*73+Time.frameCount*13)%height,width,7),Texture2D.whiteTexture); }
         GUI.color=Color.white;
     }
 }
-
-
