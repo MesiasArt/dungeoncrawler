@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c357e5792463143a5f3a0564ebe3f9, type: 3}
   m_Name: DungeonAtmosphereSettings
   m_EditorClassIdentifier: Assembly-CSharp::DungeonAtmosphereSettings
-  minimumIntensity: 0.493
-  maximumIntensity: 1.741
-  pulsePeriod: 4.5
+  minimumIntensity: 0.537
+  maximumIntensity: 2
+  pulsePeriod: 3
   horizonEnabled: 1
   horizonHeight: 0
-  fogStart: 6
-  fogEnd: 23
+  fogStart: 4.9
+  fogEnd: 17.3
   fogColor: {r: 0.0015, g: 0.006, b: 0.028, a: 1}
   horizonColor: {r: 0.03, g: 0.65, b: 1, a: 1}
-  horizonIntensity: 0.75
-  lineWidth: 0.004
-  glowWidth: 0.035
+  horizonIntensity: 0.876
+  lineWidth: 0.0056
+  glowWidth: 0.0829
