@@ -1,0 +1,4 @@
+PASS 1× paredes, suelo y techo
+PASS 2× paredes, suelo y techo
+PASS 0,5× paredes, suelo y techo
+Restaurados valores originales1×

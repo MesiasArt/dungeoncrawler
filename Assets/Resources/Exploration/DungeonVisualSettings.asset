@@ -17,6 +17,9 @@ MonoBehaviour:
   minimumCorridorHeight: 3
   minimumCombatHeight: 4.5
   enemySpaceMargin: 0.4
+  wallGridScale: 1.96
+  floorGridScale: 1.96
+  ceilingTextureScale: 1.96
   torchColor: {r: 1, g: 0.02, b: 0.45, a: 1}
   torchIntensity: 2
   torchRange: 4.5

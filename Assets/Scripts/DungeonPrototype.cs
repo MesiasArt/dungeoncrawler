@@ -150,6 +150,7 @@ public partial class DungeonPrototype : MonoBehaviour
         floor.SetVector("_FloorGridRegion",new Vector4(266f/1254f,850f/1254f,146f/1254f,143f/1254f));
         floor.SetFloat("_FloorGridSize",Cell/9f);
         ceiling = Surface("Textures/textura rosa luffy2", .35f, .6f);
+        ApplyNeonTextureScales();
         ConfigureFloorSheen();
         pink = Glow(new Color(1,.015f,.5f)); blue = Glow(new Color(.05f,.45f,1));
         for (int z=0; z<map.Length; z++) for(int x=0;x<map[z].Length;x++)
