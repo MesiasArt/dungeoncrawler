@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7904bd1a54e8c354e9370c8b1fb2d543, type: 3}
+  m_Name: AntesSepararTeleportPuerta
+  m_EditorClassIdentifier: Assembly-CSharp::RefugeSettings
+  regionId: zone-0
+  devotoPlacementId: refuge.devoto
+  rewardId: refuge.core
+  startCell: {x: 17, y: 2}
+  saveCell: {x: 14, y: 2}
+  devotoCell: {x: 17, y: 3}
+  exitDestination: {x: 1, y: 1}
+  exitDoorCell: {x: 17, y: 9.5}
+  startHeading: 0
+  exitHeading: 0
+  devotoLevel: 4
+  automaticDevotoEncounter: 1
+  refugePassageRow: 5
+  devotoApproachRange: 2
+  npcs:
+  - id: centinela
+    displayName: CENTINELA
+    cell: {x: 14, y: 8}
+    portrait: {fileID: 0}
+    visualSpeciesId: Tapaku
+    conversations:
+    - "No abras esa puerta. Seguimos vivos porque nadie sabe que estamos aqu\xED
+      ."
+    - Afuera ya no distinguen entre amigos y enemigos.
+    lastWords: "La puerta... nunca se abri\xF3..."
+    placeholderColor: {r: 0.25, g: 0.65, b: 0.85, a: 1}
+  - id: archivista
+    displayName: ARCHIVISTA
+    cell: {x: 17, y: 7}
+    portrait: {fileID: 0}
+    visualSpeciesId: MakubaLanza
+    conversations:
+    - Antes este lugar estaba lleno de gente. Ahora solo quedamos nosotros.
+    - A veces escucho voces de programas que ya no existen.
+    lastWords: Ahora... recuerdo su voz...
+    placeholderColor: {r: 0.25, g: 0.65, b: 0.85, a: 1}
+  - id: cobarde
+    displayName: COBARDE
+    cell: {x: 20, y: 8}
+    portrait: {fileID: 0}
+    visualSpeciesId: MakubaArco
+    conversations:
+    - "\xBFVas a salir? \xA1Est\xE1s loco! \xA1Esas cosas nos despedazar\xE1n!"
+    - "Yo no pienso moverme. Aqu\xED estoy bien... creo."
+    lastWords: "Ten\xEDa... tanto miedo..."
+    placeholderColor: {r: 0.25, g: 0.65, b: 0.85, a: 1}
+  - id: optimista
+    displayName: OPTIMISTA
+    cell: {x: 15, y: 6}
+    portrait: {fileID: 0}
+    visualSpeciesId: Hongo
+    conversations:
+    - "\xA1Alguien nuevo! Quiz\xE1s todav\xEDa haya esperanza."
+    - "Si encuentras ayuda, \xBFpodr\xEDas volver por nosotros?"
+    lastWords: "Pens\xE9... que estar\xEDamos bien..."
+    placeholderColor: {r: 0.25, g: 0.65, b: 0.85, a: 1}
+  - id: devoto
+    displayName: DEVOTO
+    cell: {x: 20, y: 6}
+    portrait: {fileID: 0}
+    visualSpeciesId: GranMakuba
+    conversations:
+    - "Qu\xE9 extra\xF1o... \xFAltimamente este lugar parece m\xE1s tranquilo."
+    - "A veces sue\xF1o con una voz. Dice que todo va a estar bien."
+    - "Los dem\xE1s tienen demasiado miedo. Ojal\xE1 pudiera ayudarlos a descansar."
+    lastWords: 
+    placeholderColor: {r: 0.9, g: 0.5, b: 0.2, a: 1}
+  nodes:
+  - id: node.refuge
+    displayName: REFUGIO
+    cell: {x: 18, y: 9}
+    arrivalHeading: 2
+    triggersRefugeTragedy: 0
+  - id: node.zone2
+    displayName: ZONA 2
+    cell: {x: 7, y: 16}
+    arrivalHeading: 0
+    triggersRefugeTragedy: 1
+  exitDialogue:
+  - speaker: CENTINELA
+    text: "\xA1Espera! \xBFDe verdad vas a salir?"
+  - speaker: GAMERBOY
+    text: "\xBFY quedarme aqu\xED para siempre? Paso."
+  - speaker: OPTIMISTA
+    text: Entonces... buena suerte.
+  - speaker: DEVOTO
+    text: "Ten cuidado ah\xED fuera."
+  - speaker: DEVOTO
+    text: A veces lo peligroso no parece peligroso.
+  devotoDialogue:
+  - speaker: DEVOTO
+    text: Has vuelto.
+  - speaker: GAMERBOY
+    text: "\xBFQu\xE9 les pas\xF3 a los dem\xE1s?"
+  - speaker: DEVOTO
+    text: "Ten\xEDan miedo."
+  - speaker: DEVOTO
+    text: "Much\xEDsimo miedo."
+  - speaker: GAMERBOY
+    text: "\xBFQu\xE9 hiciste?"
+  - speaker: DEVOTO
+    text: "Los ayud\xE9 a descansar."
+  - speaker: GAMERBOY
+    text: "...T\xFA los mataste."
+  - speaker: DEVOTO
+    text: No lo entiendes.
+  - speaker: DEVOTO
+    text: "Ahora est\xE1n en paz."

@@ -1,0 +1,25 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+public partial class DungeonPrototype {
+ DungeonDoor zoneTwoDoor;PreservationCorridorSettings preservation;int preservationLine=-1;
+ readonly DialogueTypewriter preservationTyping=new DialogueTypewriter();
+ bool DoorsBlock(Vector3 from,Vector3 to){return MapDoorsBlock(from,to)||(exitDoor!=null&&exitDoor.Blocks(from,to))||(zoneTwoDoor!=null&&zoneTwoDoor.Blocks(from,to))||(refugeDoor!=null&&refugeDoor.Blocks(from,to));}
+ void CreatePreservationCorridor(){preservation=PreservationCorridorSettings.Current;if(preservation==null)return;exitDoor.closeAfterPassage=true;
+  var root=new GameObject("Zona 1.5 → Zona 2 door");root.transform.SetParent(transform,false);root.transform.position=new Vector3(preservation.secondDoorCell.x*Cell,0,preservation.secondDoorCell.y*Cell);
+  zoneTwoDoor=root.AddComponent<DungeonDoor>();zoneTwoDoor.settings=exitDoorSettings;zoneTwoDoor.closeAfterPassage=true;zoneTwoDoor.doorwayWidth=Cell;zoneTwoDoor.interactionDistance=Cell*.5f+.25f;zoneTwoDoor.openingTravel=corridorHeight+.2f;
+  var panel=Box("Zone 2 door panel",root.transform.position+Vector3.up*corridorHeight*.5f,new Vector3(Cell-.15f,corridorHeight,.18f),wall);panel.transform.SetParent(root.transform,true);zoneTwoDoor.panel=panel.transform;zoneTwoDoor.blocker=panel.GetComponent<Collider>();
+  for(int side=-1;side<=1;side+=2){var frame=Box("Zone 2 door frame",root.transform.position+new Vector3(side*(Cell*.5f-.04f),corridorHeight*.5f,0),new Vector3(.08f,corridorHeight,.22f),blue);frame.transform.SetParent(root.transform,true);}
+  var stripe=Box("Zone 2 door neon",root.transform.position+new Vector3(0,1.4f,-.11f),new Vector3(Cell-.3f,.06f,.025f),pink);stripe.transform.SetParent(panel.transform,true);zoneTwoDoor.Initialize();zoneTwoDoor.Passed+=()=>{message="Zona 2";};
+  var signPosition=new Vector3((preservation.signCell.x+.48f)*Cell,1.65f,preservation.signCell.y*Cell);
+  var sign=Box("PROTOCOLO DE PRESERVACIÓN — [E]",signPosition,new Vector3(.08f,.9f,1.8f),Glow(new Color(.006f,.01f,.025f)));
+  var label=new GameObject("Sign lettering");label.transform.SetParent(transform,false);label.transform.position=signPosition+Vector3.left*.06f;label.transform.rotation=Quaternion.Euler(0,90,0);
+  var text=label.AddComponent<TextMesh>();text.text="PROTOCOLO\nDE PRESERVACIÓN\n[E] LEER";text.anchor=TextAnchor.MiddleCenter;text.alignment=TextAlignment.Center;text.fontSize=48;text.characterSize=.035f;text.color=new Color(.3f,.85f,1);
+ }
+ bool NearPreservationSign(){return preservation!=null&&!battle&&!moving&&!lost&&!IntroductionActive&&(position-preservation.signCell).sqrMagnitude<=1&&LookingToward(new Vector3((preservation.signCell.x+.48f)*Cell,1.65f,preservation.signCell.y*Cell));}
+ string PreservationText(){return preservationLine==0?preservation.signText:preservation.responses[preservationLine-1];}
+ void BeginPreservationReading(){if(!NearPreservationSign())return;var lines=new System.Collections.Generic.List<WorldDialogueLine>{new WorldDialogueLine("PROTOCOLO DE PRESERVACIÓN",preservation.signText){textPanel=true}};if(!refuge.preservationSignRead)foreach(var text in preservation.responses)lines.Add(new WorldDialogueLine("GAMERBOY",text));worldDialogue.Begin(lines.ToArray(),()=>refuge.preservationSignRead=true);}
+ void AdvancePreservationReading(){if(preservationLine<0)return;if(!preservationTyping.IsComplete(Time.unscaledTime,Layout.lettersPerSecond)){preservationTyping.Complete();return;}DungeonAudio.Play(DungeonAudio.Cue.TextAdvance);preservationLine++;if(preservationLine>preservation.responses.Length){preservationLine=-1;return;}preservationTyping.SetText(PreservationText(),Time.unscaledTime,true);}
+ bool UpdatePreservationInput(){var k=Keyboard.current;if(preservationLine>=0){if(ConfirmPressed()||(k!=null&&(k.eKey.wasPressedThisFrame||k.enterKey.wasPressedThisFrame||k.numpadEnterKey.wasPressedThisFrame)))AdvancePreservationReading();return true;}if(battle||moving||lost||IntroductionActive||pauseOpen||view==null||k==null)return false;if(k.eKey.wasPressedThisFrame){if(NearPreservationSign()){BeginPreservationReading();return true;}if(DoorInteractionAvailable(zoneTwoDoor)){zoneTwoDoor.OpenDoor();return true;}}return false;}
+ void DrawPreservationDialogue(float height){if(preservationLine>0)NeonDungeonUI.DialogueAvatar(Layout.Resolve(Layout.dialogueAvatar,0,height));Rect rect=Layout.Resolve(Layout.dialogue,0,height);if(preservationLine==0)rect=new Rect(80,height-330,1120,300);NeonDungeonUI.Dialogue(rect,preservationLine==0?"PROTOCOLO DE PRESERVACIÓN":"GAMERBOY",preservationTyping.VisibleText(Time.unscaledTime,Layout.lettersPerSecond,true),Layout.preservePanelAspect&&preservationLine>0,preservationTyping.IsComplete(Time.unscaledTime,Layout.lettersPerSecond));}
+ void DrawPreservationPrompt(float width,float height){if(worldDialogue.Active||preservationLine>=0||IntroductionActive||battle||lost||pauseOpen)return;if(NearPreservationSign())GUI.Box(new Rect(width/2-140,height-155,280,45),"[E] Leer letrero");else if(DoorInteractionAvailable(zoneTwoDoor))GUI.Box(new Rect(width/2-140,height-155,280,45),"[E] Abrir puerta a Zona 2");}
+}

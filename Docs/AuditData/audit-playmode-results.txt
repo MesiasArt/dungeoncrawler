@@ -1,0 +1,12 @@
+PASS
+real loadout HP37 ATK9 DEF7 LUK10, full initial HP
+all four enemy visuals/stats connected to catalog
+movement, wall blocking, explored cell + adjacent walls, enemy turn
+pause/resume freezes time/audio
+normal player hit 7 HP on Hongo DEF3
+Hongo ATK2 vs DEF7 does 1 HP, no invulnerability
+Big Tapaku special 3 separate hits of2 HP
+live scheduled audio Jump win, preview/final damage 17, rhythm chain and enemy response
+zero HP triggers player defeat
+respawn reuses dead list slot
+door opens, closed passage blocks, exiting triggers completion

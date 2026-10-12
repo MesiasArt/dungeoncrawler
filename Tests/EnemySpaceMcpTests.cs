@@ -1,0 +1,4 @@
+var config=UnityEngine.Resources.Load<DungeonVisualSettings>("Exploration/DungeonVisualSettings");var sizes=EnemySizeSettings.Current;var space=EnemySpaceLayout.Corridor(config,sizes);float ceiling=EnemySpaceLayout.CombatHeight(config,sizes);
+for(int k=0;k<EnemyRoster.Count;k++){if(EnemySpaceLayout.Width(k,sizes,.75f)>space.x||EnemySpaceLayout.Height(k,sizes,.75f)>space.y||EnemySpaceLayout.Height(k,sizes)>ceiling)throw new System.Exception("Enemy does not fit "+EnemyRoster.Names[k]);}
+var copy=UnityEngine.Object.Instantiate(sizes);copy.granMakuba=4;var giant=EnemySpaceLayout.Corridor(config,copy);float top=EnemySpaceLayout.CombatHeight(config,copy);if(giant.x<=space.x||top<=ceiling)throw new System.Exception("Giant size does not expand space");UnityEngine.Object.DestroyImmediate(copy);
+return "PASS: all 8 enemy canvases fit corridor and combat ceiling; future larger Gran expands width and height; current corridor="+space+", combat height="+ceiling;

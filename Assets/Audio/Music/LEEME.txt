@@ -1,0 +1,1 @@
+Importa aqui tus pistas de dungeon y combate. Selecciona Assets/Resources/Audio/DungeonAudioSettings.asset y arrastra cada pista al campo Dungeon Music o Combat Music. Music Volume y Effects Volume controlan sus volumenes por separado. Ambas pistas se reproducen en bucle.

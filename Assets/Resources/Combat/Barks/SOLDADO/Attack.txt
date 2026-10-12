@@ -1,0 +1,12 @@
+# SOLDADO / Attack — selección temporal.
+# Una frase por línea; puedes cambiarlas o añadir más.
+¡OBEDECE!
+¡ELIMINAR!
+¡UNO MENOS!
+¡LA ORDEN ES CLARA!
+¡CORRECCIÓN!
+¡EL SISTEMA LO EXIGE!
+¡SIN ERRORES!
+¡REINICIAR!
+¡TU TURNO TERMINÓ!
+¡NO ES PERSONAL!

@@ -1,0 +1,33 @@
+{
+    "enabledLuck": true,
+    "characters": [
+        {
+            "character": "GAMERBOY",
+            "normalMissPercent": 10.0,
+            "specialMissPercent": 20.0
+        },
+        {
+            "character": "TAPAKU",
+            "normalMissPercent": 10.0,
+            "specialMissPercent": 20.0
+        },
+        {
+            "character": "HONGO",
+            "normalMissPercent": 10.0,
+            "specialMissPercent": 20.0
+        },
+        {
+            "character": "SOLDADO",
+            "normalMissPercent": 12.0,
+            "specialMissPercent": 25.0
+        },
+        {
+            "character": "BIG TAPAKU",
+            "normalMissPercent": 15.0,
+            "specialMissPercent": 25.0
+        }
+    ],
+    "hacks": [],
+    "unlistedHacksUseLuck": false,
+    "unlistedHackMissPercent": 15.0
+}

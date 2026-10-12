@@ -1,0 +1,18 @@
+
+var settings=PlayerLevelSettings.Current;var character=Resources.Load<PlayerCharacterSettings>("Combat/PlayerCharacterSettings");var inventory=Resources.Load<CombatInventorySettings>("Combat/CombatInventorySettings");var zone=EnemyZoneSettings.Current;var catalog=EnemyCharacterCatalog.Current;var balance=CombatBalanceSettings.Current;
+int[] bonus=new int[4];foreach(var id in character.initialEquipmentIds)foreach(var e in character.equipment)if(e!=null&&e.id==id){bonus[0]+=e.health;bonus[1]+=e.strength;bonus[2]+=e.defense;bonus[3]+=e.luck;}
+var chainRng=new System.Random(145);double[] chainCounts=new double[21];for(int run=0;run<1000;run++){int player=1;long remaining=0;int safety=0;while(player<=20&&safety++<10000){int starting=player,amount=0;for(int i=0,n=chainRng.Next(1,4);i<n;i++){var p=catalog.FindId(EnemyRoster.ResourceIds[zone.SelectKind(chainRng.NextDouble())]);var cat=p.category==EnemyRank.Jefe?PlacedEnemyCategory.Boss:p.category==EnemyRank.Enemigo?PlacedEnemyCategory.Normal:PlacedEnemyCategory.Elite;amount+=settings.Reward(starting,starting,cat);}chainCounts[starting]++;settings.AddXP(ref player,ref remaining,amount);}}var rng=new System.Random(145);var rows=new System.Collections.Generic.List<string>();rows.Add("level,hp,atk,def,luk,xp_next,normal_xp,encounters_1,encounters_2,encounters_3,weighted_encounters,chained_encounters,duel_win_percent,average_rounds");
+for(int lv=1;lv<=20;lv++){
+ int hp=inventory.maximumHP+settings.Growth(settings.healthGrowth,lv)+bonus[0],atk=character.strength+settings.Growth(settings.attackGrowth,lv)+bonus[1],def=character.defense+settings.Growth(settings.defenseGrowth,lv)+bonus[2],luk=character.luck+settings.Growth(settings.luckGrowth,lv)+bonus[3];
+ int xp=settings.RequiredXP(lv),normal=settings.Reward(lv,lv,PlacedEnemyCategory.Normal);double encounters=0,rounds=0;int wins=0;
+ for(int run=0;run<1000;run++){
+  int earned=0,count=0;while(earned<xp&&count<10000){int group=rng.Next(1,4);for(int i=0;i<group;i++){int kind=zone.SelectKind(rng.NextDouble());var p=catalog.FindId(EnemyRoster.ResourceIds[kind]);var cat=p.category==EnemyRank.Jefe?PlacedEnemyCategory.Boss:p.category==EnemyRank.Enemigo?PlacedEnemyCategory.Normal:PlacedEnemyCategory.Elite;earned+=settings.Reward(lv,lv,cat);}count++;}encounters+=count;
+  int duelKind=zone.SelectKind(rng.NextDouble());var profile=catalog.FindId(EnemyRoster.ResourceIds[duelKind]);var enemy=EnemyLevelSettings.Current.Evaluate(profile,lv);int ph=hp,eh=enemy.maximumHP,turns=0;
+  float playerMiss=CombatMath.Miss(Resources.Load<CombatAccuracySettings>("Combat/CombatAccuracySettings").CharacterMissPercent("GAMERBOY",false),luk,balance);
+  while(ph>0&&eh>0&&turns<500){turns++;if(rng.NextDouble()*100>=playerMiss)eh-=CombatMath.Damage(atk,enemy.defense,1,CombatMath.CriticalRoll(CombatMath.Critical(character.criticalPercent,luk,balance),(float)rng.NextDouble()),character.criticalMultiplier,balance);if(eh<=0)break;if(rng.NextDouble()*100>=CombatMath.Miss(enemy.normalMissPercent,enemy.luck,balance))ph-=CombatMath.Damage(enemy.damage,def,1,CombatMath.CriticalRoll(CombatMath.Critical(enemy.criticalPercent,enemy.luck,balance),(float)rng.NextDouble()),enemy.criticalMultiplier,balance);}
+  if(eh<=0)wins++;rounds+=turns;
+ }
+ rows.Add(string.Format(System.Globalization.CultureInfo.InvariantCulture,"{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10:F3},{11:F3},{12:F1},{13:F3}",lv,hp,atk,def,luk,xp,normal,(xp+normal-1)/normal,(xp+2*normal-1)/(2*normal),(xp+3*normal-1)/(3*normal),encounters/1000,chainCounts[lv]/1000,wins/10d,rounds/1000));
+}
+System.IO.File.WriteAllLines(System.IO.Path.Combine(Application.dataPath,"../Tests/PlayerLevelSimulation.csv"),rows);
+return rows;

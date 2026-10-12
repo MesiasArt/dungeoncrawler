@@ -1,0 +1,21 @@
+Existing actors retain Zone1 range1..4; user overlap validation handled separately
+Safe Zone0 rejects spawn
+West population accepts two
+West independent limit2
+East independent limit1
+Per-region species and levels
+Per-region species and levels
+Per-region species and levels
+Fixed-level manual elite uses scaled catalog
+Manual boss never schedules respawn
+Non-counting manual placements leave local limits unchanged
+Random respawn stays in original region with new instance ID
+Elite respawns at authored cell with stable placement ID and fixed level
+Boss stays defeated even if a timer is forced
+Pursuit cannot enter safe area
+Stable placement IDs and defeated state prepared for save
+Interactive event triggers Mimic encounter
+Event cannot trigger twice
+Actual combat applies existing CombatMath and scaled defense
+JUMP starts with manual elite scaled defense, audio and no luck
+PASS 20 checks

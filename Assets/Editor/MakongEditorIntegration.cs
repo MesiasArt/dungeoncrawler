@@ -1,0 +1,27 @@
+using UnityEngine;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+public static class MakongEditorIntegration {
+ public const string ScenePath="Assets/Scenes/CombatLaboratory.unity";
+ [MenuItem("Editor/Pruebas de combate",false,2100)] public static void Open(){if(EditorApplication.isPlaying){Debug.LogWarning("Sal de Play Mode para abrir el laboratorio.");return;}if(!System.IO.File.Exists(ScenePath))Setup();var scene=SceneManager.GetSceneByPath(ScenePath);if(!scene.isLoaded)scene=EditorSceneManager.OpenScene(ScenePath,SceneManager.GetActiveScene().isDirty?OpenSceneMode.Additive:OpenSceneMode.Single);SceneManager.SetActiveScene(scene);}
+ [MenuItem("Editor/Makong/Parámetros de especiales",false,2101)] public static void Settings(){Selection.activeObject=MakongSpecialSettings.Current;}
+ public static void Setup(){
+  var catalog=EnemyCharacterCatalog.Current;if(catalog.FindId("Makong")==null){var list=new List<EnemyCharacterDefinition>(catalog.enemies);list.Add(new EnemyCharacterDefinition{id="Makong",character="MAKONG",category=EnemyRank.Subjefe,reservedForEvents=true,health=60,strength=7,defense=4,luck=6,specialDamage=10,specialHits=1,normalMissPercent=15,specialMissPercent=25,criticalPercent=5});catalog.enemies=list.ToArray();EditorUtility.SetDirty(catalog);AssetDatabase.SaveAssetIfDirty(catalog);}
+  if(AssetDatabase.LoadAssetAtPath<MakongSpecialSettings>("Assets/Resources/Combat/MakongSpecialSettings.asset")==null)AssetDatabase.CreateAsset(ScriptableObject.CreateInstance<MakongSpecialSettings>(),"Assets/Resources/Combat/MakongSpecialSettings.asset");
+  foreach(string file in System.IO.Directory.GetFiles("Assets/Resources/Enemies/Makong","*.png"))Import(file);
+  foreach(string file in System.IO.Directory.GetFiles("Assets/Resources/UI/JumpEnemies","Makong_*.png"))Import(file);
+  NewEnemiesEditorIntegration.UpgradeGallery();
+  if(System.IO.File.Exists(ScenePath))return;
+  const string folder="Assets/CombatLaboratory";if(!AssetDatabase.IsValidFolder(folder))AssetDatabase.CreateFolder("Assets","CombatLaboratory");
+  var zone=ScriptableObject.CreateInstance<EnemyZoneSettings>();zone.zoneId="combat-laboratory";zone.spawnsEnabled=false;AssetDatabase.CreateAsset(zone,folder+"/Enemigos.asset");
+  var regions=ScriptableObject.CreateInstance<DungeonRegionSettings>();regions.legacyPlacements=false;regions.initialRandomPerZone=0;var region=new DungeonRegion{id="combat-laboratory",displayName="Laboratorio",safeArea=true,spawnsEnabled=false,enemies=zone};for(int y=1;y<9;y++)for(int x=1;x<9;x++)region.cells.Add(new Vector2Int(x,y));regions.regions=new[]{region};AssetDatabase.CreateAsset(regions,folder+"/Regiones.asset");
+  var map=ScriptableObject.CreateInstance<DungeonMapSettings>();map.rows=new[]{"##########","#........#","#........#","#........#","#........#","#........#","#........#","#........#","#........#","##########"};map.includeLegacyObjects=false;map.startCell=new Vector2Int(4,2);map.regions=regions;AssetDatabase.CreateAsset(map,folder+"/Plano.asset");
+  var previous=SceneManager.GetActiveScene();var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Additive);var root=new GameObject("Laboratorio de combate");var dungeon=root.AddComponent<DungeonPrototype>();dungeon.mapSettings=map;dungeon.dungeonRegions=regions;dungeon.enemyZoneSettings=zone;root.AddComponent<CombatLaboratory>();new GameObject("Preview camera").AddComponent<Camera>();new GameObject("Preview light").AddComponent<Light>().type=LightType.Directional;EditorSceneManager.SaveScene(scene,ScenePath);EditorSceneManager.CloseScene(scene,true);if(previous.IsValid())SceneManager.SetActiveScene(previous);
+ }
+ static void Import(string file){string path=file.Replace('\\','/');AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceUpdate);var t=AssetImporter.GetAtPath(path) as TextureImporter;if(t==null)return;t.npotScale=TextureImporterNPOTScale.None;t.filterMode=FilterMode.Point;t.wrapMode=TextureWrapMode.Clamp;t.mipmapEnabled=false;t.alphaIsTransparency=true;t.textureCompression=TextureImporterCompression.Uncompressed;t.SaveAndReimport();}
+}
+[CustomEditor(typeof(CombatLaboratory))] public sealed class CombatLaboratoryEditor:Editor {
+ public override void OnInspectorGUI(){serializedObject.Update();var field=serializedObject.FindProperty("speciesId");var definitions=new List<EnemyCharacterDefinition>();foreach(var e in EnemyCharacterCatalog.Current.enemies)if(e!=null&&(System.Array.IndexOf(EnemyRoster.ResourceIds,e.id)>=0||e.id=="DevotoCorrompido"))definitions.Add(e);var names=definitions.ConvertAll(e=>e.character).ToArray();int chosen=definitions.FindIndex(e=>e.id==field.stringValue);int next=EditorGUILayout.Popup("Enemigo",Mathf.Max(0,chosen),names);if(next>=0&&next<definitions.Count)field.stringValue=definitions[next].id;EditorGUILayout.PropertyField(serializedObject.FindProperty("enemyLevel"),new GUIContent("Nivel enemigo"));EditorGUILayout.PropertyField(serializedObject.FindProperty("gamerLevel"),new GUIContent("Nivel GamerBoy"));EditorGUILayout.PropertyField(serializedObject.FindProperty("equipmentPreset"),new GUIContent("Equipo de prueba (0 inicial, 3 nuevo)"));EditorGUILayout.PropertyField(serializedObject.FindProperty("companions"),new GUIContent("Compañeros (0 = individual)"));serializedObject.ApplyModifiedProperties();if(Application.isPlaying&&GUILayout.Button("Iniciar / reiniciar combate"))((CombatLaboratory)target).Fight();}
+}

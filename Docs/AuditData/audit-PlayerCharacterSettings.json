@@ -1,0 +1,48 @@
+{
+    "strength": 6,
+    "defense": 3,
+    "luck": 4,
+    "criticalPercent": 5.0,
+    "fleePercent": 50.0,
+    "criticalMultiplier": 1.5,
+    "initialEquipmentNames": [
+        "Power Glove de Jugete",
+        "Tshirt de Pacas",
+        "Medias de la suerte"
+    ],
+    "equipment": [
+        {
+            "name": "Power Glove de Jugete",
+            "slot": "1",
+            "icon": {
+                "instanceID": 0
+            },
+            "health": 0,
+            "strength": 3,
+            "defense": 0,
+            "luck": 2
+        },
+        {
+            "name": "Tshirt de Pacas",
+            "slot": "2",
+            "icon": {
+                "instanceID": 0
+            },
+            "health": 5,
+            "strength": 0,
+            "defense": 3,
+            "luck": 0
+        },
+        {
+            "name": "Medias de la suerte",
+            "slot": "3",
+            "icon": {
+                "instanceID": 0
+            },
+            "health": 2,
+            "strength": 0,
+            "defense": 1,
+            "luck": 4
+        }
+    ]
+}

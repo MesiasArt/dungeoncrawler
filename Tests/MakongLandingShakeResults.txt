@@ -1,0 +1,1 @@
+PASS: super salto activa la sacudida fuerte al aterrizar. Amplitud 0,38, duración 0,85

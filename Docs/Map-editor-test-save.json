@@ -1,0 +1,133 @@
+{
+    "version": 1,
+    "introductionCompleted": true,
+    "cell": {
+        "x": 1,
+        "y": 1
+    },
+    "heading": 0,
+    "player": {
+        "currentHP": 37,
+        "inventory": [
+            {
+                "itemId": "7e13872279104700994a6d67e313b5c2",
+                "quantity": 1
+            },
+            {
+                "itemId": "7130831737454e3ab8ef76207d4062eb",
+                "quantity": 1
+            },
+            {
+                "itemId": "7fd390e943284a3ba155ac1f001c552a",
+                "quantity": 1
+            },
+            {
+                "itemId": "1d84c78dcae84edf8d28847da3c5ab94",
+                "quantity": 1
+            },
+            {
+                "itemId": "b19d2185c0a040a5befb4ecf6d0764dd",
+                "quantity": 1
+            }
+        ],
+        "equipmentIds": [
+            "7e13872279104700994a6d67e313b5c2",
+            "7130831737454e3ab8ef76207d4062eb",
+            "7fd390e943284a3ba155ac1f001c552a"
+        ]
+    },
+    "refuge": {
+        "narrativeVersion": 0,
+        "savePointIntroSeen": false,
+        "refugeTeleportActivatedByPlayer": false,
+        "refugeTeleportActivatedByDevotee": false,
+        "zone2TeleportActivated": false,
+        "refugeTragedyDiscovered": false,
+        "firstBodyDiscovered": false,
+        "sentinelTeleportSeen": false,
+        "devotoConfrontationSeen": false,
+        "exitDialogueCompleted": false,
+        "refugeTragedyTriggered": false,
+        "devotoDefeated": false,
+        "rewardObtained": false,
+        "unlockedNodes": [
+            "test.teleport"
+        ],
+        "npcs": [
+            {
+                "id": "test.npc",
+                "talks": 0,
+                "lastWordsHeard": false
+            }
+        ]
+    },
+    "enemies": [
+        {
+            "instanceId": "4c006430d4114be0a2bc1cffb4ca4cfd",
+            "speciesId": "Tapaku",
+            "zoneId": "map-test-zone",
+            "placementId": "test.enemy",
+            "category": 0,
+            "level": 2,
+            "currentHP": 11,
+            "cell": {
+                "x": 3,
+                "y": 2
+            },
+            "alerted": false,
+            "defeated": false,
+            "respawnRemaining": 0.0,
+            "stats": {
+                "speciesId": "Tapaku",
+                "displayName": "TAPAKU",
+                "level": 2,
+                "maximumHP": 11,
+                "damage": 3,
+                "defense": 2,
+                "luck": 5,
+                "specialDamage": 3,
+                "specialHits": 1,
+                "specialHitInterval": 0.20000000298023225,
+                "normalMissPercent": 10.0,
+                "specialMissPercent": 20.0,
+                "criticalPercent": 0.0,
+                "criticalMultiplier": 1.5
+            }
+        }
+    ],
+    "triggeredEncounters": [
+        "test.enemy"
+    ],
+    "entityStates": [
+        {
+            "id": "test.chest",
+            "opened": true
+        },
+        {
+            "id": "test.chest.mimic",
+            "opened": false
+        },
+        {
+            "id": "test.chest.key",
+            "opened": true
+        },
+        {
+            "id": "test.door",
+            "opened": false
+        }
+    ],
+    "explored": [
+        {
+            "x": 1,
+            "y": 0
+        },
+        {
+            "x": 0,
+            "y": 1
+        },
+        {
+            "x": 1,
+            "y": 1
+        }
+    ]
+}

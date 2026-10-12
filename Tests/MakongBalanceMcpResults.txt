@@ -1,0 +1,90 @@
+PASS Estadísticas finales exigentes de Makong LV10 sin doble escalado
+PASS Cooldown devorar turno 1
+PASS Sin cadena invocar/devorar turno 1
+PASS Sin cadena invocar/devorar turno 2
+PASS Cooldown terremoto turno 3
+PASS Sin cadena invocar/devorar turno 3
+PASS Sin cadena invocar/devorar turno 4
+PASS Sin cadena invocar/devorar turno 5
+PASS Cooldown devorar turno 6
+PASS Sin cadena invocar/devorar turno 6
+PASS Sin cadena invocar/devorar turno 7
+PASS Cooldown terremoto turno 8
+PASS Sin cadena invocar/devorar turno 8
+PASS Sin cadena invocar/devorar turno 9
+PASS Sin cadena invocar/devorar turno 10
+PASS Sin cadena invocar/devorar turno 11
+PASS Cooldown terremoto turno 12
+PASS Sin cadena invocar/devorar turno 12
+PASS Sin cadena invocar/devorar turno 13
+PASS Sin cadena invocar/devorar turno 14
+PASS Sin cadena invocar/devorar turno 15
+PASS Cooldown terremoto turno 16
+PASS Sin cadena invocar/devorar turno 16
+PASS Sin cadena invocar/devorar turno 17
+PASS Sin cadena invocar/devorar turno 18
+PASS Sin cadena invocar/devorar turno 19
+PASS Cooldown terremoto turno 20
+PASS Sin cadena invocar/devorar turno 20
+PASS Sin cadena invocar/devorar turno 21
+PASS Sin cadena invocar/devorar turno 22
+PASS Sin cadena invocar/devorar turno 23
+PASS Cooldown terremoto turno 24
+PASS Sin cadena invocar/devorar turno 24
+PASS Sin cadena invocar/devorar turno 25
+PASS Sin cadena invocar/devorar turno 26
+PASS Sin cadena invocar/devorar turno 27
+PASS Cooldown terremoto turno 28
+PASS Sin cadena invocar/devorar turno 28
+PASS Sin cadena invocar/devorar turno 29
+PASS Sin cadena invocar/devorar turno 30
+PASS Sin cadena invocar/devorar turno 31
+PASS Cooldown terremoto turno 32
+PASS Sin cadena invocar/devorar turno 32
+PASS Sin cadena invocar/devorar turno 33
+PASS Sin cadena invocar/devorar turno 34
+PASS Sin cadena invocar/devorar turno 35
+PASS Cooldown terremoto turno 36
+PASS Sin cadena invocar/devorar turno 36
+PASS Sin cadena invocar/devorar turno 37
+PASS Sin cadena invocar/devorar turno 38
+PASS Sin cadena invocar/devorar turno 39
+PASS Cooldown terremoto turno 40
+PASS Sin cadena invocar/devorar turno 40
+PASS Devorar: máximo dos usos por combate
+PASS No devora con HP alto
+PASS No devora sin ayudantes
+PASS Límite dos ayudantes y tres participantes
+PASS No fabrica ayudantes para curarse con HP bajo
+PASS Nueva partida inicia diálogos originales de GamerBoy
+PASS Recibir los tres equipos no los equipa automáticamente
+PASS Objeto equipable real equipment.power-glove-mk2
+PASS Objeto equipable real equipment.resistance-shirt
+PASS Objeto equipable real equipment.glitch-socks
+PASS GamerBoy LV10 con equipo nuevo: HP66 ATK17 DEF15 LUK14
+PASS Inicio de llamada válido
+PASS Invocación crea dos ayudantes y respeta capacidad
+PASS Ayudante existente, débil y de nivel inferior
+PASS Ayudante sin respawn permanente
+PASS Ayudante existente, débil y de nivel inferior
+PASS Ayudante sin respawn permanente
+PASS Ayudantes invocados excluidos del guardado de población
+PASS Terremoto válido tras un turno normal
+PASS Terremoto usa CombatMath y defensa, daño único
+PASS Caída activa sacudida
+PASS Devorar válido con HP bajo y ayudante antiguo
+PASS Devorar cura exactamente 18 HP
+PASS Ayudante consumido eliminado realmente
+PASS Consumido no entrega XP ni drops de derrota del jugador
+PASS Lengua separada se limpia al terminar
+PASS Ayudante derrotado por GamerBoy da XP normal una sola vez
+PASS Ayudante derrotado por jugador registra drops
+PASS Victoria paga XP de subjefe y ayudante, excluyendo consumido
+PASS Victoria limpia población temporal
+PASS Guardar equipo y cofres en fixture aislado
+PASS Cargar fixture
+PASS Equipo nuevo persiste al cargar
+PASS Cofres abiertos no repiten sus objetos tras carga
+PASS JUMP conserva fórmula y recursos de Makong
+PASS OVERCLOCK continúa disponible a nivel 10
+TOTAL 89 PASS / 0 FAIL

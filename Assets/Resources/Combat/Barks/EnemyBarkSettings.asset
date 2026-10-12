@@ -1,0 +1,206 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 032516641c0842649befc3caa1840359, type: 3}
+  m_Name: EnemyBarkSettings
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBarkSettings
+  displaySeconds: 3
+  lettersPerSecond: 35
+  textFontSize: 18
+  normalCooldown: 1.5
+  recentPhraseCount: 5
+  displayRect:
+    serializedVersion: 2
+    x: 8.6
+    y: -14.9
+    width: 414.1
+    height: 93.5
+  enemies:
+  - enemyId: TAPAKU
+    rules:
+    - category: 0
+      probability: 1
+      phrases: {fileID: 4900000, guid: 1a37f5782c12f7f49b00c1ad6f6b1595, type: 3}
+    - category: 1
+      probability: 0.18
+      phrases: {fileID: 4900000, guid: babf781a6999a1445998a4718c293a87, type: 3}
+    - category: 2
+      probability: 0.25
+      phrases: {fileID: 4900000, guid: b739dff18e961f5449ac91f2a786b912, type: 3}
+    - category: 3
+      probability: 0.9
+      phrases: {fileID: 4900000, guid: 63970b4322295374e8a12f484fb09f4c, type: 3}
+    - category: 4
+      probability: 0.7
+      phrases: {fileID: 4900000, guid: f7b55465cb973ea468af707c271e23e3, type: 3}
+    - category: 5
+      probability: 0.95
+      phrases: {fileID: 4900000, guid: 97550226f5ca4c8449054dc36366c7a3, type: 3}
+  - enemyId: HONGO
+    rules:
+    - category: 0
+      probability: 1
+      phrases: {fileID: 4900000, guid: 2b15519565966434f9713697775912bf, type: 3}
+    - category: 1
+      probability: 0.18
+      phrases: {fileID: 4900000, guid: 92a981248500d5d4fa90fb45dabffc2c, type: 3}
+    - category: 2
+      probability: 0.25
+      phrases: {fileID: 4900000, guid: 2ad78f67f192c9841805f9417b6cb5e8, type: 3}
+    - category: 3
+      probability: 0.9
+      phrases: {fileID: 4900000, guid: c36b11fbb96047045a531e121939d6bb, type: 3}
+    - category: 4
+      probability: 0.7
+      phrases: {fileID: 4900000, guid: ccbab49e6ccab84438f5833ccf57fa5d, type: 3}
+    - category: 5
+      probability: 0.95
+      phrases: {fileID: 4900000, guid: 98dee71192f1f6946a80d5fe97a04402, type: 3}
+  - enemyId: SOLDADO
+    rules:
+    - category: 0
+      probability: 1
+      phrases: {fileID: 4900000, guid: 60e90a41f40c545429b88a146dfc6910, type: 3}
+    - category: 1
+      probability: 0.18
+      phrases: {fileID: 4900000, guid: 87e40662c7816924b830fa15bbc5bb2f, type: 3}
+    - category: 2
+      probability: 0.25
+      phrases: {fileID: 4900000, guid: 99fb27e7077ce234da9641ba720595af, type: 3}
+    - category: 3
+      probability: 0.9
+      phrases: {fileID: 4900000, guid: cd13771e67ecae6428c7822585036c34, type: 3}
+    - category: 4
+      probability: 0.7
+      phrases: {fileID: 4900000, guid: 863b9c9c5b79b9d498bdcb480c4c25a5, type: 3}
+    - category: 5
+      probability: 0.95
+      phrases: {fileID: 4900000, guid: 342a5ef595a79e24d841b5143fbb8323, type: 3}
+  - enemyId: BOSS
+    rules:
+    - category: 0
+      probability: 1
+      phrases: {fileID: 4900000, guid: 4ae1a0c7eef97c64aab051c03148fee1, type: 3}
+    - category: 1
+      probability: 0.18
+      phrases: {fileID: 4900000, guid: 3c45e4e7c3f7e0d40af8b4752e1c24ac, type: 3}
+    - category: 2
+      probability: 0.25
+      phrases: {fileID: 4900000, guid: 4cd12e06fb2cd9f42901740a75f35297, type: 3}
+    - category: 3
+      probability: 0.9
+      phrases: {fileID: 4900000, guid: 97035562019a131499d30e66a7cab01f, type: 3}
+    - category: 4
+      probability: 0.7
+      phrases: {fileID: 4900000, guid: dd6bc6169e0cd694f9ec815e515d3ae1, type: 3}
+    - category: 5
+      probability: 0.95
+      phrases: {fileID: 4900000, guid: 16bd21eb9ea19af4ab15e78de73f5bac, type: 3}
+  - enemyId: MAKUBA LANZA
+    rules:
+    - category: 0
+      probability: 1
+      phrases: {fileID: 4900000, guid: 1a37f5782c12f7f49b00c1ad6f6b1595, type: 3}
+    - category: 1
+      probability: 0.18
+      phrases: {fileID: 4900000, guid: babf781a6999a1445998a4718c293a87, type: 3}
+    - category: 2
+      probability: 0.25
+      phrases: {fileID: 4900000, guid: b739dff18e961f5449ac91f2a786b912, type: 3}
+    - category: 3
+      probability: 0.9
+      phrases: {fileID: 4900000, guid: 63970b4322295374e8a12f484fb09f4c, type: 3}
+    - category: 4
+      probability: 0.7
+      phrases: {fileID: 4900000, guid: f7b55465cb973ea468af707c271e23e3, type: 3}
+    - category: 5
+      probability: 0.95
+      phrases: {fileID: 4900000, guid: 97550226f5ca4c8449054dc36366c7a3, type: 3}
+  - enemyId: MAKUBA ARCO
+    rules:
+    - category: 0
+      probability: 1
+      phrases: {fileID: 4900000, guid: 1a37f5782c12f7f49b00c1ad6f6b1595, type: 3}
+    - category: 1
+      probability: 0.18
+      phrases: {fileID: 4900000, guid: babf781a6999a1445998a4718c293a87, type: 3}
+    - category: 2
+      probability: 0.25
+      phrases: {fileID: 4900000, guid: b739dff18e961f5449ac91f2a786b912, type: 3}
+    - category: 3
+      probability: 0.9
+      phrases: {fileID: 4900000, guid: 63970b4322295374e8a12f484fb09f4c, type: 3}
+    - category: 4
+      probability: 0.7
+      phrases: {fileID: 4900000, guid: f7b55465cb973ea468af707c271e23e3, type: 3}
+    - category: 5
+      probability: 0.95
+      phrases: {fileID: 4900000, guid: 97550226f5ca4c8449054dc36366c7a3, type: 3}
+  - enemyId: GRAN MAKUBA
+    rules:
+    - category: 0
+      probability: 1
+      phrases: {fileID: 4900000, guid: 1a37f5782c12f7f49b00c1ad6f6b1595, type: 3}
+    - category: 1
+      probability: 0.18
+      phrases: {fileID: 4900000, guid: babf781a6999a1445998a4718c293a87, type: 3}
+    - category: 2
+      probability: 0.25
+      phrases: {fileID: 4900000, guid: b739dff18e961f5449ac91f2a786b912, type: 3}
+    - category: 3
+      probability: 0.9
+      phrases: {fileID: 4900000, guid: 63970b4322295374e8a12f484fb09f4c, type: 3}
+    - category: 4
+      probability: 0.7
+      phrases: {fileID: 4900000, guid: f7b55465cb973ea468af707c271e23e3, type: 3}
+    - category: 5
+      probability: 0.95
+      phrases: {fileID: 4900000, guid: 97550226f5ca4c8449054dc36366c7a3, type: 3}
+  - enemyId: MIMIC
+    rules:
+    - category: 0
+      probability: 1
+      phrases: {fileID: 4900000, guid: 1a37f5782c12f7f49b00c1ad6f6b1595, type: 3}
+    - category: 1
+      probability: 0.18
+      phrases: {fileID: 4900000, guid: babf781a6999a1445998a4718c293a87, type: 3}
+    - category: 2
+      probability: 0.25
+      phrases: {fileID: 4900000, guid: b739dff18e961f5449ac91f2a786b912, type: 3}
+    - category: 3
+      probability: 0.9
+      phrases: {fileID: 4900000, guid: 63970b4322295374e8a12f484fb09f4c, type: 3}
+    - category: 4
+      probability: 0.7
+      phrases: {fileID: 4900000, guid: f7b55465cb973ea468af707c271e23e3, type: 3}
+    - category: 5
+      probability: 0.95
+      phrases: {fileID: 4900000, guid: 97550226f5ca4c8449054dc36366c7a3, type: 3}
+  - enemyId: DEVOTO CORROMPIDO
+    rules:
+    - category: 0
+      probability: 1
+      phrases: {fileID: 4900000, guid: 8f3ae62f8db69ac448b69373807909a0, type: 3}
+    - category: 2
+      probability: 0.25
+      phrases: {fileID: 4900000, guid: f530ee01b56e9954aa29879da91b21ef, type: 3}
+    - category: 1
+      probability: 0.2
+      phrases: {fileID: 4900000, guid: 3e88da3661039024c9a1ffe0192c52e6, type: 3}
+    - category: 3
+      probability: 1
+      phrases: {fileID: 4900000, guid: 1c6e646339e81d44683247fabce6b9b1, type: 3}
+    - category: 6
+      probability: 1
+      phrases: {fileID: 4900000, guid: 82cd51c6c9dc56b4c8b813aef31e05ee, type: 3}
+    - category: 4
+      probability: 1
+      phrases: {fileID: 4900000, guid: aecbde11d52d85c4fa927c7c17250503, type: 3}

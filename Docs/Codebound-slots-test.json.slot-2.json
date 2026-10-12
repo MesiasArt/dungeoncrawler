@@ -1,0 +1,1471 @@
+{
+    "slotName": "Después del combate",
+    "savedUtc": "2026-10-11T23:28:45.6315483Z",
+    "version": 1,
+    "introductionCompleted": true,
+    "cell": {
+        "x": 17,
+        "y": 11
+    },
+    "heading": 2,
+    "player": {
+        "currentHP": 11,
+        "inventory": [
+            {
+                "itemId": "7e13872279104700994a6d67e313b5c2",
+                "quantity": 1
+            },
+            {
+                "itemId": "7130831737454e3ab8ef76207d4062eb",
+                "quantity": 1
+            },
+            {
+                "itemId": "7fd390e943284a3ba155ac1f001c552a",
+                "quantity": 1
+            },
+            {
+                "itemId": "refuge.core",
+                "quantity": 1
+            },
+            {
+                "itemId": "b19d2185c0a040a5befb4ecf6d0764dd",
+                "quantity": 2
+            },
+            {
+                "itemId": "9e16c25941b547ff87ce8a813008e635",
+                "quantity": 2
+            }
+        ],
+        "equipmentIds": [
+            "7e13872279104700994a6d67e313b5c2",
+            "7130831737454e3ab8ef76207d4062eb",
+            "7fd390e943284a3ba155ac1f001c552a"
+        ]
+    },
+    "refuge": {
+        "preservationSignRead": true,
+        "departureGiftIds": [
+            "1d84c78dcae84edf8d28847da3c5ab94",
+            "b19d2185c0a040a5befb4ecf6d0764dd",
+            "9e16c25941b547ff87ce8a813008e635"
+        ],
+        "narrativeVersion": 1,
+        "savePointIntroSeen": false,
+        "refugeTeleportActivatedByPlayer": true,
+        "refugeTeleportActivatedByDevotee": false,
+        "zone2TeleportActivated": true,
+        "refugeTragedyDiscovered": true,
+        "firstBodyDiscovered": true,
+        "sentinelTeleportSeen": false,
+        "devotoConfrontationSeen": true,
+        "exitDialogueCompleted": true,
+        "refugeTragedyTriggered": true,
+        "devotoDefeated": true,
+        "rewardObtained": true,
+        "unlockedNodes": [
+            "node.refuge",
+            "node.zone2"
+        ],
+        "npcs": [
+            {
+                "id": "centinela",
+                "talks": 0,
+                "lastWordsHeard": true
+            },
+            {
+                "id": "archivista",
+                "talks": 1,
+                "lastWordsHeard": true
+            },
+            {
+                "id": "cobarde",
+                "talks": 1,
+                "lastWordsHeard": true
+            },
+            {
+                "id": "optimista",
+                "talks": 0,
+                "lastWordsHeard": true
+            },
+            {
+                "id": "devoto",
+                "talks": 1,
+                "lastWordsHeard": false
+            }
+        ]
+    },
+    "enemies": [
+        {
+            "instanceId": "7c2166791d4e49e6991f5c83190ef440",
+            "speciesId": "Soldier",
+            "zoneId": "zone-1",
+            "placementId": "",
+            "category": 0,
+            "level": 3,
+            "currentHP": 25,
+            "cell": {
+                "x": 13,
+                "y": 11
+            },
+            "alerted": false,
+            "defeated": false,
+            "respawnRemaining": 0.0,
+            "stats": {
+                "speciesId": "Soldier",
+                "displayName": "SOLDADO",
+                "level": 3,
+                "maximumHP": 25,
+                "damage": 5,
+                "defense": 6,
+                "luck": 3,
+                "specialDamage": 5,
+                "specialHits": 1,
+                "specialHitInterval": 0.20000000298023225,
+                "normalMissPercent": 12.0,
+                "specialMissPercent": 25.0,
+                "criticalPercent": 0.0,
+                "criticalMultiplier": 1.5
+            }
+        },
+        {
+            "instanceId": "7ab0b18c6a304585a6861668ccc3573b",
+            "speciesId": "Soldier",
+            "zoneId": "zone-1",
+            "placementId": "",
+            "category": 0,
+            "level": 3,
+            "currentHP": 25,
+            "cell": {
+                "x": 3,
+                "y": 5
+            },
+            "alerted": false,
+            "defeated": false,
+            "respawnRemaining": 0.0,
+            "stats": {
+                "speciesId": "Soldier",
+                "displayName": "SOLDADO",
+                "level": 3,
+                "maximumHP": 25,
+                "damage": 5,
+                "defense": 6,
+                "luck": 3,
+                "specialDamage": 5,
+                "specialHits": 1,
+                "specialHitInterval": 0.20000000298023225,
+                "normalMissPercent": 12.0,
+                "specialMissPercent": 25.0,
+                "criticalPercent": 0.0,
+                "criticalMultiplier": 1.5
+            }
+        },
+        {
+            "instanceId": "b406d24368b641b7ade0673c47f248ff",
+            "speciesId": "Soldier",
+            "zoneId": "zone-1",
+            "placementId": "",
+            "category": 0,
+            "level": 1,
+            "currentHP": 20,
+            "cell": {
+                "x": 2,
+                "y": 3
+            },
+            "alerted": false,
+            "defeated": false,
+            "respawnRemaining": 0.0,
+            "stats": {
+                "speciesId": "Soldier",
+                "displayName": "SOLDADO",
+                "level": 1,
+                "maximumHP": 20,
+                "damage": 4,
+                "defense": 5,
+                "luck": 3,
+                "specialDamage": 4,
+                "specialHits": 1,
+                "specialHitInterval": 0.20000000298023225,
+                "normalMissPercent": 12.0,
+                "specialMissPercent": 25.0,
+                "criticalPercent": 0.0,
+                "criticalMultiplier": 1.5
+            }
+        },
+        {
+            "instanceId": "d5d9d291be294260b3ef0d133b783f29",
+            "speciesId": "Mimic",
+            "zoneId": "zone-2",
+            "placementId": "7a689886cdda416cb33de22dbcec969c",
+            "category": 0,
+            "level": 1,
+            "currentHP": 0,
+            "cell": {
+                "x": 9,
+                "y": 17
+            },
+            "alerted": false,
+            "defeated": true,
+            "respawnRemaining": 0.0,
+            "stats": {
+                "speciesId": "Mimic",
+                "displayName": "MIMIC",
+                "level": 1,
+                "maximumHP": 20,
+                "damage": 4,
+                "defense": 6,
+                "luck": 2,
+                "specialDamage": 3,
+                "specialHits": 1,
+                "specialHitInterval": 0.20000000298023225,
+                "normalMissPercent": 10.0,
+                "specialMissPercent": 25.0,
+                "criticalPercent": 0.0,
+                "criticalMultiplier": 1.5
+            }
+        },
+        {
+            "instanceId": "91260eace49445b1bd8e51e697fddaf1",
+            "speciesId": "Tapaku",
+            "zoneId": "zone-1",
+            "placementId": "",
+            "category": 0,
+            "level": 4,
+            "currentHP": 0,
+            "cell": {
+                "x": 16,
+                "y": 11
+            },
+            "alerted": false,
+            "defeated": true,
+            "respawnRemaining": 47.974647521972659,
+            "stats": {
+                "speciesId": "Tapaku",
+                "displayName": "TAPAKU",
+                "level": 4,
+                "maximumHP": 14,
+                "damage": 4,
+                "defense": 2,
+                "luck": 5,
+                "specialDamage": 4,
+                "specialHits": 1,
+                "specialHitInterval": 0.20000000298023225,
+                "normalMissPercent": 10.0,
+                "specialMissPercent": 20.0,
+                "criticalPercent": 0.0,
+                "criticalMultiplier": 1.5
+            }
+        },
+        {
+            "instanceId": "627e56a4e8f643a98431fc235f01534a",
+            "speciesId": "Tapaku",
+            "zoneId": "zone-1",
+            "placementId": "",
+            "category": 0,
+            "level": 1,
+            "currentHP": 0,
+            "cell": {
+                "x": 6,
+                "y": 1
+            },
+            "alerted": false,
+            "defeated": true,
+            "respawnRemaining": 49.938697814941409,
+            "stats": {
+                "speciesId": "Tapaku",
+                "displayName": "TAPAKU",
+                "level": 1,
+                "maximumHP": 10,
+                "damage": 3,
+                "defense": 2,
+                "luck": 5,
+                "specialDamage": 3,
+                "specialHits": 1,
+                "specialHitInterval": 0.20000000298023225,
+                "normalMissPercent": 10.0,
+                "specialMissPercent": 20.0,
+                "criticalPercent": 0.0,
+                "criticalMultiplier": 1.5
+            }
+        }
+    ],
+    "triggeredEncounters": [
+        "refuge.devoto",
+        "7a689886cdda416cb33de22dbcec969c"
+    ],
+    "entityStates": [
+        {
+            "id": "0e5e856f8377403ba6261f0418529e06",
+            "opened": true
+        },
+        {
+            "id": "556b2694ac7a4e05a3a4fd76eb7fbf75",
+            "opened": true
+        },
+        {
+            "id": "0138508de80849ab9098377ef02d10c2",
+            "opened": false
+        },
+        {
+            "id": "5c90a1a1f62640fa90e8399557659b0b",
+            "opened": false
+        },
+        {
+            "id": "d139e772467a46efa9523235669e7705",
+            "opened": false
+        },
+        {
+            "id": "f41a0736f0e745b79714cf647d3d7ae3",
+            "opened": false
+        },
+        {
+            "id": "c5fc191240334b81b98ac5ee4c9cdf18",
+            "opened": false
+        },
+        {
+            "id": "5d6f3e9d288c428fb7d879992a98b8ea",
+            "opened": false
+        },
+        {
+            "id": "dd55f8a1b779451bb2501875413a5400",
+            "opened": false
+        },
+        {
+            "id": "da875bcc4edc40ac822d64516067a58d",
+            "opened": false
+        },
+        {
+            "id": "dd039ce578724a8a970d25e156c2a295",
+            "opened": false
+        },
+        {
+            "id": "58db9855ccb147678f2afb6bfccd53ee",
+            "opened": false
+        },
+        {
+            "id": "e69b2f9aa1d24b4799e0937d61b1f655",
+            "opened": false
+        }
+    ],
+    "explored": [
+        {
+            "x": 1,
+            "y": 0
+        },
+        {
+            "x": 2,
+            "y": 0
+        },
+        {
+            "x": 3,
+            "y": 0
+        },
+        {
+            "x": 4,
+            "y": 0
+        },
+        {
+            "x": 5,
+            "y": 0
+        },
+        {
+            "x": 9,
+            "y": 0
+        },
+        {
+            "x": 10,
+            "y": 0
+        },
+        {
+            "x": 11,
+            "y": 0
+        },
+        {
+            "x": 0,
+            "y": 1
+        },
+        {
+            "x": 1,
+            "y": 1
+        },
+        {
+            "x": 2,
+            "y": 1
+        },
+        {
+            "x": 3,
+            "y": 1
+        },
+        {
+            "x": 4,
+            "y": 1
+        },
+        {
+            "x": 5,
+            "y": 1
+        },
+        {
+            "x": 9,
+            "y": 1
+        },
+        {
+            "x": 10,
+            "y": 1
+        },
+        {
+            "x": 11,
+            "y": 1
+        },
+        {
+            "x": 12,
+            "y": 1
+        },
+        {
+            "x": 0,
+            "y": 2
+        },
+        {
+            "x": 1,
+            "y": 2
+        },
+        {
+            "x": 2,
+            "y": 2
+        },
+        {
+            "x": 3,
+            "y": 2
+        },
+        {
+            "x": 4,
+            "y": 2
+        },
+        {
+            "x": 5,
+            "y": 2
+        },
+        {
+            "x": 6,
+            "y": 2
+        },
+        {
+            "x": 7,
+            "y": 2
+        },
+        {
+            "x": 8,
+            "y": 2
+        },
+        {
+            "x": 9,
+            "y": 2
+        },
+        {
+            "x": 10,
+            "y": 2
+        },
+        {
+            "x": 11,
+            "y": 2
+        },
+        {
+            "x": 12,
+            "y": 2
+        },
+        {
+            "x": 14,
+            "y": 2
+        },
+        {
+            "x": 15,
+            "y": 2
+        },
+        {
+            "x": 16,
+            "y": 2
+        },
+        {
+            "x": 17,
+            "y": 2
+        },
+        {
+            "x": 18,
+            "y": 2
+        },
+        {
+            "x": 0,
+            "y": 3
+        },
+        {
+            "x": 1,
+            "y": 3
+        },
+        {
+            "x": 2,
+            "y": 3
+        },
+        {
+            "x": 3,
+            "y": 3
+        },
+        {
+            "x": 4,
+            "y": 3
+        },
+        {
+            "x": 5,
+            "y": 3
+        },
+        {
+            "x": 6,
+            "y": 3
+        },
+        {
+            "x": 7,
+            "y": 3
+        },
+        {
+            "x": 8,
+            "y": 3
+        },
+        {
+            "x": 9,
+            "y": 3
+        },
+        {
+            "x": 10,
+            "y": 3
+        },
+        {
+            "x": 11,
+            "y": 3
+        },
+        {
+            "x": 12,
+            "y": 3
+        },
+        {
+            "x": 14,
+            "y": 3
+        },
+        {
+            "x": 15,
+            "y": 3
+        },
+        {
+            "x": 16,
+            "y": 3
+        },
+        {
+            "x": 17,
+            "y": 3
+        },
+        {
+            "x": 18,
+            "y": 3
+        },
+        {
+            "x": 1,
+            "y": 4
+        },
+        {
+            "x": 2,
+            "y": 4
+        },
+        {
+            "x": 3,
+            "y": 4
+        },
+        {
+            "x": 4,
+            "y": 4
+        },
+        {
+            "x": 5,
+            "y": 4
+        },
+        {
+            "x": 6,
+            "y": 4
+        },
+        {
+            "x": 7,
+            "y": 4
+        },
+        {
+            "x": 8,
+            "y": 4
+        },
+        {
+            "x": 9,
+            "y": 4
+        },
+        {
+            "x": 10,
+            "y": 4
+        },
+        {
+            "x": 11,
+            "y": 4
+        },
+        {
+            "x": 12,
+            "y": 4
+        },
+        {
+            "x": 14,
+            "y": 4
+        },
+        {
+            "x": 15,
+            "y": 4
+        },
+        {
+            "x": 16,
+            "y": 4
+        },
+        {
+            "x": 17,
+            "y": 4
+        },
+        {
+            "x": 18,
+            "y": 4
+        },
+        {
+            "x": 0,
+            "y": 5
+        },
+        {
+            "x": 1,
+            "y": 5
+        },
+        {
+            "x": 2,
+            "y": 5
+        },
+        {
+            "x": 3,
+            "y": 5
+        },
+        {
+            "x": 4,
+            "y": 5
+        },
+        {
+            "x": 7,
+            "y": 5
+        },
+        {
+            "x": 8,
+            "y": 5
+        },
+        {
+            "x": 9,
+            "y": 5
+        },
+        {
+            "x": 10,
+            "y": 5
+        },
+        {
+            "x": 11,
+            "y": 5
+        },
+        {
+            "x": 12,
+            "y": 5
+        },
+        {
+            "x": 15,
+            "y": 5
+        },
+        {
+            "x": 16,
+            "y": 5
+        },
+        {
+            "x": 17,
+            "y": 5
+        },
+        {
+            "x": 18,
+            "y": 5
+        },
+        {
+            "x": 0,
+            "y": 6
+        },
+        {
+            "x": 1,
+            "y": 6
+        },
+        {
+            "x": 2,
+            "y": 6
+        },
+        {
+            "x": 3,
+            "y": 6
+        },
+        {
+            "x": 4,
+            "y": 6
+        },
+        {
+            "x": 5,
+            "y": 6
+        },
+        {
+            "x": 6,
+            "y": 6
+        },
+        {
+            "x": 7,
+            "y": 6
+        },
+        {
+            "x": 8,
+            "y": 6
+        },
+        {
+            "x": 9,
+            "y": 6
+        },
+        {
+            "x": 10,
+            "y": 6
+        },
+        {
+            "x": 11,
+            "y": 6
+        },
+        {
+            "x": 12,
+            "y": 6
+        },
+        {
+            "x": 17,
+            "y": 6
+        },
+        {
+            "x": 18,
+            "y": 6
+        },
+        {
+            "x": 0,
+            "y": 7
+        },
+        {
+            "x": 1,
+            "y": 7
+        },
+        {
+            "x": 2,
+            "y": 7
+        },
+        {
+            "x": 3,
+            "y": 7
+        },
+        {
+            "x": 4,
+            "y": 7
+        },
+        {
+            "x": 5,
+            "y": 7
+        },
+        {
+            "x": 6,
+            "y": 7
+        },
+        {
+            "x": 7,
+            "y": 7
+        },
+        {
+            "x": 8,
+            "y": 7
+        },
+        {
+            "x": 9,
+            "y": 7
+        },
+        {
+            "x": 10,
+            "y": 7
+        },
+        {
+            "x": 11,
+            "y": 7
+        },
+        {
+            "x": 12,
+            "y": 7
+        },
+        {
+            "x": 14,
+            "y": 7
+        },
+        {
+            "x": 15,
+            "y": 7
+        },
+        {
+            "x": 16,
+            "y": 7
+        },
+        {
+            "x": 17,
+            "y": 7
+        },
+        {
+            "x": 18,
+            "y": 7
+        },
+        {
+            "x": 1,
+            "y": 8
+        },
+        {
+            "x": 2,
+            "y": 8
+        },
+        {
+            "x": 3,
+            "y": 8
+        },
+        {
+            "x": 4,
+            "y": 8
+        },
+        {
+            "x": 5,
+            "y": 8
+        },
+        {
+            "x": 6,
+            "y": 8
+        },
+        {
+            "x": 7,
+            "y": 8
+        },
+        {
+            "x": 8,
+            "y": 8
+        },
+        {
+            "x": 9,
+            "y": 8
+        },
+        {
+            "x": 10,
+            "y": 8
+        },
+        {
+            "x": 11,
+            "y": 8
+        },
+        {
+            "x": 12,
+            "y": 8
+        },
+        {
+            "x": 14,
+            "y": 8
+        },
+        {
+            "x": 15,
+            "y": 8
+        },
+        {
+            "x": 16,
+            "y": 8
+        },
+        {
+            "x": 17,
+            "y": 8
+        },
+        {
+            "x": 18,
+            "y": 8
+        },
+        {
+            "x": 8,
+            "y": 9
+        },
+        {
+            "x": 9,
+            "y": 9
+        },
+        {
+            "x": 10,
+            "y": 9
+        },
+        {
+            "x": 11,
+            "y": 9
+        },
+        {
+            "x": 12,
+            "y": 9
+        },
+        {
+            "x": 17,
+            "y": 9
+        },
+        {
+            "x": 18,
+            "y": 9
+        },
+        {
+            "x": 19,
+            "y": 9
+        },
+        {
+            "x": 20,
+            "y": 9
+        },
+        {
+            "x": 8,
+            "y": 10
+        },
+        {
+            "x": 9,
+            "y": 10
+        },
+        {
+            "x": 10,
+            "y": 10
+        },
+        {
+            "x": 11,
+            "y": 10
+        },
+        {
+            "x": 12,
+            "y": 10
+        },
+        {
+            "x": 13,
+            "y": 10
+        },
+        {
+            "x": 14,
+            "y": 10
+        },
+        {
+            "x": 15,
+            "y": 10
+        },
+        {
+            "x": 16,
+            "y": 10
+        },
+        {
+            "x": 17,
+            "y": 10
+        },
+        {
+            "x": 18,
+            "y": 10
+        },
+        {
+            "x": 19,
+            "y": 10
+        },
+        {
+            "x": 8,
+            "y": 11
+        },
+        {
+            "x": 9,
+            "y": 11
+        },
+        {
+            "x": 10,
+            "y": 11
+        },
+        {
+            "x": 11,
+            "y": 11
+        },
+        {
+            "x": 12,
+            "y": 11
+        },
+        {
+            "x": 13,
+            "y": 11
+        },
+        {
+            "x": 14,
+            "y": 11
+        },
+        {
+            "x": 15,
+            "y": 11
+        },
+        {
+            "x": 16,
+            "y": 11
+        },
+        {
+            "x": 17,
+            "y": 11
+        },
+        {
+            "x": 18,
+            "y": 11
+        },
+        {
+            "x": 8,
+            "y": 12
+        },
+        {
+            "x": 9,
+            "y": 12
+        },
+        {
+            "x": 10,
+            "y": 12
+        },
+        {
+            "x": 11,
+            "y": 12
+        },
+        {
+            "x": 12,
+            "y": 12
+        },
+        {
+            "x": 13,
+            "y": 12
+        },
+        {
+            "x": 14,
+            "y": 12
+        },
+        {
+            "x": 15,
+            "y": 12
+        },
+        {
+            "x": 16,
+            "y": 12
+        },
+        {
+            "x": 17,
+            "y": 12
+        },
+        {
+            "x": 8,
+            "y": 13
+        },
+        {
+            "x": 9,
+            "y": 13
+        },
+        {
+            "x": 10,
+            "y": 13
+        },
+        {
+            "x": 7,
+            "y": 14
+        },
+        {
+            "x": 8,
+            "y": 14
+        },
+        {
+            "x": 9,
+            "y": 14
+        },
+        {
+            "x": 10,
+            "y": 14
+        },
+        {
+            "x": 7,
+            "y": 15
+        },
+        {
+            "x": 8,
+            "y": 15
+        },
+        {
+            "x": 9,
+            "y": 15
+        },
+        {
+            "x": 10,
+            "y": 15
+        },
+        {
+            "x": 4,
+            "y": 16
+        },
+        {
+            "x": 5,
+            "y": 16
+        },
+        {
+            "x": 6,
+            "y": 16
+        },
+        {
+            "x": 7,
+            "y": 16
+        },
+        {
+            "x": 8,
+            "y": 16
+        },
+        {
+            "x": 9,
+            "y": 16
+        },
+        {
+            "x": 10,
+            "y": 16
+        },
+        {
+            "x": 4,
+            "y": 17
+        },
+        {
+            "x": 5,
+            "y": 17
+        },
+        {
+            "x": 4,
+            "y": 18
+        },
+        {
+            "x": 5,
+            "y": 18
+        },
+        {
+            "x": 6,
+            "y": 18
+        },
+        {
+            "x": 4,
+            "y": 19
+        },
+        {
+            "x": 5,
+            "y": 19
+        },
+        {
+            "x": 6,
+            "y": 19
+        },
+        {
+            "x": 3,
+            "y": 20
+        },
+        {
+            "x": 4,
+            "y": 20
+        },
+        {
+            "x": 5,
+            "y": 20
+        },
+        {
+            "x": 6,
+            "y": 20
+        },
+        {
+            "x": 2,
+            "y": 21
+        },
+        {
+            "x": 3,
+            "y": 21
+        },
+        {
+            "x": 4,
+            "y": 21
+        },
+        {
+            "x": 5,
+            "y": 21
+        },
+        {
+            "x": 2,
+            "y": 22
+        },
+        {
+            "x": 3,
+            "y": 22
+        },
+        {
+            "x": 4,
+            "y": 22
+        },
+        {
+            "x": 5,
+            "y": 22
+        },
+        {
+            "x": 2,
+            "y": 23
+        },
+        {
+            "x": 3,
+            "y": 23
+        },
+        {
+            "x": 4,
+            "y": 23
+        },
+        {
+            "x": 5,
+            "y": 23
+        },
+        {
+            "x": 3,
+            "y": 24
+        },
+        {
+            "x": 4,
+            "y": 24
+        },
+        {
+            "x": 5,
+            "y": 24
+        },
+        {
+            "x": 6,
+            "y": 24
+        },
+        {
+            "x": 4,
+            "y": 25
+        },
+        {
+            "x": 5,
+            "y": 25
+        },
+        {
+            "x": 6,
+            "y": 25
+        },
+        {
+            "x": 5,
+            "y": 26
+        },
+        {
+            "x": 6,
+            "y": 26
+        },
+        {
+            "x": 5,
+            "y": 27
+        },
+        {
+            "x": 6,
+            "y": 27
+        },
+        {
+            "x": 4,
+            "y": 28
+        },
+        {
+            "x": 5,
+            "y": 28
+        },
+        {
+            "x": 6,
+            "y": 28
+        },
+        {
+            "x": 4,
+            "y": 29
+        },
+        {
+            "x": 5,
+            "y": 29
+        },
+        {
+            "x": 5,
+            "y": 30
+        },
+        {
+            "x": 6,
+            "y": 30
+        },
+        {
+            "x": 3,
+            "y": 31
+        },
+        {
+            "x": 4,
+            "y": 31
+        },
+        {
+            "x": 5,
+            "y": 31
+        },
+        {
+            "x": 6,
+            "y": 31
+        },
+        {
+            "x": 2,
+            "y": 32
+        },
+        {
+            "x": 3,
+            "y": 32
+        },
+        {
+            "x": 4,
+            "y": 32
+        },
+        {
+            "x": 5,
+            "y": 32
+        },
+        {
+            "x": 6,
+            "y": 32
+        },
+        {
+            "x": 3,
+            "y": 33
+        },
+        {
+            "x": 5,
+            "y": 33
+        },
+        {
+            "x": 6,
+            "y": 33
+        },
+        {
+            "x": 2,
+            "y": 34
+        },
+        {
+            "x": 3,
+            "y": 34
+        },
+        {
+            "x": 4,
+            "y": 34
+        },
+        {
+            "x": 5,
+            "y": 34
+        },
+        {
+            "x": 6,
+            "y": 34
+        },
+        {
+            "x": 2,
+            "y": 35
+        },
+        {
+            "x": 3,
+            "y": 35
+        },
+        {
+            "x": 4,
+            "y": 35
+        },
+        {
+            "x": 5,
+            "y": 35
+        },
+        {
+            "x": 6,
+            "y": 35
+        },
+        {
+            "x": 2,
+            "y": 36
+        },
+        {
+            "x": 3,
+            "y": 36
+        },
+        {
+            "x": 5,
+            "y": 36
+        },
+        {
+            "x": 2,
+            "y": 37
+        },
+        {
+            "x": 3,
+            "y": 37
+        },
+        {
+            "x": 2,
+            "y": 38
+        },
+        {
+            "x": 3,
+            "y": 38
+        },
+        {
+            "x": 4,
+            "y": 38
+        },
+        {
+            "x": 2,
+            "y": 39
+        },
+        {
+            "x": 3,
+            "y": 39
+        },
+        {
+            "x": 4,
+            "y": 39
+        },
+        {
+            "x": 3,
+            "y": 40
+        },
+        {
+            "x": 3,
+            "y": 41
+        },
+        {
+            "x": 3,
+            "y": 42
+        },
+        {
+            "x": 3,
+            "y": 43
+        },
+        {
+            "x": 3,
+            "y": 44
+        },
+        {
+            "x": 3,
+            "y": 45
+        },
+        {
+            "x": 2,
+            "y": 46
+        },
+        {
+            "x": 3,
+            "y": 46
+        },
+        {
+            "x": 4,
+            "y": 46
+        }
+    ]
+}

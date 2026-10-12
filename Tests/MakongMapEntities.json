@@ -1,0 +1,559 @@
+{
+    "objects": [
+        {
+            "id": "0e5e856f8377403ba6261f0418529e06",
+            "displayName": "Cofre",
+            "kind": 1,
+            "cell": {
+                "x": 6,
+                "y": 5
+            },
+            "heading": 0,
+            "npcCatalog": {
+                "instanceID": 568105584918842850
+            },
+            "npcId": "",
+            "dialogue": [],
+            "chestKind": 0,
+            "contentId": "9e16c25941b547ff87ce8a813008e635",
+            "quantity": 1,
+            "mimicPlacementId": "",
+            "doorKind": 0,
+            "requiredKeyId": "",
+            "destinationRegionId": "",
+            "destinationMap": {
+                "instanceID": 0
+            },
+            "destinationCell": {
+                "x": 0,
+                "y": 0
+            },
+            "doorSettings": {
+                "instanceID": 0
+            },
+            "heal": true,
+            "save": true,
+            "initiallyActive": false,
+            "requiresActivation": true,
+            "destinations": []
+        },
+        {
+            "id": "556b2694ac7a4e05a3a4fd76eb7fbf75",
+            "displayName": "Cofre",
+            "kind": 1,
+            "cell": {
+                "x": 9,
+                "y": 17
+            },
+            "heading": 0,
+            "npcCatalog": {
+                "instanceID": 568105584918842850
+            },
+            "npcId": "centinela",
+            "dialogue": [],
+            "chestKind": 1,
+            "contentId": "",
+            "quantity": 1,
+            "mimicPlacementId": "7a689886cdda416cb33de22dbcec969c",
+            "doorKind": 0,
+            "requiredKeyId": "",
+            "destinationRegionId": "",
+            "destinationMap": {
+                "instanceID": 0
+            },
+            "destinationCell": {
+                "x": 0,
+                "y": 0
+            },
+            "doorSettings": {
+                "instanceID": 0
+            },
+            "heal": true,
+            "save": true,
+            "initiallyActive": false,
+            "requiresActivation": true,
+            "destinations": []
+        },
+        {
+            "id": "0138508de80849ab9098377ef02d10c2",
+            "displayName": "Puerta",
+            "kind": 2,
+            "cell": {
+                "x": 3,
+                "y": 46
+            },
+            "heading": 0,
+            "npcCatalog": {
+                "instanceID": 568105584918842850
+            },
+            "npcId": "centinela",
+            "dialogue": [],
+            "chestKind": 0,
+            "contentId": "",
+            "quantity": 1,
+            "mimicPlacementId": "",
+            "doorKind": 1,
+            "requiredKeyId": "",
+            "destinationRegionId": "",
+            "destinationMap": {
+                "instanceID": 0
+            },
+            "destinationCell": {
+                "x": 0,
+                "y": 0
+            },
+            "doorSettings": {
+                "instanceID": 568105584918842728
+            },
+            "heal": true,
+            "save": true,
+            "initiallyActive": false,
+            "requiresActivation": true,
+            "destinations": []
+        },
+        {
+            "id": "5c90a1a1f62640fa90e8399557659b0b",
+            "displayName": "Puerta",
+            "kind": 2,
+            "cell": {
+                "x": 16,
+                "y": 42
+            },
+            "heading": 0,
+            "npcCatalog": {
+                "instanceID": 568105584918842850
+            },
+            "npcId": "centinela",
+            "dialogue": [],
+            "chestKind": 0,
+            "contentId": "",
+            "quantity": 1,
+            "mimicPlacementId": "",
+            "doorKind": 0,
+            "requiredKeyId": "",
+            "destinationRegionId": "",
+            "destinationMap": {
+                "instanceID": 0
+            },
+            "destinationCell": {
+                "x": 0,
+                "y": 0
+            },
+            "doorSettings": {
+                "instanceID": 0
+            },
+            "heal": true,
+            "save": true,
+            "initiallyActive": false,
+            "requiresActivation": true,
+            "destinations": []
+        },
+        {
+            "id": "d139e772467a46efa9523235669e7705",
+            "displayName": "Puerta",
+            "kind": 2,
+            "cell": {
+                "x": 11,
+                "y": 46
+            },
+            "heading": 0,
+            "npcCatalog": {
+                "instanceID": 568105584918842850
+            },
+            "npcId": "centinela",
+            "dialogue": [],
+            "chestKind": 0,
+            "contentId": "",
+            "quantity": 1,
+            "mimicPlacementId": "",
+            "doorKind": 0,
+            "requiredKeyId": "",
+            "destinationRegionId": "",
+            "destinationMap": {
+                "instanceID": 0
+            },
+            "destinationCell": {
+                "x": 0,
+                "y": 0
+            },
+            "doorSettings": {
+                "instanceID": 0
+            },
+            "heal": true,
+            "save": true,
+            "initiallyActive": false,
+            "requiresActivation": true,
+            "destinations": []
+        },
+        {
+            "id": "f41a0736f0e745b79714cf647d3d7ae3",
+            "displayName": "Puerta",
+            "kind": 2,
+            "cell": {
+                "x": 20,
+                "y": 48
+            },
+            "heading": 0,
+            "npcCatalog": {
+                "instanceID": 568105584918842850
+            },
+            "npcId": "centinela",
+            "dialogue": [],
+            "chestKind": 0,
+            "contentId": "",
+            "quantity": 1,
+            "mimicPlacementId": "",
+            "doorKind": 0,
+            "requiredKeyId": "",
+            "destinationRegionId": "",
+            "destinationMap": {
+                "instanceID": 0
+            },
+            "destinationCell": {
+                "x": 0,
+                "y": 0
+            },
+            "doorSettings": {
+                "instanceID": 0
+            },
+            "heal": true,
+            "save": true,
+            "initiallyActive": false,
+            "requiresActivation": true,
+            "destinations": []
+        },
+        {
+            "id": "ed55c002d9bc4be296015a7c609b32b1",
+            "displayName": "Teleport",
+            "kind": 4,
+            "cell": {
+                "x": 10,
+                "y": 49
+            },
+            "heading": 0,
+            "npcCatalog": {
+                "instanceID": 568105584918842850
+            },
+            "npcId": "centinela",
+            "dialogue": [],
+            "chestKind": 0,
+            "contentId": "",
+            "quantity": 1,
+            "mimicPlacementId": "",
+            "doorKind": 0,
+            "requiredKeyId": "",
+            "destinationRegionId": "",
+            "destinationMap": {
+                "instanceID": 0
+            },
+            "destinationCell": {
+                "x": 0,
+                "y": 0
+            },
+            "doorSettings": {
+                "instanceID": 0
+            },
+            "heal": true,
+            "save": true,
+            "initiallyActive": false,
+            "requiresActivation": true,
+            "destinations": []
+        },
+        {
+            "id": "c5fc191240334b81b98ac5ee4c9cdf18",
+            "displayName": "Cofre",
+            "kind": 1,
+            "cell": {
+                "x": 15,
+                "y": 45
+            },
+            "heading": 0,
+            "npcCatalog": {
+                "instanceID": 568105584918842850
+            },
+            "npcId": "centinela",
+            "dialogue": [],
+            "chestKind": 0,
+            "contentId": "",
+            "quantity": 1,
+            "mimicPlacementId": "",
+            "doorKind": 0,
+            "requiredKeyId": "",
+            "destinationRegionId": "",
+            "destinationMap": {
+                "instanceID": 0
+            },
+            "destinationCell": {
+                "x": 0,
+                "y": 0
+            },
+            "doorSettings": {
+                "instanceID": 0
+            },
+            "heal": true,
+            "save": true,
+            "initiallyActive": false,
+            "requiresActivation": true,
+            "destinations": []
+        },
+        {
+            "id": "5d6f3e9d288c428fb7d879992a98b8ea",
+            "displayName": "Cofre",
+            "kind": 1,
+            "cell": {
+                "x": 20,
+                "y": 41
+            },
+            "heading": 0,
+            "npcCatalog": {
+                "instanceID": 568105584918842850
+            },
+            "npcId": "centinela",
+            "dialogue": [],
+            "chestKind": 0,
+            "contentId": "",
+            "quantity": 1,
+            "mimicPlacementId": "",
+            "doorKind": 0,
+            "requiredKeyId": "",
+            "destinationRegionId": "",
+            "destinationMap": {
+                "instanceID": 0
+            },
+            "destinationCell": {
+                "x": 0,
+                "y": 0
+            },
+            "doorSettings": {
+                "instanceID": 0
+            },
+            "heal": true,
+            "save": true,
+            "initiallyActive": false,
+            "requiresActivation": true,
+            "destinations": []
+        },
+        {
+            "id": "dd55f8a1b779451bb2501875413a5400",
+            "displayName": "Cofre",
+            "kind": 1,
+            "cell": {
+                "x": 1,
+                "y": 36
+            },
+            "heading": 0,
+            "npcCatalog": {
+                "instanceID": 568105584918842850
+            },
+            "npcId": "centinela",
+            "dialogue": [],
+            "chestKind": 0,
+            "contentId": "",
+            "quantity": 1,
+            "mimicPlacementId": "",
+            "doorKind": 0,
+            "requiredKeyId": "",
+            "destinationRegionId": "",
+            "destinationMap": {
+                "instanceID": 0
+            },
+            "destinationCell": {
+                "x": 0,
+                "y": 0
+            },
+            "doorSettings": {
+                "instanceID": 0
+            },
+            "heal": true,
+            "save": true,
+            "initiallyActive": false,
+            "requiresActivation": true,
+            "destinations": []
+        },
+        {
+            "id": "da875bcc4edc40ac822d64516067a58d",
+            "displayName": "Puerta",
+            "kind": 2,
+            "cell": {
+                "x": 15,
+                "y": 33
+            },
+            "heading": 0,
+            "npcCatalog": {
+                "instanceID": 568105584918842850
+            },
+            "npcId": "centinela",
+            "dialogue": [],
+            "chestKind": 0,
+            "contentId": "",
+            "quantity": 1,
+            "mimicPlacementId": "",
+            "doorKind": 0,
+            "requiredKeyId": "",
+            "destinationRegionId": "",
+            "destinationMap": {
+                "instanceID": 0
+            },
+            "destinationCell": {
+                "x": 0,
+                "y": 0
+            },
+            "doorSettings": {
+                "instanceID": 0
+            },
+            "heal": true,
+            "save": true,
+            "initiallyActive": false,
+            "requiresActivation": true,
+            "destinations": []
+        },
+        {
+            "id": "5d6d25c28f8f4e3e830d4e68d3e1fec8",
+            "displayName": "NPC",
+            "kind": 0,
+            "cell": {
+                "x": 17,
+                "y": 34
+            },
+            "heading": 0,
+            "npcCatalog": {
+                "instanceID": 568105584918842850
+            },
+            "npcId": "centinela",
+            "dialogue": [],
+            "chestKind": 0,
+            "contentId": "",
+            "quantity": 1,
+            "mimicPlacementId": "",
+            "doorKind": 0,
+            "requiredKeyId": "",
+            "destinationRegionId": "",
+            "destinationMap": {
+                "instanceID": 0
+            },
+            "destinationCell": {
+                "x": 0,
+                "y": 0
+            },
+            "doorSettings": {
+                "instanceID": 0
+            },
+            "heal": true,
+            "save": true,
+            "initiallyActive": false,
+            "requiresActivation": true,
+            "destinations": []
+        },
+        {
+            "id": "dd039ce578724a8a970d25e156c2a295",
+            "displayName": "Cofre",
+            "kind": 1,
+            "cell": {
+                "x": 19,
+                "y": 36
+            },
+            "heading": 0,
+            "npcCatalog": {
+                "instanceID": 568105584918842850
+            },
+            "npcId": "centinela",
+            "dialogue": [],
+            "chestKind": 0,
+            "contentId": "",
+            "quantity": 1,
+            "mimicPlacementId": "",
+            "doorKind": 0,
+            "requiredKeyId": "",
+            "destinationRegionId": "",
+            "destinationMap": {
+                "instanceID": 0
+            },
+            "destinationCell": {
+                "x": 0,
+                "y": 0
+            },
+            "doorSettings": {
+                "instanceID": 0
+            },
+            "heal": true,
+            "save": true,
+            "initiallyActive": false,
+            "requiresActivation": true,
+            "destinations": []
+        },
+        {
+            "id": "58db9855ccb147678f2afb6bfccd53ee",
+            "displayName": "Cofre",
+            "kind": 1,
+            "cell": {
+                "x": 19,
+                "y": 34
+            },
+            "heading": 0,
+            "npcCatalog": {
+                "instanceID": 568105584918842850
+            },
+            "npcId": "centinela",
+            "dialogue": [],
+            "chestKind": 0,
+            "contentId": "",
+            "quantity": 1,
+            "mimicPlacementId": "",
+            "doorKind": 0,
+            "requiredKeyId": "",
+            "destinationRegionId": "",
+            "destinationMap": {
+                "instanceID": 0
+            },
+            "destinationCell": {
+                "x": 0,
+                "y": 0
+            },
+            "doorSettings": {
+                "instanceID": 0
+            },
+            "heal": true,
+            "save": true,
+            "initiallyActive": false,
+            "requiresActivation": true,
+            "destinations": []
+        },
+        {
+            "id": "e69b2f9aa1d24b4799e0937d61b1f655",
+            "displayName": "Cofre",
+            "kind": 1,
+            "cell": {
+                "x": 19,
+                "y": 32
+            },
+            "heading": 0,
+            "npcCatalog": {
+                "instanceID": 568105584918842850
+            },
+            "npcId": "centinela",
+            "dialogue": [],
+            "chestKind": 0,
+            "contentId": "",
+            "quantity": 1,
+            "mimicPlacementId": "",
+            "doorKind": 0,
+            "requiredKeyId": "",
+            "destinationRegionId": "",
+            "destinationMap": {
+                "instanceID": 0
+            },
+            "destinationCell": {
+                "x": 0,
+                "y": 0
+            },
+            "doorSettings": {
+                "instanceID": 0
+            },
+            "heal": true,
+            "save": true,
+            "initiallyActive": false,
+            "requiresActivation": true,
+            "destinations": []
+        }
+    ]
+}

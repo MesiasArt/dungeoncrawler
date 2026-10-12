@@ -1,0 +1,13 @@
+# HONGO / Hit — selección temporal.
+# Una frase por línea; puedes cambiarlas o añadir más.
+# Golpe confirmado: banco preparado; aún no conectado al combate.
+¡Funciona! ¡Todavía funciona!
+¡JA! ¡JA! ¡JA!
+¡No te levantes!
+Así... así se hacía antes...
+¡Lo hice bien! ¿Verdad?
+¡No te resistas!
+¡No vuelvas a levantarte!
+Por fin... hice algo correcto.
+¡Quédate conmigo!
+No te preocupes. Pronto acabará.

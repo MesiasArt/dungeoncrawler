@@ -1,0 +1,12 @@
+scenario0 LV1 expected=42,605% count=4254
+scenario0 LV2 expected=27,693% count=2824
+scenario0 LV3 expected=18,001% count=1779
+scenario0 LV4 expected=11,700% count=1143
+scenario1 LV1 expected=62,461% count=6265
+scenario1 LV3 expected=26,390% count=2625
+scenario1 LV5 expected=11,150% count=1110
+scenario2 LV7 expected=33,875% count=3348
+scenario2 LV8 expected=27,100% count=2666
+scenario2 LV9 expected=21,680% count=2162
+scenario2 LV10 expected=17,344% count=1824
+PASS 60032 assertions; 30000 draws; seeds1102026..1102028

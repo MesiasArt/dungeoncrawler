@@ -1,0 +1,13 @@
+# HONGO / ExtremeCorruption — selección temporal.
+# Una frase por línea; puedes cambiarlas o añadir más.
+# Reservado; no se activa en los enemigos normales.
+La voz. La voz. ¡SACA LA VOZ!
+0100... mamá... 0110...
+NO ME BORRES NO ME BORRES NO ME BORRES.
+Ella dice que soy perfecto.
+¿POR QUÉ TENGO RECUERDOS?
+Mi nombre es [NULL].
+Ayúdame. Elimíname. Ayúdame.
+Soy feliz. Soy feliz. SOY FELIZ.
+El dolor no existe. ERROR: DOLOR.
+¿Dónde están los demás? ¿DÓNDE ESTÁN?

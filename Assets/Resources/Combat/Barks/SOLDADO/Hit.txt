@@ -1,0 +1,14 @@
+# SOLDADO / Hit — selección temporal.
+# Una frase por línea; puedes cambiarlas o añadir más.
+# Golpe confirmado: banco preparado; aún no conectado al combate.
+¡Impacto confirmado!
+¡Ella estará satisfecha!
+Tu resistencia es inútil.
+¡El error está disminuyendo!
+¡SIGUIENTE CORRECCIÓN!
+Tu integridad está fallando.
+Cada golpe nos acerca al orden.
+¡MI FUNCIÓN! ¡MI FUNCIÓN!
+Tu dolor será registrado.
+¡El sistema me recompensa!
+¡CORRECCIÓN EXITOSA!

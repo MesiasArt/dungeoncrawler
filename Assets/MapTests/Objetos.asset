@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fdea577286a71c4dbaf413b4b9011ab, type: 3}
+  m_Name: Objetos
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonEntitySettings
+  objects:
+  - id: test.npc
+    displayName: NPC de prueba
+    kind: 0
+    cell: {x: 2, y: 2}
+    heading: 0
+    npcCatalog: {fileID: 11400000, guid: d9cf2ec8775878a4aaa779f8deb76746, type: 2}
+    npcId: centinela
+    dialogue: []
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    destinations: []
+  - id: test.chest
+    displayName: Cofre normal
+    kind: 1
+    cell: {x: 4, y: 3}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 0
+    contentId: 1d84c78dcae84edf8d28847da3c5ab94
+    quantity: 1
+    mimicPlacementId: 
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    destinations: []
+  - id: test.chest.mimic
+    displayName: Cofre Mimic
+    kind: 1
+    cell: {x: 5, y: 3}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 1
+    contentId: 
+    quantity: 1
+    mimicPlacementId: test.mimic
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    destinations: []
+  - id: test.chest.key
+    displayName: Cofre de objeto clave
+    kind: 1
+    cell: {x: 6, y: 3}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 2
+    contentId: b19d2185c0a040a5befb4ecf6d0764dd
+    quantity: 1
+    mimicPlacementId: 
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    destinations: []
+  - id: test.door
+    displayName: Puerta de prueba
+    kind: 2
+    cell: {x: 7, y: 3}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    destinations: []
+  - id: test.save
+    displayName: Savepoint de prueba
+    kind: 3
+    cell: {x: 1, y: 4}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    destinations: []
+  - id: test.teleport
+    displayName: Teleport de prueba
+    kind: 4
+    cell: {x: 8, y: 5}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    destinations: []

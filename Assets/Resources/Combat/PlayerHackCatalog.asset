@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0aafd62ebddedd4a8b6370257a74e8f, type: 3}
+  m_Name: PlayerHackCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHackCatalog
+  hacks:
+  - id: hack.jump
+    displayName: JUMP
+    description: "Salta sobre los enemigos y encadena golpes para aumentar el da\xF1o."
+    minimumLevel: 1
+    available: 1
+    unlockMode: 0
+    implementationScript: {fileID: 11500000, guid: 1ac163d2865ecc841baa273ee69aaa60, type: 3}
+    implementationTypeName: EnemyJumpHack
+  - id: hack.overclock
+    displayName: OVERCLOCK
+    description: "Pulsa r\xE1pidamente para cargar energ\xEDa: m\xE1ximo poder si
+      completas la barra antes del l\xEDmite."
+    minimumLevel: 8
+    available: 1
+    unlockMode: 0
+    implementationScript: {fileID: 11500000, guid: 5eed629a125336248a6e776e17057ec1, type: 3}
+    implementationTypeName: OverclockHack

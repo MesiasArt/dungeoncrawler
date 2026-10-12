@@ -1,0 +1,25 @@
+PASS JUMP disponible LV1; solo funcionales
+PASS Inicio sin aviso repetido de JUMP
+PASS Ejecucion directa bloqueada por nivel
+PASS Sin implementacion no ejecuta
+PASS Desactivado no ejecuta
+PASS Evento futuro no se desbloquea por nivel
+PASS IDs duplicados detectados y excluidos
+PASS Multiples subidas LV1 a LV7
+PASS Menu actualizado inmediatamente con niveles3 y5
+PASS Dos nuevos HACKS generan dos avisos
+PASS Sin repetir avisos ya emitidos
+PASS Sin avisos de desbloqueos antiguos
+PASS Lista usa nombres visibles y solo desbloqueados
+PASS JUMP ejecutable desbloqueado
+PASS Disponibilidad editada actualiza menu
+PASS Guardado conserva nivel fuente de desbloqueos
+PASS Carga reconstruye y no anuncia desbloqueos antiguos
+PASS Partida anterior: JUMP disponible LV1
+PASS IDs de evento preparados conservados sin otorgar HACKS
+PASS JUMP real inicia modelo y ritmo sin regresion
+PASS JUMP mantiene exclusion de suerte
+PASS Catalogo real conserva solo JUMP
+PASS Componente no funcional excluido
+PASS Menu rechaza indice inexistente
+PASS ApplyMapTravel conserva nivel y reconstruye HACKS y futuros IDs

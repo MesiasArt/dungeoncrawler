@@ -1,0 +1,260 @@
+{
+    "version": 1,
+    "introductionCompleted": true,
+    "cell": {
+        "x": 7,
+        "y": 16
+    },
+    "heading": 0,
+    "player": {
+        "currentHP": 37,
+        "inventory": [
+            {
+                "itemId": "7e13872279104700994a6d67e313b5c2",
+                "quantity": 1
+            },
+            {
+                "itemId": "7130831737454e3ab8ef76207d4062eb",
+                "quantity": 1
+            },
+            {
+                "itemId": "7fd390e943284a3ba155ac1f001c552a",
+                "quantity": 1
+            }
+        ],
+        "equipmentIds": [
+            "7e13872279104700994a6d67e313b5c2",
+            "7130831737454e3ab8ef76207d4062eb",
+            "7fd390e943284a3ba155ac1f001c552a"
+        ]
+    },
+    "refuge": {
+        "narrativeVersion": 1,
+        "savePointIntroSeen": true,
+        "refugeTeleportActivatedByPlayer": false,
+        "refugeTeleportActivatedByDevotee": true,
+        "zone2TeleportActivated": true,
+        "refugeTragedyDiscovered": true,
+        "firstBodyDiscovered": false,
+        "sentinelTeleportSeen": false,
+        "devotoConfrontationSeen": true,
+        "exitDialogueCompleted": false,
+        "refugeTragedyTriggered": true,
+        "devotoDefeated": false,
+        "rewardObtained": false,
+        "unlockedNodes": [
+            "node.refuge",
+            "node.zone2"
+        ],
+        "npcs": [
+            {
+                "id": "centinela",
+                "talks": 0,
+                "lastWordsHeard": false
+            },
+            {
+                "id": "archivista",
+                "talks": 0,
+                "lastWordsHeard": false
+            },
+            {
+                "id": "cobarde",
+                "talks": 0,
+                "lastWordsHeard": false
+            },
+            {
+                "id": "optimista",
+                "talks": 0,
+                "lastWordsHeard": false
+            },
+            {
+                "id": "devoto",
+                "talks": 0,
+                "lastWordsHeard": false
+            }
+        ]
+    },
+    "enemies": [
+        {
+            "instanceId": "02c834d9849f4cbfa6e7f09c1f1fe8c6",
+            "speciesId": "Tapaku",
+            "zoneId": "zone-1",
+            "placementId": "",
+            "category": 0,
+            "level": 2,
+            "currentHP": 11,
+            "cell": {
+                "x": 5,
+                "y": 3
+            },
+            "alerted": false,
+            "defeated": false,
+            "respawnRemaining": 0.0,
+            "stats": {
+                "speciesId": "Tapaku",
+                "displayName": "TAPAKU",
+                "level": 2,
+                "maximumHP": 11,
+                "damage": 3,
+                "defense": 2,
+                "luck": 5,
+                "specialDamage": 3,
+                "specialHits": 1,
+                "specialHitInterval": 0.20000000298023225,
+                "normalMissPercent": 10.0,
+                "specialMissPercent": 20.0,
+                "criticalPercent": 0.0,
+                "criticalMultiplier": 1.5
+            }
+        },
+        {
+            "instanceId": "7b004045760e42339efeee4fc1549a16",
+            "speciesId": "Soldier",
+            "zoneId": "zone-1",
+            "placementId": "",
+            "category": 0,
+            "level": 3,
+            "currentHP": 25,
+            "cell": {
+                "x": 7,
+                "y": 7
+            },
+            "alerted": false,
+            "defeated": false,
+            "respawnRemaining": 0.0,
+            "stats": {
+                "speciesId": "Soldier",
+                "displayName": "SOLDADO",
+                "level": 3,
+                "maximumHP": 25,
+                "damage": 5,
+                "defense": 6,
+                "luck": 3,
+                "specialDamage": 5,
+                "specialHits": 1,
+                "specialHitInterval": 0.20000000298023225,
+                "normalMissPercent": 12.0,
+                "specialMissPercent": 25.0,
+                "criticalPercent": 0.0,
+                "criticalMultiplier": 1.5
+            }
+        },
+        {
+            "instanceId": "2f7e6c2508c44816be89668105848731",
+            "speciesId": "Hongo",
+            "zoneId": "zone-1",
+            "placementId": "",
+            "category": 0,
+            "level": 4,
+            "currentHP": 20,
+            "cell": {
+                "x": 1,
+                "y": 5
+            },
+            "alerted": false,
+            "defeated": false,
+            "respawnRemaining": 0.0,
+            "stats": {
+                "speciesId": "Hongo",
+                "displayName": "HONGO",
+                "level": 4,
+                "maximumHP": 20,
+                "damage": 2,
+                "defense": 4,
+                "luck": 3,
+                "specialDamage": 2,
+                "specialHits": 1,
+                "specialHitInterval": 0.20000000298023225,
+                "normalMissPercent": 10.0,
+                "specialMissPercent": 20.0,
+                "criticalPercent": 0.0,
+                "criticalMultiplier": 1.5
+            }
+        },
+        {
+            "instanceId": "a47261912e784f19bf92dc2c66e67afc",
+            "speciesId": "BigTapaku",
+            "zoneId": "zone-1",
+            "placementId": "",
+            "category": 0,
+            "level": 4,
+            "currentHP": 33,
+            "cell": {
+                "x": 9,
+                "y": 3
+            },
+            "alerted": false,
+            "defeated": false,
+            "respawnRemaining": 0.0,
+            "stats": {
+                "speciesId": "BigTapaku",
+                "displayName": "BIG TAPAKU",
+                "level": 4,
+                "maximumHP": 33,
+                "damage": 7,
+                "defense": 11,
+                "luck": 4,
+                "specialDamage": 4,
+                "specialHits": 3,
+                "specialHitInterval": 0.20000000298023225,
+                "normalMissPercent": 15.0,
+                "specialMissPercent": 25.0,
+                "criticalPercent": 0.0,
+                "criticalMultiplier": 1.5
+            }
+        },
+        {
+            "instanceId": "cd1745853a9348e3ac25c43d7a2ea2c9",
+            "speciesId": "DevotoCorrompido",
+            "zoneId": "zone-0",
+            "placementId": "refuge.devoto",
+            "category": 2,
+            "level": 4,
+            "currentHP": 33,
+            "cell": {
+                "x": 17,
+                "y": 3
+            },
+            "alerted": false,
+            "defeated": false,
+            "respawnRemaining": 0.0,
+            "stats": {
+                "speciesId": "DevotoCorrompido",
+                "displayName": "DEVOTO CORROMPIDO",
+                "level": 4,
+                "maximumHP": 33,
+                "damage": 6,
+                "defense": 5,
+                "luck": 3,
+                "specialDamage": 7,
+                "specialHits": 2,
+                "specialHitInterval": 0.30000001192092898,
+                "normalMissPercent": 15.0,
+                "specialMissPercent": 30.0,
+                "criticalPercent": 0.0,
+                "criticalMultiplier": 1.5
+            }
+        }
+    ],
+    "triggeredEncounters": [
+        "refuge.devoto"
+    ],
+    "explored": [
+        {
+            "x": 17,
+            "y": 2
+        },
+        {
+            "x": 19,
+            "y": 9
+        },
+        {
+            "x": 19,
+            "y": 10
+        },
+        {
+            "x": 7,
+            "y": 16
+        }
+    ]
+}

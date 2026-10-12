@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d79994417be1b4b999c0edb517d568, type: 3}
+  m_Name: Letrero
+  m_EditorClassIdentifier: Assembly-CSharp::PreservationCorridorSettings
+  signCell: {x: 9, y: 9}
+  secondDoorCell: {x: 5, y: 17.5}
+  signText: "PROTOCOLO DE PRESERVACI\xD3N. Toda conciencia almacenada ser\xE1 protegida.
+    La eliminaci\xF3n de recuerdos no constituye una p\xE9rdida de identidad. ERROR:
+    PROTOCOLO MODIFICADO"
+  responses:
+  - "\xBFEliminaci\xF3n de recuerdos? \xBFQu\xE9 clase de lugar es este?"
+  - Primero aparecen cosas intentando matarme y ahora esto... Genial.
+  - "Tengo que encontrar a alguien que sepa qu\xE9 est\xE1 pasando. Alguien que no
+    intente arrancarme la cabeza, preferiblemente."

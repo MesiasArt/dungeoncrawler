@@ -1,0 +1,72 @@
+
+var d=UnityEngine.Object.FindObjectOfType<DungeonPrototype>();if(d==null)return "No dungeon";
+d.enabled=false;d.StopAllCoroutines();
+var flags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+System.Func<string,object[],object> call=(name,args)=>typeof(DungeonPrototype).GetMethod(name,flags).Invoke(d,args);
+System.Action<string,object> set=(name,value)=>typeof(DungeonPrototype).GetField(name,flags).SetValue(d,value);
+System.Func<string,object> get=name=>typeof(DungeonPrototype).GetField(name,flags).GetValue(d);
+var results=new System.Collections.Generic.List<string>();
+System.Action<bool,string> check=(ok,label)=>{if(!ok)throw new System.Exception(label);results.Add("PASS "+label);};
+var config=PlayerLevelSettings.Current;
+var character=Resources.Load<PlayerCharacterSettings>("Combat/PlayerCharacterSettings");
+set("playerLevel",1);set("playerExperience",0L);set("equippedIds",null);
+check(string.Join("/",System.Array.ConvertAll(d.PlayerStatValues,x=>x.ToString()))=="37/9/7/10","Equipo inicial 37/9/7/10");
+for(int i=0;i<3;i++)d.UnequipSlot(i);
+check(string.Join("/",System.Array.ConvertAll(d.PlayerStatValues,x=>x.ToString()))=="30/6/3/4","Nivel 1 base 30/6/3/4");
+foreach(var id in character.initialEquipmentIds)d.EquipItem(id);
+set("hp",12);d.GainPlayerXP(12);
+check(d.PlayerLevel==2&&d.PlayerExperience==0,"Subida nivel 2");
+check((int)get("hp")==12,"Sin curacion automatica");
+check(d.PlayerStatValues[0]==39,"Crecimiento HP con equipo");
+set("playerLevel",1);set("playerExperience",0L);
+long threshold=0;for(int i=1;i<20;i++)threshold+=config.RequiredXP(i);d.GainPlayerXP(threshold+7);
+check(d.PlayerLevel==20&&d.PlayerExperience==7,"Multiples niveles y sobrante");
+check(string.Join("/",System.Array.ConvertAll(d.PlayerStatValues,x=>x.ToString()))=="75/18/13/13","Nivel 20 equipado");
+for(int i=0;i<3;i++)d.UnequipSlot(i);
+check(string.Join("/",System.Array.ConvertAll(d.PlayerStatValues,x=>x.ToString()))=="68/15/9/7","Desequipar nivel 20");
+foreach(var id in character.initialEquipmentIds)d.EquipItem(id);
+check(d.PlayerStatValues[1]==18,"Reequipar nivel 20");
+int[] enemyLevels={15,11,10,9,7,5,2};int[] rewards={90,61,50,32,12,3,0};
+for(int i=0;i<enemyLevels.Length;i++)check(config.Reward(enemyLevels[i],10,PlacedEnemyCategory.Normal)==rewards[i],"Diferencia LV "+enemyLevels[i]);
+check(config.Reward(10,10,PlacedEnemyCategory.Elite)==75&&config.Reward(10,10,PlacedEnemyCategory.Boss)==150,"Categorias Elite y Jefe");
+var enemies=new System.Collections.Generic.List<GameObject>();
+for(int count=1;count<=3;count++){
+ set("playerLevel",1);set("playerExperience",0L);call("BeginEncounterXP",new object[0]);
+ for(int i=0;i<count;i++){var o=new GameObject("XP test");enemies.Add(o);var e=o.AddComponent<EnemyCombatStats>();e.level=1;e.speciesId="Hongo";call("RecordEnemyXP",new object[]{e});call("RecordEnemyXP",new object[]{e});}
+ check((int)get("encounterXP")==count*5,"Grupo "+count+" sin duplicados");
+ call("AwardEncounterXP",new object[0]);long before=d.PlayerExperience;int lvBefore=d.PlayerLevel;call("AwardEncounterXP",new object[0]);
+ check(before==d.PlayerExperience&&lvBefore==d.PlayerLevel,"Victoria "+count+" idempotente");
+}
+set("playerLevel",1);set("playerExperience",0L);call("BeginEncounterXP",new object[0]);
+var old=enemies[0].GetComponent<EnemyCombatStats>();call("RecordEnemyXP",new object[]{old});call("BeginEncounterXP",new object[0]);
+check(d.PlayerLevel==1&&d.PlayerExperience==0&&(int)get("encounterXP")==0,"Huir descarta XP pendiente");
+var respawn=new GameObject("Respawn XP test");enemies.Add(respawn);var rs=respawn.AddComponent<EnemyCombatStats>();rs.speciesId="Hongo";rs.level=1;rs.instanceId=old.instanceId;call("RecordEnemyXP",new object[]{rs});call("AwardEncounterXP",new object[0]);
+check(d.PlayerExperience==5,"Respawn legitimo nueva vida da XP");
+d.GainPlayerXP(long.MaxValue);check(d.PlayerLevel==50&&d.PlayerExperience==0&&d.XPRequired==0,"Maximo LV50");d.GainPlayerXP(999);check(d.PlayerLevel==50&&d.PlayerExperience==0,"No acumula mas alla maximo");
+set("playerLevel",20);set("playerExperience",7L);set("hp",12);
+var save=d.CaptureDungeonSave();save.introductionCompleted=true;
+DungeonSaveStore.editorTestPath=System.IO.Path.Combine(Application.dataPath,"../Tests/PlayerLevelsFixture.json");
+DungeonSaveStore.Write(save,0,"Prueba XP aislada");
+var restored=DungeonSaveStore.Read(0);
+set("playerLevel",1);set("playerExperience",0L);d.RestoreDungeonSave(restored);d.StopAllCoroutines();
+check(d.PlayerLevel==20&&d.PlayerExperience==7&&(int)get("hp")==12,"Guardado restauracion XP nivel HP");
+check(string.Join("/",System.Array.ConvertAll(d.PlayerStatValues,x=>x.ToString()))=="75/18/13/13","Equipo guardado conserva bonos");
+var legacy=JsonUtility.FromJson<PlayerProgressionRecord>("{\"currentHP\":10}");
+call("RestorePlayerLevel",new object[]{legacy});check(d.PlayerLevel==1&&d.PlayerExperience==0,"Migracion partida sin campos XP");
+set("playerLevel",20);
+var jump=d.GetComponent<EnemyJumpHack>();if(jump==null)jump=d.gameObject.AddComponent<EnemyJumpHack>();if(jump.settings==null)jump.settings=Resources.Load<EnemyJumpSettings>("Combat/EnemyJumpSettings");
+if(jump.settings==null)jump.settings=ScriptableObject.CreateInstance<EnemyJumpSettings>();
+jump.ConfigureAttack(d.PlayerStatValues[1],3);
+int preview=(int)typeof(EnemyJumpHack).GetMethod("PreviewDamage",flags).Invoke(jump,new object[]{3,3,0});
+int expected=CombatMath.Damage(d.PlayerStatValues[1],3,CombatMath.JumpQuality(3,3,0,jump.settings.enemiesToWin,CombatBalanceSettings.Current),false,1,CombatBalanceSettings.Current);
+check(preview==expected&&!jump.UsesAttackLuck,"JUMP usa fuerza escalada y misma formula sin suerte");
+check(CombatMath.Damage(d.PlayerStatValues[1],3,1,false,1,CombatBalanceSettings.Current)>0,"Ataque normal usa fuerza escalada");
+foreach(var obj in enemies)UnityEngine.Object.Destroy(obj);
+
+// A corpse cannot pay again in a later encounter, even after the first award.
+set("playerLevel",1);set("playerExperience",0L);call("BeginEncounterXP",new object[0]);call("RecordEnemyXP",new object[]{rs});call("AwardEncounterXP",new object[0]);check(d.PlayerExperience==0,"Una vida no entrega XP en otro encuentro");
+// Partial healing uses a temporary config; production asset remains unchanged.
+var temporary=UnityEngine.Object.Instantiate(config);temporary.healMaximumFraction=.1f;d.playerLevelSettings=temporary;set("hp",12);d.GainPlayerXP(12);check((int)get("hp")==16,"Recuperacion parcial configurable sin llenar HP");d.playerLevelSettings=config;UnityEngine.Object.Destroy(temporary);
+DungeonSaveStore.editorTestPath=null;
+System.IO.File.WriteAllLines(System.IO.Path.Combine(Application.dataPath,"../Tests/PlayerLevelResults.txt"),results);
+return results;

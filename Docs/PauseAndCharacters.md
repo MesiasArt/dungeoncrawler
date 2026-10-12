@@ -1,0 +1,8 @@
+> Actualización de balance (11/10/2026): las fórmulas y límites actuales están en [Auditoría general y estadísticas](AuditoriaGeneralYEstadisticas.md), sección D. Esa sección reemplaza las cifras anteriores de suerte y defensa de este documento.
+
+# Menú de pausa y personajes
+Enter en exploración abre el menú; el tiempo, las apariciones y el audio quedan pausados. Durante introducción y combate Enter conserva su control original. Escape vuelve; cerrar menú restaura el tiempo y audio anteriores.
+Personaje muestra vida, fuerza (daño normal), defensa (reducción por golpe) y suerte. Equipo permite equipar/desequipar un objeto por ranura; bonos configurables y tres objetos provisionales disponibles desde el inicio. Inventario utiliza las mismas cantidades que combate y no consume pociones a vida completa. Mapa muestra únicamente celdas descubiertas. Ajustes es un marcador sin acciones.
+Editor > Personajes - estadisticas y equipo reúne fichas en Personaje, Enemigos, Fuertes, Subjefes y Jefes. Big Tapaku empieza en Fuertes; categoría configurable. Las categorías vacías aceptan fichas para enemigos futuros, pero no generan nuevos gráficos o comportamientos.
+Las fichas del catálogo de enemigos se inicializan una vez con los valores anteriores, conservándolos. Desde ahora sus estadísticas se editan en este panel; apariciones y movimiento siguen en Editor > Enemigos - apariciones. Los cambios de enemigos se aplican al crear/reaparecer.
+Cada punto de suerte reduce un punto porcentual de fallo y aumenta un punto porcentual de crítico (y huida para GamerBoy). Críticos normales de GamerBoy: base 5%, multiplicador 1.5; huida base 65%. JUMP queda excluido de fallo aleatorio y críticos. Defensa reduce el daño recibido sin valores negativos.

@@ -1,0 +1,34 @@
+PASS
+Real initial loadout 37/9/7/10
+Spawn snapshot Tapaku LV2
+Spawn snapshot Soldier LV2
+Spawn snapshot Hongo LV1
+Spawn snapshot BigTapaku LV1
+Spawn snapshot Hongo LV1
+Spawn snapshot Soldier LV3
+Spawn snapshot Hongo LV1
+Unequip body
+Clamp HP after max reduction
+Reequip stable ID
+Increasing max HP does not heal
+Reject missing/duplicate acquisition
+Unequip before acquisition test
+Exploration acquisition/equip existing item
+Serializable inventory and three slots
+Player record JSON roundtrip
+Stable IDs survive rename and reorder
+Inventory capacity exactly18
+Full bag rejects acquisition and unequip
+Replacement succeeds with full bag; old gear returns to same capacity
+Restore initial hands equipment
+Stable-ID potion acquisition stacks
+Live LV20 Gran three-hit special snapshot, total 9 HP; catalog edit ignored
+Live scaled normal attack 8 HP
+Three-enemy encounter preserved
+Live JUMP audio/rhythm/no random luck
+JUMP uses scaled target DEF
+Full live JUMP win applies scaled DEF damage 16
+Defeated record retained
+Respawn creates new valid instance and reuses slot
+Respawn clears defeated record
+Enemy instance save preparation

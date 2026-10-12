@@ -12,9 +12,12 @@ public class CombatImpactFeedback : MonoBehaviour
     public bool Active { get { return remaining>0; } }
     public void Play(bool received)
     {
-        duration=Mathf.Max(.01f,received ? hurtDuration : attackDuration);
-        remaining=duration; amplitude=received ? hurtAmplitude : attackAmplitude;
-        phase=0;
+        PlayImpact(received?hurtAmplitude:attackAmplitude,received?hurtDuration:attackDuration);
+    }
+    public void PlayImpact(float strength,float seconds)
+    {
+        if(Active&&amplitude>strength)return;
+        duration=Mathf.Max(.01f,seconds);remaining=duration;amplitude=Mathf.Max(0,strength);phase=0;
     }
     void LateUpdate() { Tick(Time.unscaledDeltaTime); }
     public void Tick(float dt)

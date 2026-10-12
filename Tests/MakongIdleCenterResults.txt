@@ -1,0 +1,7 @@
+Makong en índice 0: True; centro=0, lados=-4,654,4,495
+Makong en índice 1: True; centro=0, lados=-4,654,4,495
+Makong en índice 2: True; centro=0, lados=-4,654,4,495
+
+idle_0: altura visible 190, pies en fila 200
+idle_1: altura visible 190, pies en fila 200
+idle_2: altura visible 190, pies en fila 200

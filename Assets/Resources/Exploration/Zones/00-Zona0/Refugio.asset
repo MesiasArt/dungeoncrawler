@@ -1,0 +1,530 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7904bd1a54e8c354e9370c8b1fb2d543, type: 3}
+  m_Name: Refugio
+  m_EditorClassIdentifier: Assembly-CSharp::RefugeSettings
+  regionId: zone-0
+  devotoPlacementId: refuge.devoto
+  rewardId: refuge.core
+  startCell: {x: 17, y: 2}
+  saveCell: {x: 15, y: 2}
+  devotoCell: {x: 17, y: 3}
+  exitDestination: {x: 1, y: 1}
+  exitDoorCell: {x: 17, y: 9.5}
+  startHeading: 0
+  exitHeading: 0
+  devotoLevel: 4
+  automaticDevotoEncounter: 1
+  refugePassageRow: 5
+  devotoApproachRange: 2
+  npcs:
+  - id: centinela
+    displayName: CENTINELA
+    cell: {x: 15, y: 9}
+    portrait: {fileID: 0}
+    visualSpeciesId: Tapaku
+    conversations:
+    - "No abras esa puerta. Seguimos vivos porque nadie sabe que estamos aqu\xED
+      ."
+    - Afuera ya no distinguen entre amigos y enemigos.
+    lastWords: "La puerta... nunca se abri\xF3..."
+    placeholderColor: {r: 0.25, g: 0.65, b: 0.85, a: 1}
+  - id: archivista
+    displayName: ARCHIVISTA
+    cell: {x: 17, y: 7}
+    portrait: {fileID: 0}
+    visualSpeciesId: MakubaLanza
+    conversations:
+    - Antes este lugar estaba lleno de gente. Ahora solo quedamos nosotros.
+    - A veces escucho voces de programas que ya no existen.
+    lastWords: Ahora... recuerdo su voz...
+    placeholderColor: {r: 0.25, g: 0.65, b: 0.85, a: 1}
+  - id: cobarde
+    displayName: COBARDE
+    cell: {x: 19, y: 8}
+    portrait: {fileID: 0}
+    visualSpeciesId: MakubaArco
+    conversations:
+    - "\xBFVas a salir? \xA1Est\xE1s loco! \xA1Esas cosas nos despedazar\xE1n!"
+    - "Yo no pienso moverme. Aqu\xED estoy bien... creo."
+    lastWords: "Ten\xEDa... tanto miedo..."
+    placeholderColor: {r: 0.25, g: 0.65, b: 0.85, a: 1}
+  - id: optimista
+    displayName: OPTIMISTA
+    cell: {x: 15, y: 6}
+    portrait: {fileID: 0}
+    visualSpeciesId: Hongo
+    conversations:
+    - "\xA1Alguien nuevo! Quiz\xE1s todav\xEDa haya esperanza."
+    - "Si encuentras ayuda, \xBFpodr\xEDas volver por nosotros?"
+    lastWords: "Pens\xE9... que estar\xEDamos bien..."
+    placeholderColor: {r: 0.25, g: 0.65, b: 0.85, a: 1}
+  - id: devoto
+    displayName: DEVOTO
+    cell: {x: 19, y: 6}
+    portrait: {fileID: 0}
+    visualSpeciesId: GranMakuba
+    conversations:
+    - "Qu\xE9 extra\xF1o... \xFAltimamente este lugar parece m\xE1s tranquilo."
+    - "A veces sue\xF1o con una voz. Dice que todo va a estar bien."
+    - "Los dem\xE1s tienen demasiado miedo. Ojal\xE1 pudiera ayudarlos a descansar."
+    lastWords: 
+    placeholderColor: {r: 0.9, g: 0.5, b: 0.2, a: 1}
+  nodes:
+  - id: node.refuge
+    displayName: REFUGIO
+    cell: {x: 19, y: 9}
+    arrivalHeading: 2
+    triggersRefugeTragedy: 0
+  - id: node.zone2
+    displayName: ZONA 2
+    cell: {x: 7, y: 16}
+    arrivalHeading: 0
+    triggersRefugeTragedy: 1
+  exitDialogue:
+  - speaker: CENTINELA
+    text: "\xA1Espera! \xBFDe verdad vas a salir?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "\xBFY quedarme aqu\xED para siempre? Paso."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: ARCHIVISTA
+    text: "Ll\xE9vate estas pociones peque\xF1as. Ten cuidado ah\xED afuera."
+    giftId: 1d84c78dcae84edf8d28847da3c5ab94
+    giftQuantity: 3
+    textPanel: 0
+  - speaker: OPTIMISTA
+    text: "Tambi\xE9n tengo unas pociones medianas para ti. \xDAsalas si te hieren."
+    giftId: b19d2185c0a040a5befb4ecf6d0764dd
+    giftQuantity: 2
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "Gracias... Intentar\xE9 volver entero."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: OPTIMISTA
+    text: Entonces... buena suerte.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "Toma esta poci\xF3n grande. Te har\xE1 falta si las cosas se ponen dif\xEDciles."
+    giftId: 9e16c25941b547ff87ce8a813008e635
+    giftQuantity: 1
+    textPanel: 0
+  - speaker: DEVOTO
+    text: A veces lo peligroso no parece peligroso.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  devotoDialogue:
+  - speaker: DEVOTO
+    text: Has vuelto.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "\xBFQu\xE9 les pas\xF3 a los dem\xE1s?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "Ten\xEDan miedo."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "Much\xEDsimo miedo."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "\xBFQu\xE9 hiciste?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "Los ayud\xE9 a descansar."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "...T\xFA los mataste."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: No lo entiendes.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "Ahora est\xE1n en paz."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  savePointIntro:
+  - speaker: GAMERBOY
+    text: "\xBFUna terminal?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "A ver qu\xE9 hace..."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SISTEMA
+    text: Usuario detectado.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SISTEMA
+    text: Restaurando integridad...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SISTEMA
+    text: "Progreso registrado. Restauraci\xF3n completada."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "\xA1Oh! \xBFUn punto de guardado?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: Bueno, al menos este lugar tiene algo familiar.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  sentinelTeleportDialogue:
+  - speaker: CENTINELA
+    text: "\xBFVes ese teletransportador?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: CENTINELA
+    text: Desactivamos los nodos para que esas cosas no pudieran seguirnos.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: CENTINELA
+    text: "Mientras est\xE9n apagados, este lugar seguir\xE1 oculto."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "\xBFY si alguien necesita regresar?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: CENTINELA
+    text: Nadie que haya salido ha regresado.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  refugeNodeIntro:
+  - speaker: GAMERBOY
+    text: "\xBFAs\xED que esto es un teletransportador?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "Parece que todav\xEDa tiene energ\xEDa..."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SISTEMA
+    text: "NODO DE TRANSFERENCIA \u2014 00"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SISTEMA
+    text: 'Estado: DESACTIVADO.'
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SISTEMA
+    text: "Conexi\xF3n con la red: INTERRUMPIDA."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SISTEMA
+    text: "\xBFReactivar nodo local?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  refugeNodeActivate:
+  - speaker: GAMERBOY
+    text: Dijeron que era peligroso encenderlo...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "Pero si encuentro otro, podr\xEDa usarlo para regresar."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: Supongo que vale la pena el riesgo.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SISTEMA
+    text: Nodo REFUGIO activado.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SISTEMA
+    text: Buscando destinos...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SISTEMA
+    text: "Ning\xFAn otro nodo disponible."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "Bueno... ya tengo c\xF3mo volver."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "Ahora solo falta encontrar ad\xF3nde ir."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  refugeNodeDecline:
+  - speaker: GAMERBOY
+    text: "Mejor no tocar nada todav\xEDa."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  zoneTwoPlayerDialogue:
+  - speaker: SISTEMA
+    text: 'Nodo de transferencia registrado: ZONA 2.'
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SISTEMA
+    text: "Conexi\xF3n establecida."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SISTEMA
+    text: 'Destino disponible: REFUGIO.'
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "\xA1Perfecto! Ahora puedo regresar."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  zoneTwoDevoteeDialogue:
+  - speaker: SISTEMA
+    text: 'Nodo de transferencia registrado: ZONA 2.'
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SISTEMA
+    text: Buscando conexiones...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SISTEMA
+    text: 'Destino disponible: REFUGIO.'
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "\xBFEh? \xBFEl refugio?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "Pens\xE9 que ese teletransportador estaba apagado..."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SISTEMA
+    text: 'Nodo REFUGIO: ACTIVO.'
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "\xBFAlguien lo encendi\xF3?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "Ser\xE1 mejor que vaya a echar un vistazo."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  tragedyArrivalDialogue:
+  - speaker: GAMERBOY
+    text: "\xBFHola...?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "\xBFD\xF3nde est\xE1n todos?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  tragedyBodyDialogue:
+  - speaker: GAMERBOY
+    text: No...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "\xBFQu\xE9 pas\xF3 aqu\xED?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  devotoPlayerDialogue:
+  - speaker: DEVOTO
+    text: Has vuelto.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "\xBFQu\xE9 les pas\xF3 a los dem\xE1s?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "Ten\xEDan miedo."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "Much\xEDsimo miedo."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "\xBFQu\xE9 hiciste?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "Los ayud\xE9 a descansar."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "...T\xFA los mataste."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: No lo entiendes.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "Ahora est\xE1n en paz."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "\xBFPor qu\xE9 hiciste esto?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "Ella me ense\xF1\xF3 que el miedo es un error."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: Y los errores deben corregirse.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  devotoDevoteeDialogue:
+  - speaker: DEVOTO
+    text: Has vuelto.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "\xBFQu\xE9 les pas\xF3 a los dem\xE1s?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "Ten\xEDan miedo."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "Much\xEDsimo miedo."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "\xBFT\xFA encendiste el teletransportador?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "S\xED."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "Pens\xE9 que quiz\xE1s querr\xEDas volver."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "\xBFPara qu\xE9?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "Para que vieras lo tranquilos que est\xE1n ahora."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: "...T\xFA los mataste."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: No lo entiendes.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "Ahora est\xE1n en paz."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: DEVOTO
+    text: "Y t\xFA tambi\xE9n puedes estarlo."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0

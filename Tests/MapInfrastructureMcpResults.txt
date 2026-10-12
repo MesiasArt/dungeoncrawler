@@ -1,0 +1,31 @@
+PASS BFS puertas por aristas: rojo → verde → maestra; sin atajo a Makong
+PASS Vacío válido y no transitable
+PASS No se permiten objetos en vacío
+PASS Herramienta Vacío dibuja casilla
+PASS Undo restaura suelo
+PASS Redo restaura vacío
+PASS NPC conserva coordenadas
+PASS NPC oculta campos ajenos
+PASS Chest conserva coordenadas
+PASS Chest oculta campos ajenos
+PASS Door conserva coordenadas
+PASS Door oculta campos ajenos
+PASS Savepoint conserva coordenadas
+PASS Savepoint oculta campos ajenos
+PASS Teleport conserva coordenadas
+PASS Teleport oculta campos ajenos
+PASS Puerta normal oculta llave
+PASS Puerta bloqueada muestra llave
+PASS Navegación runtime bloquea vacío sin caída
+PASS Puerta real bloquea sin llave
+PASS Cofre inicia combate con guardián vivo
+PASS Guardián impide recoger llave antes de vencer
+PASS Victoria entrega poción garantizada
+PASS Cofre entrega llave tras morir guardián
+PASS Puerta real abre con llave
+PASS Llaves conservan tres consumibles de combate
+PASS Subida de nivel restaura todo HP
+PASS Llave restaurada desde guardado
+PASS Guardián único permanece derrotado
+PASS Cofre y recompensa no se duplican al cargar
+TOTAL 30 PASS / 0 FAIL

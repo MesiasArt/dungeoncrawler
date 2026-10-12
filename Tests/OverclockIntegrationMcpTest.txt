@@ -1,0 +1,26 @@
+
+UnityEditor.EditorApplication.isPaused=false;var d=UnityEngine.Object.FindObjectOfType<DungeonPrototype>();d.enabled=false;d.StopAllCoroutines();var oc=d.GetComponent<OverclockHack>();oc.enabled=false;oc.enabled=true;
+var f=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+System.Action<string,object> set=(n,v)=>typeof(DungeonPrototype).GetField(n,f).SetValue(d,v);
+System.Func<string,object> get=n=>typeof(DungeonPrototype).GetField(n,f).GetValue(d);
+System.Func<string,object[],object> call=(n,a)=>typeof(DungeonPrototype).GetMethod(n,f).Invoke(d,a);
+call("SetPause",new object[]{false});set("startMenuOpen",false);var intro=get("introduction");intro.GetType().GetMethod("Skip").Invoke(intro,new object[0]);call("ReleaseIntroductionInput",new object[0]);
+set("playerLevel",8);set("playerExperience",0L);set("hp",2000);set("battle",true);set("busy",false);set("lost",false);set("selectingEnemy",false);
+var menu=typeof(DungeonPrototype).GetNestedType("CombatMenu",System.Reflection.BindingFlags.NonPublic);set("combatMenu",System.Enum.Parse(menu,"Main"));
+var encounter=(System.Collections.Generic.List<int>)get("encounter");encounter.Clear();
+var lives=(System.Collections.Generic.List<int>)get("enemyLives");var objects=(System.Collections.Generic.List<GameObject>)get("enemyObjects");var live=new System.Collections.Generic.List<int>();for(int i=0;i<objects.Count;i++)if(objects[i]!=null)live.Add(i);if(live.Count<3)throw new System.Exception("Se necesitan3 enemigos vivos en fixture");int primary=live[0],target=live[1],neighbor=live[2];encounter.Add(primary);encounter.Add(target);encounter.Add(neighbor);set("activeEnemy",primary);lives[target]=100;
+int other0=lives[primary],other2=lives[neighbor];
+call("BeginEncounterXP",new object[0]);call("Action",new object[]{1});call("Action",new object[]{1});
+if(!(bool)get("selectingEnemy"))throw new System.Exception("OVERCLOCK no permite elegir objetivo");call("HandleCombatInput",new object[]{1,false});call("ConfirmEnemyTarget",new object[0]);
+if(!oc.Active||(int)get("activeEnemy")!=target)throw new System.Exception("Objetivo seleccionado incorrecto");
+var results=new System.Collections.Generic.List<string>();results.Add("PASS Menu HACK selecciona OVERCLOCK y objetivo elegido");
+var jump=d.GetComponent<EnemyJumpHack>();call("BeginTargetHack",new object[]{jump});if(jump.Active||!oc.Active)throw new System.Exception("HACK simultaneo");results.Add("PASS No permite JUMP simultaneo");
+call("BackToCombatMenu",new object[0]);call("Action",new object[]{0});if(!oc.Active||lives[target]!=100)throw new System.Exception("Comando interrumpio");results.Add("PASS Otros comandos y cancelacion bloqueados durante OVERCLOCK");
+set("activeEnemy",neighbor);
+int expected=CombatMath.Damage(d.PlayerStatValues[1],objects[target].GetComponent<EnemyCombatStats>().defense,2.5f,false,1,CombatBalanceSettings.Current);
+for(int i=0;i<20;i++)oc.RegisterPress(oc.Model.Started+i*.1);
+if(lives[target]!=100-expected||lives[primary]!=other0||lives[neighbor]!=other2)throw new System.Exception("Daño a objetivo incorrecto");
+results.Add("PASS Daño fuerte real="+expected+" solo al objetivo elegido");results.Add("PASS Objetivo original conservado aunque cambie activeEnemy durante el minijuego");
+oc.RegisterPress(oc.Model.Started+3);oc.TickSession(oc.Model.Started+10);if(lives[target]!=100-expected)throw new System.Exception("Daño duplicado");results.Add("PASS Daño real no duplicado");
+System.IO.File.AppendAllLines(System.IO.Path.Combine(Application.dataPath,"../Tests/OverclockResults.txt"),results);
+return results;

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 444942b70c6a53c4caedd97df85364ae, type: 3}
+  m_Name: DungeonUILayout
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonUILayout
+  playerHealth:
+    serializedVersion: 2
+    x: 165.5
+    y: 36.3
+    width: 221.8
+    height: 103.2
+  playerAvatar:
+    serializedVersion: 2
+    x: 30.3
+    y: 4.8
+    width: 150.1
+    height: 132
+  map:
+    serializedVersion: 2
+    x: -240
+    y: 20
+    width: 220
+    height: 200
+  message:
+    serializedVersion: 2
+    x: -885.5
+    y: -102.6
+    width: 441.7
+    height: 81.6
+  dialogue:
+    serializedVersion: 2
+    x: 207.6
+    y: -191.3
+    width: 527.8
+    height: 177
+  dialogueAvatar:
+    serializedVersion: 2
+    x: 46.9
+    y: -190
+    width: 174.8
+    height: 164.8
+  lettersPerSecond: 35
+  textFontSize: 18
+  continueBlinkSeconds: 0.45
+  enemyHealth:
+    serializedVersion: 2
+    x: -123.1
+    y: 15
+    width: 275.4
+    height: 95.1
+  combatOffset: {x: 20, y: -33}
+  combatButtonSize: {x: 270, y: 54}
+  combatButtonGap: 4
+  preservePanelAspect: 1
+  discoveredFloor: {r: 0, g: 0.55, b: 0.8, a: 0.85}
+  discoveredWall: {r: 0.3, g: 0.22, b: 0.55, a: 0.95}

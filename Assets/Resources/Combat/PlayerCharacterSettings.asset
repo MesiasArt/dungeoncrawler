@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc6cab3593f132444ab39b026edc3d12, type: 3}
+  m_Name: PlayerCharacterSettings
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacterSettings
+  strength: 6
+  defense: 3
+  luck: 4
+  criticalPercent: 5
+  fleePercent: 50
+  criticalMultiplier: 1.5
+  initialEquipmentIds:
+  - 7e13872279104700994a6d67e313b5c2
+  - 7130831737454e3ab8ef76207d4062eb
+  - 7fd390e943284a3ba155ac1f001c552a
+  initialEquipmentIdsMigrated: 1
+  initialEquipmentNames:
+  - Power Glove de Jugete
+  - Tshirt de Pacas
+  - Medias de la suerte
+  equipment:
+  - id: 7e13872279104700994a6d67e313b5c2
+    name: Power Glove de Jugete
+    slot: 1
+    description: 
+    specialEffectIds: []
+    icon: {fileID: 2800000, guid: 8689038c8bf524e42a08048f56eef96c, type: 3}
+    health: 0
+    strength: 3
+    defense: 0
+    luck: 2
+  - id: 7130831737454e3ab8ef76207d4062eb
+    name: Tshirt de Pacas
+    slot: 2
+    description: 
+    specialEffectIds: []
+    icon: {fileID: 2800000, guid: 2367b165b85ba344c981c3291b8c9464, type: 3}
+    health: 5
+    strength: 0
+    defense: 3
+    luck: 0
+  - id: 7fd390e943284a3ba155ac1f001c552a
+    name: Medias de la suerte
+    slot: 3
+    description: 
+    specialEffectIds: []
+    icon: {fileID: 2800000, guid: ad03e72f5b9f6994b9c0cfab319c2bae, type: 3}
+    health: 2
+    strength: 0
+    defense: 1
+    luck: 4
+  - id: refuge.core
+    name: "N\xFAcleo del Refugio"
+    slot: Accesorio
+    description: "Un lugar no es seguro porque sus puertas est\xE9n cerradas."
+    specialEffectIds: []
+    icon: {fileID: 2800000, guid: a1bcfa1611b395d4aa06842192c69072, type: 2}
+    health: 0
+    strength: 0
+    defense: 3
+    luck: 2
+  - id: 959079ed2c40443596c8d54850215283
+    name: Guante de bronze
+    slot: 1
+    description: 
+    specialEffectIds: []
+    icon: {fileID: 0}
+    health: 5
+    strength: 10
+    defense: 2
+    luck: 3
+  - id: ae43e3ab446e4465a7c41e1e14d4b847
+    name: Tshirt Futurista
+    slot: 2
+    description: 
+    specialEffectIds: []
+    icon: {fileID: 0}
+    health: 10
+    strength: 3
+    defense: 7
+    luck: 3
+  - id: 51e80bc0cc454deba6600745470ba9a0
+    name: Calzoncillos limpios
+    slot: 3
+    description: 
+    specialEffectIds: []
+    icon: {fileID: 0}
+    health: 5
+    strength: 2
+    defense: 5
+    luck: 10
+  - id: equipment.power-glove-mk2
+    name: Power Glove MK-II
+    slot: 1
+    description: "Equipamiento de preparaci\xF3n para Makong."
+    specialEffectIds: []
+    icon: {fileID: 2800000, guid: 8689038c8bf524e42a08048f56eef96c, type: 3}
+    health: 0
+    strength: 7
+    defense: 0
+    luck: 3
+  - id: equipment.resistance-shirt
+    name: T-Shirt de Resistencia
+    slot: 2
+    description: "Equipamiento de preparaci\xF3n para Makong."
+    specialEffectIds: []
+    icon: {fileID: 2800000, guid: 2367b165b85ba344c981c3291b8c9464, type: 3}
+    health: 12
+    strength: 0
+    defense: 7
+    luck: 0
+  - id: equipment.glitch-socks
+    name: Medias del Glitch
+    slot: 3
+    description: "Equipamiento de preparaci\xF3n para Makong."
+    specialEffectIds: []
+    icon: {fileID: 2800000, guid: ad03e72f5b9f6994b9c0cfab319c2bae, type: 3}
+    health: 6
+    strength: 0
+    defense: 2
+    luck: 6

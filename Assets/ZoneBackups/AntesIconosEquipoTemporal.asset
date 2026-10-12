@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc6cab3593f132444ab39b026edc3d12, type: 3}
+  m_Name: AntesIconosEquipoTemporal
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacterSettings
+  strength: 6
+  defense: 3
+  luck: 4
+  criticalPercent: 5
+  fleePercent: 50
+  criticalMultiplier: 1.5
+  initialEquipmentIds:
+  - 7e13872279104700994a6d67e313b5c2
+  - 7130831737454e3ab8ef76207d4062eb
+  - 7fd390e943284a3ba155ac1f001c552a
+  initialEquipmentIdsMigrated: 1
+  initialEquipmentNames:
+  - Power Glove de Jugete
+  - Tshirt de Pacas
+  - Medias de la suerte
+  equipment:
+  - id: 7e13872279104700994a6d67e313b5c2
+    name: Power Glove de Jugete
+    slot: 1
+    description: 
+    specialEffectIds: []
+    icon: {fileID: 0}
+    health: 0
+    strength: 3
+    defense: 0
+    luck: 2
+  - id: 7130831737454e3ab8ef76207d4062eb
+    name: Tshirt de Pacas
+    slot: 2
+    description: 
+    specialEffectIds: []
+    icon: {fileID: 0}
+    health: 5
+    strength: 0
+    defense: 3
+    luck: 0
+  - id: 7fd390e943284a3ba155ac1f001c552a
+    name: Medias de la suerte
+    slot: 3
+    description: 
+    specialEffectIds: []
+    icon: {fileID: 0}
+    health: 2
+    strength: 0
+    defense: 1
+    luck: 4
+  - id: refuge.core
+    name: "N\xFAcleo del Refugio"
+    slot: Accesorio
+    description: "Un lugar no es seguro porque sus puertas est\xE9n cerradas."
+    specialEffectIds: []
+    icon: {fileID: 2800000, guid: a1bcfa1611b395d4aa06842192c69072, type: 2}
+    health: 0
+    strength: 0
+    defense: 3
+    luck: 2

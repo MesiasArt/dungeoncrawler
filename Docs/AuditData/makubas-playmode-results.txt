@@ -1,0 +1,3 @@
+PASS
+Gran Makuba: two normal turns then special, actual three impacts total3 HP, returns to idle
+Live JUMP: Gran Makuba's walking frames, 180px collision/render height and scheduled audio

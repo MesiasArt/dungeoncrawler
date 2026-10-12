@@ -1,0 +1,4 @@
+PASS8 frames importados y alineados 512x512
+PASS Secuencia1..8 ligada a carga; callback unico y calidad2.5
+PASS Carga parcial40%, disparo con frame8, calidad0.5
+PASS Dimensiones definitivas597x480 sin deformacion; turno real regresa

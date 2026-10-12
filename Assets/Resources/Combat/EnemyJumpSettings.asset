@@ -12,13 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b4e197532ee834f92204383479e9a1, type: 3}
   m_Name: EnemyJumpSettings
   m_EditorClassIdentifier: Assembly-CSharp::EnemyJumpSettings
+  bpm: 145
+  musicOffsetSeconds: 0
+  judgementOffsetSeconds: 0
+  perfectWindowSeconds: 0.065
+  goodWindowSeconds: 0.125
+  beatsPerEnemy: 2
+  groundJumpBeats: 2
+  firstEnemyBeat: 8
+  scheduleLeadSeconds: 0.5
+  matchEnemyReferenceSize: 1
+  referenceEnemyPixels: 80
+  minimumEnemyPixels: 48
+  maximumEnemyPixels: 180
   enemiesToWin: 10
   enemySpeed: 260
   gravity: 3000
   jumpForce: 1020
   bounceForce: 950
   weakBounceForce: 180
-  landingPressWindow: 0.09
+  landingPressWindow: 0.14
   enemySpacing: 260
   spacingVariation: 0.08
   speedPerCombo: 0.018

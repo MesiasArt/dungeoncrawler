@@ -1,0 +1,6 @@
+PASS: 12 checks of valid regions, safe cells, exact sign text, typewriter completion, three responses in order and closing.
+PASS: safe area rejects encounters; both doors finish real animated opening; first passage no longer completes level; reset temporary runtime passage flag then verify second door announces Zona2; open crossing allowed.
+Visual QA via screenshots of sign and protocol.
+
+PASS 15 checks: seven safe cells, both doors automatically closing at passage, colliders immediately restored, no encounter or level completion.
+PASS: reopening after automatic closure and return crossings also close both doors.

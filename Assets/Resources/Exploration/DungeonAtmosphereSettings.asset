@@ -17,10 +17,10 @@ MonoBehaviour:
   pulsePeriod: 3
   horizonEnabled: 1
   horizonHeight: 0
-  fogStart: 4.9
-  fogEnd: 17.3
+  fogStart: 4.91
+  fogEnd: 24.5
   fogColor: {r: 0.0015, g: 0.006, b: 0.028, a: 1}
   horizonColor: {r: 0.03, g: 0.65, b: 1, a: 1}
   horizonIntensity: 0.876
-  lineWidth: 0.0056
+  lineWidth: 0.0062
   glowWidth: 0.0829

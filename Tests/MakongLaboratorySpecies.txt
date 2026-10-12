@@ -1,0 +1,9 @@
+Tapaku: True
+Hongo: True
+Soldier: True
+BigTapaku: True
+MakubaLanza: True
+MakubaArco: True
+GranMakuba: True
+Mimic: True
+Makong: True

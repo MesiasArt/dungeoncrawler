@@ -1,0 +1,4 @@
+PASS Sprite Sliced
+PASS Grosor constante al extender de 2 a 8 unidades
+PASS Extremos protegidos de 0,374026 unidades
+PASS Longitud ajustada al objetivo

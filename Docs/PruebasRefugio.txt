@@ -1,0 +1,39 @@
+PASS 36 checks
+New game starts in lower refuge corner
+Existing introduction remains active
+Fresh event state
+Five NPC and safe starting zone
+NPC first line centinela
+NPC second line centinela
+NPC first line archivista
+NPC second line archivista
+NPC first line cobarde
+NPC second line cobarde
+NPC first line optimista
+NPC second line optimista
+NPC first line devoto
+NPC second line devoto
+Terminal heals and writes isolated test save
+First node registered
+Undiscovered destination blocked
+First exit conversation
+Exit dialogue marked once
+Exit does not replay
+Zone2 node silently triggers tragedy
+No secret event notification
+Registered node travel returns to refuge
+Friendly Devoto disappears
+Body remains centinela
+Body remains archivista
+Body remains cobarde
+Body remains optimista
+Reserved Devoto uses scaled catalog level
+Body last words
+Body consumed once
+Save changed refuge
+Restore event nodes and body state from disk
+Devoto restored
+Devoto precombat dialogue
+Existing combat starts
+PASS JUMP begins with Devoto scaled stats and Big Tapaku placeholder.
+PASS 10 further checks: real death/reward/final words, terminal, equip, load, no respawn or repeated event, unexamined bodies retained.

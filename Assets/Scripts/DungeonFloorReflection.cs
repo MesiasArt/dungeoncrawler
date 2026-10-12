@@ -13,6 +13,8 @@ public class DungeonFloorReflection : MonoBehaviour
     Matrix4x4 lastProjection;
     float planeHeight;
     bool captured;
+    public bool IsCeiling {get{return planeHeight>0;}}
+    public void SetPlaneHeight(float height){if(Mathf.Abs(planeHeight-height)<.001f)return;planeHeight=height;captured=false;}
     float lastCaptureTime;
     readonly UniversalRenderPipeline.SingleCameraRequest request = new UniversalRenderPipeline.SingleCameraRequest();
 
@@ -32,12 +34,14 @@ public class DungeonFloorReflection : MonoBehaviour
         reflection.Create();
         request.destination = reflection;
         floor.SetTexture("_PlanarReflection", reflection);
-        floor.SetFloat("_PlanarStrength", .16f);
+        floor.SetFloat("_PlanarStrength", height == 0 ? .23f : .16f);
     }
 
     void LateUpdate()
     {
-        if (source == null || mirror == null) return;
+        if (source == null || mirror == null || !source.enabled) return;
+        var settings=DungeonVisualSettings.Current;
+        if(settings!=null){floor.SetFloat("_PlanarStrength",planeHeight==0?settings.floorReflection:settings.ceilingReflection);floor.SetFloat("_PlanarBottomVisibility",settings.reflectionBottomVisibility);}
         // Follow movement immediately; refresh at 2 Hz when idle for enemies/combat.
         if (captured && source.transform.position == lastPosition &&
             source.transform.rotation == lastRotation && source.projectionMatrix == lastProjection &&

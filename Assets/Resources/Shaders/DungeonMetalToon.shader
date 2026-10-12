@@ -13,6 +13,7 @@ Shader "Dungeon/Metal Toon"
         _EmissionStrength("Neon", Range(0,1)) = 0.15
         _ShadowColor("Anime shadow", Color) = (0.12,0.08,0.25,1)
         [HideInInspector] _PlanarReflection("Surface reflection", 2D) = "black" {}
+        _PlanarBottomVisibility("Bottom reflection visibility",Range(0,1))=.55
         _PlanarStrength("Surface reflection strength", Range(0,1)) = 0
         [HideInInspector] _PlanarReady("Reflection ready", Float) = 0
         [HideInInspector] _FloorWallDistance("Distance to walls", 2D) = "black" {}
@@ -49,7 +50,7 @@ Shader "Dungeon/Metal Toon"
                 half4 _BaseColor, _ShadowColor;
                 half _Metallic, _Smoothness, _EmissionStrength;
                 float4x4 _PlanarMatrix;
-                half _PlanarStrength, _PlanarReady;
+                half _PlanarStrength, _PlanarReady, _PlanarBottomVisibility;
                 float4 _FloorDistanceBounds;
             CBUFFER_END
             struct Attributes { float4 positionOS : POSITION; float3 normalOS : NORMAL; float2 uv : TEXCOORD0; };
@@ -60,12 +61,14 @@ Shader "Dungeon/Metal Toon"
                 half3 normalWS : TEXCOORD1;
                 float2 uv : TEXCOORD2;
                 half fog : TEXCOORD3;
+                float4 screenPosition : TEXCOORD4;
             };
             Varyings Vert(Attributes input)
             {
                 Varyings output;
                 VertexPositionInputs p = GetVertexPositionInputs(input.positionOS.xyz);
                 output.positionCS = p.positionCS;
+                output.screenPosition = ComputeScreenPos(p.positionCS);
                 output.positionWS = p.positionWS;
                 output.normalWS = TransformObjectToWorldNormal(input.normalOS);
                 output.uv = TRANSFORM_TEX(input.uv, _BaseMap);
@@ -101,10 +104,15 @@ Shader "Dungeon/Metal Toon"
                 half3 v = GetWorldSpaceNormalizeViewDir(input.positionWS);
                 Light main = GetMainLight(TransformWorldToShadowCoord(input.positionWS));
                 half3 illumination = half3(0.12h, 0.10h, 0.18h) + ToonLight(main, n, v);
+                half3 localGlow=0;
                 #if defined(_ADDITIONAL_LIGHTS)
                 uint count = GetAdditionalLightsCount();
                 for (uint i = 0u; i < count; ++i)
-                    illumination += ToonLight(GetAdditionalLight(i, input.positionWS, half4(1,1,1,1)), n, v);
+                {
+                    Light nearby=GetAdditionalLight(i, input.positionWS, half4(1,1,1,1));
+                    illumination += ToonLight(nearby, n, v);
+                    localGlow += nearby.color*nearby.distanceAttenuation*nearby.shadowAttenuation*saturate(dot(n,nearby.direction))*.07h;
+                }
                 #endif
                 float4 reflectionClip = mul(_PlanarMatrix,float4(input.positionWS,1));
                 float2 reflectionUV = reflectionClip.xy / max(reflectionClip.w,0.0001) * 0.5 + 0.5;
@@ -120,6 +128,7 @@ Shader "Dungeon/Metal Toon"
                 half fresnel = pow(1.0h - saturate(dot(n,v)), 5.0h);
                 half reflectionWeight = _PlanarReady * _PlanarStrength * (0.8h + 0.2h*fresnel)
                     * step(0.9h,abs(n.y)) * (1.0h - _DungeonReflectionCapture) * (1.0h-centerFade);
+                reflectionWeight *= lerp(1.0h, lerp(_PlanarBottomVisibility,1.0h,smoothstep(0.0,0.25,input.screenPosition.y/input.screenPosition.w)),step(0.9h,n.y));
                 half3 color = base * illumination + reflected * reflectionWeight
                     + base * _EmissionStrength;
                 // Player-relative lighting also affects emissive artwork, so side openings stay readable.
@@ -129,7 +138,7 @@ Shader "Dungeon/Metal Toon"
                 half corridorLight=lerp(0.12h,0.78h,distanceFade*lerp(0.30h,1.0h,facing));
                 half neonMask=smoothstep(0.25h,0.8h,max(artwork.r,max(artwork.g,artwork.b)));
                 color*=corridorLight*lerp(1.0h,max(_DungeonNeonPulse,0.0),neonMask);
-                return half4(ApplyDungeonHorizon(MixFog(color,input.fog),offset,input.positionWS.y),1);
+                return half4(ApplyDungeonHorizon(MixFog(color,input.fog),offset,input.positionWS.y)+localGlow,1);
             }
             ENDHLSL
         }

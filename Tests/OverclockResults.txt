@@ -1,0 +1,47 @@
+PASS JUMP LV1
+PASS OVERCLOCK bloqueado LV7
+PASS No ejecuta bloqueado
+PASS Disponible LV8
+PASS Pulsacion individual 1
+PASS Pulsacion individual 2
+PASS Pulsacion individual 3
+PASS Pulsacion individual 4
+PASS Pulsacion individual 5
+PASS Pulsacion individual 6
+PASS Pulsacion individual 7
+PASS Pulsacion individual 8
+PASS Pulsacion individual 9
+PASS Pulsacion individual 10
+PASS Pulsacion individual 11
+PASS Pulsacion individual 12
+PASS Pulsacion individual 13
+PASS Pulsacion individual 14
+PASS Pulsacion individual 15
+PASS Pulsacion individual 16
+PASS Pulsacion individual 17
+PASS Pulsacion individual 18
+PASS Pulsacion individual 19
+PASS 19 pulsaciones no completan
+PASS Exito con20 antes del limite
+PASS No acumula despues de terminar
+PASS Fallo al agotar5 segundos
+PASS Pulsacion en limite no gana
+PASS Reloj no retrocede
+PASS Exito callback y calidad2.5 una vez
+PASS Daño no se solicita dos veces
+PASS Fallo callback y calidad0.5
+PASS CombatMath multiplica calidad y aplica DEF
+PASS Tecla mantenida al abrir no cuenta
+PASS Input System teclado cuenta nueva pulsacion
+PASS Mantener tecla no repite carga
+PASS Soltar y volver a pulsar cuenta
+PASS Mando cuenta pulsacion incluso con teclado sostenido
+PASS Mando sostenido no repite
+PASS Mando soltar y pulsar cuenta
+PASS 20 pulsaciones Input System completan sin callback duplicado
+PASS Menu HACK selecciona OVERCLOCK y objetivo elegido
+PASS No permite JUMP simultaneo
+PASS Otros comandos y cancelacion bloqueados durante OVERCLOCK
+PASS Daño fuerte real=15 solo al objetivo elegido
+PASS Objetivo original conservado aunque cambie activeEnemy durante el minijuego
+PASS Daño real no duplicado

@@ -1,0 +1,31 @@
+if(!UnityEngine.Application.isPlaying)throw new System.Exception("Run in Play Mode");
+var root=new UnityEngine.GameObject("MCP encounter test");var d=root.AddComponent<DungeonPrototype>();d.enabled=false;var t=d.GetType();var f=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+t.GetMethod("Start",f).Invoke(d,null);t.GetMethod("ProcessIntroductionInput",f).Invoke(d,new object[]{false,true,0f});
+var cells=(System.Collections.Generic.List<UnityEngine.Vector2Int>)t.GetField("enemies",f).GetValue(d);
+var objects=(System.Collections.Generic.List<UnityEngine.GameObject>)t.GetField("enemyObjects",f).GetValue(d);
+var health=(System.Collections.Generic.List<int>)t.GetField("enemyLives",f).GetValue(d);
+if(objects[0].name!="TAPAKU"||health[0]!=10||health[1]!=13||health[2]!=16)throw new System.Exception("Replacement/stats");
+var cfg=UnityEngine.Object.Instantiate(UnityEngine.Resources.Load<EnemyEncounterSettings>("Exploration/EnemyEncounterSettings"));cfg.minimumEnemies=cfg.maximumEnemies=3;d.enemyEncounterSettings=cfg;
+if(cfg.respawnSeconds!=30)throw new System.Exception("Respawn default");
+t.GetField("position",f).SetValue(d,new UnityEngine.Vector2Int(5,1));
+if(!(bool)t.GetMethod("SeesPlayer",f).Invoke(d,new object[]{new UnityEngine.Vector2Int(5,3)}))throw new System.Exception("Two cell LOS");
+if((bool)t.GetMethod("SeesPlayer",f).Invoke(d,new object[]{new UnityEngine.Vector2Int(3,1)})){} // clear horizontal path
+if((bool)t.GetMethod("SeesPlayer",f).Invoke(d,new object[]{new UnityEngine.Vector2Int(3,3)}))throw new System.Exception("Diagonal sight");
+if((bool)t.GetMethod("SeesPlayer",f).Invoke(d,new object[]{new UnityEngine.Vector2Int(5,4)}))throw new System.Exception("Range");
+cells[0]=new UnityEngine.Vector2Int(5,3);cells[1]=new UnityEngine.Vector2Int(7,7);cells[2]=new UnityEngine.Vector2Int(1,5);
+var step=(UnityEngine.Vector2Int)t.GetMethod("PursuitStep",f).Invoke(d,new object[]{0});if(step!=new UnityEngine.Vector2Int(5,2))throw new System.Exception("Pursuit path "+step);
+t.GetField("position",f).SetValue(d,new UnityEngine.Vector2Int(1,1));
+t.GetMethod("BeginEncounter",f).Invoke(d,new object[]{0});
+var party=(System.Collections.Generic.List<int>)t.GetField("encounter",f).GetValue(d);if(party.Count!=3)throw new System.Exception("Party size");
+t.GetMethod("SelectEnemy",f).Invoke(d,new object[]{1});int target=(int)t.GetField("activeEnemy",f).GetValue(d);if(target!=party[1]||(int)t.GetField("enemyHP",f).GetValue(d)!=health[target])throw new System.Exception("Target health");
+var jump=d.GetComponent<EnemyJumpHack>();jump.SetOpponent(objects[target]);
+if(objects.Exists(o=>o!=null&&o.name=="GHOST"))throw new System.Exception("Ghost remains");
+t.GetMethod("RestoreEncounter",f).Invoke(d,null);t.GetField("battle",f).SetValue(d,false);
+var times=(System.Collections.Generic.List<float>)t.GetField("respawnAt",f).GetValue(d);
+UnityEngine.Object.DestroyImmediate(objects[0]);objects[0]=null;times[0]=UnityEngine.Time.unscaledTime+30;
+t.GetMethod("UpdateEnemyRespawns",f).Invoke(d,null);if(objects[0]!=null)throw new System.Exception("Early respawn");
+times[0]=UnityEngine.Time.unscaledTime-1;t.GetField("battle",f).SetValue(d,true);t.GetMethod("UpdateEnemyRespawns",f).Invoke(d,null);if(objects[0]!=null)throw new System.Exception("Respawn during combat");
+t.GetField("battle",f).SetValue(d,false);int count=objects.Count;t.GetMethod("UpdateEnemyRespawns",f).Invoke(d,null);if(objects[0]==null||objects.Count!=count||health[0]<=0)throw new System.Exception("Respawn/reused slot");
+var turn=(System.Collections.IEnumerator)t.GetMethod("EnemyTurn",f).Invoke(d,null);turn.MoveNext();
+var occupied=new System.Collections.Generic.HashSet<UnityEngine.Vector2Int>();foreach(var cell in cells){if(!occupied.Add(cell)||!(bool)t.GetMethod("Open",f).Invoke(d,new object[]{cell}))throw new System.Exception("Enemy overlap/wall");}
+UnityEngine.Object.DestroyImmediate(root);return "PASS: Tapaku, half HP, 30s default, two-cell sight, pursuit, three opponents, independent target HP, no early/combat respawn, slot reuse, movement without overlapping walls/enemies";

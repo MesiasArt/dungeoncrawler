@@ -1,0 +1,14 @@
+using System.Collections.Generic;
+using UnityEngine;
+public partial class DungeonPrototype {
+ int coins,encounterDefeats,encounterCoinBonus;bool combatDropsAwarded;
+ List<InventoryItemRecord> pendingCombatDrops=new List<InventoryItemRecord>();
+ bool EnemySpacingAllows(Vector2Int target,int index=-1){if(EnemySettings.encounterDirectorEnabled)return NavigationEnemySpacing(target,index);int minimum=Mathf.Max(1,EnemySettings.minimumMapSpacing);for(int i=0;i<enemies.Count;i++){if(i==index||enemyObjects[i]==null)continue;int distance=(target-enemies[i]).sqrMagnitude;if(distance>=minimum*minimum)continue;if(index>=0&&distance>(enemies[index]-enemies[i]).sqrMagnitude)continue;return false;}return true;}
+ readonly List<InventoryItemRecord> guaranteedEncounterDrops=new List<InventoryItemRecord>();
+ List<int> CombatItemIndices(){var result=new List<int>();for(int i=0;i<inventorySettings.items.Length;i++)if(inventorySettings.items[i]!=null&&!inventorySettings.items[i].keyItem)result.Add(i);return result;}
+ void RecordCombatDropEnemy(EnemyCombatStats enemy){encounterDefeats++;if(enemy!=null&&!string.IsNullOrEmpty(enemy.placementId)){var placement=RegionMap==null?null:System.Array.Find(RegionMap.placedEnemies,p=>p.id==enemy.placementId);if(placement!=null)foreach(var item in placement.guaranteedDrops??new InventoryItemRecord[0])if(item!=null&&item.quantity>0)guaranteedEncounterDrops.Add(new InventoryItemRecord{itemId=item.itemId,quantity=item.quantity});}var settings=CombatDropSettings.Current;if(settings!=null&&enemy!=null)encounterCoinBonus+=settings.StrengthCoinBonus(enemy.level,enemy.maximumHP,enemy.damage,enemy.defense);}
+ void AwardCombatDrops(){if(combatDropsAwarded||encounterDefeats<=0)return;combatDropsAwarded=true;foreach(var item in guaranteedEncounterDrops)if(!AcquireItem(item.itemId,item.quantity))pendingCombatDrops.Add(item);guaranteedEncounterDrops.Clear();var settings=CombatDropSettings.Current;if(settings==null||!settings.enabled)return;int low=Mathf.Max(0,settings.minimumCoinsPerEnemy),high=Mathf.Max(low,settings.maximumCoinsPerEnemy);int amount=encounterCoinBonus;for(int i=0;i<encounterDefeats;i++)amount+=Random.Range(low,high+1);coins=(int)System.Math.Min(int.MaxValue,(long)coins+amount);if(amount>0)NotifyReceived("Monedas",amount);
+  foreach(var entry in settings.potions)if(entry!=null&&!string.IsNullOrEmpty(entry.itemId)&&Random.value*100<entry.chancePercent){int quantity=Mathf.Max(1,entry.quantity);if(!AcquireItem(entry.itemId,quantity))pendingCombatDrops.Add(new InventoryItemRecord{itemId=entry.itemId,quantity=quantity});}
+ }
+ void ClaimPendingCombatDrops(){if(pendingCombatDrops.Count==0||battle)return;for(int i=pendingCombatDrops.Count-1;i>=0;i--){var item=pendingCombatDrops[i];if(AcquireItem(item.itemId,item.quantity))pendingCombatDrops.RemoveAt(i);}}
+}

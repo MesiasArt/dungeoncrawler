@@ -14,3 +14,8 @@
 *.pdb
 *.opendb
 *.VC.db
+
+/Backups/
+/Tools/psd_dependencies/
+/Captures/
+/Tests/*Fixture.json

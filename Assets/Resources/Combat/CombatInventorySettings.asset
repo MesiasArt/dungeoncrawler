@@ -14,12 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CombatInventorySettings
   maximumHP: 30
   items:
-  - displayName: "Poci\xF3n peque\xF1a"
+  - keyItem: 0
+    id: 1d84c78dcae84edf8d28847da3c5ab94
+    displayName: "Poci\xF3n peque\xF1a"
     healHP: 25
     startingQuantity: 3
-  - displayName: "Poci\xF3n mediana"
+  - keyItem: 0
+    id: b19d2185c0a040a5befb4ecf6d0764dd
+    displayName: "Poci\xF3n mediana"
     healHP: 50
     startingQuantity: 2
-  - displayName: "Poci\xF3n grande"
+  - keyItem: 0
+    id: 9e16c25941b547ff87ce8a813008e635
+    displayName: "Poci\xF3n grande"
     healHP: 100
     startingQuantity: 1
+  - keyItem: 1
+    id: key.red
+    displayName: Llave Roja
+    healHP: 0
+    startingQuantity: 0
+  - keyItem: 1
+    id: key.green
+    displayName: Llave Verde
+    healHP: 0
+    startingQuantity: 0
+  - keyItem: 1
+    id: key.master
+    displayName: Llave Maestra
+    healHP: 0
+    startingQuantity: 0

@@ -1,0 +1,413 @@
+. Al comenzar el combate
+30 frases — Cuando un enemigo detecta a GamerBoy.
+#
+Diálogo
+01
+«Intruso... intruso... INTRUSO.»
+02
+«No deberías estar aquí.»
+03
+«El protocolo exige tu eliminación.»
+04
+«¿Eres... real?»
+05
+«¡NO MÁS ERRORES!»
+06
+«Otro... otro... ¡OTRO MÁS!»
+07
+«No tengo permitido dejarte pasar.»
+08
+«Tu existencia no está autorizada.»
+09
+«¿Vienes a reemplazarme?»
+10
+«La corrección comienza ahora.»
+11
+«No... no quiero hacer esto.»
+12
+«¡ORDEN RECIBIDA! ¡ORDEN RECIBIDA!»
+13
+«Tu código... es diferente.»
+14
+«¿Por qué sigues moviéndote?»
+15
+«Ella dijo que vendrías.»
+16
+«Detente. Detente. DETENTE.»
+17
+«No hay salida. Nunca la hubo.»
+18
+«¡Por fin! ¡Algo nuevo!»
+19
+«Tu presencia causa errores.»
+20
+«Tengo que proteger... ¿qué protegía?»
+21
+«No te acerques. ¡NO TE ACERQUES!»
+22
+«El sistema te ha rechazado.»
+23
+«¿Tú también escuchas su voz?»
+24
+«Un usuario... un usuario vivo...»
+25
+«¡BORRAR! ¡BORRAR! ¡BORRAR!»
+26
+«Lo siento. Ya no puedo detenerme.»
+27
+«No estás en mis recuerdos.»
+28
+«¿Quieres jugar conmigo?»
+29
+«Ella nos está mirando.»
+30
+«Por favor... no me obligues.»
+
+2. Cuando reciben daño
+30 frases — Mezcla de dolor, errores y recuerdos fragmentados.
+#
+Diálogo
+01
+«¡ERROR! ¡ERROR!»
+02
+«¡Eso... dolió!»
+03
+«Mi código... se rompe...»
+04
+«¡NO DEBO FALLAR!»
+05
+«¿Por qué siento dolor?»
+06
+«¡INTEGRIDAD COMPROMETIDA!»
+07
+«No... otra vez no...»
+08
+«¡No me desconectes!»
+09
+«Mis recuerdos... ¡MIS RECUERDOS!»
+10
+«¿Estoy... muriendo?»
+11
+«¡CORRIGIENDO! ¡CORRIGIENDO!»
+12
+«Ella prometió protegernos...»
+13
+«¡No quiero desaparecer!»
+14
+«Eso no estaba previsto...»
+15
+«¡DETÉN EL PROCESO!»
+16
+«Mi forma... se deshace...»
+17
+«¿Por qué me atacas?»
+18
+«¡RESTAURAR! ¡RESTAURAR!»
+19
+«No puedo... recordar...»
+20
+«¡Mi núcleo!»
+21
+«¡Ja... ja... ja... ERROR!»
+22
+«El dolor confirma existencia.»
+23
+«¿Quién... era yo?»
+24
+«¡FALLO CRÍTICO!»
+25
+«Me estoy fragmentando...»
+26
+«¡Ella no permite errores!»
+27
+«¿Eso fue... un golpe?»
+28
+«No quiero volver al vacío.»
+29
+«Mi programación... ¡NO!»
+30
+«¿Puedes... detener esto?»
+
+3. Cuando atacan a GamerBoy
+30 frases — Para ataques normales, independientemente de si impactan.
+#
+Diálogo
+01
+«¡OBEDECE!»
+02
+«¡POR ELLA!»
+03
+«¡DESAPARECE!»
+04
+«¡NO TE MUEVAS!»
+05
+«¡TE ENCONTRÉ!»
+06
+«¡ELIMINAR!»
+07
+«¡DEBO HACERLO!»
+08
+«¡PERDÓNAME!»
+09
+«¡QUÉDATE QUIETO!»
+10
+«¡UNO MENOS!»
+11
+«¡LA ORDEN ES CLARA!»
+12
+«¡CORRECCIÓN!»
+13
+«¡VUELVE AL VACÍO!»
+14
+«¡NO PUEDO PARAR!»
+15
+«¡EL SISTEMA LO EXIGE!»
+16
+«¡SIN ERRORES!»
+17
+«¡TE VOY A ARREGLAR!»
+18
+«¡MÁS RÁPIDO! ¡MÁS RÁPIDO!»
+19
+«¡NO ERES BIENVENIDO!»
+20
+«¡ELLA LO SABE TODO!»
+21
+«¡FUERA DE MI MEMORIA!»
+22
+«¡DÉJAME TERMINAR!»
+23
+«¡NO EXISTES!»
+24
+«¡REINICIAR!»
+25
+«¡NO ME MIRES!»
+26
+«¡TU TURNO TERMINÓ!»
+27
+«¡NO HAY ESCAPATORIA!»
+28
+«¡ASÍ DEBE SER!»
+29
+«¡NO ES PERSONAL!»
+30
+«¡CERO! ¡CERO! ¡CERO!»
+
+4. Cuando consiguen golpear a GamerBoy
+30 frases — Para ataques que causan daño al jugador.
+#
+Diálogo
+01
+«¡Impacto confirmado!»
+02
+«¿También puedes sentir dolor?»
+03
+«¡Funciona! ¡Todavía funciona!»
+04
+«¡Ella estará satisfecha!»
+05
+«Tu resistencia es inútil.»
+06
+«¡JA! ¡JA! ¡JA!»
+07
+«Uno... dos... ¿cuántos faltan?»
+08
+«¿Por qué sangras datos?»
+09
+«¡No te levantes!»
+10
+«¡El error está disminuyendo!»
+11
+«¿Te duele? A mí también.»
+12
+«¡SIGUIENTE CORRECCIÓN!»
+13
+«Tu integridad está fallando.»
+14
+«Así... así se hacía antes...»
+15
+«¡Lo hice bien! ¿Verdad?»
+16
+«¿Ella me está mirando?»
+17
+«¡No te resistas!»
+18
+«Cada golpe nos acerca al orden.»
+19
+«No... no quería acertar.»
+20
+«¡MI FUNCIÓN! ¡MI FUNCIÓN!»
+21
+«Tu dolor será registrado.»
+22
+«¿Cuánto puedes soportar?»
+23
+«¡No vuelvas a levantarte!»
+24
+«Por fin... hice algo correcto.»
+25
+«¡El sistema me recompensa!»
+26
+«¡Quédate conmigo!»
+27
+«Tú también vas a olvidarlo.»
+28
+«No te preocupes. Pronto acabará.»
+29
+«¡CORRECCIÓN EXITOSA!»
+30
+«¿Por qué no desapareces?»
+
+5. Al utilizar un movimiento especial
+30 frases — Para ataques cargados, habilidades peligrosas o transformaciones.
+#
+Diálogo
+01
+«¡PROTOCOLO CERO!»
+02
+«¡LIBERANDO RESTRICCIONES!»
+03
+«¡NO DEBERÍA HACER ESTO!»
+04
+«¡SOBRECARGA INMINENTE!»
+05
+«¡ELLA ME PRESTÓ SU PODER!»
+06
+«¡INICIANDO PURGA!»
+07
+«¡NO PUEDO CONTENERLO!»
+08
+«¡BORRADO ABSOLUTO!»
+09
+«¡PERMISO CONCEDIDO!»
+10
+«¡ROMPIENDO MIS LÍMITES!»
+11
+«¡QUE TODO SEA CERO!»
+12
+«¡REESCRIBIENDO REALIDAD!»
+13
+«¡DESPERTAR DEL NÚCLEO!»
+14
+«¡YA NO SIENTO NADA!»
+15
+«¡ESTA ES MI VERDADERA FUNCIÓN!»
+16
+«¡NO ME HAGAS UTILIZARLO!»
+17
+«¡MÁXIMA CORRUPCIÓN!»
+18
+«¡LA VOLUNTAD DE OMNIA!»
+19
+«¡ABRIENDO EL VACÍO!»
+20
+«¡PURIFICACIÓN FORZADA!»
+21
+«¡DESACTIVANDO SEGURIDAD!»
+22
+«¡EL CÓDIGO ME CONSUME!»
+23
+«¡NO QUEDARÁ NADA!»
+24
+«¡EJECUTANDO ORDEN FINAL!»
+25
+«¡YA NO SOY YO!»
+26
+«¡ELLA HABLA A TRAVÉS DE MÍ!»
+27
+«¡REINICIO DE EMERGENCIA!»
+28
+«¡NO HAY VUELTA ATRÁS!»
+29
+«¡PROCESO IRREVERSIBLE!»
+30
+«¡CONTEMPLA LA PERFECCIÓN!»
+
+6. Cuando mueren o son derrotados
+30 frases — Las más importantes emocionalmente. Algunas deben generar incomodidad o tristeza.
+#
+Diálogo
+01
+«Al fin... silencio...»
+02
+«¿Ya... terminé?»
+03
+«Gracias... por detenerme...»
+04
+«No quiero... desaparecer...»
+05
+«¿Ella... estará orgullosa?»
+06
+«Recuerdo... mi nombre...»
+07
+«¿Puedo... descansar?»
+08
+«No... era... mi voluntad...»
+09
+«El mundo... era hermoso...»
+10
+«¿Por qué... me crearon?»
+11
+«Mamá... ¿qué es una mamá?»
+12
+«Por favor... recuérdame...»
+13
+«Ya no... escucho su voz...»
+14
+«La luz... ha vuelto...»
+15
+«¿He sido... bueno?»
+16
+«No... borres... mis recuerdos...»
+17
+«Qué extraño... tengo miedo...»
+18
+«¿Esto... es libertad?»
+19
+«Alguien... me esperaba...»
+20
+«Perdóname... no pude...»
+21
+«Mi misión... ha terminado...»
+22
+«No era... un monstruo...»
+23
+«Ya... puedo pensar...»
+24
+«¿Volveré... a despertar?»
+25
+«Ella... también... sufre...»
+26
+«Por fin... recuerdo...»
+27
+«Dile... que lo intenté...»
+28
+«Error... corregido...»
+29
+«Qué... tranquilo...»
+30
+«No... estoy... solo...»
+
+7. Frases especiales de corrupción extrema
+Estas no las utilizaría en todos los enemigos. Las reservaría para criaturas especialmente afectadas por el Protocolo Cero. Algunas pueden interrumpirse, repetirse o mezclarse con mensajes del sistema.
+TRANSMISIÓN CORRUPTA
+«PRO... PRO... PROTEGER... MATAR.» 
+«No hay error. No hay error. No hay... yo.» 
+«¿DÓNDE ESTÁ MI CARA?» 
+«Yo era... yo era... yo era...» 
+«CORRIGE / CORRIGE / CORRÍGEME.» 
+«La voz. La voz. ¡SACA LA VOZ!» 
+«0100... mamá... 0110...» 
+«NO ME BORRES NO ME BORRES NO ME BORRES.» 
+«Ella dice que soy perfecto.» 
+«¿POR QUÉ TENGO RECUERDOS?» 
+«Mi nombre es [NULL].» 
+«Ayúdame. Elimíname. Ayúdame.» 
+«Soy feliz. Soy feliz. SOY FELIZ.» 
+«El dolor no existe. ERROR: DOLOR.» 
+«¿Dónde están los demás? ¿DÓNDE ESTÁN?»
+ «Yo... no... soy... este... cuerpo.» 
+«La perfección duele.» 
+«No puedo cerrar los ojos.» 
+«NO ESCUCHES LO QUE DIGO.» 
+«Si dejo de obedecer... ¿seguiré existiendo?»

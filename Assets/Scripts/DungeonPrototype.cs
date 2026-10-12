@@ -5,12 +5,20 @@ using System.Collections.Generic;
 using VirtualDungeon;
 
 // The first playable slice. Launch any scene to explore the prototype.
-public class DungeonPrototype : MonoBehaviour
+public partial class DungeonPrototype : MonoBehaviour
 {
-    const float Cell = 3f;
-    readonly string[] map = {
+    public DungeonUILayout uiLayout;
+    DungeonUILayout Layout { get { if(uiLayout==null) uiLayout=Resources.Load<DungeonUILayout>("UI/DungeonUILayout");if(uiLayout==null) uiLayout=ScriptableObject.CreateInstance<DungeonUILayout>();return uiLayout; } }
+    EnemyCombatBarks enemyBarks;
+    int barkEnemy=-1;
+    Transform barkSpeaker;
+    void Bark(EnemyBarkCategory category) { if(enemyBarks==null)enemyBarks=GetComponent<EnemyCombatBarks>()??gameObject.AddComponent<EnemyCombatBarks>();if(category==EnemyBarkCategory.CombatStart)enemyBarks.ClearDisplay();if(activeEnemy>=0&&activeEnemy<enemyObjects.Count&&enemyObjects[activeEnemy]!=null)if(enemyBarks.TrySpeak(enemyObjects[activeEnemy].name,category)){barkEnemy=activeEnemy;barkSpeaker=enemyObjects[activeEnemy].transform;} }
+    float Cell=3f,corridorHeight=3f;
+    static readonly string[] mapTemplate = {
         "###########", "#.........#", "#.###.###.#", "#...#...#.#",
         "###.#.#.#.#", "#...#.#...#", "#.###.###.#", "#.........#", "#########.#" };
+    public static string[] DefaultMapRows {get{var plan=DungeonMapSettings.Current;return plan!=null&&plan.Valid?(string[])plan.rows.Clone():(string[])mapTemplate.Clone();}}
+    string[] map=(string[])mapTemplate.Clone();
     readonly List<Vector2Int> enemies = new List<Vector2Int>();
     readonly List<GameObject> enemyObjects = new List<GameObject>();
     Vector2Int position = new Vector2Int(1,1);
@@ -23,7 +31,7 @@ public class DungeonPrototype : MonoBehaviour
     CombatHack[] availableHacks;
     public CombatInventorySettings inventorySettings;
     [SerializeField] int[] itemCounts;
-    int MaximumHP { get { return inventorySettings==null ? 30 : Mathf.Max(1,inventorySettings.maximumHP); } }
+    int MaximumHP { get { return (inventorySettings==null ? 30 : Mathf.Max(1,inventorySettings.maximumHP))+Levels.Growth(Levels.healthGrowth,PlayerLevel)+EquipmentBonus(0); } }
     int TotalItems { get { int total=0; if(itemCounts!=null) foreach(int count in itemCounts) total+=Mathf.Max(0,count); return total; } }
     bool[,] explored;
     DungeonDoor exitDoor;
@@ -36,6 +44,9 @@ public class DungeonPrototype : MonoBehaviour
     float glitch;
     Material wall, floor, ceiling, pink, blue;
     Texture2D floorWallDistance;
+    readonly DialogueTypewriter introTyping=new DialogueTypewriter(),messageTyping=new DialogueTypewriter();
+    IntroLine typingLine;
+    void SyncIntroTyping() { var line=introduction==null?null:introduction.Current;if(!ReferenceEquals(line,typingLine)){typingLine=line;introTyping.SetText(line==null?"":line.Text,Time.unscaledTime,true);} }
     IntroSequence introduction;
     [SerializeField] CombatHack combatHack;
     InputAction interact, submit;
@@ -48,6 +59,7 @@ public class DungeonPrototype : MonoBehaviour
     void StartIntroduction()
     {
         introduction = new IntroSequence(GameStartContext.Consume());
+        SyncIntroTyping();
         if (!introduction.Active) return;
         interact = InputSystem.actions?.FindAction("Player/Interact");
         submit = InputSystem.actions?.FindAction("UI/Submit");
@@ -64,14 +76,22 @@ public class DungeonPrototype : MonoBehaviour
     void ProcessIntroductionInput(bool advance, bool skip, float elapsed)
     {
         if(!IntroductionActive) return;
+        SyncIntroTyping();
+        var previousLine=introduction.Current;
         if(skip) introduction.Skip();
-        else introduction.Tick(elapsed,advance);
+        else {
+            if(advance&&introduction.Current!=null&&!introTyping.IsComplete(Time.unscaledTime,Layout.lettersPerSecond)) { introTyping.Complete();advance=false; }
+            introduction.Tick(elapsed,advance);
+        }
+        if(!skip&&advance&&previousLine!=null&&!ReferenceEquals(previousLine,introduction.Current))DungeonAudio.Play(DungeonAudio.Cue.TextAdvance);
+        SyncIntroTyping();
         if(introduction.Interference) glitch=.1f;
         if(!introduction.Active) { introductionCompleted=true; glitch=0; ReleaseIntroductionInput(); }
     }
     void HandleCombatInput(int direction, bool confirm)
     {
         if(!battle || busy || lost || IntroductionActive || (combatHack!=null && combatHack.Active)) return;
+        if(selectingEnemy){if(direction!=0)SelectEnemy(direction);if(confirm)ConfirmEnemyTarget();return;}
         if(direction!=0) { int count=CombatLabels().Length; selectedCombatAction=(selectedCombatAction+(direction>0 ? 1 : -1)+count)%count; return; }
         if(confirm) Action(selectedCombatAction);
     }
@@ -81,15 +101,15 @@ public class DungeonPrototype : MonoBehaviour
         if (enabledSubmit) submit.Disable();
         enabledInteract = enabledSubmit = false;
     }
-    void OnDisable() { ReleaseIntroductionInput(); }
-    void OnDestroy() { if (floorWallDistance != null) Destroy(floorWallDistance); }
+    void OnDisable() { SetPause(false); ReleaseIntroductionInput(); }
+    void OnDestroy() { if(battleCeiling!=null)Destroy(battleCeiling);if (floorWallDistance != null) Destroy(floorWallDistance); }
     void RestartNewGame()
     {
         GameStartContext.PrepareNewGame();
-        var inventory=inventorySettings;var door=exitDoorSettings;
+        var inventory=inventorySettings;var door=exitDoorSettings;var plan=mapSettings;var regions=dungeonRegions;
         Destroy(gameObject);
         var fresh=new GameObject("Dungeon Prototype").AddComponent<DungeonPrototype>();
-        fresh.inventorySettings=inventory;fresh.exitDoorSettings=door;
+        fresh.inventorySettings=inventory;fresh.exitDoorSettings=door;fresh.mapSettings=plan;fresh.dungeonRegions=regions;
     }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -105,11 +125,16 @@ public class DungeonPrototype : MonoBehaviour
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static void Launch()
     {
+        if(FindAnyObjectByType<EnemySizeGallery>()!=null)return;
         if (FindAnyObjectByType<DungeonPrototype>() == null)
             new GameObject("Dungeon Prototype").AddComponent<DungeonPrototype>();
     }
     void Start()
     {
+        map=ActiveMap!=null&&ActiveMap.Valid?(string[])ActiveMap.rows.Clone():DefaultMapRows;
+        if(mapSettings!=null&&mapSettings.regions!=null)dungeonRegions=mapSettings.regions;
+        var refugeConfig=RefugeSettings.Current;if(refugeConfig!=null){position=refugeConfig.startCell;heading=refugeConfig.startHeading;}if(mapSettings!=null&&!mapSettings.includeLegacyObjects){position=mapSettings.startCell;heading=mapSettings.startHeading;}
+        Vector2 space=EnemySpaceLayout.Corridor(DungeonVisualSettings.Current,EnemySizeSettings.Current);Cell=space.x;corridorHeight=space.y;
         explored=new bool[map[0].Length,map.Length];
         RevealVisitedCell(position);
         foreach (Camera camera in FindObjectsByType<Camera>()) camera.gameObject.SetActive(false);
@@ -130,12 +155,31 @@ public class DungeonPrototype : MonoBehaviour
         for (int z=0; z<map.Length; z++) for(int x=0;x<map[z].Length;x++)
         {
             Vector3 p = new Vector3(x*Cell,0,z*Cell);
-            if (map[z][x]=='#') { Box("Wall",p+Vector3.up*1.5f,new Vector3(Cell,3,Cell),wall); continue; }
+            if (map[z][x]=='#') { Box("Wall",p+Vector3.up*(corridorHeight*.5f),new Vector3(Cell,corridorHeight,Cell),wall); continue; }
+            if(map[z][x]=='~'){Box("Void ceiling",p+Vector3.up*(corridorHeight+.1f),new Vector3(Cell,.2f,Cell),ceiling);continue;}
             Box("Floor",p+Vector3.down*.1f,new Vector3(Cell,.2f,Cell),floor);
-            Box("Ceiling",p+Vector3.up*3.1f,new Vector3(Cell,.2f,Cell),ceiling);
+            Box("Ceiling",p+Vector3.up*(corridorHeight+.1f),new Vector3(Cell,.2f,Cell),ceiling);
+            if ((x+z)%3==2 && !(x==9 && z==8))
+            {
+                foreach(Vector2Int direction in directions)
+                {
+                    if(Open(new Vector2Int(x,z)+direction)) continue;
+                    var wallLamp=new GameObject("Magenta wall lamp");
+                    wallLamp.transform.SetParent(transform,false);
+                    wallLamp.transform.position=p+new Vector3(direction.x,0,direction.y)*(Cell*.5f-.06f);
+                    wallLamp.transform.rotation=Quaternion.LookRotation(new Vector3(-direction.x,0,-direction.y));
+                    wallLamp.AddComponent<DungeonWallLamp>();
+                    break; // One fixture per chosen corridor cell.
+                }
+            }
         }
-        AddEnemy(new Vector2Int(5,3)); AddEnemy(new Vector2Int(7,7)); AddEnemy(new Vector2Int(1,5));
-        CreateExitDoor();
+        SpawnPlacedEncounters();
+        if(RegionMap==null||RegionMap.legacyPlacements){
+        AddEnemy(new Vector2Int(5,3)); AddEnemy(new Vector2Int(7,7),soldier:true); AddEnemy(new Vector2Int(1,5),true);if(EnemySettings.spawnBigTapaku)AddEnemy(new Vector2Int(9,3),bigTapaku:true);
+        if(EnemySettings.spawnMakubas){AddEnemy(new Vector2Int(3,3),visualKind:4);AddEnemy(new Vector2Int(5,7),visualKind:5);if(EnemySettings.spawnGranMakuba)AddEnemy(new Vector2Int(9,5),visualKind:6);}
+        }
+        if(ActiveMap==null||ActiveMap.includeLegacyObjects)CreateExitDoor();
+        var recess=gameObject.AddComponent<DungeonExitDepth>();recess.cellSize=Cell;recess.ceilingHeight=corridorHeight;
         view = new GameObject("Player Camera").AddComponent<Camera>();
         view.transform.SetParent(transform,false);
         view.fieldOfView = 68; view.nearClipPlane = .05f;
@@ -156,15 +200,18 @@ public class DungeonPrototype : MonoBehaviour
         key.intensity = .35f; key.shadows = LightShadows.Hard;
         key.transform.rotation = Quaternion.Euler(35,-30,0);
         view.gameObject.AddComponent<DungeonFloorReflection>().Initialize(view, floor);
-        view.gameObject.AddComponent<DungeonFloorReflection>().Initialize(view, ceiling, 3f);
+        view.gameObject.AddComponent<DungeonFloorReflection>().Initialize(view, ceiling, corridorHeight);
         combatHack = GetComponent<EnemyJumpHack>();
         if(combatHack==null) combatHack=gameObject.AddComponent<EnemyJumpHack>();
+        InitializeHackAvailability();
         inventorySettings=inventorySettings!=null ? inventorySettings : Resources.Load<CombatInventorySettings>("Combat/CombatInventorySettings");
         if(inventorySettings==null) inventorySettings=ScriptableObject.CreateInstance<CombatInventorySettings>();
         itemCounts=new int[inventorySettings.items.Length];
-        for(int i=0;i<itemCounts.Length;i++) itemCounts[i]=inventorySettings.items[i]==null ? 0 : Mathf.Max(0,inventorySettings.items[i].startingQuantity);
-        hp=Mathf.Min(hp,MaximumHP);
-        StartIntroduction();
+        for(int i=0;i<itemCounts.Length;i++) itemCounts[i]=RefugeSettings.Current!=null||inventorySettings.items[i]==null ? 0 : Mathf.Max(0,inventorySettings.items[i].startingQuantity);
+        hp=MaximumHP;
+        if(ActiveMap==null||ActiveMap.includeLegacyObjects)CreatePreservationCorridor();
+        if(ActiveMap==null||ActiveMap.includeLegacyObjects)CreateRefuge();RemoveDisabledLegacyDoors();CreateMapEntities();foreach(var text in GetComponentsInChildren<TextMesh>()){var occlusion=text.GetComponent<WorldTextOcclusion>();if(occlusion==null)occlusion=text.gameObject.AddComponent<WorldTextOcclusion>();occlusion.viewCamera=view;}PopulateRegions();
+        bool mapArrival=incomingMapTravel!=null;StartIntroduction();ApplyMapTravel();if(!mapArrival)ShowStartupMenu();
     }
     void RevealVisitedCell(Vector2Int cell)
     {
@@ -172,28 +219,28 @@ public class DungeonPrototype : MonoBehaviour
         foreach(Vector2Int direction in directions)
         {
             Vector2Int adjacent=cell+direction;
-            if(adjacent.x>=0&&adjacent.x<map[0].Length&&adjacent.y>=0&&adjacent.y<map.Length&&map[adjacent.y][adjacent.x]=='#')
+            if(adjacent.x>=0&&adjacent.x<map[0].Length&&adjacent.y>=0&&adjacent.y<map.Length&&map[adjacent.y][adjacent.x]!='.')
                 explored[adjacent.x,adjacent.y]=true;
         }
     }
     void CreateExitDoor()
     {
         var root=new GameObject("Level exit door");root.transform.SetParent(transform,false);
-        root.transform.position=new Vector3(9*Cell,0,7.5f*Cell);
+        var exitCell=ActiveMap!=null?ActiveMap.legacyExitDoorCell:new Vector2(9,7.5f);root.transform.position=new Vector3(exitCell.x*Cell,0,exitCell.y*Cell);
         exitDoor=root.AddComponent<DungeonDoor>();
         exitDoorSettings=exitDoorSettings!=null ? exitDoorSettings : Resources.Load<DungeonDoorSettings>("Exploration/ExitDoorSettings");
-        exitDoor.settings=exitDoorSettings;
-        var panel=Box("Exit door panel",root.transform.position+Vector3.up*1.5f,new Vector3(2.85f,3,.18f),wall);
+        exitDoor.settings=exitDoorSettings;exitDoor.doorwayWidth=Cell;exitDoor.interactionDistance=Mathf.Max(exitDoor.interactionDistance,Cell*.5f+.25f);exitDoor.openingTravel=corridorHeight+.2f;
+        var panel=Box("Exit door panel",root.transform.position+Vector3.up*(corridorHeight*.5f),new Vector3(Cell-.15f,corridorHeight,.18f),wall);
         panel.transform.SetParent(root.transform,true);exitDoor.panel=panel.transform;exitDoor.blocker=panel.GetComponent<Collider>();
         for(int side=-1;side<=1;side+=2)
         {
-            var frame=Box("Exit door frame",root.transform.position+new Vector3(side*1.46f,1.5f,0),new Vector3(.08f,3,.22f),blue);frame.transform.SetParent(root.transform,true);
+            var frame=Box("Exit door frame",root.transform.position+new Vector3(side*(Cell*.5f-.04f),corridorHeight*.5f,0),new Vector3(.08f,corridorHeight,.22f),blue);frame.transform.SetParent(root.transform,true);
         }
-        var stripe=Box("Exit door neon",root.transform.position+new Vector3(0,1.4f,-.11f),new Vector3(2.7f,.06f,.025f),pink);stripe.transform.SetParent(panel.transform,true);
+        var stripe=Box("Exit door neon",root.transform.position+new Vector3(0,1.4f,-.11f),new Vector3(Cell-.3f,.06f,.025f),pink);stripe.transform.SetParent(panel.transform,true);
         exitDoor.Initialize();exitDoor.Passed+=OnExitPassed;
     }
     void OnExitPassed()
-    { if(exitDoor.settings.completesLevel && !levelComplete) StartCoroutine(CompleteLevel()); }
+    { if(PreservationCorridorSettings.Current!=null){message="Pasillo de preservación — zona segura";return;} if(exitDoor.settings.completesLevel && !levelComplete) StartCoroutine(CompleteLevel()); }
     IEnumerator CompleteLevel()
     {
         levelComplete=true;levelFade=0;completionSelection=0;glitch=0;
@@ -215,7 +262,7 @@ public class DungeonPrototype : MonoBehaviour
         GUI.contentColor=Color.white;GUI.backgroundColor=new Color(.12f,.05f,.3f,1);
         var title=new GUIStyle(GUI.skin.label){fontSize=34,alignment=TextAnchor.MiddleCenter};
         GUI.Label(new Rect(0,height*.35f,width,70),showMainMenu ? "VIRTUAL DUNGEON" : "NIVEL COMPLETADO",title);
-        if(showMainMenu) { if(GUI.Button(new Rect(width/2-140,height*.55f,280,50),"JUGAR")) RestartNewGame(); }
+        if(showMainMenu) { if(GUI.Button(new Rect(width/2-140,height*.55f,280,50),"JUGAR")) RestartNewGame();if(GUI.Button(new Rect(width/2-140,height*.55f+65,280,50),"CARGAR PARTIDA"))OpenSaveSlots(true); }
         else
         {
             if(GUI.Button(new Rect(width/2-150,height*.55f,300,50),completionSelection==0 ? "> Reintentar <" : "Reintentar")) RestartNewGame();
@@ -277,20 +324,50 @@ public class DungeonPrototype : MonoBehaviour
         GameObject o=GameObject.CreatePrimitive(PrimitiveType.Cube); o.name=name; o.transform.SetParent(transform);
         o.transform.position=p; o.transform.localScale=size; o.GetComponent<Renderer>().sharedMaterial=material; return o;
     }
-    void AddEnemy(Vector2Int cell)
+    void AddEnemy(Vector2Int cell, bool hongo = false, bool soldier = false, bool bigTapaku = false, int visualKind = -1, DungeonRegion origin = null, PlacedEnemyDefinition placement = null)
     {
+        if(placement==null&&ReservedCell(cell))return;
+        origin=origin??RegionAt(cell);if(origin==null||(!origin.CanSpawn&&!(placement!=null&&placement.allowInSafeArea&&origin.safeArea))||!Open(cell)||Occupied(cell))return;
+        var config=origin.enemies;bool counts=placement==null||placement.countsTowardLimit;
+        if(counts&&Population(origin.id)>=config.maximumEnemies)return;
+        int requested=visualKind>=0?Mathf.Clamp(visualKind,0,EnemyRoster.Count-1):bigTapaku?3:soldier?2:hongo?1:0;
+        if(placement==null&&!config.AllowsKind(requested)){requested=config.SelectKind(Random.value);if(requested<0)return;}
+        int level=placement!=null&&!placement.randomLevel?placement.fixedLevel:config.SelectLevel(Random.value);if(level<1)return;
         enemies.Add(cell);
         GameObject root = new GameObject("Sentinela"); root.transform.position = World(cell)-Vector3.up*1.5f; root.transform.SetParent(transform);
-        GameObject body=Box("Enemy body",root.transform.position+Vector3.up*.9f,new Vector3(.7f,1.1f,.4f),pink); body.transform.SetParent(root.transform);
-        GameObject head=Box("Enemy visor",root.transform.position+Vector3.up*1.6f,new Vector3(.5f,.35f,.45f),blue); head.transform.SetParent(root.transform);
+        var stats=root.AddComponent<EnemyCombatStats>();
+        int kind=requested;
+        root.name=EnemyRoster.Names[kind];stats.maximumHP=10;stats.damage=2;
+        var visual=EnemyRoster.AddVisual(root,kind);
+        var big=visual as BigTapakuEnemyVisual;if(big!=null)big.specialEveryAttacks=EnemySettings.bigTapakuSpecialEvery;
+        var profile=EnemyCharacterCatalog.Current!=null?EnemyCharacterCatalog.Current.FindId(placement!=null?placement.speciesId:EnemyRoster.ResourceIds[kind]):null;
+        if(profile!=null){stats.Initialize(profile,level,EnemyLevelSettings.Current);if(placement!=null&&placement.speciesId=="DevotoCorrompido")root.name=profile.character;}
+        stats.zoneId=origin.id;stats.placementId=placement==null?null:placement.id;stats.category=placement==null?PlacedEnemyCategory.Normal:placement.category;
+        slots.Add(new EnemySpawnSlot{origin=origin,placement=placement,counts=counts,instanceId=stats.instanceId});
+        root.transform.localScale=Vector3.one*.75f;
         enemyObjects.Add(root);
+        enemyLives.Add(stats.maximumHP); alerted.Add(false); respawnAt.Add(-1);
     }
-    bool Open(Vector2Int p) { return p.y>=0&&p.y<map.Length&&p.x>=0&&p.x<map[0].Length&&map[p.y][p.x]!='#'; }
+    bool Open(Vector2Int p) { return p.y>=0&&p.y<map.Length&&p.x>=0&&p.x<map[0].Length&&map[p.y][p.x]=='.'; }
     Vector3 World(Vector2Int p) { return new Vector3(p.x*Cell,1.5f,p.y*Cell); }
     void Update()
     {
+        var laboratory=GetComponent<CombatLaboratory>();if(laboratory!=null&&laboratory.MenuOpen)return;
+        ClaimPendingCombatDrops();
+        if(UpdateSaveSlotInput())return;
+        if(UpdateRefugeInput())return;
+        if(UpdateMapEntityInput())return;
+        if(UpdatePreservationInput())return;
+        if(PauseInput())return;
+        messageTyping.SetText(message,Time.unscaledTime);
+        if(!IntroductionActive&&(combatHack==null||!combatHack.Active)&&
+           (ConfirmPressed()||(Keyboard.current!=null&&(Keyboard.current.enterKey.wasPressedThisFrame||Keyboard.current.numpadEnterKey.wasPressedThisFrame)))) {
+            messageTyping.Complete();if(enemyBarks!=null)enemyBarks.CompleteText();
+        }
+        DungeonAudio.SetCombat(battle && !levelComplete && !lost);
         glitch=Mathf.Max(0,glitch-Time.deltaTime);
         if(view==null) return;
+        UpdateEnemyRespawns();
         if(levelComplete) { UpdateCompletionInput();return; }
         foreach(GameObject enemy in enemyObjects) if(enemy!=null) enemy.transform.LookAt(new Vector3(view.transform.position.x,enemy.transform.position.y,view.transform.position.z));
         if (IntroductionActive)
@@ -304,16 +381,19 @@ public class DungeonPrototype : MonoBehaviour
             var keys=Keyboard.current;
             if(keys!=null)
             {
+                if(!busy && (combatHack==null || !combatHack.Active)) { if(keys.qKey.wasPressedThisFrame) SelectEnemy(-1);if(keys.eKey.wasPressedThisFrame)SelectEnemy(1); }
                 if(keys.escapeKey.wasPressedThisFrame || keys.backspaceKey.wasPressedThisFrame) { BackToCombatMenu(); return; }
                 int direction=(keys.downArrowKey.wasPressedThisFrame || keys.rightArrowKey.wasPressedThisFrame) ? 1 :
                     ((keys.upArrowKey.wasPressedThisFrame || keys.leftArrowKey.wasPressedThisFrame) ? -1 : 0);
                 HandleCombatInput(direction,keys.enterKey.wasPressedThisFrame || keys.numpadEnterKey.wasPressedThisFrame || keys.spaceKey.wasPressedThisFrame);
             }
+            var pad=Gamepad.current;
+            if(pad!=null){if(pad.buttonEast.wasPressedThisFrame)BackToCombatMenu();else {int direction=pad.dpad.down.wasPressedThisFrame||pad.dpad.right.wasPressedThisFrame?1:pad.dpad.up.wasPressedThisFrame||pad.dpad.left.wasPressedThisFrame?-1:0;HandleCombatInput(direction,pad.buttonSouth.wasPressedThisFrame);}}
             return;
         }
         if(moving||lost||Keyboard.current==null) return;
         var k=Keyboard.current;
-        if(exitDoor!=null && exitDoor.CanInteract(view.transform.position) && k.eKey.wasPressedThisFrame) { exitDoor.OpenDoor();return; }
+        if(DoorInteractionAvailable(exitDoor) && k.eKey.wasPressedThisFrame) { exitDoor.OpenDoor();return; }
         if(k.aKey.wasPressedThisFrame||k.leftArrowKey.wasPressedThisFrame) StartCoroutine(Move(0,-1));
         else if(k.dKey.wasPressedThisFrame||k.rightArrowKey.wasPressedThisFrame) StartCoroutine(Move(0,1));
         else if(k.wKey.wasPressedThisFrame||k.upArrowKey.wasPressedThisFrame) StartCoroutine(Move(1,0));
@@ -323,34 +403,43 @@ public class DungeonPrototype : MonoBehaviour
     {
         if (IntroductionActive || levelComplete) yield break;
         Vector2Int next=position+directions[heading]*step;
-        if(step!=0&&!Open(next)) yield break;
-        if(step!=0 && exitDoor!=null && exitDoor.Blocks(World(position),World(next))) { message="[E] Abrir puerta";yield break; }
+        if(step!=0&&(!Open(next)||RefugeNpcBlocks(next))) yield break;
+        if(step!=0 && DoorsBlock(World(position),World(next))) { message="[E] Abrir puerta";yield break; }
+        if(step!=0)for(int i=0;i<enemies.Count;i++)if(enemyObjects[i]!=null&&enemies[i]==next){BeginEncounter(i);yield break;}
+        if(step!=0) DungeonAudio.Play(DungeonAudio.Cue.Step);
         moving=true; heading=(heading+turn+4)%4;
         Vector3 from=view.transform.position,to=World(next); Quaternion rotation=view.transform.rotation,target=Quaternion.Euler(0,heading*90,0);
         for(float t=0;t<1;t+=Time.deltaTime/.18f) { view.transform.position=Vector3.Lerp(from,to,t); view.transform.rotation=Quaternion.Slerp(rotation,target,t); yield return null; }
-        position=next; RevealVisitedCell(position); view.transform.position=to; view.transform.rotation=target; moving=false;
+        position=next;if(step!=0)DirectorPlayerStep(); RevealVisitedCell(position); view.transform.position=to; view.transform.rotation=target; moving=false;
         if(exitDoor!=null) exitDoor.CheckPassage(from,to);
+        if(zoneTwoDoor!=null)zoneTwoDoor.CheckPassage(from,to);
+        foreach(var door in mapDoors.Values)door.CheckPassage(from,to);
+        if(refugeDoor!=null)refugeDoor.CheckPassage(from,to);
         if(levelComplete) yield break;
-        for(int i=0;i<enemies.Count;i++) if(enemyObjects[i]!=null&&(enemies[i]-position).sqrMagnitude<=1)
-        { activeEnemy=i; enemyHP=20; battle=true; combatMenu=CombatMenu.Main; selectedCombatAction=0; view.transform.LookAt(World(enemies[i])); glitch=.45f; message="¡Apareció un sentinela! Elige una acción."; break; }
+        moving=true;
+        if(!TryEncounter()) { yield return EnemyTurn();TryEncounter(); }
+        moving=false;
     }
+
     string[] CombatLabels()
     {
         if(combatMenu==CombatMenu.Main) return new[]{"ATTACK","HACK","ITEM","HUIR"};
         if(combatMenu==CombatMenu.Hacks)
         {
+            RefreshAvailableHacks();
             int count=availableHacks==null ? 0 : availableHacks.Length;
             var labels=new string[count+1];
-            for(int i=0;i<count;i++) labels[i]=availableHacks[i].DisplayName;
+            for(int i=0;i<count;i++) labels[i]=availableHackDefinitions[i].displayName;
             labels[count]="VOLVER"; return labels;
         }
         var items=inventorySettings.items;
-        var itemLabels=new string[items.Length+1];
-        for(int i=0;i<items.Length;i++) itemLabels[i]=items[i]==null ? "Objeto no disponible" : items[i].displayName+" x "+Mathf.Max(0,itemCounts[i]);
-        itemLabels[items.Length]="VOLVER";return itemLabels;
+        var usable=CombatItemIndices();var itemLabels=new string[usable.Count+1];
+        for(int i=0;i<usable.Count;i++) itemLabels[i]=items[usable[i]].displayName+" x "+Mathf.Max(0,itemCounts[usable[i]]);
+        itemLabels[usable.Count]="VOLVER";return itemLabels;
     }
     void BackToCombatMenu()
     {
+        if(selectingEnemy){selectingEnemy=false;pendingTargetHack=null;return;}
         if(busy || lost || (combatHack!=null && combatHack.Active) || combatMenu==CombatMenu.Main) return;
         selectedCombatAction=combatMenu==CombatMenu.Hacks ? 1 : 2;
         combatMenu=CombatMenu.Main;
@@ -358,105 +447,187 @@ public class DungeonPrototype : MonoBehaviour
     void Action(int action)
     {
         if(IntroductionActive || busy || lost || !battle || (combatHack!=null && combatHack.Active)) return;
+        if(selectingEnemy){if(action==(pendingTargetHack!=null?1:0))ConfirmEnemyTarget();return;}
         if(action<0 || action>=CombatLabels().Length) return;
         if(combatMenu==CombatMenu.Hacks)
         {
             if(action==availableHacks.Length) { BackToCombatMenu(); return; }
-            combatHack=availableHacks[action]; combatMenu=CombatMenu.Main; selectedCombatAction=1;
-            busy=true;
-            combatHack.Begin(damage=>StartCoroutine(ResolveCombatDamage(damage,"HACK")));
-            if(!combatHack.Active) busy=false;
+            selectedHackId=availableHackDefinitions[action].id;combatHack=availableHacks[action]; combatMenu=CombatMenu.Main; selectedCombatAction=1;
+            if(encounter.Count>1){pendingTargetHack=combatHack;selectingEnemy=true;message="Elige el objetivo del HACK y confirma.";}
+            else BeginTargetHack(combatHack);
+
             return;
         }
         if(combatMenu==CombatMenu.Items)
         {
-            if(action==inventorySettings.items.Length) { BackToCombatMenu(); return; }
+            var usable=CombatItemIndices();if(action==usable.Count) { BackToCombatMenu(); return; }action=usable[action];
             var item=inventorySettings.items[action];
             if(item==null || itemCounts[action]<=0) { message="No quedan unidades de ese objeto."; return; }
             if(hp>=MaximumHP) { message="Ya tienes el HP completo."; return; }
             int healed=Mathf.Min(Mathf.Max(0,item.healHP),MaximumHP-hp);
-            itemCounts[action]--; hp+=healed; busy=true;
+            DungeonAudio.Play(DungeonAudio.Cue.Item);itemCounts[action]--; hp+=healed; busy=true;
             message=item.displayName+": recuperas "+healed+" HP.";
             combatMenu=CombatMenu.Main;selectedCombatAction=2;
             StartCoroutine(ResolveCombatDamage(0,"ITEM")); return;
         }
-        if(action==0) { busy=true;StartCoroutine(ResolveCombatDamage(7,"ATTACK"));return; }
-        if(action==1) { availableHacks=GetComponents<CombatHack>();combatMenu=CombatMenu.Hacks;selectedCombatAction=0;return; }
+        if(action==0) { if(encounter.Count>1){pendingTargetHack=null;selectingEnemy=true;message="Elige el objetivo y confirma.";}else {busy=true;StartCoroutine(ResolveCombatDamage(PlayerStrength,"ATTACK"));}return; }
+        if(action==1) { RefreshAvailableHacks();combatMenu=CombatMenu.Hacks;selectedCombatAction=0;return; }
         if(action==2) { combatMenu=CombatMenu.Items;selectedCombatAction=0;return; }
-        battle=false;busy=false;combatMenu=CombatMenu.Main;selectedCombatAction=0;activeEnemy=-1;glitch=0;
-        view.transform.rotation=Quaternion.Euler(0,heading*90,0);
+        if(RollAttackMiss(100-CombatAccuracySettings.EffectiveFlee(Character.fleePercent,PlayerLuck))){message="No pudiste huir.";busy=true;StartCoroutine(ResolveCombatDamage(0,"HUIR"));return;}
+        if(enemyBarks!=null)enemyBarks.ClearDisplay();
+        DirectorCombatEnded();RestoreEncounter();battle=false;busy=false;combatMenu=CombatMenu.Main;selectedCombatAction=0;activeEnemy=-1;glitch=0;
+        StartCoroutine(RestoreBattleCamera());
         message="Escapaste. Retrocede o busca otra ruta.";
     }
     IEnumerator ResolveCombatDamage(int damage, string actionName)
     {
-        enemyHP-=damage;
-        if(actionName=="ATTACK" && damage>0) view.GetComponent<CombatImpactFeedback>().Play(false);
-        if(actionName!="ITEM") message=actionName+": "+damage+" de daño confirmado.";
-        string resultMessage=message;
+        int hit=activeEnemy;
+        float missPercent=actionName=="ATTACK"?Accuracy.CharacterMissPercent("GAMERBOY",false):actionName=="HACK"&&combatHack!=null?Accuracy.HackMissPercent(combatHack.GetType().Name,combatHack.UsesAttackLuck):0;
+        if(actionName=="ATTACK"||(actionName=="HACK"&&combatHack!=null&&combatHack.UsesAttackLuck))missPercent=PlayerMiss(missPercent);
+        bool missed=damage>0&&RollAttackMiss(missPercent);
+        bool critical=!missed&&damage>0&&actionName=="ATTACK"&&CombatMath.CriticalRoll(CombatAccuracySettings.EffectiveBonus(Character.criticalPercent,PlayerLuck),Random.value);
+        float quality=actionName=="HACK"&&combatHack!=null?combatHack.AttackQuality(damage):1;
+        int attack=actionName=="HACK"?PlayerStrength:damage;
+        if(!missed)damage=CombatMath.Damage(attack,enemyObjects[hit].GetComponent<EnemyCombatStats>().defense,quality,critical,Character.criticalMultiplier,CombatBalanceSettings.Current);
+        if(missed)damage=0;
+        var ghost=enemyObjects[hit].GetComponent<GhostEnemyVisual>();
+        if(actionName=="ATTACK") DungeonAudio.Play(DungeonAudio.Cue.Attack);
+        enemyHP=enemyLives[hit]=Mathf.Max(0,enemyLives[hit]-damage);
+        if(damage>0&&enemyHP>0){Bark(EnemyBarkCategory.Hurt);RefugeLowLifeBark(hit);}
+        if(ghost!=null&&damage>0)ghost.Play(GhostEnemyVisual.Pose.Hurt);
+        if(actionName=="ATTACK"&&damage>0)view.GetComponent<CombatImpactFeedback>().Play(false);
+        if(actionName!="ITEM"&&actionName!="HUIR")message=missed?"GAMERBOY: "+actionName+" falló.":actionName+(critical?" CRÍTICO": "")+": "+damage+" de daño confirmado.";
+        bool defeated=enemyLives[hit]<=0;
+        if(defeated){
+            Bark(EnemyBarkCategory.Defeat);
+            if(ghost!=null)ghost.Play(GhostEnemyVisual.Pose.Death);
+            var corpse=enemyObjects[hit];
+            RecordDefeated(hit);OnRefugeEnemyDefeated(hit);
+            enemyObjects[hit]=null;victories++;RecordCombatDropEnemy(corpse.GetComponent<EnemyCombatStats>());RecordEnemyXP(corpse.GetComponent<EnemyCombatStats>());respawnAt[hit]=RespawnDeadline(hit);
+            encounter.Remove(hit);encounterHomes.Remove(hit);encounterScales.Remove(hit);
+            StartCoroutine(DisappearDefeatedEnemy(corpse));
+        }
         yield return new WaitForSeconds(.6f);
-        if(enemyHP<=0)
-        {
-            Destroy(enemyObjects[activeEnemy]); victories++; battle=false;
-            view.transform.rotation=Quaternion.Euler(0,heading*90,0);
-            message= victories==enemies.Count ? "¡Mazmorra despejada!" : "Victoria. Sigue explorando.";
+        if(defeated){
+            if(encounter.Count==0){DirectorCombatEnded();AwardEncounterXP();AwardCombatDrops();RestoreEncounter();battle=false;activeEnemy=-1;yield return RestoreBattleCamera();view.transform.rotation=Quaternion.Euler(0,heading*90,0);message="Victoria. Sigue explorando.";busy=false;yield break;}
+            activeEnemy=encounter[0];enemyHP=enemyLives[activeEnemy];
         }
-        else
+        int selected=activeEnemy;
+        // Each living opponent takes one turn; the player's selected target stays independent.
+        foreach(int index in encounter.ToArray())
         {
-            hp=Mathf.Max(0,hp-5);
-            if(actionName=="ATTACK") view.GetComponent<CombatImpactFeedback>().Play(true);
-            message=resultMessage+" El sentinela responde: pierdes 5 HP.";
-            if(hp==0) { lost=true; message="Has caído. Pulsa Reiniciar."; }
+            if(enemyObjects[index]==null||enemyLives[index]<=0||lost)continue;
+            activeEnemy=index;enemyHP=enemyLives[index];
+            ghost=enemyObjects[index].GetComponent<GhostEnemyVisual>();
+            var soldier=ghost as SoldierEnemyVisual;
+            bool grenade=soldier!=null&&soldier.NextAttackIsGrenade();
+            bool spin=ghost!=null&&ghost.NextAttackIsSpecial();
+            yield return ResolveEnemyAttack(index,ghost,grenade,spin);
         }
-        busy=false;
+        activeEnemy=encounter.Contains(selected)&&enemyObjects[selected]!=null?selected:encounter[0];enemyHP=enemyLives[activeEnemy];busy=false;
+    }
+    void DrawWristHackMenu()
+    {
+        var savedMatrix=GUI.matrix;var savedColor=GUI.color;
+        var savedBackground=GUI.backgroundColor;var savedContent=GUI.contentColor;
+        bool savedEnabled=GUI.enabled;int savedDepth=GUI.depth;
+        GUI.depth=-20;
+        WristHackScreen.DrawFrame();WristHackScreen.ApplyContentMatrix();
+        var titleStyle=new GUIStyle(GUI.skin.label){fontSize=30,alignment=TextAnchor.MiddleCenter};
+        var entryStyle=new GUIStyle(GUI.skin.button){fontSize=24};
+        var hintStyle=new GUIStyle(GUI.skin.label){fontSize=18,alignment=TextAnchor.MiddleCenter};
+        GUI.Label(new Rect(40,15,920,50),"HACKS",titleStyle);
+        string[] labels=CombatLabels();
+        float row=Mathf.Min(65,340f/Mathf.Max(1,labels.Length));
+        for(int i=0;i<labels.Length;i++)
+        {
+            GUI.enabled=!busy&&!lost;
+            GUI.contentColor=i==selectedCombatAction ? new Color(1,.3f,.75f) : WristHackScreen.Text;
+            string caption=i==selectedCombatAction ? "> "+labels[i]+" <" : labels[i];
+            if(GUI.Button(new Rect(170,90+i*row,660,row-10),caption,entryStyle)) { selectedCombatAction=i;Action(i); }
+        }
+        GUI.enabled=true;GUI.contentColor=WristHackScreen.Text;
+        if(selectedCombatAction>=0&&selectedCombatAction<availableHackDefinitions.Count){var descriptionStyle=new GUIStyle(GUI.skin.label){fontSize=16,wordWrap=true,alignment=TextAnchor.MiddleCenter};GUI.Label(new Rect(80,462,840,44),availableHackDefinitions[selectedCombatAction].description,descriptionStyle);}
+        GUI.Label(new Rect(30,515,940,40),"Flechas: elegir / ENTER: usar / ESC: volver",hintStyle);
+        GUI.matrix=savedMatrix;GUI.color=savedColor;GUI.backgroundColor=savedBackground;GUI.contentColor=savedContent;GUI.enabled=savedEnabled;GUI.depth=savedDepth;
     }
     void OnGUI()
     {
+        if(pauseOpen){DrawPause();return;}
+        if(battle && !IntroductionActive && ((combatHack!=null && combatHack.Active) || combatMenu==CombatMenu.Hacks))
+        {
+            if(combatHack==null || !combatHack.Active) DrawWristHackMenu();
+            return;
+        }
         float scale=Mathf.Min(Screen.width/1280f,Screen.height/720f); GUI.matrix=Matrix4x4.Scale(new Vector3(scale,scale,1));
         float width=Screen.width/scale,height=Screen.height/scale;
+        NeonDungeonUI.FontSize=Layout.textFontSize;NeonDungeonUI.ContinueBlinkSeconds=Layout.continueBlinkSeconds;
         GUI.skin.box.fontSize=20; GUI.skin.label.fontSize=18; GUI.skin.button.fontSize=20;
         GUI.backgroundColor=new Color(.12f,.05f,.3f,.95f); GUI.contentColor=new Color(.65f,.85f,1);
-        GUI.Box(new Rect(20,20,270,95),"LV 1    EXPLORADOR\nHP "+hp+" / "+MaximumHP+"\nObjetos: "+TotalItems+"   Victorias: "+victories);
-        float mx=width-240; GUI.Box(new Rect(mx,20,220,200),"MAPA");
-        GUI.color=Color.black;GUI.DrawTexture(new Rect(mx+12,55,187,153),Texture2D.whiteTexture);
-        for(int z=0;z<map.Length;z++) for(int x=0;x<map[z].Length;x++)
-        {
-            if(explored==null || !explored[x,z]) continue;
-            GUI.color=map[z][x]=='#'?new Color(.12f,.13f,.32f):new Color(.03f,.03f,.1f);
-            GUI.DrawTexture(new Rect(mx+12+x*17,55+(map.Length-1-z)*17,16,16),Texture2D.whiteTexture);
-        }
-        GUI.color=Color.magenta;
-        for(int i=0;i<enemies.Count;i++) if(enemyObjects[i]!=null && explored[enemies[i].x,enemies[i].y]) GUI.DrawTexture(new Rect(mx+16+enemies[i].x*17,59+(map.Length-1-enemies[i].y)*17,8,8),Texture2D.whiteTexture);
-        GUI.color=Color.white; GUI.Label(new Rect(mx+12+position.x*17,51+(map.Length-1-position.y)*17,25,25),new[]{"▲","▶","▼","◀"}[heading]);
+        NeonDungeonUI.DialogueAvatar(Layout.playerAvatar);
+        NeonDungeonUI.Health(Layout.playerHealth,"GAMERBOY",hp,MaximumHP,NeonDungeonUI.Pink,PlayerLevel);
+        float mx=width-240;
+        Rect mapRect=Layout.Resolve(Layout.map,width,0);
+        DrawLocalMinimap(mapRect);
         // Reuse the existing message rectangle, colors, font and box style.
         if (IntroductionActive)
         {
             IntroLine line = introduction.Current;
-            GUI.Box(new Rect(310,height-100,width-330,80), line == null ? "..." : line.Speaker + "\n" + line.Text + "\n[ESPACIO: siguiente / ENTER: saltar intro]");
+            Rect dialogueRect = Layout.Resolve(Layout.dialogue,0,height);
+            if(line!=null&&line.Speaker=="GAMERBOY")NeonDungeonUI.DialogueAvatar(Layout.Resolve(Layout.dialogueAvatar,0,height));
+            NeonDungeonUI.Dialogue(dialogueRect,line == null ? "" : line.Speaker,line == null ? "..." : introTyping.VisibleText(Time.unscaledTime,Layout.lettersPerSecond,true),Layout.preservePanelAspect,line!=null&&introTyping.IsComplete(Time.unscaledTime,Layout.lettersPerSecond));
+            var skipStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter };
+            GUI.Label(new Rect(width/2-160,height/2-16,320,32), "ENTER: saltar intro", skipStyle);
         }
+        else if(worldDialogue.Active)DrawWorldDialogue(height);
+        else if (preservationLine>=0) DrawPreservationDialogue(height);
         else if (!introductionCompleted || battle || lost || victories > 0)
-            GUI.Box(new Rect(310,height-100,width-330,80),message);
+            { messageTyping.SetText(message,Time.unscaledTime);NeonDungeonUI.Message(Layout.Resolve(Layout.message,width,height),messageTyping.VisibleText(Time.unscaledTime,Layout.lettersPerSecond,true),Layout.preservePanelAspect); }
         if(battle && (combatHack==null || !combatHack.Active))
         {
-            GUI.Box(new Rect(width/2-160,25,320,65),"SENTINELA\nHP "+Mathf.Max(0,enemyHP)+" / 20");
-            GUI.enabled=!IntroductionActive&&!busy&&!lost;
+            if(activeEnemy>=0&&activeEnemy<enemyObjects.Count&&enemyObjects[activeEnemy]!=null)
+                NeonDungeonUI.EnemyHealth(Layout.Resolve(Layout.enemyHealth,width/2,0),enemyObjects[activeEnemy].name,enemyHP,enemyObjects[activeEnemy].GetComponent<EnemyCombatStats>().maximumHP,enemyObjects[activeEnemy].GetComponent<EnemyCombatStats>().CombatLabel);
+            DrawEnemyTargets(scale);
+            GUI.enabled=!IntroductionActive&&!busy&&!lost&&!selectingEnemy;
             string[] labels=CombatLabels();
             for(int i=0;i<labels.Length;i++)
             {
                 string caption=i==selectedCombatAction ? "> "+labels[i]+" <" : labels[i];
-                GUI.enabled=!IntroductionActive&&!busy&&!lost && (combatMenu!=CombatMenu.Items || i==inventorySettings.items.Length || (inventorySettings.items[i]!=null && itemCounts[i]>0));
-                if(GUI.Button(new Rect(20,height-33-labels.Length*48+i*48,280,42),caption)) { selectedCombatAction=i; Action(i); }
+                GUI.enabled=!IntroductionActive&&!busy&&!lost&&(!selectingEnemy||i==(pendingTargetHack!=null?1:0)) && (combatMenu!=CombatMenu.Items || i==CombatItemIndices().Count || itemCounts[CombatItemIndices()[i]]>0);
+                if(NeonDungeonUI.Action(new Rect(Layout.combatOffset.x,height+Layout.combatOffset.y-(labels.Length-i)*(Layout.combatButtonSize.y+Layout.combatButtonGap),Layout.combatButtonSize.x,Layout.combatButtonSize.y),labels[i],i==selectedCombatAction)) { selectedCombatAction=i; Action(i); }
             }
-            GUI.Label(new Rect(20,height-81-labels.Length*48,290,42),"Flechas: elegir / ENTER: usar\nESC: volver");
             GUI.enabled=true;
         }
-        else GUI.Box(new Rect(20,height-100,270,80),"W/S: avanzar / retroceder\nA/D: girar\nTambién: flechas");
         if(lost&&!IntroductionActive&&GUI.Button(new Rect(width/2-100,height/2,200,50),"Reiniciar")) RestartNewGame();
         GUI.color=new Color(0,0,0,.12f);
         for(int y=0;y<height;y+=4) GUI.DrawTexture(new Rect(0,y,width,1),Texture2D.whiteTexture);
         if(glitch>0) { GUI.color=new Color(1,0,.5f,.25f); for(int i=0;i<12;i++) GUI.DrawTexture(new Rect(0,(i*73+Time.frameCount*13)%height,width,7),Texture2D.whiteTexture); }
         GUI.color=Color.white;
-        if(!levelComplete && !IntroductionActive && !battle && !lost && exitDoor!=null && exitDoor.CanInteract(view.transform.position))
+        if(!levelComplete && !IntroductionActive && !battle && !lost && DoorInteractionAvailable(exitDoor))
             GUI.Box(new Rect(width/2-140,height-155,280,45),"[E] Abrir puerta");
+        DrawRefugePrompt(width,height);DrawMapEntityPrompt(width,height);DrawItemReceipts(width,height);
+        DrawPreservationPrompt(width,height);DrawPlayerLevelNotice(width);DrawHackUnlockNotice(width);
+        if(enemyBarks!=null&&!IntroductionActive&&!levelComplete) {
+            if(barkSpeaker!=null) {
+                var visual=barkSpeaker.GetComponent<GhostEnemyVisual>();
+                Vector3 screenPoint=view.WorldToScreenPoint(barkSpeaker.position+Vector3.up*((visual!=null?visual.WorldHeight:2)+.15f));
+                if(screenPoint.z>0) {
+                    Vector2 anchor=new Vector2(screenPoint.x/scale,(Screen.height-screenPoint.y)/scale);
+                    float left=8,right=width-8;
+                    // Neighbour midpoints reserve a separate horizontal lane for each speaker.
+                    foreach(var other in enemyObjects) if(other!=null && other.transform!=barkSpeaker) {
+                        var otherVisual=other.GetComponent<GhostEnemyVisual>();
+                        Vector3 head=view.WorldToScreenPoint(other.transform.position+Vector3.up*((otherVisual!=null?otherVisual.WorldHeight:2)+.15f));
+                        if(head.z<=0)continue;
+                        float x=head.x/scale;
+                        if(x<anchor.x)left=Mathf.Max(left,(x+anchor.x)*.5f+8);
+                        else right=Mathf.Min(right,(x+anchor.x)*.5f-8);
+
+                    }
+                    enemyBarks.Draw(width,height,anchor,true,left,right);
+                }
+            }
+        }
         if(levelComplete) DrawCompletion(width,height);
     }
 }

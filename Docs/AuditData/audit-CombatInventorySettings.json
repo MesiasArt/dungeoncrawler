@@ -1,0 +1,20 @@
+{
+    "maximumHP": 30,
+    "items": [
+        {
+            "displayName": "Poción pequeña",
+            "healHP": 25,
+            "startingQuantity": 3
+        },
+        {
+            "displayName": "Poción mediana",
+            "healHP": 50,
+            "startingQuantity": 2
+        },
+        {
+            "displayName": "Poción grande",
+            "healHP": 100,
+            "startingQuantity": 1
+        }
+    ]
+}

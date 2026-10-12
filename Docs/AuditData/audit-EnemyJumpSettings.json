@@ -1,0 +1,21 @@
+{
+    "bpm": 145.0,
+    "musicOffsetSeconds": 0.0,
+    "judgementOffsetSeconds": 0.0,
+    "perfectWindowSeconds": 0.06499999761581421,
+    "goodWindowSeconds": 0.125,
+    "beatsPerEnemy": 2,
+    "groundJumpBeats": 2,
+    "firstEnemyBeat": 8,
+    "scheduleLeadSeconds": 0.5,
+    "enemiesToWin": 10,
+    "enemySpeed": 260.0,
+    "gravity": 3000.0,
+    "jumpForce": 1020.0,
+    "bounceForce": 950.0,
+    "weakBounceForce": 180.0,
+    "landingPressWindow": 0.14000000059604646,
+    "enemySpacing": 260.0,
+    "spacingVariation": 0.07999999821186066,
+    "speedPerCombo": 0.017999999225139619
+}

@@ -1,0 +1,50 @@
+UnityEditor.EditorApplication.isPaused=false;
+
+var d=UnityEngine.Object.FindObjectOfType<DungeonPrototype>();d.enabled=false;d.StopAllCoroutines();
+var f=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+System.Action<string,object> set=(n,v)=>typeof(DungeonPrototype).GetField(n,f).SetValue(d,v);
+System.Func<string,object> get=n=>typeof(DungeonPrototype).GetField(n,f).GetValue(d);
+System.Func<string,object[],object> call=(n,a)=>typeof(DungeonPrototype).GetMethod(n,f).Invoke(d,a);
+var results=new System.Collections.Generic.List<string>();System.Action<bool,string> check=(ok,label)=>{if(!ok)throw new System.Exception(label);results.Add("PASS "+label);};
+var catalog=PlayerHackCatalog.Current;check(catalog.Find("hack.jump").Unlocked(1,null),"JUMP LV1");
+set("playerLevel",7);check(!System.Array.Exists(d.AvailableHackIds,id=>id=="hack.overclock"),"OVERCLOCK bloqueado LV7");
+var oc=d.GetComponent<OverclockHack>()??d.gameObject.AddComponent<OverclockHack>();set("selectedHackId","hack.overclock");set("busy",false);call("BeginTargetHack",new object[]{oc});check(!oc.Active,"No ejecuta bloqueado");
+set("playerLevel",8);check(System.Array.Exists(d.AvailableHackIds,id=>id=="hack.overclock"),"Disponible LV8");
+var model=new OverclockModel(10,5,20);for(int i=0;i<19;i++)check(model.Press(10+i*.1),"Pulsacion individual "+(i+1));check(!model.Finished&&model.Presses==19,"19 pulsaciones no completan");model.Press(14.9);check(model.Finished&&model.Success&&model.Presses==20&&model.Charge==1,"Exito con20 antes del limite");check(!model.Press(14.95)&&model.Presses==20,"No acumula despues de terminar");
+var failed=new OverclockModel(10,5,20);failed.Press(10.1);failed.Tick(15);check(failed.Finished&&!failed.Success,"Fallo al agotar5 segundos");check(!failed.Press(15),"Pulsacion en limite no gana");
+var backwards=new OverclockModel(10,5,20);backwards.Tick(12);backwards.Tick(11);check(backwards.Remaining==3,"Reloj no retrocede");
+int callbacks=0;oc.BeginSession(score=>callbacks++,OverclockHack.ClockNow);
+for(int i=0;i<20;i++)oc.RegisterPress(oc.Model.Started+i*.1);
+check(callbacks==1&&!oc.Active&&oc.AttackQuality(1)==2.5f,"Exito callback y calidad2.5 una vez");
+oc.RegisterPress(oc.Model.Started+3);oc.TickSession(oc.Model.Started+10);check(callbacks==1,"Daño no se solicita dos veces");
+oc.enabled=false;oc.enabled=true;callbacks=0;oc.BeginSession(score=>callbacks++,OverclockHack.ClockNow);oc.TickSession(oc.Model.Started+5);
+check(callbacks==1&&oc.AttackQuality(1)==.5f,"Fallo callback y calidad0.5");
+oc.enabled=false;oc.enabled=true;
+int atk=d.PlayerStatValues[1];int def=8;int strong=CombatMath.Damage(atk,def,2.5f,false,1,CombatBalanceSettings.Current);int weak=CombatMath.Damage(atk,def,.5f,false,1,CombatBalanceSettings.Current);int naked=CombatMath.Damage(atk,0,2.5f,false,1,CombatBalanceSettings.Current);
+check(strong>weak&&strong<naked,"CombatMath multiplica calidad y aplica DEF");
+var keyboard=UnityEngine.InputSystem.InputSystem.AddDevice<UnityEngine.InputSystem.Keyboard>("OverclockTestKeyboard");
+var pad=UnityEngine.InputSystem.InputSystem.AddDevice<UnityEngine.InputSystem.Gamepad>("OverclockTestPad");
+UnityEngine.InputSystem.InputSystem.EnableDevice(keyboard);UnityEngine.InputSystem.InputSystem.EnableDevice(pad);
+try{
+ UnityEngine.InputSystem.InputSystem.QueueStateEvent(keyboard,new UnityEngine.InputSystem.LowLevel.KeyboardState(UnityEngine.InputSystem.Key.Space));UnityEngine.InputSystem.InputSystem.Update();
+ callbacks=0;oc.BeginSession(score=>callbacks++,OverclockHack.ClockNow);UnityEngine.InputSystem.InputSystem.Update();check(oc.Model.Presses==0,"Tecla mantenida al abrir no cuenta");
+ UnityEngine.InputSystem.InputSystem.QueueStateEvent(keyboard,new UnityEngine.InputSystem.LowLevel.KeyboardState());UnityEngine.InputSystem.InputSystem.Update();
+ UnityEngine.InputSystem.InputSystem.QueueStateEvent(keyboard,new UnityEngine.InputSystem.LowLevel.KeyboardState(UnityEngine.InputSystem.Key.Space));UnityEngine.InputSystem.InputSystem.Update();
+ check(oc.Model.Presses==1,"Input System teclado cuenta nueva pulsacion");
+ for(int i=0;i<5;i++){UnityEngine.InputSystem.InputSystem.QueueStateEvent(keyboard,new UnityEngine.InputSystem.LowLevel.KeyboardState(UnityEngine.InputSystem.Key.Space));UnityEngine.InputSystem.InputSystem.Update();}
+ check(oc.Model.Presses==1,"Mantener tecla no repite carga");
+ UnityEngine.InputSystem.InputSystem.QueueStateEvent(keyboard,new UnityEngine.InputSystem.LowLevel.KeyboardState());UnityEngine.InputSystem.InputSystem.Update();
+ UnityEngine.InputSystem.InputSystem.QueueStateEvent(keyboard,new UnityEngine.InputSystem.LowLevel.KeyboardState(UnityEngine.InputSystem.Key.Space));UnityEngine.InputSystem.InputSystem.Update();
+ check(oc.Model.Presses==2,"Soltar y volver a pulsar cuenta");
+ UnityEngine.InputSystem.InputSystem.QueueStateEvent(pad,new UnityEngine.InputSystem.LowLevel.GamepadState().WithButton(UnityEngine.InputSystem.LowLevel.GamepadButton.South));UnityEngine.InputSystem.InputSystem.Update();
+ check(oc.Model.Presses==3,"Mando cuenta pulsacion incluso con teclado sostenido");
+ for(int i=0;i<4;i++){UnityEngine.InputSystem.InputSystem.QueueStateEvent(pad,new UnityEngine.InputSystem.LowLevel.GamepadState().WithButton(UnityEngine.InputSystem.LowLevel.GamepadButton.South));UnityEngine.InputSystem.InputSystem.Update();}
+ check(oc.Model.Presses==3,"Mando sostenido no repite");
+ UnityEngine.InputSystem.InputSystem.QueueStateEvent(pad,new UnityEngine.InputSystem.LowLevel.GamepadState());UnityEngine.InputSystem.InputSystem.Update();
+ UnityEngine.InputSystem.InputSystem.QueueStateEvent(pad,new UnityEngine.InputSystem.LowLevel.GamepadState().WithButton(UnityEngine.InputSystem.LowLevel.GamepadButton.South));UnityEngine.InputSystem.InputSystem.Update();
+ check(oc.Model.Presses==4,"Mando soltar y pulsar cuenta");
+ for(int i=0;i<16;i++){UnityEngine.InputSystem.InputSystem.QueueStateEvent(keyboard,new UnityEngine.InputSystem.LowLevel.KeyboardState());UnityEngine.InputSystem.InputSystem.Update();UnityEngine.InputSystem.InputSystem.QueueStateEvent(keyboard,new UnityEngine.InputSystem.LowLevel.KeyboardState(UnityEngine.InputSystem.Key.Space));UnityEngine.InputSystem.InputSystem.Update();}
+ check(oc.Model.Success&&oc.Model.Presses==20&&callbacks==1,"20 pulsaciones Input System completan sin callback duplicado");
+}catch(System.Exception ex){throw new System.Exception("Input tests: "+ex);}
+finally{oc.enabled=false;oc.enabled=true;UnityEngine.InputSystem.InputSystem.RemoveDevice(keyboard);UnityEngine.InputSystem.InputSystem.RemoveDevice(pad);}
+System.IO.File.WriteAllLines(System.IO.Path.Combine(Application.dataPath,"../Tests/OverclockResults.txt"),results);return results;

@@ -1,0 +1,4 @@
+using UnityEditor;
+public sealed class MakongTextureImporter:AssetPostprocessor {
+ void OnPreprocessTexture(){if(!assetPath.StartsWith("Assets/Resources/Enemies/Makong/")&&!assetPath.StartsWith("Assets/Resources/UI/JumpEnemies/Makong_"))return;var t=(TextureImporter)assetImporter;t.filterMode=UnityEngine.FilterMode.Point;t.mipmapEnabled=false;t.alphaIsTransparency=true;t.npotScale=TextureImporterNPOTScale.None;t.maxTextureSize=1024;t.textureCompression=TextureImporterCompression.Uncompressed;t.wrapMode=UnityEngine.TextureWrapMode.Clamp;if(assetPath.EndsWith("/tongue_sprite.png")){t.textureType=TextureImporterType.Sprite;t.spriteImportMode=SpriteImportMode.Single;t.spritePixelsPerUnit=308f/1.8f;t.spriteBorder=new UnityEngine.Vector4(40,0,40,0);var spriteSettings=new TextureImporterSettings();t.ReadTextureSettings(spriteSettings);spriteSettings.spriteMeshType=UnityEngine.SpriteMeshType.FullRect;t.SetTextureSettings(spriteSettings);}}
+}

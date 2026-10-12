@@ -1,0 +1,48 @@
+PASS Guardado aislado del laboratorio
+PASS ID estable, categoría subjefe y reservado para encuentros manuales
+PASS IDs visuales anteriores conservados
+PASS 1000 tiradas: Makong y Mimic excluidos del spawn aleatorio
+PASS Sprite idle_0 importado sin distorsión
+PASS Sprite idle_1 importado sin distorsión
+PASS Sprite idle_2 importado sin distorsión
+PASS Sprite attack_0 importado sin distorsión
+PASS Sprite attack_1 importado sin distorsión
+PASS Sprite hurt importado sin distorsión
+PASS Sprite death_0 importado sin distorsión
+PASS Sprite death_1 importado sin distorsión
+PASS Sprite jump_0 importado sin distorsión
+PASS Sprite jump_1 importado sin distorsión
+PASS Sprite jump_2 importado sin distorsión
+PASS Sprite jump_3 importado sin distorsión
+PASS Sprite jump_4 importado sin distorsión
+PASS Sprite swallow_prepare_0 importado sin distorsión
+PASS Sprite swallow_prepare_1 importado sin distorsión
+PASS Sprite swallow_tongue_0 importado sin distorsión
+PASS Sprite swallow_tongue_1 importado sin distorsión
+PASS Sprite swallow_tongue_2 importado sin distorsión
+PASS Sprite swallow_eat_0 importado sin distorsión
+PASS Sprite swallow_eat_1 importado sin distorsión
+PASS Encuentro de Makong y dos compañeros a nivel fijo
+PASS Progresión y equipo del jugador reutilizados
+PASS Instancia de laboratorio sin respawn automático
+PASS Inicio super salto
+PASS Makong fuera de cámara durante super salto
+PASS Círculo de caída crece en el suelo
+PASS Aterrizaje restaura posición y visibilidad
+PASS Pisotón: un solo daño y DEF aplicada por CombatMath
+PASS Salto limpia efectos y libera combate
+PASS Inicio lengua con compañero
+PASS La lengua arrastra al compañero
+PASS Compañero consumido sale del encuentro y turnos
+PASS Curación escalada y limitada al máximo
+PASS Baja, drops y XP registrados una sola vez
+PASS Lengua limpia efectos y libera combate
+PASS Combate normal: devora objetivo seleccionado, no rompe enumeración ni selección
+PASS Sin compañero: devorar usa super salto
+PASS Combate individual continúa
+PASS Makong compatible con sprites de JUMP / OVERCLOCK
+PASS Primer frame de muerte
+PASS Segundo frame de muerte
+PASS Selector reinicia y prueba otra especie individualmente
+PASS Volver al selector limpia el combate
+TOTAL 47 PASS / 0 FAIL

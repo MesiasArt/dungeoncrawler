@@ -1,0 +1,34 @@
+PASS Equipo inicial 37/9/7/10
+PASS Nivel 1 base 30/6/3/4
+PASS Subida nivel 2
+PASS Sin curacion automatica
+PASS Crecimiento HP con equipo
+PASS Multiples niveles y sobrante
+PASS Nivel 20 equipado
+PASS Desequipar nivel 20
+PASS Reequipar nivel 20
+PASS Diferencia LV 15
+PASS Diferencia LV 11
+PASS Diferencia LV 10
+PASS Diferencia LV 9
+PASS Diferencia LV 7
+PASS Diferencia LV 5
+PASS Diferencia LV 2
+PASS Categorias Elite y Jefe
+PASS Grupo 1 sin duplicados
+PASS Victoria 1 idempotente
+PASS Grupo 2 sin duplicados
+PASS Victoria 2 idempotente
+PASS Grupo 3 sin duplicados
+PASS Victoria 3 idempotente
+PASS Huir descarta XP pendiente
+PASS Respawn legitimo nueva vida da XP
+PASS Maximo LV50
+PASS No acumula mas alla maximo
+PASS Guardado restauracion XP nivel HP
+PASS Equipo guardado conserva bonos
+PASS Migracion partida sin campos XP
+PASS JUMP usa fuerza escalada y misma formula sin suerte
+PASS Ataque normal usa fuerza escalada
+PASS Una vida no entrega XP en otro encuentro
+PASS Recuperacion parcial configurable sin llenar HP

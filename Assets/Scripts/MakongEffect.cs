@@ -1,0 +1,8 @@
+using UnityEngine;
+// Own the generated line material; transient effects never become scene assets.
+public sealed class MakongEffect:MonoBehaviour {
+ Material owned;Mesh ownedMesh;
+ public LineRenderer Initialize(Color color,float width,bool loop=false){owned=new Material(Resources.Load<Shader>("Shaders/MakongEffect"));owned.SetColor("_BaseColor",color);var line=gameObject.AddComponent<LineRenderer>();line.sharedMaterial=owned;line.useWorldSpace=true;line.alignment=LineAlignment.TransformZ;line.widthMultiplier=width;line.loop=loop;line.numCapVertices=4;line.shadowCastingMode=UnityEngine.Rendering.ShadowCastingMode.Off;return line;}
+ public Renderer InitializeRing(){owned=new Material(Resources.Load<Shader>("Shaders/MakongEffect"));owned.SetColor("_BaseColor",new Color(1,.08f,.4f,.85f));ownedMesh=new Mesh();const int count=48;var vertices=new Vector3[count*2];var triangles=new int[count*6];for(int n=0;n<count;n++){float a=n*Mathf.PI*2/count;Vector3 point=new Vector3(Mathf.Cos(a),0,Mathf.Sin(a));vertices[n*2]=point*.94f;vertices[n*2+1]=point;int next=(n+1)%count;int at=n*6;triangles[at]=n*2;triangles[at+1]=next*2;triangles[at+2]=n*2+1;triangles[at+3]=n*2+1;triangles[at+4]=next*2;triangles[at+5]=next*2+1;}ownedMesh.vertices=vertices;ownedMesh.triangles=triangles;ownedMesh.RecalculateBounds();gameObject.AddComponent<MeshFilter>().sharedMesh=ownedMesh;var renderer=gameObject.AddComponent<MeshRenderer>();renderer.sharedMaterial=owned;renderer.shadowCastingMode=UnityEngine.Rendering.ShadowCastingMode.Off;return renderer;}
+ void OnDestroy(){if(ownedMesh!=null)Destroy(ownedMesh);if(owned!=null)Destroy(owned);}
+}
