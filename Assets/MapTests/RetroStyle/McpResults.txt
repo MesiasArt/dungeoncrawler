@@ -1,0 +1,27 @@
+PASS Arranque original bloqueado: solo marcador desactivado, sin geometría ni cámara del juego
+PASS Escena abre con cuadrícula existente válida
+PASS Avanzar cambia composición y posición exactamente una casilla
+PASS Giro90 actualiza perspectiva
+PASS Giro inverso restaura orientación
+PASS Retroceder una casilla
+PASS Pared bloquea movimiento
+PASS Puerta cerrada bloquea movimiento
+PASS Puerta abierta cambia composición
+PASS Puerta abierta permite pasar
+PASS Sprite enemigo visible en pasillo
+PASS Sprite aumenta de tamaño al acercarse
+PASS Pared oculta enemigo situado detrás
+PASS Puerta cerrada oculta sprite
+PASS Abrir puerta descubre sprite
+PASS Objeto de muestra visible dentro de habitación
+PASS No recompone ni crea texturas por frame en reposo
+PASS Resolución426×240, Point, sin mipmaps
+PASS Imagen sin antialiasing ni mipmaps
+PASS Straight: superficies encajan sin huecos
+PASS Corner: superficies encajan sin huecos
+PASS Intersection: superficies encajan sin huecos
+PASS WideRoom: superficies encajan sin huecos
+PASS DoorClosed: superficies encajan sin huecos
+PASS DoorOpen: superficies encajan sin huecos
+PASS Cámara3D independiente con RenderTexture válida
+TOTAL 26 PASS / 0 FAIL

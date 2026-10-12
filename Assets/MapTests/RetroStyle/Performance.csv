@@ -1,0 +1,5 @@
+mode,resolution,frames,fps,frame_ms,cpu_playerloop_ms,gpu_ms,draw_calls,setpass,gc_bytes_frame,recompose_ms,buffer_bytes
+Pseudo3DDrawn,256x192,120,263.64,3.793,0.861,0.903,8.00,9.00,14401,16.351,4128768
+Current3DReference,256x192,120,169.27,5.908,2.040,1.225,204.00,17.00,14402,16.858,4128768
+Pseudo3DDrawn,426x240,120,261.25,3.828,0.886,0.887,8.00,9.00,14400,33.230,8588160
+Current3DReference,426x240,120,188.70,5.299,1.648,1.464,260.00,17.00,14402,33.931,8588160

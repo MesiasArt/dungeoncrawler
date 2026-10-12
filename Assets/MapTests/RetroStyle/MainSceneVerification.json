@@ -1,0 +1,14 @@
+{
+  "scene": "Assets/Scenes/SampleScene.unity",
+  "originalGameReady": true,
+  "experimentalRenderers": 0,
+  "walls": 871,
+  "expectedWalls": 871,
+  "wallsOverWalkableCells": 0,
+  "stats": [
+    37,
+    9,
+    7,
+    10
+  ]
+}
