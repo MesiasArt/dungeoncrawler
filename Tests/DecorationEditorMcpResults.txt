@@ -1,0 +1,53 @@
+PASS Catálogo18 prefabs reutilizables
+PASS IDs de catálogo únicos
+PASS wall.crt sin colisiones
+PASS wall.crt sin luces dinámicas
+PASS wall.vent sin colisiones
+PASS wall.vent sin luces dinámicas
+PASS wall.control sin colisiones
+PASS wall.control sin luces dinámicas
+PASS wall.sign sin colisiones
+PASS wall.sign sin luces dinámicas
+PASS wall.glitch sin colisiones
+PASS wall.glitch sin luces dinámicas
+PASS wall.pipe sin colisiones
+PASS wall.pipe sin luces dinámicas
+PASS wall.cable sin colisiones
+PASS wall.cable sin luces dinámicas
+PASS wall.window sin colisiones
+PASS wall.window sin luces dinámicas
+PASS floor.circuit sin colisiones
+PASS floor.circuit sin luces dinámicas
+PASS floor.signal sin colisiones
+PASS floor.signal sin luces dinámicas
+PASS ceiling.light sin colisiones
+PASS ceiling.light sin luces dinámicas
+PASS ceiling.duct sin colisiones
+PASS ceiling.duct sin luces dinámicas
+PASS ceiling.fan sin colisiones
+PASS ceiling.fan sin luces dinámicas
+PASS room.server sin colisiones
+PASS room.server sin luces dinámicas
+PASS room.arcade sin colisiones
+PASS room.arcade sin luces dinámicas
+PASS room.generator sin colisiones
+PASS room.generator sin luces dinámicas
+PASS room.column sin colisiones
+PASS room.column sin luces dinámicas
+PASS door.frame sin colisiones
+PASS door.frame sin luces dinámicas
+PASS Automática genera población limitada
+PASS Misma semilla y mapa produce exactamente mismas posiciones/IDs
+PASS No altera RNG del combate o encuentros
+PASS Semilla distinta cambia distribución
+PASS Automáticas válidas, interactivos y enemigos protegidos
+PASS Desactivar zona elimina sus automáticas y marcos
+PASS Densidad0 deja todo despejado
+PASS Desactivar automática conserva mapa sin nuevos objetos
+PASS Planner no modifica mapas, zonas, encuentros o entidades originales
+PASS Tres composiciones manuales válidas
+PASS Mover conserva identidad
+PASS Undo de movimiento
+PASS Redo de movimiento
+PASS Colocación persiste al guardar/importar asset
+PASS 100 semillas reproducibles con límites y referencias válidas

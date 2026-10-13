@@ -5,8 +5,10 @@ public static class NeonDungeonUI
  static readonly System.Collections.Generic.Dictionary<string,Texture2D> textures=new System.Collections.Generic.Dictionary<string,Texture2D>();
  public static readonly Color Pink=new Color(1,.02f,.36f), Cyan=new Color(0,.78f,1);
  public static int FontSize=18;
+ public static Font PixelFont;
+ public static void ApplyFont(){if(PixelFont==null)PixelFont=Resources.Load<Font>("UI/Fonts/ThaleahFat_TTF");if(PixelFont!=null){GUI.skin.font=PixelFont;GUI.skin.label.font=PixelFont;GUI.skin.button.font=PixelFont;GUI.skin.toggle.font=PixelFont;}}
  public static float ContinueBlinkSeconds=.45f;
- static void Prepare() { if(text==null) { text=new GUIStyle(GUI.skin.label){fontSize=18,wordWrap=true};text.normal.textColor=Color.white;centered=new GUIStyle(text){alignment=TextAnchor.MiddleCenter};messageText=new GUIStyle(text){alignment=TextAnchor.MiddleLeft,clipping=TextClipping.Clip}; } text.fontSize=centered.fontSize=messageText.fontSize=FontSize; }
+ static void Prepare() { ApplyFont(); if(text==null) { text=new GUIStyle(GUI.skin.label){fontSize=18,wordWrap=true};text.normal.textColor=Color.white;centered=new GUIStyle(text){alignment=TextAnchor.MiddleCenter};messageText=new GUIStyle(text){alignment=TextAnchor.MiddleLeft,clipping=TextClipping.Clip}; } text.font=centered.font=messageText.font=PixelFont;text.fontSize=centered.fontSize=messageText.fontSize=FontSize; }
  static Texture2D Texture(string key) { Texture2D t;if(!textures.TryGetValue(key,out t)) textures[key]=t=Resources.Load<Texture2D>("UI/MenuUI/"+key);return t; }
  static void Art(Rect r,string key) { var t=Texture(key);if(t==null)return;var c=GUI.color;GUI.color=GUI.enabled?Color.white:new Color(.5f,.5f,.5f,1);GUI.DrawTexture(r,t,ScaleMode.StretchToFill,true);GUI.color=c; }
  static void Fill(Rect r,Color color) { var c=GUI.color;GUI.color=color;GUI.DrawTexture(r,Texture2D.whiteTexture);GUI.color=c; }
@@ -29,6 +31,14 @@ public static class NeonDungeonUI
   Rect panel=r;Art(panel,"Health");Fill(Relative(panel,.065f,.12f,.86f,.72f),new Color(.008f,.015f,.055f));
   Label(Relative(panel,.1f,.12f,.8f,.22f),"LV "+level+"   "+name);Label(Relative(panel,.1f,.35f,.8f,.23f),"HP "+Mathf.Max(0,hp)+" / "+maximum);
   Rect bar=Relative(panel,.1f,.64f,.78f,.12f);Fill(bar,new Color(.13f,.03f,.15f));bar.width*=Mathf.Clamp01(hp/(float)Mathf.Max(1,maximum));Fill(bar,color);
+ }
+ public static void PlayerStatus(Rect r,string name,int level,float life,float bits,float xp){
+  Art(r,"Health");Fill(Relative(r,.065f,.12f,.86f,.72f),new Color(.008f,.015f,.055f));
+  Label(Relative(r,.1f,.13f,.8f,.23f),"LV "+level+"  "+name);
+  var resourceLabel=new GUIStyle(GUI.skin.label){fontSize=13,alignment=TextAnchor.MiddleLeft};GUI.Label(Relative(r,.1f,.37f,.14f,.17f),"HP",resourceLabel);GUI.Label(Relative(r,.1f,.53f,.14f,.16f),"BP",resourceLabel);GUI.Label(Relative(r,.1f,.67f,.14f,.14f),"EXP",resourceLabel);
+  Rect bar=Relative(r,.24f,.40f,.64f,.11f);Fill(bar,new Color(.13f,.03f,.15f));var fill=bar;fill.width*=Mathf.Clamp01(life);Fill(fill,Pink);
+  bar=Relative(r,.24f,.56f,.64f,.10f);Fill(bar,new Color(.015f,.04f,.14f));fill=bar;fill.width*=Mathf.Clamp01(bits);Fill(fill,new Color(.12f,.38f,1));
+  bar=Relative(r,.24f,.72f,.64f,.035f);Fill(bar,new Color(.03f,.05f,.09f));fill=bar;fill.width*=Mathf.Clamp01(xp);Fill(fill,new Color(.25f,.95f,.65f));
  }
  public static void EnemyHealth(Rect r,string name,int hp,int maximum,string displayLabel=null) { Art(r,"EnemyHealth");var enemyNameStyle=new GUIStyle(GUI.skin.label){fontSize=Mathf.Min(FontSize,18),alignment=TextAnchor.MiddleCenter};string title=displayLabel??name;Rect nameRect=Relative(r,.35f,.24f,.56f,.2f);while(enemyNameStyle.fontSize>10&&enemyNameStyle.CalcSize(new GUIContent(title)).x>nameRect.width)enemyNameStyle.fontSize--;GUI.Label(nameRect,title,enemyNameStyle);Rect bar=Relative(r,.35f,.46f,.56f,.2f);Fill(bar,new Color(.13f,.03f,.15f));Rect fill=bar;fill.width*=Mathf.Clamp01(hp/(float)Mathf.Max(1,maximum));Fill(fill,Pink);Label(bar,"HP "+Mathf.Max(0,hp)+" / "+maximum,true);string kind=EnemyRoster.ResourceIds[EnemyRoster.KindForName(name)];string key="Portrait/"+kind;Texture2D portrait;if(!textures.TryGetValue(key,out portrait))textures[key]=portrait=Resources.Load<Texture2D>("Enemies/"+kind+"/idle_0");if(portrait!=null)GUI.DrawTexture(Relative(r,.06f,.21f,.23f,.5f),portrait,ScaleMode.ScaleToFit,true); }
  static void Sheet(Rect r,Rect s,bool flip=false) { var t=Texture("Sheet");if(t==null)return;var c=GUI.color;GUI.color=Color.white;GUI.DrawTextureWithTexCoords(r,t,new Rect(s.x/t.width,flip?1-s.y/t.height:1-s.yMax/t.height,s.width/t.width,(flip?-1:1)*s.height/t.height),true);GUI.color=c; }

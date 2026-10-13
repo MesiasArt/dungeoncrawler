@@ -21,7 +21,7 @@ MonoBehaviour:
   defensePerExtraCoin: 2
   potions:
   - itemId: 1d84c78dcae84edf8d28847da3c5ab94
-    chancePercent: 20
+    chancePercent: 35
     quantity: 1
   - itemId: b19d2185c0a040a5befb4ecf6d0764dd
     chancePercent: 7

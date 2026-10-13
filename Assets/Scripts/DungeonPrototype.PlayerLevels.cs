@@ -18,5 +18,13 @@ public partial class DungeonPrototype {
  void AwardEncounterXP(){int amount=encounterXP;encounterXP=0;xpDefeats.Clear();if(amount<=0)return;GainPlayerXP(amount);}
  public void GainPlayerXP(long amount){int previousLevel=PlayerLevel;int gained=Levels.AddXP(ref playerLevel,ref playerExperience,amount);if(gained<=0)return;PlayerLevelHackUnlocks(previousLevel);int healing=Levels.healFlatHP+Mathf.RoundToInt(MaximumHP*Levels.healMaximumFraction);hp=(int)System.Math.Min(MaximumHP,(long)hp+(long)Mathf.Max(0,healing)*gained);levelNotice="LEVEL UP — GAMERBOY LV "+PlayerLevel;levelNoticeUntil=Time.unscaledTime+4;}
  void RestorePlayerLevel(PlayerProgressionRecord record){playerLevel=Levels.ClampLevel(record.level);playerExperience=System.Math.Max(0,record.experience);Levels.AddXP(ref playerLevel,ref playerExperience,0);encounterXP=0;xpDefeats.Clear();levelNoticeUntil=0;}
+ void DrawExperienceBar(Rect r,bool showRemaining){
+  float progress=XPRequired<=0?1:Mathf.Clamp01(PlayerExperience/(float)XPRequired);
+  NeonDungeonUI.Solid(r,new Color(.035f,.06f,.12f));
+  NeonDungeonUI.Solid(new Rect(r.x,r.y,r.width*progress,r.height),NeonDungeonUI.Cyan);
+  var style=new GUIStyle(GUI.skin.label){fontSize=12,alignment=TextAnchor.MiddleCenter};
+  style.normal.textColor=Color.white;
+  if(showRemaining)GUI.Label(new Rect(r.x,r.yMax+2,r.width,18),XPRequired<=0?"NIVEL MÁXIMO":"XP "+PlayerExperience+" / "+XPRequired+(showRemaining?" · Faltan "+XPRemaining:""),style);
+ }
  void DrawPlayerLevelNotice(float width){if(Time.unscaledTime>=levelNoticeUntil)return;var style=new GUIStyle(GUI.skin.label){fontSize=16,alignment=TextAnchor.MiddleCenter};style.normal.textColor=NeonDungeonUI.Pink;GUI.Label(new Rect(width/2-190,115,380,30),levelNotice,style);}
 }

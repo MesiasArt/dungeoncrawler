@@ -6,7 +6,7 @@ using UnityEngine;
  [TextArea(2,4)] public string lastWords;
  public Color placeholderColor=new Color(.25f,.65f,.85f);
 }
-[System.Serializable] public class TransferNodeDefinition {public string id,displayName;public Vector2Int cell;[Range(0,3)] public int arrivalHeading;public bool triggersRefugeTragedy;}
+[System.Serializable] public class TransferNodeDefinition {public string id,displayName;public Vector2Int cell;[Range(0,3)] public int arrivalHeading;public bool triggersRefugeTragedy;public System.Collections.Generic.List<string> revealedRegionIds=new System.Collections.Generic.List<string>();}
 [CreateAssetMenu(menuName="Virtual Dungeon/Refugio y narrativa")]
 public class RefugeSettings:ScriptableObject {
  public string regionId="zone-0",devotoPlacementId="refuge.devoto",rewardId="refuge.core";
@@ -35,6 +35,7 @@ public class RefugeSettings:ScriptableObject {
 }
 [System.Serializable] public class RefugeNpcState {public string id;public int talks;public bool lastWordsHeard;}
 [System.Serializable] public class RefugeProgress {
+ public System.Collections.Generic.List<string> mapRevealedNodes=new System.Collections.Generic.List<string>();
  public bool preservationSignRead;public System.Collections.Generic.List<string> departureGiftIds=new System.Collections.Generic.List<string>();
  public int narrativeVersion;
  public bool savePointIntroSeen,refugeTeleportActivatedByPlayer,refugeTeleportActivatedByDevotee,zone2TeleportActivated,refugeTragedyDiscovered,firstBodyDiscovered,sentinelTeleportSeen,devotoConfrontationSeen;

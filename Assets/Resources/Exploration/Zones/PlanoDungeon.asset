@@ -71,6 +71,7 @@ MonoBehaviour:
   - '########################'
   disabledLegacyObjects: []
   legacyExitDoorCell: {x: 9, y: 7.5}
+  decorations: {fileID: 11400000, guid: 7a2294836d7eab44d92e2c07d7bff10f, type: 2}
   entities: {fileID: 11400000, guid: c4104f796fc0dfb4b852563c7b4fa892, type: 2}
   regions: {fileID: 0}
   includeLegacyObjects: 1

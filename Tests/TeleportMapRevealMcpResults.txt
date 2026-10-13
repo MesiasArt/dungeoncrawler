@@ -1,0 +1,4 @@
+zone-0: cells=170 coverage=True exclusive=True
+zone-1+zone-1.5: cells=189 coverage=True exclusive=True
+zone-2: cells=555 coverage=True exclusive=True
+PlayMode: opened=True frozen=True partial=84 total=170 callbackOnce=True duplicateBlocked=True persisted=True timeRestored=True

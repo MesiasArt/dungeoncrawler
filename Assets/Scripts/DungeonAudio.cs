@@ -9,6 +9,8 @@ public sealed class DungeonAudio : MonoBehaviour
  AudioClip dungeonTrack,combatTrack;
  AudioClip[] clips;
  static bool jumpMusicOverride;
+ bool menuDucked;float musicGain=1;
+ public static void SetMenuDucked(bool active){EnsureInstance();instance.menuDucked=active;}
  public static AudioClip JumpTrack { get { EnsureInstance();return instance.combatTrack; } }
  public static float MusicVolume { get { EnsureInstance();return instance.settings!=null ? instance.settings.musicVolume : .28f; } }
  public static void SetJumpMusicOverride(bool active)
@@ -20,7 +22,7 @@ public sealed class DungeonAudio : MonoBehaviour
   EnsureInstance();
   if(jumpMusicOverride) return;
   AudioClip clip=combat ? instance.combatTrack : instance.dungeonTrack;
-  instance.musicSource.volume=instance.settings!=null ? instance.settings.musicVolume : .28f;
+  instance.musicSource.volume=(instance.settings!=null ? instance.settings.musicVolume : .28f)*instance.musicGain;
   if(instance.musicSource.clip==clip) return;
   instance.musicSource.Stop();instance.musicSource.clip=clip;
   if(clip!=null) instance.musicSource.Play();
@@ -41,10 +43,10 @@ public sealed class DungeonAudio : MonoBehaviour
   settings=Resources.Load<DungeonAudioSettings>("Audio/DungeonAudioSettings");
   dungeonTrack=settings!=null && settings.dungeonMusic!=null ? settings.dungeonMusic : Resources.Load<AudioClip>("Audio/Music/DungeonMusic");
   combatTrack=settings!=null && settings.combatMusic!=null ? settings.combatMusic : Resources.Load<AudioClip>("Audio/Music/CombatMusic");
-  musicSource=gameObject.AddComponent<AudioSource>();musicSource.playOnAwake=false;musicSource.spatialBlend=0;musicSource.loop=true;
+  musicSource=gameObject.AddComponent<AudioSource>();musicSource.playOnAwake=false;musicSource.spatialBlend=0;musicSource.loop=true;musicSource.ignoreListenerPause=true;
   string[] names=System.Enum.GetNames(typeof(Cue));clips=new AudioClip[names.Length];
   for(int i=0;i<names.Length;i++) clips[i]=Resources.Load<AudioClip>("Audio/Temporary/"+names[i]);
  }
- void Update() { if(musicSource!=null&&settings!=null)musicSource.volume=settings.musicVolume; }
+ void Update() {float target=menuDucked?(settings!=null?settings.menuMusicMultiplier:.7f):1;musicGain=Mathf.Lerp(musicGain,target,1-Mathf.Exp(-8*Time.unscaledDeltaTime));if(musicSource!=null)musicSource.volume=(settings!=null?settings.musicVolume:.28f)*musicGain;}
  void OnDestroy() { if(instance==this) { instance=null;jumpMusicOverride=false;lastTextSound=-100; } }
 }

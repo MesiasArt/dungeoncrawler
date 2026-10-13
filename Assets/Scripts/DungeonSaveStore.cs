@@ -36,7 +36,7 @@ public static class DungeonSaveStore {
  return slot==0&&File.Exists(LegacyPath);}
  public static bool Exists {get{return SlotExists(ActiveSlot);}}
  public static void Write(DungeonSaveData data){Write(data,ActiveSlot,data.slotName);}
- public static void Write(DungeonSaveData data,int slot,string name){data.slotName=string.IsNullOrWhiteSpace(name)?"Slot "+(slot+1):name.Trim();data.savedUtc=DateTime.UtcNow.ToString("o");var path=SlotPath(slot);string temp=path+".tmp";File.WriteAllText(temp,JsonUtility.ToJson(data,true));File.Copy(temp,path,true);File.Delete(temp);}
+ public static void Write(DungeonSaveData data,int slot,string name){data.slotName=string.IsNullOrWhiteSpace(name)?"Slot "+(slot+1):name.Trim();data.savedUtc=DateTime.UtcNow.ToString("o");var path=SlotPath(slot);string temp=path+".tmp";File.WriteAllText(temp,JsonUtility.ToJson(data,true));if(File.Exists(path)){for(int i=4;i>=1;i--){string from=path+".bak"+i,to=path+".bak"+(i+1);if(File.Exists(from))File.Copy(from,to,true);}File.Copy(path,path+".bak1",true);}File.Copy(temp,path,true);File.Delete(temp);}
  public static DungeonSaveData Read(){return Read(ActiveSlot);}
  public static DungeonSaveData Read(int slot){if(!SlotExists(slot))return null;string path=SlotPath(slot);if(!File.Exists(path))path=LegacyPath;var data=JsonUtility.FromJson<DungeonSaveData>(File.ReadAllText(path));if(data==null||data.version!=1||data.player==null)throw new InvalidDataException("Partida incompatible");return data;}
 }

@@ -1,0 +1,6 @@
+PASS Main decoration count 35
+PASS Collider count 0
+PASS Added light count 0
+PASS Navigation rows unchanged True
+PASS Unique planned IDs 35
+PASS Valid placements True

@@ -1,0 +1,1 @@
+{ before = 0,1019608, after = 0,1294118, brighter = True, shaderErrors = False }

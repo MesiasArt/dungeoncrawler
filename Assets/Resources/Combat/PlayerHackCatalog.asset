@@ -17,6 +17,7 @@ MonoBehaviour:
     displayName: JUMP
     description: "Salta sobre los enemigos y encadena golpes para aumentar el da\xF1o."
     minimumLevel: 1
+    bitsCost: 10
     available: 1
     unlockMode: 0
     implementationScript: {fileID: 11500000, guid: 1ac163d2865ecc841baa273ee69aaa60, type: 3}
@@ -26,6 +27,7 @@ MonoBehaviour:
     description: "Pulsa r\xE1pidamente para cargar energ\xEDa: m\xE1ximo poder si
       completas la barra antes del l\xEDmite."
     minimumLevel: 8
+    bitsCost: 25
     available: 1
     unlockMode: 0
     implementationScript: {fileID: 11500000, guid: 5eed629a125336248a6e776e17057ec1, type: 3}

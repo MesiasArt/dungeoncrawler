@@ -110,6 +110,7 @@ public partial class DungeonPrototype
     void BeginEncounter(int primary,IList<int> forcedGroup=null)
     {
         if(primary<0||primary>=enemyObjects.Count||enemyObjects[primary]==null)return;
+        ResetConversationCamera();
         DirectorEncounterStarted();BeginEncounterXP();encounterDefeats=0;encounterCoinBonus=0;combatDropsAwarded=false;guaranteedEncounterDrops.Clear();encounter.Clear();encounterHomes.Clear();encounter.Add(primary);
         if(forcedGroup!=null)foreach(int member in forcedGroup)if(member!=primary&&member>=0&&member<enemyObjects.Count&&enemyObjects[member]!=null&&!encounter.Contains(member))encounter.Add(member);
         int wanted=forcedGroup!=null?encounter.Count:slots[primary].placement!=null?1:Random.Range(Mathf.Clamp(EnemySettings.minimumEnemies,1,3),Mathf.Clamp(EnemySettings.maximumEnemies,Mathf.Clamp(EnemySettings.minimumEnemies,1,3),3)+1);
@@ -213,6 +214,7 @@ public partial class DungeonPrototype
         if(hack==null||!CanExecuteHack(hack)){busy=false;message="HACK no disponible.";return;}
         int target=activeEnemy;
         if(!battle||target<0||target>=enemyObjects.Count||enemyObjects[target]==null||enemyLives[target]<=0){message="Objetivo no disponible.";return;}
+        int bitsCost=HackBitsCost(hack);if(CurrentBits<bitsCost){busy=false;message="Bits insuficientes: necesitas "+bitsCost+".";return;}
         var opponent=enemyObjects[target];
         combatHack=hack;busy=true;
         var jump=hack as EnemyJumpHack;if(jump!=null){jump.SetOpponent(opponent);jump.ConfigureAttack(PlayerStrength,opponent.GetComponent<EnemyCombatStats>().defense);}
@@ -224,6 +226,7 @@ public partial class DungeonPrototype
             activeEnemy=target;
             StartCoroutine(ResolveCombatDamage(damage,"HACK"));
         });
+        if(hack.Active||resolved)playerBits=CurrentBits-bitsCost;
         if(!hack.Active)busy=false;
     }
     static readonly Vector3 BattleStageOrigin=new Vector3(1000,0,1000);

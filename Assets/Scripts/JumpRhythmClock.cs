@@ -11,6 +11,12 @@ public sealed class JumpRhythmClock
  public double BeatPosition { get { return (SongTime-Offset)/SecondsPerBeat; } }
  public int BeatCount { get { return Math.Max(0,(int)Math.Floor(BeatPosition)+1); } }
  public float Phase { get { double b=BeatPosition;return (float)(b-Math.Floor(b)); } }
+ // Gameplay elapsed time is independent of the continuously playing combat music.
+ public JumpRhythmClock(EnemyJumpSettings settings)
+ {
+  SecondsPerBeat=60d/Math.Max(1,settings.bpm);Offset=settings.musicOffsetSeconds;
+  ScheduledStart=AudioSettings.dspTime+Math.Max(.2,settings.scheduleLeadSeconds);
+ }
  public JumpRhythmClock(AudioSource source,AudioClip track,EnemyJumpSettings settings)
  {
   SecondsPerBeat=60d/Math.Max(1,settings.bpm);Offset=settings.musicOffsetSeconds;

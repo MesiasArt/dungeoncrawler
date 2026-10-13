@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa16e9516df732b46ba3759d3b084d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonDecorationSettings
+  catalog: {fileID: 11400000, guid: 2c345f49225771840b4b1a39080ae277, type: 2}
+  regions: {fileID: 0}
+  enabled: 1
+  automaticEnabled: 0
+  seed: 1987
+  density: 0.2
+  maximumAutomatic: 90
+  minimumSpacing: 3
+  roomAccentWeight: 5
+  zones: []
+  placements:
+  - id: test.stable.decoration
+    prefabId: wall.crt
+    cell: {x: 3, y: 4}
+    heading: 3
+    localOffset: {x: 0, y: 0, z: 0}
+    scale: 1
+    yawOffset: 0
+    enabled: 1
+  suppressedAutomaticIds: []

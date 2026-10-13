@@ -1,0 +1,1 @@
+Menu music continues=True; lower menu volume=True; menu volume=0,196; restored volume=0,2779945; conversation FOV=44,00745 < 68; zoom works=True; player position unchanged=True; camera restores=True

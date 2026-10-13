@@ -37,6 +37,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: 556b2694ac7a4e05a3a4fd76eb7fbf75
     displayName: Cofre
@@ -62,6 +63,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: 0138508de80849ab9098377ef02d10c2
     displayName: Puerta Roja
@@ -87,6 +89,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: 5c90a1a1f62640fa90e8399557659b0b
     displayName: Puerta
@@ -112,6 +115,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: d139e772467a46efa9523235669e7705
     displayName: Puerta
@@ -137,6 +141,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: f41a0736f0e745b79714cf647d3d7ae3
     displayName: Puerta
@@ -162,6 +167,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: ed55c002d9bc4be296015a7c609b32b1
     displayName: Teleport
@@ -187,6 +193,8 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds:
+    - zone-2
     destinations: []
   - id: c5fc191240334b81b98ac5ee4c9cdf18
     displayName: Cofre
@@ -212,6 +220,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: 5d6f3e9d288c428fb7d879992a98b8ea
     displayName: "Cofre \u2014 Llave Roja"
@@ -237,6 +246,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: dd55f8a1b779451bb2501875413a5400
     displayName: Cofre
@@ -262,6 +272,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: da875bcc4edc40ac822d64516067a58d
     displayName: Puerta
@@ -287,6 +298,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: 5d6d25c28f8f4e3e830d4e68d3e1fec8
     displayName: NPC
@@ -312,6 +324,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: dd039ce578724a8a970d25e156c2a295
     displayName: Cofre
@@ -322,7 +335,7 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId: 
+    contentId: b19d2185c0a040a5befb4ecf6d0764dd
     quantity: 1
     mimicPlacementId: 
     guardPlacementId: 
@@ -337,6 +350,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: 58db9855ccb147678f2afb6bfccd53ee
     displayName: Cofre
@@ -347,7 +361,7 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId: 
+    contentId: b19d2185c0a040a5befb4ecf6d0764dd
     quantity: 1
     mimicPlacementId: 
     guardPlacementId: 
@@ -362,6 +376,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: e69b2f9aa1d24b4799e0937d61b1f655
     displayName: Cofre
@@ -372,7 +387,7 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId: 
+    contentId: b19d2185c0a040a5befb4ecf6d0764dd
     quantity: 1
     mimicPlacementId: 
     guardPlacementId: 
@@ -387,6 +402,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: makong.prep.glove
     displayName: "Cofre \u2014 Power Glove MK-II"
@@ -412,6 +428,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: makong.prep.shirt
     displayName: "Cofre \u2014 T-Shirt de Resistencia"
@@ -437,6 +454,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: makong.prep.socks
     displayName: "Cofre \u2014 Medias del Glitch"
@@ -462,6 +480,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: makong.key.chest.1
     displayName: "Cofre \u2014 Llave Verde"
@@ -487,6 +506,7 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []
   - id: makong.key.chest.2
     displayName: "Cofre \u2014 Llave Maestra"
@@ -512,4 +532,5 @@ MonoBehaviour:
     save: 1
     initiallyActive: 0
     requiresActivation: 1
+    revealedRegionIds: []
     destinations: []

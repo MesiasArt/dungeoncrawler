@@ -17,9 +17,9 @@ public partial class DungeonPrototype {
   CompleteTerminalSave(true);
  }
  void CompleteTerminalSave(bool showConfirmation){
-  hp=MaximumHP;TryGrantRefugeReward();refuge.narrativeVersion=1;bool saved=SaveDungeonGame();
-  foreach(var device in GetComponentsInChildren<RefugeDeviceVisual>())if(!device.portal)device.ShowSaveResult(saved);
-  if(!saved||showConfirmation){var lines=new List<WorldDialogueLine>{new WorldDialogueLine("SISTEMA",saved?"Integridad restaurada. Partida guardada.":"Integridad restaurada. No se pudo guardar la partida.")};if(refuge.devotoDefeated)lines.Add(new WorldDialogueLine("SISTEMA","Usuarios activos en el refugio: 1."));worldDialogue.Begin(lines.ToArray());}
+  hp=MaximumHP;RestoreBits();TryGrantRefugeReward();refuge.narrativeVersion=1;
+  if(showConfirmation)worldDialogue.Begin(new[]{new WorldDialogueLine("SISTEMA","Integridad restaurada. Elige un slot para guardar.")},()=>OpenSaveSlots(false));
+  else OpenSaveSlots(false);
  }
  void ExamineTransferNode(string id){
   if(refugeSettings==null||worldDialogue.Active||nodeDecision||battle||lost)return;
@@ -44,6 +44,7 @@ public partial class DungeonPrototype {
   RefreshTransferVisuals();worldDialogue.Begin(playerActivated?refugeSettings.zoneTwoPlayerDialogue:refugeSettings.zoneTwoDevoteeDialogue,()=>OpenTransferChoices(id));
  }
  void OpenTransferChoices(string origin,bool showEmpty=true){
+  if(TryRevealNodeMap(origin,()=>OpenTransferChoices(origin,showEmpty)))return;
   transferChoices.Clear();foreach(var target in refugeSettings.nodes)if(target.id!=origin&&refuge.unlockedNodes.Contains(target.id))transferChoices.Add(target);
   transferSelection=0;transferMenu=transferChoices.Count>0;
   if(!transferMenu&&showEmpty)worldDialogue.Begin(new[]{new WorldDialogueLine("SISTEMA","Ningún otro nodo disponible.")});

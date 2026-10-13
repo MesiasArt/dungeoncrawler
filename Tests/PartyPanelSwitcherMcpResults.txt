@@ -1,0 +1,11 @@
+Single member stays put=True
+Unique IDs=True
+Switch starts=True
+Repeated input blocked=True
+Outgoing hidden=True
+Skips spent actor=True
+Incoming finishes at original position=True
+Selection callback once=True
+Reverse skips spent actor=True
+Reset keeps main actor=True
+Maximum four=True

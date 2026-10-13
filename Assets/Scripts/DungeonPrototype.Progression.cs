@@ -6,6 +6,7 @@ using UnityEngine;
  public int level=1;public long experience;
  public string[] eventHackIds=new string[0];
  public int coins;public List<InventoryItemRecord> pendingCombatDrops=new List<InventoryItemRecord>();
+ public bool hasBits;public int currentBits;
  public int currentHP;public List<InventoryItemRecord> inventory=new List<InventoryItemRecord>();
  public string[] equipmentIds=new string[3];
 }
@@ -32,7 +33,7 @@ public partial class DungeonPrototype {
   equippedIds[slot]=null;EnsureEquipment();hp=Mathf.Min(hp,MaximumHP);return true;
  }
  public PlayerProgressionRecord CapturePlayerProgression() {
-  EnsureEquipment();var result=new PlayerProgressionRecord{level=PlayerLevel,experience=playerExperience,eventHackIds=new List<string>(eventHackIds).ToArray(),currentHP=hp,coins=coins,pendingCombatDrops=new List<InventoryItemRecord>(pendingCombatDrops)};
+  EnsureEquipment();var result=new PlayerProgressionRecord{level=PlayerLevel,experience=playerExperience,eventHackIds=new List<string>(eventHackIds).ToArray(),currentHP=hp,hasBits=true,currentBits=CurrentBits,coins=coins,pendingCombatDrops=new List<InventoryItemRecord>(pendingCombatDrops)};
   foreach(var id in ownedEquipment)result.inventory.Add(new InventoryItemRecord{itemId=id,quantity=1});
   for(int i=0;i<itemCounts.Length;i++)if(itemCounts[i]>0)result.inventory.Add(new InventoryItemRecord{itemId=inventorySettings.items[i].id,quantity=itemCounts[i]});
   for(int slot=0;slot<3;slot++){int i=EquippedInSlot(slot);result.equipmentIds[slot]=i<0?null:Character.equipment[i].id;}

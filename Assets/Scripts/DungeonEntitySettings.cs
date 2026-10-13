@@ -11,6 +11,7 @@ public enum DungeonDoorKind { Normal, Locked, Transition }
  public DungeonChestKind chestKind;public string contentId;[Min(1)]public int quantity=1;public string mimicPlacementId,guardPlacementId;
  public bool doorInitiallyOpen;public DungeonDoorKind doorKind;public string requiredKeyId,destinationRegionId;public DungeonMapSettings destinationMap;public Vector2Int destinationCell;public DungeonDoorSettings doorSettings;
  public bool heal=true,save=true,initiallyActive,requiresActivation=true;
+ public List<string> revealedRegionIds=new List<string>();
  public List<string> destinations=new List<string>();
  }
 [Serializable]public class DungeonEntityState {public string id;public bool opened;}
@@ -27,6 +28,7 @@ public class DungeonEntitySettings:ScriptableObject {
    if(e.kind==DungeonEntityKind.Chest&&e.chestKind!=DungeonChestKind.Mimic&&!string.IsNullOrEmpty(e.contentId)){var inventory=Resources.Load<CombatInventorySettings>("Combat/CombatInventorySettings");var character=Resources.Load<PlayerCharacterSettings>("Combat/PlayerCharacterSettings");if(!(inventory!=null&&Array.Exists(inventory.items,i=>i.id==e.contentId))&&!(character!=null&&Array.Exists(character.equipment,i=>i.id==e.contentId)))errors.Add(e.displayName+": contenido desconocido");}
    if(e.kind==DungeonEntityKind.Door&&e.doorKind==DungeonDoorKind.Locked&&string.IsNullOrEmpty(e.requiredKeyId))errors.Add(e.displayName+": falta llave");
    if(e.kind==DungeonEntityKind.Door&&e.doorKind==DungeonDoorKind.Transition){var destination=e.destinationMap!=null?e.destinationMap:map;if(!destination.IsFloor(e.destinationCell))errors.Add(e.displayName+": destino inválido");}
+   if(e.kind==DungeonEntityKind.Teleport)foreach(var id in e.revealedRegionIds)if(regions==null||!Array.Exists(regions.regions,r=>r.id==id))errors.Add(e.displayName+": zona de revelación inexistente "+id);
    foreach(var id in e.destinations)if(!objects.Exists(o=>o.kind==DungeonEntityKind.Teleport&&o.id==id)&&!(RefugeSettings.Current!=null&&Array.Exists(RefugeSettings.Current.nodes,n=>n.id==id)))errors.Add(e.displayName+": destino inexistente "+id);
   }return errors;
  }

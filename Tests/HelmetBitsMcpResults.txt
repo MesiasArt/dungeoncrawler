@@ -1,0 +1,1 @@
+JUMP cost10=True; repeat no debit=True; OVERCLOCK cost25=True; insufficient Bits rejected=True; zero Bits restored=True; refill100=True; continuous JUMP music=True; intensity clamp=True; duration clamp=True

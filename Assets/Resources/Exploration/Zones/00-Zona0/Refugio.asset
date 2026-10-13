@@ -85,11 +85,16 @@ MonoBehaviour:
     cell: {x: 19, y: 9}
     arrivalHeading: 2
     triggersRefugeTragedy: 0
+    revealedRegionIds:
+    - zone-0
   - id: node.zone2
     displayName: ZONA 2
     cell: {x: 7, y: 16}
     arrivalHeading: 0
     triggersRefugeTragedy: 1
+    revealedRegionIds:
+    - zone-1
+    - zone-1.5
   exitDialogue:
   - speaker: CENTINELA
     text: "\xA1Espera! \xBFDe verdad vas a salir?"

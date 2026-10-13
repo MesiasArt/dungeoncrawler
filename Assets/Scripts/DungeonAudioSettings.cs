@@ -7,5 +7,6 @@ public sealed class DungeonAudioSettings : ScriptableObject
     public AudioClip dungeonMusic;
     public AudioClip combatMusic;
     [Range(0,1)] public float musicVolume=.28f;
+    [Range(0,1)] public float menuMusicMultiplier=.7f;
     [Range(0,1)] public float effectsVolume=.45f;
 }

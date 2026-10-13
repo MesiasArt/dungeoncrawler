@@ -18,6 +18,14 @@ public class DungeonUILayout : ScriptableObject
  public Vector2 combatButtonSize=new Vector2(280,58);
  [Min(0)] public float combatButtonGap=4;
  [Tooltip("Preserve the original aspect of dialogue and message artwork.")] public bool preservePanelAspect=true;
+ [Header("Future active-character panel")]
+ [Range(.1f,1)] public float partyPanelSlideSeconds=.36f;
+ public UnityEngine.InputSystem.Key previousPartyKey=UnityEngine.InputSystem.Key.L;
+ public UnityEngine.InputSystem.Key nextPartyKey=UnityEngine.InputSystem.Key.R;
+ [Header("Conversation camera")]
+ public bool zoomDuringConversation=true;
+ [Range(30,68)] public float conversationFieldOfView=44;
+ [Range(.1f,1)] public float conversationZoomSeconds=.3f;
  [Header("Discovered map tiles")]
  public Color discoveredFloor=new Color(0,.55f,.8f,.85f);
  public Color discoveredWall=new Color(.3f,.22f,.55f,.95f);

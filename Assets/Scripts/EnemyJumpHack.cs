@@ -10,7 +10,6 @@ public class EnemyJumpHack : CombatHack
     public EnemyJumpModel Model { get; private set; }
     public override bool Active { get { return Model!=null; } }
     Action<int> completed;
-    AudioSource rhythmSource;
     EnemyJumpSettings sessionSettings;
     public JumpRhythmClock Rhythm { get; private set; }
     int shownBeat=-1;
@@ -18,8 +17,7 @@ public class EnemyJumpHack : CombatHack
     void StopRhythm()
     {
         if(Rhythm==null) return;
-        if(rhythmSource!=null) rhythmSource.Stop();
-        Rhythm=null;DungeonAudio.SetJumpMusicOverride(false);
+        Rhythm=null;
         if(sessionSettings!=null) { Destroy(sessionSettings);sessionSettings=null; }
     }
     float resultTime;
@@ -81,8 +79,6 @@ public class EnemyJumpHack : CombatHack
     public override void Begin(Action<int> callback)
     {
         if(Active) return;
-        AudioClip track=DungeonAudio.JumpTrack;
-        if(track==null) { Debug.LogError("Jump requires Arcade Showdown in DungeonAudioSettings.combatMusic.",this);return; }
         if(playerSprite==null) playerSprite=Resources.Load<Texture2D>("UI/GamerboyJump");
         if(jumpSprite==null) jumpSprite=Resources.Load<Texture2D>("UI/GamerboyJumpAir");
         if(deathSprite==null) deathSprite=Resources.Load<Texture2D>("UI/GamerboyJumpDeath");
@@ -102,11 +98,8 @@ public class EnemyJumpHack : CombatHack
         deathStarted=deathComplete=false;deathTime=0;
         if(settings==null) settings=Resources.Load<EnemyJumpSettings>("Combat/EnemyJumpSettings");
         if(settings==null) settings=ScriptableObject.CreateInstance<EnemyJumpSettings>();
-        if(rhythmSource==null) { rhythmSource=gameObject.AddComponent<AudioSource>();rhythmSource.playOnAwake=false;rhythmSource.spatialBlend=0; }
-        rhythmSource.volume=DungeonAudio.MusicVolume;
-        DungeonAudio.SetJumpMusicOverride(true);
         sessionSettings=Instantiate(settings);
-        Rhythm=new JumpRhythmClock(rhythmSource,track,sessionSettings);
+        Rhythm=new JumpRhythmClock(sessionSettings);
         shownBeat=-1;
         float extent=sessionSettings.referenceEnemyPixels;
         var sizes=EnemySizeSettings.Current;
@@ -149,7 +142,6 @@ public class EnemyJumpHack : CombatHack
         }
         if(Rhythm!=null)
         {
-            rhythmSource.volume=DungeonAudio.MusicVolume;
             Model.TickTo(System.Math.Max(0,Rhythm.SongTime));
             int beat=Rhythm.BeatCount;
             if(beat!=shownBeat) { shownBeat=beat;beatText="BEAT "+beat; }
@@ -165,7 +157,7 @@ public class EnemyJumpHack : CombatHack
         var callback=completed; completed=null; if(callback!=null) callback(damage);
     }
     void OnDisable() { StopRhythm();if(backdrop!=null) backdrop.Restore();Model=null;completed=null; }
-    void OnDestroy() { StopRhythm();if(rhythmSource!=null) Destroy(rhythmSource); }
+    void OnDestroy() { StopRhythm(); }
     void OnGUI()
     {
         if(!Active) return;

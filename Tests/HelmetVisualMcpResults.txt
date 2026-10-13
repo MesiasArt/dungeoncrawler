@@ -1,0 +1,1 @@
+Door closed prompt=True; behind hidden=True; open hidden=True; distant hidden=True; glitch expired=True; inward/outward shader rendered; room/corridor/menu/teleport captures generated

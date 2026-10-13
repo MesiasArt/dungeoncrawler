@@ -101,7 +101,7 @@ public partial class DungeonPrototype : MonoBehaviour
         if (enabledSubmit) submit.Disable();
         enabledInteract = enabledSubmit = false;
     }
-    void OnDisable() { SetPause(false); ReleaseIntroductionInput(); }
+    void OnDisable() { CancelMapReveal(); SetPause(false); ReleaseIntroductionInput(); }
     void OnDestroy() { if(battleCeiling!=null)Destroy(battleCeiling);if (floorWallDistance != null) Destroy(floorWallDistance); }
     void RestartNewGame()
     {
@@ -188,6 +188,7 @@ public partial class DungeonPrototype : MonoBehaviour
         view.transform.position = World(position); view.transform.rotation = Quaternion.Euler(0,heading*90,0);
         view.gameObject.AddComponent<AudioListener>();
         view.gameObject.AddComponent<CombatImpactFeedback>();
+        view.gameObject.AddComponent<HelmetCRTController>();
         view.gameObject.AddComponent<DungeonCorridorLighting>();
         RenderSettings.ambientLight = new Color(.22f,.16f,.36f);
         RenderSettings.fog = true; RenderSettings.fogColor = view.backgroundColor; RenderSettings.fogDensity = .035f;
@@ -212,7 +213,7 @@ public partial class DungeonPrototype : MonoBehaviour
         hp=MaximumHP;
         if(ActiveMap==null||ActiveMap.includeLegacyObjects)CreatePreservationCorridor();
         if(ActiveMap==null||ActiveMap.includeLegacyObjects)CreateRefuge();RemoveDisabledLegacyDoors();CreateMapEntities();foreach(var text in GetComponentsInChildren<TextMesh>()){var occlusion=text.GetComponent<WorldTextOcclusion>();if(occlusion==null)occlusion=text.gameObject.AddComponent<WorldTextOcclusion>();occlusion.viewCamera=view;}PopulateRegions();
-        bool mapArrival=incomingMapTravel!=null;StartIntroduction();ApplyMapTravel();if(!mapArrival)ShowStartupMenu();
+        CreateDungeonDecorations();bool mapArrival=incomingMapTravel!=null;StartIntroduction();ApplyMapTravel();if(!mapArrival)ShowStartupMenu();
     }
     void RevealVisitedCell(Vector2Int cell)
     {
@@ -353,6 +354,7 @@ public partial class DungeonPrototype : MonoBehaviour
     Vector3 World(Vector2Int p) { return new Vector3(p.x*Cell,1.5f,p.y*Cell); }
     void Update()
     {
+        if(UpdateMapReveal())return;
         var laboratory=GetComponent<CombatLaboratory>();if(laboratory!=null&&laboratory.MenuOpen)return;
         ClaimPendingCombatDrops();
         if(UpdateSaveSlotInput())return;
@@ -360,12 +362,15 @@ public partial class DungeonPrototype : MonoBehaviour
         if(UpdateMapEntityInput())return;
         if(UpdatePreservationInput())return;
         if(PauseInput())return;
+        if(PartySwitchInput())return;
+        if(message=="[E] Abrir puerta")message="";
         messageTyping.SetText(message,Time.unscaledTime);
         if(!IntroductionActive&&(combatHack==null||!combatHack.Active)&&
            (ConfirmPressed()||(Keyboard.current!=null&&(Keyboard.current.enterKey.wasPressedThisFrame||Keyboard.current.numpadEnterKey.wasPressedThisFrame)))) {
             messageTyping.Complete();if(enemyBarks!=null)enemyBarks.CompleteText();
         }
         DungeonAudio.SetCombat(battle && !levelComplete && !lost);
+        UpdateHelmetContext();
         glitch=Mathf.Max(0,glitch-Time.deltaTime);
         if(view==null) return;
         UpdateEnemyRespawns();
@@ -405,7 +410,7 @@ public partial class DungeonPrototype : MonoBehaviour
         if (IntroductionActive || levelComplete) yield break;
         Vector2Int next=position+directions[heading]*step;
         if(step!=0&&(!Open(next)||RefugeNpcBlocks(next))) yield break;
-        if(step!=0 && DoorsBlock(World(position),World(next))) { message="[E] Abrir puerta";yield break; }
+        if(step!=0 && DoorsBlock(World(position),World(next))) { yield break; }
         if(step!=0)for(int i=0;i<enemies.Count;i++)if(enemyObjects[i]!=null&&enemies[i]==next){BeginEncounter(i);yield break;}
         if(step!=0) DungeonAudio.Play(DungeonAudio.Cue.Step);
         moving=true; heading=(heading+turn+4)%4;
@@ -430,7 +435,7 @@ public partial class DungeonPrototype : MonoBehaviour
             RefreshAvailableHacks();
             int count=availableHacks==null ? 0 : availableHacks.Length;
             var labels=new string[count+1];
-            for(int i=0;i<count;i++) labels[i]=availableHackDefinitions[i].displayName;
+            for(int i=0;i<count;i++) labels[i]=availableHackDefinitions[i].displayName+" ["+availableHackDefinitions[i].bitsCost+" Bits]";
             labels[count]="VOLVER"; return labels;
         }
         var items=inventorySettings.items;
@@ -450,6 +455,7 @@ public partial class DungeonPrototype : MonoBehaviour
         if(IntroductionActive || busy || lost || !battle || (combatHack!=null && combatHack.Active)) return;
         if(selectingEnemy){if(action==(pendingTargetHack!=null?1:0))ConfirmEnemyTarget();return;}
         if(action<0 || action>=CombatLabels().Length) return;
+        if(RoutePartyCommand(action))return;
         if(combatMenu==CombatMenu.Hacks)
         {
             if(action==availableHacks.Length) { BackToCombatMenu(); return; }
@@ -508,6 +514,7 @@ public partial class DungeonPrototype : MonoBehaviour
             encounter.Remove(hit);encounterHomes.Remove(hit);encounterScales.Remove(hit);
             StartCoroutine(DisappearDefeatedEnemy(corpse));
         }
+        PartyActionFinished();
         yield return new WaitForSeconds(.6f);
         if(defeated){
             if(encounter.Count==0){DirectorCombatEnded();AwardEncounterXP();AwardCombatDrops();RestoreEncounter();battle=false;activeEnemy=-1;yield return RestoreBattleCamera();view.transform.rotation=Quaternion.Euler(0,heading*90,0);message="Victoria. Sigue explorando.";busy=false;yield break;}
@@ -554,6 +561,7 @@ public partial class DungeonPrototype : MonoBehaviour
     }
     void OnGUI()
     {
+        if(mapRevealActive){DrawMapReveal();return;}
         if(pauseOpen){DrawPause();return;}
         if(battle && !IntroductionActive && ((combatHack!=null && combatHack.Active) || combatMenu==CombatMenu.Hacks))
         {
@@ -565,8 +573,8 @@ public partial class DungeonPrototype : MonoBehaviour
         NeonDungeonUI.FontSize=Layout.textFontSize;NeonDungeonUI.ContinueBlinkSeconds=Layout.continueBlinkSeconds;
         GUI.skin.box.fontSize=20; GUI.skin.label.fontSize=18; GUI.skin.button.fontSize=20;
         GUI.backgroundColor=new Color(.12f,.05f,.3f,.95f); GUI.contentColor=new Color(.65f,.85f,1);
-        NeonDungeonUI.DialogueAvatar(Layout.playerAvatar);
-        NeonDungeonUI.Health(Layout.playerHealth,"GAMERBOY",hp,MaximumHP,NeonDungeonUI.Pink,PlayerLevel);
+        NeonDungeonUI.ApplyFont();
+        DrawActivePartyPanel();
         float mx=width-240;
         Rect mapRect=Layout.Resolve(Layout.map,width,0);
         DrawLocalMinimap(mapRect);
@@ -601,8 +609,8 @@ public partial class DungeonPrototype : MonoBehaviour
         }
         if(lost&&!IntroductionActive&&GUI.Button(new Rect(width/2-100,height/2,200,50),"Reiniciar")) RestartNewGame();
         GUI.color=new Color(0,0,0,.12f);
-        for(int y=0;y<height;y+=4) GUI.DrawTexture(new Rect(0,y,width,1),Texture2D.whiteTexture);
-        if(glitch>0) { GUI.color=new Color(1,0,.5f,.25f); for(int i=0;i<12;i++) GUI.DrawTexture(new Rect(0,(i*73+Time.frameCount*13)%height,width,7),Texture2D.whiteTexture); }
+
+
         GUI.color=Color.white;
         if(!levelComplete && !IntroductionActive && !battle && !lost && DoorInteractionAvailable(exitDoor))
             GUI.Box(new Rect(width/2-140,height-155,280,45),"[E] Abrir puerta");

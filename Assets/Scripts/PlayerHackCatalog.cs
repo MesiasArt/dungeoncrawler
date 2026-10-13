@@ -7,6 +7,7 @@ public enum HackUnlockMode { PlayerLevel, FutureEvent }
  public string displayName;
  [TextArea] public string description;
  [Min(1)] public int minimumLevel=1;
+ [Min(0)] public int bitsCost;
  public bool available=true;
  public HackUnlockMode unlockMode;
  public UnityEngine.Object implementationScript;

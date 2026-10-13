@@ -1,0 +1,177 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5657cf343847c5848a0008a46dd01bfc, type: 3}
+  m_Name: Catalog
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonDecorationCatalog
+  entries:
+  - id: wall.crt
+    displayName: Monitor CRT de memoria
+    prefab: {fileID: 7725207848950000638, guid: 50ce77c9775bc834989d4a692fe4897b, type: 3}
+    mount: 0
+    theme: 1
+    weight: 1
+    depth: 0.3
+    cornerOnly: 0
+    doorwayFrame: 0
+  - id: wall.vent
+    displayName: "Rejilla de ventilaci\xF3n"
+    prefab: {fileID: 5534576595233874820, guid: 6a32369469c81704b84f9045f0cee69f, type: 3}
+    mount: 0
+    theme: 0
+    weight: 1
+    depth: 0.3
+    cornerOnly: 0
+    doorwayFrame: 0
+  - id: wall.control
+    displayName: "Panel t\xE9cnico retro"
+    prefab: {fileID: 4333620221155895886, guid: 35930b1996a2eaa44842933235ae41d5, type: 3}
+    mount: 0
+    theme: 0
+    weight: 1
+    depth: 0.3
+    cornerOnly: 0
+    doorwayFrame: 0
+  - id: wall.sign
+    displayName: Letrero Memory Core
+    prefab: {fileID: 7094524064775051743, guid: 365fbb40f482d1d4bbcde3f9609deda1, type: 3}
+    mount: 0
+    theme: 0
+    weight: 1
+    depth: 0.3
+    cornerOnly: 0
+    doorwayFrame: 0
+  - id: wall.glitch
+    displayName: Panel de memoria corrupta
+    prefab: {fileID: 8888733453651981960, guid: 99b78accb44f7ee48aabffe26e54c501, type: 3}
+    mount: 0
+    theme: 2
+    weight: 1
+    depth: 0.3
+    cornerOnly: 0
+    doorwayFrame: 0
+  - id: wall.pipe
+    displayName: "Conducto con codos de ne\xF3n"
+    prefab: {fileID: 5969079819794438330, guid: 6aaeaa4387efefa46968079310740cfc, type: 3}
+    mount: 0
+    theme: 0
+    weight: 1
+    depth: 0.25
+    cornerOnly: 0
+    doorwayFrame: 0
+  - id: wall.cable
+    displayName: Cableado de esquina
+    prefab: {fileID: 4115044991738736763, guid: 948f97a34100ed5458de20c2d20f988a, type: 3}
+    mount: 0
+    theme: 0
+    weight: 1
+    depth: 0.3
+    cornerOnly: 1
+    doorwayFrame: 0
+  - id: wall.window
+    displayName: "Ventana de datos hologr\xE1ficos"
+    prefab: {fileID: 2254609539110383715, guid: c0d1b1caba4521041aa5239a07389269, type: 3}
+    mount: 0
+    theme: 0
+    weight: 1
+    depth: 0.3
+    cornerOnly: 0
+    doorwayFrame: 0
+  - id: floor.circuit
+    displayName: Placa de circuito cian
+    prefab: {fileID: 1272770241438802101, guid: beb4f5ff7f8d961478d815f2fe191150, type: 3}
+    mount: 1
+    theme: 0
+    weight: 1
+    depth: 0.3
+    cornerOnly: 0
+    doorwayFrame: 0
+  - id: floor.signal
+    displayName: Marca digital magenta
+    prefab: {fileID: 8475209555452335180, guid: 18b62373b8d4cdf4f80602c22fb345cf, type: 3}
+    mount: 1
+    theme: 0
+    weight: 1
+    depth: 0.3
+    cornerOnly: 0
+    doorwayFrame: 0
+  - id: ceiling.light
+    displayName: "L\xE1mpara digital suspendida"
+    prefab: {fileID: 8037454388670040787, guid: 3cf2bd85037d61c448eb9e69829d11ff, type: 3}
+    mount: 2
+    theme: 0
+    weight: 1
+    depth: 0.3
+    cornerOnly: 0
+    doorwayFrame: 0
+  - id: ceiling.duct
+    displayName: Conducto de techo
+    prefab: {fileID: 6617483285658119912, guid: 907f3dff5df3cc54b92f54da3a183b36, type: 3}
+    mount: 2
+    theme: 0
+    weight: 1
+    depth: 0.3
+    cornerOnly: 0
+    doorwayFrame: 0
+  - id: ceiling.fan
+    displayName: Ventilador digital animado
+    prefab: {fileID: 2057487894648849070, guid: fa0a321f205d1294d9b498450111c60a, type: 3}
+    mount: 2
+    theme: 0
+    weight: 1
+    depth: 0.3
+    cornerOnly: 0
+    doorwayFrame: 0
+  - id: room.server
+    displayName: Rack de servidores
+    prefab: {fileID: 6478472163574723733, guid: c6d2e0a7a1240e9458130a55d6ed9ff0, type: 3}
+    mount: 3
+    theme: 0
+    weight: 1
+    depth: 0.65
+    cornerOnly: 0
+    doorwayFrame: 0
+  - id: room.arcade
+    displayName: "M\xE1quina arcade de diagn\xF3stico"
+    prefab: {fileID: 2801896466616088184, guid: 0dd48fe79560d234eb1500b17827d492, type: 3}
+    mount: 3
+    theme: 0
+    weight: 1
+    depth: 0.8
+    cornerOnly: 0
+    doorwayFrame: 0
+  - id: room.generator
+    displayName: Generador de datos
+    prefab: {fileID: 7677547726648163376, guid: c22d8893ac518b4468645b5821099c27, type: 3}
+    mount: 3
+    theme: 0
+    weight: 1
+    depth: 0.8
+    cornerOnly: 0
+    doorwayFrame: 0
+  - id: room.column
+    displayName: "Columna energ\xE9tica"
+    prefab: {fileID: 1455645055311638349, guid: 019a4c2e5b63109499d21965354efa70, type: 3}
+    mount: 3
+    theme: 0
+    weight: 1
+    depth: 0.8
+    cornerOnly: 0
+    doorwayFrame: 0
+  - id: door.frame
+    displayName: Marco de acceso cian
+    prefab: {fileID: 8329441901850051438, guid: 1037f22e940da584699696d78c18cdc9, type: 3}
+    mount: 4
+    theme: 0
+    weight: 1
+    depth: 0.3
+    cornerOnly: 0
+    doorwayFrame: 1

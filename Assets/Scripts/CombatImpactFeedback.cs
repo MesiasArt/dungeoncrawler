@@ -12,6 +12,7 @@ public class CombatImpactFeedback : MonoBehaviour
     public bool Active { get { return remaining>0; } }
     public void Play(bool received)
     {
+        if(received){var crt=GetComponent<HelmetCRTController>();if(crt!=null)crt.TriggerGlitch(.3f,.18f);}
         PlayImpact(received?hurtAmplitude:attackAmplitude,received?hurtDuration:attackDuration);
     }
     public void PlayImpact(float strength,float seconds)
