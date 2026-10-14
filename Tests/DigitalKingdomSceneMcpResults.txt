@@ -1,0 +1,30 @@
+PASS Gate blocks access before Makong
+PASS City Single scene replaces the dungeon scene
+PASS Dungeon actors and geometry unloaded
+PASS No minigames built in city
+PASS World controller dormant in city
+PASS City UI sound is not paused
+PASS First visit and real return point recorded
+PASS Keyboard selects next option
+PASS Gamepad selects next option
+PASS Gamepad A opens Temple
+PASS Gamepad B returns to city
+PASS Open city.inn
+PASS Open city.shop
+PASS Open city.temple
+PASS Open city.lab
+PASS Open city.travel
+PASS Open city.sewers
+PASS Temple heals and registers Continue
+PASS Save restores directly within city scene
+PASS Only discovered travel destinations listed
+PASS Locked node rejected
+PASS Exit City restores exact dungeon entrance
+PASS Return preserves enemies, map and object states
+PASS Return preserves level XP and inventory currency
+PASS Return preserves item and equipment IDs
+PASS Revisit does not repeat discovery
+PASS Travel to discovered node accepted
+PASS Travel restores dungeon at registered node
+PASS Defeat with Continue transitions to kingdom
+PASS Respawn at Temple with restored HP

@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fdea577286a71c4dbaf413b4b9011ab, type: 3}
+  m_Name: ObjectsB
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonEntitySettings
+  objects:
+  - id: test-phase2-chest
+    displayName: Fixture chest
+    kind: 1
+    cell: {x: 3, y: 1}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    guardPlacementId: 
+    cityEntrance: 0
+    doorInitiallyOpen: 0
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []
+  - id: test-phase2-door
+    displayName: Fixture door
+    kind: 2
+    cell: {x: 3, y: 3}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    guardPlacementId: 
+    cityEntrance: 0
+    doorInitiallyOpen: 0
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []

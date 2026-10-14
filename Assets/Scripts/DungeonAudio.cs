@@ -10,6 +10,7 @@ public sealed class DungeonAudio : MonoBehaviour
  AudioClip[] clips;
  static bool jumpMusicOverride;
  bool menuDucked;float musicGain=1;
+ public static void KeepAcrossScenes(){EnsureInstance();DontDestroyOnLoad(instance.gameObject);}
  public static void SetMenuDucked(bool active){EnsureInstance();instance.menuDucked=active;}
  public static AudioClip JumpTrack { get { EnsureInstance();return instance.combatTrack; } }
  public static float MusicVolume { get { EnsureInstance();return instance.settings!=null ? instance.settings.musicVolume : .28f; } }

@@ -19,17 +19,18 @@ MonoBehaviour:
     cell: {x: 6, y: 5}
     heading: 0
     npcCatalog: {fileID: 11400000, guid: d9cf2ec8775878a4aaa779f8deb76746, type: 2}
-    npcId: 
+    npcId:
     dialogue: []
     chestKind: 0
     contentId: 9e16c25941b547ff87ce8a813008e635
     quantity: 1
-    mimicPlacementId: 
-    guardPlacementId: 
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -48,14 +49,15 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 1
-    contentId: 
+    contentId:
     quantity: 1
     mimicPlacementId: 7a689886cdda416cb33de22dbcec969c
-    guardPlacementId: 
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -74,14 +76,15 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId: 
+    contentId:
     quantity: 1
-    mimicPlacementId: 
-    guardPlacementId: 
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 1
     requiredKeyId: key.red
-    destinationRegionId: 
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 11400000, guid: da460f17f23a89446a53468eeefb8fb6, type: 2}
@@ -100,14 +103,15 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId: 
+    contentId:
     quantity: 1
-    mimicPlacementId: 
-    guardPlacementId: 
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 1
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -126,14 +130,15 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId: 
+    contentId:
     quantity: 1
-    mimicPlacementId: 
-    guardPlacementId: 
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 1
     requiredKeyId: key.master
-    destinationRegionId: 
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -152,14 +157,15 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId: 
+    contentId:
     quantity: 1
-    mimicPlacementId: 
-    guardPlacementId: 
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 1
     requiredKeyId: key.green
-    destinationRegionId: 
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -178,14 +184,15 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId: 
+    contentId:
     quantity: 1
-    mimicPlacementId: 
-    guardPlacementId: 
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -205,14 +212,15 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId: 
+    contentId:
     quantity: 1
-    mimicPlacementId: 
-    guardPlacementId: 
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -233,12 +241,13 @@ MonoBehaviour:
     chestKind: 2
     contentId: key.red
     quantity: 1
-    mimicPlacementId: 
+    mimicPlacementId:
     guardPlacementId: makong.key.guard.0
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -257,14 +266,15 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId: 
+    contentId:
     quantity: 1
-    mimicPlacementId: 
-    guardPlacementId: 
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -278,19 +288,20 @@ MonoBehaviour:
     displayName: Puerta
     kind: 2
     cell: {x: 15, y: 33}
-    heading: 0
+    heading: 3
     npcCatalog: {fileID: 11400000, guid: d9cf2ec8775878a4aaa779f8deb76746, type: 2}
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId: 
+    contentId:
     quantity: 1
-    mimicPlacementId: 
-    guardPlacementId: 
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -309,14 +320,15 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId: 
+    contentId:
     quantity: 1
-    mimicPlacementId: 
-    guardPlacementId: 
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -337,12 +349,13 @@ MonoBehaviour:
     chestKind: 0
     contentId: b19d2185c0a040a5befb4ecf6d0764dd
     quantity: 1
-    mimicPlacementId: 
-    guardPlacementId: 
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -363,12 +376,13 @@ MonoBehaviour:
     chestKind: 0
     contentId: b19d2185c0a040a5befb4ecf6d0764dd
     quantity: 1
-    mimicPlacementId: 
-    guardPlacementId: 
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -389,12 +403,13 @@ MonoBehaviour:
     chestKind: 0
     contentId: b19d2185c0a040a5befb4ecf6d0764dd
     quantity: 1
-    mimicPlacementId: 
-    guardPlacementId: 
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -410,17 +425,18 @@ MonoBehaviour:
     cell: {x: 17, y: 26}
     heading: 0
     npcCatalog: {fileID: 0}
-    npcId: 
+    npcId:
     dialogue: []
     chestKind: 0
     contentId: equipment.power-glove-mk2
     quantity: 1
-    mimicPlacementId: 
-    guardPlacementId: 
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -436,17 +452,18 @@ MonoBehaviour:
     cell: {x: 2, y: 44}
     heading: 0
     npcCatalog: {fileID: 0}
-    npcId: 
+    npcId:
     dialogue: []
     chestKind: 0
     contentId: equipment.resistance-shirt
     quantity: 1
-    mimicPlacementId: 
-    guardPlacementId: 
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -462,17 +479,18 @@ MonoBehaviour:
     cell: {x: 21, y: 51}
     heading: 0
     npcCatalog: {fileID: 0}
-    npcId: 
+    npcId:
     dialogue: []
     chestKind: 0
     contentId: equipment.glitch-socks
     quantity: 1
-    mimicPlacementId: 
-    guardPlacementId: 
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -488,17 +506,18 @@ MonoBehaviour:
     cell: {x: 1, y: 51}
     heading: 0
     npcCatalog: {fileID: 0}
-    npcId: 
+    npcId:
     dialogue: []
     chestKind: 2
     contentId: key.green
     quantity: 1
-    mimicPlacementId: 
+    mimicPlacementId:
     guardPlacementId: makong.key.guard.1
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -514,17 +533,45 @@ MonoBehaviour:
     cell: {x: 19, y: 51}
     heading: 0
     npcCatalog: {fileID: 0}
-    npcId: 
+    npcId:
     dialogue: []
     chestKind: 2
     contentId: key.master
     quantity: 1
-    mimicPlacementId: 
+    mimicPlacementId:
     guardPlacementId: makong.key.guard.2
+    cityEntrance: 0
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId: 
-    destinationRegionId: 
+    requiredKeyId:
+    destinationRegionId:
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []
+  - id: city.entrance
+    displayName: Digital Kingdom
+    kind: 2
+    cell: {x: 11, y: 66}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId:
+    dialogue: []
+    chestKind: 0
+    contentId:
+    quantity: 1
+    mimicPlacementId:
+    guardPlacementId:
+    cityEntrance: 1
+    doorInitiallyOpen: 0
+    doorKind: 2
+    requiredKeyId:
+    destinationRegionId:
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}

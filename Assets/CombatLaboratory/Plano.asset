@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e8c47f6cda186644aa0efe06e0d25bf, type: 3}
   m_Name: Plano
   m_EditorClassIdentifier: Assembly-CSharp::DungeonMapSettings
+  mapId: map-9fbf29f9bfe637542adebbd7dbc0d76c
   rows:
   - '##########'
   - '#........#'
@@ -25,6 +26,7 @@ MonoBehaviour:
   - '##########'
   disabledLegacyObjects: []
   legacyExitDoorCell: {x: 9, y: 7.5}
+  decorations: {fileID: 0}
   entities: {fileID: 0}
   regions: {fileID: 11400000, guid: f1ebc9e9b6bab524a920f06f14a03078, type: 2}
   includeLegacyObjects: 0

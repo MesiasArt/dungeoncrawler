@@ -1,0 +1,3 @@
+PASS Floor B displays its opened chest
+PASS Returning A removes B symbols
+PASS Returning B rebuilds symbols from restored snapshot

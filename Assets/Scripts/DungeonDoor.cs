@@ -11,7 +11,7 @@ public class DungeonDoor : MonoBehaviour
     [Min(.1f)] public float interactionDistance=2.2f;
     [Min(.1f)] public float doorwayWidth=3;
     [Min(.1f)] public float openingTravel=3.2f;
-    public bool closeAfterPassage;
+    public bool closeAfterPassage,repeatTransition;
     public bool IsOpen { get; private set; }
     public bool IsOpening { get; private set; }
     public bool HasBeenPassed { get; private set; }
@@ -51,6 +51,7 @@ public class DungeonDoor : MonoBehaviour
     { return !IsOpen&&!IsOpening && Vector3.Distance(player,transform.position+Vector3.up*1.5f)<=interactionDistance; }
     public void SetOpenImmediately(){Initialize();StopAllCoroutines();panel.localPosition=closedPosition+Vector3.up*openingTravel;blocker.enabled=false;IsOpen=true;IsOpening=false;}
     public void SetClosedImmediately(){Initialize();StopAllCoroutines();panel.localPosition=closedPosition;blocker.enabled=true;IsOpen=false;IsOpening=false;}
+    public void SetCityEntranceAppearance(){if(doorSurface==null)return;doorSurface.SetColor("_BaseColor",new Color(.9f,.95f,1));doorSurface.SetColor("_ShadowColor",new Color(.65f,.75f,.85f));doorSurface.SetFloat("_EmissionStrength",1.5f);}
     public void OpenDoor()
     { if(!IsOpen&&!IsOpening) StartCoroutine(AnimateOpen()); }
     IEnumerator AnimateOpen()
@@ -75,7 +76,7 @@ public class DungeonDoor : MonoBehaviour
     public void CheckPassage(Vector3 from, Vector3 to)
     {
         if(!IsOpen || !Crosses(from,to)) return;
-        if(!HasBeenPassed && transform.InverseTransformPoint(to).z>0){HasBeenPassed=true;if(Passed!=null) Passed();}
+        if((!HasBeenPassed||repeatTransition) && transform.InverseTransformPoint(to).z>0){HasBeenPassed=true;if(Passed!=null) Passed();}
         if(closeAfterPassage)CloseDoor();
     }
 }

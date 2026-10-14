@@ -1,0 +1,5 @@
+using UnityEngine;using UnityEditor;
+[CustomEditor(typeof(DungeonMovementSettings))]public class DungeonMovementSettingsEditor:Editor {
+ [MenuItem("Editor/Movimiento de exploración",false,2028)]static void Open(){Selection.activeObject=DungeonMovementSettings.Current;}
+ public override void OnInspectorGUI(){DrawDefaultInspector();var s=(DungeonMovementSettings)target;if(GUILayout.Button("Restaurar comportamiento original")){Undo.RecordObject(s,"Restaurar movimiento");s.RestoreOriginal();EditorUtility.SetDirty(s);}if(GUILayout.Button("Aplicar configuración experimental")){Undo.RecordObject(s,"Configurar movimiento");s.experimental=true;s.stepSeconds=.14f;s.turnSeconds=.12f;s.stepInterpolation=DungeonMovementInterpolation.Linear;s.turnInterpolation=DungeonMovementInterpolation.SmoothStep;s.continuousMovement=s.repeatTurns=s.overlapEnemyAnimation=true;s.repeatInterval=0;s.inputBufferSeconds=.22f;EditorUtility.SetDirty(s);}if(GUILayout.Button("Guardar configuración"))AssetDatabase.SaveAssetIfDirty(s);}
+}

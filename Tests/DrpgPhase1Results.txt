@@ -1,0 +1,20 @@
+Retiradas=36; asignadas=7; Undo=True; Redo=True; geometría intacta=True
+Suelo accesible: 448 / 448. Incidencias: 0. BFS geométrico: no simula llaves, puertas cerradas ni actores.
+Fixture duplicate ID=True
+Fixture object outside floor=True
+Fixture destination=True
+Fixture missing destination zone=True
+Fixture missing guardian=True
+Fixture missing NPC=True
+Fixture disconnected floor=True
+Fixture interaction adjacency=True
+Paint wall removes region=True
+Paint Undo restores geometry and region=True
+Paint Redo=True
+Paint void removes region=True
+Rectangle excludes wall and void=True
+Play world present=True
+Play zone-1 repaired=True
+Play zone-2 repaired=True
+Play diagnostics zero=True
+Original movement preserved=True

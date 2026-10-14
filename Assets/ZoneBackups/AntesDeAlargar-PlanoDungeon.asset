@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e8c47f6cda186644aa0efe06e0d25bf, type: 3}
   m_Name: AntesDeAlargar-PlanoDungeon
   m_EditorClassIdentifier: Assembly-CSharp::DungeonMapSettings
+  mapId: map-c60b185da044d1d4087883a9c54c1428
   rows:
   - '###########'
   - '#.........#'
@@ -29,3 +30,11 @@ MonoBehaviour:
   - '#####.....#'
   - '#####.....#'
   - '###########'
+  disabledLegacyObjects: []
+  legacyExitDoorCell: {x: 9, y: 7.5}
+  decorations: {fileID: 0}
+  entities: {fileID: 0}
+  regions: {fileID: 0}
+  includeLegacyObjects: 1
+  startCell: {x: 1, y: 1}
+  startHeading: 0

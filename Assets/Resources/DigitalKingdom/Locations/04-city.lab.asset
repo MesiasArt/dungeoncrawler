@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 413e4245d27b39f48b0b659bd83661e7, type: 3}
+  m_Name: 04-city.lab
+  m_EditorClassIdentifier: Assembly-CSharp::DigitalKingdomLocation
+  id: city.lab
+  displayName: "Bug Lab \u2014 Research Center"
+  npcName: SCIENTIST
+  background: {fileID: 0}
+  npcPortrait: {fileID: 0}
+  service: 3
+  initiallyUnlocked: 1
+  available: 1
+  uniqueConversation: 1
+  dialogue:
+  - speaker: SCIENTIST
+    text: Welcome to Bug Lab!
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SCIENTIST
+    text: We don't fix bugs here.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: Then what do you do?
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SCIENTIST
+    text: We make them useful!
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  stockIds: []
+  futureService:
+    m_PersistentCalls:
+      m_Calls: []
+  onLeave:
+    m_PersistentCalls:
+      m_Calls: []

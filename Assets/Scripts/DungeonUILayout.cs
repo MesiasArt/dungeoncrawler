@@ -28,6 +28,8 @@ public class DungeonUILayout : ScriptableObject
  [Range(.1f,1)] public float conversationZoomSeconds=.3f;
  [Header("Discovered map tiles")]
  public Color discoveredFloor=new Color(0,.55f,.8f,.85f);
+ public bool mapSymbols=true,mapLegend=true;
+ public Color visitedFloor=new Color(.15f,.85f,1,.95f);
  public Color discoveredWall=new Color(.3f,.22f,.55f,.95f);
  public Rect Resolve(Rect rect,float anchorX,float anchorY) { return new Rect(anchorX+rect.x,anchorY+rect.y,Mathf.Max(1,rect.width),Mathf.Max(1,rect.height)); }
 }

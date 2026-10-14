@@ -1,0 +1,6 @@
+wallBlocked=True
+closedDoorBlocked=True
+openDoorPassed=True
+chestBlocked=True
+enemyEncounter=True playerDidNotEnterEnemyCell=True
+dialogueBlocksAndClearsBuffer=True

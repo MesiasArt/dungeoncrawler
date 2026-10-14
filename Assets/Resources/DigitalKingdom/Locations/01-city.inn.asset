@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 413e4245d27b39f48b0b659bd83661e7, type: 3}
+  m_Name: 01-city.inn
+  m_EditorClassIdentifier: Assembly-CSharp::DigitalKingdomLocation
+  id: city.inn
+  displayName: "The Last Life \u2014 Inn"
+  npcName: INNKEEPER
+  background: {fileID: 0}
+  npcPortrait: {fileID: 0}
+  service: 0
+  initiallyUnlocked: 1
+  available: 1
+  uniqueConversation: 1
+  dialogue:
+  - speaker: INNKEEPER
+    text: Welcome to The Last Life!
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: INNKEEPER
+    text: Heroes, villains, and background characters. Everyone needs a break.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: Do you have a room?
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: INNKEEPER
+    text: Of course! Just don't ask about the previous guests.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: ...What happened to them?
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: INNKEEPER
+    text: Game over.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  stockIds: []
+  futureService:
+    m_PersistentCalls:
+      m_Calls: []
+  onLeave:
+    m_PersistentCalls:
+      m_Calls: []

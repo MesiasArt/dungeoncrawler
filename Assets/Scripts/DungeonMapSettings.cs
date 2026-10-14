@@ -1,6 +1,9 @@
 using UnityEngine;
 [CreateAssetMenu(menuName="Virtual Dungeon/Plano del dungeon")]
 public class DungeonMapSettings:ScriptableObject {
+ [Tooltip("ID persistente del mapa. No cambiar después de publicar partidas.")] public string mapId;
+ public string[] eventIds=new string[0];
+ public DungeonLegacyInteractionBinding[] legacyInteractions=new DungeonLegacyInteractionBinding[0];
  [Tooltip("Filas de sur a norte: # pared, . suelo, ~ vacío decorativo no transitable. Todas deben tener el mismo ancho.")] public string[] rows;
  public bool Valid {get{if(rows==null||rows.Length<3||rows[0]==null||rows[0].Length<3)return false;foreach(var row in rows){if(row==null||row.Length!=rows[0].Length)return false;foreach(char c in row)if(c!='#'&&c!='.'&&c!='~')return false;}return true;}}
  public System.Collections.Generic.List<string> disabledLegacyObjects=new System.Collections.Generic.List<string>();

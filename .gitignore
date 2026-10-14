@@ -19,3 +19,7 @@
 /Tools/psd_dependencies/
 /Captures/
 /Tests/*Fixture.json
+
+/Assets/_Recovery/
+
+/Tests/*.json*

@@ -5,7 +5,7 @@ public partial class DungeonPrototype {
  public DungeonRegionSettings dungeonRegions;
  public string[] MapRows {get{return (string[])map.Clone();}}
  DungeonRegion fallbackRegion;
- DungeonRegionSettings RegionMap {get{return dungeonRegions!=null?dungeonRegions:enemyZoneSettings!=null?null:DungeonRegionSettings.Current;}}
+ DungeonRegionSettings RegionMap {get{return dungeonRegions!=null?dungeonRegions:enemyZoneSettings!=null||ActiveMap!=null&&!ActiveMap.includeLegacyObjects?null:DungeonRegionSettings.Current;}}
  DungeonRegion RegionAt(Vector2Int cell){if(RegionMap!=null&&RegionMap.regions.Length>0)return RegionMap.At(cell);if(fallbackRegion==null)fallbackRegion=new DungeonRegion{id=Zone.zoneId,displayName="Zona 1",enemies=Zone};return fallbackRegion;}
  bool EnemyMayEnter(Vector2Int cell){if(RefugeNpcBlocks(cell))return false;var r=RegionAt(cell);return r==null||!r.safeArea;}
  sealed class EnemySpawnSlot {

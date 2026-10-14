@@ -1,0 +1,4 @@
+keyboardDown=False
+gamepadDown=False
+gamepadConfirm=False
+gamepadBack=True

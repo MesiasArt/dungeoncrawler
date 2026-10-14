@@ -1,0 +1,27 @@
+PASS Teleport reveals explored without visits
+PASS First transition stores source snapshot
+PASS New floor has independent visits and chests
+PASS First visit creates configured enemy once
+PASS Physical arrival adds a visit
+PASS Chest A remains opened after return
+PASS Defeated boss A remains defeated
+PASS Floor A discovery and visits restored
+PASS Enemy identity and HP restored without duplication
+PASS Floor B chest and door remain opened
+PASS Floor B event and visits preserved
+PASS Version 2 roundtrip slot 1
+PASS Version 2 roundtrip slot 2
+PASS Version 2 roundtrip slot 3
+PASS Version 2 roundtrip slot 4
+PASS Version 2 roundtrip slot 5
+PASS Version 2 roundtrip slot 6
+PASS Loading from other floor restores dead enemy and correct map
+PASS Legacy migration does not invent visits from explored
+PASS City transition accepts defeated boss
+PASS City bridge preserves floor snapshots and stable return ID
+PASS City save/load retains both floors
+PASS City exit restores source floor and other snapshot
+PASS City roundtrip preserves other floor permanent states
+PASS Phase 1 validators still pass both maps
+PASS Original movement unchanged
+PASS Completed all phase 2 checks

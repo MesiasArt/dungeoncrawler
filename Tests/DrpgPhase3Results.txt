@@ -1,0 +1,24 @@
+PASS Undiscovered chest hidden
+PASS Discovered available chest shown
+PASS Rendering query creates no persistent state
+PASS Real chest animation updates opened symbol
+PASS Locked door shown closed
+PASS Key unlock and actual opening update door symbol
+PASS Inactive node has outline symbol
+PASS Node activation immediately updates symbol
+PASS Legacy savepoint shown
+PASS Undiscovered kingdom connection hidden
+PASS Discovered kingdom connection shown
+PASS Inter-floor destination has stairs symbol
+PASS Discovery alone does not mark a visit
+PASS Actual arrival changes visited tile
+PASS Save restores opened chest symbol
+PASS Save restores open door symbol
+PASS Save restores unlocked node symbol
+PASS Removed Mimic does not leave a chest icon
+PASS Legacy save supports its known current visit
+PASS Legacy markers remain discovery-gated
+PASS Symbol fits tile at 4 reference pixels
+PASS Symbol fits tile at 18 reference pixels
+PASS Symbol fits tile at 32 reference pixels
+PASS Symbol fits tile at 60 reference pixels

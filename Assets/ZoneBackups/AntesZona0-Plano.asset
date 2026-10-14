@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e8c47f6cda186644aa0efe06e0d25bf, type: 3}
   m_Name: AntesZona0-Plano
   m_EditorClassIdentifier: Assembly-CSharp::DungeonMapSettings
+  mapId: map-2d2b170e90915b44a9b71214f078d794
   rows:
   - '#####.#####'
   - '#.........#'
@@ -32,3 +33,11 @@ MonoBehaviour:
   - '#####.....#'
   - '#####.....#'
   - '###########'
+  disabledLegacyObjects: []
+  legacyExitDoorCell: {x: 9, y: 7.5}
+  decorations: {fileID: 0}
+  entities: {fileID: 0}
+  regions: {fileID: 0}
+  includeLegacyObjects: 1
+  startCell: {x: 1, y: 1}
+  startHeading: 0

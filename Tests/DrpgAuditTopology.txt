@@ -1,0 +1,48 @@
+Geometry BFS: start=(17, 2) floors=448 reachable=448 unreachable=
+Makong=(11, 53) connected=True
+City gate=(11, 66) connected=True
+Validation errors=43
+Zona 0 — El refugio de los olvidados: casilla inválida (13, 1)
+Zona 0 — El refugio de los olvidados: casilla inválida (14, 1)
+Zona 0 — El refugio de los olvidados: casilla inválida (20, 1)
+Zona 0 — El refugio de los olvidados: casilla inválida (21, 1)
+Zona 0 — El refugio de los olvidados: casilla inválida (13, 2)
+Zona 0 — El refugio de los olvidados: casilla inválida (14, 2)
+Zona 0 — El refugio de los olvidados: casilla inválida (20, 2)
+Zona 0 — El refugio de los olvidados: casilla inválida (21, 2)
+Zona 0 — El refugio de los olvidados: casilla inválida (13, 3)
+Zona 0 — El refugio de los olvidados: casilla inválida (14, 3)
+Zona 0 — El refugio de los olvidados: casilla inválida (20, 3)
+Zona 0 — El refugio de los olvidados: casilla inválida (21, 3)
+Zona 0 — El refugio de los olvidados: casilla inválida (13, 4)
+Zona 0 — El refugio de los olvidados: casilla inválida (14, 4)
+Zona 0 — El refugio de los olvidados: casilla inválida (20, 4)
+Zona 0 — El refugio de los olvidados: casilla inválida (21, 4)
+Zona 0 — El refugio de los olvidados: casilla inválida (13, 6)
+Zona 0 — El refugio de los olvidados: casilla inválida (14, 6)
+Zona 0 — El refugio de los olvidados: casilla inválida (20, 6)
+Zona 0 — El refugio de los olvidados: casilla inválida (21, 6)
+Zona 0 — El refugio de los olvidados: casilla inválida (13, 7)
+Zona 0 — El refugio de los olvidados: casilla inválida (14, 7)
+Zona 0 — El refugio de los olvidados: casilla inválida (20, 7)
+Zona 0 — El refugio de los olvidados: casilla inválida (21, 7)
+Zona 0 — El refugio de los olvidados: casilla inválida (13, 8)
+Zona 0 — El refugio de los olvidados: casilla inválida (14, 8)
+Zona 0 — El refugio de los olvidados: casilla inválida (20, 8)
+Zona 0 — El refugio de los olvidados: casilla inválida (21, 8)
+Zona 0 — El refugio de los olvidados: casilla inválida (13, 9)
+Zona 0 — El refugio de los olvidados: casilla inválida (14, 9)
+Zona 0 — El refugio de los olvidados: casilla inválida (20, 9)
+Zona 0 — El refugio de los olvidados: casilla inválida (21, 9)
+Zona 1: casilla inválida (5, 4)
+Zona 1: casilla inválida (5, 5)
+Zona 1: casilla inválida (5, 6)
+Zona 1: casilla inválida (9, 6)
+Sin zona: 2,1
+Sin zona: 6,5
+Sin zona: 14,23
+Sin zona: 15,23
+Sin zona: 16,23
+Sin zona: 17,23
+Sin zona: 18,23
+Plan editor validation: 0

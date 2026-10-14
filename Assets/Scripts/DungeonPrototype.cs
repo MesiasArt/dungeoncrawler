@@ -33,7 +33,7 @@ public partial class DungeonPrototype : MonoBehaviour
     [SerializeField] int[] itemCounts;
     int MaximumHP { get { return (inventorySettings==null ? 30 : Mathf.Max(1,inventorySettings.maximumHP))+Levels.Growth(Levels.healthGrowth,PlayerLevel)+EquipmentBonus(0); } }
     int TotalItems { get { int total=0; if(itemCounts!=null) foreach(int count in itemCounts) total+=Mathf.Max(0,count); return total; } }
-    bool[,] explored;
+    bool[,] explored,visited;
     DungeonDoor exitDoor;
     public DungeonDoorSettings exitDoorSettings;
     bool levelComplete, showMainMenu;
@@ -101,7 +101,7 @@ public partial class DungeonPrototype : MonoBehaviour
         if (enabledSubmit) submit.Disable();
         enabledInteract = enabledSubmit = false;
     }
-    void OnDisable() { CancelMapReveal(); SetPause(false); ReleaseIntroductionInput(); }
+    void OnDisable() { ClearMovementInput(); CancelMapReveal(); SetPause(false); ReleaseIntroductionInput(); }
     void OnDestroy() { if(battleCeiling!=null)Destroy(battleCeiling);if (floorWallDistance != null) Destroy(floorWallDistance); }
     void RestartNewGame()
     {
@@ -125,17 +125,19 @@ public partial class DungeonPrototype : MonoBehaviour
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static void Launch()
     {
+        if(FindAnyObjectByType<DigitalKingdomController>()!=null)return;
         if(FindAnyObjectByType<EnemySizeGallery>()!=null)return;
         if (FindAnyObjectByType<DungeonPrototype>() == null)
             new GameObject("Dungeon Prototype").AddComponent<DungeonPrototype>();
     }
     void Start()
     {
+        bool cityArrival=DigitalKingdomTransit.ReturnData!=null;if(cityArrival){if(DigitalKingdomTransit.Map!=null)mapSettings=DigitalKingdomTransit.Map;characterSettings=DigitalKingdomTransit.Character;playerLevelSettings=DigitalKingdomTransit.Levels;inventorySettings=DigitalKingdomTransit.Inventory;}
         map=ActiveMap!=null&&ActiveMap.Valid?(string[])ActiveMap.rows.Clone():DefaultMapRows;
         if(mapSettings!=null&&mapSettings.regions!=null)dungeonRegions=mapSettings.regions;
         var refugeConfig=RefugeSettings.Current;if(refugeConfig!=null){position=refugeConfig.startCell;heading=refugeConfig.startHeading;}if(mapSettings!=null&&!mapSettings.includeLegacyObjects){position=mapSettings.startCell;heading=mapSettings.startHeading;}
         Vector2 space=EnemySpaceLayout.Corridor(DungeonVisualSettings.Current,EnemySizeSettings.Current);Cell=space.x;corridorHeight=space.y;
-        explored=new bool[map[0].Length,map.Length];
+        explored=new bool[map[0].Length,map.Length];visited=new bool[map[0].Length,map.Length];
         RevealVisitedCell(position);
         foreach (Camera camera in FindObjectsByType<Camera>()) camera.gameObject.SetActive(false);
         foreach (Light light in FindObjectsByType<Light>()) light.enabled = false;
@@ -174,8 +176,9 @@ public partial class DungeonPrototype : MonoBehaviour
                 }
             }
         }
-        SpawnPlacedEncounters();
-        if(RegionMap==null||RegionMap.legacyPlacements){
+        bool restoreFloor=cityArrival||(incomingMapTravel!=null&&!incomingMapFirstVisit);
+        if(!restoreFloor)SpawnPlacedEncounters();
+        if(!restoreFloor&&(RegionMap==null||RegionMap.legacyPlacements)){
         AddEnemy(new Vector2Int(5,3)); AddEnemy(new Vector2Int(7,7),soldier:true); AddEnemy(new Vector2Int(1,5),true);if(EnemySettings.spawnBigTapaku)AddEnemy(new Vector2Int(9,3),bigTapaku:true);
         if(EnemySettings.spawnMakubas){AddEnemy(new Vector2Int(3,3),visualKind:4);AddEnemy(new Vector2Int(5,7),visualKind:5);if(EnemySettings.spawnGranMakuba)AddEnemy(new Vector2Int(9,5),visualKind:6);}
         }
@@ -212,11 +215,13 @@ public partial class DungeonPrototype : MonoBehaviour
         for(int i=0;i<itemCounts.Length;i++) itemCounts[i]=RefugeSettings.Current!=null||inventorySettings.items[i]==null ? 0 : Mathf.Max(0,inventorySettings.items[i].startingQuantity);
         hp=MaximumHP;
         if(ActiveMap==null||ActiveMap.includeLegacyObjects)CreatePreservationCorridor();
-        if(ActiveMap==null||ActiveMap.includeLegacyObjects)CreateRefuge();RemoveDisabledLegacyDoors();CreateMapEntities();foreach(var text in GetComponentsInChildren<TextMesh>()){var occlusion=text.GetComponent<WorldTextOcclusion>();if(occlusion==null)occlusion=text.gameObject.AddComponent<WorldTextOcclusion>();occlusion.viewCamera=view;}PopulateRegions();
-        CreateDungeonDecorations();bool mapArrival=incomingMapTravel!=null;StartIntroduction();ApplyMapTravel();if(!mapArrival)ShowStartupMenu();
+        if(ActiveMap==null||ActiveMap.includeLegacyObjects)CreateRefuge();RemoveDisabledLegacyDoors();CreateMapEntities();foreach(var text in GetComponentsInChildren<TextMesh>()){var occlusion=text.GetComponent<WorldTextOcclusion>();if(occlusion==null)occlusion=text.gameObject.AddComponent<WorldTextOcclusion>();occlusion.viewCamera=view;}if(!restoreFloor)PopulateRegions();
+        CreateDungeonDecorations();bool mapArrival=incomingMapTravel!=null;StartIntroduction();ApplyMapTravel();if(cityArrival){restoringCitySnapshot=true;var data=DigitalKingdomTransit.ConsumeReturn();RestoreDungeonSave(data);restoringCitySnapshot=false;var target=DigitalKingdomTransit.ArrivalNode;DigitalKingdomTransit.ArrivalNode=null;if(!string.IsNullOrEmpty(target))DiscoverRefugeReturn(target);}else if(!mapArrival)ShowStartupMenu();
     }
     void RevealVisitedCell(Vector2Int cell)
     {
+        if(!Open(cell))return;
+        if(visited==null)visited=new bool[map[0].Length,map.Length];visited[cell.x,cell.y]=true;
         explored[cell.x,cell.y]=true;
         foreach(Vector2Int direction in directions)
         {
@@ -354,6 +359,9 @@ public partial class DungeonPrototype : MonoBehaviour
     Vector3 World(Vector2Int p) { return new Vector3(p.x*Cell,1.5f,p.y*Cell); }
     void Update()
     {
+        if(TryCityRespawn())return;
+        if(UpdateCityInput())return;
+        if(MovementInterfaceBlocked())ClearMovementInput();
         if(UpdateMapReveal())return;
         var laboratory=GetComponent<CombatLaboratory>();if(laboratory!=null&&laboratory.MenuOpen)return;
         ClaimPendingCombatDrops();
@@ -397,6 +405,7 @@ public partial class DungeonPrototype : MonoBehaviour
             if(pad!=null){if(pad.buttonEast.wasPressedThisFrame)BackToCombatMenu();else {int direction=pad.dpad.down.wasPressedThisFrame||pad.dpad.right.wasPressedThisFrame?1:pad.dpad.up.wasPressedThisFrame||pad.dpad.left.wasPressedThisFrame?-1:0;HandleCombatInput(direction,pad.buttonSouth.wasPressedThisFrame);}}
             return;
         }
+        if(ExperimentalMovement){if(!moving&&Keyboard.current!=null&&DoorInteractionAvailable(exitDoor)&&Keyboard.current.eKey.wasPressedThisFrame){ClearMovementInput();exitDoor.OpenDoor();return;}PollMovementInput();return;}
         if(moving||lost||Keyboard.current==null) return;
         var k=Keyboard.current;
         if(DoorInteractionAvailable(exitDoor) && k.eKey.wasPressedThisFrame) { exitDoor.OpenDoor();return; }
@@ -411,20 +420,25 @@ public partial class DungeonPrototype : MonoBehaviour
         Vector2Int next=position+directions[heading]*step;
         if(step!=0&&(!Open(next)||RefugeNpcBlocks(next))) yield break;
         if(step!=0 && DoorsBlock(World(position),World(next))) { yield break; }
-        if(step!=0)for(int i=0;i<enemies.Count;i++)if(enemyObjects[i]!=null&&enemies[i]==next){BeginEncounter(i);yield break;}
+        if(step!=0)for(int i=0;i<enemies.Count;i++)if(enemyObjects[i]!=null&&enemies[i]==next){moving=true;while(enemyNavigationRunning)yield return null;moving=false;ClearMovementInput();BeginEncounter(i);yield break;}
         if(step!=0) DungeonAudio.Play(DungeonAudio.Cue.Step);
         moving=true; heading=(heading+turn+4)%4;
         Vector3 from=view.transform.position,to=World(next); Quaternion rotation=view.transform.rotation,target=Quaternion.Euler(0,heading*90,0);
-        for(float t=0;t<1;t+=Time.deltaTime/.18f) { view.transform.position=Vector3.Lerp(from,to,t); view.transform.rotation=Quaternion.Slerp(rotation,target,t); yield return null; }
+        if(ExperimentalMovement){float duration=Mathf.Max(.03f,step!=0?Movement.stepSeconds:Movement.turnSeconds);float started=Time.time;float elapsed=0;while(elapsed<duration){elapsed=Time.time-started;float t=DungeonMovementSettings.Interpolate(elapsed/duration,step!=0?Movement.stepInterpolation:Movement.turnInterpolation);view.transform.position=Vector3.Lerp(from,to,t);view.transform.rotation=Quaternion.Slerp(rotation,target,t);if(elapsed<duration)yield return null;}}
+        else for(float t=0;t<1;t+=Time.deltaTime/.18f) { view.transform.position=Vector3.Lerp(from,to,t); view.transform.rotation=Quaternion.Slerp(rotation,target,t); yield return null; }
         position=next;if(step!=0)DirectorPlayerStep(); RevealVisitedCell(position); view.transform.position=to; view.transform.rotation=target; moving=false;
         if(exitDoor!=null) exitDoor.CheckPassage(from,to);
         if(zoneTwoDoor!=null)zoneTwoDoor.CheckPassage(from,to);
         foreach(var door in mapDoors.Values)door.CheckPassage(from,to);
         if(refugeDoor!=null)refugeDoor.CheckPassage(from,to);
-        if(levelComplete) yield break;
+        if(levelComplete||cityActive){moving=false;yield break;}
         moving=true;
-        if(!TryEncounter()) { yield return EnemyTurn();TryEncounter(); }
-        moving=false;
+        if(ExperimentalMovement&&Movement.overlapEnemyAnimation){
+            // Preserve one enemy decision turn per completed player action; serialize enemy turns.
+            while(enemyNavigationRunning)yield return null;
+            if(!MovementInterfaceBlocked()&&!TryEncounter())StartCoroutine(AnimateEnemyNavigation());
+            moving=false;ContinueNavigation();
+        }else{if(!TryEncounter()) { yield return EnemyTurn();TryEncounter(); }moving=false;if(ExperimentalMovement)ContinueNavigation();}
     }
 
     string[] CombatLabels()
@@ -561,6 +575,7 @@ public partial class DungeonPrototype : MonoBehaviour
     }
     void OnGUI()
     {
+        if(cityActive){DrawCity();return;}
         if(mapRevealActive){DrawMapReveal();return;}
         if(pauseOpen){DrawPause();return;}
         if(battle && !IntroductionActive && ((combatHack!=null && combatHack.Active) || combatMenu==CombatMenu.Hacks))

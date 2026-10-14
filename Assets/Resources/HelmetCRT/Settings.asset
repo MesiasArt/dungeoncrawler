@@ -16,7 +16,7 @@ MonoBehaviour:
   automaticGlitches: 1
   affectUI: 0
   brightness: 1
-  bufferHeight: 250
+  bufferHeight: 340
   scanlines: 1
   artifacts: 1
   chromaticFringe: 1

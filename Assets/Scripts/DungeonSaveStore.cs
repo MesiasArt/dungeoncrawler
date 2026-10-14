@@ -3,6 +3,12 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 [Serializable] public class DungeonSaveData {
+ public DigitalKingdomProgress city;
+ public DungeonInteractionProgress interactions=new DungeonInteractionProgress();
+ public string activeMapId;
+ public List<DungeonMapSnapshot> maps=new List<DungeonMapSnapshot>();
+ public List<Vector2Int> visited=new List<Vector2Int>();
+ public List<DungeonEntityState> legacyDoors=new List<DungeonEntityState>();
  public string slotName,savedUtc;
  public int directorRestRemaining;
  public int version=1;public bool introductionCompleted;
@@ -38,5 +44,5 @@ public static class DungeonSaveStore {
  public static void Write(DungeonSaveData data){Write(data,ActiveSlot,data.slotName);}
  public static void Write(DungeonSaveData data,int slot,string name){data.slotName=string.IsNullOrWhiteSpace(name)?"Slot "+(slot+1):name.Trim();data.savedUtc=DateTime.UtcNow.ToString("o");var path=SlotPath(slot);string temp=path+".tmp";File.WriteAllText(temp,JsonUtility.ToJson(data,true));if(File.Exists(path)){for(int i=4;i>=1;i--){string from=path+".bak"+i,to=path+".bak"+(i+1);if(File.Exists(from))File.Copy(from,to,true);}File.Copy(path,path+".bak1",true);}File.Copy(temp,path,true);File.Delete(temp);}
  public static DungeonSaveData Read(){return Read(ActiveSlot);}
- public static DungeonSaveData Read(int slot){if(!SlotExists(slot))return null;string path=SlotPath(slot);if(!File.Exists(path))path=LegacyPath;var data=JsonUtility.FromJson<DungeonSaveData>(File.ReadAllText(path));if(data==null||data.version!=1||data.player==null)throw new InvalidDataException("Partida incompatible");return data;}
+ public static DungeonSaveData Read(int slot){if(!SlotExists(slot))return null;string path=SlotPath(slot);if(!File.Exists(path))path=LegacyPath;var data=JsonUtility.FromJson<DungeonSaveData>(File.ReadAllText(path));if(data==null||(data.version!=1&&data.version!=2)||data.player==null)throw new InvalidDataException("Partida incompatible");return data;}
 }

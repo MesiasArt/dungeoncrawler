@@ -1,0 +1,9 @@
+PASS Existing v1 slot 1 migration preserves player and discovery; known visits=1
+PASS Existing slot 2 remains empty
+PASS Existing slot 3 remains empty
+PASS Existing slot 4 remains empty
+PASS Existing slot 5 remains empty
+PASS Existing slot 6 remains empty
+PASS Actual old save restores level XP HP
+PASS Actual old save restores equipment
+PASS Actual old save restores discovery with only known visit

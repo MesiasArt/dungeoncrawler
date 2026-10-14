@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 413e4245d27b39f48b0b659bd83661e7, type: 3}
+  m_Name: 06-city.sewers
+  m_EditorClassIdentifier: Assembly-CSharp::DigitalKingdomLocation
+  id: city.sewers
+  displayName: "RNG Sewers \u2014 Procedural Dungeon"
+  npcName: SEWER KEEPER
+  background: {fileID: 0}
+  npcPortrait: {fileID: 0}
+  service: 5
+  initiallyUnlocked: 1
+  available: 1
+  uniqueConversation: 1
+  dialogue:
+  - speaker: SEWER KEEPER
+    text: Welcome to the RNG Sewers.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SEWER KEEPER
+    text: No two trips are ever the same.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: What's down there?
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SEWER KEEPER
+    text: Depends on your luck.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: And if I have bad luck?
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: SEWER KEEPER
+    text: Then you'll fit right in.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  stockIds: []
+  futureService:
+    m_PersistentCalls:
+      m_Calls: []
+  onLeave:
+    m_PersistentCalls:
+      m_Calls: []

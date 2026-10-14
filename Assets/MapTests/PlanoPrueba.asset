@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e8c47f6cda186644aa0efe06e0d25bf, type: 3}
   m_Name: PlanoPrueba
   m_EditorClassIdentifier: Assembly-CSharp::DungeonMapSettings
+  mapId: map-6affe4c66b3dcae4982c400df702cbff
   rows:
   - '##########'
   - '#........#'
@@ -21,6 +22,9 @@ MonoBehaviour:
   - '#........#'
   - '#........#'
   - '##########'
+  disabledLegacyObjects: []
+  legacyExitDoorCell: {x: 9, y: 7.5}
+  decorations: {fileID: 0}
   entities: {fileID: 11400000, guid: 36357f03e35286e48a8e47dcedf283c6, type: 2}
   regions: {fileID: 11400000, guid: 8744b65fd4984b549ab61f56b308db0a, type: 2}
   includeLegacyObjects: 0

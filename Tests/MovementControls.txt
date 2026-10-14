@@ -1,0 +1,4 @@
+start=(15, 1) end=(18, 1) blocked=False cap=60 step=0,150 turn=0,133 aligned=True rotation=True heldContinuous=True finalAligned=True
+bufferOnce=True
+start=(15, 1) end=(18, 1) blocked=False cap=120 step=0,142 turn=0,125 aligned=True rotation=True heldContinuous=True finalAligned=True
+bufferOnce=True

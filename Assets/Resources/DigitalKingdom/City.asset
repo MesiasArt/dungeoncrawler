@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7534a7a1e4a116f4ba27648c94687b01, type: 3}
+  m_Name: City
+  m_EditorClassIdentifier: Assembly-CSharp::DigitalKingdomSettings
+  scenePath: Assets/Scenes/DigitalKingdom.unity
+  fallbackDungeonScene: Assets/Scenes/SampleScene.unity
+  panorama: {fileID: 2800000, guid: ad0796142a335134fb6d5cc44387a877, type: 3}
+  locations:
+  - {fileID: 11400000, guid: e9a7f3c541541fb4c8e62aef10f5f112, type: 2}
+  - {fileID: 11400000, guid: 516c8f680a181c04ca17a62f33344ab3, type: 2}
+  - {fileID: 11400000, guid: d2755ba060a81854eaa200e130c9e5b6, type: 2}
+  - {fileID: 11400000, guid: f5c62bdc83f056b47b621a9710e199e0, type: 2}
+  - {fileID: 11400000, guid: 95b766b8cb882df4db109e5965ef29b4, type: 2}
+  - {fileID: 11400000, guid: c613b253336d237419c7e199f9920621, type: 2}
+  - {fileID: 11400000, guid: 5e52de43d297e774296753b77784331b, type: 2}
+  requiredBossId: makong.first-sub-boss
+  fallbackReturnCell: {x: 11, y: 65}
+  fallbackReturnHeading: 2
+  transitionSeconds: 0.25
+  firstVisit:
+  - speaker: SYSTEM
+    text: Digital Kingdom discovered.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: Wait... there's an entire city in here?
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+  - speaker: GAMERBOY
+    text: Okay. This game is way bigger than I thought.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0

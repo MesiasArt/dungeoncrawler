@@ -1,0 +1,10 @@
+Main geometry unchanged=True
+Main regions unchanged=True
+Personal save unchanged Codebound-save-v1.json=True
+Personal save unchanged Codebound-slot-1-v1.json=True
+Personal save unchanged Codebound-slot-1-v1.json.bak1=True
+Personal save unchanged Codebound-slot-1-v1.json.bak2=True
+Personal save unchanged Codebound-slot-1-v1.json.bak3=True
+Personal save unchanged Codebound-slot-1-v1.json.bak4=True
+Personal save unchanged Codebound-slot-1-v1.json.bak5=True
+Final comparison: slot 1 has a later v2 save 2026-10-13T17:36:47.3380433Z; prior exact-byte checks were before this write. Current save preserved.

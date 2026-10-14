@@ -1,0 +1,2 @@
+clock=60 shortStep=True shortTurn90=True holdOnlyOneStep=True holdOnlyOneTurn=True rapidInputsIgnoredWhileMoving=True releaseNoPending=True exactAlignment=True
+clock=120 shortStep=True shortTurn90=True holdOnlyOneStep=True holdOnlyOneTurn=True rapidInputsIgnoredWhileMoving=True releaseNoPending=True exactAlignment=True

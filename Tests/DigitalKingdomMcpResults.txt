@@ -1,0 +1,32 @@
+PASS Acceso bloqueado antes de derrotar Makong
+PASS Cruzar puerta real abre ciudad
+PASS Dungeon suspendido y sin turnos extra
+PASS Vista ciudad sin mundo 3D ni HUD dungeon
+PASS Primera visita completada
+PASS Retorno guarda entrada real
+PASS Establecimiento abre: The Last Life — Inn
+PASS Establecimiento vuelve al hub: city.inn
+PASS Establecimiento abre: Pay 2 Win — Item Shop
+PASS Establecimiento vuelve al hub: city.shop
+PASS Establecimiento abre: Temple of Continue — Save & Respawn
+PASS Establecimiento vuelve al hub: city.temple
+PASS Establecimiento abre: Bug Lab — Research Center
+PASS Establecimiento vuelve al hub: city.lab
+PASS Establecimiento abre: Fast Travel Station — Teleport Network
+PASS Establecimiento vuelve al hub: city.travel
+PASS Establecimiento abre: RNG Sewers — Procedural Dungeon
+PASS Establecimiento vuelve al hub: city.sewers
+PASS Temple cura y registra Continue
+PASS Guardar/cargar preserva ciudad, Continue y conversaciones
+PASS Fast Travel muestra solo nodo descubierto
+PASS Viaje a nodo bloqueado rechazado
+PASS Bug Lab accesible
+PASS Servicio futuro presenta placeholder
+PASS Exit City seleccionable
+PASS Exit retorna al dungeon correcto
+PASS Cámara y reloj restaurados
+PASS Salir conserva enemigos, cofres/puertas y mapa
+PASS Revisita por puerta sin repetir descubrimiento
+PASS Derrota regresa al Temple
+PASS Continue sin bucle de derrota
+keyboardNavigation=False gamepadNavigation=False

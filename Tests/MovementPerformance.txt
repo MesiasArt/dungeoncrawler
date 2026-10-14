@@ -1,0 +1,4 @@
+original cap=60 fps=43,7 meanMs=22,90 maxMs=103,60
+original cap=120 fps=87,2 meanMs=11,47 maxMs=96,64
+experimental cap=60 fps=44,1 meanMs=22,70 maxMs=98,11
+experimental cap=120 fps=80,5 meanMs=12,42 maxMs=93,49
