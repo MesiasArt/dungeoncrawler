@@ -49,7 +49,7 @@ MonoBehaviour:
     width: 174.8
     height: 164.8
   lettersPerSecond: 35
-  textFontSize: 18
+  textFontSize: 22
   continueBlinkSeconds: 0.45
   enemyHealth:
     serializedVersion: 2

@@ -22,9 +22,9 @@ public partial class DungeonPrototype {
   float progress=XPRequired<=0?1:Mathf.Clamp01(PlayerExperience/(float)XPRequired);
   NeonDungeonUI.Solid(r,new Color(.035f,.06f,.12f));
   NeonDungeonUI.Solid(new Rect(r.x,r.y,r.width*progress,r.height),NeonDungeonUI.Cyan);
-  var style=new GUIStyle(GUI.skin.label){fontSize=12,alignment=TextAnchor.MiddleCenter};
+  var style=new GUIStyle(GUI.skin.label){fontSize=14,alignment=TextAnchor.MiddleCenter};
   style.normal.textColor=Color.white;
   if(showRemaining)GUI.Label(new Rect(r.x,r.yMax+2,r.width,18),XPRequired<=0?"NIVEL MÁXIMO":"XP "+PlayerExperience+" / "+XPRequired+(showRemaining?" · Faltan "+XPRemaining:""),style);
  }
- void DrawPlayerLevelNotice(float width){if(Time.unscaledTime>=levelNoticeUntil)return;var style=new GUIStyle(GUI.skin.label){fontSize=16,alignment=TextAnchor.MiddleCenter};style.normal.textColor=NeonDungeonUI.Pink;GUI.Label(new Rect(width/2-190,115,380,30),levelNotice,style);}
+ void DrawPlayerLevelNotice(float width){if(Time.unscaledTime>=levelNoticeUntil)return;var style=new GUIStyle(GUI.skin.label){fontSize=19,alignment=TextAnchor.MiddleCenter};style.normal.textColor=NeonDungeonUI.Pink;GUI.Label(new Rect(width/2-190,115,380,30),levelNotice,style);}
 }

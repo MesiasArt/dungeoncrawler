@@ -16,7 +16,7 @@ public class DungeonFloorReflection : MonoBehaviour
     public bool IsCeiling {get{return planeHeight>0;}}
     public void SetPlaneHeight(float height){if(Mathf.Abs(planeHeight-height)<.001f)return;planeHeight=height;captured=false;}
     float lastCaptureTime;
-    readonly UniversalRenderPipeline.SingleCameraRequest request = new UniversalRenderPipeline.SingleCameraRequest();
+    UniversalRenderPipeline.SingleCameraRequest request = new UniversalRenderPipeline.SingleCameraRequest();
 
     public void Initialize(Camera camera, Material material, float height = 0)
     {
@@ -39,7 +39,11 @@ public class DungeonFloorReflection : MonoBehaviour
 
     void LateUpdate()
     {
-        if (source == null || mirror == null || !source.enabled) return;
+        if (!Application.isPlaying || source == null || mirror == null || floor == null || reflection == null || !source.enabled) return;
+        // Managed requests are recreated during script reload; their destination is not serialized.
+        if(request==null) request=new UniversalRenderPipeline.SingleCameraRequest();
+        request.destination=reflection;
+        if(!reflection.IsCreated()){reflection.Create();captured=false;}
         var settings=DungeonVisualSettings.Current;
         if(settings!=null){floor.SetFloat("_PlanarStrength",planeHeight==0?settings.floorReflection:settings.ceilingReflection);floor.SetFloat("_PlanarBottomVisibility",settings.reflectionBottomVisibility);}
         // Follow movement immediately; refresh at 2 Hz when idle for enemies/combat.
@@ -81,10 +85,17 @@ public class DungeonFloorReflection : MonoBehaviour
         }
     }
 
+    void OnEnable(){captured=false;}
+    void OnDisable()
+    {
+        captured=false;
+        if(floor!=null) floor.SetFloat("_PlanarReady",0);
+        Shader.SetGlobalFloat("_DungeonReflectionCapture",0);
+    }
     void OnDestroy()
     {
         if (floor != null) floor.SetFloat("_PlanarReady",0);
-        if (reflection != null) { reflection.Release(); Destroy(reflection); }
-        if (mirror != null) Destroy(mirror.gameObject);
+        if (reflection != null) { if(RenderTexture.active==reflection)RenderTexture.active=null;reflection.Release();if(Application.isPlaying)Destroy(reflection);else DestroyImmediate(reflection); }
+        if (mirror != null) {if(Application.isPlaying)Destroy(mirror.gameObject);else DestroyImmediate(mirror.gameObject);}
     }
 }

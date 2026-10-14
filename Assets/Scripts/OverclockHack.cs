@@ -80,12 +80,12 @@ public sealed class OverclockHack:CombatHack {
   float shake=pulse*(2+charge*5);float zoom=1+pulse*.012f;
   GUI.matrix=GUI.matrix*Matrix4x4.TRS(new Vector3(Mathf.Sin((float)ClockNow*127)*shake,Mathf.Cos((float)ClockNow*103)*shake,0),Quaternion.identity,new Vector3(zoom,zoom,1));
   Fill(new Rect(0,0,1000,570),new Color(.006f,.009f,.027f));
-  var title=new GUIStyle(GUI.skin.label){fontSize=28,alignment=TextAnchor.MiddleLeft};title.normal.textColor=WristHackScreen.Text;
+  var title=new GUIStyle(GUI.skin.label){fontSize=34,alignment=TextAnchor.MiddleLeft};title.normal.textColor=WristHackScreen.Text;
   GUI.Label(new Rect(48,12,650,44),"OVERCLOCK.exe",title);
-  var clock=new GUIStyle(title){fontSize=40,alignment=TextAnchor.MiddleRight};GUI.Label(new Rect(780,10,172,50),Model!=null?Model.Remaining.ToString("0.00")+" s":"0.00 s",clock);
+  var clock=new GUIStyle(title){fontSize=48,alignment=TextAnchor.MiddleRight};GUI.Label(new Rect(780,10,172,50),Model!=null?Model.Remaining.ToString("0.00")+" s":"0.00 s",clock);
   Rect bar=new Rect(50,70,675,22);Fill(new Rect(bar.x-3,bar.y-3,bar.width+6,bar.height+6),NeonDungeonUI.Pink);Fill(bar,new Color(.015f,.025f,.07f));
   for(int i=0;i<20;i++){float begin=i/20f,end=Mathf.Min(charge,(i+1)/20f);if(end>begin)Fill(new Rect(bar.x+bar.width*begin,bar.y+2,bar.width*(end-begin)-1,bar.height-4),Color.Lerp(NeonDungeonUI.Cyan,NeonDungeonUI.Pink,begin));}
-  var info=new GUIStyle(title){fontSize=24,alignment=TextAnchor.MiddleCenter};GUI.Label(new Rect(745,60,200,40),Mathf.RoundToInt(charge*100)+"%",info);
+  var info=new GUIStyle(title){fontSize=29,alignment=TextAnchor.MiddleCenter};GUI.Label(new Rect(745,60,200,40),Mathf.RoundToInt(charge*100)+"%",info);
   Rect arena=new Rect(27,120,946,340);if(arenaBackground!=null)arenaBackground.Draw(arena,0);
   GUI.BeginGroup(arena);
   float ground=EnemyJumpLayout.GroundY;
@@ -103,7 +103,7 @@ public sealed class OverclockHack:CombatHack {
   else if(charge>0)OverclockEnergyVisual.Orb(hand,Mathf.Lerp(5,30,charge)*(1+pulse*.08f),ClockNow);
   GUI.EndGroup();
   GUI.Label(new Rect(40,470,920,38),Active?"CARGA: ["+KeyLabel+"] / MANDO ["+PadLabel+"]":result,info);
-  var hint=new GUIStyle(info){fontSize=17};GUI.Label(new Rect(50,516,900,30),Active?"Pulsa rápido para aumentar la energía.":"DISPARO DE ENERGÍA",hint);
+  var hint=new GUIStyle(info){fontSize=20};GUI.Label(new Rect(50,516,900,30),Active?"Pulsa rápido para aumentar la energía.":"DISPARO DE ENERGÍA",hint);
   if(pulse>0)Fill(new Rect(0,0,1000,570),new Color(1,.1f,.5f,pulse*.07f));
   GUI.matrix=matrix;GUI.color=color;GUI.contentColor=content;GUI.backgroundColor=background;GUI.depth=depth;GUI.enabled=enabled;
  }

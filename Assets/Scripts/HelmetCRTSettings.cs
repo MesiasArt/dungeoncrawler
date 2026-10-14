@@ -3,6 +3,11 @@ using UnityEngine;
 public class HelmetCRTSettings:ScriptableObject {
  public bool crtEnabled=true,automaticGlitches=true;
  public bool affectUI=true;
+ [Header("Intensidad por elemento")]
+ public bool separateLayerIntensity=true;
+ [Range(0,1)] public float backgroundIntensity=1;
+ [Range(0,1)] public float enemyIntensity=.35f;
+ [Range(0,1)] public float uiIntensity=.08f;
  [Range(.75f,1.75f)] public float brightness=1.05f;
  [Range(240,1080)] public int bufferHeight=720;
  [Range(0,1)] public float scanlines=.12f;

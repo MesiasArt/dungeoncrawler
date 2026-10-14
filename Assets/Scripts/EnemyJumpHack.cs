@@ -169,11 +169,12 @@ public class EnemyJumpHack : CombatHack
         WristHackScreen.DrawFrame();
         WristHackScreen.ApplyContentMatrix();
         GUI.enabled=true;
-        if(label==null) { label=new GUIStyle(GUI.skin.label){fontSize=20}; button=new GUIStyle(GUI.skin.button){fontSize=20}; }
+        if(label==null) { label=new GUIStyle(GUI.skin.label){fontSize=24}; button=new GUIStyle(GUI.skin.button){fontSize=24}; }
         Fill(new Rect(0,0,1000,570),new Color(.008f,.004f,.025f,1));
         GUI.Label(new Rect(25,12,650,35),"HACK_01 / ENEMY JUMP",label);
         GUI.Label(new Rect(800,12,190,35),comboText,label);
         Fill(new Rect(24,54,952,442),new Color(.15f,.45f,.85f)); Fill(new Rect(27,57,946,436),Color.black);
+
         if(parallax!=null)parallax.Draw(new Rect(27,120,946,340),Rhythm!=null?Rhythm.SongTime:Time.unscaledTime-backgroundStarted);
         GUI.Label(new Rect(50,72,700,35),damageText,label);
         GUI.Label(new Rect(50,108,880,30),"SPACE / JUMP: salta libremente y aterriza al pulso",label);
@@ -211,10 +212,11 @@ public class EnemyJumpHack : CombatHack
             Texture2D frame=walkingEnemies[opponentKind][(Mathf.FloorToInt(Time.unscaledTime/.22f)+id)%2];
             GUI.color=Color.white;
             float size=Model.EnemyExtent*(frame!=null?(float)frame.width/frame.height:1);
+
             if(frame!=null) GUI.DrawTexture(new Rect(x+(Model.EnemyExtent-size)*.5f,EnemyJumpLayout.GroundY-Model.EnemyExtent,size,Model.EnemyExtent),frame,ScaleMode.StretchToFill,true);
             else Fill(new Rect(x,EnemyJumpLayout.GroundY-Model.EnemyExtent,Model.EnemyExtent,Model.EnemyExtent),new Color(1,.15f,.23f));
         }
-        if(popupStyle==null) { popupStyle=new GUIStyle(GUI.skin.label){fontSize=22,fontStyle=FontStyle.Bold,alignment=TextAnchor.MiddleCenter};popupStyle.normal.textColor=new Color(1,.3f,.65f); }
+        if(popupStyle==null) { popupStyle=new GUIStyle(GUI.skin.label){fontSize=26,fontStyle=FontStyle.Bold,alignment=TextAnchor.MiddleCenter};popupStyle.normal.textColor=new Color(1,.3f,.65f); }
         for(int i=0;i<popups.Length;i++)
         {
             if(popups[i].caption==null) continue;

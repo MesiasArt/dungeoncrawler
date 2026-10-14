@@ -8,9 +8,11 @@ public static class WristHackScreen
     public static readonly Color Text = new Color(.65f,.85f,1);
     public static void DrawFrame()
     {
+        HelmetCRTLayerMask.BeginGUI();
         if(arm==null) arm=Resources.Load<Texture2D>("UI/HackArm");
         GUI.matrix=Matrix4x4.identity;GUI.color=Color.white;
         if(Event.current.type!=EventType.Repaint) return;
+
         if(Background!=null) GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),Background,ScaleMode.StretchToFill,false);
         float sx=Screen.width/1672f,sy=Screen.height/941f;
         // Behind the frame: cover only the display hole, leaving exterior alpha clear.

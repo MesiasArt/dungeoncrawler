@@ -11,7 +11,7 @@ public class DungeonUILayout : ScriptableObject
  [Tooltip("GamerBoy portrait position from the bottom-left.")] public Rect dialogueAvatar=new Rect(20,-200,160,141);
  [Header("Text appearance")]
  [Tooltip("Zero shows complete text immediately.")] [Min(0)] public float lettersPerSecond=35;
- [Min(12)] public int textFontSize=18;
+ [Min(12)] public int textFontSize=22;
  [Min(.1f)] public float continueBlinkSeconds=.45f;
  [Tooltip("Position from the top-center.")] public Rect enemyHealth=new Rect(-180,15,360,114);
  [Tooltip("Bottom-left offset for the combat button stack.")] public Vector2 combatOffset=new Vector2(20,-33);

@@ -264,10 +264,11 @@ public partial class DungeonPrototype : MonoBehaviour
     }
     void DrawCompletion(float width,float height)
     {
+
         GUI.enabled=true;GUI.color=new Color(0,0,0,levelFade);GUI.DrawTexture(new Rect(0,0,width,height),Texture2D.whiteTexture);GUI.color=Color.white;
         if(levelFade<1) return;
         GUI.contentColor=Color.white;GUI.backgroundColor=new Color(.12f,.05f,.3f,1);
-        var title=new GUIStyle(GUI.skin.label){fontSize=34,alignment=TextAnchor.MiddleCenter};
+        var title=new GUIStyle(GUI.skin.label){fontSize=41,alignment=TextAnchor.MiddleCenter};
         GUI.Label(new Rect(0,height*.35f,width,70),showMainMenu ? "VIRTUAL DUNGEON" : "NIVEL COMPLETADO",title);
         if(showMainMenu) { if(GUI.Button(new Rect(width/2-140,height*.55f,280,50),"JUGAR")) RestartNewGame();if(GUI.Button(new Rect(width/2-140,height*.55f+65,280,50),"CARGAR PARTIDA"))OpenSaveSlots(true); }
         else
@@ -555,9 +556,9 @@ public partial class DungeonPrototype : MonoBehaviour
         bool savedEnabled=GUI.enabled;int savedDepth=GUI.depth;
         GUI.depth=-20;
         WristHackScreen.DrawFrame();WristHackScreen.ApplyContentMatrix();
-        var titleStyle=new GUIStyle(GUI.skin.label){fontSize=30,alignment=TextAnchor.MiddleCenter};
-        var entryStyle=new GUIStyle(GUI.skin.button){fontSize=24};
-        var hintStyle=new GUIStyle(GUI.skin.label){fontSize=18,alignment=TextAnchor.MiddleCenter};
+        var titleStyle=new GUIStyle(GUI.skin.label){fontSize=36,alignment=TextAnchor.MiddleCenter};
+        var entryStyle=new GUIStyle(GUI.skin.button){fontSize=29};
+        var hintStyle=new GUIStyle(GUI.skin.label){fontSize=22,alignment=TextAnchor.MiddleCenter};
         GUI.Label(new Rect(40,15,920,50),"HACKS",titleStyle);
         string[] labels=CombatLabels();
         float row=Mathf.Min(65,340f/Mathf.Max(1,labels.Length));
@@ -569,12 +570,13 @@ public partial class DungeonPrototype : MonoBehaviour
             if(GUI.Button(new Rect(170,90+i*row,660,row-10),caption,entryStyle)) { selectedCombatAction=i;Action(i); }
         }
         GUI.enabled=true;GUI.contentColor=WristHackScreen.Text;
-        if(selectedCombatAction>=0&&selectedCombatAction<availableHackDefinitions.Count){var descriptionStyle=new GUIStyle(GUI.skin.label){fontSize=16,wordWrap=true,alignment=TextAnchor.MiddleCenter};GUI.Label(new Rect(80,462,840,44),availableHackDefinitions[selectedCombatAction].description,descriptionStyle);}
+        if(selectedCombatAction>=0&&selectedCombatAction<availableHackDefinitions.Count){var descriptionStyle=new GUIStyle(GUI.skin.label){fontSize=19,wordWrap=true,alignment=TextAnchor.MiddleCenter};GUI.Label(new Rect(80,462,840,44),availableHackDefinitions[selectedCombatAction].description,descriptionStyle);}
         GUI.Label(new Rect(30,515,940,40),"Flechas: elegir / ENTER: usar / ESC: volver",hintStyle);
         GUI.matrix=savedMatrix;GUI.color=savedColor;GUI.backgroundColor=savedBackground;GUI.contentColor=savedContent;GUI.enabled=savedEnabled;GUI.depth=savedDepth;
     }
     void OnGUI()
     {
+        HelmetCRTLayerMask.BeginGUI();
         if(cityActive){DrawCity();return;}
         if(mapRevealActive){DrawMapReveal();return;}
         if(pauseOpen){DrawPause();return;}
@@ -586,7 +588,7 @@ public partial class DungeonPrototype : MonoBehaviour
         float scale=Mathf.Min(Screen.width/1280f,Screen.height/720f); GUI.matrix=Matrix4x4.Scale(new Vector3(scale,scale,1));
         float width=Screen.width/scale,height=Screen.height/scale;
         NeonDungeonUI.FontSize=Layout.textFontSize;NeonDungeonUI.ContinueBlinkSeconds=Layout.continueBlinkSeconds;
-        GUI.skin.box.fontSize=20; GUI.skin.label.fontSize=18; GUI.skin.button.fontSize=20;
+        GUI.skin.box.fontSize=24; GUI.skin.label.fontSize=22; GUI.skin.button.fontSize=24;
         GUI.backgroundColor=new Color(.12f,.05f,.3f,.95f); GUI.contentColor=new Color(.65f,.85f,1);
         NeonDungeonUI.ApplyFont();
         DrawActivePartyPanel();

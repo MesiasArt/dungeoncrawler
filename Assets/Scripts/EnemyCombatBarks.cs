@@ -40,11 +40,11 @@ public class EnemyCombatBarks : MonoBehaviour
   if(laneRight<0)laneRight=width-8;
   float available=Mathf.Max(40,laneRight-laneLeft);
   float boxWidth=Mathf.Min(available,Mathf.Min(settings.displayRect.width,320));
-  int font=Mathf.Clamp(settings.textFontSize,12,16);
+  int font=Mathf.Clamp(Mathf.RoundToInt(settings.textFontSize*1.2f),14,20);
   var style=new GUIStyle(GUI.skin.label){fontSize=font,wordWrap=true};
   float textWidth=boxWidth*.77f;
   float textHeight=style.CalcHeight(new GUIContent(phrase),textWidth);
-  while(font>12 && textHeight>90){style.fontSize=--font;textHeight=style.CalcHeight(new GUIContent(phrase),textWidth);}
+  while(font>14 && textHeight>90){style.fontSize=--font;textHeight=style.CalcHeight(new GUIContent(phrase),textWidth);}
   float boxHeight=Mathf.Max(60,(textHeight+8)/.65f);
   Rect r=new Rect(Mathf.Clamp(enemyAnchor.x-boxWidth*.5f,laneLeft,Mathf.Max(laneLeft,laneRight-boxWidth)),enemyAnchor.y-boxHeight-6,boxWidth,boxHeight);
   r.y=Mathf.Max(4,r.y);

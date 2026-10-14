@@ -14,15 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HelmetCRTSettings
   crtEnabled: 1
   automaticGlitches: 1
-  affectUI: 0
-  brightness: 1
+  affectUI: 1
+  separateLayerIntensity: 1
+  backgroundIntensity: 1
+  enemyIntensity: 0.786
+  uiIntensity: 0
+  brightness: 0.75
   bufferHeight: 340
   scanlines: 1
   artifacts: 1
   chromaticFringe: 1
   curvature: 1
   cornerMask: 1
-  curvatureAmount: -0.0712
+  curvatureAmount: 0.0306
   minimumGlitchInterval: 18
   maximumGlitchInterval: 40
   minimumGlitchDuration: 0.1

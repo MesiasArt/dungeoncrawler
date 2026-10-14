@@ -5,7 +5,7 @@ public class HelmetCRTRendererFeature:CRTPostprocess.NTSCFeature {
   var camera=data.cameraData.camera;
   if(camera==null||camera.cameraType!=UnityEngine.CameraType.Game||camera.targetTexture!=null)return;
   var controller=camera.GetComponent<HelmetCRTController>();
-  if(controller==null||!controller.EffectEnabled||controller.settings.affectUI)return;
+  if(controller==null||!controller.EffectEnabled||controller.settings.affectUI||controller.settings.separateLayerIntensity)return;
   var s=controller.settings;float glitch=controller.GlitchStrength;
   bufferHeight=UnityEngine.Mathf.Clamp(s.bufferHeight,240,1080);outputHeight=bufferHeight;
   crossTalkMode=glitch>.01f?CRTPostprocess.NTSCPass.CrossTalkMode.SlantNoise:CRTPostprocess.NTSCPass.CrossTalkMode.None;

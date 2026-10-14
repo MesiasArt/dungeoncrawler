@@ -11,7 +11,7 @@ public partial class DungeonPrototype {
   NeonDungeonUI.Label(new Rect(left.x+22,body+16,248,30),"EQUIPAMIENTO");NeonDungeonUI.Rule(new Rect(left.x+22,body+52,248,1));
   EnsureEquipment();pauseRow=Mathf.Clamp(pauseRow,0,2);GUI.enabled=!choosingEquipment;
   string[] slots={"GUANTE","CAMISETA","PIES"};
-  var small=new GUIStyle(GUI.skin.label){fontSize=15,wordWrap=true};small.normal.textColor=new Color(.65f,.85f,1);
+  var small=new GUIStyle(GUI.skin.label){fontSize=18,wordWrap=true};small.normal.textColor=new Color(.65f,.85f,1);
   for(int n=0;n<3;n++){
    int index=EquippedInSlot(n);var item=index>=0?Character.equipment[index]:null;float row=body+68+n*100;
    Rect icon=new Rect(left.x+22,row,72,72);NeonDungeonUI.InventorySlot(icon,pauseRow==n);
@@ -45,7 +45,7 @@ public partial class DungeonPrototype {
   if(availableHackDefinitions.Count>0){var h=availableHackDefinitions[characterHackSelection];GUI.Label(new Rect(right.x+24,body+385,368,26),h.displayName+" / "+h.bitsCost+" Bits",small);GUI.Label(new Rect(right.x+24,body+412,368,40),h.description,small);}else GUI.Label(new Rect(right.x+24,body+328,368,35),"Ninguno desbloqueado",small);
   Rect back=new Rect(width/2-140,y+542,280,44);NeonDungeonUI.Panel(back);NeonDungeonUI.Label(back,"VOLVER",true);if(GUI.Button(back,GUIContent.none,GUIStyle.none))pausePage=0;
   GUI.enabled=true;if(choosingEquipment)DrawEquipmentChoice(width,height);
-  var hint=new GUIStyle(GUI.skin.label){fontSize=13,alignment=TextAnchor.MiddleCenter};GUI.Label(new Rect(x,y+599,sheetWidth,24),"Flechas: equipo / ENTER: cambiar / Clic: HACK / ESC: volver",hint);
+  var hint=new GUIStyle(GUI.skin.label){fontSize=16,alignment=TextAnchor.MiddleCenter};GUI.Label(new Rect(x,y+599,sheetWidth,24),"Flechas: equipo / ENTER: cambiar / Clic: HACK / ESC: volver",hint);
  }
  void CharacterSheetBar(Rect r,float amount,Color color){NeonDungeonUI.Solid(r,new Color(.025f,.035f,.075f));NeonDungeonUI.Solid(new Rect(r.x,r.y,r.width*Mathf.Clamp01(amount),r.height),color);}
 }
