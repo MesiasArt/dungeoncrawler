@@ -110,11 +110,22 @@ public partial class DungeonPrototype : MonoBehaviour
     void RestartNewGame()
     {
         GameStartContext.PrepareNewGame();
-        var inventory=inventorySettings;var door=exitDoorSettings;var plan=mapSettings;var regions=dungeonRegions;
+        // Copy configuration, never the generated hierarchy or live combat state.
+        var configuration=JsonUtility.ToJson(this);
+        var retro=GetComponent<RetroDungeonWallComposer>();
+        var jump=GetComponent<EnemyJumpHack>();var overclock=GetComponent<OverclockHack>();
+        var retroSettings=retro!=null?retro.settings:null;
+        var jumpSettings=jump!=null?jump.settings:null;var overclockSettings=overclock!=null?overclock.settings:null;
+        gameObject.SetActive(false);
         Destroy(gameObject);
         var fresh=new GameObject("Dungeon Prototype").AddComponent<DungeonPrototype>();
-        fresh.inventorySettings=inventory;fresh.exitDoorSettings=door;fresh.mapSettings=plan;fresh.dungeonRegions=regions;
+        JsonUtility.FromJsonOverwrite(configuration,fresh);
+        fresh.combatHack=null;
+        fresh.restartRetroSettings=retroSettings;
+        if(jumpSettings!=null)fresh.gameObject.AddComponent<EnemyJumpHack>().settings=jumpSettings;
+        if(overclockSettings!=null)fresh.gameObject.AddComponent<OverclockHack>().settings=overclockSettings;
     }
+    RetroDungeonSettings restartRetroSettings;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     static void RegisterSceneLaunch()
@@ -137,6 +148,8 @@ public partial class DungeonPrototype : MonoBehaviour
     }
     void Start()
     {
+        // Start runs after the old object's destruction, including its audio/fog cleanup.
+        if(restartRetroSettings!=null){var composer=gameObject.AddComponent<RetroDungeonWallComposer>();composer.settings=restartRetroSettings;composer.dungeon=this;restartRetroSettings=null;}
         DungeonAudio.SetCityMusic(false);
         bool cityArrival=DigitalKingdomTransit.ReturnData!=null;if(cityArrival){if(DigitalKingdomTransit.Map!=null)mapSettings=DigitalKingdomTransit.Map;characterSettings=DigitalKingdomTransit.Character;playerLevelSettings=DigitalKingdomTransit.Levels;inventorySettings=DigitalKingdomTransit.Inventory;}
         ApplyPlayerProfileDefaults();
@@ -224,6 +237,7 @@ public partial class DungeonPrototype : MonoBehaviour
         if(ActiveMap==null||ActiveMap.includeLegacyObjects)CreatePreservationCorridor();
         if(ActiveMap==null||ActiveMap.includeLegacyObjects)CreateRefuge();RemoveDisabledLegacyDoors();CreateMapEntities();if(ActiveMap!=null&&ActiveMap.digitalDoorsEnabled)foreach(var legacyDoor in new[]{exitDoor,refugeDoor,zoneTwoDoor})if(legacyDoor!=null)legacyDoor.ConfigureDigital(DigitalDoorAccess.Cyan,false,true,false);ConfigureDoorZoneSigns();foreach(var text in GetComponentsInChildren<TextMesh>()){if(text.GetComponentInParent<DungeonDoorZoneSigns>()!=null)continue;var occlusion=text.GetComponent<WorldTextOcclusion>();if(occlusion==null)occlusion=text.gameObject.AddComponent<WorldTextOcclusion>();occlusion.viewCamera=view;}if(!restoreFloor)PopulateRegions();
         CreateDungeonDecorations();bool mapArrival=incomingMapTravel!=null;StartIntroduction();ApplyMapTravel();if(cityArrival){restoringCitySnapshot=true;var data=DigitalKingdomTransit.ConsumeReturn();RestoreDungeonSave(data);restoringCitySnapshot=false;var target=DigitalKingdomTransit.ArrivalNode;DigitalKingdomTransit.ArrivalNode=null;if(!string.IsNullOrEmpty(target))DiscoverRefugeReturn(target);}else if(!mapArrival){var requestedSave=CodeboundTitleScreen.TakeSavedGame();if(requestedSave!=null)RestoreDungeonSave(requestedSave);else if(CodeboundTitleScreen.TakeNewGame())StartFreshFromMenu();else ShowStartupMenu();}
+        sceneInitializationCompleted=true;
     }
     void RevealVisitedCell(Vector2Int cell)
     {
@@ -368,6 +382,7 @@ public partial class DungeonPrototype : MonoBehaviour
     Vector3 World(Vector2Int p) { return new Vector3(p.x*Cell,1.5f,p.y*Cell); }
     void Update()
     {
+        if(DungeonSaveRecoveryNotice.Active){ClearMovementInput();return;}
         TickBattleMenuSlide();
         UpdateHackSystemSession();
         if(TryCityRespawn())return;

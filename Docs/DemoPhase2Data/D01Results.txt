@@ -1,0 +1,21 @@
+PASS: Pixel baseline contains generated visual layers
+PASS: Pixel restart 0 retains map and composer configuration
+PASS: Pixel restart 0 rebuilds identical visual composition
+PASS: Pixel restart 0 has one controller and composer
+PASS: Pixel restart 0 restores floor and ceiling reflections
+PASS: Pixel restart 0 preserves CRT profile
+PASS: Pixel restart 0 preserves one audio host and map playlist
+PASS: Pixel restart 1 retains map and composer configuration
+PASS: Pixel restart 1 rebuilds identical visual composition
+PASS: Pixel restart 1 has one controller and composer
+PASS: Pixel restart 1 restores floor and ceiling reflections
+PASS: Pixel restart 1 preserves CRT profile
+PASS: Pixel restart 1 preserves one audio host and map playlist
+PASS: Pixel restart 2 retains map and composer configuration
+PASS: Pixel restart 2 rebuilds identical visual composition
+PASS: Pixel restart 2 has one controller and composer
+PASS: Pixel restart 2 restores floor and ceiling reflections
+PASS: Pixel restart 2 preserves CRT profile
+PASS: Pixel restart 2 preserves one audio host and map playlist
+PASS: Normal dungeon restart retains map without injecting Pixel presentation
+PASS: Normal dungeon restart has one controller and both reflections

@@ -3,12 +3,14 @@ using System;using System.Collections.Generic;using UnityEngine;
 public sealed partial class RetroDungeonWallComposer:MonoBehaviour {
  public RetroDungeonSettings settings;public DungeonPrototype dungeon;
  public int WallRuns {get;private set;}public int ElementCount {get;private set;}public int PipeCount {get;private set;}public int CompositionHash {get;private set;}
+ internal bool PresentationReady {get{return ready;}}
  Texture floorDistance;Vector4 floorBounds;DungeonAtmosphereSettings atmosphere;int visualHash;bool ready;
  readonly Dictionary<Material,Texture2D> layerTextures=new Dictionary<Material,Texture2D>();
  Transform generated;readonly List<Material> materials=new List<Material>();readonly Dictionary<string,Material> shared=new Dictionary<string,Material>();readonly List<ScriptableObject> temporary=new List<ScriptableObject>();
  #if UNITY_EDITOR
  string previousSavePath;
  void Awake(){previousSavePath=DungeonSaveStore.editorTestPath;DungeonSaveStore.editorTestPath=System.IO.Path.GetFullPath("Tests/RetroExperimentSave.json");}
+ internal void HandOffEditorSavePath(RetroDungeonWallComposer destination){destination.previousSavePath=previousSavePath;previousSavePath=DungeonSaveStore.editorTestPath;}
  #endif
  void Start(){if(dungeon==null)dungeon=GetComponent<DungeonPrototype>();dungeon.BeginRetroExperiment();ConfigureLight();if(settings.audioProfile!=null)DungeonAudio.SetMapPlaylist(this,settings.audioProfile);Build();ready=true;ApplyLiveSettings();}
  void ConfigureLight(){var view=dungeon.RetroView;var lighting=view.GetComponent<DungeonCorridorLighting>();atmosphere=Instantiate(lighting.settings);temporary.Add(atmosphere);atmosphere.fogColor=settings.distanceLight;atmosphere.fogStart=settings.fogStart;atmosphere.fogEnd=settings.fogEnd;atmosphere.horizonColor=Color.white;atmosphere.horizonIntensity=.15f;lighting.settings=atmosphere;RenderSettings.fogColor=settings.distanceLight;RenderSettings.fogMode=FogMode.Linear;RenderSettings.fogStartDistance=settings.fogStart;RenderSettings.fogEndDistance=settings.fogEnd;RenderSettings.ambientLight=Color.white*.8f;view.backgroundColor=settings.distanceLight;

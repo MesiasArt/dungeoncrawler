@@ -1,0 +1,1 @@
+PASS: Recovery notice acknowledges Enter without loading or saving a personal slot

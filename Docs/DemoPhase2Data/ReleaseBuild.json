@@ -1,0 +1,13 @@
+{
+    "result": "Succeeded",
+    "errors": 0,
+    "warnings": 2,
+    "bytes": 469680924,
+    "seconds": 280.58147149999999,
+    "scenes": [
+        "Assets/Scenes/CodeboundTitle.unity",
+        "Assets/Scenes/SampleScene.unity",
+        "Assets/Scenes/DigitalKingdom.unity",
+        "Assets/Scenes/RetroDungeonExperiment.unity"
+    ]
+}

@@ -7,7 +7,7 @@ public partial class DungeonPrototype {
  DigitalKingdomLocation CityLocation {get{return City==null?null:Array.Find(City.locations,l=>l!=null&&l.id==cityProgress.locationId);}}
  bool CityBossDefeated(){return City!=null&&(string.IsNullOrEmpty(City.requiredBossId)||System.Linq.Enumerable.Any(defeatedEnemies.Values,r=>r.defeated&&r.placementId==City.requiredBossId));}
  public bool EnterDigitalKingdom(){return EnterDigitalKingdomAt(position,heading);}
- bool EnterDigitalKingdomAt(Vector2Int returnCell,int returnHeading){if(City==null||cityActive||battle||lost||moving||IntroductionActive)return false;if(!CityBossDefeated()){message="La salida permanece bloqueada hasta derrotar a Makong.";return false;}
+ bool EnterDigitalKingdomAt(Vector2Int returnCell,int returnHeading){if(!DungeonWhiteTransition.CanEnter||City==null||cityActive||battle||lost||moving||IntroductionActive)return false;if(!CityBossDefeated()){message="La salida permanece bloqueada hasta derrotar a Makong.";return false;}
   cityProgress.returnCell=returnCell;cityProgress.returnHeading=returnHeading;cityProgress.returnMap=ActiveMap!=null?ActiveMap.name:"";cityProgress.returnMapId=DungeonMapPersistence.RequireId(ActiveMap);cityProgress.returnScene=gameObject.scene.path;var zone=RegionAt(position);cityProgress.returnZone=zone!=null?zone.id:"";cityProgress.discovered=true;cityProgress.inCity=true;cityProgress.locationId="";OpenCityView();
   if(!cityProgress.firstVisitCompleted)worldDialogue.Begin(City.firstVisit,()=>cityProgress.firstVisitCompleted=true);return true;
  }

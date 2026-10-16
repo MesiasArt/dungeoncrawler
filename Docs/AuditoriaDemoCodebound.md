@@ -2,6 +2,8 @@
 
 Fecha: 16 de octubre de 2026. Alcance: análisis, sin implementar optimizaciones.
 
+Actualización de preparación: ver [Fase 2 — correcciones funcionales](DemoPhase2FunctionalFixes.md). D01, D03/R02 y R03 ya tienen implementación y evidencia de pruebas; su cierre final se registra allí. Las secciones originales y la actualización Windows conservan sus conclusiones históricas. La Fase 3 fue autorizada; todavía no se han aplicado sus optimizaciones en este punto de control.
+
 ## 1. Resumen ejecutivo
 
 El prototipo dispone de una base funcional considerable: exploración por casillas, combate, JUMP y OVERCLOCK, SPEEDRUN, progresión, seis slots, snapshots por mapa, condiciones/eventos, Digital Kingdom y Reino del Píxel. Las fases DRPG 1–7 están documentadas como completadas. La documentación general antigua no describe todo el estado actual: no debe usarse para afirmar que faltan guardado o progresión.

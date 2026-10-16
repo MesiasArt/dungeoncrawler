@@ -1,0 +1,60 @@
+PASS: Pixel baseline contains generated visual layers
+PASS: Pixel restart 0 retains map and composer configuration
+PASS: Pixel restart 0 rebuilds identical visual composition
+PASS: Pixel restart 0 has one controller and composer
+PASS: Pixel restart 0 restores floor and ceiling reflections
+PASS: Pixel restart 0 preserves CRT profile
+PASS: Pixel restart 0 preserves one audio host and map playlist
+PASS: Pixel restart 1 retains map and composer configuration
+PASS: Pixel restart 1 rebuilds identical visual composition
+PASS: Pixel restart 1 has one controller and composer
+PASS: Pixel restart 1 restores floor and ceiling reflections
+PASS: Pixel restart 1 preserves CRT profile
+PASS: Pixel restart 1 preserves one audio host and map playlist
+PASS: Pixel restart 2 retains map and composer configuration
+PASS: Pixel restart 2 rebuilds identical visual composition
+PASS: Pixel restart 2 has one controller and composer
+PASS: Pixel restart 2 restores floor and ceiling reflections
+PASS: Pixel restart 2 preserves CRT profile
+PASS: Pixel restart 2 preserves one audio host and map playlist
+PASS: Normal dungeon restart retains map without injecting Pixel presentation
+PASS: Normal dungeon restart has one controller and both reflections
+PASS: Save: slot 0 version 1 roundtrip
+PASS: Save: slot 0 preserves floor snapshot
+PASS: Save: slot 1 version 2 roundtrip
+PASS: Save: slot 1 preserves floor snapshot
+PASS: Save: slot 2 version 1 roundtrip
+PASS: Save: slot 2 preserves floor snapshot
+PASS: Save: slot 3 version 2 roundtrip
+PASS: Save: slot 3 preserves floor snapshot
+PASS: Save: slot 4 version 1 roundtrip
+PASS: Save: slot 4 preserves floor snapshot
+PASS: Save: slot 5 version 2 roundtrip
+PASS: Save: slot 5 preserves floor snapshot
+PASS: Save: backup rotation 1
+PASS: Save: backup rotation 2
+PASS: Save: backup rotation 3
+PASS: Save: backup rotation 4
+PASS: Save: backup rotation 5
+PASS: Save: truncated principal falls back to first valid backup
+PASS: Save: summary read does not repair or mutate files
+PASS: Save: explicit recovery reports source and possible lost recent progress
+PASS: Save: load repairs principal and archives damaged bytes
+PASS: Save: recovery leaves source backup intact
+PASS: Save: skips invalid recent backup
+PASS: Save: missing principal remains recoverable through slot menu
+PASS: Save: missing principal recreated atomically
+PASS: Save: locked destination fails safely
+PASS: Save: failed replacement retains original and cleans staged write
+PASS: Save: invalid inventory rejected before touching destination
+PASS: Save: abandoned temporary write never supersedes committed principal
+PASS: Save: structurally invalid principal falls back safely
+PASS: Save: no valid candidate fails clearly without deleting evidence
+PASS: Save: minimal version 1 optional fields remain compatible
+PASS: Save: recovery creates a persistent acknowledgement notice
+PASS: Save: live restoration slot 0 version 1
+PASS: Save: live restoration slot 1 version 2
+PASS: Save: live restoration slot 2 version 1
+PASS: Save: live restoration slot 3 version 2
+PASS: Save: live restoration slot 4 version 1
+PASS: Save: live restoration slot 5 version 2
