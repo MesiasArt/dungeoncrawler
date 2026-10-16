@@ -12,9 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413e4245d27b39f48b0b659bd83661e7, type: 3}
   m_Name: 03-city.temple
   m_EditorClassIdentifier: Assembly-CSharp::DigitalKingdomLocation
+  description: Descansa, recupera tus fuerzas y registra tu progreso.
+  personality: Venera la luz de los puntos de guardado. Cada Game Over es una oportunidad
+    de renacer.
+  welcomeGiftId: level-up-cheat
+  welcomeGiftQuantity: 1
+  welcomeGiftDialogue: "Acepta este LEVEL UP CHEAT. Un nivel de esperanza para tu
+    camino. Incluso la luz admite alg\xFAn peque\xF1o truco."
   id: city.temple
-  displayName: "Temple of Continue \u2014 Save & Respawn"
-  npcName: PRIEST
+  displayName: Temple of Continue
+  npcName: San Solair
   background: {fileID: 0}
   npcPortrait: {fileID: 0}
   service: 2
@@ -22,32 +29,93 @@ MonoBehaviour:
   available: 1
   uniqueConversation: 1
   dialogue:
-  - speaker: PRIEST
-    text: Welcome, lost player.
+  - presentationCue: 
+    speaker: San Solair
+    text: "Soy San Solair. Que la luz de los puntos de guardado te acompa\xF1e. Cada
+      Game Over es otra oportunidad de renacer."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: PRIEST
-    text: Even death is temporary for those who still have a Continue.
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: San Solair
+    text: Bienvenido, jugador perdido.
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: GAMERBOY
-    text: So... I can respawn here?
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: San Solair
+    text: "Incluso la muerte es temporal para quienes a\xFAn tienen una continuaci\xF3n."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: PRIEST
-    text: Provided the system remembers you.
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "Entonces... \xBFpuedo reaparecer aqu\xED?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: GAMERBOY
-    text: That's... not very reassuring.
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: San Solair
+    text: Siempre que el sistema te recuerde.
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: Eso... no me tranquiliza mucho.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
   stockIds: []
+  stockNames: []
   futureService:
     m_PersistentCalls:
       m_Calls: []

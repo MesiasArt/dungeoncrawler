@@ -1,0 +1,40 @@
+PASS Static remains on its cell
+PASS holdPosition overrides new pursuit profile
+PASS Patrol routes via adjacent grid cell
+PASS Real enemy turn aligns actor exactly to grid
+PASS Ping-pong patrol reverses at endpoint
+PASS Loop patrol routes back towards first point
+PASS Closed door blocks local detection
+PASS BFS never crosses the closed door plane (routing around is allowed)
+PASS Open door permits detection and pursuit
+PASS Pursuit memory retains last seen cell instead of tracking through walls
+PASS Pursuit alert expires after configured memory turns
+PASS Wall blocks straight sight
+PASS Navigation detection follows available route around corner
+PASS Safe region cannot trigger pursuit
+PASS Safe region rejects enemy movement
+PASS Walls reject movement
+PASS Guardian ignores player outside home leash
+PASS Guardian pursues inside leash
+PASS Guardian returns towards home
+PASS Guardian BFS cannot leave leash
+PASS Elite pursues without modifying combat stats
+PASS Exploration turn preserves HP damage and defense
+PASS Occupied enemy cell rejects movement
+PASS Player cell rejects movement
+PASS Legacy random walk matches original algorithm with same random state
+PASS Snapshot captures patrol direction and detection memory
+PASS Save/load restores actor location and patrol progress
+PASS Old saves reconstruct home without inventing patrol history
+PASS Timed respawn creates a legitimate live enemy through existing loop
+PASS Timed placement exposes respawn policy
+PASS Timed manual placement respawns with director enabled at its reserved cell
+PASS Elite visible marker follows actual player camera above actor
+PASS ResetOnReentry revives manual placement on actual floor return
+PASS PermanentDefeat remains defeated after floor return
+PASS Independent floor snapshot retained during roundtrip
+PASS Loading a save does not reset ResetOnReentry placements
+PASS City return adapter applies same per-map reentry policy
+PASS Old placement defaults to Legacy respawn
+PASS Unique guard cannot respawn
+PASS Boss cannot be accidentally respawned by new profile

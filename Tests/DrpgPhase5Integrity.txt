@@ -1,0 +1,9 @@
+PASS Assets/Scripts/DungeonPrototype.Movement.cs unchanged vs phase backup
+PASS Assets/Scripts/CombatMath.cs unchanged vs phase backup
+PASS Assets/Resources/Exploration/Zones/PlanoDungeon.asset unchanged vs phase backup
+PASS Assets/Resources/Exploration/Zones/DungeonRegions.asset unchanged vs phase backup
+PASS Assets/Resources/Exploration/Zones/PlanoDungeon-Objetos.asset unchanged vs phase backup
+PASS DrpgPhase5Results.txt: 40 passed / 0 failed
+PASS DrpgPhase5Diagnostics.txt: 15 passed / 0 failed
+PASS DrpgPhase4Results.txt: 58 passed / 0 failed
+PASS DrpgPhase4Diagnostics.txt: 21 passed / 0 failed

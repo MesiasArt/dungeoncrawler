@@ -1,0 +1,18 @@
+PASS Locked door rejects missing key
+PASS Key fixture added through inventory
+PASS Key door permanently opens after animation
+PASS Used key removed from inventory
+PASS Unlock stored on existing entity state
+PASS Permanent key door resists crossings and close commands
+PASS Loading an older unopened state resets runtime permanent flag
+PASS Save/load restores permanent opening without key
+PASS Ordinary refresh cannot relock consumed-key door
+PASS Old opened-key save migrates and consumes retained key once
+PASS Repeated restore refresh keeps migrated opening
+PASS Cancelled opening does not consume the key
+PASS Normal door closes after forward passage
+PASS Auto-close updates persistent door state
+PASS Normal door also closes after reverse passage
+PASS Warning text has no black backplate
+PASS Independent guide NPC is Cerrojio
+PASS Refuge sentinel keeps Solid Guarda

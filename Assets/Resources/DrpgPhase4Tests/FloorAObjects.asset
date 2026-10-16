@@ -1,0 +1,350 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fdea577286a71c4dbaf413b4b9011ab, type: 3}
+  m_Name: FloorAObjects
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonEntitySettings
+  objects:
+  - interaction: {fileID: 11400000, guid: 5d9300853e5e7494388664d9a8931dc0, type: 2}
+    switchInitiallyActive: 0
+    id: phase4.switch
+    displayName: Interruptor de prueba
+    kind: 5
+    cell: {x: 2, y: 1}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    guardPlacementId: 
+    cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
+    doorInitiallyOpen: 0
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: phase4.door
+    displayName: Puerta de prueba
+    kind: 2
+    cell: {x: 4, y: 2}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    guardPlacementId: 
+    cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
+    doorInitiallyOpen: 0
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: phase4.shortcut
+    displayName: Atajo bloqueado
+    kind: 2
+    cell: {x: 4, y: 4}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    guardPlacementId: 
+    cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
+    doorInitiallyOpen: 0
+    doorKind: 1
+    requiredKeyId: key.green
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []
+  - interaction: {fileID: 11400000, guid: 36c1a0db0fe7ed944b7c76687477deee, type: 2}
+    switchInitiallyActive: 0
+    id: phase4.chest
+    displayName: Cofre condicionado
+    kind: 1
+    cell: {x: 5, y: 1}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 0
+    contentId: 1d84c78dcae84edf8d28847da3c5ab94
+    quantity: 3
+    mimicPlacementId: 
+    guardPlacementId: 
+    cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
+    doorInitiallyOpen: 0
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []
+  - interaction: {fileID: 11400000, guid: 68729a921608fcb4cb9becd7bf3fafa4, type: 2}
+    switchInitiallyActive: 0
+    id: phase4.npc
+    displayName: NPC de prueba
+    kind: 0
+    cell: {x: 6, y: 3}
+    heading: 0
+    npcCatalog: {fileID: 11400000, guid: d9cf2ec8775878a4aaa779f8deb76746, type: 2}
+    npcId: centinela
+    dialogue:
+    - speaker: NPC
+      text: "Di\xE1logo original conservado."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    guardPlacementId: 
+    cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
+    doorInitiallyOpen: 0
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: phase4.node
+    displayName: Nodo de prueba
+    kind: 4
+    cell: {x: 7, y: 5}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    guardPlacementId: 
+    cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
+    doorInitiallyOpen: 0
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: phase4.connection
+    displayName: Piso B
+    kind: 2
+    cell: {x: 7, y: 1}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    guardPlacementId: 
+    cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
+    doorInitiallyOpen: 0
+    doorKind: 2
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 11400000, guid: 724ca4c360f750b4890d6def895df78e, type: 2}
+    destinationCell: {x: 1, y: 1}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []
+  - interaction: {fileID: 11400000, guid: 5d6305ed07ee9b0498f2a4d2e0287bfb, type: 2}
+    switchInitiallyActive: 0
+    id: phase4.sequence
+    displayName: Secuencia
+    kind: 3
+    cell: {x: 1, y: 5}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    guardPlacementId: 
+    cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
+    doorInitiallyOpen: 0
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 0
+    save: 0
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []
+  - interaction: {fileID: 11400000, guid: 22206bd098593ea4f81c4c8ff19d81f8, type: 2}
+    switchInitiallyActive: 0
+    id: phase4.parent
+    displayName: Evento anidado
+    kind: 3
+    cell: {x: 3, y: 5}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    guardPlacementId: 
+    cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
+    doorInitiallyOpen: 0
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 0
+    save: 0
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []
+  - interaction: {fileID: 11400000, guid: ceb5e590f730ce2459945976f1ccbb19, type: 2}
+    switchInitiallyActive: 0
+    id: phase4.unlock
+    displayName: Desbloquear atajo
+    kind: 5
+    cell: {x: 5, y: 5}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    guardPlacementId: 
+    cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
+    doorInitiallyOpen: 0
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []

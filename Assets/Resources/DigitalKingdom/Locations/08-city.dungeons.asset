@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 413e4245d27b39f48b0b659bd83661e7, type: 3}
+  m_Name: 08-city.dungeons
+  m_EditorClassIdentifier: Assembly-CSharp::DigitalKingdomLocation
+  description: "Habla con el gu\xEDa y elige un reino para explorar."
+  id: city.dungeons
+  displayName: Explorar dungeons
+  npcName: "GU\xCDA"
+  background: {fileID: 0}
+  npcPortrait: {fileID: 0}
+  service: 7
+  initiallyUnlocked: 1
+  available: 1
+  uniqueConversation: 1
+  dialogue:
+  - presentationCue: 
+    speaker: "GU\xCDA"
+    text: "Llevo exploradores a otros reinos. \xBFA d\xF3nde quieres ir?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "Esa es una buena pregunta... No s\xE9 a d\xF3nde debo ir."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: "GU\xCDA"
+    text: "Entonces date una vuelta por la ciudad. A veces una conversaci\xF3n basta
+      para encontrar el camino."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  stockIds: []
+  stockNames: []
+  futureService:
+    m_PersistentCalls:
+      m_Calls: []
+  onLeave:
+    m_PersistentCalls:
+      m_Calls: []

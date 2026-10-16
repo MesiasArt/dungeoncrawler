@@ -5,7 +5,7 @@ using System.IO;
 // Edits the real Resources assets, with normal Inspector Undo and persistence.
 public sealed class VirtualDungeonEditorWindow : EditorWindow
 {
- static readonly string[] Names={"Audio: musica y SFX","Enemigos: apariciones","Ambiente: horizonte y fondo","Antorchas, reflejos y fondo JUMP","Interfaz: posiciones y tamanos","Dialogos de enemigos","HACK JUMP: ritmo y saltos","Inventario y vida del jugador","Puerta de salida","Tamanos de enemigos","Reglas de suerte para HACK","Personajes: estadisticas y equipo"};
+ static readonly string[] Names={"Audio: musica y SFX","Enemigos: apariciones","Ambiente: horizonte y fondo","Antorchas, reflejos y fondo JUMP","Interfaz: posiciones y tamanos","Dialogos de enemigos","HACK JUMP: ritmo y saltos","Inventario y vida del jugador","Puerta de salida","Tamanos de enemigos","Reglas de suerte para HACK","Personajes: estadisticas y equipo","HACKS: JUMP y OVERCLOCK"};
  static readonly string[] Paths={"Audio/DungeonAudioSettings","Exploration/EnemyEncounterSettings","Exploration/DungeonAtmosphereSettings","Exploration/DungeonVisualSettings","UI/DungeonUILayout","Combat/Barks/EnemyBarkSettings","Combat/EnemyJumpSettings","Combat/CombatInventorySettings","Exploration/ExitDoorSettings","Exploration/EnemySizeSettings","Combat/CombatAccuracySettings","Combat/PlayerCharacterSettings"};
  int section;Vector2 scroll;UnityEditor.Editor inspector;Object current;
  [MenuItem("Editor/Panel de Virtual Dungeon",false,2000)] public static void Open(){GetWindow<VirtualDungeonEditorWindow>("Virtual Dungeon").Show();}
@@ -31,6 +31,7 @@ public sealed class VirtualDungeonEditorWindow : EditorWindow
   EditorGUILayout.LabelField("EDITOR DE VIRTUAL DUNGEON",EditorStyles.boldLabel);
   EditorGUILayout.HelpBox("Estos ajustes se guardan en el proyecto, incluso si los editas durante Play Mode. Undo: Ctrl+Z. Algunos cambios de combate o aparicion se aplican al siguiente encuentro o partida.",MessageType.Info);
   section=EditorGUILayout.Popup("Seccion",section,Names);
+  if(section==12){EditorGUILayout.HelpBox("JUMP y OVERCLOCK: daño, minijuegos, desbloqueos y costes de BP.",MessageType.Info);if(GUILayout.Button("Abrir pestañas de HACKS"))HackSettingsWindow.Open();return;}
   var asset=AssetDatabase.LoadAssetAtPath<Object>("Assets/Resources/"+Paths[section]+".asset");
   if(current!=asset||inspector==null){if(inspector!=null)DestroyImmediate(inspector);current=asset;inspector=asset!=null?UnityEditor.Editor.CreateEditor(asset):null;}
   if(asset==null){EditorGUILayout.HelpBox("No se encontro el archivo de ajustes de esta seccion.",MessageType.Warning);return;}

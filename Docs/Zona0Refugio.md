@@ -55,3 +55,8 @@ Tras la tragedia, cruzar el paso a la sala inferior y mirar al Devoto a distanci
 Verificado mediante Unity MCP en Play Mode: cinco apariencias, llegada y orientación, ausencia de activación antes de cruzar o al mirar en otra dirección, diálogo automático, combate automático, Gran Makuba y terminal intacta; sin errores de consola. Pruebas con estado temporal sin guardar la partida del usuario.
 
 La conversación de salida se inicia únicamente al pulsar E para abrir la puerta; la cámara gira hacia quien habla y vuelve a la puerta al terminar, iniciando su apertura. El teleport solo se usa con E sobre su propia casilla. Hablar con refugiados requiere tenerlos en la casilla inmediatamente delante.
+
+
+## Nombres visibles implementados - 2026-10-15
+
+Los cinco nombres ya están implementados en Unity: Solid Guarda, Zeldoro, Pacmiedo, Toadavía y Prayman. Se actualizaron los nombres visibles y las etiquetas de hablante; los IDs internos y los parlamentos existentes permanecen intactos. Los demás pendientes siguen abiertos. El combate de Prayman conserva sus claves internas anteriores.

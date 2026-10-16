@@ -1,0 +1,7 @@
+PASS All 75 speaker/text entries unchanged in JSON and Unity asset
+PASS Assets/Scripts/CombatMath.cs unchanged
+PASS Assets/Scripts/MakongTactics.cs unchanged
+PASS Assets/Scripts/MakongEnemyVisual.cs unchanged
+PASS Assets/Scripts/EnemyJumpHack.cs unchanged
+PASS Assets/Scripts/OverclockHack.cs unchanged
+PASS Assets/Resources/Audio/DungeonAudioSettings.asset unchanged

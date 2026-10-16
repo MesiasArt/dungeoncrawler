@@ -12,12 +12,1067 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b436c6db2363c4ea7864258381a60b, type: 3}
   m_Name: MakongSpecialSettings
   m_EditorClassIdentifier: Assembly-CSharp::MakongSpecialSettings
+  encounterDialogue:
+  - presentationCue: 
+    speaker: MAKONG
+    text: Je, je, je...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "Otro peque\xF1o h\xE9roe ha venido a desafiarme."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "Ac\xE9rcate. Arrod\xEDllate ante el gran Makong."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "\xBFEn serio? \xBFUna rana gigante con corona?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "\xA1SILENCIO, INSECTO!"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "\xA1Est\xE1s ante el soberano de este...!"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: ...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0.35
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "\xBFDe este...?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "Qu\xE9 extra\xF1o..."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0.65
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Este no es mi castillo.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "\xBFD\xF3nde est\xE1n mis s\xFAbditos?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "\xBFMe lo preguntas a m\xED? Acabo de llegar."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "T\xFA..."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "T\xFA no perteneces aqu\xED."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: No eres uno de mis enemigos.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "Ni uno de mis h\xE9roes."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: Bueno, gracias por darte cuenta.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: N0...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 1
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "No deber\xEDas estar aqu\xED."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 1
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Ella puede verte.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 1
+    corruption: 1
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "\xBFElla? \xBFDe qui\xE9n hablas?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "No lo s\xE9."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: No recuerdo haberla conocido.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Pero escucho su voz...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Incluso cuando estoy solo.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "\xBFY qu\xE9 te dice?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "Que todo estar\xE1 bien."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "Que pronto dejar\xE9 de sentirme confundido."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "Que ya no tendr\xE9 que recordar..."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: ...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 2
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "\xBFPor qu\xE9 estoy aqu\xED?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 2
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "\xBFCu\xE1nto tiempo llevo sentado en este trono?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 2
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "Oye, \xBFest\xE1s bien?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "\xA1NO ME COMPADEZCAS!"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "\xA1SOY MAKONG! \xA1EL REY DE...!"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: ...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0.65
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: No... otra vez no...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 2
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: N0 D3BES... PASAR...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 3
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: LA SALIDA... DEBE...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 3
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: D3BE PERMANECER...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 3
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "\xA1Oye! \xA1Tranquilo!"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Mis manos...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 3
+    corruption: 2
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "Se est\xE1n moviendo solas..."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 3
+    corruption: 2
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "Peque\xF1o extra\xF1o..."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "Al\xE9jate de m\xED."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "\xBFQu\xE9?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "\xA1HE DICHO QUE TE ALEJES!"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Antes de que...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Je... je... je...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 3
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Parece que...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 3
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Parece que debo matarte.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 4
+    corruption: 3
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  presentation: {fileID: 11400000, guid: e8517966c080f604abe405ec343d0d38, type: 2}
+  narrativeEnabled: 1
+  defeatDialogue:
+  - presentationCue: 
+    speaker: MAKONG
+    text: Imposible...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: El gran Makong... derrotado...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Je, je...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "As\xED es como deb\xEDa terminar, \xBFverdad?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "\xBFDe qu\xE9 est\xE1s hablando?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "Un h\xE9roe llega..."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Derrota al rey malvado...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Y todos celebran.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Lo he vivido tantas veces...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Pero esta vez...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "Esta vez no recuerdo c\xF3mo empez\xF3."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Ella sigue mirando...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 2
+    writingSpeed: 0
+    pauseBefore: 0.65
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Incluso ahora.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "\xA1Espera! \xBFQui\xE9n es ella?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "No lo s\xE9..."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 3
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Pero creo...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: "Que tambi\xE9n est\xE1 perdida."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Ah...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 1
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Por fin...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 1
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: Ya no tengo que...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 1
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: MAKONG
+    text: ...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 2
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 3
+  defeatEpilogue:
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: ...
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: Un jefe que no recuerda su propio juego.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "Definitivamente hay algo muy mal aqu\xED."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   specialEvery: 3
   earthquakeCooldownTurns: 3
   swallowCooldownTurns: 4
   summonCooldownTurns: 4
-  normalTurnsBetweenSpecials: 1
-  maximumSwallows: 2
+  normalTurnsBetweenSpecials: 2
+  maximumSwallows: 3
   maximumHelpers: 2
   earthquakeProbability: 1
   swallowProbability: 1
@@ -44,13 +1099,15 @@ MonoBehaviour:
   fallSeconds: 0.35
   landingFrameSeconds: 0.2
   jumpHeight: 8
+  landingSound: {fileID: 8300000, guid: 932834875b58df54f85cd6d146833f47, type: 3}
+  landingVolume: 1
   landingShakeAmplitude: 0.38
   landingShakeSeconds: 0.85
   circleStartRadius: 0.3
   circleEndRadius: 2
   healBelowFraction: 0.45
   healFraction: 0
-  healFlat: 18
+  healFlat: 14
   swallowFrameSeconds: 0.18
   retractSeconds: 0.65
   tongueExtendSeconds: 0.3

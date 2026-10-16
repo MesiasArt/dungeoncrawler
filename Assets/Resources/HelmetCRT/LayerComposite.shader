@@ -17,7 +17,7 @@ Shader "Hidden/Codebound/CRT Layer Composite"
   // Match the geometry warp in the CRT image to avoid doubled silhouettes.
   half4 clean=tex2D(_CleanFrame,uv),crt=tex2D(_MainTex,i.uv);
   if(any(uv<0)||any(uv>1))return half4(0,0,0,1);
-  return half4(lerp(clean.rgb,crt.rgb,saturate(intensity))*max(_Brightness,0),1);
+  return half4(lerp(clean.rgb,crt.rgb,saturate(intensity))*lerp(max(_Brightness,0),1,saturate(mask.g)),1);
  }
  ENDHLSL }
  }

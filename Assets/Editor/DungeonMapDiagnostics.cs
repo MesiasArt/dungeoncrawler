@@ -17,6 +17,7 @@ public static class DungeonMapDiagnostics {
   var result=new Report();if(map==null||!map.Valid){result.errors.Add("Plano ausente o geometría inválida");return result;}
   if(!string.IsNullOrEmpty(AssetDatabase.GetAssetPath(map))){if(string.IsNullOrEmpty(map.mapId))result.errors.Add("Mapa sin mapId estable");else foreach(var guid in AssetDatabase.FindAssets("t:DungeonMapSettings")){var other=AssetDatabase.LoadAssetAtPath<DungeonMapSettings>(AssetDatabase.GUIDToAssetPath(guid));if(other!=map&&other.mapId==map.mapId)result.errors.Add("mapId duplicado: "+map.mapId);}}
   result.errors.AddRange(DungeonInteractionValidation.Validate(map));
+  result.errors.AddRange(DrpgPhase6Diagnostics.Validate(map));
   var regions=map.regions!=null?map.regions:map.includeLegacyObjects?DungeonRegionSettings.Current:null;
   var editor=Editor.CreateEditor(map) as DungeonMapSettingsEditor;
   try {if(editor!=null)result.errors.AddRange(editor.ValidateObjects());}finally{if(editor!=null)UnityEngine.Object.DestroyImmediate(editor);}

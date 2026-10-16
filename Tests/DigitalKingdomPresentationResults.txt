@@ -1,0 +1,11 @@
+PASS Empty playlist preserves legacy exploration track
+PASS Playlist ignores null and duplicate references
+PASS Sequential playlist starts at first track
+PASS Per-frame exploration updates do not restart music
+PASS Playlist advances automatically when a track finishes
+PASS Shuffle avoids immediate repeats across 30 selections
+PASS Normal combat uses its independent playlist
+PASS Repeated combat updates keep track position
+PASS Makong heavy landing clip assigned
+PASS Landing impact has audible level without sample clipping
+PASS Playlists reuse existing music and SFX sources

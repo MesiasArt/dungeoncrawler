@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413e4245d27b39f48b0b659bd83661e7, type: 3}
   m_Name: 06-city.sewers
   m_EditorClassIdentifier: Assembly-CSharp::DigitalKingdomLocation
+  description: "Una misteriosa red de alcantarillas donde nunca sabes qu\xE9 encontrar\xE1s."
+  personality: "Guardi\xE1n anciano de RNG Sewers. Ofrece consejos poco \xFAtiles
+    con absoluta solemnidad."
+  welcomeGiftId: 
+  welcomeGiftQuantity: 1
+  welcomeGiftDialogue: 
   id: city.sewers
-  displayName: "RNG Sewers \u2014 Procedural Dungeon"
-  npcName: SEWER KEEPER
+  displayName: RNG Sewers
+  npcName: Don Peligro
   background: {fileID: 0}
   npcPortrait: {fileID: 0}
   service: 5
@@ -22,37 +28,107 @@ MonoBehaviour:
   available: 1
   uniqueConversation: 1
   dialogue:
-  - speaker: SEWER KEEPER
-    text: Welcome to the RNG Sewers.
+  - presentationCue: 
+    speaker: Don Peligro
+    text: "Soy Don Peligro, guardi\xE1n de RNG Sewers. Es peligroso entrar solo.
+      Pero si vas acompa\xF1ado, tambi\xE9n."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: SEWER KEEPER
-    text: No two trips are ever the same.
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: Don Peligro
+    text: Bienvenido a RNG Sewers.
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: GAMERBOY
-    text: What's down there?
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: Don Peligro
+    text: Nunca hay dos viajes iguales.
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: SEWER KEEPER
-    text: Depends on your luck.
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "\xBFQu\xE9 hay ah\xED abajo?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: GAMERBOY
-    text: And if I have bad luck?
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: Don Peligro
+    text: Depende de tu suerte.
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: SEWER KEEPER
-    text: Then you'll fit right in.
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "\xBFY si tengo mala suerte?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: Don Peligro
+    text: "Entonces encajar\xE1s perfectamente."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
   stockIds: []
+  stockNames: []
   futureService:
     m_PersistentCalls:
       m_Calls: []

@@ -4,12 +4,12 @@ public partial class DungeonPrototype {
  void FocusConversationOn(Transform target){conversationFocus=target;}
  Transform CurrentConversationSpeaker(){
   var line=worldDialogue.Current;if(line==null)return null;
-  if(refugeSettings!=null){var npc=System.Array.Find(refugeSettings.npcs,n=>n.displayName==line.speaker);GameObject actor;if(npc!=null&&refugeActors.TryGetValue(npc.id,out actor)&&actor.activeSelf)return actor.transform;}
+  if(refugeSettings!=null){var npc=System.Array.Find(refugeSettings.npcs,n=>string.Equals(n.displayName,line.speaker,System.StringComparison.OrdinalIgnoreCase));GameObject actor;if(npc!=null&&refugeActors.TryGetValue(npc.id,out actor)&&actor.activeSelf)return actor.transform;}
   if(ActiveMap!=null&&ActiveMap.entities!=null)foreach(var entity in ActiveMap.entities.objects){if(entity.kind!=DungeonEntityKind.NPC)continue;var npc=entity.npcCatalog!=null?System.Array.Find(entity.npcCatalog.npcs,n=>n.id==entity.npcId):null;GameObject actor;if((npc!=null&&npc.displayName==line.speaker||entity.displayName==line.speaker)&&mapEntityObjects.TryGetValue(entity.id,out actor)&&actor.activeSelf)return actor.transform;}
   return conversationFocus!=null&&conversationFocus.gameObject.activeInHierarchy?conversationFocus:null;
  }
  void TickConversationCamera(){
-  if(view==null||pauseOpen)return;
+  if(view==null||pauseOpen||welcomeLooking)return;
   Transform target=worldDialogue.Active?CurrentConversationSpeaker():null;
   bool focus=Layout.zoomDuringConversation&&worldDialogue.Active&&target!=null&&!battle&&!IntroductionActive;
   if(focus){

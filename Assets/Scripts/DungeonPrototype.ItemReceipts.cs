@@ -7,10 +7,12 @@ public partial class DungeonPrototype {
  readonly List<ItemReceipt> itemReceipts=new List<ItemReceipt>();float lastItemNoticeSound=-100;
  void NotifyReceived(string id,int quantity){if(quantity<=0)return;var item=inventorySettings!=null?Array.Find(inventorySettings.items,e=>e!=null&&e.id==id):null;var equipment=Array.Find(Character.equipment,e=>e!=null&&e.id==id);string name=item!=null?item.displayName:equipment!=null?equipment.name:id;
   if(quantity>1&&name.StartsWith("Poción "))name=name.Replace("Poción ","Pociones ").Replace("pequeña","pequeñas").Replace("mediana","medianas").Replace("grande","grandes");
+  SystemMessages.Show(SystemMessageCode.Received,name,quantity,item!=null?item.digitalIcon:DigitalIcon.Granted);
   itemReceipts.Add(new ItemReceipt{text="+"+quantity+" "+name,expires=Time.unscaledTime+itemNoticeSeconds});if(itemReceipts.Count>8)itemReceipts.RemoveAt(0);
   if(Time.unscaledTime-lastItemNoticeSound>.08f){DungeonAudio.Play(DungeonAudio.Cue.Item);lastItemNoticeSound=Time.unscaledTime;}
  }
- void DrawItemReceipts(float width,float height){itemReceipts.RemoveAll(n=>n.expires<=Time.unscaledTime);if(itemReceipts.Count==0)return;float y=Mathf.Min(280,height*.4f);var r=new Rect(width-360,y,340,itemReceipts.Count*34+20);NeonDungeonUI.Panel(r);for(int i=0;i<itemReceipts.Count;i++)NeonDungeonUI.Label(new Rect(r.x+15,r.y+10+i*34,r.width-30,30),itemReceipts[i].text);}
+ void DrawItemReceipts(float width,float height){itemReceipts.RemoveAll(n=>n.expires<=Time.unscaledTime);}
+
  bool LookingToward(Vector3 point){Vector3 delta=point-view.transform.position;delta.y=0;if(delta.sqrMagnitude<.01f)return false;var dir=directions[heading];return Vector3.Dot(delta.normalized,new Vector3(dir.x,0,dir.y))>.7f;}
  bool DoorInteractionAvailable(DungeonDoor door){return door!=null&&door.CanInteract(view.transform.position)&&LookingToward(door.transform.position);}
  bool RefugeTerminalAvailable(){if(refugeSettings==null||!LegacyObjectEnabled("refuge.save")||!NearRefugeCell(refugeSettings.saveCell))return false;foreach(var device in GetComponentsInChildren<RefugeDeviceVisual>())if(!device.portal&&device.deviceName=="TERMINAL DE RESTAURACIÓN")return LookingToward(device.transform.position);return false;}

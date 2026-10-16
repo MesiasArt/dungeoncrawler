@@ -1,0 +1,18 @@
+17 passed / 0 failed
+PASS Fresh map includes ordinary enemies
+PASS Cloud/mountain/bush apparent motion ordered by depth
+PASS Mountains have configurable blue atmospheric perspective
+PASS All eleven supplied normal assets are imported as normals
+PASS Actual normal maps bound to rendered walls
+PASS Floor has wall-distance field for soft center fade
+PASS Existing planar reflection capture ready
+PASS GPU output responds to independent depth offsets
+PASS Forward/back and 90-degree turns preserve logical grid
+PASS Turns return camera exactly to original heading
+PASS Approaching frontal pipe emits existing enemy
+PASS Frontal enemy starts exactly at authored mouth
+PASS Top pipe emits existing enemy
+PASS Top enemy emerges from upper rim instead of base
+PASS Rushing pipe enemy starts combat with minimap hidden
+PASS Interrupted emergence preserves a floor-aligned return position
+PASS URP shader compiled without errors

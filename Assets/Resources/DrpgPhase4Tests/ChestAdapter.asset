@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a040a538a92dcc48830c0a73f5cbc01, type: 3}
+  m_Name: ChestAdapter
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonInteractionSettings
+  id: phase4.ChestAdapter
+  once: 1
+  continueLegacy: 1
+  join: 0
+  groups:
+  - join: 0
+    conditions:
+    - kind: 2
+      sourceMap: {fileID: 0}
+      targetId: phase4.switch
+      quantity: 1
+      negate: 0
+  actions: []
+  deniedMessage: "Todav\xEDa no puedes activar este mecanismo."

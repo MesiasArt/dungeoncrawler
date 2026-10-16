@@ -1,0 +1,59 @@
+58 passed / 0 failed
+PASS Separate Explore Dungeons button removed
+PASS NEW guide notice assigned to Fast Travel Station
+PASS Dialogue finishes
+PASS Only original dungeon shown before unlocking Pixel
+PASS Original dungeon shows only unlocked nodes
+PASS Back from nodes stays inside station
+PASS Dialogue finishes
+PASS Dialogue finishes
+PASS Dialogue finishes
+PASS Dialogue finishes
+PASS Dialogue finishes
+PASS Dialogue finishes
+PASS All six destinations trigger bar NEW
+PASS Dialogue finishes
+PASS Bar rumor activates station NEW
+PASS Dialogue finishes
+PASS Station guide unlocks Pixel without separate menu
+PASS Station groups include unlocked kingdom
+PASS Kingdom entry appears as first available node
+PASS Future map teleports appear only after their IDs unlock
+PASS Reused save retains read NEW notices
+PASS Transition reaches Assets/Scenes/RetroDungeonExperiment.unity
+PASS Entry node arrives at start cell
+PASS Return door is directly behind initial facing
+PASS Grouped trip preserves original floor snapshot
+PASS Layered Depth disables existing material live
+PASS Strength and per-layer factors update live without Build
+PASS Live variant 0 applies in Corridor
+PASS Live variant 1 applies in Corridor
+PASS Live variant 2 applies in Corridor
+PASS Retro variant quantizes fog only
+PASS Live variant 0 applies in Corner
+PASS Live variant 1 applies in Corner
+PASS Live variant 2 applies in Corner
+PASS Retro variant quantizes fog only
+PASS Live variant 0 applies in Room
+PASS Live variant 1 applies in Room
+PASS Live variant 2 applies in Room
+PASS Retro variant quantizes fog only
+PASS All A/B/C comparisons preserve geometry and pipes
+PASS Fog distances adapt from cells to real world scale
+PASS Fog modes produce a visible world change
+PASS World fog leaves UI rendering unaffected
+PASS Existing pipe enemy available for battle visual test
+PASS Pixel battle builds exclusive layered backdrop
+PASS Pixel battle uses matching floor texture
+PASS Pixel battle uses matching sky walls
+PASS Battle keeps minimap hidden
+PASS Leaving battle restores exploration presentation
+PASS Transition reaches Assets/Scenes/DigitalKingdom.unity
+PASS Return door preserves Pixel floor progress
+PASS Dialogue finishes
+PASS Transition reaches Assets/Scenes/SampleScene.unity
+PASS Original group travels to selected unlocked node
+PASS Luminous fog resets outside the kingdom
+PASS Original dungeon battle visual unchanged
+PASS Title uses editable settings asset
+PASS Title positions and sizes editable live

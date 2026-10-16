@@ -1,5 +1,5 @@
 using UnityEngine;
-public sealed class DungeonAudio : MonoBehaviour
+public sealed partial class DungeonAudio : MonoBehaviour
 {
  public enum Cue { Step,Attack,GhostAttack,HongoAttack,SoldierAttack,EnemyHurt,EnemyDeath,PlayerHurt,PlayerDeath,GrenadeThrow,Explosion,Door,Jump,Stomp,HackWin,HackFail,Item,Encounter,Confirm,Text,TextAdvance,JumpPoint }
  [Range(0,1)] public float masterVolume=.45f;
@@ -22,11 +22,7 @@ public sealed class DungeonAudio : MonoBehaviour
  {
   EnsureInstance();
   if(jumpMusicOverride) return;
-  AudioClip clip=combat ? instance.combatTrack : instance.dungeonTrack;
-  instance.musicSource.volume=(instance.settings!=null ? instance.settings.musicVolume : .28f)*instance.musicGain;
-  if(instance.musicSource.clip==clip) return;
-  instance.musicSource.Stop();instance.musicSource.clip=clip;
-  if(clip!=null) instance.musicSource.Play();
+  instance.SelectBaseMusic(combat);
  }
  static float lastTextSound=-100;
  public static void PlayTextBlip() { EnsureInstance();if(!instance.isActiveAndEnabled||Time.unscaledTime-lastTextSound<.025f)return;lastTextSound=Time.unscaledTime;var clip=instance.clips[(int)Cue.Text];if(clip!=null)instance.source.PlayOneShot(clip,(instance.settings!=null?instance.settings.effectsVolume*instance.settings.dialogueVolume:.045f)); }
@@ -48,6 +44,6 @@ public sealed class DungeonAudio : MonoBehaviour
   string[] names=System.Enum.GetNames(typeof(Cue));clips=new AudioClip[names.Length];
   for(int i=0;i<names.Length;i++) clips[i]=Resources.Load<AudioClip>("Audio/Temporary/"+names[i]);
  }
- void Update() {float target=menuDucked?(settings!=null?settings.menuMusicMultiplier:.7f):1;musicGain=Mathf.Lerp(musicGain,target,1-Mathf.Exp(-8*Time.unscaledDeltaTime));if(musicSource!=null)musicSource.volume=(settings!=null?settings.musicVolume:.28f)*musicGain;}
+ void Update(){TickMusic();}
  void OnDestroy() { if(instance==this) { instance=null;jumpMusicOverride=false;lastTextSound=-100; } }
 }

@@ -24,19 +24,20 @@ public partial class DungeonPrototype
         while(cell!=position){Vector2Int next=cell+direction;if(!Open(next)||DoorsBlock(World(cell),World(next)))return false;cell=next;}
         return true;
     }
-    Vector2Int PursuitStep(int index)
+    Vector2Int PursuitStep(int index){return EnemyPathStep(index,position);}
+    Vector2Int EnemyPathStep(int index,Vector2Int goal)
     {
         var queue=new Queue<Vector2Int>();var first=new Dictionary<Vector2Int,Vector2Int>();
-        Vector2Int origin=enemies[index];queue.Enqueue(origin);first[origin]=origin;
+        Vector2Int origin=enemies[index];if(origin==goal)return origin;queue.Enqueue(origin);first[origin]=origin;
         while(queue.Count>0)
         {
             Vector2Int at=queue.Dequeue();
             foreach(var direction in directions)
             {
                 Vector2Int next=at+direction;
-                if(!Open(next)||!EnemyMayEnter(next)||first.ContainsKey(next)||Occupied(next,index)||DoorsBlock(World(at),World(next)))continue;
+                if(!ExplorationDomainAllows(index,next)||!Open(next)||!EnemyMayEnter(next)||first.ContainsKey(next)||Occupied(next,index)||DoorsBlock(World(at),World(next)))continue;
                 first[next]=at==origin?next:first[at];
-                if(next==position)return first[next]==position?origin:first[next];
+                if(next==goal)return first[next]==position?origin:first[next];
                 queue.Enqueue(next);
             }
         }
@@ -48,14 +49,16 @@ public partial class DungeonPrototype
         for(int i=0;i<enemies.Count;i++)
         {
             if(enemyObjects[i]==null||slots[i].placement!=null&&slots[i].placement.holdPosition)continue;
-            if(SeesPlayer(enemies[i]))alerted[i]=true;
-            Vector2Int next=enemies[i];
-            if(alerted[i])next=PursuitStep(i);
-            else
-            {
-                int start=Random.Range(0,4);
-                for(int j=0;j<4;j++){var candidate=enemies[i]+directions[(start+j)%4];if(CanEnemyMove(enemies[i],candidate,i)){next=candidate;break;}}
-            }
+            Vector2Int next;
+            if(ExplorationProfile(i)==EnemyExplorationProfile.Legacy){
+                if(SeesPlayer(enemies[i]))alerted[i]=true;
+                next=enemies[i];
+                if(alerted[i])next=PursuitStep(i);
+                else {
+                    int start=Random.Range(0,4);
+                    for(int j=0;j<4;j++){var candidate=enemies[i]+directions[(start+j)%4];if(CanEnemyMove(enemies[i],candidate,i)){next=candidate;break;}}
+                }
+            }else next=ExplorationStep(i);
             if(next==enemies[i]||!CanEnemyMove(enemies[i],next,i))continue;
             starts[i]=enemyObjects[i].transform.position;targets[i]=World(next)-Vector3.up*1.5f;enemies[i]=next;
         }
@@ -93,8 +96,8 @@ public partial class DungeonPrototype
         for(int i=0;i<respawnAt.Count;i++)
         {
             if(respawnAt[i]<0||Time.unscaledTime<respawnAt[i]||enemyObjects[i]!=null)continue;
-            var slot=slots[i];if(!slot.CanRespawn||!slot.origin.CanSpawn||Population(slot.origin.id)>=slot.origin.enemies.maximumEnemies)continue;
-            Vector2Int cell;if(slot.placement!=null){cell=slot.placement.cell;if(Occupied(cell)||cell==position||EnemySettings.encounterDirectorEnabled&&!DirectedSpawnCellValid(cell,slot.origin))continue;}else if(!FindSpawn(out cell,false,slot.origin))continue;
+            var slot=slots[i];bool customTimed=slot.placement!=null&&slot.placement.exploration!=null&&slot.placement.exploration.persistence==EnemyExplorationPersistence.TimedRespawn;if(!slot.CanRespawn||!slot.origin.CanSpawn||((!customTimed||slot.counts)&&Population(slot.origin.id)>=slot.origin.enemies.maximumEnemies))continue;
+            Vector2Int cell;if(slot.placement!=null){cell=slot.placement.cell;if(Occupied(cell)||cell==position||EnemySettings.encounterDirectorEnabled&&!(customTimed?ExplorationPlacementRespawnValid(cell,slot.origin):DirectedSpawnCellValid(cell,slot.origin)))continue;}else if(!FindSpawn(out cell,false,slot.origin))continue;
             int before=enemyObjects.Count;if(slot.placement!=null)AddEnemy(cell,visualKind:ArrayIndex(slot.placement.speciesId),origin:slot.origin,placement:slot.placement);else SpawnRandom(cell,slot.origin);
             if(enemyObjects.Count==before)continue;defeatedEnemies.Remove(i);int last=enemyObjects.Count-1;enemyObjects[last].GetComponent<EnemyCombatStats>().instanceId=slot.instanceId;slots[last].instanceId=slot.instanceId;
             enemies[i]=enemies[last];enemyObjects[i]=enemyObjects[last];enemyLives[i]=enemyLives[last];alerted[i]=false;respawnAt[i]=-1;slots[i]=slots[last];
@@ -109,8 +112,17 @@ public partial class DungeonPrototype
     }
     void BeginEncounter(int primary,IList<int> forcedGroup=null)
     {
+        if(primary<0||primary>=enemyObjects.Count||enemyObjects[primary]==null||worldDialogue.Active)return;
+        if(enemyObjects[primary].GetComponent<MakongEnemyVisual>()!=null&&MakongNarrativeAllowed&&!MakongIntroductionSeen(primary)&&MakongSpecialSettings.Current.encounterDialogue!=null&&MakongSpecialSettings.Current.encounterDialogue.Length>0){
+            SystemMessages.Show(SystemMessageCode.BossWarning,"",0,DigitalIcon.Warning);ClearMovementInput();FocusConversationOn(enemyObjects[primary].transform);
+            BeginMakongAmbient();worldDialogue.Begin(MakongSpecialSettings.Current.encounterDialogue,()=>FinishMakongIntroduction(primary,forcedGroup));return;
+        }
+        BeginEncounterCombat(primary,forcedGroup);
+    }
+    void BeginEncounterCombat(int primary,IList<int> forcedGroup=null)
+    {
         if(primary<0||primary>=enemyObjects.Count||enemyObjects[primary]==null)return;
-        ResetConversationCamera();
+        BeginMakongBattleMusic(primary,forcedGroup);ResetConversationCamera();
         DirectorEncounterStarted();BeginEncounterXP();encounterDefeats=0;encounterCoinBonus=0;combatDropsAwarded=false;guaranteedEncounterDrops.Clear();encounter.Clear();encounterHomes.Clear();encounter.Add(primary);
         if(forcedGroup!=null)foreach(int member in forcedGroup)if(member!=primary&&member>=0&&member<enemyObjects.Count&&enemyObjects[member]!=null&&!encounter.Contains(member))encounter.Add(member);
         int wanted=forcedGroup!=null?encounter.Count:slots[primary].placement!=null?1:Random.Range(Mathf.Clamp(EnemySettings.minimumEnemies,1,3),Mathf.Clamp(EnemySettings.maximumEnemies,Mathf.Clamp(EnemySettings.minimumEnemies,1,3),3)+1);
@@ -129,7 +141,7 @@ public partial class DungeonPrototype
         formationForward=forward.normalized;formationRight=Vector3.Cross(Vector3.up,formationForward);
         view.transform.rotation=Quaternion.LookRotation(formationForward);
         busy=true;StartCoroutine(EnterEncounter());
-        DungeonAudio.Play(DungeonAudio.Cue.Encounter);glitch=.45f;message="¡Enemigos a la vista!";Bark(EnemyBarkCategory.CombatStart);
+        DungeonAudio.Play(DungeonAudio.Cue.Encounter);glitch=.45f;message="Â¡Enemigos a la vista!";Bark(EnemyBarkCategory.CombatStart);
     }
     Vector3 battleCameraHome,formationCenter,formationForward,formationRight;
     float battleCameraFov;
@@ -159,7 +171,7 @@ public partial class DungeonPrototype
     float FormationScale { get { return 1f; } }
     IEnumerator EnterEncounter()
     {
-        selectingEnemy=false;pendingTargetHack=null;encounterScales.Clear();
+        selectingSpeedrun=false;selectingEnemy=false;pendingTargetHack=null;encounterScales.Clear();
         EnsureBattleStage();battleStage.SetActive(true);
         foreach(int i in encounter){encounterScales[i]=enemyObjects[i].transform.localScale;enemyObjects[i].transform.localScale=Vector3.one*FormationScale;}
         glitch=.85f;
@@ -192,7 +204,7 @@ public partial class DungeonPrototype
     }
     void RestoreEncounter()
     {
-        selectingEnemy=false;pendingTargetHack=null;ClearCombatSummons();
+        selectingSpeedrun=false;selectingEnemy=false;pendingTargetHack=null;ClearCombatSummons();
         foreach(var pair in encounterHomes)if(enemyObjects[pair.Key]!=null){enemyObjects[pair.Key].transform.position=pair.Value;Vector3 scale;if(encounterScales.TryGetValue(pair.Key,out scale))enemyObjects[pair.Key].transform.localScale=scale;}
         encounter.Clear();encounterHomes.Clear();encounterScales.Clear();
     }
@@ -204,7 +216,7 @@ public partial class DungeonPrototype
         if(battleStage!=null)battleStage.SetActive(false);SetCeilingReflection(corridorHeight);moving=false;
     }
     void ConfirmEnemyTarget()
-    { if(!selectingEnemy||busy||lost)return;selectingEnemy=false;
+    { if(!selectingEnemy||busy||lost)return;if(selectingSpeedrun){TryExecuteSpeedrun(activeEnemy);return;}selectingEnemy=false;
         var hack=pendingTargetHack;pendingTargetHack=null;
         if(hack!=null)BeginTargetHack(hack);else{busy=true;StartCoroutine(ResolveCombatDamage(PlayerStrength,"ATTACK"));}
     }
@@ -219,15 +231,15 @@ public partial class DungeonPrototype
         combatHack=hack;busy=true;
         var jump=hack as EnemyJumpHack;if(jump!=null){jump.SetOpponent(opponent);jump.ConfigureAttack(PlayerStrength,opponent.GetComponent<EnemyCombatStats>().defense);}
         var overclock=hack as OverclockHack;if(overclock!=null)overclock.SetOpponent(opponent);
-        bool resolved=false;
+        bool resolved=false;BeginHackSystemSession(hack);
         hack.Begin(damage=>{
             if(resolved)return;resolved=true;
-            if(!battle||target>=enemyObjects.Count||enemyObjects[target]!=opponent||opponent==null||enemyLives[target]<=0){busy=false;return;}
-            activeEnemy=target;
+            if(!battle||target>=enemyObjects.Count||enemyObjects[target]!=opponent||opponent==null||enemyLives[target]<=0){CompleteHackSystemSession(HackExecutionOutcome.Interrupted);busy=false;return;}
+            CompleteHackSystemSession(hack.LastOutcome);activeEnemy=target;
             StartCoroutine(ResolveCombatDamage(damage,"HACK"));
         });
         if(hack.Active||resolved)playerBits=CurrentBits-bitsCost;
-        if(!hack.Active)busy=false;
+        if(!hack.Active){if(!resolved)CompleteHackSystemSession(HackExecutionOutcome.Interrupted);busy=false;}
     }
     static readonly Vector3 BattleStageOrigin=new Vector3(1000,0,1000);
     GameObject battleStage;
@@ -246,15 +258,17 @@ public partial class DungeonPrototype
         ResizeStageBox("Battle right wall",new Vector3(width*.5f+.1f,height*.5f,8),new Vector3(.2f,height,30),wall);
         ResizeStageBox("Battle far wall",new Vector3(0,height*.5f,23),new Vector3(width,height,.2f),wall);
         int torch=0;foreach(Transform child in battleStage.transform)if(child.name=="Battle torch"){int side=torch%2==0?-1:1;child.position=BattleStageOrigin+new Vector3(side*(width*.5f-.1f),0,2+(torch/2)*7);torch++;}
+        var retro=GetComponent<RetroDungeonWallComposer>();if(retro!=null)retro.ApplyBattleStage(battleStage,BattleStageOrigin,width,height);
     }
     void ResizeStageBox(string name,Vector3 offset,Vector3 size,Material material){var existing=battleStage.transform.Find(name);if(existing==null)StageBox(name,offset,size,material);else{existing.position=BattleStageOrigin+offset;existing.localScale=size;}}
 
     void StageBox(string name,Vector3 offset,Vector3 size,Material material)
     { var box=Box(name,BattleStageOrigin+offset,size,material);box.transform.SetParent(battleStage.transform,true); }
     void SelectEnemy(int direction)
-    { if(encounter.Count==0)return;int n=encounter.IndexOf(activeEnemy);activeEnemy=encounter[(n+direction+encounter.Count)%encounter.Count];enemyHP=enemyLives[activeEnemy]; }
+    { var choices=selectingSpeedrun?SpeedrunTargets():encounter;if(choices.Count==0)return;int n=choices.IndexOf(activeEnemy);activeEnemy=choices[(n+direction+choices.Count)%choices.Count];enemyHP=enemyLives[activeEnemy]; }
     void DrawEnemyTargets(float scale)
     {
+        var ui=BattleUISettings.Current;if(ui!=null&&ui.useNewArtwork)targetArrow=BattleUIArt.Texture("TargetArrow");
         if(targetArrow==null)targetArrow=Resources.Load<Texture2D>("UI/MenuUI/TargetArrow");
         foreach(int index in encounter)
         {
@@ -262,8 +276,8 @@ public partial class DungeonPrototype
             Vector3 point=view.WorldToScreenPoint(enemyObjects[index].transform.position+Vector3.up*(enemyObjects[index].GetComponent<GhostEnemyVisual>().WorldHeight+.2f));
             if(point.z<=0)continue;
             Rect rect=new Rect(point.x/scale-85,(Screen.height-point.y)/scale-20,170,30);
-            if(index==activeEnemy&&targetArrow!=null&&!busy){GUI.color=Color.white;GUI.DrawTexture(new Rect(rect.center.x-14,rect.y-24+Mathf.Sin(Time.unscaledTime*5)*3,28,20),targetArrow,ScaleMode.ScaleToFit,true);}
-            GUI.enabled=!busy&&!lost;
+            if(index==activeEnemy&&targetArrow!=null&&!busy&&(!selectingSpeedrun||SpeedrunEligible(index))){GUI.color=Color.white;GUI.DrawTexture(new Rect(rect.center.x-14,rect.y-24+Mathf.Sin(Time.unscaledTime*5)*3,28,20),targetArrow,ScaleMode.ScaleToFit,true);}
+            GUI.enabled=!busy&&!lost&&(!selectingSpeedrun||SpeedrunEligible(index));
             if(GUI.Button(rect,GUIContent.none,GUIStyle.none)){activeEnemy=index;enemyHP=enemyLives[index];}
         }
         GUI.enabled=true;

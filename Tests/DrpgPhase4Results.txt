@@ -1,0 +1,58 @@
+PASS Missing key denies condition
+PASS Owned key satisfies condition
+PASS Item quantity respected
+PASS Unlocked functional HACK condition
+PASS Locked HACK denies condition
+PASS Defeated enemy condition uses existing record
+PASS Undefeated enemy does not satisfy condition
+PASS Named defeat history survives removal of current death record
+PASS AND requires all terms
+PASS OR accepts one true term
+PASS Nested AND of OR groups
+PASS Top-level OR groups
+PASS Negated condition
+PASS Chest adapter denies before switch
+PASS Grid-adjacent switch triggers through component
+PASS Switch activates and opens linked door
+PASS Switch reward granted
+PASS Completed narrative event condition
+PASS Once-only event prevents duplicate reward
+PASS Remote switch cannot be triggered without adjacency
+PASS Allowed chest keeps its original reward and animation
+PASS Opened chest does not duplicate contents
+PASS Unlock existing shortcut and teleport actions
+PASS Keyless shortcut unlocked by mechanism; node unlocked
+PASS Close-door action
+PASS Repeatable mechanism reopens door
+PASS Dialogue sequence starts
+PASS Actions after dialogue wait for completion
+PASS Re-entry cannot duplicate pending event
+PASS Reload resumes checkpoint without repeating prior reward
+PASS Dialogue callback completes remaining actions
+PASS Nested narrative waits before parent reward
+PASS Nested dialogue resumes parent event exactly once
+PASS NPC adapter presents configured dialogue first
+PASS Original NPC dialogue continues after profile
+PASS Invalid later reward leaves event pending
+PASS Retry continues from failed action without duplicating first reward
+PASS Runtime event cycle blocked
+PASS Phase 3 symbols consume live mechanism states
+PASS Isolated save/load slot 1
+PASS Isolated save/load slot 2
+PASS Isolated save/load slot 3
+PASS Isolated save/load slot 4
+PASS Isolated save/load slot 5
+PASS Isolated save/load slot 6
+PASS Loaded event receipts prevent duplicate reward
+PASS Map B does not inherit A switches
+PASS Cross-map conditions read A snapshot
+PASS A-B-A restores switches, door and chest symbol
+PASS Remote event reads B snapshot after return
+PASS Second return restores B switch state
+PASS Legacy save without interaction data initializes empty state
+PASS Precise original movement settings unchanged
+PASS City transition accepts existing boss defeat condition
+PASS City bridge retains independent interaction snapshots
+PASS City save/load preserves completed events
+PASS City return then floor return restores mechanism state
+PASS City roundtrip cannot duplicate earlier reward

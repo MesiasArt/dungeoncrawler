@@ -1,0 +1,30 @@
+PASS All supplied narrative lines installed
+PASS Gamerboy stays clean and hidden controller identity is not disclosed
+PASS Unity font contains all Spanish accents and inverted punctuation
+PASS Effects can be disabled
+PASS Temporary substitutions preserve source text and markup
+PASS Text effects do not consume gameplay RNG
+PASS Existing NPC dialogue remains readable
+PASS Immediate reveal bypasses pauses and corruption
+PASS Rapid advance completes callback once
+PASS Introduction precedes actual combat
+PASS Movement blocked during introduction
+PASS Dramatic pause blocks pending movement
+PASS Fast advance starts combat exactly once
+PASS Introduction seen flag is persistent per map
+PASS Repeat encounter skips completed introduction
+PASS Final dialogue starts after boss defeat
+PASS Existing defeated sprite stays visible for final words
+PASS Rewards are deferred until final sequence completes
+PASS Existing disappearance precedes Gamerboy epilogue
+PASS Victory restores exploration and input
+PASS Normal victory grants XP and retains defeated boss
+PASS Rewards cannot be awarded twice
+PASS Final dialogue marked complete in existing snapshot state
+PASS Save/load keeps boss defeated without replaying dialogue
+PASS Controls restored after loading victory
+PASS Camera aligned with original grid after sequence/load
+PASS Boss body remains while other group members finish their normal turn
+PASS Group XP waits for ordinary encounter completion
+PASS Group victory starts final dialogue once
+PASS Group returns to exploration with normal rewards

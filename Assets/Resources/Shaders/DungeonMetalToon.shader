@@ -2,6 +2,8 @@ Shader "Dungeon/Metal Toon"
 {
     Properties
     {
+        [HideInInspector] _VoidDepthFade("Void fade",Float)=0
+        [HideInInspector] _VoidDepth("Void depth",Float)=10
         _BaseMap("Texture", 2D) = "white" {}
         [HideInInspector] _ContinuousFloorGrid("Continuous floor grid", Float) = 0
         [HideInInspector] _ContinuousWallGrid("Continuous wall grid", Float) = 0
@@ -46,7 +48,7 @@ Shader "Dungeon/Metal Toon"
             float _DungeonNeonPulse;
             CBUFFER_START(UnityPerMaterial)
                 float4 _BaseMap_ST, _FloorGridRegion;
-                float _ContinuousFloorGrid, _ContinuousWallGrid, _FloorGridSize;
+                float _ContinuousFloorGrid, _ContinuousWallGrid, _FloorGridSize,_VoidDepthFade,_VoidDepth;
                 half4 _BaseColor, _ShadowColor;
                 half _Metallic, _Smoothness, _EmissionStrength;
                 float4x4 _PlanarMatrix;
@@ -138,7 +140,9 @@ Shader "Dungeon/Metal Toon"
                 half corridorLight=lerp(0.12h,0.78h,distanceFade*lerp(0.30h,1.0h,facing));
                 half neonMask=smoothstep(0.25h,0.8h,max(artwork.r,max(artwork.g,artwork.b)));
                 color*=corridorLight*lerp(1.0h,max(_DungeonNeonPulse,0.0),neonMask);
-                return half4(ApplyDungeonHorizon(MixFog(color,input.fog),offset,input.positionWS.y)+localGlow,1);
+                half3 result=ApplyDungeonHorizon(MixFog(color,input.fog),offset,input.positionWS.y)+localGlow;
+                result=lerp(result,half3(.001h,.001h,.003h),_VoidDepthFade*smoothstep(0,max(.1,_VoidDepth),-input.positionWS.y));
+                return half4(result,1);
             }
             ENDHLSL
         }

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a040a538a92dcc48830c0a73f5cbc01, type: 3}
+  m_Name: BossHalf
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonInteractionSettings
+  id: phase6.boss.half
+  once: 1
+  continueLegacy: 1
+  join: 0
+  groups: []
+  actions:
+  - id: phase6.half.reward
+    kind: 6
+    targetId: 1d84c78dcae84edf8d28847da3c5ab94
+    value: 1
+    quantity: 1
+    dialogue: []
+    message: 
+    eventProfile: {fileID: 0}
+  deniedMessage: "Todav\xEDa no puedes activar este mecanismo."

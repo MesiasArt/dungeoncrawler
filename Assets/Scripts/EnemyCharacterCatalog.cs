@@ -6,6 +6,7 @@ public enum EnemyRank { Enemigo, Fuerte, Subjefe, Jefe }
  public bool overrideGrowth;public EnemyGrowth growth=new EnemyGrowth();
  public EnemyRank category;
  public bool reservedForEvents;
+ [Tooltip("Protege enemigos cuya eliminación instantánea rompería una mecánica.")] public bool protectedFromInstantDefeat;
  [Min(1)] public int health=10;
  [Min(0)] public int strength=2,defense,luck;
  [Range(0,100)] public float normalMissPercent=10,specialMissPercent=25,criticalPercent;

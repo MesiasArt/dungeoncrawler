@@ -1,0 +1,493 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a040a538a92dcc48830c0a73f5cbc01, type: 3}
+  m_Name: RefugeWelcomeDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonInteractionSettings
+  id: refuge.welcome
+  once: 1
+  continueLegacy: 0
+  join: 0
+  groups: []
+  actions:
+  - id: refuge.welcome.dialogue
+    kind: 4
+    targetId: 
+    value: 1
+    quantity: 1
+    dialogue:
+    - presentationCue: 
+      speaker: ZELDORO
+      text: Un momento. No recuerdo haberte visto llegar.
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: SOLID GUARDA
+      text: "\xA1Eh! \xA1T\xFA! \xBFDe d\xF3nde saliste?"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: GAMERBOY
+      text: "\xA1Ah! \xA1Por fin alguien! Oigan, \xBFd\xF3nde estoy?"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: SOLID GUARDA
+      text: "\xA1Las preguntas las hago yo! \xBFC\xF3mo entraste aqu\xED?"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: GAMERBOY
+      text: No tengo ni idea. Acabo de despertar.
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: ZELDORO
+      text: "Qu\xE9 extra\xF1o... Estoy seguro de que antes no estabas aqu\xED."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: "TOADAV\xCDA"
+      text: "\xA1Pues ahora s\xED est\xE1! \xA1Y parece bastante confundido!"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: PACMIEDO
+      text: "\xA1Esperen! \xBFY si no vino solo?"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: GAMERBOY
+      text: "\xBFQu\xE9?"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: PACMIEDO
+      text: "\xA1Mira detr\xE1s de ti! \xBFTe sigui\xF3 alguien?"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: refuge.welcome.look-back
+      speaker: GAMERBOY
+      text: "\xBF\xA1Qui\xE9n se supone que me iba a seguir!?"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 2.2
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: PACMIEDO
+      text: "\xA1No lo s\xE9! \xA1Por eso pregunto!"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: SOLID GUARDA
+      text: "\xA1Ya basta! Est\xE1s poniendo nervioso al reci\xE9n llegado."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: GAMERBOY
+      text: Un poco tarde para eso.
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: "TOADAV\xCDA"
+      text: "\xA1Bueno, bueno! Lo importante es que est\xE1s aqu\xED. Este lugar
+        es nuestro refugio."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: GAMERBOY
+      text: "\xBFRefugio? \xBFDe qu\xE9 se est\xE1n escondiendo?"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: ZELDORO
+      text: "De muchas cosas. Aunque \xFAltimamente cuesta recordar cu\xE1les."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 1.1
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: GAMERBOY
+      text: "\xBFTambi\xE9n tienen problemas para recordar?"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: ZELDORO
+      text: "\xBFTambi\xE9n?"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: GAMERBOY
+      text: "Yo estaba con alguien... Pero no recuerdo qui\xE9n."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: PACMIEDO
+      text: "\xA1Eso es terrible!"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: "TOADAV\xCDA"
+      text: "\xA1Pacmiedo!"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: PACMIEDO
+      text: "\xBF\xA1Qu\xE9!? \xA1Lo es!"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: PRAYMAN
+      text: "D\xE9jenlo tranquilo. Acaba de despertar."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: PRAYMAN
+      text: No necesitas encontrar todas las respuestas ahora.
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: GAMERBOY
+      text: "Pues me gustar\xEDa encontrar al menos una."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: PRAYMAN
+      text: No te preocupes. Todo va a estar bien.
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: GAMERBOY
+      text: "\xBFC\xF3mo puedes estar tan seguro?"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: PRAYMAN
+      text: ...
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: PRAYMAN
+      text: "Digamos que alguien me lo prometi\xF3."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: SOLID GUARDA
+      text: "Bueno, ya tendremos tiempo de hablar. Por ahora, qu\xE9date dentro de
+        las paredes."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: "TOADAV\xCDA"
+      text: "\xA1Y bienvenido al refugio!"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: GAMERBOY
+      text: ...Gracias, supongo.
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    message: 
+    eventProfile: {fileID: 0}
+  deniedMessage: "Todav\xEDa no puedes activar este mecanismo."

@@ -1,0 +1,15 @@
+PASS Empty Patrol route detected
+PASS Waypoint on wall detected
+PASS Disconnected waypoint detected
+PASS Valid connected patrol accepted
+PASS Negative detection detected
+PASS NaN respawn detected
+PASS Unique reset contradiction detected
+PASS Boss respawn contradiction detected
+PASS Phase 1 main dungeon diagnostic remains valid
+PASS All published placements remain Legacy
+PASS Makong remains static and unique
+PASS Independent fixture FloorA passes consolidated diagnostic
+PASS Independent fixture FloorB passes consolidated diagnostic
+PASS Inspector exposes nested exploration and patrol configuration
+PASS Legacy main-map region binding preserves existing defeats

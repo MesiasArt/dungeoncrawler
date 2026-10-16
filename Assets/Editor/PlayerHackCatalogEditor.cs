@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEditor;
 [CustomPropertyDrawer(typeof(PlayerHackDefinition))]
 public class PlayerHackDefinitionDrawer:PropertyDrawer {
- public override float GetPropertyHeight(SerializedProperty p,GUIContent label){return EditorGUIUtility.singleLineHeight*12+26;}
+ public override float GetPropertyHeight(SerializedProperty p,GUIContent label){return EditorGUIUtility.singleLineHeight*13+28;}
  public override void OnGUI(Rect r,SerializedProperty p,GUIContent label){
   EditorGUI.BeginProperty(r,label,p);float line=EditorGUIUtility.singleLineHeight;float y=r.y;
   EditorGUI.LabelField(new Rect(r.x,y,r.width,line),label,EditorStyles.boldLabel);y+=line+2;
@@ -10,6 +10,7 @@ public class PlayerHackDefinitionDrawer:PropertyDrawer {
   EditorGUI.PropertyField(new Rect(r.x,y,r.width,line*3),p.FindPropertyRelative("description"));y+=line*3+2;
   foreach(var name in new[]{"minimumLevel","bitsCost","available","unlockMode"}){EditorGUI.PropertyField(new Rect(r.x,y,r.width,line),p.FindPropertyRelative(name));y+=line+2;}
   var script=p.FindPropertyRelative("implementationScript");EditorGUI.BeginChangeCheck();var value=EditorGUI.ObjectField(new Rect(r.x,y,r.width,line),"Implementación (CombatHack)",script.objectReferenceValue,typeof(MonoScript),false);if(EditorGUI.EndChangeCheck()){script.objectReferenceValue=value;var type=value!=null?((MonoScript)value).GetClass():null;p.FindPropertyRelative("implementationTypeName").stringValue=type!=null&&!type.IsAbstract&&typeof(CombatHack).IsAssignableFrom(type)?type.FullName:"";}
+  y+=line+2;EditorGUI.PropertyField(new Rect(r.x,y,r.width,line),p.FindPropertyRelative("systemMessages"),new GUIContent("System Message opcional"));
   EditorGUI.EndProperty();
  }
 }

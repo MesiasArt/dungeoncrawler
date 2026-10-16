@@ -19,8 +19,11 @@ public enum EncounterTrigger { OnDungeonStart, InteractiveEvent }
  [Min(1)] public int fixedLevel=1;
  public PlacedEnemyCategory category;
  public EncounterTrigger trigger;
+ [Tooltip("Impide SPEEDRUN en esta colocación.")] public bool protectedFromInstantDefeat;
+ public DungeonBossProfile bossProfile;
  public bool holdPosition;public InventoryItemRecord[] guaranteedDrops=new InventoryItemRecord[0];
- public bool CanRespawn {get{return respawn&&!unique&&category!=PlacedEnemyCategory.Boss;}}
+ public EnemyExplorationSettings exploration=new EnemyExplorationSettings();
+ public bool CanRespawn {get{return !unique&&category!=PlacedEnemyCategory.Boss&&(exploration==null||exploration.persistence==EnemyExplorationPersistence.Legacy?respawn:exploration.persistence==EnemyExplorationPersistence.TimedRespawn);}}
 }
 [CreateAssetMenu(menuName="Virtual Dungeon/Regiones y encuentros")]
 public sealed class DungeonRegionSettings:ScriptableObject {
@@ -38,7 +41,7 @@ public sealed class DungeonRegionSettings:ScriptableObject {
    if(r.CanSpawn&&r.enemies.LevelValues().Length==0)errors.Add(r.displayName+": niveles vacíos");if(r.CanSpawn&&r.enemies.SelectKind(.5)<0)errors.Add(r.displayName+": no hay especies aleatorias válidas");
   }
   for(int y=0;y<map.Length;y++)for(int x=0;x<map[y].Length;x++)if(map[y][x]=='.'&&!assigned.ContainsKey(new Vector2Int(x,y)))errors.Add("Sin zona: "+x+","+y);
-  ids.Clear();var locations=new HashSet<Vector2Int>();foreach(var e in placedEnemies){if(e==null)continue;if(string.IsNullOrEmpty(e.id)||!ids.Add(e.id))errors.Add("ID de colocación vacío/duplicado");if(!locations.Add(e.cell)&&e.trigger==EncounterTrigger.OnDungeonStart)errors.Add("Colocaciones en misma casilla "+e.cell);var r=At(e.cell);if(r==null)errors.Add(e.id+": colocación sin zona válida");if(EnemyCharacterCatalog.Current.FindId(e.speciesId)==null)errors.Add(e.id+": especie desconocida");if(e.speciesId=="Mimic"&&e.trigger!=EncounterTrigger.InteractiveEvent)errors.Add(e.id+": Mimic necesita evento interactivo");if(r!=null&&!r.CanSpawn&&e.enabled&&!e.allowInSafeArea)errors.Add(e.id+": colocación en zona segura/desactivada");}
+  ids.Clear();var locations=new HashSet<Vector2Int>();foreach(var e in placedEnemies){if(e==null)continue;if(string.IsNullOrEmpty(e.id)||!ids.Add(e.id))errors.Add("ID de colocación vacío/duplicado");if(!locations.Add(e.cell)&&e.trigger==EncounterTrigger.OnDungeonStart)errors.Add("Colocaciones en misma casilla "+e.cell);var r=At(e.cell);if(r==null)errors.Add(e.id+": colocación sin zona válida");if(EnemyCharacterCatalog.Current.FindId(e.speciesId)==null)errors.Add(e.id+": especie desconocida");EnemyExplorationSettings.Validate(e,map,errors,this);if(e.speciesId=="Mimic"&&e.trigger!=EncounterTrigger.InteractiveEvent)errors.Add(e.id+": Mimic necesita evento interactivo");if(r!=null&&!r.CanSpawn&&e.enabled&&!e.allowInSafeArea)errors.Add(e.id+": colocación en zona segura/desactivada");}
   return errors;
  }
 }

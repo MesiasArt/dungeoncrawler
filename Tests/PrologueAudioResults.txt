@@ -1,0 +1,3 @@
+PASS Exploration music resumes through normal music source
+PASS No extra music source or overlapping carrier added
+PASS Transmission relinquishes encounter audio ownership

@@ -1,0 +1,9 @@
+elapsedSeconds=12.0074800000002
+frames=303
+width=1920
+height=1080
+GC0=5
+GC1=5
+GC2=5
+scene=Assets/Scenes/SampleScene.unity
+Editor=true

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DungeonRegionSettings
   regions:
   - id: zone-0
-    displayName: "Zona 0 \u2014 El refugio de los olvidados"
+    displayName: Refugio de los olvidados
     editorColor: {r: 0.1, g: 0.7, b: 0.5, a: 1}
     cells:
     - {x: 15, y: 1}
@@ -127,7 +127,7 @@ MonoBehaviour:
     spawnsEnabled: 1
     safeArea: 0
   - id: zone-1.5
-    displayName: "Zona 1.5 \u2014 Pasillo de preservaci\xF3n"
+    displayName: "Pasillo de preservaci\xF3n"
     editorColor: {r: 0, g: 1, b: 0, a: 1}
     cells:
     - {x: 9, y: 8}
@@ -443,31 +443,6 @@ MonoBehaviour:
     - {x: 11, y: 54}
     - {x: 12, y: 54}
     - {x: 13, y: 54}
-    - {x: 15, y: 32}
-    - {x: 16, y: 32}
-    - {x: 17, y: 32}
-    - {x: 18, y: 32}
-    - {x: 19, y: 32}
-    - {x: 15, y: 33}
-    - {x: 16, y: 33}
-    - {x: 17, y: 33}
-    - {x: 18, y: 33}
-    - {x: 19, y: 33}
-    - {x: 15, y: 34}
-    - {x: 16, y: 34}
-    - {x: 17, y: 34}
-    - {x: 18, y: 34}
-    - {x: 19, y: 34}
-    - {x: 15, y: 35}
-    - {x: 16, y: 35}
-    - {x: 17, y: 35}
-    - {x: 18, y: 35}
-    - {x: 19, y: 35}
-    - {x: 15, y: 36}
-    - {x: 16, y: 36}
-    - {x: 17, y: 36}
-    - {x: 18, y: 36}
-    - {x: 19, y: 36}
     - {x: 14, y: 23}
     - {x: 15, y: 23}
     - {x: 16, y: 23}
@@ -493,6 +468,38 @@ MonoBehaviour:
     - {x: 11, y: 65}
     - {x: 11, y: 66}
     - {x: 11, y: 67}
+    enemies: {fileID: 0}
+    spawnsEnabled: 0
+    safeArea: 1
+  - id: 3cfa154f816a478ab0035567c978eec5
+    displayName: Callejon Secreto
+    editorColor: {r: 0.9, g: 0.84150004, b: 0.31500003, a: 1}
+    cells:
+    - {x: 15, y: 36}
+    - {x: 16, y: 36}
+    - {x: 17, y: 36}
+    - {x: 18, y: 36}
+    - {x: 19, y: 36}
+    - {x: 19, y: 35}
+    - {x: 18, y: 35}
+    - {x: 17, y: 35}
+    - {x: 16, y: 35}
+    - {x: 15, y: 35}
+    - {x: 17, y: 34}
+    - {x: 16, y: 34}
+    - {x: 15, y: 34}
+    - {x: 15, y: 33}
+    - {x: 15, y: 32}
+    - {x: 16, y: 32}
+    - {x: 16, y: 33}
+    - {x: 17, y: 33}
+    - {x: 17, y: 32}
+    - {x: 18, y: 32}
+    - {x: 18, y: 33}
+    - {x: 18, y: 34}
+    - {x: 19, y: 34}
+    - {x: 19, y: 33}
+    - {x: 19, y: 32}
     enemies: {fileID: 0}
     spawnsEnabled: 0
     safeArea: 1
@@ -537,7 +544,7 @@ MonoBehaviour:
     fixedLevel: 10
     category: 1
     trigger: 0
-    holdPosition: 0
+    holdPosition: 1
     guaranteedDrops: []
   - id: makong.prep.shirt-guard
     speciesId: Hongo

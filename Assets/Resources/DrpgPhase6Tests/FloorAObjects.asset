@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fdea577286a71c4dbaf413b4b9011ab, type: 3}
+  m_Name: FloorAObjects
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonEntitySettings
+  objects:
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: phase6.chest
+    displayName: Objeto
+    kind: 1
+    cell: {x: 2, y: 2}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestRewards: {fileID: 11400000, guid: aa05e80dd2e18db4c8d327f89a290019, type: 2}
+    chestKind: 0
+    contentId: key.red
+    quantity: 1
+    mimicPlacementId: 
+    guardPlacementId: 
+    cityEntrance: 0
+    returnToDigitalKingdom: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
+    doorInitiallyOpen: 0
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: phase6.story
+    displayName: Objeto
+    kind: 1
+    cell: {x: 4, y: 2}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestRewards: {fileID: 11400000, guid: aa05e80dd2e18db4c8d327f89a290019, type: 2}
+    chestKind: 2
+    contentId: key.green
+    quantity: 1
+    mimicPlacementId: 
+    guardPlacementId: 
+    cityEntrance: 0
+    returnToDigitalKingdom: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
+    doorInitiallyOpen: 0
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: phase6.conditional
+    displayName: Objeto
+    kind: 1
+    cell: {x: 6, y: 2}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestRewards: {fileID: 11400000, guid: d5cb3edc31aa9d84687b7288d3d406d3, type: 2}
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    guardPlacementId: 
+    cityEntrance: 0
+    returnToDigitalKingdom: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
+    doorInitiallyOpen: 0
+    doorKind: 0
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 0}
+    destinationCell: {x: 0, y: 0}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []

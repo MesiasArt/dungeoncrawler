@@ -1,0 +1,10 @@
+PASS Assets/Resources/Textures/texturas tipo mario.psd
+CHANGED Assets/Resources/RetroDungeonExperiment/Map.asset
+CHANGED Assets/Resources/RetroDungeonExperiment/Regions.asset
+PASS Assets/Resources/RetroDungeonExperiment/Objects.asset
+PASS Assets/Scripts/DungeonPrototype.Movement.cs
+PASS Assets/Scripts/CombatMath.cs
+PASS Assets/Scenes/SampleScene.unity
+PASS Assets/Scenes/DigitalKingdom.unity
+PASS C:\Users\soyot\AppData\LocalLow\DefaultCompany\dungeoncrawler\Codebound-save-v1.json
+PASS C:\Users\soyot\AppData\LocalLow\DefaultCompany\dungeoncrawler\Codebound-slot-1-v1.json

@@ -1,0 +1,30 @@
+29 passed / 0 failed
+PASS Fixture explicitly initializes its boss placement
+PASS Valid loot table diagnostic
+PASS Stable map/chest/table roll
+PASS Fixed story content always first and guaranteed
+PASS Key chest ignores all random rolls
+PASS Existing conditions deny chest without key
+PASS Inventory full checkpoints one delivered entry
+PASS Guaranteed key granted once before capacity failure
+PASS Save/load preserves roll and partial reward cursor
+PASS Retry never duplicates earlier key
+PASS Retry completes chest after space is freed
+PASS Opened chest cannot duplicate rewards
+PASS Key-item chest always grants its story key
+PASS Condition succeeds using existing item state
+PASS Round trip preserves chest and inventory states
+PASS HP phase emits one persistent signal
+PASS Phase events do not interrupt combat attacks
+PASS Pending phase event resumes after load
+PASS Phase reward executes once
+PASS Boss defeat reaches existing victory flow
+PASS Victory profile executes existing event actions
+PASS Victory reward not duplicated
+PASS Existing defeat condition recorded
+PASS Makong Legacy accepts actual Makong species
+PASS Makong adapter rejects other species
+PASS Diagnostic rejects wrong species and duplicate phase IDs
+PASS Diagnostic prevents random-only key rewards
+PASS Old chest state remains compatible
+PASS All writes isolated under Tests

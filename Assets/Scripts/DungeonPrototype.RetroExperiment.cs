@@ -1,0 +1,14 @@
+using UnityEngine;
+public partial class DungeonPrototype {
+ public Camera RetroView {get{return view;}}public float RetroCellSize {get{return Cell;}}public float RetroWallHeight {get{return corridorHeight;}}public Vector2Int RetroPlayerCell {get{return position;}}
+ public void BeginRetroExperiment(){if(DigitalKingdomTransit.FirstKingdomVisit){DigitalKingdomTransit.FirstKingdomVisit=false;SpawnPlacedEncounters();}Physics.SyncTransforms();PopulateRegions(true);introduction?.Skip();introductionCompleted=true;EndIntroPresentation(true);ReleaseIntroductionInput();startMenuOpen=saveSlotsOpen=false;SetPause(false);ClearMovementInput();StartCoroutine(ShowDungeonEntryNotice());}
+ public bool RetroExplorationAvailable {get{return !MovementInterfaceBlocked()&&!moving&&!enemyNavigationRunning;}}
+ public bool RetroSpawnPending(RetroDungeonSettings settings,string id,string[] ids){if(ids==null||ids.Length==0)return false;int used=RetroPipeAttempts(id);return used<Mathf.Min(settings.once?1:settings.maximumSpawns,ids.Length)&&!triggeredEncounters.Contains(ids[used]);}
+ public bool RetroPipeEnteredCombat(GameObject actor,Vector3 floorHome){int index=enemyObjects.IndexOf(actor);if(!battle||index<0||!encounter.Contains(index))return false;encounterHomes[index]=floorHome;return true;}
+ public int RetroPipeAttempts(string id){int count=0;foreach(var value in interactionProgress.completedEvents)if(value.StartsWith(id+".attempt."))count++;return count;}
+ bool RetroEmergenceCellValid(Vector2Int cell){var region=RegionAt(cell);return region!=null&&region.CanSpawn&&Open(cell)&&cell!=position&&!RefugeNpcBlocks(cell)&&!Occupied(cell)&&PlayerNavigation().ContainsKey(cell);}
+ public bool TryEmitRetroPipe(RetroDungeonSettings settings,string pipeId,out GameObject actor,string[] placementIds=null,bool nearbyEmergence=false){actor=null;var ids=placementIds??settings.placementIds;if(MovementInterfaceBlocked()||moving||enemyNavigationRunning)return false;int used=RetroPipeAttempts(pipeId),limit=Mathf.Min(settings.once?1:settings.maximumSpawns,ids.Length);if(used>=limit)return false;var placement=System.Array.Find(RegionMap.placedEnemies,p=>p.id==ids[used]);if(placement==null||triggeredEncounters.Contains(placement.id)||Population(RegionAt(placement.cell).id)>=RegionAt(placement.cell).enemies.maximumEnemies||!(nearbyEmergence?RetroEmergenceCellValid(placement.cell):ExplorationPlacementRespawnValid(placement.cell,RegionAt(placement.cell),true)))return false;
+  var random=new System.Random(settings.seed+used*7919);if(random.NextDouble()>settings.spawnProbability){interactionProgress.completedEvents.Add(pipeId+".attempt."+used);return true;}
+  if(!SpawnPlacement(placement))return false;interactionProgress.completedEvents.Add(pipeId+".attempt."+used);actor=enemyObjects[enemyObjects.Count-1];return true;
+ }
+}

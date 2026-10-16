@@ -1,0 +1,8 @@
+PASS Assets\Resources\Exploration\Zones\00-Zona0\Refugio.asset
+PASS Assets\Resources\Exploration\Zones\PlanoDungeon.asset
+PASS Assets\Resources\Exploration\Zones\PlanoDungeon-Objetos.asset
+PASS Assets\Scripts\DungeonPrototype.Movement.cs
+PASS Docs\Narrativa\02_Biblia_del_mundo.md
+PASS Docs\Narrativa\Fuentes\Implementacion_observada.md
+PASS Docs\Narrativa\Fuentes\Texto pegado(6).txt
+PASS Docs\Narrativa\Fuentes\Verificacion.md

@@ -2,7 +2,7 @@ using UnityEngine;
 public partial class DungeonPrototype {
  float previousHelmetGlitch;int previousHelmetHP=-1;string previousHelmetRegion;
  void UpdateHelmetContext(){
-  if(view==null)return;var crt=view.GetComponent<HelmetCRTController>();if(crt==null)return;
+  if(view==null)return;var crt=view.GetComponent<HelmetCRTController>();if(crt==null)return;crt.SetCombatContext(battle&&!lost&&!levelComplete);
   if(glitch>previousHelmetGlitch+.05f)crt.TriggerContext("Memory / encounter",.22f);
   if(previousHelmetHP>=0&&previousHelmetHP-hp>=Mathf.Max(1,MaximumHP/4))crt.TriggerContext("Heavy damage",.4f);
   var region=RegionAt(position);string id=region!=null?region.id:null;

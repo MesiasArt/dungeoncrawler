@@ -18,12 +18,16 @@ MonoBehaviour:
   separateLayerIntensity: 1
   backgroundIntensity: 1
   enemyIntensity: 0.786
-  uiIntensity: 0
-  brightness: 0.75
-  bufferHeight: 340
+  uiIntensity: 0.243
+  brightness: 1.359
+  combatBrightness: 1.428
+  worldGamma: 0.736
+  bufferHeight: 292
   scanlines: 1
   artifacts: 1
   chromaticFringe: 1
+  rgbSplitPixels: 2.87
+  glitchRGBSplitPixels: 10.98
   curvature: 1
   cornerMask: 1
   curvatureAmount: 0.0306

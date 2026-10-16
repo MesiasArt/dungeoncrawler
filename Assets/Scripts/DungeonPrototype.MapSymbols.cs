@@ -9,7 +9,7 @@ public partial class DungeonPrototype {
   if(ActiveMap!=null&&ActiveMap.entities!=null)foreach(var e in ActiveMap.entities.objects){if(e==null||!MapCellDiscovered(e.cell))continue;var state=mapEntityStates.Find(s=>s.id==e.id);bool opened=state!=null?state.opened:e.doorInitiallyOpen;DungeonDoor door;if(mapDoors.TryGetValue(e.id,out door)&&door!=null)opened=door.IsOpen;
    var marker=new DungeonMapMarker{id=e.id,label=e.displayName,cell=e.cell,open=opened};
    switch(e.kind){
-    case DungeonEntityKind.Door:marker.symbol=e.cityEntrance?DungeonMapSymbol.KingdomConnection:e.doorKind==DungeonDoorKind.Transition&&e.destinationMap!=null&&e.destinationMap!=ActiveMap?DungeonMapSymbol.FloorConnection:opened?DungeonMapSymbol.DoorOpen:DungeonMapSymbol.DoorClosed;if(marker.symbol==DungeonMapSymbol.FloorConnection)marker.label+=" → "+e.destinationMap.name;break;
+    case DungeonEntityKind.Door:marker.symbol=e.cityEntrance||e.returnToDigitalKingdom?DungeonMapSymbol.KingdomConnection:e.doorKind==DungeonDoorKind.Transition&&e.destinationMap!=null&&e.destinationMap!=ActiveMap?DungeonMapSymbol.FloorConnection:opened?DungeonMapSymbol.DoorOpen:DungeonMapSymbol.DoorClosed;if(marker.symbol==DungeonMapSymbol.FloorConnection)marker.label+=" → "+e.destinationMap.name;break;
     case DungeonEntityKind.Chest:if(e.chestKind==DungeonChestKind.Mimic&&opened)continue;marker.symbol=opened?DungeonMapSymbol.ChestOpened:DungeonMapSymbol.ChestAvailable;break;
     case DungeonEntityKind.Savepoint:marker.symbol=DungeonMapSymbol.Savepoint;break;
     case DungeonEntityKind.Teleport:marker.symbol=refuge.unlockedNodes.Contains(e.id)?DungeonMapSymbol.NodeUnlocked:DungeonMapSymbol.NodeLocked;break;

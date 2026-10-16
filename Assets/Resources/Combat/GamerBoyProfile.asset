@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c8f38dde4d47a4ca1d47b1f253a12d, type: 3}
+  m_Name: GamerBoyProfile
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerProfileSettings
+  id: gamerboy
+  character: {fileID: 11400000, guid: 9adac04ff4c4b164cabccba2b862d888, type: 2}
+  levels: {fileID: 11400000, guid: 898920714a06b3a42bf4d98ff96eeeb0, type: 2}
+  bits: {fileID: 11400000, guid: 0afc91784df530b4794f0fcda47094d4, type: 2}
+  inventory: {fileID: 11400000, guid: c040543b955a7f54ca9c79edcc424c7b, type: 2}
+  hacks: {fileID: 11400000, guid: 05fa17f1727b99a49b4bd9bedc163d54, type: 2}

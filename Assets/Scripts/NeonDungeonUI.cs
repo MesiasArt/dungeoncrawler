@@ -6,7 +6,7 @@ public static class NeonDungeonUI
  public static readonly Color Pink=new Color(1,.02f,.36f), Cyan=new Color(0,.78f,1);
  public static int FontSize=22;
  public static Font PixelFont;
- public static void ApplyFont(){if(PixelFont==null)PixelFont=Resources.Load<Font>("UI/Fonts/ThaleahFat_TTF");if(PixelFont!=null){GUI.skin.font=PixelFont;GUI.skin.label.font=PixelFont;GUI.skin.button.font=PixelFont;GUI.skin.toggle.font=PixelFont;}}
+ public static void ApplyFont(){if(PixelFont==null)PixelFont=Resources.Load<Font>("UI/Fonts/CodeboundPixelSpanish")??Resources.Load<Font>("UI/Fonts/ThaleahFat_TTF");if(PixelFont!=null){GUI.skin.font=PixelFont;GUI.skin.label.font=PixelFont;GUI.skin.button.font=PixelFont;GUI.skin.toggle.font=PixelFont;}}
  public static float ContinueBlinkSeconds=.45f;
  static void Prepare() { ApplyFont(); if(text==null) { text=new GUIStyle(GUI.skin.label){fontSize=22,wordWrap=true};text.normal.textColor=Color.white;centered=new GUIStyle(text){alignment=TextAnchor.MiddleCenter};messageText=new GUIStyle(text){alignment=TextAnchor.MiddleLeft,clipping=TextClipping.Clip}; } text.font=centered.font=messageText.font=PixelFont;text.fontSize=centered.fontSize=messageText.fontSize=FontSize; }
  static Texture2D Texture(string key) { Texture2D t;if(!textures.TryGetValue(key,out t)) textures[key]=t=Resources.Load<Texture2D>("UI/MenuUI/"+key);return t; }

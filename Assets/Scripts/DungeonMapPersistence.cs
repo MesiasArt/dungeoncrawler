@@ -16,6 +16,13 @@ public static class DungeonMapPersistence {
  public static List<T> Copy<T>(List<T> value){if(value==null)return new List<T>();return JsonUtility.FromJson<ListCopy<T>>(JsonUtility.ToJson(new ListCopy<T>{items=value})).items;}
  public static T Copy<T>(T value){return JsonUtility.FromJson<T>(JsonUtility.ToJson(value));}
  public static DungeonMapSettings Resolve(string id,DungeonMapSettings activeMap=null){if(string.IsNullOrEmpty(id))return null;DungeonMapSettings found=null;var seen=new HashSet<DungeonMapSettings>();var queue=new Queue<DungeonMapSettings>(Resources.LoadAll<DungeonMapSettings>(""));if(activeMap!=null)queue.Enqueue(activeMap);while(queue.Count>0){var map=queue.Dequeue();if(map==null||!seen.Add(map))continue;if(map.mapId==id){if(found!=null&&found!=map)throw new InvalidOperationException("mapId duplicado: "+id);found=map;}if(map.entities!=null)foreach(var entity in map.entities.objects)if(entity!=null&&entity.destinationMap!=null)queue.Enqueue(entity.destinationMap);}return found;}
+ public static void ResetExplorationOnReentry(DungeonSaveData data,DungeonMapSettings destination){
+  if(destination==null)return;var regions=destination.regions??(destination.includeLegacyObjects?DungeonRegionSettings.Current:null);if(regions==null)return;
+  foreach(var record in data.enemies){var p=Array.Find(regions.placedEnemies,e=>e!=null&&e.id==record.placementId);
+   if(p==null||p.unique||p.category==PlacedEnemyCategory.Boss||p.exploration==null||p.exploration.persistence!=EnemyExplorationPersistence.ResetOnReentry)continue;
+   record.cell=p.cell;record.currentHP=int.MaxValue;record.defeated=false;record.alerted=false;record.respawnRemaining=0;record.hasExplorationState=false;record.patrolIndex=record.memoryTurns=0;record.patrolDirection=1;
+  }
+ }
  public static string RequireId(DungeonMapSettings map){if(map==null||string.IsNullOrEmpty(map.mapId))throw new InvalidOperationException("Mapa sin mapId estable");return map.mapId;}
  public static void Normalize(DungeonSaveData data,DungeonMapSettings fallback){
   if(data.interactions==null)data.interactions=new DungeonInteractionProgress();if(data.maps==null)data.maps=new List<DungeonMapSnapshot>();if(data.visited==null)data.visited=new List<Vector2Int>();if(data.explored==null)data.explored=new List<Vector2Int>();if(data.enemies==null)data.enemies=new List<EnemyInstanceRecord>();if(data.entityStates==null)data.entityStates=new List<DungeonEntityState>();if(data.legacyDoors==null)data.legacyDoors=new List<DungeonEntityState>();
@@ -34,6 +41,6 @@ public static class DungeonMapPersistence {
  public static void StoreCurrent(DungeonSaveData data){data.maps.RemoveAll(s=>s!=null&&s.mapId==data.activeMapId);data.maps.Add(Snapshot(data));}
  public static void Apply(DungeonSaveData data,DungeonMapSnapshot snapshot){var s=Copy(snapshot);data.interactions=s.interactions??new DungeonInteractionProgress();data.activeMapId=s.mapId;data.cell=s.cell;data.heading=s.heading;data.directorRestRemaining=s.directorRestRemaining;data.enemies=s.enemies;data.triggeredEncounters=s.triggeredEncounters;data.entityStates=s.entityStates;data.legacyDoors=s.legacyDoors;data.explored=s.explored;data.visited=s.visited;}
  public static DungeonSaveData ForTravel(DungeonSaveData source,DungeonMapSettings destination,Vector2Int cell,int heading,out bool firstVisit){
-  var data=Copy(source);Normalize(data,DungeonMapSettings.Current);StoreCurrent(data);string id=RequireId(destination);var saved=data.maps.Find(s=>s!=null&&s.mapId==id);firstVisit=saved==null;Apply(data,saved??new DungeonMapSnapshot{mapId=id});data.cell=cell;data.heading=heading;return data;
+  var data=Copy(source);Normalize(data,DungeonMapSettings.Current);StoreCurrent(data);string id=RequireId(destination);var saved=data.maps.Find(s=>s!=null&&s.mapId==id);firstVisit=saved==null;Apply(data,saved??new DungeonMapSnapshot{mapId=id});data.cell=cell;data.heading=heading;if(!firstVisit)ResetExplorationOnReentry(data,destination);return data;
  }
 }

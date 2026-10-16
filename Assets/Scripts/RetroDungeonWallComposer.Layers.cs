@@ -1,0 +1,25 @@
+using System;using UnityEngine;
+public sealed partial class RetroDungeonWallComposer {
+ void ApplyTextureCrop(Material material,Texture2D texture){var entry=Array.Find(settings.textureRegions,r=>r!=null&&r.texture==texture);material.SetVector("_UVRect",entry!=null?entry.uv:new Vector4(0,0,1,1));}
+ float TextureAspect(Texture2D texture){var region=Array.Find(settings.textureRegions,r=>r!=null&&r.texture==texture);return texture.width*(region!=null?region.uv.z:1)/(texture.height*(region!=null?region.uv.w:1));}
+ float DepthFor(RetroOrderedLayer layer){return layer.depth==RetroLayerDepth.Cloud?settings.cloudParallax:layer.depth==RetroLayerDepth.Mountain?settings.mountainParallax:settings.bushParallax;}
+ float OrderedDepth(Texture2D texture,float fallback){if(settings.orderedLayers!=null)foreach(var layer in settings.orderedLayers)if(layer!=null&&Array.IndexOf(layer.textures,texture)>=0)return DepthFor(layer)*layer.parallaxMultiplier;return fallback;}
+ void ComposeOrderedLayers(Vector3 center,Vector3 normal,Vector3 tangent,float width,float height,int cells,System.Random rng){
+  foreach(var layer in settings.orderedLayers){if(layer==null||layer.textures==null||layer.textures.Length==0)continue;
+   if(!layer.continuous){Scatter(layer.textures,layer.density,layer.heights,DepthFor(layer)*layer.parallaxMultiplier,layer.altitude,layer.offset,center,normal,tangent,width,height,cells,rng);continue;}
+   float h=layer.heights.x*height/3;var texture=layer.textures[0];if(texture==null)continue;
+   float tileWidth=h*TextureAspect(texture);int tiles=Mathf.Max(1,Mathf.CeilToInt(width/tileWidth));float w=width/tiles;
+   for(int i=0;i<tiles;i++){texture=layer.textures[i%layer.textures.Length];float x=-width*.5f+w*(i+.5f);Quad("PSD "+layer.name,center+tangent*x+Vector3.up*(h*.5f+.01f)+normal*layer.offset,normal,w+.002f,h,Layer(texture,DepthFor(layer)*layer.parallaxMultiplier));ElementCount++;}
+  }
+  if(settings.floorEdge!=null){float h=settings.floorEdgeHeight;float tileWidth=h*TextureAspect(settings.floorEdge);int tiles=Mathf.Max(1,Mathf.CeilToInt(width/tileWidth));float w=width/tiles;for(int i=0;i<tiles;i++)Quad("Borde de tierra y cesped",center+tangent*(-width*.5f+w*(i+.5f))+Vector3.up*h*.5f+normal*.205f,normal,w+.46f,h,Layer(settings.floorEdge));}
+ }
+ void BuildVoidEdges(){if(settings.floorEdge==null)return;var rows=dungeon.MapRows;var dirs=new[]{Vector2Int.up,Vector2Int.right,Vector2Int.down,Vector2Int.left};float size=dungeon.RetroCellSize,h=settings.floorEdgeHeight;for(int y=1;y<rows.Length-1;y++)for(int x=1;x<rows[y].Length-1;x++){if(rows[y][x]!='~')continue;foreach(var dir in dirs){var adjacent=new Vector2Int(x,y)+dir;if(rows[adjacent.y][adjacent.x]!='.')continue;var outward=new Vector3(dir.x,0,dir.y);var center=new Vector3(x*size,-h*.5f,y*size)+outward*(size*.5f-.02f);Quad("Borde de cesped del hueco",center,-outward,size+.025f,h,Layer(settings.floorEdge));}}}
+ void MakeDecorativeBushes(){if(!settings.bushEmergence||settings.bushes.Length==0)return;var rng=new System.Random(settings.seed+5431);var rows=dungeon.MapRows;var dirs=new[]{Vector2Int.up,Vector2Int.right,Vector2Int.down,Vector2Int.left};for(int y=1;y<rows.Length-1;y++)for(int x=1;x<rows[y].Length-1;x++){if(rows[y][x]!='.')continue;for(int direction=0;direction<4;direction++){var p=new Vector2Int(x,y)+dirs[direction];if(rows[p.y][p.x]!='#'||rng.NextDouble()>settings.decorativeBushFrequency)continue;var texture=settings.bushes[rng.Next(settings.bushes.Length)];float h=Mathf.Lerp(.6f,1.1f,(float)rng.NextDouble());var normal=-new[]{Vector3.forward,Vector3.right,Vector3.back,Vector3.left}[direction];var center=new Vector3(x*dungeon.RetroCellSize,0,y*dungeon.RetroCellSize)-normal*(dungeon.RetroCellSize*.5f-.38f);var bush=Quad("Arbusto decorativo",center+Vector3.up*(h*.5f-.02f),normal,h*TextureAspect(texture),h,Layer(texture,settings.bushParallax));if(rng.NextDouble()<settings.swayingBushFraction){var sway=bush.AddComponent<RetroFoliageSway>();sway.phase=(float)rng.NextDouble()*6.28f;sway.owner=dungeon;}}}}
+ void MakeBush(Vector2Int cell,int direction,string id,string[] ids){if(settings.bushes==null||settings.bushes.Length==0)return;
+  var normal=-new[]{Vector3.forward,Vector3.right,Vector3.back,Vector3.left}[direction];float size=dungeon.RetroCellSize,height=dungeon.RetroWallHeight*.46f;
+  var center=new Vector3(cell.x*size,0,cell.y*size)-normal*(size*.5f-.24f);var texture=settings.bushes[Math.Abs(cell.x+cell.y)%settings.bushes.Length];
+  var root=new GameObject("Arbusto de encuentro - "+id);root.transform.SetParent(generated,false);root.transform.position=center;root.transform.rotation=Quaternion.LookRotation(normal);
+  var bush=Quad("Arbusto que se sacude",center+Vector3.up*(height*.5f-.025f)+normal*.1f,normal,Mathf.Min(size*.85f,height*TextureAspect(texture)),height,Layer(texture,settings.bushParallax));bush.transform.SetParent(root.transform,true);
+  var component=root.AddComponent<RetroDungeonBush>();component.owner=dungeon;component.settings=settings;component.cell=cell;component.persistentId=id;component.placementIds=ids;component.foliage=bush.transform;
+ }
+}

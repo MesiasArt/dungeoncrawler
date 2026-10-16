@@ -1,0 +1,103 @@
+102 passed / 0 failed
+PASS Personal six save slots isolated
+PASS Level boundary 10 vs 1
+PASS Level boundary 11 vs 1
+PASS Level boundary 15 vs 5
+PASS Level boundary 20 vs 10
+PASS Level boundary 20 vs 11
+PASS Level boundary 30 vs 5
+PASS Independent fixture creates requested opponents
+PASS Combat turn settles
+PASS Normal target eligible
+PASS HP and DEF do not determine availability
+PASS Mixed group excludes high-level enemy and boss
+PASS Catalog strong/elite excluded
+PASS Catalog subboss excluded
+PASS Reserved event enemy excluded
+PASS Explicit placement protection
+PASS Exploration elite excluded
+PASS Insufficient Bits consumes neither turn nor Bits
+PASS Insufficient Bits system message
+PASS Multiple targets enter filtered selection
+PASS Selection cycles eligible targets only
+PASS Selection skips excluded boss
+PASS Revalidation rejects changed target without cost
+PASS Valid SPEEDRUN starts
+PASS Exactly five Bits; duplicate command blocked
+PASS Initialization system message
+PASS Combat turn settles
+PASS One target deleted and combat continues
+PASS Defeat recorded exactly once
+PASS Normal reward collector records one enemy
+PASS Existing level-gap XP restriction preserved
+PASS Enemy turn adds no extra Bits charge
+PASS Independent fixture creates requested opponents
+PASS Combat turn settles
+PASS Single-target execution
+PASS Combat turn settles
+PASS Last target follows normal victory
+PASS Normal rewards awarded at victory
+PASS Normal coin reward preserved
+PASS No repeat execution or duplicate rewards after victory
+PASS Consumable in existing catalog
+PASS Acquire stack through normal inventory
+PASS Exactly one level with near-full XP bar
+PASS Exactly one unit consumed
+PASS Cheat uses existing system panel
+PASS Existing catalog unlocks refreshed
+PASS Level and inventory survive save/load
+PASS Max level rejects without consuming
+PASS Independent fixture creates requested opponents
+PASS Combat turn settles
+PASS Combat ITEM consumes one cheat and a normal action
+PASS Combat turn settles
+PASS Combat consumable preserves opponent and Bits
+PASS Level-up unlocks OVERCLOCK through existing catalog
+PASS Level growth applies through normal stat calculation
+PASS Interrupted visual restores original material and animation
+PASS Legacy save without new item remains compatible
+PASS Full inventory does not mark gift as claimed
+PASS Gift retries successfully after freeing inventory space
+PASS Open city.inn
+PASS Open city.shop
+PASS Open city.temple
+PASS Three NPC gifts total three consumables
+PASS Gifts do not repeat after reload and revisits
+PASS All six NPC names configured
+PASS City backpack opens
+PASS Cheat usable from city
+PASS Backpack reuses character card
+PASS Backpack closes without leaving city
+PASS City captures changed inventory and progression
+PASS Return anchor preserved
+PASS City fixture writes remain in Tests after scene change
+PASS City return starts normally
+PASS Return to dungeon retains level and consumables
+PASS Return retains all three gift receipts
+PASS Independent fixture creates requested opponents
+PASS Combat turn settles
+PASS Combat UI rendered at (1280, 720)
+PASS Independent fixture creates requested opponents
+PASS Combat turn settles
+PASS Combat UI rendered at (1920, 1080)
+PASS Independent fixture creates requested opponents
+PASS Combat turn settles
+PASS Combat UI rendered at (1024, 768)
+PASS Independent fixture creates requested opponents
+PASS Combat turn settles
+PASS One deletion / one charge with FPS cap 60 (0,515 s)
+PASS Combat turn settles
+PASS Independent fixture creates requested opponents
+PASS Combat turn settles
+PASS One deletion / one charge with FPS cap 120 (0,500 s)
+PASS Combat turn settles
+PASS Independent fixture creates requested opponents
+PASS Combat turn settles
+PASS Combat turn settles
+PASS Normal ATTACK regression: damage and Bits unchanged
+PASS Existing save slot 1 round trip in Tests
+PASS Existing save slot 2 round trip in Tests
+PASS Existing save slot 3 round trip in Tests
+PASS Existing save slot 4 round trip in Tests
+PASS Existing save slot 5 round trip in Tests
+PASS Existing save slot 6 round trip in Tests

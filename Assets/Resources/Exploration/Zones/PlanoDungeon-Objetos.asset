@@ -13,24 +13,30 @@ MonoBehaviour:
   m_Name: PlanoDungeon-Objetos
   m_EditorClassIdentifier: Assembly-CSharp::DungeonEntitySettings
   objects:
-  - id: 0e5e856f8377403ba6261f0418529e06
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: 0e5e856f8377403ba6261f0418529e06
     displayName: Cofre
     kind: 1
     cell: {x: 6, y: 5}
     heading: 0
     npcCatalog: {fileID: 11400000, guid: d9cf2ec8775878a4aaa779f8deb76746, type: 2}
-    npcId:
+    npcId: 
     dialogue: []
     chestKind: 0
     contentId: 9e16c25941b547ff87ce8a813008e635
     quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -40,7 +46,9 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: 556b2694ac7a4e05a3a4fd76eb7fbf75
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: 556b2694ac7a4e05a3a4fd76eb7fbf75
     displayName: Cofre
     kind: 1
     cell: {x: 9, y: 17}
@@ -49,15 +57,19 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 1
-    contentId:
+    contentId: 
     quantity: 1
     mimicPlacementId: 7a689886cdda416cb33de22dbcec969c
-    guardPlacementId:
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -67,7 +79,9 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: 0138508de80849ab9098377ef02d10c2
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: 0138508de80849ab9098377ef02d10c2
     displayName: Puerta Roja
     kind: 2
     cell: {x: 3, y: 46}
@@ -76,15 +90,19 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId:
+    contentId: 
     quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 1
     requiredKeyId: key.red
-    destinationRegionId:
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 11400000, guid: da460f17f23a89446a53468eeefb8fb6, type: 2}
@@ -94,7 +112,9 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: 5c90a1a1f62640fa90e8399557659b0b
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: 5c90a1a1f62640fa90e8399557659b0b
     displayName: Puerta
     kind: 2
     cell: {x: 16, y: 42}
@@ -103,15 +123,19 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId:
+    contentId: 
     quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 1
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -121,7 +145,9 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: d139e772467a46efa9523235669e7705
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: d139e772467a46efa9523235669e7705
     displayName: Puerta
     kind: 2
     cell: {x: 11, y: 46}
@@ -130,15 +156,19 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId:
+    contentId: 
     quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 1
     requiredKeyId: key.master
-    destinationRegionId:
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -148,7 +178,9 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: f41a0736f0e745b79714cf647d3d7ae3
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: f41a0736f0e745b79714cf647d3d7ae3
     displayName: Puerta
     kind: 2
     cell: {x: 20, y: 47}
@@ -157,15 +189,19 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId:
+    contentId: 
     quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 1
     requiredKeyId: key.green
-    destinationRegionId:
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -175,8 +211,10 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: ed55c002d9bc4be296015a7c609b32b1
-    displayName: Teleport
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: ed55c002d9bc4be296015a7c609b32b1
+    displayName: Salida del Dungeon
     kind: 4
     cell: {x: 10, y: 49}
     heading: 0
@@ -184,15 +222,19 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId:
+    contentId: 
     quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -203,7 +245,9 @@ MonoBehaviour:
     revealedRegionIds:
     - zone-2
     destinations: []
-  - id: c5fc191240334b81b98ac5ee4c9cdf18
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: c5fc191240334b81b98ac5ee4c9cdf18
     displayName: Cofre
     kind: 1
     cell: {x: 15, y: 45}
@@ -212,15 +256,19 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId:
+    contentId: 
     quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -230,7 +278,9 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: 5d6f3e9d288c428fb7d879992a98b8ea
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: 5d6f3e9d288c428fb7d879992a98b8ea
     displayName: "Cofre \u2014 Llave Roja"
     kind: 1
     cell: {x: 20, y: 41}
@@ -241,13 +291,17 @@ MonoBehaviour:
     chestKind: 2
     contentId: key.red
     quantity: 1
-    mimicPlacementId:
+    mimicPlacementId: 
     guardPlacementId: makong.key.guard.0
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -257,7 +311,9 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: dd55f8a1b779451bb2501875413a5400
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: dd55f8a1b779451bb2501875413a5400
     displayName: Cofre
     kind: 1
     cell: {x: 1, y: 36}
@@ -266,15 +322,19 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId:
-    quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    contentId: item.fast-backward
+    quantity: 3
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -284,7 +344,9 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: da875bcc4edc40ac822d64516067a58d
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: da875bcc4edc40ac822d64516067a58d
     displayName: Puerta
     kind: 2
     cell: {x: 15, y: 33}
@@ -293,15 +355,19 @@ MonoBehaviour:
     npcId: centinela
     dialogue: []
     chestKind: 0
-    contentId:
+    contentId: 
     quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -311,24 +377,86 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: 5d6d25c28f8f4e3e830d4e68d3e1fec8
-    displayName: NPC
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: 5d6d25c28f8f4e3e830d4e68d3e1fec8
+    displayName: Cerrojio
     kind: 0
     cell: {x: 17, y: 34}
     heading: 0
     npcCatalog: {fileID: 11400000, guid: d9cf2ec8775878a4aaa779f8deb76746, type: 2}
     npcId: centinela
-    dialogue: []
+    dialogue:
+    - speaker: Cerrojio
+      text: "Antes de seguir, f\xEDjate en los avisos de las puertas. Te indican
+        si la zona del otro lado es segura."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - speaker: Cerrojio
+      text: 'Verde significa que puedes respirar tranquilo: es una zona segura, sin
+        encuentros.'
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - speaker: Cerrojio
+      text: "Rojo significa peligro. Al cruzar puedes encontrarte con enemigos, as\xED
+        que no bajes la guardia."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - speaker: Cerrojio
+      text: Revisa tu vida, tus BP y tus objetos antes de entrar. Leer una puerta
+        a tiempo puede evitarte una mala sorpresa.
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
     chestKind: 0
-    contentId:
+    contentId: 
     quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -338,7 +466,9 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: dd039ce578724a8a970d25e156c2a295
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: dd039ce578724a8a970d25e156c2a295
     displayName: Cofre
     kind: 1
     cell: {x: 19, y: 36}
@@ -349,13 +479,17 @@ MonoBehaviour:
     chestKind: 0
     contentId: b19d2185c0a040a5befb4ecf6d0764dd
     quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -365,7 +499,9 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: 58db9855ccb147678f2afb6bfccd53ee
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: 58db9855ccb147678f2afb6bfccd53ee
     displayName: Cofre
     kind: 1
     cell: {x: 19, y: 34}
@@ -376,13 +512,17 @@ MonoBehaviour:
     chestKind: 0
     contentId: b19d2185c0a040a5befb4ecf6d0764dd
     quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -392,7 +532,9 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: e69b2f9aa1d24b4799e0937d61b1f655
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: e69b2f9aa1d24b4799e0937d61b1f655
     displayName: Cofre
     kind: 1
     cell: {x: 19, y: 32}
@@ -403,13 +545,17 @@ MonoBehaviour:
     chestKind: 0
     contentId: b19d2185c0a040a5befb4ecf6d0764dd
     quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -419,24 +565,30 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: makong.prep.glove
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: makong.prep.glove
     displayName: "Cofre \u2014 Power Glove MK-II"
     kind: 1
     cell: {x: 17, y: 26}
     heading: 0
     npcCatalog: {fileID: 0}
-    npcId:
+    npcId: 
     dialogue: []
     chestKind: 0
     contentId: equipment.power-glove-mk2
     quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -446,24 +598,30 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: makong.prep.shirt
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: makong.prep.shirt
     displayName: "Cofre \u2014 T-Shirt de Resistencia"
     kind: 1
     cell: {x: 2, y: 44}
     heading: 0
     npcCatalog: {fileID: 0}
-    npcId:
+    npcId: 
     dialogue: []
     chestKind: 0
     contentId: equipment.resistance-shirt
     quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -473,24 +631,30 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: makong.prep.socks
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: makong.prep.socks
     displayName: "Cofre \u2014 Medias del Glitch"
     kind: 1
     cell: {x: 21, y: 51}
     heading: 0
     npcCatalog: {fileID: 0}
-    npcId:
+    npcId: 
     dialogue: []
     chestKind: 0
     contentId: equipment.glitch-socks
     quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -500,24 +664,30 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: makong.key.chest.1
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: makong.key.chest.1
     displayName: "Cofre \u2014 Llave Verde"
     kind: 1
     cell: {x: 1, y: 51}
     heading: 0
     npcCatalog: {fileID: 0}
-    npcId:
+    npcId: 
     dialogue: []
     chestKind: 2
     contentId: key.green
     quantity: 1
-    mimicPlacementId:
+    mimicPlacementId: 
     guardPlacementId: makong.key.guard.1
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -527,24 +697,30 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: makong.key.chest.2
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: makong.key.chest.2
     displayName: "Cofre \u2014 Llave Maestra"
     kind: 1
     cell: {x: 19, y: 51}
     heading: 0
     npcCatalog: {fileID: 0}
-    npcId:
+    npcId: 
     dialogue: []
     chestKind: 2
     contentId: key.master
     quantity: 1
-    mimicPlacementId:
+    mimicPlacementId: 
     guardPlacementId: makong.key.guard.2
     cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 0
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}
@@ -554,24 +730,30 @@ MonoBehaviour:
     requiresActivation: 1
     revealedRegionIds: []
     destinations: []
-  - id: city.entrance
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: city.entrance
     displayName: Digital Kingdom
     kind: 2
     cell: {x: 11, y: 66}
     heading: 0
     npcCatalog: {fileID: 0}
-    npcId:
+    npcId: 
     dialogue: []
     chestKind: 0
-    contentId:
+    contentId: 
     quantity: 1
-    mimicPlacementId:
-    guardPlacementId:
+    mimicPlacementId: 
+    guardPlacementId: 
     cityEntrance: 1
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
     doorInitiallyOpen: 0
     doorKind: 2
-    requiredKeyId:
-    destinationRegionId:
+    requiredKeyId: 
+    destinationRegionId: 
     destinationMap: {fileID: 0}
     destinationCell: {x: 0, y: 0}
     doorSettings: {fileID: 0}

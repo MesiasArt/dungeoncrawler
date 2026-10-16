@@ -1,0 +1,2435 @@
+{
+  "fileCount": 2048,
+  "sourceBytes": 438106597,
+  "largestFiles": [
+    {
+      "path": "Assets/Audio/Music/virtual worlds main title.wav",
+      "size": 38170988,
+      "sha256": "4123bc3c79b487a04b027b2be963743ef577b99a064cbf4ca9356112b721ffa0"
+    },
+    {
+      "path": "Assets/Audio/Music/Arcade Showdown.wav",
+      "size": 33578348,
+      "sha256": "252a4244ca267bf723cfc285a04895319595a3ae12e6a713910149c2123ff166"
+    },
+    {
+      "path": "Assets/Audio/Music/Welcome to the Town.wav",
+      "size": 31658348,
+      "sha256": "b18419aa9a0dabfb3b790143a05f6ebfdf9557557f1f9015731f28cb63a99cb0"
+    },
+    {
+      "path": "Assets/Audio/Music/Retro Dungeon/Bit-Battle 2.wav",
+      "size": 31558508,
+      "sha256": "f6b393957bd8afa6b836e305ae8062ff11968911b2f4e34758310791c1b65420"
+    },
+    {
+      "path": "Assets/Audio/Music/Retro Dungeon/Bit-Battle.wav",
+      "size": 28133228,
+      "sha256": "50151f43cae16088fcfb84aaa128922b6fc5674fc7a75eb693e2500342652bd3"
+    },
+    {
+      "path": "Assets/Audio/Music/Retro Dungeon/Pixel Platformer 2.wav",
+      "size": 27465068,
+      "sha256": "3f7a55092f25f466d91ee241dcea2594549d663bcb685ee569da8e2cac79432c"
+    },
+    {
+      "path": "Assets/Audio/Music/Retro Dungeon/Pixel Platformer.wav",
+      "size": 25552748,
+      "sha256": "9b81100d61540c44379f8891c36bcfff2ac8949b9269b7a9cc3ccbe4101c4398"
+    },
+    {
+      "path": "Assets/Resources/Textures/texturas tipo mario.psd",
+      "size": 17997553,
+      "sha256": "cee5eb0972de065a401c8d0d0ec53f7c63d6b917a3822950374020e85956e48f"
+    },
+    {
+      "path": "Assets/sprites/enemigos/caminando mini juego jump/enemigos mini jump.psd",
+      "size": 13123501,
+      "sha256": "fa9f254d4119a75cad9dda97039aa4afb0e3e071ede55dd9ec87f3b5375fe0ba"
+    },
+    {
+      "path": "Assets/sprites/gamerboy overclock.psd",
+      "size": 12663594,
+      "sha256": "160374747fa8c288547bea3c4c7ddb94628bc842ed57532979bae1c17323fa13"
+    },
+    {
+      "path": "Packages/LocalPackages/com.unity.probuilder-6.1.3-patched.tgz",
+      "size": 11968204,
+      "sha256": "463bb714de92ec99fe5c36d45bf00256fb7224131cf86aeef9e65765dd06117d"
+    },
+    {
+      "path": "Assets/sprites/sub jefes/makong.psd",
+      "size": 8340733,
+      "sha256": "f9d62f958328ae04badc0e2c90f6c8a7ee3b895199c32727c6936ca4c229cd30"
+    },
+    {
+      "path": "Assets/sprites/menu y ui.psd",
+      "size": 5366430,
+      "sha256": "dfc7ddacd98912efc553778b0ec5c0333f27bdb7d61f63d800f857bc94013e53"
+    },
+    {
+      "path": "Assets/Audio/Music/Corrupted Memories.mp3",
+      "size": 4796972,
+      "sha256": "8d22e8466f7c9613a96392fd32455cf6a32860abad13bcc8469c85ff1d3fbea4"
+    },
+    {
+      "path": "Assets/sprites/enemigos/hongo/hongo.psd",
+      "size": 4766732,
+      "sha256": "7939a979f88a279a2da953d49cfed50682d45d25a68ab704db5e87abf5f9b16e"
+    },
+    {
+      "path": "Assets/sprites/enemigos/soldado/soldado.psd",
+      "size": 4686852,
+      "sha256": "296e41ef2aa629a81be637e7459734d280db4806c8e645ef34b5c6d443369a32"
+    },
+    {
+      "path": "Assets/sprites/enemigos/Makubas/Gran Makuba.psd",
+      "size": 4683492,
+      "sha256": "ef4ca6431911a5c10a85109c23e28d990e88fe54192fab6a4d9852952f931c6e"
+    },
+    {
+      "path": "Assets/Audio/Music/Boss Battle Groove.mp3",
+      "size": 4674560,
+      "sha256": "9289c23c5027244b477eef4bea57610fe80a2784c6a3b7add8bbd54549aa5d81"
+    },
+    {
+      "path": "Assets/Resources/Audio/OST/region 0 boss battle.mp3",
+      "size": 4674560,
+      "sha256": "9289c23c5027244b477eef4bea57610fe80a2784c6a3b7add8bbd54549aa5d81"
+    },
+    {
+      "path": "Assets/Audio/Music/Arcade Showdown.mp3",
+      "size": 4314836,
+      "sha256": "9e362ee99f8668901ea74d304ca7e13868569a317711e63386edab85e33592bf"
+    },
+    {
+      "path": "Assets/sprites/enemigos/big tapaku/Big Tapaku.psd",
+      "size": 4244716,
+      "sha256": "e2afebf3cc6188d2209b9789fa5d9026b27f68886bbb7c9fc4c57a01da56389b"
+    },
+    {
+      "path": "Assets/sprites/enemigos/ghost/fantasma.psd",
+      "size": 3923424,
+      "sha256": "02a41cad05a2c5a94edf775af75fb4d1d8282175f857e979d91b4a42da92341d"
+    },
+    {
+      "path": "Assets/Resources/DigitalKingdom/Panorama.png",
+      "size": 3607921,
+      "sha256": "e0d5e7ca7379edeb21e5b8ffbdc354a1cef78119ffe1a44aec950c47e9763a37"
+    },
+    {
+      "path": "Assets/sprites/enemigos/Makubas/Makuba Lanza.psd",
+      "size": 3508673,
+      "sha256": "7645c244a78fe8af1c67a61bce41a077863564d2b6a6df0ccd102a58c6918d6b"
+    },
+    {
+      "path": "Assets/Resources/DigitalKingdom/Panorama 2.png",
+      "size": 3120897,
+      "sha256": "be93c6c4f8fd0421b8b10f07243ba96f7567ffcb284edb9aa00ae488d67b6e01"
+    },
+    {
+      "path": "Assets/sprites/enemigos/caminando mini juego jump/FONDO MINIJUEGO JUMP.psd",
+      "size": 3106134,
+      "sha256": "070f1b9297b9479552d3e474f87fc3c303363293149998ae26eb95cf8c6882fd"
+    },
+    {
+      "path": "Assets/Resources/placeholder/Atlas de Recursos Cyberpunk Ne\u00f3n.png",
+      "size": 3089810,
+      "sha256": "8c61ab3ca33ac82180b0f562d2c565abdecd078125e2c3d7137a9416f56f4f7d"
+    },
+    {
+      "path": "Assets/Resources/Decorations/Art/PlaceholderAtlas.png",
+      "size": 3089810,
+      "sha256": "8c61ab3ca33ac82180b0f562d2c565abdecd078125e2c3d7137a9416f56f4f7d"
+    },
+    {
+      "path": "Assets/Resources/placeholder/Atlas de m\u00f3dulos neon retrofuturistas.png",
+      "size": 3083427,
+      "sha256": "1ae5177f17c43b30dc87c5aa2adcb4a7fbab27948b12d4e21ad811dfd9992787"
+    },
+    {
+      "path": "Assets/Resources/Audio/OST/region 0 sub jefe.mp3",
+      "size": 2973980,
+      "sha256": "b5a1904f13eb511876a718d408ee2d98af27d24535e016c816c2648fc6fa0e64"
+    }
+  ],
+  "binaryDuplicates": [
+    {
+      "bytesEach": 4674560,
+      "paths": [
+        "Assets/Audio/Music/Boss Battle Groove.mp3",
+        "Assets/Resources/Audio/OST/region 0 boss battle.mp3"
+      ],
+      "avoidableSourceBytes": 4674560
+    },
+    {
+      "bytesEach": 3089810,
+      "paths": [
+        "Assets/Resources/placeholder/Atlas de Recursos Cyberpunk Ne\u00f3n.png",
+        "Assets/Resources/Decorations/Art/PlaceholderAtlas.png"
+      ],
+      "avoidableSourceBytes": 3089810
+    },
+    {
+      "bytesEach": 1489057,
+      "paths": [
+        "Assets/sprites/brazo pantalla.png",
+        "Assets/Resources/UI/HackArm.png"
+      ],
+      "avoidableSourceBytes": 1489057
+    },
+    {
+      "bytesEach": 1031263,
+      "paths": [
+        "Assets/Resources/RetroDungeonExperiment/Layers/FrontPipe.png",
+        "Assets/Resources/RetroDungeonExperiment/Normals/FrontPipe-Normal.png"
+      ],
+      "avoidableSourceBytes": 1031263
+    },
+    {
+      "bytesEach": 748397,
+      "paths": [
+        "Assets/Resources/RetroDungeonExperiment/Layers/Floor.png",
+        "Assets/Resources/RetroDungeonExperiment/Normals/Floor-Normal.png"
+      ],
+      "avoidableSourceBytes": 748397
+    },
+    {
+      "bytesEach": 262123,
+      "paths": [
+        "Assets/Resources/Enemies/Mimic/attack.png",
+        "Assets/Resources/Enemies/Mimic/attack_0.png"
+      ],
+      "avoidableSourceBytes": 262123
+    },
+    {
+      "bytesEach": 188600,
+      "paths": [
+        "Assets/Resources/UI/Overclock/frame_1.png",
+        "Assets/Resources/UI/Overclock/frame_8.png"
+      ],
+      "avoidableSourceBytes": 188600
+    },
+    {
+      "bytesEach": 175107,
+      "paths": [
+        "Assets/Resources/Enemies/MakubaLanza/attack.png",
+        "Assets/Resources/Enemies/MakubaLanza/attack_0.png"
+      ],
+      "avoidableSourceBytes": 175107
+    },
+    {
+      "bytesEach": 166331,
+      "paths": [
+        "Assets/Resources/Enemies/GranMakuba/attack.png",
+        "Assets/Resources/Enemies/GranMakuba/attack_0.png"
+      ],
+      "avoidableSourceBytes": 166331
+    },
+    {
+      "bytesEach": 148294,
+      "paths": [
+        "Assets/Resources/Enemies/Makong/attack.png",
+        "Assets/Resources/Enemies/Makong/attack_0.png"
+      ],
+      "avoidableSourceBytes": 148294
+    },
+    {
+      "bytesEach": 145650,
+      "paths": [
+        "Assets/Resources/Enemies/MakubaArco/attack.png",
+        "Assets/Resources/Enemies/MakubaArco/attack_0.png"
+      ],
+      "avoidableSourceBytes": 145650
+    },
+    {
+      "bytesEach": 136693,
+      "paths": [
+        "Assets/Resources/Enemies/Makong/jump_3.png",
+        "Assets/Resources/Enemies/Makong/special_3.png"
+      ],
+      "avoidableSourceBytes": 136693
+    },
+    {
+      "bytesEach": 121032,
+      "paths": [
+        "Assets/MapTests/RetroStyle/Captures/C-Neon-Straight.png",
+        "Assets/MapTests/RetroStyle/Captures/C-Straight.png"
+      ],
+      "avoidableSourceBytes": 121032
+    },
+    {
+      "bytesEach": 120780,
+      "paths": [
+        "Assets/MapTests/RetroStyle/Captures/C-Corner.png",
+        "Assets/MapTests/RetroStyle/Captures/C-Neon-Corner.png"
+      ],
+      "avoidableSourceBytes": 120780
+    },
+    {
+      "bytesEach": 120703,
+      "paths": [
+        "Assets/MapTests/RetroStyle/Captures/C-Intersection.png",
+        "Assets/MapTests/RetroStyle/Captures/C-Neon-Intersection.png"
+      ],
+      "avoidableSourceBytes": 120703
+    },
+    {
+      "bytesEach": 105379,
+      "paths": [
+        "Assets/MapTests/RetroStyle/Captures/C-DoorOpen.png",
+        "Assets/MapTests/RetroStyle/Captures/C-Neon-DoorOpen.png"
+      ],
+      "avoidableSourceBytes": 105379
+    },
+    {
+      "bytesEach": 101931,
+      "paths": [
+        "Assets/MapTests/RetroStyle/Captures/C-Neon-WideRoom.png",
+        "Assets/MapTests/RetroStyle/Captures/C-WideRoom.png"
+      ],
+      "avoidableSourceBytes": 101931
+    },
+    {
+      "bytesEach": 96893,
+      "paths": [
+        "Assets/Resources/Enemies/Makong/jump_4.png",
+        "Assets/Resources/Enemies/Makong/special_4.png"
+      ],
+      "avoidableSourceBytes": 96893
+    },
+    {
+      "bytesEach": 94838,
+      "paths": [
+        "Assets/Resources/Enemies/Makong/jump_1.png",
+        "Assets/Resources/Enemies/Makong/special_1.png"
+      ],
+      "avoidableSourceBytes": 94838
+    },
+    {
+      "bytesEach": 83779,
+      "paths": [
+        "Assets/Resources/Enemies/Makong/death.png",
+        "Assets/Resources/Enemies/Makong/death_0.png"
+      ],
+      "avoidableSourceBytes": 83779
+    },
+    {
+      "bytesEach": 72900,
+      "paths": [
+        "Assets/Resources/Enemies/Makong/jump_0.png",
+        "Assets/Resources/Enemies/Makong/special_0.png"
+      ],
+      "avoidableSourceBytes": 72900
+    },
+    {
+      "bytesEach": 68920,
+      "paths": [
+        "Assets/Resources/Enemies/Makong/jump_2.png",
+        "Assets/Resources/Enemies/Makong/special_2.png"
+      ],
+      "avoidableSourceBytes": 68920
+    },
+    {
+      "bytesEach": 11581,
+      "paths": [
+        "Assets/Scenes/SampleScene.unity",
+        "Assets/_Recovery/0 (1).unity",
+        "Assets/_Recovery/0 (2).unity",
+        "Assets/_Recovery/0 (3).unity",
+        "Assets/_Recovery/0 (4).unity",
+        "Assets/_Recovery/0.unity"
+      ],
+      "avoidableSourceBytes": 57905
+    },
+    {
+      "bytesEach": 10080,
+      "paths": [
+        "Assets/Resources/UI/Fonts/ThaleahFat_TTF.ttf",
+        "Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf"
+      ],
+      "avoidableSourceBytes": 10080
+    }
+  ],
+  "textures": [
+    {
+      "path": "Assets/sprites/enemigos/caminando mini juego jump/enemigos mini jump.psd",
+      "width": 2039,
+      "height": 2039,
+      "sourceBytes": 13123501,
+      "rgba8UncompressedBaseBytes": 16630084
+    },
+    {
+      "path": "Assets/CRTPostprocess/SampleData/Textures/sample5/sample5.png",
+      "width": 1920,
+      "height": 1200,
+      "sourceBytes": 46240,
+      "rgba8UncompressedBaseBytes": 9216000
+    },
+    {
+      "path": "Assets/UI/Codebound Title Screen.png",
+      "width": 1920,
+      "height": 1080,
+      "sourceBytes": 2005004,
+      "rgba8UncompressedBaseBytes": 8294400
+    },
+    {
+      "path": "Assets/sprites/enemigos/big tapaku/big tapaku transparente.png",
+      "width": 1774,
+      "height": 887,
+      "sourceBytes": 1399928,
+      "rgba8UncompressedBaseBytes": 6294152
+    },
+    {
+      "path": "Assets/sprites/enemigos/big tapaku/big tapaku.png",
+      "width": 1774,
+      "height": 887,
+      "sourceBytes": 1313900,
+      "rgba8UncompressedBaseBytes": 6294152
+    },
+    {
+      "path": "Assets/sprites/enemigos/ghost/fantasma.psd",
+      "width": 1774,
+      "height": 887,
+      "sourceBytes": 3923424,
+      "rgba8UncompressedBaseBytes": 6294152
+    },
+    {
+      "path": "Assets/sprites/enemigos/hongo/hongo.psd",
+      "width": 1774,
+      "height": 887,
+      "sourceBytes": 4766732,
+      "rgba8UncompressedBaseBytes": 6294152
+    },
+    {
+      "path": "Assets/sprites/enemigos/soldado/soldado.psd",
+      "width": 1774,
+      "height": 887,
+      "sourceBytes": 4686852,
+      "rgba8UncompressedBaseBytes": 6294152
+    },
+    {
+      "path": "Assets/sprites/brazo pantalla.png",
+      "width": 1672,
+      "height": 941,
+      "sourceBytes": 1489057,
+      "rgba8UncompressedBaseBytes": 6293408
+    },
+    {
+      "path": "Assets/Resources/UI/HackArm.png",
+      "width": 1672,
+      "height": 941,
+      "sourceBytes": 1489057,
+      "rgba8UncompressedBaseBytes": 6293408
+    },
+    {
+      "path": "Assets/sprites/menu y ui.psd",
+      "width": 1536,
+      "height": 1024,
+      "sourceBytes": 5366430,
+      "rgba8UncompressedBaseBytes": 6291456
+    },
+    {
+      "path": "Assets/Resources/placeholder/Atlas de m\u00f3dulos neon retrofuturistas.png",
+      "width": 1536,
+      "height": 1024,
+      "sourceBytes": 3083427,
+      "rgba8UncompressedBaseBytes": 6291456
+    },
+    {
+      "path": "Assets/Resources/placeholder/Atlas de Recursos Cyberpunk Ne\u00f3n.png",
+      "width": 1536,
+      "height": 1024,
+      "sourceBytes": 3089810,
+      "rgba8UncompressedBaseBytes": 6291456
+    },
+    {
+      "path": "Assets/Resources/Decorations/Art/PlaceholderAtlas.png",
+      "width": 1536,
+      "height": 1024,
+      "sourceBytes": 3089810,
+      "rgba8UncompressedBaseBytes": 6291456
+    },
+    {
+      "path": "Assets/Resources/UI/MenuUI/Sheet.png",
+      "width": 1536,
+      "height": 1024,
+      "sourceBytes": 939887,
+      "rgba8UncompressedBaseBytes": 6291456
+    },
+    {
+      "path": "Assets/UI/Codebound Title Screen Logo.png",
+      "width": 2172,
+      "height": 724,
+      "sourceBytes": 1187598,
+      "rgba8UncompressedBaseBytes": 6290112
+    },
+    {
+      "path": "Assets/Resources/Decorations/Art/MemoryCheckCRT.png",
+      "width": 1448,
+      "height": 1086,
+      "sourceBytes": 1699596,
+      "rgba8UncompressedBaseBytes": 6290112
+    },
+    {
+      "path": "Assets/Resources/UI/JumpBackground/Black.png",
+      "width": 2172,
+      "height": 724,
+      "sourceBytes": 7962,
+      "rgba8UncompressedBaseBytes": 6290112
+    },
+    {
+      "path": "Assets/Resources/UI/JumpBackground/Clouds.png",
+      "width": 2172,
+      "height": 724,
+      "sourceBytes": 296193,
+      "rgba8UncompressedBaseBytes": 6290112
+    },
+    {
+      "path": "Assets/Resources/UI/JumpBackground/Floor.png",
+      "width": 2172,
+      "height": 724,
+      "sourceBytes": 262714,
+      "rgba8UncompressedBaseBytes": 6290112
+    },
+    {
+      "path": "Assets/Resources/UI/JumpBackground/Mountains.png",
+      "width": 2172,
+      "height": 724,
+      "sourceBytes": 378051,
+      "rgba8UncompressedBaseBytes": 6290112
+    },
+    {
+      "path": "Assets/sprites/enemigos/caminando mini juego jump/FONDO MINIJUEGO JUMP.psd",
+      "width": 2172,
+      "height": 724,
+      "sourceBytes": 3106134,
+      "rgba8UncompressedBaseBytes": 6290112
+    },
+    {
+      "path": "Assets/Resources/Textures/textura azul luffy2.jpg",
+      "width": 1254,
+      "height": 1254,
+      "sourceBytes": 1811887,
+      "rgba8UncompressedBaseBytes": 6290064
+    },
+    {
+      "path": "Assets/Resources/Textures/textura rosa luffy2.jpg",
+      "width": 1254,
+      "height": 1254,
+      "sourceBytes": 1749455,
+      "rgba8UncompressedBaseBytes": 6290064
+    },
+    {
+      "path": "Assets/Resources/Textures/texturas tipo mario.psd",
+      "width": 1254,
+      "height": 1254,
+      "sourceBytes": 17997553,
+      "rgba8UncompressedBaseBytes": 6290064
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Layers/Floor.png",
+      "width": 1254,
+      "height": 1254,
+      "sourceBytes": 748397,
+      "rgba8UncompressedBaseBytes": 6290064
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Layers/Sky.png",
+      "width": 1254,
+      "height": 1254,
+      "sourceBytes": 9410,
+      "rgba8UncompressedBaseBytes": 6290064
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Normals/Floor-Normal.png",
+      "width": 1254,
+      "height": 1254,
+      "sourceBytes": 748397,
+      "rgba8UncompressedBaseBytes": 6290064
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/00-Floor-00.png",
+      "width": 1254,
+      "height": 1254,
+      "sourceBytes": 1196267,
+      "rgba8UncompressedBaseBytes": 6290064
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/01-Sky-00.png",
+      "width": 1254,
+      "height": 1254,
+      "sourceBytes": 29093,
+      "rgba8UncompressedBaseBytes": 6290064
+    },
+    {
+      "path": "Assets/Resources/UI/EquipmentTemporary/LuckySocks.png",
+      "width": 1254,
+      "height": 1254,
+      "sourceBytes": 589516,
+      "rgba8UncompressedBaseBytes": 6290064
+    },
+    {
+      "path": "Assets/Resources/UI/EquipmentTemporary/SecondhandTshirt.png",
+      "width": 1254,
+      "height": 1254,
+      "sourceBytes": 602306,
+      "rgba8UncompressedBaseBytes": 6290064
+    },
+    {
+      "path": "Assets/Resources/UI/EquipmentTemporary/ToyPowerGlove.png",
+      "width": 1254,
+      "height": 1254,
+      "sourceBytes": 624790,
+      "rgba8UncompressedBaseBytes": 6290064
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Layers/FrontPipe.png",
+      "width": 1262,
+      "height": 1246,
+      "sourceBytes": 1031263,
+      "rgba8UncompressedBaseBytes": 6289808
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Normals/FrontPipe-Normal.png",
+      "width": 1262,
+      "height": 1246,
+      "sourceBytes": 1031263,
+      "rgba8UncompressedBaseBytes": 6289808
+    },
+    {
+      "path": "Assets/Resources/UI/CharacterSheet/GamerBoyFullBody.png",
+      "width": 1218,
+      "height": 1291,
+      "sourceBytes": 733835,
+      "rgba8UncompressedBaseBytes": 6289752
+    },
+    {
+      "path": "Assets/Resources/DigitalKingdom/Panorama 2.png",
+      "width": 1946,
+      "height": 808,
+      "sourceBytes": 3120897,
+      "rgba8UncompressedBaseBytes": 6289472
+    },
+    {
+      "path": "Assets/Resources/DigitalKingdom/Panorama.png",
+      "width": 1945,
+      "height": 808,
+      "sourceBytes": 3607921,
+      "rgba8UncompressedBaseBytes": 6286240
+    },
+    {
+      "path": "Assets/CRTPostprocess/SampleData/Textures/sample4.png",
+      "width": 2946,
+      "height": 528,
+      "sourceBytes": 38720,
+      "rgba8UncompressedBaseBytes": 6221952
+    },
+    {
+      "path": "Assets/CRTPostprocess/SampleData/Textures/sample1.png",
+      "width": 1369,
+      "height": 1005,
+      "sourceBytes": 195436,
+      "rgba8UncompressedBaseBytes": 5503380
+    },
+    {
+      "path": "Assets/sprites/enemigos/Tapaku/Tapaku.psd",
+      "width": 1122,
+      "height": 805,
+      "sourceBytes": 2905210,
+      "rgba8UncompressedBaseBytes": 3612840
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/GranMakuba_0.png",
+      "width": 797,
+      "height": 988,
+      "sourceBytes": 841523,
+      "rgba8UncompressedBaseBytes": 3149744
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/GranMakuba_1.png",
+      "width": 797,
+      "height": 988,
+      "sourceBytes": 853730,
+      "rgba8UncompressedBaseBytes": 3149744
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/BigTapaku_0.png",
+      "width": 983,
+      "height": 738,
+      "sourceBytes": 528780,
+      "rgba8UncompressedBaseBytes": 2901816
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/BigTapaku_1.png",
+      "width": 983,
+      "height": 738,
+      "sourceBytes": 555563,
+      "rgba8UncompressedBaseBytes": 2901816
+    },
+    {
+      "path": "Assets/Resources/UI/GamerboyJump.png",
+      "width": 720,
+      "height": 740,
+      "sourceBytes": 158561,
+      "rgba8UncompressedBaseBytes": 2131200
+    },
+    {
+      "path": "Assets/Resources/UI/GamerboyJumpAir.png",
+      "width": 720,
+      "height": 740,
+      "sourceBytes": 178550,
+      "rgba8UncompressedBaseBytes": 2131200
+    },
+    {
+      "path": "Assets/Resources/UI/GamerboyJumpDeath.png",
+      "width": 720,
+      "height": 740,
+      "sourceBytes": 157530,
+      "rgba8UncompressedBaseBytes": 2131200
+    },
+    {
+      "path": "Assets/CRTPostprocess/SampleData/Textures/sample3.png",
+      "width": 1024,
+      "height": 500,
+      "sourceBytes": 830992,
+      "rgba8UncompressedBaseBytes": 2048000
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/A-Corner.png",
+      "width": 768,
+      "height": 576,
+      "sourceBytes": 465247,
+      "rgba8UncompressedBaseBytes": 1769472
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/A-DoorClosed.png",
+      "width": 768,
+      "height": 576,
+      "sourceBytes": 8925,
+      "rgba8UncompressedBaseBytes": 1769472
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/A-DoorOpen.png",
+      "width": 768,
+      "height": 576,
+      "sourceBytes": 291506,
+      "rgba8UncompressedBaseBytes": 1769472
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/A-Intersection.png",
+      "width": 768,
+      "height": 576,
+      "sourceBytes": 467435,
+      "rgba8UncompressedBaseBytes": 1769472
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/A-Straight.png",
+      "width": 768,
+      "height": 576,
+      "sourceBytes": 480419,
+      "rgba8UncompressedBaseBytes": 1769472
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/A-WideRoom.png",
+      "width": 768,
+      "height": 576,
+      "sourceBytes": 397964,
+      "rgba8UncompressedBaseBytes": 1769472
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/Ghost_0.png",
+      "width": 680,
+      "height": 640,
+      "sourceBytes": 165243,
+      "rgba8UncompressedBaseBytes": 1740800
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/Ghost_1.png",
+      "width": 680,
+      "height": 640,
+      "sourceBytes": 164159,
+      "rgba8UncompressedBaseBytes": 1740800
+    },
+    {
+      "path": "Assets/sprites/sub jefes/makong.psd",
+      "width": 768,
+      "height": 558,
+      "sourceBytes": 8340733,
+      "rgba8UncompressedBaseBytes": 1714176
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/10-FloorEdge-00.png",
+      "width": 1301,
+      "height": 300,
+      "sourceBytes": 510215,
+      "rgba8UncompressedBaseBytes": 1561200
+    },
+    {
+      "path": "Assets/sprites/gamerboy jump hack.psd",
+      "width": 639,
+      "height": 604,
+      "sourceBytes": 1684303,
+      "rgba8UncompressedBaseBytes": 1543824
+    },
+    {
+      "path": "Assets/sprites/gamerboy overclock.psd",
+      "width": 639,
+      "height": 604,
+      "sourceBytes": 12663594,
+      "rgba8UncompressedBaseBytes": 1543824
+    },
+    {
+      "path": "Assets/sprites/enemigos/big tapaku/Big Tapaku.psd",
+      "width": 801,
+      "height": 481,
+      "sourceBytes": 4244716,
+      "rgba8UncompressedBaseBytes": 1541124
+    },
+    {
+      "path": "Assets/Resources/Enemies/Soldier/explosion.png",
+      "width": 744,
+      "height": 510,
+      "sourceBytes": 393045,
+      "rgba8UncompressedBaseBytes": 1517760
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/MakubaArco_0.png",
+      "width": 537,
+      "height": 698,
+      "sourceBytes": 419117,
+      "rgba8UncompressedBaseBytes": 1499304
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/MakubaArco_1.png",
+      "width": 537,
+      "height": 698,
+      "sourceBytes": 418078,
+      "rgba8UncompressedBaseBytes": 1499304
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/Soldier_0.png",
+      "width": 595,
+      "height": 600,
+      "sourceBytes": 230182,
+      "rgba8UncompressedBaseBytes": 1428000
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/Soldier_1.png",
+      "width": 595,
+      "height": 600,
+      "sourceBytes": 236697,
+      "rgba8UncompressedBaseBytes": 1428000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Hongo/attack.png",
+      "width": 720,
+      "height": 480,
+      "sourceBytes": 385429,
+      "rgba8UncompressedBaseBytes": 1382400
+    },
+    {
+      "path": "Assets/Resources/Enemies/Hongo/death.png",
+      "width": 720,
+      "height": 480,
+      "sourceBytes": 221045,
+      "rgba8UncompressedBaseBytes": 1382400
+    },
+    {
+      "path": "Assets/Resources/Enemies/Hongo/hurt.png",
+      "width": 720,
+      "height": 480,
+      "sourceBytes": 281766,
+      "rgba8UncompressedBaseBytes": 1382400
+    },
+    {
+      "path": "Assets/Resources/Enemies/Hongo/idle_0.png",
+      "width": 720,
+      "height": 480,
+      "sourceBytes": 259620,
+      "rgba8UncompressedBaseBytes": 1382400
+    },
+    {
+      "path": "Assets/Resources/Enemies/Hongo/idle_1.png",
+      "width": 720,
+      "height": 480,
+      "sourceBytes": 258359,
+      "rgba8UncompressedBaseBytes": 1382400
+    },
+    {
+      "path": "Assets/Resources/Enemies/Hongo/idle_2.png",
+      "width": 720,
+      "height": 480,
+      "sourceBytes": 264565,
+      "rgba8UncompressedBaseBytes": 1382400
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/MakubaLanza_0.png",
+      "width": 479,
+      "height": 719,
+      "sourceBytes": 339468,
+      "rgba8UncompressedBaseBytes": 1377604
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/MakubaLanza_1.png",
+      "width": 479,
+      "height": 719,
+      "sourceBytes": 345320,
+      "rgba8UncompressedBaseBytes": 1377604
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/Hongo_0.png",
+      "width": 558,
+      "height": 601,
+      "sourceBytes": 238817,
+      "rgba8UncompressedBaseBytes": 1341432
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/Hongo_1.png",
+      "width": 558,
+      "height": 601,
+      "sourceBytes": 235200,
+      "rgba8UncompressedBaseBytes": 1341432
+    },
+    {
+      "path": "Assets/sprites/enemigos/mimic/mimic.psd",
+      "width": 762,
+      "height": 438,
+      "sourceBytes": 2876878,
+      "rgba8UncompressedBaseBytes": 1335024
+    },
+    {
+      "path": "Assets/Resources/Enemies/Soldier/attack.png",
+      "width": 600,
+      "height": 540,
+      "sourceBytes": 153172,
+      "rgba8UncompressedBaseBytes": 1296000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Soldier/death.png",
+      "width": 600,
+      "height": 540,
+      "sourceBytes": 119450,
+      "rgba8UncompressedBaseBytes": 1296000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Soldier/hurt.png",
+      "width": 600,
+      "height": 540,
+      "sourceBytes": 146073,
+      "rgba8UncompressedBaseBytes": 1296000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Soldier/idle_0.png",
+      "width": 600,
+      "height": 540,
+      "sourceBytes": 138574,
+      "rgba8UncompressedBaseBytes": 1296000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Soldier/idle_1.png",
+      "width": 600,
+      "height": 540,
+      "sourceBytes": 135201,
+      "rgba8UncompressedBaseBytes": 1296000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Soldier/idle_2.png",
+      "width": 600,
+      "height": 540,
+      "sourceBytes": 132332,
+      "rgba8UncompressedBaseBytes": 1296000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Soldier/special_0.png",
+      "width": 600,
+      "height": 540,
+      "sourceBytes": 133691,
+      "rgba8UncompressedBaseBytes": 1296000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Soldier/special_1.png",
+      "width": 600,
+      "height": 540,
+      "sourceBytes": 126142,
+      "rgba8UncompressedBaseBytes": 1296000
+    },
+    {
+      "path": "Assets/sprites/objetos/Cofres.psd",
+      "width": 649,
+      "height": 497,
+      "sourceBytes": 2969753,
+      "rgba8UncompressedBaseBytes": 1290212
+    },
+    {
+      "path": "Assets/Resources/Enemies/Mimic/attack.png",
+      "width": 725,
+      "height": 437,
+      "sourceBytes": 262123,
+      "rgba8UncompressedBaseBytes": 1267300
+    },
+    {
+      "path": "Assets/Resources/Enemies/Mimic/attack_0.png",
+      "width": 725,
+      "height": 437,
+      "sourceBytes": 262123,
+      "rgba8UncompressedBaseBytes": 1267300
+    },
+    {
+      "path": "Assets/Resources/Enemies/Mimic/death.png",
+      "width": 725,
+      "height": 437,
+      "sourceBytes": 200410,
+      "rgba8UncompressedBaseBytes": 1267300
+    },
+    {
+      "path": "Assets/Resources/Enemies/Mimic/hurt.png",
+      "width": 725,
+      "height": 437,
+      "sourceBytes": 188245,
+      "rgba8UncompressedBaseBytes": 1267300
+    },
+    {
+      "path": "Assets/Resources/Enemies/Mimic/idle_0.png",
+      "width": 725,
+      "height": 437,
+      "sourceBytes": 160901,
+      "rgba8UncompressedBaseBytes": 1267300
+    },
+    {
+      "path": "Assets/Resources/Enemies/Mimic/idle_1.png",
+      "width": 725,
+      "height": 437,
+      "sourceBytes": 164448,
+      "rgba8UncompressedBaseBytes": 1267300
+    },
+    {
+      "path": "Assets/Resources/Enemies/Mimic/idle_2.png",
+      "width": 725,
+      "height": 437,
+      "sourceBytes": 183052,
+      "rgba8UncompressedBaseBytes": 1267300
+    },
+    {
+      "path": "Assets/sprites/enemigos/Makubas/Makuba Lanza.psd",
+      "width": 648,
+      "height": 487,
+      "sourceBytes": 3508673,
+      "rgba8UncompressedBaseBytes": 1262304
+    },
+    {
+      "path": "Assets/Resources/Enemies/BigTapaku/attack.png",
+      "width": 742,
+      "height": 419,
+      "sourceBytes": 315081,
+      "rgba8UncompressedBaseBytes": 1243592
+    },
+    {
+      "path": "Assets/Resources/Enemies/BigTapaku/death.png",
+      "width": 742,
+      "height": 419,
+      "sourceBytes": 184432,
+      "rgba8UncompressedBaseBytes": 1243592
+    },
+    {
+      "path": "Assets/Resources/Enemies/BigTapaku/hurt.png",
+      "width": 742,
+      "height": 419,
+      "sourceBytes": 249495,
+      "rgba8UncompressedBaseBytes": 1243592
+    },
+    {
+      "path": "Assets/Resources/Enemies/BigTapaku/idle_0.png",
+      "width": 742,
+      "height": 419,
+      "sourceBytes": 210157,
+      "rgba8UncompressedBaseBytes": 1243592
+    },
+    {
+      "path": "Assets/Resources/Enemies/BigTapaku/idle_1.png",
+      "width": 742,
+      "height": 419,
+      "sourceBytes": 197866,
+      "rgba8UncompressedBaseBytes": 1243592
+    },
+    {
+      "path": "Assets/Resources/Enemies/BigTapaku/idle_2.png",
+      "width": 742,
+      "height": 419,
+      "sourceBytes": 207433,
+      "rgba8UncompressedBaseBytes": 1243592
+    },
+    {
+      "path": "Assets/Resources/Enemies/BigTapaku/special_0.png",
+      "width": 742,
+      "height": 419,
+      "sourceBytes": 156304,
+      "rgba8UncompressedBaseBytes": 1243592
+    },
+    {
+      "path": "Assets/Resources/Enemies/BigTapaku/special_1.png",
+      "width": 742,
+      "height": 419,
+      "sourceBytes": 187255,
+      "rgba8UncompressedBaseBytes": 1243592
+    },
+    {
+      "path": "Assets/Resources/Enemies/BigTapaku/special_2.png",
+      "width": 742,
+      "height": 419,
+      "sourceBytes": 179231,
+      "rgba8UncompressedBaseBytes": 1243592
+    },
+    {
+      "path": "Assets/Resources/Enemies/BigTapaku/special_3.png",
+      "width": 742,
+      "height": 419,
+      "sourceBytes": 169811,
+      "rgba8UncompressedBaseBytes": 1243592
+    },
+    {
+      "path": "Assets/Resources/Enemies/BigTapaku/special_4.png",
+      "width": 742,
+      "height": 419,
+      "sourceBytes": 172310,
+      "rgba8UncompressedBaseBytes": 1243592
+    },
+    {
+      "path": "Assets/Resources/Enemies/BigTapaku/special_5.png",
+      "width": 742,
+      "height": 419,
+      "sourceBytes": 181303,
+      "rgba8UncompressedBaseBytes": 1243592
+    },
+    {
+      "path": "Assets/Resources/UI/Overclock/frame_1.png",
+      "width": 597,
+      "height": 480,
+      "sourceBytes": 188600,
+      "rgba8UncompressedBaseBytes": 1146240
+    },
+    {
+      "path": "Assets/Resources/UI/Overclock/frame_2.png",
+      "width": 597,
+      "height": 480,
+      "sourceBytes": 149055,
+      "rgba8UncompressedBaseBytes": 1146240
+    },
+    {
+      "path": "Assets/Resources/UI/Overclock/frame_3.png",
+      "width": 597,
+      "height": 480,
+      "sourceBytes": 94415,
+      "rgba8UncompressedBaseBytes": 1146240
+    },
+    {
+      "path": "Assets/Resources/UI/Overclock/frame_4.png",
+      "width": 597,
+      "height": 480,
+      "sourceBytes": 113397,
+      "rgba8UncompressedBaseBytes": 1146240
+    },
+    {
+      "path": "Assets/Resources/UI/Overclock/frame_5.png",
+      "width": 597,
+      "height": 480,
+      "sourceBytes": 95880,
+      "rgba8UncompressedBaseBytes": 1146240
+    },
+    {
+      "path": "Assets/Resources/UI/Overclock/frame_6.png",
+      "width": 597,
+      "height": 480,
+      "sourceBytes": 75613,
+      "rgba8UncompressedBaseBytes": 1146240
+    },
+    {
+      "path": "Assets/Resources/UI/Overclock/frame_7.png",
+      "width": 597,
+      "height": 480,
+      "sourceBytes": 86516,
+      "rgba8UncompressedBaseBytes": 1146240
+    },
+    {
+      "path": "Assets/Resources/UI/Overclock/frame_8.png",
+      "width": 597,
+      "height": 480,
+      "sourceBytes": 188600,
+      "rgba8UncompressedBaseBytes": 1146240
+    },
+    {
+      "path": "Assets/Resources/Enemies/Tapaku/attack.png",
+      "width": 660,
+      "height": 430,
+      "sourceBytes": 260210,
+      "rgba8UncompressedBaseBytes": 1135200
+    },
+    {
+      "path": "Assets/Resources/Enemies/Tapaku/death.png",
+      "width": 660,
+      "height": 430,
+      "sourceBytes": 128958,
+      "rgba8UncompressedBaseBytes": 1135200
+    },
+    {
+      "path": "Assets/Resources/Enemies/Tapaku/hurt.png",
+      "width": 660,
+      "height": 430,
+      "sourceBytes": 164371,
+      "rgba8UncompressedBaseBytes": 1135200
+    },
+    {
+      "path": "Assets/Resources/Enemies/Tapaku/idle_0.png",
+      "width": 660,
+      "height": 430,
+      "sourceBytes": 180472,
+      "rgba8UncompressedBaseBytes": 1135200
+    },
+    {
+      "path": "Assets/Resources/Enemies/Tapaku/idle_1.png",
+      "width": 660,
+      "height": 430,
+      "sourceBytes": 175342,
+      "rgba8UncompressedBaseBytes": 1135200
+    },
+    {
+      "path": "Assets/Resources/Enemies/Tapaku/idle_2.png",
+      "width": 660,
+      "height": 430,
+      "sourceBytes": 176253,
+      "rgba8UncompressedBaseBytes": 1135200
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/Tapaku_0.png",
+      "width": 568,
+      "height": 488,
+      "sourceBytes": 218138,
+      "rgba8UncompressedBaseBytes": 1108736
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/Tapaku_1.png",
+      "width": 568,
+      "height": 488,
+      "sourceBytes": 216462,
+      "rgba8UncompressedBaseBytes": 1108736
+    },
+    {
+      "path": "Assets/sprites/enemigos/Makubas/Gran Makuba.psd",
+      "width": 629,
+      "height": 439,
+      "sourceBytes": 4683492,
+      "rgba8UncompressedBaseBytes": 1104524
+    },
+    {
+      "path": "Assets/Resources/Objects/Chest/frame_1.png",
+      "width": 602,
+      "height": 432,
+      "sourceBytes": 155630,
+      "rgba8UncompressedBaseBytes": 1040256
+    },
+    {
+      "path": "Assets/Resources/Objects/Chest/frame_2.png",
+      "width": 602,
+      "height": 432,
+      "sourceBytes": 186626,
+      "rgba8UncompressedBaseBytes": 1040256
+    },
+    {
+      "path": "Assets/Resources/Objects/Chest/frame_3.png",
+      "width": 602,
+      "height": 432,
+      "sourceBytes": 156055,
+      "rgba8UncompressedBaseBytes": 1040256
+    },
+    {
+      "path": "Assets/Resources/Objects/Chest/frame_4.png",
+      "width": 602,
+      "height": 432,
+      "sourceBytes": 198043,
+      "rgba8UncompressedBaseBytes": 1040256
+    },
+    {
+      "path": "Assets/Resources/Objects/Chest/frame_5.png",
+      "width": 602,
+      "height": 432,
+      "sourceBytes": 199287,
+      "rgba8UncompressedBaseBytes": 1040256
+    },
+    {
+      "path": "Assets/Resources/Objects/Chest/frame_6.png",
+      "width": 602,
+      "height": 432,
+      "sourceBytes": 207604,
+      "rgba8UncompressedBaseBytes": 1040256
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaLanza/attack.png",
+      "width": 566,
+      "height": 441,
+      "sourceBytes": 175107,
+      "rgba8UncompressedBaseBytes": 998424
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaLanza/attack_0.png",
+      "width": 566,
+      "height": 441,
+      "sourceBytes": 175107,
+      "rgba8UncompressedBaseBytes": 998424
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaLanza/death.png",
+      "width": 566,
+      "height": 441,
+      "sourceBytes": 113506,
+      "rgba8UncompressedBaseBytes": 998424
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaLanza/hurt.png",
+      "width": 566,
+      "height": 441,
+      "sourceBytes": 143515,
+      "rgba8UncompressedBaseBytes": 998424
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaLanza/idle_0.png",
+      "width": 566,
+      "height": 441,
+      "sourceBytes": 140371,
+      "rgba8UncompressedBaseBytes": 998424
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaLanza/idle_1.png",
+      "width": 566,
+      "height": 441,
+      "sourceBytes": 137478,
+      "rgba8UncompressedBaseBytes": 998424
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaLanza/idle_2.png",
+      "width": 566,
+      "height": 441,
+      "sourceBytes": 143930,
+      "rgba8UncompressedBaseBytes": 998424
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaLanza/special_0.png",
+      "width": 566,
+      "height": 441,
+      "sourceBytes": 308048,
+      "rgba8UncompressedBaseBytes": 998424
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaLanza/special_1.png",
+      "width": 566,
+      "height": 441,
+      "sourceBytes": 355878,
+      "rgba8UncompressedBaseBytes": 998424
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaLanza/special_2.png",
+      "width": 566,
+      "height": 441,
+      "sourceBytes": 336670,
+      "rgba8UncompressedBaseBytes": 998424
+    },
+    {
+      "path": "Assets/Resources/Enemies/Ghost/attack.png",
+      "width": 680,
+      "height": 360,
+      "sourceBytes": 306871,
+      "rgba8UncompressedBaseBytes": 979200
+    },
+    {
+      "path": "Assets/Resources/Enemies/Ghost/death.png",
+      "width": 680,
+      "height": 360,
+      "sourceBytes": 233197,
+      "rgba8UncompressedBaseBytes": 979200
+    },
+    {
+      "path": "Assets/Resources/Enemies/Ghost/hurt.png",
+      "width": 680,
+      "height": 360,
+      "sourceBytes": 201006,
+      "rgba8UncompressedBaseBytes": 979200
+    },
+    {
+      "path": "Assets/Resources/Enemies/Ghost/idle_0.png",
+      "width": 680,
+      "height": 360,
+      "sourceBytes": 191447,
+      "rgba8UncompressedBaseBytes": 979200
+    },
+    {
+      "path": "Assets/Resources/Enemies/Ghost/idle_1.png",
+      "width": 680,
+      "height": 360,
+      "sourceBytes": 189366,
+      "rgba8UncompressedBaseBytes": 979200
+    },
+    {
+      "path": "Assets/Resources/Enemies/Ghost/idle_2.png",
+      "width": 680,
+      "height": 360,
+      "sourceBytes": 205829,
+      "rgba8UncompressedBaseBytes": 979200
+    },
+    {
+      "path": "Assets/Resources/Enemies/GranMakuba/attack.png",
+      "width": 570,
+      "height": 429,
+      "sourceBytes": 166331,
+      "rgba8UncompressedBaseBytes": 978120
+    },
+    {
+      "path": "Assets/Resources/Enemies/GranMakuba/attack_0.png",
+      "width": 570,
+      "height": 429,
+      "sourceBytes": 166331,
+      "rgba8UncompressedBaseBytes": 978120
+    },
+    {
+      "path": "Assets/Resources/Enemies/GranMakuba/attack_1.png",
+      "width": 570,
+      "height": 429,
+      "sourceBytes": 219797,
+      "rgba8UncompressedBaseBytes": 978120
+    },
+    {
+      "path": "Assets/Resources/Enemies/GranMakuba/death.png",
+      "width": 570,
+      "height": 429,
+      "sourceBytes": 140382,
+      "rgba8UncompressedBaseBytes": 978120
+    },
+    {
+      "path": "Assets/Resources/Enemies/GranMakuba/hurt.png",
+      "width": 570,
+      "height": 429,
+      "sourceBytes": 192770,
+      "rgba8UncompressedBaseBytes": 978120
+    },
+    {
+      "path": "Assets/Resources/Enemies/GranMakuba/idle_0.png",
+      "width": 570,
+      "height": 429,
+      "sourceBytes": 194883,
+      "rgba8UncompressedBaseBytes": 978120
+    },
+    {
+      "path": "Assets/Resources/Enemies/GranMakuba/idle_1.png",
+      "width": 570,
+      "height": 429,
+      "sourceBytes": 194163,
+      "rgba8UncompressedBaseBytes": 978120
+    },
+    {
+      "path": "Assets/Resources/Enemies/GranMakuba/idle_2.png",
+      "width": 570,
+      "height": 429,
+      "sourceBytes": 194324,
+      "rgba8UncompressedBaseBytes": 978120
+    },
+    {
+      "path": "Assets/Resources/Enemies/GranMakuba/special_0.png",
+      "width": 570,
+      "height": 429,
+      "sourceBytes": 166337,
+      "rgba8UncompressedBaseBytes": 978120
+    },
+    {
+      "path": "Assets/Resources/Enemies/GranMakuba/special_1.png",
+      "width": 570,
+      "height": 429,
+      "sourceBytes": 257988,
+      "rgba8UncompressedBaseBytes": 978120
+    },
+    {
+      "path": "Assets/Resources/Enemies/GranMakuba/special_2.png",
+      "width": 570,
+      "height": 429,
+      "sourceBytes": 292035,
+      "rgba8UncompressedBaseBytes": 978120
+    },
+    {
+      "path": "Assets/Resources/Enemies/GranMakuba/special_3.png",
+      "width": 570,
+      "height": 429,
+      "sourceBytes": 339306,
+      "rgba8UncompressedBaseBytes": 978120
+    },
+    {
+      "path": "Assets/Resources/Enemies/GranMakuba/special_4.png",
+      "width": 570,
+      "height": 429,
+      "sourceBytes": 257895,
+      "rgba8UncompressedBaseBytes": 978120
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/05-MiddleMountain-00.png",
+      "width": 1536,
+      "height": 159,
+      "sourceBytes": 322509,
+      "rgba8UncompressedBaseBytes": 976896
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/07-NearMountain-00.png",
+      "width": 1536,
+      "height": 156,
+      "sourceBytes": 361398,
+      "rgba8UncompressedBaseBytes": 958464
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Sprites/Chest.png",
+      "width": 530,
+      "height": 400,
+      "sourceBytes": 153811,
+      "rgba8UncompressedBaseBytes": 848000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/attack.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 148294,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/attack_0.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 148294,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/attack_1.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 157631,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/death.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 83779,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/death_0.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 83779,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/death_1.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 67567,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/hurt.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 88206,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/idle_0.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 95159,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/idle_1.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 91746,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/idle_2.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 93353,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/jump_0.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 72900,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/jump_1.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 94838,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/jump_2.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 68920,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/jump_3.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 136693,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/jump_4.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 96893,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/special_0.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 72900,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/special_1.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 94838,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/special_2.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 68920,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/special_3.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 136693,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/special_4.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 96893,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/swallow_eat_0.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 74487,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/swallow_eat_1.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 96405,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/swallow_prepare_0.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 70533,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/swallow_prepare_1.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 73580,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/swallow_tongue_0.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 98633,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/swallow_tongue_1.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 86217,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/swallow_tongue_2.png",
+      "width": 600,
+      "height": 350,
+      "sourceBytes": 80028,
+      "rgba8UncompressedBaseBytes": 840000
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaArco/attack.png",
+      "width": 520,
+      "height": 376,
+      "sourceBytes": 145650,
+      "rgba8UncompressedBaseBytes": 782080
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaArco/attack_0.png",
+      "width": 520,
+      "height": 376,
+      "sourceBytes": 145650,
+      "rgba8UncompressedBaseBytes": 782080
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaArco/attack_1.png",
+      "width": 520,
+      "height": 376,
+      "sourceBytes": 161185,
+      "rgba8UncompressedBaseBytes": 782080
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaArco/death.png",
+      "width": 520,
+      "height": 376,
+      "sourceBytes": 106118,
+      "rgba8UncompressedBaseBytes": 782080
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaArco/hurt.png",
+      "width": 520,
+      "height": 376,
+      "sourceBytes": 186974,
+      "rgba8UncompressedBaseBytes": 782080
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaArco/idle_0.png",
+      "width": 520,
+      "height": 376,
+      "sourceBytes": 157147,
+      "rgba8UncompressedBaseBytes": 782080
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaArco/idle_1.png",
+      "width": 520,
+      "height": 376,
+      "sourceBytes": 164548,
+      "rgba8UncompressedBaseBytes": 782080
+    },
+    {
+      "path": "Assets/Resources/Enemies/MakubaArco/idle_2.png",
+      "width": 520,
+      "height": 376,
+      "sourceBytes": 159175,
+      "rgba8UncompressedBaseBytes": 782080
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/04-FarMountain-02.png",
+      "width": 893,
+      "height": 213,
+      "sourceBytes": 190748,
+      "rgba8UncompressedBaseBytes": 760836
+    },
+    {
+      "path": "Assets/sprites/enemigos/Makubas/Makuba Arco.psd",
+      "width": 444,
+      "height": 376,
+      "sourceBytes": 2286984,
+      "rgba8UncompressedBaseBytes": 667776
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Sprites/Tapaku.png",
+      "width": 390,
+      "height": 376,
+      "sourceBytes": 174832,
+      "rgba8UncompressedBaseBytes": 586560
+    },
+    {
+      "path": "Assets/Resources/UI/MenuUI/Dialogue.png",
+      "width": 608,
+      "height": 185,
+      "sourceBytes": 53494,
+      "rgba8UncompressedBaseBytes": 449920
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/06-FarLeaves-07.png",
+      "width": 409,
+      "height": 240,
+      "sourceBytes": 87450,
+      "rgba8UncompressedBaseBytes": 392640
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/08-Leaves-07.png",
+      "width": 409,
+      "height": 240,
+      "sourceBytes": 87449,
+      "rgba8UncompressedBaseBytes": 392640
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/06-FarLeaves-01.png",
+      "width": 359,
+      "height": 245,
+      "sourceBytes": 76329,
+      "rgba8UncompressedBaseBytes": 351820
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/08-Leaves-01.png",
+      "width": 359,
+      "height": 245,
+      "sourceBytes": 76328,
+      "rgba8UncompressedBaseBytes": 351820
+    },
+    {
+      "path": "Assets/Resources/UI/MenuUI/EnemyHealth.png",
+      "width": 505,
+      "height": 160,
+      "sourceBytes": 72782,
+      "rgba8UncompressedBaseBytes": 323200
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Layers/Pipe.png",
+      "width": 200,
+      "height": 399,
+      "sourceBytes": 1864,
+      "rgba8UncompressedBaseBytes": 319200
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Normals/Pipe-Normal.png",
+      "width": 200,
+      "height": 399,
+      "sourceBytes": 1864,
+      "rgba8UncompressedBaseBytes": 319200
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/06-FarLeaves-03.png",
+      "width": 296,
+      "height": 261,
+      "sourceBytes": 77253,
+      "rgba8UncompressedBaseBytes": 309024
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/08-Leaves-03.png",
+      "width": 296,
+      "height": 261,
+      "sourceBytes": 77252,
+      "rgba8UncompressedBaseBytes": 309024
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/06-FarLeaves-04.png",
+      "width": 334,
+      "height": 222,
+      "sourceBytes": 77691,
+      "rgba8UncompressedBaseBytes": 296592
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/08-Leaves-04.png",
+      "width": 334,
+      "height": 222,
+      "sourceBytes": 77690,
+      "rgba8UncompressedBaseBytes": 296592
+    },
+    {
+      "path": "Assets/TutorialInfo/Icons/URP.png",
+      "width": 350,
+      "height": 200,
+      "sourceBytes": 24069,
+      "rgba8UncompressedBaseBytes": 280000
+    },
+    {
+      "path": "Assets/Resources/UI/MenuUI/Avatar.png",
+      "width": 282,
+      "height": 248,
+      "sourceBytes": 133794,
+      "rgba8UncompressedBaseBytes": 279744
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/04-FarMountain-01.png",
+      "width": 385,
+      "height": 179,
+      "sourceBytes": 61059,
+      "rgba8UncompressedBaseBytes": 275660
+    },
+    {
+      "path": "Assets/CRTPostprocess/SampleData/Textures/sample2.png",
+      "width": 321,
+      "height": 213,
+      "sourceBytes": 6240,
+      "rgba8UncompressedBaseBytes": 273492
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/04-FarMountain-00.png",
+      "width": 341,
+      "height": 172,
+      "sourceBytes": 64293,
+      "rgba8UncompressedBaseBytes": 234608
+    },
+    {
+      "path": "Assets/Resources/UI/MenuUI/Message.png",
+      "width": 534,
+      "height": 107,
+      "sourceBytes": 49914,
+      "rgba8UncompressedBaseBytes": 228552
+    },
+    {
+      "path": "Assets/CRTPostprocess/SampleData/Textures/sample6.png",
+      "width": 256,
+      "height": 208,
+      "sourceBytes": 12735,
+      "rgba8UncompressedBaseBytes": 212992
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/06-FarLeaves-02.png",
+      "width": 313,
+      "height": 164,
+      "sourceBytes": 65149,
+      "rgba8UncompressedBaseBytes": 205328
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/08-Leaves-02.png",
+      "width": 313,
+      "height": 164,
+      "sourceBytes": 65148,
+      "rgba8UncompressedBaseBytes": 205328
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/Makong_0.png",
+      "width": 268,
+      "height": 190,
+      "sourceBytes": 90515,
+      "rgba8UncompressedBaseBytes": 203680
+    },
+    {
+      "path": "Assets/Resources/UI/JumpEnemies/Makong_1.png",
+      "width": 268,
+      "height": 190,
+      "sourceBytes": 87596,
+      "rgba8UncompressedBaseBytes": 203680
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-Blocks-Corner.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 6136,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-Blocks-DoorClosed.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 1763,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-Blocks-DoorOpen.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 5267,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-Blocks-Intersection.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 6316,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-Blocks-Straight.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 7102,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-Blocks-WideRoom.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 4586,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-Corner.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 120780,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-DoorClosed.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 1763,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-DoorOpen.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 105379,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-Intersection.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 120703,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-Neon-Corner.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 120780,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-Neon-DoorClosed.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 1763,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-Neon-DoorOpen.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 105379,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-Neon-Intersection.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 120703,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-Neon-Straight.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 121032,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-Neon-WideRoom.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 101931,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-Straight.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 121032,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/MapTests/RetroStyle/Captures/C-WideRoom.png",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 101931,
+      "rgba8UncompressedBaseBytes": 196608
+    },
+    {
+      "path": "Assets/Resources/UI/MenuUI/Map.png",
+      "width": 224,
+      "height": 205,
+      "sourceBytes": 48931,
+      "rgba8UncompressedBaseBytes": 183680
+    },
+    {
+      "path": "Assets/Resources/UI/MenuUI/Health.png",
+      "width": 297,
+      "height": 146,
+      "sourceBytes": 51697,
+      "rgba8UncompressedBaseBytes": 173448
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/02-FarCloud-02.png",
+      "width": 313,
+      "height": 133,
+      "sourceBytes": 43764,
+      "rgba8UncompressedBaseBytes": 166516
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Layers/Mountains-2.png",
+      "width": 296,
+      "height": 128,
+      "sourceBytes": 1559,
+      "rgba8UncompressedBaseBytes": 151552
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Normals/Mountains-2-Normal.png",
+      "width": 296,
+      "height": 128,
+      "sourceBytes": 1559,
+      "rgba8UncompressedBaseBytes": 151552
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/09-Bush-02.png",
+      "width": 245,
+      "height": 136,
+      "sourceBytes": 52261,
+      "rgba8UncompressedBaseBytes": 133280
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/03-Cloud-00.png",
+      "width": 257,
+      "height": 127,
+      "sourceBytes": 43088,
+      "rgba8UncompressedBaseBytes": 130556
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/03-Cloud-07.png",
+      "width": 238,
+      "height": 137,
+      "sourceBytes": 50131,
+      "rgba8UncompressedBaseBytes": 130424
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/03-Cloud-05.png",
+      "width": 226,
+      "height": 139,
+      "sourceBytes": 45023,
+      "rgba8UncompressedBaseBytes": 125656
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/03-Cloud-03.png",
+      "width": 212,
+      "height": 139,
+      "sourceBytes": 42849,
+      "rgba8UncompressedBaseBytes": 117872
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/09-Bush-01.png",
+      "width": 238,
+      "height": 119,
+      "sourceBytes": 47750,
+      "rgba8UncompressedBaseBytes": 113288
+    },
+    {
+      "path": "Assets/Resources/Enemies/Soldier/grenade.png",
+      "width": 160,
+      "height": 170,
+      "sourceBytes": 15044,
+      "rgba8UncompressedBaseBytes": 108800
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/06-FarLeaves-06.png",
+      "width": 197,
+      "height": 134,
+      "sourceBytes": 36108,
+      "rgba8UncompressedBaseBytes": 105592
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/08-Leaves-06.png",
+      "width": 197,
+      "height": 134,
+      "sourceBytes": 36107,
+      "rgba8UncompressedBaseBytes": 105592
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/09-Bush-06.png",
+      "width": 191,
+      "height": 136,
+      "sourceBytes": 41152,
+      "rgba8UncompressedBaseBytes": 103904
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/02-FarCloud-03.png",
+      "width": 238,
+      "height": 107,
+      "sourceBytes": 27364,
+      "rgba8UncompressedBaseBytes": 101864
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/06-FarLeaves-05.png",
+      "width": 183,
+      "height": 129,
+      "sourceBytes": 32765,
+      "rgba8UncompressedBaseBytes": 94428
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/08-Leaves-05.png",
+      "width": 183,
+      "height": 129,
+      "sourceBytes": 32764,
+      "rgba8UncompressedBaseBytes": 94428
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/09-Bush-00.png",
+      "width": 174,
+      "height": 135,
+      "sourceBytes": 37605,
+      "rgba8UncompressedBaseBytes": 93960
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/03-Cloud-04.png",
+      "width": 214,
+      "height": 108,
+      "sourceBytes": 33239,
+      "rgba8UncompressedBaseBytes": 92448
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/03-Cloud-01.png",
+      "width": 179,
+      "height": 122,
+      "sourceBytes": 31897,
+      "rgba8UncompressedBaseBytes": 87352
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Layers/Clouds-8.png",
+      "width": 240,
+      "height": 90,
+      "sourceBytes": 1534,
+      "rgba8UncompressedBaseBytes": 86400
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Normals/Clouds-8-Normal.png",
+      "width": 240,
+      "height": 90,
+      "sourceBytes": 1534,
+      "rgba8UncompressedBaseBytes": 86400
+    },
+    {
+      "path": "Assets/Resources/UI/MenuUI/Selection.png",
+      "width": 317,
+      "height": 68,
+      "sourceBytes": 1789,
+      "rgba8UncompressedBaseBytes": 86224
+    },
+    {
+      "path": "Assets/Thaleah_PixelFont/Materials/Thaleah_DemoBackground.png",
+      "width": 195,
+      "height": 107,
+      "sourceBytes": 2042,
+      "rgba8UncompressedBaseBytes": 83460
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/09-Bush-03.png",
+      "width": 188,
+      "height": 110,
+      "sourceBytes": 35058,
+      "rgba8UncompressedBaseBytes": 82720
+    },
+    {
+      "path": "Assets/Resources/UI/MenuUI/Attack.png",
+      "width": 313,
+      "height": 65,
+      "sourceBytes": 13551,
+      "rgba8UncompressedBaseBytes": 81380
+    },
+    {
+      "path": "Assets/Resources/UI/MenuUI/Hack.png",
+      "width": 313,
+      "height": 65,
+      "sourceBytes": 15867,
+      "rgba8UncompressedBaseBytes": 81380
+    },
+    {
+      "path": "Assets/Resources/UI/MenuUI/Item.png",
+      "width": 313,
+      "height": 65,
+      "sourceBytes": 14726,
+      "rgba8UncompressedBaseBytes": 81380
+    },
+    {
+      "path": "Assets/Resources/UI/MenuUI/Flee.png",
+      "width": 313,
+      "height": 64,
+      "sourceBytes": 14542,
+      "rgba8UncompressedBaseBytes": 80128
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/09-Bush-07.png",
+      "width": 154,
+      "height": 128,
+      "sourceBytes": 33519,
+      "rgba8UncompressedBaseBytes": 78848
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/09-Bush-05.png",
+      "width": 170,
+      "height": 104,
+      "sourceBytes": 33008,
+      "rgba8UncompressedBaseBytes": 70720
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/09-Bush-04.png",
+      "width": 159,
+      "height": 111,
+      "sourceBytes": 29592,
+      "rgba8UncompressedBaseBytes": 70596
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/06-FarLeaves-00.png",
+      "width": 136,
+      "height": 128,
+      "sourceBytes": 25149,
+      "rgba8UncompressedBaseBytes": 69632
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/08-Leaves-00.png",
+      "width": 136,
+      "height": 128,
+      "sourceBytes": 25148,
+      "rgba8UncompressedBaseBytes": 69632
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/03-Cloud-06.png",
+      "width": 153,
+      "height": 110,
+      "sourceBytes": 24417,
+      "rgba8UncompressedBaseBytes": 67320
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/06-FarLeaves-08.png",
+      "width": 125,
+      "height": 130,
+      "sourceBytes": 26785,
+      "rgba8UncompressedBaseBytes": 65000
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/08-Leaves-08.png",
+      "width": 125,
+      "height": 130,
+      "sourceBytes": 26784,
+      "rgba8UncompressedBaseBytes": 65000
+    },
+    {
+      "path": "Assets/Resources/Enemies/Makong/tongue_sprite.png",
+      "width": 238,
+      "height": 63,
+      "sourceBytes": 19182,
+      "rgba8UncompressedBaseBytes": 59976
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Layers/Bushes-3.png",
+      "width": 240,
+      "height": 57,
+      "sourceBytes": 1041,
+      "rgba8UncompressedBaseBytes": 54720
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Normals/Bushes-3-Normal.png",
+      "width": 240,
+      "height": 57,
+      "sourceBytes": 1041,
+      "rgba8UncompressedBaseBytes": 54720
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Layers/Mountains-4.png",
+      "width": 180,
+      "height": 68,
+      "sourceBytes": 992,
+      "rgba8UncompressedBaseBytes": 48960
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Normals/Mountains-4-Normal.png",
+      "width": 180,
+      "height": 68,
+      "sourceBytes": 992,
+      "rgba8UncompressedBaseBytes": 48960
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/02-FarCloud-01.png",
+      "width": 135,
+      "height": 83,
+      "sourceBytes": 14908,
+      "rgba8UncompressedBaseBytes": 44820
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/03-Cloud-02.png",
+      "width": 131,
+      "height": 84,
+      "sourceBytes": 17051,
+      "rgba8UncompressedBaseBytes": 44016
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Layers/Clouds-5.png",
+      "width": 120,
+      "height": 90,
+      "sourceBytes": 1280,
+      "rgba8UncompressedBaseBytes": 43200
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Layers/Clouds-7.png",
+      "width": 120,
+      "height": 90,
+      "sourceBytes": 1280,
+      "rgba8UncompressedBaseBytes": 43200
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Normals/Clouds-5-Normal.png",
+      "width": 120,
+      "height": 90,
+      "sourceBytes": 1280,
+      "rgba8UncompressedBaseBytes": 43200
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Normals/Clouds-7-Normal.png",
+      "width": 120,
+      "height": 90,
+      "sourceBytes": 1280,
+      "rgba8UncompressedBaseBytes": 43200
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Layers/Bushes-11.png",
+      "width": 180,
+      "height": 59,
+      "sourceBytes": 990,
+      "rgba8UncompressedBaseBytes": 42480
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Normals/Bushes-11-Normal.png",
+      "width": 180,
+      "height": 59,
+      "sourceBytes": 990,
+      "rgba8UncompressedBaseBytes": 42480
+    },
+    {
+      "path": "Assets/Thaleah_PixelFont/Materials/ThaleahFat.png",
+      "width": 64,
+      "height": 128,
+      "sourceBytes": 2564,
+      "rgba8UncompressedBaseBytes": 32768
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Layers/Bushes-10.png",
+      "width": 120,
+      "height": 60,
+      "sourceBytes": 910,
+      "rgba8UncompressedBaseBytes": 28800
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/Normals/Bushes-10-Normal.png",
+      "width": 120,
+      "height": 60,
+      "sourceBytes": 910,
+      "rgba8UncompressedBaseBytes": 28800
+    },
+    {
+      "path": "Assets/Resources/RetroDungeonExperiment/UpdatedLayers/02-FarCloud-00.png",
+      "width": 90,
+      "height": 69,
+      "sourceBytes": 10647,
+      "rgba8UncompressedBaseBytes": 24840
+    },
+    {
+      "path": "Assets/Resources/UI/MenuUI/TargetArrow.png",
+      "width": 23,
+      "height": 16,
+      "sourceBytes": 1200,
+      "rgba8UncompressedBaseBytes": 1472
+    }
+  ]
+}

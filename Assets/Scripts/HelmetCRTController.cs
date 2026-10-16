@@ -5,13 +5,18 @@ public class HelmetCRTController:MonoBehaviour {
  public const string PreferenceKey="Codebound.Graphics.HelmetCRT";
  System.Random random;float nextGlitch,remaining,duration,strength,clock;
  public bool EffectEnabled {get{return Application.isPlaying&&isActiveAndEnabled&&settings!=null&&settings.crtEnabled&&PlayerPrefs.GetInt(PreferenceKey,1)!=0;}}
+ public bool CombatActive {get;private set;}
+ public bool DialogueContext {get;private set;}
+ public void SetDialogueContext(bool active){if(DialogueContext==active)return;DialogueContext=active;Schedule();}
+ public float WorldBrightness {get{return settings==null?1:CombatActive?settings.combatBrightness:settings.brightness;}}
+ public void SetCombatContext(bool value){CombatActive=value;}
  public float GlitchStrength {get{return remaining>0?strength*Mathf.Clamp01(remaining/Mathf.Max(.01f,duration)):0;}}
  void Awake(){if(settings==null)settings=HelmetCRTSettings.Current;random=new System.Random(System.Environment.TickCount);Schedule();if(GetComponent<HelmetCRTWholeFrame>()==null)gameObject.AddComponent<HelmetCRTWholeFrame>();}
  void OnEnable(){if(!Application.isPlaying)return;if(settings==null)settings=HelmetCRTSettings.Current;if(random==null)random=new System.Random(System.Environment.TickCount);Schedule();}
  void OnDisable(){remaining=0;}
  float Between(float a,float b){if(random==null)random=new System.Random(System.Environment.TickCount);return Mathf.Lerp(Mathf.Min(a,b),Mathf.Max(a,b),(float)random.NextDouble());}
  void Schedule(){if(settings!=null)nextGlitch=clock+Between(Mathf.Max(5,settings.minimumGlitchInterval),Mathf.Max(5,settings.maximumGlitchInterval));}
- void Update(){if(!Application.isPlaying)return;clock+=Time.unscaledDeltaTime;remaining=Mathf.Max(0,remaining-Time.unscaledDeltaTime);if(Time.timeScale<=0){nextGlitch+=Time.unscaledDeltaTime;return;}if(!EffectEnabled){remaining=0;return;}if(settings.automaticGlitches&&clock>=nextGlitch){TriggerGlitch(settings.automaticGlitchIntensity,Between(settings.minimumGlitchDuration,settings.maximumGlitchDuration));Schedule();}}
+ void Update(){if(!Application.isPlaying)return;clock+=Time.unscaledDeltaTime;remaining=Mathf.Max(0,remaining-Time.unscaledDeltaTime);if(Time.timeScale<=0){nextGlitch+=Time.unscaledDeltaTime;return;}if(!EffectEnabled){remaining=0;return;}if(settings.automaticGlitches&&!DialogueContext&&clock>=nextGlitch){TriggerGlitch(settings.automaticGlitchIntensity,Between(settings.minimumGlitchDuration,settings.maximumGlitchDuration));Schedule();}}
  public void TriggerGlitch(float intensity=.3f,float seconds=.18f){if(!EffectEnabled)return;float value=Mathf.Clamp(intensity,0,settings.maximumGlitchIntensity);if(value<GlitchStrength)return;strength=value;duration=remaining=Mathf.Clamp(seconds,.1f,.3f);}
  public void TriggerContext(string context,float intensity=.3f){TriggerGlitch(intensity,.2f);}
  public void SetUserEnabled(bool value){PlayerPrefs.SetInt(PreferenceKey,value?1:0);PlayerPrefs.Save();if(!value)remaining=0;}

@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413e4245d27b39f48b0b659bd83661e7, type: 3}
   m_Name: 05-city.travel
   m_EditorClassIdentifier: Assembly-CSharp::DigitalKingdomLocation
+  description: Selecciona un dungeon y despues uno de sus nodos desbloqueados.
+  personality: "Piloto presumido, energ\xE9tico, dram\xE1tico y obsesionado con la
+    velocidad. Cada viaje es una carrera por el campeonato."
+  welcomeGiftId: 
+  welcomeGiftQuantity: 1
+  welcomeGiftDialogue: 
   id: city.travel
-  displayName: "Fast Travel Station \u2014 Teleport Network"
-  npcName: OPERATOR
+  displayName: Fast Travel Station
+  npcName: "Capit\xE1n Turbo"
   background: {fileID: 0}
   npcPortrait: {fileID: 0}
   service: 4
@@ -22,27 +28,66 @@ MonoBehaviour:
   available: 1
   uniqueConversation: 1
   dialogue:
-  - speaker: OPERATOR
-    text: Welcome to Fast Travel Station.
+  - presentationCue: 
+    speaker: "Capit\xE1n Turbo"
+    text: "\xA1Capit\xE1n Turbo, listo para despegar! Elige un destino descubierto
+      y abr\xF3chate el cintur\xF3n. \xA1Cada viaje es una carrera por el campeonato!"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: OPERATOR
-    text: Connecting worlds since version 1.0.
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: "Capit\xE1n Turbo"
+    text: "Llevo exploradores a otros reinos. \xBFA d\xF3nde quieres ir?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: GAMERBOY
-    text: Is it safe?
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "Esa es una buena pregunta... No s\xE9 a d\xF3nde debo ir."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: OPERATOR
-    text: Define safe.
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: "Capit\xE1n Turbo"
+    text: "Entonces date una vuelta por la ciudad. A veces una conversaci\xF3n basta
+      para encontrar el camino."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   stockIds: []
+  stockNames: []
   futureService:
     m_PersistentCalls:
       m_Calls: []

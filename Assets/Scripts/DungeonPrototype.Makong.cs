@@ -21,6 +21,7 @@ public partial class DungeonPrototype {
    visual.Hold("jump_2");visual.ShowBody(true);
    for(float t=0;t<s.fallSeconds;t+=Time.deltaTime){visual.transform.position=home+Vector3.up*Mathf.Lerp(s.jumpHeight,0,Mathf.Clamp01(t/s.fallSeconds));yield return null;}
    visual.transform.position=home;ring.enabled=false;visual.Hold("jump_3");
+   if(s.landingSound!=null)DungeonAudio.PlayClip(s.landingSound,s.landingVolume);else DungeonAudio.Play(DungeonAudio.Cue.Explosion);
    var stats=enemyObjects[index].GetComponent<EnemyCombatStats>();var profile=stats.snapshot;
    float miss=profile==null?0:CombatAccuracySettings.EffectiveMiss(profile.specialMissPercent,Accuracy.enabledLuck?profile.luck:0);
    ApplyEnemyHit(index,profile!=null?profile.specialDamage:stats.damage,RollAttackMiss(miss));

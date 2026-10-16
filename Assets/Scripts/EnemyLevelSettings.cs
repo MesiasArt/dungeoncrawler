@@ -28,5 +28,6 @@ public sealed class EnemyLevelSettings:ScriptableObject {
 [Serializable] public class EnemyInstanceRecord {
  public string instanceId,speciesId,zoneId,placementId;public PlacedEnemyCategory category;public int level,currentHP;public Vector2Int cell;
  public bool alerted,defeated;public float respawnRemaining;
+ public bool hasExplorationState;public Vector2Int explorationHome,lastKnownPlayer;public int patrolIndex,patrolDirection=1,memoryTurns;
  public EnemyStatSnapshot stats;
 }

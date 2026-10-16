@@ -31,6 +31,10 @@ public class EnemyEncounterSettings : ScriptableObject
     public bool spawnBigTapaku=true;
     public bool spawnMakubas=true;
     public bool spawnGranMakuba=true;
+    [Header("Exploracion por instancia (Legacy conserva los valores anteriores)")]
+    [Min(1)] public int explorationDetectionSteps=4;
+    [Min(0)] public int explorationMemoryTurns=3;
+    [Min(1)] public int explorationLeashSteps=6;
     [Header("Apariciones y movimiento")]
     [HideInInspector, Min(1)] public float respawnSeconds=30; // Legacy migration; Zone settings are authoritative.
     [Range(1,6)] public int detectionSteps=2;

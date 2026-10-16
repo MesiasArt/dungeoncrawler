@@ -1,0 +1,54 @@
+53 passed / 0 failed
+PASS Guide appears directly below RNG Sewers
+PASS Rumor NEW hidden before visiting every location
+PASS Kingdom unavailable before rumor and guide conversation
+PASS Open destination city.inn
+PASS Dialogue completes without blocking controls
+PASS Open destination city.shop
+PASS Dialogue completes without blocking controls
+PASS Open destination city.temple
+PASS Dialogue completes without blocking controls
+PASS Open destination city.lab
+PASS Dialogue completes without blocking controls
+PASS Open destination city.travel
+PASS Dialogue completes without blocking controls
+PASS Open destination city.sewers
+PASS Dialogue completes without blocking controls
+PASS Open destination city.dungeons
+PASS Dialogue completes without blocking controls
+PASS All destinations counted after dialogues and leaving
+PASS NEW appears on The Last Life after all visits
+PASS Guide NEW waits for bar rumor
+PASS NEW opens bartender rumor
+PASS Dialogue completes without blocking controls
+PASS Rumor completes and persists once
+PASS NEW moves to dungeon guide
+PASS Dialogue completes without blocking controls
+PASS Guide unlocks real kingdom destination
+PASS Guide NEW removed after reading
+PASS Repeated acknowledgement cannot duplicate flags
+PASS Future notification rule works without controller edits
+PASS Old city saves normalize without inventing visits
+PASS Existing save store restores notification flags and reads
+PASS Visited destinations survive save/load
+PASS Dialogue completes without blocking controls
+PASS White transition reaches Assets/Scenes/RetroDungeonExperiment.unity
+PASS Guide loads independent kingdom map
+PASS Pause can return to Digital Kingdom
+PASS Original dungeon snapshot preserved during kingdom visit
+PASS Normal enemies spawn in addition to pipe placements
+PASS Two exploration and two combat songs assigned
+PASS Eleven actual normal-map imports assigned
+PASS Two frontal pipe mouths installed
+PASS Minimap visible outside battle
+PASS Minimap hidden during battle
+PASS Minimap returns after battle
+PASS Return to city accepted
+PASS White transition reaches Assets/Scenes/DigitalKingdom.unity
+PASS Kingdom snapshot preserved on return
+PASS Notifications and original return anchor retained
+PASS Dialogue completes without blocking controls
+PASS White transition reaches Assets/Scenes/RetroDungeonExperiment.unity
+PASS Revisiting kingdom restores its independent state
+PASS Second return accepted
+PASS White transition reaches Assets/Scenes/DigitalKingdom.unity

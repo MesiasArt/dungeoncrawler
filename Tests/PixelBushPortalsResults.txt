@@ -1,0 +1,31 @@
+30 passed / 0 failed
+PASS Personal six slots isolated
+PASS Updated green flower floor
+PASS Eight PSD layer groups preserve file order
+PASS No pipe meshes or emitters
+PASS Three previous emitters replaced by bushes
+PASS Grass and earth border rendered
+PASS Decorative bushes include a swaying subset
+PASS Static decorative bushes also present
+PASS Stray semi-transparent source background clipped
+PASS Normal enemy appearances remain available
+PASS Guide speaks on first arrival
+PASS Guide notice saved in existing map events
+PASS One press moves one cell
+PASS One turn is exactly 90 degrees
+PASS Bush shakes before an enemy appears
+PASS Warning visibly shakes foliage
+PASS Walking after warning triggers one emergence
+PASS Enemy uses a jump animation
+PASS Existing emitter persistence ID retained
+PASS No duplicate spawn from consumed bush
+PASS Bush enemy enters normal combat
+PASS Combat uses updated Pixel floor
+PASS Combat backdrop has no pipes
+PASS Save and load preserve consumed emitter
+PASS Completed guide notice does not repeat after load
+PASS Return portal always passable
+PASS Portal has neither door panel nor central lock
+PASS Walking forward starts white transition before entering boundary wall
+PASS Return reaches Digital Kingdom
+PASS Pixel floor snapshot retained in city

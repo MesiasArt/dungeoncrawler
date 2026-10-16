@@ -46,7 +46,7 @@ public partial class DungeonPrototype : MonoBehaviour
     Texture2D floorWallDistance;
     readonly DialogueTypewriter introTyping=new DialogueTypewriter(),messageTyping=new DialogueTypewriter();
     IntroLine typingLine;
-    void SyncIntroTyping() { var line=introduction==null?null:introduction.Current;if(!ReferenceEquals(line,typingLine)){typingLine=line;introTyping.SetText(line==null?"":line.Text,Time.unscaledTime,true);} }
+    void SyncIntroTyping() { var line=introduction==null?null:introduction.Current;if(!ReferenceEquals(line,typingLine)){typingLine=line;introTyping.SetText(line==null?"":line.DisplayText,Time.unscaledTime,true);} }
     IntroSequence introduction;
     [SerializeField] CombatHack combatHack;
     InputAction interact, submit;
@@ -58,9 +58,11 @@ public partial class DungeonPrototype : MonoBehaviour
 
     void StartIntroduction()
     {
+        EndIntroPresentation(false);
         introduction = new IntroSequence(GameStartContext.Consume());
         SyncIntroTyping();
         if (!introduction.Active) return;
+        BeginIntroPresentation();
         interact = InputSystem.actions?.FindAction("Player/Interact");
         submit = InputSystem.actions?.FindAction("UI/Submit");
         enabledInteract = interact != null && !interact.enabled;
@@ -78,6 +80,7 @@ public partial class DungeonPrototype : MonoBehaviour
         if(!IntroductionActive) return;
         SyncIntroTyping();
         var previousLine=introduction.Current;
+        skip=false;
         if(skip) introduction.Skip();
         else {
             if(advance&&introduction.Current!=null&&!introTyping.IsComplete(Time.unscaledTime,Layout.lettersPerSecond)) { introTyping.Complete();advance=false; }
@@ -85,13 +88,14 @@ public partial class DungeonPrototype : MonoBehaviour
         }
         if(!skip&&advance&&previousLine!=null&&!ReferenceEquals(previousLine,introduction.Current))DungeonAudio.Play(DungeonAudio.Cue.TextAdvance);
         SyncIntroTyping();
-        if(introduction.Interference) glitch=.1f;
-        if(!introduction.Active) { introductionCompleted=true; glitch=0; ReleaseIntroductionInput(); }
+        UpdateIntroPresentation();
+        if(!introduction.Active) { introductionCompleted=true; glitch=0; EndIntroPresentation(true);ReleaseIntroductionInput();ClearMovementInput(); }
     }
     void HandleCombatInput(int direction, bool confirm)
     {
         if(!battle || busy || lost || IntroductionActive || (combatHack!=null && combatHack.Active)) return;
         if(selectingEnemy){if(direction!=0)SelectEnemy(direction);if(confirm)ConfirmEnemyTarget();return;}
+        if(!selectingEnemy&&combatMenu==CombatMenu.Main&&SpeedrunInput())return;
         if(direction!=0) { int count=CombatLabels().Length; selectedCombatAction=(selectedCombatAction+(direction>0 ? 1 : -1)+count)%count; return; }
         if(confirm) Action(selectedCombatAction);
     }
@@ -101,8 +105,8 @@ public partial class DungeonPrototype : MonoBehaviour
         if (enabledSubmit) submit.Disable();
         enabledInteract = enabledSubmit = false;
     }
-    void OnDisable() { ClearMovementInput(); CancelMapReveal(); SetPause(false); ReleaseIntroductionInput(); }
-    void OnDestroy() { if(battleCeiling!=null)Destroy(battleCeiling);if (floorWallDistance != null) Destroy(floorWallDistance); }
+    void OnDisable() { CancelRefugeWelcome();EndIntroPresentation(true);ClearMovementInput(); CancelMapReveal(); SetPause(false); ReleaseIntroductionInput(); }
+    void OnDestroy() { if(voidDepthMaterial!=null)Destroy(voidDepthMaterial);EndMakongPresentation();if(battleCeiling!=null)Destroy(battleCeiling);if (floorWallDistance != null) Destroy(floorWallDistance); }
     void RestartNewGame()
     {
         GameStartContext.PrepareNewGame();
@@ -125,6 +129,7 @@ public partial class DungeonPrototype : MonoBehaviour
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static void Launch()
     {
+        if(FindAnyObjectByType<CodeboundTitleScreen>()!=null)return;
         if(FindAnyObjectByType<DigitalKingdomController>()!=null)return;
         if(FindAnyObjectByType<EnemySizeGallery>()!=null)return;
         if (FindAnyObjectByType<DungeonPrototype>() == null)
@@ -132,8 +137,10 @@ public partial class DungeonPrototype : MonoBehaviour
     }
     void Start()
     {
+        DungeonAudio.SetCityMusic(false);
         bool cityArrival=DigitalKingdomTransit.ReturnData!=null;if(cityArrival){if(DigitalKingdomTransit.Map!=null)mapSettings=DigitalKingdomTransit.Map;characterSettings=DigitalKingdomTransit.Character;playerLevelSettings=DigitalKingdomTransit.Levels;inventorySettings=DigitalKingdomTransit.Inventory;}
-        map=ActiveMap!=null&&ActiveMap.Valid?(string[])ActiveMap.rows.Clone():DefaultMapRows;
+        ApplyPlayerProfileDefaults();
+        map=ActiveMap!=null&&ActiveMap.Valid?CurrentMapDefinition.Rows:DefaultMapRows;
         if(mapSettings!=null&&mapSettings.regions!=null)dungeonRegions=mapSettings.regions;
         var refugeConfig=RefugeSettings.Current;if(refugeConfig!=null){position=refugeConfig.startCell;heading=refugeConfig.startHeading;}if(mapSettings!=null&&!mapSettings.includeLegacyObjects){position=mapSettings.startCell;heading=mapSettings.startHeading;}
         Vector2 space=EnemySpaceLayout.Corridor(DungeonVisualSettings.Current,EnemySizeSettings.Current);Cell=space.x;corridorHeight=space.y;
@@ -159,7 +166,7 @@ public partial class DungeonPrototype : MonoBehaviour
         {
             Vector3 p = new Vector3(x*Cell,0,z*Cell);
             if (map[z][x]=='#') { Box("Wall",p+Vector3.up*(corridorHeight*.5f),new Vector3(Cell,corridorHeight,Cell),wall); continue; }
-            if(map[z][x]=='~'){Box("Void ceiling",p+Vector3.up*(corridorHeight+.1f),new Vector3(Cell,.2f,Cell),ceiling);continue;}
+            if(map[z][x]=='~'){BuildVoidDepth(new Vector2Int(x,z));Box("Void ceiling",p+Vector3.up*(corridorHeight+.1f),new Vector3(Cell,.2f,Cell),ceiling);continue;}
             Box("Floor",p+Vector3.down*.1f,new Vector3(Cell,.2f,Cell),floor);
             Box("Ceiling",p+Vector3.up*(corridorHeight+.1f),new Vector3(Cell,.2f,Cell),ceiling);
             if ((x+z)%3==2 && !(x==9 && z==8))
@@ -215,8 +222,8 @@ public partial class DungeonPrototype : MonoBehaviour
         for(int i=0;i<itemCounts.Length;i++) itemCounts[i]=RefugeSettings.Current!=null||inventorySettings.items[i]==null ? 0 : Mathf.Max(0,inventorySettings.items[i].startingQuantity);
         hp=MaximumHP;
         if(ActiveMap==null||ActiveMap.includeLegacyObjects)CreatePreservationCorridor();
-        if(ActiveMap==null||ActiveMap.includeLegacyObjects)CreateRefuge();RemoveDisabledLegacyDoors();CreateMapEntities();foreach(var text in GetComponentsInChildren<TextMesh>()){var occlusion=text.GetComponent<WorldTextOcclusion>();if(occlusion==null)occlusion=text.gameObject.AddComponent<WorldTextOcclusion>();occlusion.viewCamera=view;}if(!restoreFloor)PopulateRegions();
-        CreateDungeonDecorations();bool mapArrival=incomingMapTravel!=null;StartIntroduction();ApplyMapTravel();if(cityArrival){restoringCitySnapshot=true;var data=DigitalKingdomTransit.ConsumeReturn();RestoreDungeonSave(data);restoringCitySnapshot=false;var target=DigitalKingdomTransit.ArrivalNode;DigitalKingdomTransit.ArrivalNode=null;if(!string.IsNullOrEmpty(target))DiscoverRefugeReturn(target);}else if(!mapArrival)ShowStartupMenu();
+        if(ActiveMap==null||ActiveMap.includeLegacyObjects)CreateRefuge();RemoveDisabledLegacyDoors();CreateMapEntities();if(ActiveMap!=null&&ActiveMap.digitalDoorsEnabled)foreach(var legacyDoor in new[]{exitDoor,refugeDoor,zoneTwoDoor})if(legacyDoor!=null)legacyDoor.ConfigureDigital(DigitalDoorAccess.Cyan,false,true,false);ConfigureDoorZoneSigns();foreach(var text in GetComponentsInChildren<TextMesh>()){if(text.GetComponentInParent<DungeonDoorZoneSigns>()!=null)continue;var occlusion=text.GetComponent<WorldTextOcclusion>();if(occlusion==null)occlusion=text.gameObject.AddComponent<WorldTextOcclusion>();occlusion.viewCamera=view;}if(!restoreFloor)PopulateRegions();
+        CreateDungeonDecorations();bool mapArrival=incomingMapTravel!=null;StartIntroduction();ApplyMapTravel();if(cityArrival){restoringCitySnapshot=true;var data=DigitalKingdomTransit.ConsumeReturn();RestoreDungeonSave(data);restoringCitySnapshot=false;var target=DigitalKingdomTransit.ArrivalNode;DigitalKingdomTransit.ArrivalNode=null;if(!string.IsNullOrEmpty(target))DiscoverRefugeReturn(target);}else if(!mapArrival){var requestedSave=CodeboundTitleScreen.TakeSavedGame();if(requestedSave!=null)RestoreDungeonSave(requestedSave);else if(CodeboundTitleScreen.TakeNewGame())StartFreshFromMenu();else ShowStartupMenu();}
     }
     void RevealVisitedCell(Vector2Int cell)
     {
@@ -351,7 +358,8 @@ public partial class DungeonPrototype : MonoBehaviour
         var profile=EnemyCharacterCatalog.Current!=null?EnemyCharacterCatalog.Current.FindId(placement!=null?placement.speciesId:EnemyRoster.ResourceIds[kind]):null;
         if(profile!=null){stats.Initialize(profile,level,EnemyLevelSettings.Current);if(placement!=null&&placement.speciesId=="DevotoCorrompido")root.name=profile.character;}
         stats.zoneId=origin.id;stats.placementId=placement==null?null:placement.id;stats.category=placement==null?PlacedEnemyCategory.Normal:placement.category;
-        slots.Add(new EnemySpawnSlot{origin=origin,placement=placement,counts=counts,instanceId=stats.instanceId});
+        slots.Add(new EnemySpawnSlot{origin=origin,placement=placement,counts=counts,instanceId=stats.instanceId,explorationHome=cell});
+        if(placement!=null&&placement.exploration!=null&&placement.exploration.profile==EnemyExplorationProfile.Elite&&placement.exploration.showEliteMarker)root.AddComponent<EnemyExplorationMarker>().Initialize(this,visual);
         root.transform.localScale=Vector3.one*.75f;
         enemyObjects.Add(root);
         enemyLives.Add(stats.maximumHP); alerted.Add(false); respawnAt.Add(-1);
@@ -360,14 +368,18 @@ public partial class DungeonPrototype : MonoBehaviour
     Vector3 World(Vector2Int p) { return new Vector3(p.x*Cell,1.5f,p.y*Cell); }
     void Update()
     {
+        UpdateHackSystemSession();
         if(TryCityRespawn())return;
         if(UpdateCityInput())return;
+        if(UpdateBossEvents())return;
         if(MovementInterfaceBlocked())ClearMovementInput();
         if(UpdateMapReveal())return;
         var laboratory=GetComponent<CombatLaboratory>();if(laboratory!=null&&laboratory.MenuOpen)return;
         ClaimPendingCombatDrops();
         if(UpdateSaveSlotInput())return;
+        if(UpdateRefugeWelcome())return;
         if(UpdateRefugeInput())return;
+        if(makongMusicTransition)return;
         if(UpdateMapEntityInput())return;
         if(UpdatePreservationInput())return;
         if(PauseInput())return;
@@ -406,10 +418,10 @@ public partial class DungeonPrototype : MonoBehaviour
             if(pad!=null){if(pad.buttonEast.wasPressedThisFrame)BackToCombatMenu();else {int direction=pad.dpad.down.wasPressedThisFrame||pad.dpad.right.wasPressedThisFrame?1:pad.dpad.up.wasPressedThisFrame||pad.dpad.left.wasPressedThisFrame?-1:0;HandleCombatInput(direction,pad.buttonSouth.wasPressedThisFrame);}}
             return;
         }
-        if(ExperimentalMovement){if(!moving&&Keyboard.current!=null&&DoorInteractionAvailable(exitDoor)&&Keyboard.current.eKey.wasPressedThisFrame){ClearMovementInput();exitDoor.OpenDoor();return;}PollMovementInput();return;}
+        if(ExperimentalMovement){if(!moving&&Keyboard.current!=null&&DoorInteractionAvailable(exitDoor)&&Keyboard.current.eKey.wasPressedThisFrame){ClearMovementInput();OpenLegacyEventDoor("legacy.exit",exitDoor);return;}PollMovementInput();return;}
         if(moving||lost||Keyboard.current==null) return;
         var k=Keyboard.current;
-        if(DoorInteractionAvailable(exitDoor) && k.eKey.wasPressedThisFrame) { exitDoor.OpenDoor();return; }
+        if(DoorInteractionAvailable(exitDoor) && k.eKey.wasPressedThisFrame) { OpenLegacyEventDoor("legacy.exit",exitDoor);return; }
         if(k.aKey.wasPressedThisFrame||k.leftArrowKey.wasPressedThisFrame) StartCoroutine(Move(0,-1));
         else if(k.dKey.wasPressedThisFrame||k.rightArrowKey.wasPressedThisFrame) StartCoroutine(Move(0,1));
         else if(k.wKey.wasPressedThisFrame||k.upArrowKey.wasPressedThisFrame) StartCoroutine(Move(1,0));
@@ -419,6 +431,7 @@ public partial class DungeonPrototype : MonoBehaviour
     {
         if (IntroductionActive || levelComplete) yield break;
         Vector2Int next=position+directions[heading]*step;
+        if(step!=0 && TryEnterCityPortal(World(position),World(next)))yield break;
         if(step!=0&&(!Open(next)||RefugeNpcBlocks(next))) yield break;
         if(step!=0 && DoorsBlock(World(position),World(next))) { yield break; }
         if(step!=0)for(int i=0;i<enemies.Count;i++)if(enemyObjects[i]!=null&&enemies[i]==next){moving=true;while(enemyNavigationRunning)yield return null;moving=false;ClearMovementInput();BeginEncounter(i);yield break;}
@@ -449,9 +462,9 @@ public partial class DungeonPrototype : MonoBehaviour
         {
             RefreshAvailableHacks();
             int count=availableHacks==null ? 0 : availableHacks.Length;
-            var labels=new string[count+1];
+            var labels=new string[count+2];
             for(int i=0;i<count;i++) labels[i]=availableHackDefinitions[i].displayName+" ["+availableHackDefinitions[i].bitsCost+" Bits]";
-            labels[count]="VOLVER"; return labels;
+            labels[count]="SPEEDRUN";labels[count+1]="VOLVER"; return labels;
         }
         var items=inventorySettings.items;
         var usable=CombatItemIndices();var itemLabels=new string[usable.Count+1];
@@ -460,7 +473,7 @@ public partial class DungeonPrototype : MonoBehaviour
     }
     void BackToCombatMenu()
     {
-        if(selectingEnemy){selectingEnemy=false;pendingTargetHack=null;return;}
+        if(selectingEnemy){selectingSpeedrun=false;selectingEnemy=false;pendingTargetHack=null;return;}
         if(busy || lost || (combatHack!=null && combatHack.Active) || combatMenu==CombatMenu.Main) return;
         selectedCombatAction=combatMenu==CombatMenu.Hacks ? 1 : 2;
         combatMenu=CombatMenu.Main;
@@ -468,12 +481,13 @@ public partial class DungeonPrototype : MonoBehaviour
     void Action(int action)
     {
         if(IntroductionActive || busy || lost || !battle || (combatHack!=null && combatHack.Active)) return;
-        if(selectingEnemy){if(action==(pendingTargetHack!=null?1:0))ConfirmEnemyTarget();return;}
+        if(selectingEnemy){if(selectingSpeedrun){ConfirmEnemyTarget();return;}if(action==(pendingTargetHack!=null?1:0))ConfirmEnemyTarget();return;}
         if(action<0 || action>=CombatLabels().Length) return;
         if(RoutePartyCommand(action))return;
         if(combatMenu==CombatMenu.Hacks)
         {
-            if(action==availableHacks.Length) { BackToCombatMenu(); return; }
+            if(action==availableHacks.Length+1) { BackToCombatMenu(); return; }
+            if(action==availableHacks.Length){combatMenu=CombatMenu.Main;selectedCombatAction=1;BeginSpeedrunSelection();return;}
             selectedHackId=availableHackDefinitions[action].id;combatHack=availableHacks[action]; combatMenu=CombatMenu.Main; selectedCombatAction=1;
             if(encounter.Count>1){pendingTargetHack=combatHack;selectingEnemy=true;message="Elige el objetivo del HACK y confirma.";}
             else BeginTargetHack(combatHack);
@@ -485,9 +499,10 @@ public partial class DungeonPrototype : MonoBehaviour
             var usable=CombatItemIndices();if(action==usable.Count) { BackToCombatMenu(); return; }action=usable[action];
             var item=inventorySettings.items[action];
             if(item==null || itemCounts[action]<=0) { message="No quedan unidades de ese objeto."; return; }
+            if(item.gainOneLevel){if(!UseLevelUpCheat(action))return;busy=true;combatMenu=CombatMenu.Main;selectedCombatAction=2;StartCoroutine(ResolveCombatDamage(0,"ITEM"));return;}
             if(hp>=MaximumHP) { message="Ya tienes el HP completo."; return; }
             int healed=Mathf.Min(Mathf.Max(0,item.healHP),MaximumHP-hp);
-            DungeonAudio.Play(DungeonAudio.Cue.Item);itemCounts[action]--; hp+=healed; busy=true;
+            DungeonAudio.Play(DungeonAudio.Cue.Item);itemCounts[action]--; hp+=healed;NotifyHealing(item,healed); busy=true;
             message=item.displayName+": recuperas "+healed+" HP.";
             combatMenu=CombatMenu.Main;selectedCombatAction=2;
             StartCoroutine(ResolveCombatDamage(0,"ITEM")); return;
@@ -496,12 +511,10 @@ public partial class DungeonPrototype : MonoBehaviour
         if(action==1) { RefreshAvailableHacks();combatMenu=CombatMenu.Hacks;selectedCombatAction=0;return; }
         if(action==2) { combatMenu=CombatMenu.Items;selectedCombatAction=0;return; }
         if(RollAttackMiss(100-CombatAccuracySettings.EffectiveFlee(Character.fleePercent,PlayerLuck))){message="No pudiste huir.";busy=true;StartCoroutine(ResolveCombatDamage(0,"HUIR"));return;}
-        if(enemyBarks!=null)enemyBarks.ClearDisplay();
-        DirectorCombatEnded();RestoreEncounter();battle=false;busy=false;combatMenu=CombatMenu.Main;selectedCombatAction=0;activeEnemy=-1;glitch=0;
-        StartCoroutine(RestoreBattleCamera());
-        message="Escapaste. Retrocede o busca otra ruta.";
+        if(pendingMakongNarrative!=null){busy=true;StartCoroutine(FinishMakongBeforeFlee());return;}
+        FinishSuccessfulFlee();
     }
-    IEnumerator ResolveCombatDamage(int damage, string actionName)
+    IEnumerator ResolveCombatDamage(int damage, string actionName, bool instantClear=false)
     {
         int hit=activeEnemy;
         float missPercent=actionName=="ATTACK"?Accuracy.CharacterMissPercent("GAMERBOY",false):actionName=="HACK"&&combatHack!=null?Accuracy.HackMissPercent(combatHack.GetType().Name,combatHack.UsesAttackLuck):0;
@@ -510,29 +523,32 @@ public partial class DungeonPrototype : MonoBehaviour
         bool critical=!missed&&damage>0&&actionName=="ATTACK"&&CombatMath.CriticalRoll(CombatAccuracySettings.EffectiveBonus(Character.criticalPercent,PlayerLuck),Random.value);
         float quality=actionName=="HACK"&&combatHack!=null?combatHack.AttackQuality(damage):1;
         int attack=actionName=="HACK"?PlayerStrength:damage;
-        if(!missed)damage=CombatMath.Damage(attack,enemyObjects[hit].GetComponent<EnemyCombatStats>().defense,quality,critical,Character.criticalMultiplier,CombatBalanceSettings.Current);
+        if(instantClear)damage=enemyLives[hit];
+        else if(!missed)damage=CombatMath.Damage(attack,enemyObjects[hit].GetComponent<EnemyCombatStats>().defense,quality,critical,Character.criticalMultiplier,CombatBalanceSettings.Current);
         if(missed)damage=0;
+        if(actionName=="HACK"&&combatHack is OverclockHack)((OverclockHack)combatHack).ShowResolvedDamage(damage);
         var ghost=enemyObjects[hit].GetComponent<GhostEnemyVisual>();
         if(actionName=="ATTACK") DungeonAudio.Play(DungeonAudio.Cue.Attack);
         enemyHP=enemyLives[hit]=Mathf.Max(0,enemyLives[hit]-damage);
         if(damage>0&&enemyHP>0){Bark(EnemyBarkCategory.Hurt);RefugeLowLifeBark(hit);}
         if(ghost!=null&&damage>0)ghost.Play(GhostEnemyVisual.Pose.Hurt);
         if(actionName=="ATTACK"&&damage>0)view.GetComponent<CombatImpactFeedback>().Play(false);
-        if(actionName!="ITEM"&&actionName!="HUIR")message=missed?"GAMERBOY: "+actionName+" falló.":actionName+(critical?" CRÍTICO": "")+": "+damage+" de daño confirmado.";
+        if(!instantClear&&actionName!="ITEM"&&actionName!="HUIR")message=missed?"GAMERBOY: "+actionName+" falló.":actionName+(critical?" CRÍTICO": "")+": "+damage+" de daño confirmado.";
         bool defeated=enemyLives[hit]<=0;
+        SignalBossState(hit,defeated);
         if(defeated){
             Bark(EnemyBarkCategory.Defeat);
-            if(ghost!=null)ghost.Play(GhostEnemyVisual.Pose.Death);
+            if(!instantClear&&ghost!=null)ghost.Play(GhostEnemyVisual.Pose.Death);
             var corpse=enemyObjects[hit];
             RecordDefeated(hit);OnRefugeEnemyDefeated(hit);
             enemyObjects[hit]=null;victories++;RecordCombatDropEnemy(corpse.GetComponent<EnemyCombatStats>());RecordEnemyXP(corpse.GetComponent<EnemyCombatStats>());respawnAt[hit]=RespawnDeadline(hit);
             encounter.Remove(hit);encounterHomes.Remove(hit);encounterScales.Remove(hit);
-            StartCoroutine(DisappearDefeatedEnemy(corpse));
+            if(!HoldMakongNarrative(corpse)){if(instantClear)Destroy(corpse);else StartCoroutine(DisappearDefeatedEnemy(corpse));}
         }
         PartyActionFinished();
-        yield return new WaitForSeconds(.6f);
+        if(!instantClear)yield return new WaitForSeconds(.6f);
         if(defeated){
-            if(encounter.Count==0){DirectorCombatEnded();AwardEncounterXP();AwardCombatDrops();RestoreEncounter();battle=false;activeEnemy=-1;yield return RestoreBattleCamera();view.transform.rotation=Quaternion.Euler(0,heading*90,0);message="Victoria. Sigue explorando.";busy=false;yield break;}
+            if(encounter.Count==0){yield return FinishMakongNarrative();DirectorCombatEnded();AwardEncounterXP();AwardCombatDrops();RestoreEncounter();battle=false;activeEnemy=-1;yield return RestoreBattleCamera();view.transform.rotation=Quaternion.Euler(0,heading*90,0);message="";SystemMessages.Show(SystemMessageCode.Victory);busy=false;yield break;}
             activeEnemy=encounter[0];enemyHP=enemyLives[activeEnemy];
         }
         int selected=activeEnemy;
@@ -576,13 +592,14 @@ public partial class DungeonPrototype : MonoBehaviour
     }
     void OnGUI()
     {
+        SystemMessages.SetStatus(null);
+        SystemMessages.SuppressPanel=cityActive||mapRevealActive||(pauseOpen&&!(pausePage==2&&Time.unscaledTime<cheatMessageUntil))||IntroductionActive||worldDialogue.Active||preservationLine>=0;
         HelmetCRTLayerMask.BeginGUI();
-        if(cityActive){DrawCity();return;}
+        if(cityActive){if(cityDataOnly || !DungeonWhiteTransition.Active)DrawCity();return;}
         if(mapRevealActive){DrawMapReveal();return;}
         if(pauseOpen){DrawPause();return;}
-        if(battle && !IntroductionActive && ((combatHack!=null && combatHack.Active) || combatMenu==CombatMenu.Hacks))
+        if(battle && !worldDialogue.Active && !IntroductionActive && (combatHack!=null && combatHack.Active))
         {
-            if(combatHack==null || !combatHack.Active) DrawWristHackMenu();
             return;
         }
         float scale=Mathf.Min(Screen.width/1280f,Screen.height/720f); GUI.matrix=Matrix4x4.Scale(new Vector3(scale,scale,1));
@@ -591,10 +608,11 @@ public partial class DungeonPrototype : MonoBehaviour
         GUI.skin.box.fontSize=24; GUI.skin.label.fontSize=22; GUI.skin.button.fontSize=24;
         GUI.backgroundColor=new Color(.12f,.05f,.3f,.95f); GUI.contentColor=new Color(.65f,.85f,1);
         NeonDungeonUI.ApplyFont();
+        if(IntroductionActive){DrawIntroductionCinematic(width,height);return;}
         DrawActivePartyPanel();
         float mx=width-240;
         Rect mapRect=Layout.Resolve(Layout.map,width,0);
-        DrawLocalMinimap(mapRect);
+        if(ExplorationMinimapVisible){DrawLocalMinimap(mapRect);DrawZoneCaption(new Rect(mapRect.x,mapRect.yMax+4,mapRect.width,26),position);}
         // Reuse the existing message rectangle, colors, font and box style.
         if (IntroductionActive)
         {
@@ -608,19 +626,41 @@ public partial class DungeonPrototype : MonoBehaviour
         else if(worldDialogue.Active)DrawWorldDialogue(height);
         else if (preservationLine>=0) DrawPreservationDialogue(height);
         else if (!introductionCompleted || battle || lost || victories > 0)
-            { messageTyping.SetText(message,Time.unscaledTime);NeonDungeonUI.Message(Layout.Resolve(Layout.message,width,height),messageTyping.VisibleText(Time.unscaledTime,Layout.lettersPerSecond,true),Layout.preservePanelAspect); }
-        if(battle && (combatHack==null || !combatHack.Active))
+            { SystemMessages.SetStatus(message); }
+        if(battle && !worldDialogue.Active && (combatHack==null || !combatHack.Active))
         {
-            if(activeEnemy>=0&&activeEnemy<enemyObjects.Count&&enemyObjects[activeEnemy]!=null)
-                NeonDungeonUI.EnemyHealth(Layout.Resolve(Layout.enemyHealth,width/2,0),enemyObjects[activeEnemy].name,enemyHP,enemyObjects[activeEnemy].GetComponent<EnemyCombatStats>().maximumHP,enemyObjects[activeEnemy].GetComponent<EnemyCombatStats>().CombatLabel);
+            var battleUI=BattleUISettings.Current;
+            if(activeEnemy>=0&&activeEnemy<enemyObjects.Count&&enemyObjects[activeEnemy]!=null){
+                var stats=enemyObjects[activeEnemy].GetComponent<EnemyCombatStats>();
+                if(battleUI!=null&&battleUI.useNewArtwork){string kind=EnemyRoster.ResourceIds[EnemyRoster.KindForName(enemyObjects[activeEnemy].name)];BattleUIArt.Enemy(Layout.Resolve(battleUI.enemy,width/2,0),stats.CombatLabel,enemyHP,stats.maximumHP,Resources.Load<Texture2D>("Enemies/"+kind+"/idle_0"));}
+                else NeonDungeonUI.EnemyHealth(Layout.Resolve(Layout.enemyHealth,width/2,0),enemyObjects[activeEnemy].name,enemyHP,stats.maximumHP,stats.CombatLabel);
+            }
             DrawEnemyTargets(scale);
+            // SPEEDRUN is selected from the in-battle HACK command list.
             GUI.enabled=!IntroductionActive&&!busy&&!lost&&!selectingEnemy;
             string[] labels=CombatLabels();
+            if(battleUI!=null&&battleUI.useNewArtwork&&labels.Length>5){
+                var nav=new Rect(battleUI.commandOffset.x,height+battleUI.commandOffset.y-5*(battleUI.commandSize.y+battleUI.commandGap)-26,battleUI.commandSize.x,24);
+                if(GUI.Button(new Rect(nav.x,nav.y,nav.width/2-2,nav.height),"▲"))selectedCombatAction=(selectedCombatAction+labels.Length-1)%labels.Length;
+                if(GUI.Button(new Rect(nav.center.x+2,nav.y,nav.width/2-2,nav.height),"▼"))selectedCombatAction=(selectedCombatAction+1)%labels.Length;
+            }
             for(int i=0;i<labels.Length;i++)
             {
                 string caption=i==selectedCombatAction ? "> "+labels[i]+" <" : labels[i];
-                GUI.enabled=!IntroductionActive&&!busy&&!lost&&(!selectingEnemy||i==(pendingTargetHack!=null?1:0)) && (combatMenu!=CombatMenu.Items || i==CombatItemIndices().Count || itemCounts[CombatItemIndices()[i]]>0);
-                if(NeonDungeonUI.Action(new Rect(Layout.combatOffset.x,height+Layout.combatOffset.y-(labels.Length-i)*(Layout.combatButtonSize.y+Layout.combatButtonGap),Layout.combatButtonSize.x,Layout.combatButtonSize.y),labels[i],i==selectedCombatAction)) { selectedCombatAction=i; Action(i); }
+                GUI.enabled=!selectingSpeedrun&&!IntroductionActive&&!busy&&!lost&&(!selectingEnemy||i==(pendingTargetHack!=null?1:0)) && (combatMenu!=CombatMenu.Items || i==CombatItemIndices().Count || itemCounts[CombatItemIndices()[i]]>0);
+                if(combatMenu==CombatMenu.Hacks&&i==availableHacks.Length)GUI.enabled=GUI.enabled&&PlayerLevel>=SpeedrunUnlockLevel&&SpeedrunTargets().Count>0&&CurrentBits>=SpeedrunBitsCost;
+                bool clicked;
+                if(battleUI!=null&&battleUI.useNewArtwork){
+                    string key=combatMenu==CombatMenu.Main?(i==0?"Attack":i==1?"Hack":i==2?"Item":"Flee"):combatMenu==CombatMenu.Hacks?(i==labels.Length-1?"Flee":"Hack"):"Item";
+                    string title=labels[i],detail="";
+                    if(combatMenu==CombatMenu.Main)detail=i==0?"Ataque normal":i==1?"Elegir habilidad":i==2?"Usar objeto":"Intentar escapar";
+                    else if(combatMenu==CombatMenu.Hacks){if(i<availableHacks.Length){title=availableHackDefinitions[i].displayName;detail=availableHackDefinitions[i].bitsCost+" BITS";}else if(i==availableHacks.Length)detail=PlayerLevel<10?"Se desbloquea en NV 10":SpeedrunTargets().Count==0?"Sin objetivo válido":CurrentBits<5?"Faltan Bits":"5 BITS";else detail="Menú de combate";}
+                    int visibleRows=Mathf.Min(5,labels.Length);int first=Mathf.Clamp(selectedCombatAction-visibleRows+1,0,Mathf.Max(0,labels.Length-visibleRows));
+                    if(i<first||i>=first+visibleRows)continue;
+                    var rect=new Rect(battleUI.commandOffset.x,height+battleUI.commandOffset.y-(visibleRows-(i-first))*(battleUI.commandSize.y+battleUI.commandGap),battleUI.commandSize.x,battleUI.commandSize.y);
+                    clicked=BattleUIArt.Command(rect,title,detail,key,i==selectedCombatAction,battleUI);
+                }else clicked=NeonDungeonUI.Action(new Rect(Layout.combatOffset.x,height+Layout.combatOffset.y-(labels.Length-i)*(Layout.combatButtonSize.y+Layout.combatButtonGap),Layout.combatButtonSize.x,Layout.combatButtonSize.y),labels[i],i==selectedCombatAction);
+                if(clicked) { selectedCombatAction=i; Action(i); }
             }
             GUI.enabled=true;
         }
@@ -654,6 +694,7 @@ public partial class DungeonPrototype : MonoBehaviour
                 }
             }
         }
+        DrawCheatPulse(width,height);
         if(levelComplete) DrawCompletion(width,height);
     }
 }

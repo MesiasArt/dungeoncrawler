@@ -1,0 +1,9 @@
+elapsedSeconds=12.0035572999996
+frames=1970
+width=1920
+height=1080
+GC0=2
+GC1=2
+GC2=2
+scene=Assets/Scenes/DigitalKingdom.unity
+Editor=true

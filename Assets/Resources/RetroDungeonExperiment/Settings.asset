@@ -1,0 +1,337 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 119d6921d71139849a4af7d620369805, type: 3}
+  m_Name: Settings
+  m_EditorClassIdentifier: Assembly-CSharp::RetroDungeonSettings
+  crtProfile: {fileID: 11400000, guid: ed9880c92260fc84da30da80b9e9dc34, type: 2}
+  audioProfile: {fileID: 11400000, guid: 2116835344c355b4c85112b2f3ba93b6, type: 2}
+  frontPipe: {fileID: 2800000, guid: 7c1a7c0760ed7f849b58353312fa2e95, type: 3}
+  normalMaps:
+  - texture: {fileID: 2800000, guid: f3c4400ec2fd93843bf0c1b5b1e37c72, type: 3}
+    normal: {fileID: 2800000, guid: 9fde39aed53bf29408f9f1515919db1a, type: 3}
+  - texture: {fileID: 2800000, guid: ba590fd46b9a16b4d95f90444efe4459, type: 3}
+    normal: {fileID: 2800000, guid: f0d44cb9272acb44dabe530b87f06dd0, type: 3}
+  - texture: {fileID: 2800000, guid: 0458f858fe351ef40bca0b33d96a3082, type: 3}
+    normal: {fileID: 2800000, guid: 717b2a6dbf06b8144b6560cc91965faf, type: 3}
+  - texture: {fileID: 2800000, guid: ad7fec86277af6745a0dec220d9d68e3, type: 3}
+    normal: {fileID: 2800000, guid: dd31b8ce3b4687241b82499bb32d6b0b, type: 3}
+  - texture: {fileID: 2800000, guid: 3ef88ae6f2e72394fbb16227a59bcbc5, type: 3}
+    normal: {fileID: 2800000, guid: 79dfa467fde8b3b45aaf7979ae4aa1d7, type: 3}
+  - texture: {fileID: 2800000, guid: fa5af8e95871df44291d31fe8d77323b, type: 3}
+    normal: {fileID: 2800000, guid: 9d5604abe679af04489d83ac22895d1d, type: 3}
+  - texture: {fileID: 2800000, guid: 22268ec987a18a94b9cd75b776fcda7e, type: 3}
+    normal: {fileID: 2800000, guid: 9e006c055e2073d45883dd7b36722276, type: 3}
+  - texture: {fileID: 2800000, guid: 7c1a7c0760ed7f849b58353312fa2e95, type: 3}
+    normal: {fileID: 2800000, guid: adcc681d59fc2ab479357e85618712ad, type: 3}
+  - texture: {fileID: 2800000, guid: 587e1bf3383ed7542a51f5419b290f98, type: 3}
+    normal: {fileID: 2800000, guid: 03b76fdaa40a45e4180c88b301468d33, type: 3}
+  - texture: {fileID: 2800000, guid: a9f7488bdddf98f4881338e417f04968, type: 3}
+    normal: {fileID: 2800000, guid: c85ae986c7c55a146802a29e3930350b, type: 3}
+  - texture: {fileID: 2800000, guid: 1cad27d75af3a01489aeb88c936ba15d, type: 3}
+    normal: {fileID: 2800000, guid: 1f2568dac06c1784c86e56c1fc7fc584, type: 3}
+  frontPipes:
+  - id: retro.pipe.front.north
+    cell: {x: 5, y: 12}
+    direction: 0
+    placementIds:
+    - retro.front.north.0
+  - id: retro.pipe.front.west
+    cell: {x: 11, y: 15}
+    direction: 3
+    placementIds:
+    - retro.front.west.0
+  normalStrength: 0.28
+  textureRegions:
+  - texture: {fileID: 2800000, guid: 4861674c4bb02f04db3d30dc80fb5a29, type: 3}
+    uv: {x: 0.15555556, y: 0.46376812, z: 0.62222224, w: 0.28985506}
+  - texture: {fileID: 2800000, guid: ca9e336303885964b9895d7cc7adb6e1, type: 3}
+    uv: {x: 0.4, y: 0.5060241, z: 0.33333334, w: 0.20481928}
+  - texture: {fileID: 2800000, guid: a7a128a8ec283b54da0559c549e09b15, type: 3}
+    uv: {x: 0.041533545, y: 0.09022556, z: 0.85303515, w: 0.6315789}
+  - texture: {fileID: 2800000, guid: 6ded7a99206aa1344a0a000d27017973, type: 3}
+    uv: {x: 0.042016808, y: 0.093457945, z: 0.8697479, w: 0.74766356}
+  - texture: {fileID: 2800000, guid: 5c99109a97d17f8458d8d53363ee3ce7, type: 3}
+    uv: {x: 0.046692606, y: 0.22047244, z: 0.77431905, w: 0.6929134}
+  - texture: {fileID: 2800000, guid: e57aedb308a2e994fb4f2334bce007e8, type: 3}
+    uv: {x: 0.05586592, y: 0.3852459, z: 0.8659218, w: 0.5163934}
+  - texture: {fileID: 2800000, guid: 03cf8342971d39a4faaa94205b1b50ee, type: 3}
+    uv: {x: 0.129771, y: 0.33333334, z: 0.8396947, w: 0.48809522}
+  - texture: {fileID: 2800000, guid: 72acc97215688b94c9ccbeb9251dc650, type: 3}
+    uv: {x: 0.11792453, y: 0.26618704, z: 0.8018868, w: 0.60431653}
+  - texture: {fileID: 2800000, guid: 164f857556cc3624ab795a6ec9184419, type: 3}
+    uv: {x: 0.06542056, y: 0.2777778, z: 0.817757, w: 0.6296296}
+  - texture: {fileID: 2800000, guid: 24984f249611c594087079779a3f39c5, type: 3}
+    uv: {x: 0.048672568, y: 0.13669065, z: 0.8318584, w: 0.76978415}
+  - texture: {fileID: 2800000, guid: d359bdb082b5e7d4a8ed7cb4790742d0, type: 3}
+    uv: {x: 0.06535948, y: 0.3181818, z: 0.8496732, w: 0.55454546}
+  - texture: {fileID: 2800000, guid: 7616ab2974e00584a9516718f4dde615, type: 3}
+    uv: {x: 0.10504202, y: 0.124087594, z: 0.81512606, w: 0.74452555}
+  - texture: {fileID: 2800000, guid: 882e2c89534989f4dae4e13bf738a4e4, type: 3}
+    uv: {x: 0.017595308, y: 0.08139535, z: 0.94721407, w: 0.81395346}
+  - texture: {fileID: 2800000, guid: cb25f7fb2e071934ab5e20423bf5c349, type: 3}
+    uv: {x: 0.031168832, y: 0.07821229, z: 0.7818182, w: 0.76536316}
+  - texture: {fileID: 2800000, guid: c55d2195db2384d468bcdf32bdcb9254, type: 3}
+    uv: {x: 0.014557671, y: 0.11737089, z: 0.9708847, w: 0.82159626}
+  - texture: {fileID: 2800000, guid: 54b0aba531e64884fac41f4673582573, type: 3}
+    uv: {x: 0.008463542, y: 0.20125785, z: 0.98372394, w: 0.7484277}
+  - texture: {fileID: 2800000, guid: 9224c503e71b3514ab0f6b32bee799a7, type: 3}
+    uv: {x: 0.029411765, y: 0.078125, z: 0.8235294, w: 0.703125}
+  - texture: {fileID: 2800000, guid: ee6991574db78374c94d0f612fd9f5c2, type: 3}
+    uv: {x: 0.04178273, y: 0.06938776, z: 0.88022286, w: 0.8816326}
+  - texture: {fileID: 2800000, guid: c4736d6a51009c444b776ce05dad35a5, type: 3}
+    uv: {x: 0.057507988, y: 0.05487805, z: 0.8626198, w: 0.8414634}
+  - texture: {fileID: 2800000, guid: 497549deba6c6fd45bff53ded6516498, type: 3}
+    uv: {x: 0.0777027, y: 0.0038314175, z: 0.875, w: 0.9425287}
+  - texture: {fileID: 2800000, guid: fbe072eb904ced5468a25d2cb15e9c85, type: 3}
+    uv: {x: 0.0508982, y: 0.045045044, z: 0.93113774, w: 0.8468468}
+  - texture: {fileID: 2800000, guid: 300df0da016ffcb4ca9c0ff22a32abb5, type: 3}
+    uv: {x: 0.04918033, y: 0.069767445, z: 0.89617485, w: 0.8062016}
+  - texture: {fileID: 2800000, guid: 15c3ce231b80c644f8eb60e08e55acb0, type: 3}
+    uv: {x: 0.05076142, y: 0.0074626864, z: 0.9035533, w: 0.8880597}
+  - texture: {fileID: 2800000, guid: 5dcedad28969d3e45ae0192ec1ac88f4, type: 3}
+    uv: {x: 0.056234717, y: 0.004166667, z: 0.8704156, w: 0.95416665}
+  - texture: {fileID: 2800000, guid: 0952ef6027d277141bf2f230902b0286, type: 3}
+    uv: {x: 0.12, y: 0.092307694, z: 0.808, w: 0.63076925}
+  - texture: {fileID: 2800000, guid: a7392e3731c84a145a8cfe4baeee70b5, type: 3}
+    uv: {x: 0.009765625, y: 0.16666667, z: 0.9817708, w: 0.7692308}
+  - texture: {fileID: 2800000, guid: 75d58e7a5c8e49942811d1454c5b0291, type: 3}
+    uv: {x: 0.029411765, y: 0.078125, z: 0.8235294, w: 0.703125}
+  - texture: {fileID: 2800000, guid: f30e9ec8d33de7f45bee0f1eecba4c14, type: 3}
+    uv: {x: 0.04178273, y: 0.06938776, z: 0.88022286, w: 0.8816326}
+  - texture: {fileID: 2800000, guid: 7a8c859a9d75ec041a2d5f2fb1efc725, type: 3}
+    uv: {x: 0.057507988, y: 0.05487805, z: 0.8626198, w: 0.8414634}
+  - texture: {fileID: 2800000, guid: f505743be14edc646b20e339b9264bcd, type: 3}
+    uv: {x: 0.0777027, y: 0.0038314175, z: 0.875, w: 0.9425287}
+  - texture: {fileID: 2800000, guid: 55dc7084a989cad46b9aa1025db82a86, type: 3}
+    uv: {x: 0.0508982, y: 0.045045044, z: 0.93113774, w: 0.8468468}
+  - texture: {fileID: 2800000, guid: 8d3f67241c194c540ae379fd4ffd877a, type: 3}
+    uv: {x: 0.04918033, y: 0.069767445, z: 0.89617485, w: 0.8062016}
+  - texture: {fileID: 2800000, guid: ee3f1236e1553d341af1dcf67f77bbf5, type: 3}
+    uv: {x: 0.05076142, y: 0.0074626864, z: 0.9035533, w: 0.8880597}
+  - texture: {fileID: 2800000, guid: 445896b988c547b4990497162b7535d1, type: 3}
+    uv: {x: 0.056234717, y: 0.004166667, z: 0.8704156, w: 0.95416665}
+  - texture: {fileID: 2800000, guid: 8914f9ad2ae62cc4c86e1d67ac5ee10b, type: 3}
+    uv: {x: 0.12, y: 0.092307694, z: 0.808, w: 0.63076925}
+  - texture: {fileID: 2800000, guid: e207ff3c16da3de48a6b686bd5c7be4c, type: 3}
+    uv: {x: 0.057471264, y: 0.14074074, z: 0.87356323, w: 0.75555557}
+  - texture: {fileID: 2800000, guid: f642b4b822742214c84b2551983e135f, type: 3}
+    uv: {x: 0.037815128, y: 0.084033616, z: 0.9285714, w: 0.7815126}
+  - texture: {fileID: 2800000, guid: 6f55fb0b044735a4bb7938dd071a7d13, type: 3}
+    uv: {x: 0.01632653, y: 0.10294118, z: 0.94693875, w: 0.7647059}
+  - texture: {fileID: 2800000, guid: e125c7252c122a74a94b493e0b6a1042, type: 3}
+    uv: {x: 0, y: 0.06363636, z: 0.9946808, w: 0.8363636}
+  - texture: {fileID: 2800000, guid: 9c8016dbf2476ac469e0cf424ac82ab4, type: 3}
+    uv: {x: 0.08176101, y: 0.072072074, z: 0.8993711, w: 0.7477477}
+  - texture: {fileID: 2800000, guid: f1b5f8dd80846934c85d210d86c94862, type: 3}
+    uv: {x: 0.01764706, y: 0.067307696, z: 0.9764706, w: 0.8942308}
+  - texture: {fileID: 2800000, guid: d5574681002d05a40850382b2a10599f, type: 3}
+    uv: {x: 0.05235602, y: 0.073529415, z: 0.9424084, w: 0.8014706}
+  - texture: {fileID: 2800000, guid: fa74e7ea05d2c1d46a3afbd41ac27081, type: 3}
+    uv: {x: 0.038961038, y: 0.1015625, z: 0.95454544, w: 0.8515625}
+  - texture: {fileID: 2800000, guid: 4b2d7852cc9861747a879c07c546a359, type: 3}
+    uv: {x: 0.057647962, y: 0.16666667, z: 0.89392775, w: 0.7633333}
+  decorativeBushFrequency: 0.23
+  swayingBushFraction: 0.45
+  floorEdge: {fileID: 2800000, guid: 4b2d7852cc9861747a879c07c546a359, type: 3}
+  floorEdgeHeight: 0.48
+  layerAlphaCutoff: 0.7
+  orderedLayers:
+  - name: 02 Nubes lejanas
+    textures:
+    - {fileID: 2800000, guid: 4861674c4bb02f04db3d30dc80fb5a29, type: 3}
+    - {fileID: 2800000, guid: ca9e336303885964b9895d7cc7adb6e1, type: 3}
+    - {fileID: 2800000, guid: a7a128a8ec283b54da0559c549e09b15, type: 3}
+    - {fileID: 2800000, guid: 6ded7a99206aa1344a0a000d27017973, type: 3}
+    depth: 0
+    continuous: 0
+    density: 0.7
+    heights: {x: 0.5, y: 0.8}
+    altitude: 0.78
+    offset: 0.025
+    parallaxMultiplier: 0.2
+  - name: 03 Nubes
+    textures:
+    - {fileID: 2800000, guid: 5c99109a97d17f8458d8d53363ee3ce7, type: 3}
+    - {fileID: 2800000, guid: e57aedb308a2e994fb4f2334bce007e8, type: 3}
+    - {fileID: 2800000, guid: 03cf8342971d39a4faaa94205b1b50ee, type: 3}
+    - {fileID: 2800000, guid: 72acc97215688b94c9ccbeb9251dc650, type: 3}
+    - {fileID: 2800000, guid: 164f857556cc3624ab795a6ec9184419, type: 3}
+    - {fileID: 2800000, guid: 24984f249611c594087079779a3f39c5, type: 3}
+    - {fileID: 2800000, guid: d359bdb082b5e7d4a8ed7cb4790742d0, type: 3}
+    - {fileID: 2800000, guid: 7616ab2974e00584a9516718f4dde615, type: 3}
+    depth: 0
+    continuous: 0
+    density: 1.35
+    heights: {x: 0.7, y: 1.1}
+    altitude: 0.8
+    offset: 0.04
+    parallaxMultiplier: 0.4
+  - name: "04 Monta\xF1as lejanas"
+    textures:
+    - {fileID: 2800000, guid: 882e2c89534989f4dae4e13bf738a4e4, type: 3}
+    - {fileID: 2800000, guid: cb25f7fb2e071934ab5e20423bf5c349, type: 3}
+    - {fileID: 2800000, guid: c55d2195db2384d468bcdf32bdcb9254, type: 3}
+    depth: 1
+    continuous: 1
+    density: 1
+    heights: {x: 1.8, y: 1.8}
+    altitude: 0
+    offset: 0.06
+    parallaxMultiplier: 0.2
+  - name: "05 Monta\xF1as medias"
+    textures:
+    - {fileID: 2800000, guid: 54b0aba531e64884fac41f4673582573, type: 3}
+    depth: 1
+    continuous: 1
+    density: 1
+    heights: {x: 1.35, y: 1.35}
+    altitude: 0
+    offset: 0.08
+    parallaxMultiplier: 0.45
+  - name: 06 Hojas grandes lejanas
+    textures:
+    - {fileID: 2800000, guid: 9224c503e71b3514ab0f6b32bee799a7, type: 3}
+    - {fileID: 2800000, guid: ee6991574db78374c94d0f612fd9f5c2, type: 3}
+    - {fileID: 2800000, guid: c4736d6a51009c444b776ce05dad35a5, type: 3}
+    - {fileID: 2800000, guid: 497549deba6c6fd45bff53ded6516498, type: 3}
+    - {fileID: 2800000, guid: fbe072eb904ced5468a25d2cb15e9c85, type: 3}
+    - {fileID: 2800000, guid: 300df0da016ffcb4ca9c0ff22a32abb5, type: 3}
+    - {fileID: 2800000, guid: 15c3ce231b80c644f8eb60e08e55acb0, type: 3}
+    - {fileID: 2800000, guid: 5dcedad28969d3e45ae0192ec1ac88f4, type: 3}
+    - {fileID: 2800000, guid: 0952ef6027d277141bf2f230902b0286, type: 3}
+    depth: 2
+    continuous: 0
+    density: 1.15
+    heights: {x: 1.5, y: 2.3}
+    altitude: 0
+    offset: 0.1
+    parallaxMultiplier: 0.5
+  - name: "07 Monta\xF1as cercanas"
+    textures:
+    - {fileID: 2800000, guid: a7392e3731c84a145a8cfe4baeee70b5, type: 3}
+    depth: 1
+    continuous: 1
+    density: 1
+    heights: {x: 0.95, y: 0.95}
+    altitude: 0
+    offset: 0.12
+    parallaxMultiplier: 0.7
+  - name: 08 Hojas
+    textures:
+    - {fileID: 2800000, guid: 75d58e7a5c8e49942811d1454c5b0291, type: 3}
+    - {fileID: 2800000, guid: f30e9ec8d33de7f45bee0f1eecba4c14, type: 3}
+    - {fileID: 2800000, guid: 7a8c859a9d75ec041a2d5f2fb1efc725, type: 3}
+    - {fileID: 2800000, guid: f505743be14edc646b20e339b9264bcd, type: 3}
+    - {fileID: 2800000, guid: 55dc7084a989cad46b9aa1025db82a86, type: 3}
+    - {fileID: 2800000, guid: 8d3f67241c194c540ae379fd4ffd877a, type: 3}
+    - {fileID: 2800000, guid: ee3f1236e1553d341af1dcf67f77bbf5, type: 3}
+    - {fileID: 2800000, guid: 445896b988c547b4990497162b7535d1, type: 3}
+    - {fileID: 2800000, guid: 8914f9ad2ae62cc4c86e1d67ac5ee10b, type: 3}
+    depth: 2
+    continuous: 0
+    density: 1.7
+    heights: {x: 1.15, y: 2.15}
+    altitude: 0
+    offset: 0.14
+    parallaxMultiplier: 0.85
+  - name: 09 Arbustos
+    textures:
+    - {fileID: 2800000, guid: e207ff3c16da3de48a6b686bd5c7be4c, type: 3}
+    - {fileID: 2800000, guid: f642b4b822742214c84b2551983e135f, type: 3}
+    - {fileID: 2800000, guid: 6f55fb0b044735a4bb7938dd071a7d13, type: 3}
+    - {fileID: 2800000, guid: e125c7252c122a74a94b493e0b6a1042, type: 3}
+    - {fileID: 2800000, guid: 9c8016dbf2476ac469e0cf424ac82ab4, type: 3}
+    - {fileID: 2800000, guid: f1b5f8dd80846934c85d210d86c94862, type: 3}
+    - {fileID: 2800000, guid: d5574681002d05a40850382b2a10599f, type: 3}
+    - {fileID: 2800000, guid: fa74e7ea05d2c1d46a3afbd41ac27081, type: 3}
+    depth: 2
+    continuous: 0
+    density: 2.5
+    heights: {x: 0.75, y: 1.3}
+    altitude: 0
+    offset: 0.18
+    parallaxMultiplier: 1
+  bushEmergence: 1
+  bushTellSeconds: 0.8
+  jumpSeconds: 0.65
+  bushShake: 0.045
+  jumpHeight: 1.15
+  seed: 1985
+  sky: {fileID: 2800000, guid: 7e2283a5aa397314cb3a1705b00cfdc5, type: 3}
+  floor: {fileID: 2800000, guid: ba3274813d0999749bab5a4f909c37af, type: 3}
+  pipe: {fileID: 2800000, guid: 1cad27d75af3a01489aeb88c936ba15d, type: 3}
+  clouds:
+  - {fileID: 2800000, guid: 4861674c4bb02f04db3d30dc80fb5a29, type: 3}
+  - {fileID: 2800000, guid: ca9e336303885964b9895d7cc7adb6e1, type: 3}
+  - {fileID: 2800000, guid: a7a128a8ec283b54da0559c549e09b15, type: 3}
+  - {fileID: 2800000, guid: 6ded7a99206aa1344a0a000d27017973, type: 3}
+  - {fileID: 2800000, guid: 5c99109a97d17f8458d8d53363ee3ce7, type: 3}
+  - {fileID: 2800000, guid: e57aedb308a2e994fb4f2334bce007e8, type: 3}
+  - {fileID: 2800000, guid: 03cf8342971d39a4faaa94205b1b50ee, type: 3}
+  - {fileID: 2800000, guid: 72acc97215688b94c9ccbeb9251dc650, type: 3}
+  - {fileID: 2800000, guid: 164f857556cc3624ab795a6ec9184419, type: 3}
+  - {fileID: 2800000, guid: 24984f249611c594087079779a3f39c5, type: 3}
+  - {fileID: 2800000, guid: d359bdb082b5e7d4a8ed7cb4790742d0, type: 3}
+  - {fileID: 2800000, guid: 7616ab2974e00584a9516718f4dde615, type: 3}
+  mountains:
+  - {fileID: 2800000, guid: 882e2c89534989f4dae4e13bf738a4e4, type: 3}
+  - {fileID: 2800000, guid: cb25f7fb2e071934ab5e20423bf5c349, type: 3}
+  - {fileID: 2800000, guid: c55d2195db2384d468bcdf32bdcb9254, type: 3}
+  - {fileID: 2800000, guid: 54b0aba531e64884fac41f4673582573, type: 3}
+  - {fileID: 2800000, guid: a7392e3731c84a145a8cfe4baeee70b5, type: 3}
+  bushes:
+  - {fileID: 2800000, guid: e207ff3c16da3de48a6b686bd5c7be4c, type: 3}
+  - {fileID: 2800000, guid: f642b4b822742214c84b2551983e135f, type: 3}
+  - {fileID: 2800000, guid: 6f55fb0b044735a4bb7938dd071a7d13, type: 3}
+  - {fileID: 2800000, guid: e125c7252c122a74a94b493e0b6a1042, type: 3}
+  - {fileID: 2800000, guid: 9c8016dbf2476ac469e0cf424ac82ab4, type: 3}
+  - {fileID: 2800000, guid: f1b5f8dd80846934c85d210d86c94862, type: 3}
+  - {fileID: 2800000, guid: d5574681002d05a40850382b2a10599f, type: 3}
+  - {fileID: 2800000, guid: fa74e7ea05d2c1d46a3afbd41ac27081, type: 3}
+  cloudDensity: 0
+  mountainDensity: 1.35
+  bushDensity: 1.65
+  cloudHeight: {x: 0.5, y: 1.15}
+  mountainHeight: {x: 0.9, y: 2.15}
+  bushHeight: {x: 0.4, y: 1.1}
+  layeredDepth: 1
+  depthStrength: 0
+  mountainAtmosphere: 0.082
+  depthAtmosphere: {r: 0.48, g: 0.7, b: 1, a: 1}
+  cloudParallax: 0
+  mountainParallax: 0.086
+  bushParallax: 0.075
+  pipeFrequency: 0.407
+  pipeWidth: 0.7
+  pipeHeight: 1.7
+  atmosphereVariant: 2
+  luminousFogColor: {r: 0.8349056, g: 0.93048656, b: 1, a: 1}
+  fogStartCells: 1
+  fogEndCells: 5.22
+  fogResponse: 1.091
+  quantizedFog: 1
+  fogLevels: 8
+  bandSoftness: 0.433
+  distanceLight: {r: 1, g: 1, b: 1, a: 1}
+  fogStart: 16
+  fogEnd: 40
+  interactiveCell: {x: 17, y: 14}
+  pipeWallDirection: 1
+  placementIds:
+  - retro.pipe.enemy.0
+  - retro.pipe.enemy.1
+  - retro.pipe.enemy.2
+  spawnProbability: 1
+  activationSteps: 2
+  cooldownSeconds: 5
+  maximumSpawns: 1
+  once: 1

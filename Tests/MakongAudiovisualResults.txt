@@ -1,0 +1,24 @@
+PASS Both supplied MP3 tracks assigned
+PASS Three short digital placeholder clips available
+PASS Exploration fades progressively instead of cutting instantly
+PASS Dark ambience replaces exploration during introduction
+PASS Automatic random glitches suppressed during bound dialogue
+PASS One music source plus existing shared effects source
+PASS Observed line triggers one subtle synchronized effect
+PASS Existing CRT receives short line-triggered interference
+PASS Observed moment ducks dark music
+PASS Short interference recovers automatically
+PASS Distress metadata adds moderate corruption to designated normal-text line
+PASS Hands sequence quiets effects and music
+PASS Controlled line triggers strong audiovisual cue
+PASS Screen glitch does not move first-person camera
+PASS Rapid dialogue advancement respects cooldown
+PASS Last threat briefly silences ambience
+PASS Dramatic transition blocks input without extra movement
+PASS Boss music starts after dramatic pause and existing combat entry
+PASS Regular combat/map updates cannot reset or replace boss track
+PASS Normal CRT context restored for battle
+PASS Final dialogue fades boss music into very quiet ambience
+PASS Exploration music and CRT context restored
+PASS Missing ambient clip supports silence fallback
+PASS Audiovisual effects can be fully disabled

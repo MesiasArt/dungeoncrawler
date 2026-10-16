@@ -1,0 +1,7 @@
+6 passed / 0 failed
+PASS Title uses supplied Virtual Worlds track
+PASS Title music plays on one looping source
+PASS Continue restores kingdom snapshot through its own scene
+PASS Continue restores kingdom CRT, decoration and audio profile
+PASS Continue restores kingdom playlist override
+PASS Return to city remains available after continuing save

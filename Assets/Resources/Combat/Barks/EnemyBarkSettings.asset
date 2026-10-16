@@ -184,7 +184,7 @@ MonoBehaviour:
     - category: 5
       probability: 0.95
       phrases: {fileID: 4900000, guid: 97550226f5ca4c8449054dc36366c7a3, type: 3}
-  - enemyId: DEVOTO CORROMPIDO
+  - enemyId: Prayman corrompido
     rules:
     - category: 0
       probability: 1

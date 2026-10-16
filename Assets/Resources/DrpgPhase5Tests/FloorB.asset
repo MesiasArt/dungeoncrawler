@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8c47f6cda186644aa0efe06e0d25bf, type: 3}
+  m_Name: FloorB
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonMapSettings
+  digitalDoorsEnabled: 0
+  mapId: phase5.fixture.b
+  eventIds: []
+  legacyInteractions: []
+  rows:
+  - '#####################'
+  - '#...................#'
+  - '#...................#'
+  - '#...................#'
+  - '#.........#.........#'
+  - '#.........#.........#'
+  - '#.........#.........#'
+  - '#...................#'
+  - '#...................#'
+  - '#####################'
+  disabledLegacyObjects: []
+  legacyExitDoorCell: {x: 9, y: 7.5}
+  decorations: {fileID: 0}
+  entities: {fileID: 11400000, guid: b49d01e0cbf5a5b49bb29301871c901a, type: 2}
+  regions: {fileID: 11400000, guid: 4d73ba67d35ea3440a298710fbebb725, type: 2}
+  includeLegacyObjects: 0
+  startCell: {x: 1, y: 1}
+  startHeading: 0

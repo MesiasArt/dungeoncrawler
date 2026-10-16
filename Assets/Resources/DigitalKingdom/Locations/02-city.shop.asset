@@ -12,9 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413e4245d27b39f48b0b659bd83661e7, type: 3}
   m_Name: 02-city.shop
   m_EditorClassIdentifier: Assembly-CSharp::DigitalKingdomLocation
+  description: "Compra objetos sin gastar dinero real. Qu\xE9 concepto tan revolucionario."
+  personality: "Comerciante misterioso que intenta venderlo todo, incluso lo que
+    deber\xEDa ser gratuito."
+  welcomeGiftId: level-up-cheat
+  welcomeGiftQuantity: 1
+  welcomeGiftDialogue: "Un LEVEL UP CHEAT de muestra. S\xED, gratis. No te acostumbres:
+    hasta mi generosidad es una oferta limitada."
   id: city.shop
-  displayName: "Pay 2 Win \u2014 Item Shop"
-  npcName: SHOPKEEPER
+  displayName: Pay 2 Win
+  npcName: Buho-Nero
   background: {fileID: 0}
   npcPortrait: {fileID: 0}
   service: 1
@@ -22,30 +29,85 @@ MonoBehaviour:
   available: 1
   uniqueConversation: 1
   dialogue:
-  - speaker: SHOPKEEPER
-    text: Welcome to Pay 2 Win!
+  - presentationCue: 
+    speaker: Buho-Nero
+    text: "Buho-Nero, a tu servicio. Vendo de todo. Hasta consejos gratis... por
+      una peque\xF1a comisi\xF3n."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: SHOPKEEPER
-    text: Everything you need to become a legendary hero!
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: Buho-Nero
+    text: "\xA1Bienvenido a Pay 2 Win!"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: GAMERBOY
-    text: Isn't that cheating?
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: Buho-Nero
+    text: "\xA1Todo lo que necesitas para convertirte en un h\xE9roe legendario!"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: SHOPKEEPER
-    text: Not if you can afford it.
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "\xBFEso no es hacer trampa?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: Buho-Nero
+    text: No si puedes pagarlo.
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
   stockIds:
   - 1d84c78dcae84edf8d28847da3c5ab94
   - b19d2185c0a040a5befb4ecf6d0764dd
   - 9e16c25941b547ff87ce8a813008e635
+  stockNames:
+  - Parche de vida
+  - "Reparaci\xF3n del sistema"
+  - "Restauraci\xF3n completa"
   futureService:
     m_PersistentCalls:
       m_Calls: []

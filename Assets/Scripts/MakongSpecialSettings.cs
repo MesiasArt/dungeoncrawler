@@ -1,6 +1,12 @@
 using UnityEngine;
 [CreateAssetMenu(menuName="Virtual Dungeon/Makong — especiales")]
 public sealed class MakongSpecialSettings:ScriptableObject {
+ [Header("Encuentro en la mazmorra")]
+ public WorldDialogueLine[] encounterDialogue={new WorldDialogueLine("MAKONG","¡Hasta aquí llegaste! Nadie cruza mi territorio."),new WorldDialogueLine("GAMERBOY","Entonces tendré que abrirme paso.")};
+ [Header("Narrative presentation (no combat changes)")]
+ public CorruptedEncounterPresentationSettings presentation;
+ public bool narrativeEnabled=true;
+ public WorldDialogueLine[] defeatDialogue=new WorldDialogueLine[0],defeatEpilogue=new WorldDialogueLine[0];
  [HideInInspector] public int specialEvery=3;
  [Header("IA táctica: turnos completos de espera después de usar una habilidad")]
  [Min(0)] public int earthquakeCooldownTurns=3,swallowCooldownTurns=4,summonCooldownTurns=4;
@@ -18,6 +24,8 @@ public sealed class MakongSpecialSettings:ScriptableObject {
  [Header("Super salto")]
  [Min(.03f)] public float windupSeconds=.45f,ascentSeconds=.25f,aboveSeconds=.8f,fallSeconds=.35f,landingFrameSeconds=.2f;
  [Min(1)] public float jumpHeight=8;
+ public AudioClip landingSound;
+ [Range(0,1)]public float landingVolume=1;
  [Header("Sacudida del pisotón")]
  [Min(0)] public float landingShakeAmplitude=.38f;
  [Min(.01f)] public float landingShakeSeconds=.85f;

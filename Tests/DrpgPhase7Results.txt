@@ -1,0 +1,24 @@
+23 passed / 0 failed
+PASS GamerBoy profile has all existing references
+PASS Character/equipment asset reused
+PASS Growth and Bits settings reused
+PASS Inventory and HACK catalog reused
+PASS Incomplete profile diagnosed
+PASS Manual provider preserves source and mapId
+PASS Manual geometry unchanged
+PASS Existing region and entity definitions reused
+PASS Spawn pose unchanged
+PASS Manual snapshot IDs remain compatible
+PASS Rows exposed as copies
+PASS Origin metadata exposed as copy
+PASS Future seed/version namespaces are distinct (no generation)
+PASS Missing stable map ID rejected
+PASS Malformed manual map rejected
+PASS Invalid origin version rejected
+PASS Explicit fallback map supported
+PASS Controller consumes all profile references
+PASS Explicit controller override wins over profile default
+PASS Controller consumes manual provider contract
+PASS Provider for another floor cannot replace travel destination
+PASS No new playable character profile
+PASS No procedural or hybrid generator implemented

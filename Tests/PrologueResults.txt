@@ -1,0 +1,145 @@
+PASS New game starts fully black
+PASS Rendered CRT output is black during initial silence
+PASS Initial silence stops normal exploration music
+PASS Intro protects UI readability without changing CRT asset
+PASS Camera and grid remain fixed at wake.boot.1
+PASS Displacement rejected at wake.boot.1
+PASS Camera and grid remain fixed at wake.boot.2
+PASS Displacement rejected at wake.boot.2
+PASS Camera and grid remain fixed at wake.boot.3
+PASS Displacement rejected at wake.boot.3
+PASS Camera and grid remain fixed at wake.boot.cut
+PASS Displacement rejected at wake.boot.cut
+PASS Camera and grid remain fixed at wake.dialogue.01
+PASS Displacement rejected at wake.dialogue.01
+PASS Avatar shown only for GamerBoy at wake.dialogue.01
+PASS Exact supplied dialogue 1
+PASS Camera and grid remain fixed at wake.dialogue.02
+PASS Displacement rejected at wake.dialogue.02
+PASS Avatar shown only for GamerBoy at wake.dialogue.02
+PASS Exact supplied dialogue 2
+PASS Camera and grid remain fixed at wake.glimpse
+PASS Displacement rejected at wake.glimpse
+PASS Brief glimpse uses real camera with glitch and fading black envelope
+PASS Camera and grid remain fixed at wake.glimpse.black
+PASS Displacement rejected at wake.glimpse.black
+PASS Camera and grid remain fixed at wake.dialogue.03
+PASS Displacement rejected at wake.dialogue.03
+PASS Avatar shown only for GamerBoy at wake.dialogue.03
+PASS Exact supplied dialogue 3
+PASS Camera and grid remain fixed at wake.dialogue.04
+PASS Displacement rejected at wake.dialogue.04
+PASS Avatar shown only for GamerBoy at wake.dialogue.04
+PASS Exact supplied dialogue 4
+PASS Camera and grid remain fixed at wake.dialogue.05
+PASS Displacement rejected at wake.dialogue.05
+PASS Avatar shown only for GamerBoy at wake.dialogue.05
+PASS Exact supplied dialogue 5
+PASS Camera and grid remain fixed at wake.transmission.cut
+PASS Displacement rejected at wake.transmission.cut
+PASS Camera and grid remain fixed at wake.reveal
+PASS Displacement rejected at wake.reveal
+PASS Camera and grid remain fixed at wake.dialogue.06
+PASS Displacement rejected at wake.dialogue.06
+PASS Avatar shown only for GamerBoy at wake.dialogue.06
+PASS Exact supplied dialogue 6
+PASS Camera and grid remain fixed at wake.dialogue.07
+PASS Displacement rejected at wake.dialogue.07
+PASS Avatar shown only for GamerBoy at wake.dialogue.07
+PASS Exact supplied dialogue 7
+PASS Camera and grid remain fixed at wake.contemplate
+PASS Displacement rejected at wake.contemplate
+PASS Camera and grid remain fixed at wake.dialogue.08
+PASS Displacement rejected at wake.dialogue.08
+PASS Avatar shown only for GamerBoy at wake.dialogue.08
+PASS Exact supplied dialogue 8
+PASS Camera and grid remain fixed at wake.dialogue.09
+PASS Displacement rejected at wake.dialogue.09
+PASS Avatar shown only for GamerBoy at wake.dialogue.09
+PASS Exact supplied dialogue 9
+PASS Camera and grid remain fixed at wake.dialogue.10
+PASS Displacement rejected at wake.dialogue.10
+PASS Avatar shown only for GamerBoy at wake.dialogue.10
+PASS Exact supplied dialogue 10
+PASS Camera and grid remain fixed at wake.dialogue.11
+PASS Displacement rejected at wake.dialogue.11
+PASS Avatar shown only for GamerBoy at wake.dialogue.11
+PASS Exact supplied dialogue 11
+PASS Camera and grid remain fixed at wake.dialogue.12
+PASS Displacement rejected at wake.dialogue.12
+PASS Avatar shown only for GamerBoy at wake.dialogue.12
+PASS Exact supplied dialogue 12
+PASS Camera and grid remain fixed at wake.dialogue.13
+PASS Displacement rejected at wake.dialogue.13
+PASS Avatar shown only for GamerBoy at wake.dialogue.13
+PASS Exact supplied dialogue 13
+PASS Camera and grid remain fixed at wake.dialogue.14
+PASS Displacement rejected at wake.dialogue.14
+PASS Avatar shown only for GamerBoy at wake.dialogue.14
+PASS Exact supplied dialogue 14
+PASS Camera and grid remain fixed at wake.dialogue.15
+PASS Displacement rejected at wake.dialogue.15
+PASS Avatar shown only for GamerBoy at wake.dialogue.15
+PASS Exact supplied dialogue 15
+PASS Camera and grid remain fixed at wake.dialogue.16
+PASS Displacement rejected at wake.dialogue.16
+PASS Avatar shown only for GamerBoy at wake.dialogue.16
+PASS Exact supplied dialogue 16
+PASS Camera and grid remain fixed at wake.signal.break
+PASS Displacement rejected at wake.signal.break
+PASS Camera and grid remain fixed at wake.dialogue.17
+PASS Displacement rejected at wake.dialogue.17
+PASS Avatar shown only for GamerBoy at wake.dialogue.17
+PASS Exact supplied dialogue 17
+PASS Camera and grid remain fixed at wake.dialogue.18
+PASS Displacement rejected at wake.dialogue.18
+PASS Avatar shown only for GamerBoy at wake.dialogue.18
+PASS Exact supplied dialogue 18
+PASS Camera and grid remain fixed at wake.dialogue.19
+PASS Displacement rejected at wake.dialogue.19
+PASS Avatar shown only for GamerBoy at wake.dialogue.19
+PASS Exact supplied dialogue 19
+PASS Camera and grid remain fixed at wake.dialogue.20
+PASS Displacement rejected at wake.dialogue.20
+PASS Avatar shown only for GamerBoy at wake.dialogue.20
+PASS Exact supplied dialogue 20
+PASS Camera and grid remain fixed at wake.dialogue.21
+PASS Displacement rejected at wake.dialogue.21
+PASS Avatar shown only for GamerBoy at wake.dialogue.21
+PASS Exact supplied dialogue 21
+PASS Camera and grid remain fixed at wake.dialogue.22
+PASS Displacement rejected at wake.dialogue.22
+PASS Avatar shown only for GamerBoy at wake.dialogue.22
+PASS Exact supplied dialogue 22
+PASS Camera and grid remain fixed at wake.dialogue.23
+PASS Displacement rejected at wake.dialogue.23
+PASS Avatar shown only for GamerBoy at wake.dialogue.23
+PASS Exact supplied dialogue 23
+PASS Camera and grid remain fixed at wake.disconnected
+PASS Displacement rejected at wake.disconnected
+PASS Camera and grid remain fixed at wake.dialogue.24
+PASS Displacement rejected at wake.dialogue.24
+PASS Avatar shown only for GamerBoy at wake.dialogue.24
+PASS Exact supplied dialogue 24
+PASS Camera and grid remain fixed at wake.dialogue.25
+PASS Displacement rejected at wake.dialogue.25
+PASS Avatar shown only for GamerBoy at wake.dialogue.25
+PASS Exact supplied dialogue 25
+PASS Camera and grid remain fixed at wake.dialogue.26
+PASS Displacement rejected at wake.dialogue.26
+PASS Avatar shown only for GamerBoy at wake.dialogue.26
+PASS Exact supplied dialogue 26
+PASS Boot interruption, glimpse, smooth reveal and Spanish disconnect present
+PASS All supplied dialogue lines presented once and in order
+PASS No forbidden lore or sender identity disclosed
+PASS Final line completes intro and releases control
+PASS Original CRT composition restored after intro
+PASS Temporary input-action enable flags released
+PASS Exploration move can start after intro
+PASS Refuge NPC conversation still starts
+PASS Existing save terminal interaction available
+PASS Existing teleport interaction available
+PASS Loading old false/missing completion flag does not replay prologue
+PASS Loading keeps saved player location
+PASS Load releases cinematic black/UI override
+PASS Enter cannot skip prologue

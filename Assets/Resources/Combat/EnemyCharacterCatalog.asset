@@ -182,7 +182,7 @@ MonoBehaviour:
     specialHits: 1
     specialHitInterval: 0.2
   - id: DevotoCorrompido
-    character: DEVOTO CORROMPIDO
+    character: Prayman corrompido
     overrideGrowth: 0
     growth:
       health: 0.12
@@ -212,14 +212,14 @@ MonoBehaviour:
       luck: 0.03
     category: 2
     reservedForEvents: 1
-    health: 105
-    strength: 8
+    health: 95
+    strength: 7
     defense: 6
     luck: 5
     normalMissPercent: 8
     specialMissPercent: 15
     criticalPercent: 8
     criticalMultiplier: 1.5
-    specialDamage: 10
+    specialDamage: 9
     specialHits: 1
     specialHitInterval: 0.2

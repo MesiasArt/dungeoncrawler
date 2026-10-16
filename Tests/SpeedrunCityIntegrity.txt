@@ -1,0 +1,14 @@
+Personal file unchanged: True Codebound-save-v1.json
+Personal file unchanged: True Codebound-slot-1-v1.json
+Personal file unchanged: True Codebound-slot-1-v1.json.bak1
+Personal file unchanged: True Codebound-slot-1-v1.json.bak2
+Personal file unchanged: True Codebound-slot-1-v1.json.bak3
+Personal file unchanged: True Codebound-slot-1-v1.json.bak4
+Personal file unchanged: True Codebound-slot-1-v1.json.bak5
+Personal file unchanged: True TestResults.xml
+Protected unchanged: True Assets/Scripts/DungeonPrototype.Movement.cs
+Protected unchanged: True Assets/Scripts/CombatMath.cs
+Protected unchanged: True Assets/Scripts/DungeonSaveStore.cs
+Protected unchanged: True Assets/Resources/Combat/PlayerLevelSettings.asset
+Protected unchanged: True Assets/Resources/Combat/CombatDropSettings.asset
+Protected unchanged: True Assets/Resources/Combat/EnemyCharacterCatalog.asset

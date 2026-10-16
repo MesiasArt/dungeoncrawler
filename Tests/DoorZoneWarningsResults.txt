@@ -1,0 +1,12 @@
+9 doors have two destination warning faces
+Refugio — salida a Zona 1 : ZONA PELIGROSA / ZONA SEGURA
+Puerta Roja [0138508de80849ab9098377ef02d10c2] : ZONA PELIGROSA / ZONA PELIGROSA
+Digital Kingdom [city.entrance] : ZONA SEGURA / ZONA SEGURA
+Puerta [5c90a1a1f62640fa90e8399557659b0b] : ZONA PELIGROSA / ZONA PELIGROSA
+Level exit door : ZONA SEGURA / ZONA PELIGROSA
+Puerta [f41a0736f0e745b79714cf647d3d7ae3] : ZONA PELIGROSA / ZONA PELIGROSA
+Zona 1.5 → Zona 2 door : ZONA PELIGROSA / ZONA SEGURA
+Puerta [da875bcc4edc40ac822d64516067a58d] : ZONA PELIGROSA / ZONA PELIGROSA
+Puerta [d139e772467a46efa9523235669e7705] : ZONA PELIGROSA / ZONA PELIGROSA
+PASS Refuge outward danger / return safe
+PASS city safe destination

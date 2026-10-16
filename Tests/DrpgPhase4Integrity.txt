@@ -1,0 +1,7 @@
+Protected assets: 29 checked; 0 changed
+Personal saves: 7 checked; 0 changed
+Protected gameplay scripts: 6 checked; 0 changed
+DrpgPhase4Results.txt: 58 PASS / 0 FAIL
+DrpgPhase4Diagnostics.txt: 21 PASS / 0 FAIL
+DrpgPhase2Results.txt: 27 PASS / 0 FAIL
+DrpgPhase3Results.txt: 24 PASS / 0 FAIL

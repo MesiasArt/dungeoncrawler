@@ -25,7 +25,7 @@ Shader "VirtualDungeon/EnemySprite" {
    Varyings vert(Attributes i) { Varyings o;o.positionCS=TransformObjectToHClip(i.positionOS.xyz);o.world=TransformObjectToWorld(i.positionOS.xyz);o.uv=TRANSFORM_TEX(i.uv,_BaseMap);return o; }
    half4 frag(Varyings i):SV_Target { half4 color=SAMPLE_TEXTURE2D(_BaseMap,sampler_BaseMap,i.uv)*_BaseColor;
     Light main=GetMainLight(TransformWorldToShadowCoord(i.world));
-    half3 light=half3(.3,.28,.35)+main.color*.65*main.shadowAttenuation;
+    half3 light=half3(.5,.48,.55)+main.color*.65*main.shadowAttenuation;
     #if defined(_ADDITIONAL_LIGHTS)
     for(uint n=0;n<GetAdditionalLightsCount();n++){Light extra=GetAdditionalLight(n,i.world);light+=extra.color*extra.distanceAttenuation*.35;}
     #endif

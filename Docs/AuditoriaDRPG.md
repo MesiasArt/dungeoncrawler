@@ -1,6 +1,6 @@
 # CODEBOUND — Auditoría DRPG y plan por fases
 
-Estado: auditoría y plan entregados; Fases 1, 2 y 3 autorizadas e implementadas. Las fases 4–7 permanecen pendientes. Digital Kingdom pertenece al encargo previo, autorizado e implementado por separado.
+Estado: Fases 1–7 autorizadas e implementadas. Fases 6–7 verificadas el 16 de octubre de 2026; resultados y límites al final. Digital Kingdom pertenece al encargo previo, autorizado e implementado por separado.
 
 ## Evidencia y límites
 Se revisaron scripts, assets y herramientas de Unity. Se ejecutaron pruebas MCP de la ciudad, cambios reales de escena, guardado, Continue y controles. Las pruebas de movimiento preciso se documentan en Tests/MovementOriginalRestored.txt. Las fórmulas, JUMP, OVERCLOCK, IA y balance se inspeccionaron por código; esta auditoría no repite todas sus pruebas ni los declara nuevamente verificados.
@@ -35,7 +35,7 @@ BFS de geometría del mapa actual: 448 casillas de suelo, todas conectadas desde
 6. La base del jugador y el equipamiento siguen separados. La curación completa al subir está activada por el asset actual. No se propone modificar balance automáticamente.
 7. Una máquina de estados de exploración de enemigos no debe cambiar acciones, fórmulas o minijuegos del combate. El sistema especializado de Makong debe conservarse hasta contar con pruebas equivalentes de un adaptador.
 
-## FASE B — Plan de implementación (Fases 1, 2 y 3 autorizadas y completadas)
+## FASE B — Plan de implementación (Fases 1–7 autorizadas)
 
 ### Fase 1 — Diagnóstico consolidado y sincronización de regiones (prioridad inicial)
 - Integrar validadores actuales y BFS de solo lectura en una ventana de diagnóstico.
@@ -86,9 +86,9 @@ BFS de geometría del mapa actual: 448 casillas de suelo, todas conectadas desde
 - No escribir un generador, no crear pisos procedurales ni modificar la mazmorra manual.
 
 ## Autorización y alcance
-Las Fases 1, 2 y 3 fueron autorizadas por el usuario y completadas. Las fases 4–7 siguen pendientes de autorización.
+Las Fases 1–5 fueron autorizadas por el usuario y completadas. El 16 de octubre de 2026 el usuario autorizó completar la Fase 6 y continuar inmediatamente con la Fase 7, sin otra aprobación.
 
-El encargo establece: «Después de presentar la auditoría y el plan, espera mi autorización para comenzar». Las fases posteriores a la Fase 3 permanecen como propuesta; cada fase requiere autorización y verificación antes de la siguiente.
+El encargo establece: «Después de presentar la auditoría y el plan, espera mi autorización para comenzar». La autorización posterior explícita cubre las Fases 6 y 7 en ese orden. No se extiende a escribir un generador ni a añadir contenido a la mazmorra principal.
 
 
 ## Fase 1 — Resultado final
@@ -218,10 +218,209 @@ Capturas: `Captures/MapSymbols/Map-1280x720.png`, `Map-1920x1080.png`, `Map-1024
 **Fase 3 finalizada. Detener aquí; Fase 4 requiere autorización nueva.**
 
 
-## Checkpoint de Fase 4 — en curso
+## Fase 4 — Condiciones y eventos reutilizables: completada
 
-La implementación de condiciones AND/OR, acciones, recibos de recompensas, interruptores y estados en snapshots está guardada como trabajo en curso. Se crearon `DungeonInteractionSettings.cs`, `DungeonSwitch.cs`, `DungeonPrototype.Interactions.cs` y `DungeonInteractionValidation.cs`, con adaptadores opcionales en entidades y refugio. El respaldo previo está en `Backups/DrpgPhase4/20261013-134641`.
+La base del checkpoint anterior se terminó y verificó el 15 de octubre de 2026. El trabajo se limita a la Fase 4: no se implementó la Fase 5 ni generación procedural.
 
-La compilación fue comprobada durante el desarrollo, pero todavía faltan los fixtures y las pruebas de ejecución, guardado/carga, cambio de piso y regresión de las fases anteriores. La creación del mapa de prueba quedó pendiente al interrumpirse la sesión. **No se declara la Fase 4 completada ni validada para producción.** No se colocaron interruptores ni perfiles en la mazmorra principal. No comenzar Fase 5.
+### Sistema implementado
 
-Este checkpoint se registra a petición del usuario para hacer commit y push. Los guardados temporales de pruebas y las escenas `_Recovery` permanecen locales.
+- `DungeonInteractionSettings`: perfiles con ID estable, condición de una sola ejecución y adaptación opcional de la interacción original. Los grupos `All` (AND) y `Any` (OR) pueden combinarse entre sí sin escribir código.
+- Condiciones: cantidad de objeto/llave o posesión de equipamiento, HACK desbloqueado y funcional, interruptor activo, evento completado y enemigo/jefe derrotado. Admiten negación y referencia a otro mapa para estados locales.
+- Acciones: abrir/cerrar puertas, activar/desactivar interruptores, desbloquear puertas/atajos o nodos existentes, mensajes SYSTEM, diálogos existentes, recompensas, completar eventos y ejecutar perfiles narrativos anidados.
+- `DungeonSwitch`: componente con ID y casilla, conectado al controlador de exploración existente. Solo se activa mediante una interacción válida y cercana. El editor del plano ofrece Interruptor y muestra sus propiedades específicas.
+- Puertas, cofres, NPC, terminal y nodos heredados conservan su funcionamiento cuando no se les asigna un perfil. Los perfiles pueden reemplazarlo o continuar con él. La continuación espera a que terminen los diálogos configurados.
+- El progreso por mapa conserva interruptores, conexiones desbloqueadas, eventos terminados, cursores de ejecución, recibos de recompensa y derrotas de colocaciones con ID estable. Todo se serializa dentro de los snapshots existentes, sin otro gestor de guardado ni otros slots.
+- El registro de una derrota añade únicamente metadatos de evento a la colocación nombrada. Sus fórmulas, turno, XP, IA y respawn siguen intactos. Una condición de derrota ya registrada permanece cierta después del respawn.
+
+### Correcciones del checkpoint
+
+1. Los diálogos ya no dejan que las acciones posteriores se ejecuten antes de cerrarlos. Su callback reanuda la secuencia y los eventos anidados en el orden correcto.
+2. Cada acción avanza su cursor después de completarse. Ante inventario lleno o referencia inválida, el evento queda pendiente y puede reintentarse sin repetir las recompensas anteriores.
+3. Se impide la reentrada de un evento pendiente y se bloquean ciclos de eventos. Cargar una partida invalida callbacks del mundo anterior.
+4. Se completaron las continuaciones de adaptadores de NPC, puertas y nodos. Las puertas heredadas de salida/pasillo también admiten el adaptador opcional.
+5. Los interruptores de otros mapas consultan su snapshot; si todavía no existe un estado explícito, respetan el valor inicial configurado.
+6. El diagnóstico admite grupos malformados sin lanzar excepciones y reconoce contradicciones entre cantidades mínimas de objetos.
+
+### Editor y configuración
+
+1. Crear un asset con **Create > Virtual Dungeon > Interacción y evento**.
+2. Mantener su ID estable. Configurar `Groups`, `Join` y `Actions`. Las acciones nuevas necesitan IDs diferentes; el Inspector incluye un botón para añadirlas con ID nuevo.
+3. Asignar el perfil al campo `Interaction` del objeto en el plano. Para objetos heredados, usar `Legacy Interactions` con su ID en la configuración del mapa.
+4. `Continue Legacy` permite ejecutar después el comportamiento anterior del objeto. Desactivarlo si el perfil es dueño de toda la interacción. Una puerta con llave sigue respetando su llave; para desbloquearla mediante un mecanismo, usar la acción explícita `UnlockConnection`.
+5. Declarar eventos narrativos auxiliares en `Event Ids`. Una referencia de condición a otro piso utiliza `Source Map`; los objetivos de acciones pertenecen al mapa activo.
+6. **Editor > Diagnóstico DRPG** integra la validación de perfiles, destinos, IDs, ciclos, grupos imposibles, HACKS no funcionales y dependencia de un interruptor sobre sí mismo cuando es comprobable estáticamente.
+
+Los assets de demostración están en **Assets/Resources/DrpgPhase4Tests**: dos pisos, interruptores, puerta, atajo, nodo, cofre condicionado, NPC y secuencias narrativas. Se generan con **Editor > DRPG > Fase 4 > Preparar mapas independientes**. No se colocaron interruptores ni perfiles nuevos en el mapa principal. Los fixtures de ejecución se lanzan en Play Mode sobre SampleScene mediante `DrpgPhase4Validation.Run()`; los de diagnóstico usan `DrpgPhase4DiagnosticTests.Run()`.
+
+### Pruebas mediante Unity MCP
+
+| Evidencia | Resultado |
+|---|---|
+| `Tests/DrpgPhase4Results.txt` | **58 aprobadas, 0 fallos**: las cinco clases de condición, AND/OR y negación, interruptor real adyacente, puerta y cofre existentes, atajo/nodo, recompensas únicas, diálogos secuenciales/anidados, reentrada, reintento tras error, checkpoint al cargar, seis slots temporales, ida/vuelta entre dos mapas, compatibilidad antigua y movimiento preciso. Incluye transición real a Digital Kingdom, guardado/carga en ciudad, retorno al piso y prevención de premios duplicados. |
+| `Tests/DrpgPhase4Diagnostics.txt` | **21 aprobadas**: referencias inválidas de cada tipo, puertas/conexiones/acciones inexistentes, ciclos, OR vacío, AND contradictorio, dependencia imposible del propio interruptor, IDs duplicados, cantidades incompatibles, grupo nulo y diagnóstico principal sin incidencias. |
+| `Tests/DrpgPhase2Results.txt` | Regresión de **26 comprobaciones funcionales aprobadas**, más marcador final: snapshots, seis slots temporales, visitas, migración y puente de ciudad. |
+| `Tests/DrpgPhase3Results.txt` | Regresión de **24 comprobaciones aprobadas**: objetos descubiertos/ocultos, símbolos, aperturas reales, nodos, restauración y tamaños de casilla. |
+| `Tests/DrpgPhase4Integrity.txt` | **29 assets protegidos, siete archivos personales de guardado y seis scripts de sistemas protegidos sin cambios** frente al respaldo previo. |
+
+La primera extensión del fixture de ciudad detectó una referencia a su controlador anterior durante la descarga de escena. Se corrigió la espera del fixture para comprobar también la escena activa y se repitió la suite completa: 58/58 y consola sin errores en la ejecución final. No era un fallo del sistema de persistencia.
+
+Las pruebas escriben únicamente en rutas temporales bajo `Tests/Phase4Save.json` y `Tests/Phase2Save.json` con sus slots derivados. No sobrescriben partidas personales. La Fase 1 sigue integrada en el diagnóstico: el mapa principal y ambos fixtures válidos dan cero incidencias. No se repite la matriz completa de resoluciones de la Fase 3 porque esta fase no cambia su dibujo.
+
+### Respaldo y archivos
+
+Respaldo original del checkpoint: `Backups/DrpgPhase4/20261013-134641`. Respaldo antes de completar esta fase: **Backups/DrpgPhase4Completion/20261015-112706**, con scripts, assets, partidas personales y manifiestos SHA-256.
+
+- Base de la fase: `Assets/Scripts/DungeonInteractionSettings.cs`, `DungeonSwitch.cs`, `DungeonPrototype.Interactions.cs` y `Assets/Editor/DungeonInteractionValidation.cs`.
+- Adaptadores/esquema existentes ampliados: `DungeonEntitySettings.cs`, `DungeonMapSettings.cs`, `DungeonMapPersistence.cs`, `DungeonSaveStore.cs`, `DungeonPrototype.MapEntities.cs`, `DungeonPrototype.Refuge.cs`, `DungeonPrototype.Save.cs`, `DungeonPrototype.CityModel.cs`, `DungeonPrototype.cs`, `DungeonPrototype.Preservation.cs` y registro de derrota en `DungeonPrototype.Progression.cs`.
+- Integración del editor existente: `DungeonMapSettingsEditor.cs` y `DungeonMapDiagnostics.cs`.
+- Fixtures nuevos: `Assets/Editor/DrpgPhase4FixtureBuilder.cs`, `DrpgPhase4DiagnosticTests.cs`, `Assets/Scripts/DrpgPhase4Validation.cs` y los assets bajo `Assets/Resources/DrpgPhase4Tests`.
+- Informe y resultados citados. La geometría/distribución, los assets de estadísticas y balance, las fórmulas y los minijuegos se conservaron.
+
+### Límites documentados
+
+- No cambiar IDs ni reordenar acciones de un evento publicado que pueda tener una ejecución pendiente: el cursor conserva el índice de la siguiente acción.
+- Al cargar durante un diálogo, la interacción pendiente se reanuda al activarla otra vez y vuelve a presentar ese bloque de diálogo. No guarda la letra o página exacta; sí conserva los premios ya recibidos.
+- La validación estática detecta referencias y contradicciones locales comprobables; no demuestra la solución de cualquier puzle ni realiza una búsqueda global de todas las combinaciones de eventos.
+- Una partida antigua no permite reconstruir derrotas históricas de enemigos que ya reaparecieron antes de existir este registro. Se conserva la evidencia de derrotas presente en sus registros y se registran las futuras, sin inventar eventos pasados.
+- Los recibos de recompensa son por mapa, fuente de interacción, perfil y acción. Reutilizar un perfil en dos objetos distintos permite una recompensa por objeto; para una recompensa compartida, usar un evento anidado único o una condición de evento completado.
+
+**Fase 4 completada. Detener aquí. No comenzar la Fase 5 sin autorización.**
+
+
+## Fase 5 — Comportamientos de exploración (2026-10-15)
+
+Autorización: el usuario indicó «vamos a la fase 5». Respaldo previo: `Backups/DrpgPhase5/20261015-160412`, con scripts, assets de exploración y manifiesto SHA-256. La Fase 6 no se ha comenzado.
+
+### Resultado y configuración
+
+Se amplió `PlacedEnemyDefinition` con `exploration`, sin sustituir `EnemyTurn`, las colisiones, el BFS ni el sistema de combate. Los enemigos aleatorios y todas las colocaciones publicadas conservan Legacy. No se reasignaron perfiles ni rutas en la mazmorra principal. Makong conserva `holdPosition` y su carácter único.
+
+Para configurar: **Editor > Zonas y encuentros > Enemigos manuales / eventos > colocación > Exploration**, o seleccionar el asset de regiones en el Inspector. El drawer ahora también muestra `holdPosition` y las recompensas garantizadas que ya existían.
+
+| Perfil | Comportamiento fuera del combate |
+|---|---|
+| Legacy | Paseo aleatorio, detección y persecución anteriores, con sus valores originales. |
+| Static | Permanece inmóvil. El encuentro por proximidad sigue usando el flujo existente. |
+| Patrol | Recorre las casillas absolutas de `patrol`, mediante pasos BFS. Puede invertir la ruta al final o recorrerla en bucle. No abandona la patrulla para perseguir. |
+| Pursuit | Detecta y persigue; recuerda la última casilla vista durante unos turnos. Puede tener una ruta de reposo opcional. |
+| Guardian | Persigue dentro del radio de su casilla de origen y regresa a ella al perder la alerta. |
+| Elite | Persecución con ruta opcional y rombo magenta visible durante exploración. No cambia la categoría de XP ni sus estadísticas. |
+
+`holdPosition` prevalece sobre cualquier perfil. La detección puede exigir línea recta o seguir una ruta local de navegación; ninguna modalidad atraviesa paredes, puertas cerradas o zonas seguras. Las rutas respetan la ocupación y separación existentes. Por defecto los perfiles nuevos permanecen en su región de origen.
+
+En `EnemyEncounterSettings`, valores generales nuevos: detección 4 casillas, memoria 3 turnos y radio del guardián 6 casillas. Los campos correspondientes de cada colocación usan 0 para heredar esos valores. Estos campos no alteran `detectionSteps` ni `moveSeconds` de Legacy. El temporizador opcional de respawn por colocación usa 0 para heredar el de la zona.
+
+### Persistencia y reaparición
+
+- **Legacy:** conserva `respawn`, `unique` y la categoría originales.
+- **TimedRespawn:** usa el bucle de reaparición existente, sus límites y las restricciones del Director. Permite su propia casilla reservada; no permite aparecer junto al jugador ni atravesar restricciones. Cuando `countsTowardLimit` es falso, esa colocación explícita no cuenta para el límite de población.
+- **ResetOnReentry:** devuelve a la casilla de origen y restaura la vida al volver realmente a ese mapa, incluido el retorno desde la ciudad. Cargar una partida en el mismo mapa no lo reinicia.
+- **PermanentDefeat:** la derrota persiste al guardar, cargar y regresar al piso.
+- `unique` y Boss impiden reaparecer/reiniciarse incluso si se configura por error otra política. El diagnóstico avisa de esa contradicción.
+
+Los campos de IA se añaden a `EnemyInstanceRecord`, dentro de los snapshots por `mapId` ya existentes: origen, punto y dirección de patrulla, memoria y última posición vista. `hasExplorationState` permite reconocer guardados anteriores: reconstruye el origen de la colocación, sin inventar historial de patrulla. No hay otro almacén de guardado ni cambios en los seis slots. La historia de derrotas de la Fase 4 se conserva aunque una colocación permita reaparecer.
+
+### Pruebas y resultados
+
+| Evidencia | Resultado |
+|---|---|
+| `Tests/DrpgPhase5Results.txt` | 40 comprobaciones aprobadas en Play Mode: perfiles, turnos reales, alineación, ruta inversa/bucle, puertas, paredes, zonas seguras, ocupación, memoria, compatibilidad del paseo Legacy con la misma semilla, guardado/carga, partidas antiguas, respawn con y sin Director, marcador de élite y recorrido entre dos mapas. |
+| `Tests/DrpgPhase5Diagnostics.txt` | 15 comprobaciones aprobadas: rutas vacías, puntos sobre pared, destinos desconectados, valores inválidos, contradicciones de respawn, configuración del Inspector, fixtures y mapa principal. |
+| `Tests/DrpgPhase4Results.txt` | Regresión: 58 aprobadas, 0 fallos, incluidos eventos/recompensas únicas, seis slots temporales, mapas, guardados antiguos, símbolos y transición real a Digital Kingdom con guardado/carga y regreso. |
+| `Tests/DrpgPhase4Diagnostics.txt` | Regresión: 21 aprobadas, 0 fallos. |
+| `Tests/DrpgPhase5Integrity.txt` | Movimiento original, CombatMath, geometría, colocaciones y objetos del mapa principal coinciden con el respaldo previo. |
+
+La prueba antigua de ciudad necesitaba esperar el final de la transición blanca antes de intentar salir; se actualizó solamente esa espera del fixture y se repitió la regresión completa. La ejecución final no registra errores de consola. Se observó el aviso existente de ajuste del atlas de sombras de URP durante las pruebas; no se cambió el renderizado.
+
+Las pruebas escriben exclusivamente en `Tests/Phase5Save.json` y los slots de prueba de la Fase 4. No se sobrescribieron partidas personales. Los cambios concurrentes de conversaciones en `Refugio.asset` se conservaron y no pertenecen a esta fase.
+
+### Archivos
+
+Nuevos: `EnemyExplorationSettings.cs`, `DungeonPrototype.EnemyExploration.cs`, `EnemyExplorationMarker.cs`, `DrpgPhase5Validation.cs`, `Assets/Editor/DrpgPhase5FixtureBuilder.cs`, `DrpgPhase5DiagnosticTests.cs`, y los mapas/regiones/objetos independientes de `Assets/Resources/DrpgPhase5Tests`.
+
+Ampliados: `DungeonRegionSettings.cs`, `EnemyEncounterSettings.cs`, `EnemyLevelSettings.cs`, `DungeonPrototype.cs` (creación del estado/indicador), `DungeonPrototype.Enemies.cs`, `.Regions.cs`, `.Progression.cs`, `.Save.cs`, `DungeonMapPersistence.cs`, `DigitalKingdomTransit.cs` (política de reentrada), `Assets/Editor/DungeonRegionsEditor.cs` y la espera de ciudad de `DrpgPhase4Validation.cs`.
+
+### Límites
+
+- La validación de patrullas comprueba geometría/regiones; las puertas pueden abrirse después. No declara imposible una ruta solo porque una puerta esté cerrada inicialmente.
+- Una patrulla espera si la ocupación o el espaciado impiden su siguiente paso; no empuja enemigos ni atraviesa objetos.
+- Los perfiles se configuran para colocaciones manuales. La población aleatoria conserva Legacy; no se cambiaron pesos ni reglas de aparición.
+- No se alteraron movimiento, ataques, IA de combate, balance, HACKS ni estadísticas. La comprobación de integridad de CombatMath y movimiento complementa las pruebas de navegación; no equivale a repetir todos los minijuegos.
+
+**Fase 5 completada. Detener aquí. No comenzar la Fase 6 sin autorización.**
+
+
+## Fases 6 y 7 — Implementación y verificación (2026-10-16)
+
+Autorización explícita del usuario: «cuando termines esto haz la fase 6 y luego haz la fase 7 inmediatamente no esperes aprobacion». Se finalizó primero el bloque SPEEDRUN/LEVEL UP CHEAT/ciudad, se implementó y verificó la Fase 6, y después la Fase 7. Las frases históricas anteriores que pedían detenerse al final de la Fase 5 quedan sustituidas por esta autorización.
+
+Respaldo previo: `Backups/DrpgPhase67/20261016-070108/`. Incluye scripts, Editor, assets de combate/exploración/ciudad, mapas del Reino del Píxel y archivos personales. `Phase7Baseline` conserva además los scripts y editores con la Fase 6 ya terminada, antes de iniciar la 7.
+
+### Fase 6 — Cofres
+
+`DungeonChestRewardTable` combina contenido fijo del cofre, recompensas garantizadas y tiradas secundarias ponderadas. El contenido fijo se entrega siempre primero. Los cofres KeyItem ignoran las tiradas aleatorias; el diagnóstico exige que las llaves de las tablas sean garantizadas, en vez de depender de un peso.
+
+Se usa un generador local con hash estable de mapId/cofre/tabla y Seed Salt; no altera UnityEngine.Random ni los drops de combate. El resultado se registra una sola vez en el `DungeonEntityState` ya existente: `chestRewardsRolled`, `chestRewards`, `chestRewardCursor`. Cada entrega exitosa avanza el cursor; si falta espacio, el resto queda pendiente. Recargar o regresar al piso conserva el resultado y las entregas realizadas, sin volver a sortear ni duplicar premios.
+
+Una tabla puede referenciar las condiciones AND/OR de la Fase 4; se evalúan como requisitos, sin ejecutar sus acciones. Los cofres sin tabla y los Mimics conservan la ruta anterior. No se asignaron tablas nuevas a los cofres publicados.
+
+En el plano: seleccionar un cofre normal o de historia y asignar `Chest Rewards`. Los assets se crean con Create > Virtual Dungeon > Cofres > Tabla de recompensas. El contenido de historia sigue en Content ID/Quantity o en Guaranteed. CombatDropSettings permanece intacto.
+
+### Fase 6 — Jefes
+
+`DungeonBossProfile` contiene IDs estables, umbrales de HP, perfiles de evento al alcanzar cada fase y un perfil de victoria. Se asigna opcionalmente en `PlacedEnemyDefinition.bossProfile`. El adaptador Makong Legacy solo acepta la especie Makong y conserva su controlador especializado: no decide ni sustituye ataques.
+
+Los cambios de salud del circuito normal de daño emiten señales únicas. Las señales y los eventos pendientes se guardan dentro de `DungeonInteractionProgress`, que ya pertenece al snapshot de cada mapa. Las acciones reutilizan el ejecutor de la Fase 4 y sus recibos de recompensa. Una carga pendiente puede reanudarse sin duplicar premios.
+
+**Límite deliberado:** las acciones de fase se ejecutan cuando finaliza el combate o la huida, sin interrumpir los ataques, animaciones, minijuegos o narrativa actuales. Esta fase prepara fases/eventos configurables; no incorpora nuevos patrones de ataque ni fases mecánicas de Makong. No se asignó un perfil nuevo a Makong en el mapa publicado. Los perfiles referenciados deben seguir disponibles mediante el mapa/regiones o Resources para resolver eventos pendientes tras cargar.
+
+El diagnóstico consolidado incluye tablas inválidas, objetos desconocidos, llaves aleatorias, IDs duplicados, umbrales inválidos y especie incompatible con Makong Legacy. La validación de la Fase 4 recorre también las condiciones de cofres y los eventos de los perfiles de jefe.
+
+### Verificación de la Fase 6
+
+`Tests/DrpgPhase6Results.txt`: **29 correctas / 0 fallidas**, repetidas después de integrar la Fase 7.
+
+- Tirada estable, llave fija garantizada y ausencia de azar en cofres de historia.
+- Condición por llave; animación y apertura real; inventario lleno tras una entrega parcial.
+- Guardado/carga del resultado y cursor; liberar espacio y reintentar sin duplicar la llave.
+- Cofre abierto sin recompensas repetidas; ida A→B→A con estados intactos.
+- Señal de fase única y persistente, sin interrumpir combate; carga de evento pendiente y premio único.
+- Derrota en el circuito normal, condición de enemigo derrotado y evento de victoria sin duplicaciones.
+- Adaptador Legacy, diagnósticos negativos y estado de cofre antiguo sin campos nuevos.
+
+Fixtures independientes: `Assets/Resources/DrpgPhase6Tests/` y `DrpgPhase6Validation`. Preparación: Editor > DRPG > Fase 6 > Preparar mapas independientes. El harness inicializa expresamente la colocación de prueba al entrar desde la escena experimental; la primera pasada detectó esta dependencia y se corrigió antes de la pasada final. No se modificó la inicialización publicada de enemigos para resolver el fixture.
+
+### Fase 7 — Perfiles
+
+`PlayerProfileSettings` agrupa referencias a PlayerCharacterSettings, PlayerLevelSettings, PlayerBitsSettings, CombatInventorySettings y PlayerHackCatalog. Se creó solamente `Assets/Resources/Combat/GamerBoyProfile.asset`, enlazando exactamente los assets existentes. No contiene nuevas estadísticas, curvas ni miembros jugables.
+
+El controlador consume esos valores como predeterminados; una referencia explícita en el controlador o en el tránsito de ciudad conserva prioridad. El esquema de progreso del jugador y los seis slots no cambian. La ciudad utiliza el mismo perfil al cargar, consultar la mochila y regresar al dungeon.
+
+Edición: Codebound > Perfiles > Editar GamerBoy. El Inspector advierte referencias ausentes. El perfil configura al jugador actual; no implementa selección de personajes ni un grupo nuevo.
+
+### Fase 7 — Proveedor de mapa
+
+`IMapProvider` produce una `DungeonMapDefinition` con filas, referencia a regiones/entidades, punto de entrada, mapId y metadatos de origen. `ManualMapProvider` envuelve el asset actual. El controlador utiliza esa definición al construir el mapa y la ciudad. Las filas se entregan como copias; regiones y entidades conservan sus referencias existentes, que el proveedor no escribe.
+
+El proveedor manual mantiene exactamente el mapId y la clave de snapshot de la Fase 2. Un proveedor asignado para otro piso no sustituye el destino de una transición. El origen ofrece Provider ID, Algorithm Version y semilla opcional; el contrato permite distinguir claves de futuras instancias por semilla/versión sin generar geometría.
+
+**No existe generador procedural ni híbrido.** Tampoco se crean pisos, enemigos ni objetos nuevos en los mapas de juego. Un proveedor futuro deberá asignar una identidad estable de instancia y adaptar su registro/resolución a los snapshots; el contrato de metadatos no implementa esa carga procedural por sí solo.
+
+Edición del ejemplo manual: Codebound > Perfiles > Editar proveedor manual original. Asset `Assets/Resources/MapProviders/OriginalManual.asset`. El controlador sin proveedor explícito utiliza el mismo adaptador manual sobre su mapa activo.
+
+### Verificación de la Fase 7 e integridad
+
+`Tests/DrpgPhase7Results.txt`: **23 correctas / 0 fallidas** en el editor: referencias originales, perfil incompleto, geometría/pose/IDs, copias de filas y metadatos, separación de claves por semilla/versión, rechazo de mapas inválidos, valores predeterminados y overrides, destino de viaje respetado y ausencia de generadores/personajes nuevos.
+
+La regresión final de juego en `Tests/SpeedrunCityResults.txt` terminó con **102 correctas / 0 fallidas** después de integrar ambas fases: consumibles, desbloqueos, Bits, turnos y victoria, ciudad, regalos, mochila, guardado/carga, seis slots temporales y retorno al dungeon. La comparación por hash está en `Tests/DrpgPhase67Integrity.txt`: partidas personales, mapas/regiones/objetos, IA de exploración, ataques/controlador/visual de Makong, fórmulas, minijuegos, estadísticas y drops coinciden con el respaldo previo a estas fases. No se reejecuta aquí cada fixture histórico de Fases 1–5 ni se presenta esta revisión como una nueva prueba completa de balance.
+
+### Archivos
+
+Listado concreto en `Tests/DrpgPhase67Files.txt`, más los .meta generados y assets aislados de `Resources/DrpgPhase6Tests`.
+
+- Fase 6: nuevos DungeonChestRewardTable, DungeonPrototype.ChestRewards, DungeonBossProfile, DungeonPrototype.BossEvents, DrpgPhase6Diagnostics, builder y harness de pruebas. Extensiones de DungeonEntityState, DungeonInteractionProgress, PlacedEnemyDefinition, MapEntities, circuito de daño, Update y diagnósticos/Inspector.
+- Fase 7: nuevos PlayerProfileSettings, DungeonMapProvider/IMapProvider/DungeonMapDefinition, ManualMapProvider, DungeonPrototype.Profiles, instalador y pruebas. Integración puntual en inicio del mapa, modelo de ciudad y getters de personaje/niveles/Bits/HACKS. Dos assets de referencias, sin cambios a los assets de estadísticas existentes.
+
+Consola final sin errores; Unity fuera de Play Mode. Total de este cierre: 102 + 29 + 23 = **154 comprobaciones correctas**.
+
+**Fases 6 y 7 completadas dentro del alcance acordado. No se inicia generación procedural ni otra fase.**

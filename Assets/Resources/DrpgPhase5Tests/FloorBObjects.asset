@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fdea577286a71c4dbaf413b4b9011ab, type: 3}
+  m_Name: FloorBObjects
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonEntitySettings
+  objects:
+  - interaction: {fileID: 0}
+    switchInitiallyActive: 0
+    id: phase5.to.a
+    displayName: Piso A
+    kind: 2
+    cell: {x: 19, y: 1}
+    heading: 0
+    npcCatalog: {fileID: 0}
+    npcId: 
+    dialogue: []
+    chestKind: 0
+    contentId: 
+    quantity: 1
+    mimicPlacementId: 
+    guardPlacementId: 
+    cityEntrance: 0
+    doorAccess: 0
+    bossGate: 0
+    digitalEffects: 1
+    accessDeniedMessage: 
+    doorInitiallyOpen: 0
+    doorKind: 2
+    requiredKeyId: 
+    destinationRegionId: 
+    destinationMap: {fileID: 11400000, guid: 66000c9b520961441a427284c24d9c44, type: 2}
+    destinationCell: {x: 1, y: 1}
+    doorSettings: {fileID: 0}
+    heal: 1
+    save: 1
+    initiallyActive: 0
+    requiresActivation: 1
+    revealedRegionIds: []
+    destinations: []

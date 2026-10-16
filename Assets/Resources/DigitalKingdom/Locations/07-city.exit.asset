@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 07-city.exit
   m_EditorClassIdentifier: Assembly-CSharp::DigitalKingdomLocation
   id: city.exit
-  displayName: "Exit City \u2014 Return to Dungeon"
-  npcName: 
+  displayName: "Exit City"
+  npcName: ""
   background: {fileID: 0}
   npcPortrait: {fileID: 0}
   service: 6
@@ -29,3 +29,4 @@ MonoBehaviour:
   onLeave:
     m_PersistentCalls:
       m_Calls: []
+  description: "Regresar al dungeon."

@@ -11,6 +11,7 @@ public enum HackUnlockMode { PlayerLevel, FutureEvent }
  public bool available=true;
  public HackUnlockMode unlockMode;
  public UnityEngine.Object implementationScript;
+ public HackSystemMessageProfile systemMessages;
  [HideInInspector] public string implementationTypeName;
  public Type ImplementationType {get{if(string.IsNullOrWhiteSpace(implementationTypeName))return null;var type=typeof(CombatHack).Assembly.GetType(implementationTypeName??"");if(type==null)foreach(var assembly in AppDomain.CurrentDomain.GetAssemblies()){type=assembly.GetType(implementationTypeName??"");if(type!=null)break;}return type!=null&&!type.IsAbstract&&typeof(CombatHack).IsAssignableFrom(type)?type:null;}}
  public bool Unlocked(int level,ICollection<string> eventIds){return available&&ImplementationType!=null&&(unlockMode==HackUnlockMode.PlayerLevel?level>=Math.Max(1,minimumLevel):eventIds!=null&&eventIds.Contains(id));}

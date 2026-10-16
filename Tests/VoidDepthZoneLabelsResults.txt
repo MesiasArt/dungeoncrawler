@@ -1,0 +1,8 @@
+PASS Exterior depth walls 58 / expected 58
+PASS Deep caps 38 / voids 38
+PASS Voids remain blocked logically, decorative meshes have no colliders
+Zone zone-0 tint=RGBA(0.250, 1.000, 0.450, 1.000)
+Zone zone-1 tint=RGBA(1.000, 0.220, 0.250, 1.000)
+Zone zone-1.5 tint=RGBA(0.250, 1.000, 0.450, 1.000)
+Zone zone-2 tint=RGBA(1.000, 0.220, 0.250, 1.000)
+Zone zone-city-approach tint=RGBA(0.250, 1.000, 0.450, 1.000)

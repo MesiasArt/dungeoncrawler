@@ -1,0 +1,4 @@
+Current kingdom depth, normals, reflections and CRT; Editor Play Mode; 180 frames; 2046x1026
+Median ms: 10,37
+P95 ms: 40,97
+Editor sample only; not a standalone benchmark or a controlled FPS comparison.

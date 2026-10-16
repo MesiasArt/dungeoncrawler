@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210410c03dc843540982cde373037a8a, type: 3}
+  m_Name: BossProfile
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonBossProfile
+  id: phase6.boss.profile
+  adapter: 0
+  phases:
+  - id: half
+    maximumHealthFraction: 0.5
+    onEntered: {fileID: 11400000, guid: f2b0fe762a8baa24b891358588f36c60, type: 2}
+  onVictory: {fileID: 11400000, guid: 979b64fc615c69d43acf3051e475a338, type: 2}

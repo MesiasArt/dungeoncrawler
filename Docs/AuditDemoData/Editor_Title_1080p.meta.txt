@@ -1,0 +1,9 @@
+elapsedSeconds=12.0020629999999
+frames=2825
+width=1920
+height=1080
+GC0=1
+GC1=1
+GC2=1
+scene=Assets/Scenes/CodeboundTitle.unity
+Editor=true

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc838462967b4a4fb5040f127044a9a, type: 3}
+  m_Name: MakongPresentation
+  m_EditorClassIdentifier: Assembly-CSharp::CorruptedEncounterPresentationSettings
+  dialogueMusic: {fileID: 8300000, guid: f31a46bb5e4e999458bc3a288e4db108, type: 3}
+  battleMusic: {fileID: 8300000, guid: c5bf3def84a497142931bd54df8248aa, type: 3}
+  explorationFadeSeconds: 1.5
+  battleFadeSeconds: 0.25
+  defeatFadeSeconds: 0.8
+  restoreFadeSeconds: 0.65
+  dramaticPauseSeconds: 0.4
+  ambientGain: 0.65
+  battleGain: 1
+  defeatGain: 0.28
+  audioEffects: 1
+  screenEffects: 1
+  effectCooldown: 0.65
+  synchronizationDelay: 0.06
+  light:
+    clip: {fileID: 8300000, guid: ea9239b646e1d6141a3a0b20061e73d3, type: 3}
+    volume: 0.18
+    intensity: 0.06
+    seconds: 0.1
+  moderate:
+    clip: {fileID: 8300000, guid: a8168bfd9a7a22d45a9d3fa6dd2322fc, type: 3}
+    volume: 0.24
+    intensity: 0.14
+    seconds: 0.18
+  strong:
+    clip: {fileID: 8300000, guid: a169a584e857b6d45bcb129d8bcb4c69, type: 3}
+    volume: 0.3
+    intensity: 0.26
+    seconds: 0.26

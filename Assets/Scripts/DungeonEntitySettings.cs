@@ -9,14 +9,16 @@ public enum DungeonDoorKind { Normal, Locked, Transition }
  public string id=Guid.NewGuid().ToString("N"),displayName="Objeto";
  public DungeonEntityKind kind;public Vector2Int cell;[Range(0,3)]public int heading;
  public RefugeSettings npcCatalog;public string npcId;public WorldDialogueLine[] dialogue=new WorldDialogueLine[0];
+ public DungeonChestRewardTable chestRewards;
  public DungeonChestKind chestKind;public string contentId;[Min(1)]public int quantity=1;public string mimicPlacementId,guardPlacementId;
- public bool cityEntrance;
+ public bool cityEntrance;public bool returnToDigitalKingdom;
+ public DigitalDoorAccess doorAccess;public bool bossGate;public bool digitalEffects=true;[TextArea]public string accessDeniedMessage;
  public bool doorInitiallyOpen;public DungeonDoorKind doorKind;public string requiredKeyId,destinationRegionId;public DungeonMapSettings destinationMap;public Vector2Int destinationCell;public DungeonDoorSettings doorSettings;
  public bool heal=true,save=true,initiallyActive,requiresActivation=true;
  public List<string> revealedRegionIds=new List<string>();
  public List<string> destinations=new List<string>();
  }
-[Serializable]public class DungeonEntityState {public string id;public bool opened;}
+[Serializable]public class DungeonEntityState {public string id;public bool opened;public bool keyConsumed;public bool chestRewardsRolled;public int chestRewardCursor;public List<InventoryItemRecord> chestRewards=new List<InventoryItemRecord>();}
 [CreateAssetMenu(menuName="Virtual Dungeon/Objetos del plano")]
 public class DungeonEntitySettings:ScriptableObject {
  public List<DungeonMapEntity> objects=new List<DungeonMapEntity>();

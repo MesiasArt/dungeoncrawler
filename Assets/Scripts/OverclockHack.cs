@@ -7,8 +7,9 @@ using UnityEngine.InputSystem.Controls;
 public sealed class OverclockHack:CombatHack {
  public OverclockSettings settings;
  public UnityEvent onPulse=new UnityEvent(),onSuccess=new UnityEvent(),onFailure=new UnityEvent();
+ public override HackExecutionOutcome LastOutcome {get{return Model==null||!Model.Finished?HackExecutionOutcome.Completed:Model.Success?HackExecutionOutcome.Success:HackExecutionOutcome.Failed;}}
  public override string DisplayName {get{return "OVERCLOCK";}}
- public override bool Active {get{return Model!=null&&!Model.Finished;}}
+ public override bool Active {get{return Model!=null&&(!Model.Finished||ClockNow<resultUntil);}}
  public OverclockModel Model {get;private set;}
  public static double ClockNow {get{return System.Diagnostics.Stopwatch.GetTimestamp()/(double)System.Diagnostics.Stopwatch.Frequency;}}
  public override float AttackQuality(int performanceScore){return completedQuality;}
@@ -18,21 +19,22 @@ public sealed class OverclockHack:CombatHack {
  bool keyboardArmed,padArmed,delivered;
  double pulseAt=-100,resultUntil;
  float completedQuality,sessionSuccess,sessionFailure;
- string result;
+ string result;int resolvedDamage=-1;
+ public void ShowResolvedDamage(int damage){resolvedDamage=Mathf.Max(0,damage);}
  HackDungeonBackdrop backdrop;
  JumpParallaxBackdrop arenaBackground;
  readonly Texture2D[] playerFrames=new Texture2D[8];
- Texture2D opponentFrame;
+ Texture2D opponentFrame,opponentHurtFrame;
  int opponentKind;
  double shotStarted;
  public int VisualFrame {get{return Model!=null&&Model.Finished?8:Mathf.Clamp(1+Mathf.FloorToInt((Model!=null?Model.Charge:0)*7),1,7);}}
- public void SetOpponent(GameObject opponent){var visual=opponent!=null?opponent.GetComponent<GhostEnemyVisual>():null;opponentKind=visual!=null?visual.Kind:0;opponentFrame=Resources.Load<Texture2D>("UI/JumpEnemies/"+EnemyRoster.ResourceIds[opponentKind]+"_0")??Resources.Load<Texture2D>("Enemies/"+EnemyRoster.ResourceIds[opponentKind]+"/idle_0");}
+ public void SetOpponent(GameObject opponent){var visual=opponent!=null?opponent.GetComponent<GhostEnemyVisual>():null;opponentKind=visual!=null?visual.Kind:0;opponentHurtFrame=Resources.Load<Texture2D>("Enemies/"+EnemyRoster.ResourceIds[opponentKind]+"/hurt");opponentFrame=Resources.Load<Texture2D>("UI/JumpEnemies/"+EnemyRoster.ResourceIds[opponentKind]+"_0")??Resources.Load<Texture2D>("Enemies/"+EnemyRoster.ResourceIds[opponentKind]+"/idle_0");}
  void PrepareVisuals(){for(int i=0;i<8;i++)if(playerFrames[i]==null)playerFrames[i]=Resources.Load<Texture2D>("UI/Overclock/frame_"+(i+1));arenaBackground=GetComponent<JumpParallaxBackdrop>()??gameObject.AddComponent<JumpParallaxBackdrop>();arenaBackground.Prepare();if(opponentFrame==null)SetOpponent(null);}
 
  public void BeginSession(Action<int> callback,double now){
   if(Active||ClockNow<resultUntil)return;
   if(settings==null)settings=OverclockSettings.Current;if(settings==null)settings=ScriptableObject.CreateInstance<OverclockSettings>();
-  completed=callback;delivered=false;completedQuality=0;result=null;resultUntil=0;pulseAt=-100;
+  completed=callback;delivered=false;completedQuality=0;resolvedDamage=-1;result=null;resultUntil=0;pulseAt=-100;
   sessionSuccess=Mathf.Max(0,settings.successQuality);sessionFailure=Mathf.Max(0,settings.failureQuality);
   Model=new OverclockModel(now,settings.durationSeconds,settings.requiredPresses);
   activeKey=settings.keyboardKey==Key.None?Key.Space:settings.keyboardKey;activePad=settings.gamepadButton;
@@ -55,19 +57,18 @@ public sealed class OverclockHack:CombatHack {
   keyboardAction.Enable();padAction.Enable();
  }
  void DisableInput(){if(keyboardAction!=null){keyboardAction.Disable();keyboardAction.Dispose();keyboardAction=null;}if(padAction!=null){padAction.Disable();padAction.Dispose();padAction=null;}}
- public bool RegisterPress(double now){if(!Active)return false;bool valid=Model.Press(now);if(valid){pulseAt=ClockNow;if(settings.playSounds)DungeonAudio.Play(settings.pulseSound);onPulse.Invoke();}if(Model!=null&&Model.Finished)Finish();return valid;}
- public void TickSession(double now){if(!Active)return;Model.Tick(now);if(Model.Finished)Finish();}
- void Update(){if(!Active)return;if(KeyboardControl==null||!KeyboardControl.isPressed)keyboardArmed=true;if(PadControl==null||!PadControl.isPressed)padArmed=true;TickSession(ClockNow);}
+ public bool RegisterPress(double now){if(Model==null||Model.Finished||!Active)return false;bool valid=Model.Press(now);if(valid){pulseAt=ClockNow;if(settings.playSounds)DungeonAudio.Play(settings.pulseSound);onPulse.Invoke();}if(Model!=null&&Model.Finished)Finish();return valid;}
+ public void TickSession(double now){if(Model==null)return;if(!Model.Finished){Model.Tick(now);if(Model.Finished)Finish();}if(Model.Finished&&now>=shotStarted+Mathf.Clamp(settings.resultDisplaySeconds,.2f,2f)/2.3f)DeliverImpact();}
+ void Update(){if(Model!=null&&Model.Finished){TickSession(ClockNow);return;}if(!Active)return;if(KeyboardControl==null||!KeyboardControl.isPressed)keyboardArmed=true;if(PadControl==null||!PadControl.isPressed)padArmed=true;TickSession(ClockNow);}
  void Finish(){
   if(delivered||Model==null||!Model.Finished)return;delivered=true;bool won=Model.Success;completedQuality=won?sessionSuccess:sessionFailure;
   result=won?"MAXIMUM POWER":"OVERLOAD FAILED";shotStarted=ClockNow;resultUntil=shotStarted+Mathf.Clamp(settings.resultDisplaySeconds,.2f,2f);
   DisableInput();if(backdrop!=null)backdrop.Restore();
   if(settings.playSounds)DungeonAudio.Play(won?settings.successSound:settings.failureSound);
-  var callback=completed;completed=null;
-  // Report performance once. Only DungeonPrototype resolves damage through CombatMath.
-  if(callback!=null)callback(1);
+
   if(won)onSuccess.Invoke();else onFailure.Invoke();
  }
+ void DeliverImpact(){var callback=completed;if(callback==null)return;completed=null;callback(1);}
  void OnDisable(){DisableInput();if(backdrop!=null)backdrop.Restore();completed=null;Model=null;resultUntil=0;}
  void OnDestroy(){DisableInput();}
  void Fill(Rect r,Color c){GUI.color=c;GUI.DrawTexture(r,Texture2D.whiteTexture);GUI.color=Color.white;}
@@ -77,7 +78,9 @@ public sealed class OverclockHack:CombatHack {
   var matrix=GUI.matrix;var color=GUI.color;var content=GUI.contentColor;var background=GUI.backgroundColor;int depth=GUI.depth;bool enabled=GUI.enabled;
   GUI.depth=-25;WristHackScreen.DrawFrame();WristHackScreen.ApplyContentMatrix();GUI.enabled=true;
   float charge=Model!=null?Model.Charge:0;float pulse=Mathf.Clamp01(1-(float)(ClockNow-pulseAt)/.12f)*settings.feedbackStrength;
-  float shake=pulse*(2+charge*5);float zoom=1+pulse*.012f;
+  float impactPhase=Model!=null&&Model.Finished?(float)((ClockNow-shotStarted)/Mathf.Clamp(settings.resultDisplaySeconds,.2f,2f)):0;
+  float impact=impactPhase>=1f/2.3f?Mathf.Clamp01(1-(impactPhase-1f/2.3f)/.28f):0;
+  float shake=Mathf.Max(pulse*(2+charge*5),impact*7);float zoom=1+pulse*.012f;
   GUI.matrix=GUI.matrix*Matrix4x4.TRS(new Vector3(Mathf.Sin((float)ClockNow*127)*shake,Mathf.Cos((float)ClockNow*103)*shake,0),Quaternion.identity,new Vector3(zoom,zoom,1));
   Fill(new Rect(0,0,1000,570),new Color(.006f,.009f,.027f));
   var title=new GUIStyle(GUI.skin.label){fontSize=34,alignment=TextAnchor.MiddleLeft};title.normal.textColor=WristHackScreen.Text;
@@ -97,13 +100,13 @@ public sealed class OverclockHack:CombatHack {
   Rect enemy=new Rect(745-enemyWidth*.5f,ground-enemyHeight,enemyWidth,enemyHeight);
   float shotPhase=Model!=null&&Model.Finished?(float)((ClockNow-shotStarted)/Mathf.Clamp(settings.resultDisplaySeconds,.2f,2f)):0;
   GUI.color=Color.white;if(pose!=null)GUI.DrawTexture(player,pose,ScaleMode.StretchToFill,true);
-  if(opponentFrame!=null){GUI.color=Model!=null&&Model.Finished&&shotPhase>.43f&&shotPhase<.7f?new Color(1.6f,1.6f,1.6f):Color.white;GUI.DrawTexture(enemy,opponentFrame,ScaleMode.StretchToFill,true);GUI.color=Color.white;}
+  if(opponentFrame!=null){var hitFrame=impact>0&&opponentHurtFrame!=null?opponentHurtFrame:opponentFrame;enemy.x+=Mathf.Sin((float)ClockNow*130)*impact*5;GUI.color=impact>0&&Mathf.FloorToInt((float)ClockNow*24)%2==0?new Color(1,1,1,.35f):Color.white;GUI.DrawTexture(enemy,hitFrame,ScaleMode.StretchToFill,true);GUI.color=Color.white;}
   Vector2 hand=new Vector2(player.x+player.width*.94f,ground-playerHeight*.5f);
   if(Model!=null&&Model.Finished)OverclockEnergyVisual.Beam(hand,new Vector2(enemy.x+enemy.width*.35f,enemy.y+enemy.height*.53f),charge,shotPhase,ClockNow);
   else if(charge>0)OverclockEnergyVisual.Orb(hand,Mathf.Lerp(5,30,charge)*(1+pulse*.08f),ClockNow);
   GUI.EndGroup();
-  GUI.Label(new Rect(40,470,920,38),Active?"CARGA: ["+KeyLabel+"] / MANDO ["+PadLabel+"]":result,info);
-  var hint=new GUIStyle(info){fontSize=20};GUI.Label(new Rect(50,516,900,30),Active?"Pulsa rápido para aumentar la energía.":"DISPARO DE ENERGÍA",hint);
+  GUI.Label(new Rect(40,470,920,38),Model!=null&&!Model.Finished?"CARGA: ["+KeyLabel+"] / MANDO ["+PadLabel+"]":result+(resolvedDamage>=0?"  /  DAÑO: "+resolvedDamage:""),info);
+  var hint=new GUIStyle(info){fontSize=20};GUI.Label(new Rect(50,516,900,30),Model!=null&&!Model.Finished?"Pulsa rápido para aumentar la energía.":"DISPARO DE ENERGÍA",hint);
   if(pulse>0)Fill(new Rect(0,0,1000,570),new Color(1,.1f,.5f,pulse*.07f));
   GUI.matrix=matrix;GUI.color=color;GUI.contentColor=content;GUI.backgroundColor=background;GUI.depth=depth;GUI.enabled=enabled;
  }

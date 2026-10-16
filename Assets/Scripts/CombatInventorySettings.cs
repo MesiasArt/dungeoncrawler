@@ -3,7 +3,12 @@ using UnityEngine;
 [System.Serializable]
 public class CombatItemDefinition
 {
+    public DigitalIcon digitalIcon;
+    public bool unavailable;
     public bool keyItem;
+    public bool returnToSavePoint;
+    public bool gainOneLevel;
+    [TextArea] public string description;
     public string id;
     public string displayName;
     [Min(0)] public int healHP;

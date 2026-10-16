@@ -131,8 +131,8 @@ public class DungeonMapSettingsEditor:Editor {
   switch(kind){
    case DungeonEntityKind.Switch:return name=="switchInitiallyActive";
    case DungeonEntityKind.NPC:return name=="npcCatalog"||name=="npcId"||name=="dialogue";
-   case DungeonEntityKind.Chest:return name=="chestKind"||name=="guardPlacementId"||(chest==DungeonChestKind.Mimic?name=="mimicPlacementId":name=="contentId"||name=="quantity");
-   case DungeonEntityKind.Door:return name=="cityEntrance"||name=="doorKind"||name=="doorSettings"||name=="doorInitiallyOpen"||(door==DungeonDoorKind.Locked&&name=="requiredKeyId")||(door==DungeonDoorKind.Transition&&(name=="destinationRegionId"||name=="destinationMap"||name=="destinationCell"));
+   case DungeonEntityKind.Chest:return name=="chestKind"||name=="guardPlacementId"||(chest==DungeonChestKind.Mimic?name=="mimicPlacementId":name=="contentId"||name=="quantity"||name=="chestRewards");
+   case DungeonEntityKind.Door:return name=="doorAccess"||name=="bossGate"||name=="digitalEffects"||name=="accessDeniedMessage"||name=="cityEntrance"||name=="doorKind"||name=="doorSettings"||name=="doorInitiallyOpen"||(door==DungeonDoorKind.Locked&&name=="requiredKeyId")||(door==DungeonDoorKind.Transition&&(name=="destinationRegionId"||name=="destinationMap"||name=="destinationCell"));
    case DungeonEntityKind.Savepoint:return name=="heal"||name=="save";
    case DungeonEntityKind.Teleport:return name=="initiallyActive"||name=="requiresActivation"||name=="destinations"||name=="revealedRegionIds";
   }return false;

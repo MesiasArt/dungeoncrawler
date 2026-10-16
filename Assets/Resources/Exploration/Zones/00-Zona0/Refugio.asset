@@ -28,55 +28,67 @@ MonoBehaviour:
   devotoApproachRange: 2
   npcs:
   - id: centinela
-    displayName: CENTINELA
+    displayName: Solid Guarda
     cell: {x: 15, y: 9}
     portrait: {fileID: 0}
     visualSpeciesId: Tapaku
     conversations:
-    - "No abras esa puerta. Seguimos vivos porque nadie sabe que estamos aqu\xED
-      ."
-    - Afuera ya no distinguen entre amigos y enemigos.
-    lastWords: "La puerta... nunca se abri\xF3..."
+    - "Cierra al pasar. Mientras nadie sepa que estamos aqu\xED, podemos proteger
+      este lugar."
+    - "Si oyes golpes, av\xEDsame antes de abrir."
+    - "Si sales, f\xEDjate en lo que hay al otro lado antes de volver. No queremos
+      que algo te siga."
+    lastWords: "No entr\xF3 nadie... yo estaba vigilando."
     placeholderColor: {r: 0.25, g: 0.65, b: 0.85, a: 1}
   - id: archivista
-    displayName: ARCHIVISTA
+    displayName: Zeldoro
     cell: {x: 17, y: 7}
     portrait: {fileID: 0}
     visualSpeciesId: MakubaLanza
     conversations:
-    - Antes este lugar estaba lleno de gente. Ahora solo quedamos nosotros.
-    - A veces escucho voces de programas que ya no existen.
-    lastWords: Ahora... recuerdo su voz...
+    - "Antes \xE9ramos m\xE1s. Recuerdo las conversaciones, pero cada vez me cuesta
+      m\xE1s ponerles una cara."
+    - "Recuerdo que aqu\xED faltaba una l\xE1mpara. Es extra\xF1o lo que uno consigue
+      recordar."
+    - "A veces recuerdo una voz. Intento escribir lo que dec\xEDa antes de volver
+      a olvidarlo."
+    lastWords: Recuerdo una voz... me llamaba por mi nombre.
     placeholderColor: {r: 0.25, g: 0.65, b: 0.85, a: 1}
   - id: cobarde
-    displayName: COBARDE
+    displayName: Pacmiedo
     cell: {x: 19, y: 8}
     portrait: {fileID: 0}
     visualSpeciesId: MakubaArco
     conversations:
-    - "\xBFVas a salir? \xA1Est\xE1s loco! \xA1Esas cosas nos despedazar\xE1n!"
-    - "Yo no pienso moverme. Aqu\xED estoy bien... creo."
-    lastWords: "Ten\xEDa... tanto miedo..."
+    - "\xBFVas a salir? Espera. \xBFTienes con qu\xE9 defenderte?"
+    - "Si vas a salir, \xBFpuedes cerrar despacio? No quiero saber quien oye esa
+      puerta."
+    - "Yo me quedo aqu\xED. Desde este rinc\xF3n puedo ver la entrada."
+    lastWords: "Me qued\xE9 aqu\xED... para estar a salvo."
     placeholderColor: {r: 0.25, g: 0.65, b: 0.85, a: 1}
   - id: optimista
-    displayName: OPTIMISTA
+    displayName: "Toadav\xEDa"
     cell: {x: 15, y: 6}
     portrait: {fileID: 0}
     visualSpeciesId: Hongo
     conversations:
-    - "\xA1Alguien nuevo! Quiz\xE1s todav\xEDa haya esperanza."
-    - "Si encuentras ayuda, \xBFpodr\xEDas volver por nosotros?"
-    lastWords: "Pens\xE9... que estar\xEDamos bien..."
+    - "\xA1Alguien nuevo! Ven, cu\xE9ntanos qu\xE9 has visto. Quiz\xE1 podamos ayudarte."
+    - "Si encuentras algo \xFAtil, tr\xE1elo. Entre todos veremos qu\xE9 hacer."
+    - "Si encuentras ayuda, \xBFpodr\xEDas volver por nosotros? Yo les dir\xE9 que
+      est\xE1s busc\xE1ndola."
+    lastWords: "Volviste... sab\xEDa que no nos dejar\xEDas."
     placeholderColor: {r: 0.25, g: 0.65, b: 0.85, a: 1}
   - id: devoto
-    displayName: DEVOTO
+    displayName: Prayman
     cell: {x: 19, y: 6}
     portrait: {fileID: 0}
     visualSpeciesId: GranMakuba
     conversations:
-    - "Qu\xE9 extra\xF1o... \xFAltimamente este lugar parece m\xE1s tranquilo."
-    - "A veces sue\xF1o con una voz. Dice que todo va a estar bien."
-    - "Los dem\xE1s tienen demasiado miedo. Ojal\xE1 pudiera ayudarlos a descansar."
+    - "Puedes quedarte un rato. Aqu\xED todos necesitamos recuperar el aliento."
+    - "A veces sue\xF1o con una voz. Cuando la escucho, todo parece m\xE1s sencillo."
+    - "Si\xE9ntate un momento. No tienes que resolverlo todo ahora."
+    - "Ojal\xE1 los dem\xE1s pudieran sentirse as\xED. Se pasan el d\xEDa esperando
+      que ocurra algo malo."
     lastWords: 
     placeholderColor: {r: 0.9, g: 0.5, b: 0.2, a: 1}
   nodes:
@@ -88,7 +100,7 @@ MonoBehaviour:
     revealedRegionIds:
     - zone-0
   - id: node.zone2
-    displayName: ZONA 2
+    displayName: Entrada Zona 2
     cell: {x: 7, y: 16}
     arrivalHeading: 0
     triggersRefugeTragedy: 1
@@ -96,440 +108,1120 @@ MonoBehaviour:
     - zone-1
     - zone-1.5
   exitDialogue:
-  - speaker: CENTINELA
+  - speaker: Solid Guarda
     text: "\xA1Espera! \xBFDe verdad vas a salir?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "\xBFY quedarme aqu\xED para siempre? Paso."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: ARCHIVISTA
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - speaker: Zeldoro
     text: "Ll\xE9vate estas pociones peque\xF1as. Ten cuidado ah\xED afuera."
     giftId: 1d84c78dcae84edf8d28847da3c5ab94
     giftQuantity: 3
     textPanel: 0
-  - speaker: OPTIMISTA
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - speaker: "Toadav\xEDa"
     text: "Tambi\xE9n tengo unas pociones medianas para ti. \xDAsalas si te hieren."
     giftId: b19d2185c0a040a5befb4ecf6d0764dd
     giftQuantity: 2
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "Gracias... Intentar\xE9 volver entero."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: OPTIMISTA
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - speaker: "Toadav\xEDa"
     text: Entonces... buena suerte.
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "Toma esta poci\xF3n grande. Te har\xE1 falta si las cosas se ponen dif\xEDciles."
     giftId: 9e16c25941b547ff87ce8a813008e635
     giftQuantity: 1
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: A veces lo peligroso no parece peligroso.
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
   devotoDialogue:
-  - speaker: DEVOTO
+  - speaker: Prayman
     text: Has vuelto.
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "\xBFQu\xE9 les pas\xF3 a los dem\xE1s?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "Ten\xEDan miedo."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "Much\xEDsimo miedo."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "\xBFQu\xE9 hiciste?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "Los ayud\xE9 a descansar."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "...T\xFA los mataste."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: No lo entiendes.
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "Ahora est\xE1n en paz."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   savePointIntro:
   - speaker: GAMERBOY
     text: "\xBFUna terminal?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "A ver qu\xE9 hace..."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: SISTEMA
     text: Usuario detectado.
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: SISTEMA
     text: Restaurando integridad...
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: SISTEMA
     text: "Progreso registrado. Restauraci\xF3n completada."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "\xA1Oh! \xBFUn punto de guardado?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: Bueno, al menos este lugar tiene algo familiar.
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   sentinelTeleportDialogue:
-  - speaker: CENTINELA
+  - speaker: Solid Guarda
     text: "\xBFVes ese teletransportador?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: CENTINELA
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Solid Guarda
     text: Desactivamos los nodos para que esas cosas no pudieran seguirnos.
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: CENTINELA
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Solid Guarda
     text: "Mientras est\xE9n apagados, este lugar seguir\xE1 oculto."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "\xBFY si alguien necesita regresar?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: CENTINELA
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Solid Guarda
     text: Nadie que haya salido ha regresado.
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   refugeNodeIntro:
   - speaker: GAMERBOY
     text: "\xBFAs\xED que esto es un teletransportador?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "Parece que todav\xEDa tiene energ\xEDa..."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: SISTEMA
     text: "NODO DE TRANSFERENCIA \u2014 00"
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: SISTEMA
     text: 'Estado: DESACTIVADO.'
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: SISTEMA
     text: "Conexi\xF3n con la red: INTERRUMPIDA."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: SISTEMA
     text: "\xBFReactivar nodo local?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   refugeNodeActivate:
   - speaker: GAMERBOY
     text: Dijeron que era peligroso encenderlo...
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "Pero si encuentro otro, podr\xEDa usarlo para regresar."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: Supongo que vale la pena el riesgo.
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: SISTEMA
     text: Nodo REFUGIO activado.
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: SISTEMA
     text: Buscando destinos...
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: SISTEMA
     text: "Ning\xFAn otro nodo disponible."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "Bueno... ya tengo c\xF3mo volver."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "Ahora solo falta encontrar ad\xF3nde ir."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   refugeNodeDecline:
   - speaker: GAMERBOY
     text: "Mejor no tocar nada todav\xEDa."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   zoneTwoPlayerDialogue:
   - speaker: SISTEMA
     text: 'Nodo de transferencia registrado: ZONA 2.'
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: SISTEMA
     text: "Conexi\xF3n establecida."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: SISTEMA
     text: 'Destino disponible: REFUGIO.'
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "\xA1Perfecto! Ahora puedo regresar."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   zoneTwoDevoteeDialogue:
   - speaker: SISTEMA
     text: 'Nodo de transferencia registrado: ZONA 2.'
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: SISTEMA
     text: Buscando conexiones...
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: SISTEMA
     text: 'Destino disponible: REFUGIO.'
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "\xBFEh? \xBFEl refugio?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "Pens\xE9 que ese teletransportador estaba apagado..."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: SISTEMA
     text: 'Nodo REFUGIO: ACTIVO.'
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "\xBFAlguien lo encendi\xF3?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "Ser\xE1 mejor que vaya a echar un vistazo."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   tragedyArrivalDialogue:
   - speaker: GAMERBOY
     text: "\xBFHola...?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "\xBFD\xF3nde est\xE1n todos?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   tragedyBodyDialogue:
   - speaker: GAMERBOY
     text: No...
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "\xBFQu\xE9 pas\xF3 aqu\xED?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   devotoPlayerDialogue:
-  - speaker: DEVOTO
+  - speaker: Prayman
     text: Has vuelto.
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "\xBFQu\xE9 les pas\xF3 a los dem\xE1s?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "Ten\xEDan miedo."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "Much\xEDsimo miedo."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "\xBFQu\xE9 hiciste?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "Los ayud\xE9 a descansar."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "...T\xFA los mataste."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: No lo entiendes.
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "Ahora est\xE1n en paz."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "\xBFPor qu\xE9 hiciste esto?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "Ella me ense\xF1\xF3 que el miedo es un error."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: Y los errores deben corregirse.
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   devotoDevoteeDialogue:
-  - speaker: DEVOTO
+  - speaker: Prayman
     text: Has vuelto.
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "\xBFQu\xE9 les pas\xF3 a los dem\xE1s?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "Ten\xEDan miedo."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "Much\xEDsimo miedo."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "\xBFT\xFA encendiste el teletransportador?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "S\xED."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "Pens\xE9 que quiz\xE1s querr\xEDas volver."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "\xBFPara qu\xE9?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "Para que vieras lo tranquilos que est\xE1n ahora."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   - speaker: GAMERBOY
     text: "...T\xFA los mataste."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: No lo entiendes.
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "Ahora est\xE1n en paz."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: DEVOTO
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - speaker: Prayman
     text: "Y t\xFA tambi\xE9n puedes estarlo."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0

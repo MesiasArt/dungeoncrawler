@@ -12,6 +12,9 @@ public sealed class DungeonVisualSettings : ScriptableObject
  [Tooltip("1 = tamaño actual; 2 = cuadros del doble de tamaño; 0.5 = mitad. No cambia las casillas del mapa.")][Range(.25f,6)]public float wallGridScale=1;
  [Tooltip("1 = tamaño actual; 2 = cuadros del doble de tamaño.")][Range(.25f,6)]public float floorGridScale=1;
  [Tooltip("Escala del dibujo del techo: 1 actual, 2 doble. Conserva su UV original.")][Range(.25f,6)]public float ceilingTextureScale=1;
+ [Header("Profundidad visual de los huecos")]
+ [Min(1)] public float voidDepthInCells=3;
+ [Range(.1f,1)] public float voidFadeFraction=.8f;
  [Header("Antorchas")]
  public Color torchColor=new Color(1,.02f,.45f);
  [Min(0)] public float torchIntensity=2;

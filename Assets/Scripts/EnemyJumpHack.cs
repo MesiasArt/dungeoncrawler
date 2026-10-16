@@ -27,7 +27,8 @@ public class EnemyJumpHack : CombatHack
     Texture2D[][] walkingEnemies;
     int opponentKind;
     int attackStrength=7,targetDefense,lastPreviewDamage;
-    float completedQuality;
+    float completedQuality;HackExecutionOutcome completedOutcome;
+    public override HackExecutionOutcome LastOutcome {get{return completedOutcome;}}
     public void ConfigureAttack(int strength,int defense){attackStrength=Mathf.Max(0,strength);targetDefense=Mathf.Max(0,defense);}
     public override float AttackQuality(int performanceScore){return Model!=null?CombatMath.JumpQuality(Model.Combo,Model.PerfectCount,Model.GoodCount,sessionSettings!=null?sessionSettings.enemiesToWin:settings.enemiesToWin,CombatBalanceSettings.Current):completedQuality;}
     int PreviewDamage(int combo,int perfect,int good){int target=Mathf.Max(1,sessionSettings!=null?sessionSettings.enemiesToWin:settings.enemiesToWin);return CombatMath.Damage(attackStrength,targetDefense,CombatMath.JumpQuality(combo,perfect,good,target,CombatBalanceSettings.Current),false,1,CombatBalanceSettings.Current);}
@@ -43,13 +44,13 @@ public class EnemyJumpHack : CombatHack
     float backgroundStarted;
     int displayedCombo=-1, displayedTarget=-1;
     string comboText, damageText, resultText;
-    struct DamagePopup { public float started,height;public string caption; }
+    struct DamagePopup { public float started,height,x;public int visualId;public string caption; }
     readonly DamagePopup[] popups=new DamagePopup[8];
     int nextPopup;
     GUIStyle popupStyle;
     void AddDamagePopup(int total,int added)
     {
-        popups[nextPopup]=new DamagePopup { started=Time.unscaledTime,height=Model.Y,caption="-"+added+"\nTOTAL "+total };
+        popups[nextPopup]=new DamagePopup { started=Time.unscaledTime,height=Model.Y,x=Model.LastStompX,visualId=Model.LastStompVisualId,caption="+"+Model.Combo };
         nextPopup=(nextPopup+1)%popups.Length;
         DungeonAudio.Play(DungeonAudio.Cue.Stomp);
         DungeonAudio.Play(DungeonAudio.Cue.JumpPoint);
@@ -94,7 +95,7 @@ public class EnemyJumpHack : CombatHack
         parallax.Prepare();backgroundStarted=Time.unscaledTime;
         Array.Clear(popups,0,popups.Length);nextPopup=0;
         DungeonAudio.Play(DungeonAudio.Cue.Confirm);
-        completedQuality=0;lastPreviewDamage=0;
+        completedQuality=0;completedOutcome=HackExecutionOutcome.Completed;lastPreviewDamage=0;
         deathStarted=deathComplete=false;deathTime=0;
         if(settings==null) settings=Resources.Load<EnemyJumpSettings>("Combat/EnemyJumpSettings");
         if(settings==null) settings=ScriptableObject.CreateInstance<EnemyJumpSettings>();
@@ -152,7 +153,7 @@ public class EnemyJumpHack : CombatHack
     public void ConfirmResult()
     {
         if(!Active || !Model.Finished || (!Model.Won && !deathComplete)) return;
-        int damage=Model.Damage;completedQuality=AttackQuality(damage);Model=null;StopRhythm();
+        int damage=Model.Damage;completedOutcome=!Model.Won?HackExecutionOutcome.Failed:Model.PerfectCount>=sessionSettings.enemiesToWin?HackExecutionOutcome.Perfect:HackExecutionOutcome.Success;completedQuality=AttackQuality(damage);Model=null;StopRhythm();
         if(backdrop!=null) backdrop.Restore();
         var callback=completed; completed=null; if(callback!=null) callback(damage);
     }
@@ -168,6 +169,8 @@ public class EnemyJumpHack : CombatHack
         bool savedEnabled=GUI.enabled;
         WristHackScreen.DrawFrame();
         WristHackScreen.ApplyContentMatrix();
+        float impact=nextPopup>0||popups[0].caption!=null?Mathf.Clamp01(1-(Time.unscaledTime-popups[(nextPopup+popups.Length-1)%popups.Length].started)/.12f):0;
+        GUI.matrix=GUI.matrix*Matrix4x4.Translate(new Vector3(Mathf.Sin(Time.unscaledTime*125)*impact*3,Mathf.Cos(Time.unscaledTime*103)*impact*2,0));
         GUI.enabled=true;
         if(label==null) { label=new GUIStyle(GUI.skin.label){fontSize=24}; button=new GUIStyle(GUI.skin.button){fontSize=24}; }
         Fill(new Rect(0,0,1000,570),new Color(.008f,.004f,.025f,1));
@@ -216,14 +219,20 @@ public class EnemyJumpHack : CombatHack
             if(frame!=null) GUI.DrawTexture(new Rect(x+(Model.EnemyExtent-size)*.5f,EnemyJumpLayout.GroundY-Model.EnemyExtent,size,Model.EnemyExtent),frame,ScaleMode.StretchToFill,true);
             else Fill(new Rect(x,EnemyJumpLayout.GroundY-Model.EnemyExtent,Model.EnemyExtent,Model.EnemyExtent),new Color(1,.15f,.23f));
         }
-        if(popupStyle==null) { popupStyle=new GUIStyle(GUI.skin.label){fontSize=26,fontStyle=FontStyle.Bold,alignment=TextAnchor.MiddleCenter};popupStyle.normal.textColor=new Color(1,.3f,.65f); }
+        for(int n=0;n<popups.Length;n++){
+            var stomp=popups[n];float age=Time.unscaledTime-stomp.started;if(stomp.caption==null||age<0||age>.42f)continue;
+            var frame=walkingEnemies[opponentKind][stomp.visualId%2];if(frame==null)continue;
+            float squash=Mathf.Clamp01(age/.1f);float height=Model.EnemyExtent*Mathf.Lerp(1,.16f,squash);float width=Model.EnemyExtent*(float)frame.width/frame.height*Mathf.Lerp(1,1.35f,squash);
+            GUI.color=new Color(1,1,1,1-Mathf.Clamp01((age-.12f)/.3f));GUI.DrawTexture(new Rect(stomp.x+(Model.EnemyExtent-width)*.5f,EnemyJumpLayout.GroundY-height,width,height),frame,ScaleMode.StretchToFill,true);
+        }
+        if(popupStyle==null) { popupStyle=new GUIStyle(GUI.skin.label){fontSize=52,fontStyle=FontStyle.Bold,alignment=TextAnchor.MiddleCenter};popupStyle.normal.textColor=new Color(1,.3f,.65f); }
         for(int i=0;i<popups.Length;i++)
         {
             if(popups[i].caption==null) continue;
             float age=Time.unscaledTime-popups[i].started;
             if(age<0 || age>.85f) continue;
             GUI.color=new Color(1,1,1,1-age/.85f);
-            GUI.Label(new Rect(EnemyJumpModel.PlayerX-45,EnemyJumpLayout.GroundY-popups[i].height-105-age*65,120,65),popups[i].caption,popupStyle);
+            GUI.Label(new Rect(EnemyJumpModel.PlayerX-65,EnemyJumpLayout.GroundY-popups[i].height-105-age*65,180,80),popups[i].caption,popupStyle);
         }
         GUI.color=Color.white;
         GUI.EndGroup();

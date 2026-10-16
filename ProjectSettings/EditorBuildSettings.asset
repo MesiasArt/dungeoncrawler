@@ -6,10 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/CodeboundTitle.unity
+    guid: 3f551728dac211f47a1fe8fd85c014c9
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/DigitalKingdom.unity
     guid: 3ab7d1eaa57feb944babdbebc8428be3
+  - enabled: 1
+    path: Assets/Scenes/RetroDungeonExperiment.unity
+    guid: dd2de0f09b945044d9aef5a6dd6d50f8
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

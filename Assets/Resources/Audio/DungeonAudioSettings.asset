@@ -12,11 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b68fd4375c04d979fa8d2e1a7fd9e95, type: 3}
   m_Name: DungeonAudioSettings
   m_EditorClassIdentifier: 
+  dialogueVolume: 0.22
+  dialogueAdvanceVolume: 0.35
   dungeonMusic: {fileID: 8300000, guid: 5a9c5b42455d07041ac763c4217e1f54, type: 3}
   combatMusic: {fileID: 8300000, guid: 15fdb680e5d21c94f98de0676f4f9318, type: 3}
+  explorationPlaylist:
+  - {fileID: 8300000, guid: 5a9c5b42455d07041ac763c4217e1f54, type: 3}
+  - {fileID: 8300000, guid: 14ed5b0b75493a543ada67b52e41ce9d, type: 3}
+  normalCombatPlaylist:
+  - {fileID: 8300000, guid: 15fdb680e5d21c94f98de0676f4f9318, type: 3}
+  shufflePlaylist: 1
+  cityMusic: {fileID: 8300000, guid: 44d99c696fd63844c8db09b0bac31ca5, type: 3}
+  cityMusicFadeSeconds: 1
   musicVolume: 0.28
+  menuMusicMultiplier: 0.7
   effectsVolume: 0.45
-
-  dialogueVolume: 0.22
-
-  dialogueAdvanceVolume: 0.35

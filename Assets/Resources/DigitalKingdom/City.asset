@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DigitalKingdomSettings
   scenePath: Assets/Scenes/DigitalKingdom.unity
   fallbackDungeonScene: Assets/Scenes/SampleScene.unity
-  panorama: {fileID: 2800000, guid: ad0796142a335134fb6d5cc44387a877, type: 3}
+  crtSettings: {fileID: 11400000, guid: 5dbf91b823bf0f844b0d55cf94a70db2, type: 2}
+  story: {fileID: 11400000, guid: 2a6b41a4949706f4e89dc56af1fe89c5, type: 2}
+  panorama: {fileID: 2800000, guid: 625bdc19c808db14a9dfac46d6357c62, type: 3}
   locations:
   - {fileID: 11400000, guid: e9a7f3c541541fb4c8e62aef10f5f112, type: 2}
   - {fileID: 11400000, guid: 516c8f680a181c04ca17a62f33344ab3, type: 2}
@@ -27,19 +29,68 @@ MonoBehaviour:
   fallbackReturnCell: {x: 11, y: 65}
   fallbackReturnHeading: 2
   transitionSeconds: 0.25
+  whiteOutSeconds: 1
+  whiteInSeconds: 0.8
+  teleportSound: {fileID: 0}
+  texts:
+    back: Volver a la ciudad
+    next: SIGUIENTE
+    save: Guardar partida
+    restore: Curar y registrar retorno
+    viewItems: Ver objetos
+    hackUpgrades: Mejoras de HACKS - En desarrollo
+    specialAttacks: Ataques especiales - En desarrollo
+    minigameUpgrades: Mejoras de minijuegos - En desarrollo
+    anomalies: "Anomal\xEDas digitales - En desarrollo"
+    service: Servicio - En desarrollo
+    restored: Integridad restaurada. Punto de retorno registrado.
+    respawn: "El sistema te recuerda. Contin\xFAa."
+    unavailable: "Este servicio est\xE1 en desarrollo."
+    emptyStock: Estamos preparando las existencias.
+    stock: "{0} - En tu inventario: {1}. Las compras est\xE1n en desarrollo."
+    controls: 'Flechas / Cruceta: elegir
+
+      Enter / A: aceptar - Esc / B: volver'
   firstVisit:
-  - speaker: SYSTEM
-    text: Digital Kingdom discovered.
+  - presentationCue: 
+    speaker: SISTEMA
+    text: Digital Kingdom descubierto.
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: GAMERBOY
-    text: Wait... there's an entire city in here?
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "Espera... \xBFhay toda una ciudad aqu\xED?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: GAMERBOY
-    text: Okay. This game is way bigger than I thought.
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "Vale. Este juego es mucho m\xE1s grande de lo que pensaba."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0

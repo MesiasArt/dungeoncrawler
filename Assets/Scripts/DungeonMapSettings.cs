@@ -1,6 +1,7 @@
 using UnityEngine;
 [CreateAssetMenu(menuName="Virtual Dungeon/Plano del dungeon")]
 public class DungeonMapSettings:ScriptableObject {
+ [Tooltip("Presentación digital de puertas; no cambia sus reglas de acceso.")] public bool digitalDoorsEnabled;
  [Tooltip("ID persistente del mapa. No cambiar después de publicar partidas.")] public string mapId;
  public string[] eventIds=new string[0];
  public DungeonLegacyInteractionBinding[] legacyInteractions=new DungeonLegacyInteractionBinding[0];

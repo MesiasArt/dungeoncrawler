@@ -17,7 +17,7 @@ public partial class DungeonPrototype {
   CompleteTerminalSave(true);
  }
  void CompleteTerminalSave(bool showConfirmation){
-  hp=MaximumHP;RestoreBits();TryGrantRefugeReward();refuge.narrativeVersion=1;
+  RememberSavePoint("refuge.save");hp=MaximumHP;RestoreBits();TryGrantRefugeReward();refuge.narrativeVersion=1;
   if(showConfirmation)worldDialogue.Begin(new[]{new WorldDialogueLine("SISTEMA","Integridad restaurada. Elige un slot para guardar.")},()=>OpenSaveSlots(false));
   else OpenSaveSlots(false);
  }
@@ -45,7 +45,7 @@ public partial class DungeonPrototype {
  }
  void OpenTransferChoices(string origin,bool showEmpty=true){
   if(TryRevealNodeMap(origin,()=>OpenTransferChoices(origin,showEmpty)))return;
-  transferChoices.Clear();foreach(var target in refugeSettings.nodes)if(target.id!=origin&&refuge.unlockedNodes.Contains(target.id))transferChoices.Add(target);
+  transferChoices=AvailableTransferNodes(origin);
   transferSelection=0;transferMenu=transferChoices.Count>0;
   if(!transferMenu&&showEmpty)worldDialogue.Begin(new[]{new WorldDialogueLine("SISTEMA","Ningún otro nodo disponible.")});
  }

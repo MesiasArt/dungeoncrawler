@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413e4245d27b39f48b0b659bd83661e7, type: 3}
   m_Name: 01-city.inn
   m_EditorClassIdentifier: Assembly-CSharp::DigitalKingdomLocation
+  description: "Una posada para h\xE9roes que necesitan descansar. Incluso despu\xE9s
+    de perder todas sus vidas."
+  personality: "Amable, fuerte y protectora. Recibe a aventureros agotados y resuelve
+    problemas a pu\xF1etazos cuando es necesario."
+  welcomeGiftId: level-up-cheat
+  welcomeGiftQuantity: 1
+  welcomeGiftDialogue: "Toma este LEVEL UP CHEAT de bienvenida. Te sube un nivel
+    al instante. Y recuerda: aqu\xED siempre tendr\xE1s un lugar donde descansar."
   id: city.inn
-  displayName: "The Last Life \u2014 Inn"
-  npcName: INNKEEPER
+  displayName: The Last Life
+  npcName: "Tifan\xEDa"
   background: {fileID: 0}
   npcPortrait: {fileID: 0}
   service: 0
@@ -22,37 +30,107 @@ MonoBehaviour:
   available: 1
   uniqueConversation: 1
   dialogue:
-  - speaker: INNKEEPER
-    text: Welcome to The Last Life!
+  - presentationCue: 
+    speaker: "Tifan\xEDa"
+    text: "Soy Tifan\xEDa. Aqu\xED puedes descansar. Y si alguien te causa problemas,
+      me avisas: mis pu\xF1os tambi\xE9n ofrecen servicio de atenci\xF3n al cliente."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: INNKEEPER
-    text: Heroes, villains, and background characters. Everyone needs a break.
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: "Tifan\xEDa"
+    text: "\xA1Bienvenido a The Last Life!"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: GAMERBOY
-    text: Do you have a room?
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: "Tifan\xEDa"
+    text: "H\xE9roes, villanos y personajes de fondo. Todos necesitan un descanso."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: INNKEEPER
-    text: Of course! Just don't ask about the previous guests.
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "\xBFTambi\xE9n los que no saben qu\xE9 est\xE1n haciendo?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: GAMERBOY
-    text: ...What happened to them?
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: "Tifan\xEDa"
+    text: "Esos suelen necesitarlo m\xE1s."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: INNKEEPER
-    text: Game over.
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "Entonces llegu\xE9 al lugar correcto."
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: "Tifan\xEDa"
+    text: "T\xF3mate tu tiempo. Aqu\xED no hace falta tener una respuesta preparada."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
   stockIds: []
+  stockNames: []
   futureService:
     m_PersistentCalls:
       m_Calls: []

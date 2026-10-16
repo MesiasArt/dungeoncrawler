@@ -1,0 +1,273 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c91f871bdac8a948b644ca26d984492, type: 3}
+  m_Name: Story
+  m_EditorClassIdentifier: Assembly-CSharp::DigitalKingdomStorySettings
+  badge: NEW
+  guideQuestion: Preguntar por los dungeons
+  travelPrefix: 'Viajar a '
+  notices:
+  - id: city.rumor.pixel.v1
+    locationId: city.inn
+    requireAllLocationsVisited: 1
+    requiredFlags: []
+    blockedFlags: []
+    requiredVisits: []
+    grantFlags:
+    - pixel.rumor.heard
+    dialogue:
+    - presentationCue: 
+      speaker: "Tifan\xEDa"
+      text: "Antes de que te vayas... Escuch\xE9 a alguien en el bar hablar de problemas
+        en el Reino del P\xEDxel."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: GAMERBOY
+      text: "\xBFQu\xE9 clase de problemas?"
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: "Tifan\xEDa"
+      text: "Dec\xEDa que las tuber\xEDas est\xE1n soltando criaturas y que algunos
+        caminos ya no son seguros."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: GAMERBOY
+      text: Por fin un lugar donde empezar a buscar respuestas.
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: "Tifan\xEDa"
+      text: "Habla con el gu\xEDa de Fast Travel Station. \xC9l conoce el camino."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+  - id: city.guide.pixel.v1
+    locationId: city.travel
+    requireAllLocationsVisited: 0
+    requiredFlags:
+    - pixel.rumor.heard
+    blockedFlags: []
+    requiredVisits: []
+    grantFlags:
+    - pixel.route.unlocked
+    dialogue:
+    - presentationCue: 
+      speaker: "Capit\xE1n Turbo"
+      text: Veo que ya tienes algo en mente.
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: GAMERBOY
+      text: "Me hablaron de problemas en el Reino del P\xEDxel. Quiero ir all\xED."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: "Capit\xE1n Turbo"
+      text: "Conozco la ruta. No te f\xEDes de las tuber\xEDas: algunas tienen visitas."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: GAMERBOY
+      text: "Claro. Hasta las tuber\xEDas tienen m\xE1s vida social que yo."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: "Capit\xE1n Turbo"
+      text: "Cuando est\xE9s listo, elige el reino en Fast Travel Station. Podr\xE1s
+        regresar a Digital Kingdom desde el men\xFA de pausa."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+  destinations:
+  - id: dungeon.original
+    displayName: Dungeon original
+    scenePath: Assets/Scenes/SampleScene.unity
+    requiredFlag: 
+    map: {fileID: 11400000, guid: a33c857e04a2fa84bb1fd3d7bdb503d8, type: 2}
+    allowEntryWithoutNode: 0
+    includeLegacyNodes: 1
+    entryNodeName: Entrada
+    entryDialogue: []
+  - id: kingdom.pixel
+    displayName: "Reino del P\xEDxel"
+    scenePath: Assets/Scenes/RetroDungeonExperiment.unity
+    requiredFlag: pixel.route.unlocked
+    map: {fileID: 11400000, guid: 20464ec03e3feb24999781a5571a5587, type: 2}
+    allowEntryWithoutNode: 1
+    includeLegacyNodes: 0
+    entryNodeName: Entrada del reino
+    entryDialogue:
+    - presentationCue: 
+      speaker: "Capit\xE1n Turbo"
+      text: "Este dungeon todav\xEDa est\xE1 en desarrollo. Por ahora no encontrar\xE1s
+        objetivos ni recompensas nuevas, pero puedes explorar y hacerte una idea
+        de c\xF3mo ser\xE1 el Reino del P\xEDxel."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+    - presentationCue: 
+      speaker: "Capit\xE1n Turbo"
+      text: "Cuando quieras regresar a Digital Kingdom, cruza la luz blanca que queda
+        detr\xE1s de ti."
+      giftId: 
+      giftQuantity: 0
+      textPanel: 0
+      audiovisualCue: 0
+      corruption: 0
+      writingSpeed: 0
+      pauseBefore: 0
+      recoverySeconds: 0
+      characterChance: -1
+      flickerStrength: -1
+      interruptAfterCharacters: 0
+  noDestinationDialogue:
+  - presentationCue: 
+    speaker: "Capit\xE1n Turbo"
+    text: "\xBFYa sabes a d\xF3nde quieres ir?"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "Todav\xEDa no. Sigo buscando una pista."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: "Capit\xE1n Turbo"
+    text: "Pregunta por la ciudad. Yo estar\xE9 aqu\xED cuando tengas un destino."
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0

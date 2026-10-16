@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413e4245d27b39f48b0b659bd83661e7, type: 3}
   m_Name: 04-city.lab
   m_EditorClassIdentifier: Assembly-CSharp::DigitalKingdomLocation
+  description: "Investigaci\xF3n de errores y anomal\xEDas digitales."
+  personality: "Cient\xEDfico brillante, egoc\xE9ntrico y poco confiable. Los bugs
+    son oportunidades cient\xEDficas."
+  welcomeGiftId: 
+  welcomeGiftQuantity: 1
+  welcomeGiftDialogue: 
   id: city.lab
-  displayName: "Bug Lab \u2014 Research Center"
-  npcName: SCIENTIST
+  displayName: Bug Lab
+  npcName: Dr. Billy Byte
   background: {fileID: 0}
   npcPortrait: {fileID: 0}
   service: 3
@@ -22,27 +28,79 @@ MonoBehaviour:
   available: 1
   uniqueConversation: 1
   dialogue:
-  - speaker: SCIENTIST
-    text: Welcome to Bug Lab!
+  - presentationCue: 
+    speaker: Dr. Billy Byte
+    text: "Dr. Billy Byte. El genio que necesitas y que este reino todav\xEDa no
+      sabe apreciar. \xBFUn bug? \xA1Una oportunidad cient\xEDfica!"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: SCIENTIST
-    text: We don't fix bugs here.
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: -1
+    flickerStrength: -1
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: Dr. Billy Byte
+    text: "\xA1Bienvenido a Bug Lab!"
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: GAMERBOY
-    text: Then what do you do?
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: Dr. Billy Byte
+    text: "Aqu\xED no corregimos errores."
     giftId: 
     giftQuantity: 0
     textPanel: 0
-  - speaker: SCIENTIST
-    text: We make them useful!
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: GAMERBOY
+    text: "\xBFEntonces qu\xE9 hacen?"
     giftId: 
     giftQuantity: 0
     textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
+  - presentationCue: 
+    speaker: Dr. Billy Byte
+    text: "\xA1Los hacemos \xFAtiles!"
+    giftId: 
+    giftQuantity: 0
+    textPanel: 0
+    audiovisualCue: 0
+    corruption: 0
+    writingSpeed: 0
+    pauseBefore: 0
+    recoverySeconds: 0
+    characterChance: 0
+    flickerStrength: 0
+    interruptAfterCharacters: 0
   stockIds: []
+  stockNames: []
   futureService:
     m_PersistentCalls:
       m_Calls: []

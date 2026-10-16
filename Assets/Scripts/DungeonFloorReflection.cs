@@ -37,6 +37,14 @@ public class DungeonFloorReflection : MonoBehaviour
         floor.SetFloat("_PlanarStrength", height == 0 ? .23f : .16f);
     }
 
+    // Rebind an alternate surface without adding a second reflection camera.
+    public void SetSurfaceMaterial(Material material)
+    {
+        if(floor==material)return;
+        floor=material;captured=false;
+        if(floor!=null&&reflection!=null)floor.SetTexture("_PlanarReflection",reflection);
+    }
+
     void LateUpdate()
     {
         if (!Application.isPlaying || source == null || mirror == null || floor == null || reflection == null || !source.enabled) return;

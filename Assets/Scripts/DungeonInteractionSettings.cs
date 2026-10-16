@@ -12,6 +12,8 @@ public enum DungeonEventActionKind { OpenDoor,CloseDoor,SetSwitch,UnlockConnecti
 [Serializable] public sealed class DungeonSwitchState {public string id;public bool active;}
 [Serializable] public sealed class DungeonEventExecution {public string id;public int nextAction;public bool completed;}
 [Serializable] public sealed class DungeonInteractionProgress {
+ public List<DungeonBossEventRecord> pendingBossEvents=new List<DungeonBossEventRecord>();
+ public List<string> defeatedEnemyIds=new List<string>();
  public List<DungeonSwitchState> switches=new List<DungeonSwitchState>();public List<string> completedEvents=new List<string>(),unlockedConnections=new List<string>(),rewardReceipts=new List<string>();public List<DungeonEventExecution> executions=new List<DungeonEventExecution>();
 }
 [CreateAssetMenu(menuName="Virtual Dungeon/Interacción y evento")]

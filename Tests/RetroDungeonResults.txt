@@ -1,0 +1,28 @@
+PASS Experiment has independent map ID and asset
+PASS Experiment excluded from release build
+PASS Save tests isolated from personal six slots
+PASS All test sections connected by BFS
+PASS First room has clear 7x7 floor
+PASS Pipe room has clear 7x7 floor
+PASS Original grid and camera scale reused
+PASS Varied layer compositions and physical pipes generated
+PASS Same seed reproduces exact composition
+PASS No decorative regeneration per frame
+PASS Decorative layers and pipes have no blocking colliders
+PASS Original digital ceiling material retained
+PASS Distance fades into white light
+PASS Existing CRT renderer and HUD retained
+PASS Original controller advances exactly one grid cell
+PASS Original turn remains exactly 90 degrees
+PASS Consecutive reverse turn remains aligned
+PASS Section door blocks closed passage
+PASS Section door opens normally without decorative obstruction
+PASS GPU world output changes with per-layer parallax: 10629 pixels
+PASS No ambient enemies added before pipe activation
+PASS Pipe animates and spawns existing Hongo via normal factory
+PASS Pipe activation uses existing persistent event state
+PASS Once-only pipe cannot duplicate enemy
+PASS Save/load restores pipe enemy without duplication
+PASS Pipe enemy initiates normal proximity encounter
+PASS Combat uses one existing enemy and normal encounter flow
+PASS Zero probability consumes one activation without spawning

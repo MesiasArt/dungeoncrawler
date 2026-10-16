@@ -1,0 +1,12 @@
+NPC centinela = Solid Guarda
+NPC archivista = Zeldoro
+NPC cobarde = Pacmiedo
+NPC optimista = Toadavía
+NPC devoto = Prayman
+PASS All warnings mounted on sliding door panels
+PASS warning follows open/close
+PASS warning destinations
+PASS new and legacy combat name resolve same sprite
+
+PASS NPC X17/Y34 starts four-line safety dialogue with current name
+PASS dialogue completes normally

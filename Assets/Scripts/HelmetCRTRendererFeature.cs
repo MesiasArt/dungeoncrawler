@@ -14,7 +14,7 @@ public class HelmetCRTRendererFeature:CRTPostprocess.NTSCFeature {
   chromaModFrequencyScale=1;chromaPhaseShiftScale=1;blurWidth=CRTPostprocess.NTSCPass.BlurWidth.Narrow;
   curvature=s.curvature;cornerMask=s.cornerMask;cornerRadius=8;
   scanlineStrength=s.scanlines;beamSpread=.2f;beamStrength=1;overscanScale=1;
-  UnityEngine.Shader.SetGlobalVector("_CodeboundCRTControl",new UnityEngine.Vector4(1,s.curvatureAmount,s.brightness,0));
+  UnityEngine.Shader.SetGlobalVector("_CodeboundCRTControl",new UnityEngine.Vector4(1,s.curvatureAmount,controller.WorldBrightness,0));
   base.AddRenderPasses(renderer,ref data);
  }
 }

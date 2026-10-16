@@ -1,0 +1,5 @@
+PASS Biblia V1.0 and historical sources unchanged
+PASS existing dialogue text unchanged: Assets/Resources/Exploration/Zones/00-Zona0/Refugio.asset
+PASS persistent IDs unchanged: Assets/Resources/Exploration/Zones/00-Zona0/Refugio.asset
+PASS existing dialogue text unchanged: Assets/Resources/Exploration/Zones/PlanoDungeon-Objetos.asset
+PASS persistent IDs unchanged: Assets/Resources/Exploration/Zones/PlanoDungeon-Objetos.asset

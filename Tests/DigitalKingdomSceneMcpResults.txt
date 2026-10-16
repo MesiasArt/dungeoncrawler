@@ -1,9 +1,16 @@
 PASS Gate blocks access before Makong
+PASS White cover remains opaque during scene activation
+PASS City input blocked during transition and restored afterwards
+PASS Town music replaces dungeon on the single music source
+PASS One music source and existing effects source only
+PASS All seven names preserved with Spanish descriptions and NPC dialogue
+PASS GamerBoy arrival dialogue in Spanish
 PASS City Single scene replaces the dungeon scene
 PASS Dungeon actors and geometry unloaded
 PASS No minigames built in city
 PASS World controller dormant in city
 PASS City UI sound is not paused
+PASS City uses its own profile through existing CRT renderer
 PASS First visit and real return point recorded
 PASS Keyboard selects next option
 PASS Gamepad selects next option
@@ -19,6 +26,7 @@ PASS Temple heals and registers Continue
 PASS Save restores directly within city scene
 PASS Only discovered travel destinations listed
 PASS Locked node rejected
+PASS Dungeon music restored after returning
 PASS Exit City restores exact dungeon entrance
 PASS Return preserves enemies, map and object states
 PASS Return preserves level XP and inventory currency

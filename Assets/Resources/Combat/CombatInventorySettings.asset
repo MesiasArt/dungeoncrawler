@@ -14,33 +14,114 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CombatInventorySettings
   maximumHP: 30
   items:
-  - keyItem: 0
+  - digitalIcon: 8
+    unavailable: 0
+    keyItem: 0
+    returnToSavePoint: 0
+    gainOneLevel: 0
+    description: 
     id: 1d84c78dcae84edf8d28847da3c5ab94
-    displayName: "Poci\xF3n peque\xF1a"
+    displayName: HP PATCH
     healHP: 25
     startingQuantity: 3
-  - keyItem: 0
+  - digitalIcon: 9
+    unavailable: 0
+    keyItem: 0
+    returnToSavePoint: 0
+    gainOneLevel: 0
+    description: 
     id: b19d2185c0a040a5befb4ecf6d0764dd
-    displayName: "Poci\xF3n mediana"
+    displayName: SYSTEM REPAIR
     healHP: 50
     startingQuantity: 2
-  - keyItem: 0
+  - digitalIcon: 10
+    unavailable: 0
+    keyItem: 0
+    returnToSavePoint: 0
+    gainOneLevel: 0
+    description: 
     id: 9e16c25941b547ff87ce8a813008e635
-    displayName: "Poci\xF3n grande"
+    displayName: FULL RESTORE
     healHP: 100
     startingQuantity: 1
-  - keyItem: 1
+  - digitalIcon: 1
+    unavailable: 0
+    keyItem: 1
+    returnToSavePoint: 0
+    gainOneLevel: 0
+    description: 
     id: key.red
-    displayName: Llave Roja
+    displayName: RED ACCESS TOKEN
     healHP: 0
     startingQuantity: 0
-  - keyItem: 1
+  - digitalIcon: 2
+    unavailable: 0
+    keyItem: 1
+    returnToSavePoint: 0
+    gainOneLevel: 0
+    description: 
     id: key.green
-    displayName: Llave Verde
+    displayName: GREEN ACCESS TOKEN
     healHP: 0
     startingQuantity: 0
-  - keyItem: 1
+  - digitalIcon: 5
+    unavailable: 0
+    keyItem: 1
+    returnToSavePoint: 0
+    gainOneLevel: 0
+    description: 
     id: key.master
-    displayName: Llave Maestra
+    displayName: ROOT KEY
+    healHP: 0
+    startingQuantity: 0
+  - digitalIcon: 17
+    unavailable: 0
+    keyItem: 0
+    returnToSavePoint: 1
+    gainOneLevel: 0
+    description: 
+    id: item.fast-backward
+    displayName: Fast Backward
+    healHP: 0
+    startingQuantity: 0
+  - digitalIcon: 11
+    unavailable: 1
+    keyItem: 0
+    returnToSavePoint: 0
+    gainOneLevel: 0
+    description: 
+    id: future.antivirus
+    displayName: ANTIVIRUS
+    healHP: 0
+    startingQuantity: 0
+  - digitalIcon: 12
+    unavailable: 1
+    keyItem: 0
+    returnToSavePoint: 0
+    gainOneLevel: 0
+    description: 
+    id: future.reboot
+    displayName: REBOOT
+    healHP: 0
+    startingQuantity: 0
+  - digitalIcon: 13
+    unavailable: 1
+    keyItem: 0
+    returnToSavePoint: 0
+    gainOneLevel: 0
+    description: 
+    id: future.emergency-backup
+    displayName: EMERGENCY BACKUP
+    healHP: 0
+    startingQuantity: 0
+  - digitalIcon: 18
+    unavailable: 0
+    keyItem: 0
+    returnToSavePoint: 0
+    gainOneLevel: 1
+    description: "Un c\xF3digo de trucos prohibido que altera los par\xE1metros del
+      jugador. Sube un nivel al instante."
+    id: level-up-cheat
+    displayName: LEVEL UP CHEAT
     healHP: 0
     startingQuantity: 0

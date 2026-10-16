@@ -7,7 +7,7 @@ public partial class DungeonPrototype {
  DungeonMovementSettings Movement {get{return movementSettings!=null?movementSettings:DungeonMovementSettings.Current;}}
  bool ExperimentalMovement {get{return Movement!=null&&Movement.experimental;}}
  void ClearMovementInput(){pendingMovement=0;nextHeldMovement=Time.unscaledTime;}
- bool MovementInterfaceBlocked(){return cityActive||battle||lost||levelComplete||IntroductionActive||pauseOpen||worldDialogue.Active||transferMenu||nodeDecision||mapRevealActive||saveSlotsOpen||startMenuOpen;}
+ bool MovementInterfaceBlocked(){return DungeonWhiteTransition.Active||makongMusicTransition||cityActive||battle||lost||levelComplete||IntroductionActive||pauseOpen||worldDialogue.Active||transferMenu||nodeDecision||mapRevealActive||saveSlotsOpen||startMenuOpen;}
  #if UNITY_EDITOR
  public System.Func<bool,int> navigationTestInput;
 #endif

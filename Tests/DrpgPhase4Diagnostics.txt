@@ -1,0 +1,21 @@
+PASS Valid fixture accepted
+PASS Missing door detected
+PASS Missing connection detected
+PASS Missing switch action detected
+PASS Invalid reward detected
+PASS Undeclared narrative target detected
+PASS Missing event implementation detected
+PASS Event cycle detected statically
+PASS Impossible empty OR detected
+PASS Invalid condition reference: Item
+PASS Invalid condition reference: SwitchActive
+PASS Invalid condition reference: EnemyDefeated
+PASS Invalid condition reference: EventCompleted
+PASS Invalid condition reference: HackUnlocked
+PASS Contradictory AND detected
+PASS Unreachable self-dependent switch detected
+PASS Duplicate action IDs detected
+PASS Duplicate profile IDs detected
+PASS Impossible item quantity thresholds detected
+PASS Malformed group reports diagnostic instead of throwing
+PASS Phase 1 main map diagnostics unchanged

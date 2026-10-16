@@ -10,13 +10,14 @@ public partial class DungeonPrototype {
  bool EnemyMayEnter(Vector2Int cell){if(RefugeNpcBlocks(cell))return false;var r=RegionAt(cell);return r==null||!r.safeArea;}
  sealed class EnemySpawnSlot {
   public DungeonRegion origin;public PlacedEnemyDefinition placement;public bool counts;public string instanceId;
+  public Vector2Int explorationHome,lastKnownPlayer;public int patrolIndex,patrolDirection=1,memoryTurns;
   public bool CanRespawn {get{return placement==null||placement.CanRespawn;}}
  }
  readonly List<EnemySpawnSlot> slots=new List<EnemySpawnSlot>();
  readonly HashSet<string> triggeredEncounters=new HashSet<string>();
  int Population(string zoneId){int count=0;for(int i=0;i<enemyObjects.Count;i++)if(enemyObjects[i]!=null&&slots[i].counts&&slots[i].origin.id==zoneId)count++;return count;}
  static int ArrayIndex(string id){return id=="DevotoCorrompido"?6:Array.IndexOf(EnemyRoster.ResourceIds,id);}
- float RespawnDeadline(int index){return slots[index].CanRespawn?Time.unscaledTime+slots[index].origin.enemies.respawnSeconds:-1;}
+ float RespawnDeadline(int index){return slots[index].CanRespawn?Time.unscaledTime+ExplorationRespawnSeconds(index):-1;}
  bool ReservedCell(Vector2Int cell){if(ActiveMap!=null&&ActiveMap.entities!=null&&ActiveMap.entities.objects.Exists(e=>e.cell==cell))return true;return RegionMap!=null&&Array.Exists(RegionMap.placedEnemies,e=>e!=null&&e.enabled&&e.cell==cell);}
  bool EligibleJoiner(int index,int primary){return slots[index].placement==null&&slots[index].origin.id==slots[primary].origin.id;}
  void SpawnPlacedEncounters(){if(RegionMap==null)return;foreach(var e in RegionMap.placedEnemies)if(e!=null&&e.enabled&&e.trigger==EncounterTrigger.OnDungeonStart&&e.speciesId!="Mimic")SpawnPlacement(e);}

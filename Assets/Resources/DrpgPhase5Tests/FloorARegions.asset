@@ -1,0 +1,261 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3513c9a331b2e4f83f57cc63652349, type: 3}
+  m_Name: FloorARegions
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonRegionSettings
+  regions:
+  - id: phase5.fixture.a.wild
+    displayName: Prueba de exploracion
+    editorColor: {r: 0, g: 1, b: 1, a: 1}
+    cells:
+    - {x: 1, y: 1}
+    - {x: 2, y: 1}
+    - {x: 3, y: 1}
+    - {x: 4, y: 1}
+    - {x: 5, y: 1}
+    - {x: 6, y: 1}
+    - {x: 7, y: 1}
+    - {x: 8, y: 1}
+    - {x: 9, y: 1}
+    - {x: 10, y: 1}
+    - {x: 11, y: 1}
+    - {x: 12, y: 1}
+    - {x: 13, y: 1}
+    - {x: 14, y: 1}
+    - {x: 15, y: 1}
+    - {x: 16, y: 1}
+    - {x: 17, y: 1}
+    - {x: 18, y: 1}
+    - {x: 19, y: 1}
+    - {x: 1, y: 2}
+    - {x: 2, y: 2}
+    - {x: 3, y: 2}
+    - {x: 4, y: 2}
+    - {x: 5, y: 2}
+    - {x: 6, y: 2}
+    - {x: 7, y: 2}
+    - {x: 8, y: 2}
+    - {x: 9, y: 2}
+    - {x: 10, y: 2}
+    - {x: 11, y: 2}
+    - {x: 12, y: 2}
+    - {x: 13, y: 2}
+    - {x: 14, y: 2}
+    - {x: 15, y: 2}
+    - {x: 16, y: 2}
+    - {x: 17, y: 2}
+    - {x: 18, y: 2}
+    - {x: 19, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    - {x: 3, y: 3}
+    - {x: 4, y: 3}
+    - {x: 5, y: 3}
+    - {x: 6, y: 3}
+    - {x: 7, y: 3}
+    - {x: 8, y: 3}
+    - {x: 9, y: 3}
+    - {x: 10, y: 3}
+    - {x: 11, y: 3}
+    - {x: 12, y: 3}
+    - {x: 13, y: 3}
+    - {x: 14, y: 3}
+    - {x: 15, y: 3}
+    - {x: 16, y: 3}
+    - {x: 17, y: 3}
+    - {x: 18, y: 3}
+    - {x: 19, y: 3}
+    - {x: 1, y: 4}
+    - {x: 2, y: 4}
+    - {x: 3, y: 4}
+    - {x: 4, y: 4}
+    - {x: 5, y: 4}
+    - {x: 6, y: 4}
+    - {x: 7, y: 4}
+    - {x: 8, y: 4}
+    - {x: 9, y: 4}
+    - {x: 11, y: 4}
+    - {x: 12, y: 4}
+    - {x: 13, y: 4}
+    - {x: 14, y: 4}
+    - {x: 15, y: 4}
+    - {x: 16, y: 4}
+    - {x: 17, y: 4}
+    - {x: 18, y: 4}
+    - {x: 19, y: 4}
+    - {x: 1, y: 5}
+    - {x: 2, y: 5}
+    - {x: 3, y: 5}
+    - {x: 4, y: 5}
+    - {x: 5, y: 5}
+    - {x: 6, y: 5}
+    - {x: 7, y: 5}
+    - {x: 8, y: 5}
+    - {x: 9, y: 5}
+    - {x: 11, y: 5}
+    - {x: 12, y: 5}
+    - {x: 13, y: 5}
+    - {x: 14, y: 5}
+    - {x: 15, y: 5}
+    - {x: 16, y: 5}
+    - {x: 17, y: 5}
+    - {x: 18, y: 5}
+    - {x: 19, y: 5}
+    - {x: 1, y: 6}
+    - {x: 2, y: 6}
+    - {x: 3, y: 6}
+    - {x: 4, y: 6}
+    - {x: 5, y: 6}
+    - {x: 6, y: 6}
+    - {x: 7, y: 6}
+    - {x: 8, y: 6}
+    - {x: 9, y: 6}
+    - {x: 11, y: 6}
+    - {x: 12, y: 6}
+    - {x: 13, y: 6}
+    - {x: 14, y: 6}
+    - {x: 15, y: 6}
+    - {x: 16, y: 6}
+    - {x: 17, y: 6}
+    - {x: 18, y: 6}
+    - {x: 19, y: 6}
+    - {x: 1, y: 7}
+    - {x: 2, y: 7}
+    - {x: 3, y: 7}
+    - {x: 4, y: 7}
+    - {x: 5, y: 7}
+    - {x: 6, y: 7}
+    - {x: 7, y: 7}
+    - {x: 8, y: 7}
+    - {x: 9, y: 7}
+    - {x: 10, y: 7}
+    - {x: 11, y: 7}
+    - {x: 12, y: 7}
+    - {x: 13, y: 7}
+    - {x: 14, y: 7}
+    - {x: 15, y: 7}
+    - {x: 16, y: 7}
+    - {x: 17, y: 7}
+    - {x: 18, y: 7}
+    - {x: 19, y: 7}
+    enemies: {fileID: 11400000, guid: 5027f6019cd237d44be8b10d07add19e, type: 2}
+    spawnsEnabled: 1
+    safeArea: 0
+  - id: phase5.fixture.a.safe
+    displayName: Prueba segura
+    editorColor: {r: 0, g: 1, b: 1, a: 1}
+    cells:
+    - {x: 1, y: 8}
+    - {x: 2, y: 8}
+    - {x: 3, y: 8}
+    - {x: 4, y: 8}
+    - {x: 5, y: 8}
+    - {x: 6, y: 8}
+    - {x: 7, y: 8}
+    - {x: 8, y: 8}
+    - {x: 9, y: 8}
+    - {x: 10, y: 8}
+    - {x: 11, y: 8}
+    - {x: 12, y: 8}
+    - {x: 13, y: 8}
+    - {x: 14, y: 8}
+    - {x: 15, y: 8}
+    - {x: 16, y: 8}
+    - {x: 17, y: 8}
+    - {x: 18, y: 8}
+    - {x: 19, y: 8}
+    enemies: {fileID: 0}
+    spawnsEnabled: 0
+    safeArea: 1
+  placedEnemies:
+  - id: phase5.agent
+    speciesId: Tapaku
+    cell: {x: 3, y: 3}
+    allowInSafeArea: 0
+    enabled: 1
+    randomLevel: 0
+    respawn: 1
+    unique: 0
+    countsTowardLimit: 0
+    fixedLevel: 1
+    category: 0
+    trigger: 0
+    holdPosition: 0
+    guaranteedDrops: []
+    exploration:
+      profile: 2
+      persistence: 1
+      detectionSteps: 0
+      memoryTurns: 0
+      leashSteps: 0
+      requireStraightSight: 1
+      stayInOriginRegion: 1
+      patrolPingPong: 1
+      patrol:
+      - {x: 3, y: 3}
+      - {x: 6, y: 3}
+      respawnSeconds: 0.1
+      showEliteMarker: 1
+  - id: phase5.reset
+    speciesId: Hongo
+    cell: {x: 13, y: 3}
+    allowInSafeArea: 0
+    enabled: 1
+    randomLevel: 0
+    respawn: 1
+    unique: 0
+    countsTowardLimit: 0
+    fixedLevel: 1
+    category: 0
+    trigger: 0
+    holdPosition: 1
+    guaranteedDrops: []
+    exploration:
+      profile: 1
+      persistence: 2
+      detectionSteps: 0
+      memoryTurns: 0
+      leashSteps: 0
+      requireStraightSight: 1
+      stayInOriginRegion: 1
+      patrolPingPong: 1
+      patrol: []
+      respawnSeconds: 0
+      showEliteMarker: 1
+  - id: phase5.permanent
+    speciesId: Tapaku
+    cell: {x: 18, y: 6}
+    allowInSafeArea: 0
+    enabled: 1
+    randomLevel: 0
+    respawn: 1
+    unique: 0
+    countsTowardLimit: 0
+    fixedLevel: 1
+    category: 0
+    trigger: 0
+    holdPosition: 1
+    guaranteedDrops: []
+    exploration:
+      profile: 1
+      persistence: 3
+      detectionSteps: 0
+      memoryTurns: 0
+      leashSteps: 0
+      requireStraightSight: 1
+      stayInOriginRegion: 1
+      patrolPingPong: 1
+      patrol: []
+      respawnSeconds: 0
+      showEliteMarker: 1
+  legacyPlacements: 0
+  initialRandomPerZone: 0

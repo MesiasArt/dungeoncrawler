@@ -1,0 +1,25 @@
+Assets/Audio/Music/virtual worlds main title.wav|10935520
+Assets/Audio/Music/Welcome to the Town.wav|8864064
+Assets/Audio/Music/Retro Dungeon/Bit-Battle 2.wav|8663104
+Assets/Resources/Decorations/Art/PlaceholderAtlas.png|8388608
+Assets/Resources/RetroDungeonExperiment/Layers/Floor.png|8384072
+Assets/Audio/Music/Retro Dungeon/Bit-Battle.wav|7907488
+Assets/Audio/Music/Retro Dungeon/Pixel Platformer 2.wav|7817312
+Assets/Audio/Music/Retro Dungeon/Pixel Platformer.wav|7018592
+Assets/Resources/UI/HackArm.png|6293408
+Assets/Resources/UI/MenuUI/Sheet.png|6291456
+Assets/Resources/UI/JumpBackground/Floor.png|6290112
+Assets/Resources/UI/JumpBackground/Mountains.png|6290112
+Assets/Resources/UI/JumpBackground/Clouds.png|6290112
+Assets/Resources/RetroDungeonExperiment/Layers/Sky.png|6288054
+Assets/Resources/RetroDungeonExperiment/Layers/FrontPipe.png|5592404
+Assets/Resources/RetroDungeonExperiment/Normals/Floor-Normal.png|5592404
+Assets/Resources/RetroDungeonExperiment/Normals/FrontPipe-Normal.png|5592404
+Assets/Resources/UI/JumpBackground/Black.png|4717584
+Assets/Resources/UI/CharacterSheet/GamerBoyFullBody.png|4194304
+Assets/Resources/RetroDungeonExperiment/UpdatedLayers/01-Sky-00.png|4194303
+Assets/Resources/RetroDungeonExperiment/UpdatedLayers/00-Floor-00.png|4194303
+Assets/Resources/Textures/textura rosa luffy2.jpg|4194303
+Assets/Resources/Textures/textura azul luffy2.jpg|4194303
+Assets/Audio/Music/Corrupted Memories.mp3|3756064
+Assets/Resources/Audio/OST/region 0 boss battle.mp3|3682432

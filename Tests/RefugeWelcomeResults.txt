@@ -1,0 +1,175 @@
+PASS Old save without new-game eligibility does not trigger welcome
+PASS Welcome cannot trigger during prologue
+PASS Adjacent corridor cell does not trigger event
+PASS Real grid movement reaches confirmed X17/Y6
+PASS First arrival automatically starts welcome
+PASS Exact welcome dialogue 1
+PASS Navigation blocked during dialogue 1
+PASS Exact welcome dialogue 2
+PASS Navigation blocked during dialogue 2
+PASS Exact welcome dialogue 3
+PASS Navigation blocked during dialogue 3
+PASS Exact welcome dialogue 4
+PASS Navigation blocked during dialogue 4
+PASS Exact welcome dialogue 5
+PASS Navigation blocked during dialogue 5
+PASS Exact welcome dialogue 6
+PASS Navigation blocked during dialogue 6
+PASS Exact welcome dialogue 7
+PASS Navigation blocked during dialogue 7
+PASS Exact welcome dialogue 8
+PASS Navigation blocked during dialogue 8
+PASS Exact welcome dialogue 9
+PASS Navigation blocked during dialogue 9
+PASS Exact welcome dialogue 10
+PASS Navigation blocked during dialogue 10
+PASS Exact welcome dialogue 11
+PASS Navigation blocked during dialogue 11
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Look-back preserves grid cell and logical heading
+PASS Camera looks behind, holds, then returns
+PASS Look-back returns camera to forward heading
+PASS Exact welcome dialogue 12
+PASS Navigation blocked during dialogue 12
+PASS Exact welcome dialogue 13
+PASS Navigation blocked during dialogue 13
+PASS Exact welcome dialogue 14
+PASS Navigation blocked during dialogue 14
+PASS Exact welcome dialogue 15
+PASS Navigation blocked during dialogue 15
+PASS Exact welcome dialogue 16
+PASS Navigation blocked during dialogue 16
+PASS Exact welcome dialogue 17
+PASS Navigation blocked during dialogue 17
+PASS Residents' silence is a timed pause, not an added spoken line
+PASS Exact welcome dialogue 18
+PASS Navigation blocked during dialogue 18
+PASS Exact welcome dialogue 19
+PASS Navigation blocked during dialogue 19
+PASS Exact welcome dialogue 20
+PASS Navigation blocked during dialogue 20
+PASS Exact welcome dialogue 21
+PASS Navigation blocked during dialogue 21
+PASS Exact welcome dialogue 22
+PASS Navigation blocked during dialogue 22
+PASS Exact welcome dialogue 23
+PASS Navigation blocked during dialogue 23
+PASS Exact welcome dialogue 24
+PASS Navigation blocked during dialogue 24
+PASS Exact welcome dialogue 25
+PASS Navigation blocked during dialogue 25
+PASS Exact welcome dialogue 26
+PASS Navigation blocked during dialogue 26
+PASS Exact welcome dialogue 27
+PASS Navigation blocked during dialogue 27
+PASS Exact welcome dialogue 28
+PASS Navigation blocked during dialogue 28
+PASS Exact welcome dialogue 29
+PASS Navigation blocked during dialogue 29
+PASS Exact welcome dialogue 30
+PASS Navigation blocked during dialogue 30
+PASS Exact welcome dialogue 31
+PASS Navigation blocked during dialogue 31
+PASS Exact welcome dialogue 32
+PASS Navigation blocked during dialogue 32
+PASS Exact welcome dialogue 33
+PASS Navigation blocked during dialogue 33
+PASS All 33 supplied lines finish once
+PASS Completion stored in existing persistent event state
+PASS Event releases its camera/input ownership
+PASS Welcome restores original grid-facing view
+PASS Standing on trigger cannot repeat completed event
+PASS Individual NPC conversation counters unchanged
+PASS Save/load does not replay completed welcome
+PASS Per-map snapshot retains completion
+PASS Leaving and returning does not replay welcome
+PASS New-game save from before first meeting remains eligible
+PASS Load cancels pending welcome and callbacks cleanly

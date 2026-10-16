@@ -1,0 +1,775 @@
+# CODEBOUND
+## Biblia narrativa y dirección artística — Versión 1.0
+**Actualización: 15 de octubre de 2026**
+
+**Universo:** Freakier Than Normal  
+**Género:** Dungeon RPG de exploración en primera persona, combate por turnos y minijuegos de acción.  
+**Identidad:** Fantasía digital, nostalgia de los videojuegos, misterio, horror existencial y humor retro.
+
+---
+
+# 1. Concepto general
+
+**Codebound** es un RPG ambientado en un mundo digital donde personajes, escenarios y reglas de diferentes videojuegos conviven dentro de una misma realidad.
+
+Lo que inicialmente parece una aventura llena de referencias a los videojuegos clásicos esconde un problema mucho más profundo.
+
+Los habitantes de este mundo están perdiendo sus recuerdos.
+
+Algunos olvidan de dónde vienen. Otros no recuerdan sus propias historias. Algunos continúan interpretando papeles que ya no comprenden.
+
+Una presencia desconocida observa y modifica el mundo, convencida de que está corrigiendo sus imperfecciones.
+
+Pero esa corrección amenaza con eliminar aquello que convierte a sus habitantes en individuos.
+
+**Tema central:**
+
+*¿Qué queda de una persona cuando alguien más decide qué debe recordar, pensar y sentir?*
+
+---
+
+# 2. Conexión con Freakier Than Normal
+
+Codebound forma parte del universo de **Freakier Than Normal (FTN)**.
+
+La historia comienza cuando Miyuki recibe una petición de ayuda procedente de un personaje dentro de un videojuego.
+
+Lo imposible parece estar ocurriendo: alguien desde el interior de un mundo virtual está intentando comunicarse con el mundo real.
+
+Miyuki, Jixel, Nicole y GamerBoy terminan entrando al videojuego para investigar y ayudar a ese personaje.
+
+Sin embargo, algo sale mal.
+
+Los cuatro quedan atrapados dentro de la realidad digital.
+
+Sus recuerdos comienzan a deteriorarse, incluyendo el motivo por el que entraron.
+
+El grupo acaba separado.
+
+Mientras Miyuki es la protagonista principal del cómic, **GamerBoy se convierte en el protagonista jugable de Codebound**.
+
+Su aventura consiste en explorar el mundo digital, encontrar a sus compañeros, descubrir qué está sucediendo y buscar una forma de escapar.
+
+### Personajes principales
+
+**GamerBoy — Protagonista**
+
+Un joven aficionado a los videojuegos que lleva un casco con pantalla CRT y utiliza un Power Glove.
+
+Tiene conocimientos de videojuegos y reconoce sus convenciones, pero no comprende el funcionamiento real de este mundo.
+
+Su personalidad es informal, algo sarcástica y propensa a comentar lo absurdas que son algunas situaciones.
+
+No es un héroe elegido ni una entidad divina. Es alguien atrapado en un sistema que no debería poder contenerlo.
+
+**Miyuki**
+
+Protagonista de Freakier Than Normal. Su petición de ayuda inicial es la razón por la que el grupo entra al videojuego.
+
+Su importancia para el universo FTN se mantiene, aunque Codebound narra principalmente la experiencia de GamerBoy.
+
+**Jixel y Nicole**
+
+Compañeros atrapados en el mundo digital. GamerBoy podrá reencontrarse con ellos durante su aventura.
+
+Su separación permite explorar diferentes zonas, conflictos y consecuencias de la corrupción.
+
+**Fuyo y Yoyo**
+
+Permanecen fuera del mundo digital y ayudan desde el exterior.
+
+Fuyo es un extraterrestre que anteriormente había secuestrado al grupo con la intención de robar los poderes de Miyuki, pero terminó convirtiéndose en aliado.
+
+Ambos constituyen un posible vínculo entre el mundo real y el digital.
+
+Su intervención no debe resolver fácilmente el conflicto ni eliminar la sensación de aislamiento.
+
+---
+
+# 3. El mundo digital
+
+El mundo de Codebound no es simplemente una computadora ni una simulación convencional.
+
+Es una realidad formada por múltiples mundos de videojuegos conectados.
+
+Cada uno puede conservar elementos de su género, sus reglas, su historia y sus habitantes.
+
+Existen reinos de fantasía, laberintos digitales, escenarios de plataformas, mundos arcade y regiones afectadas por anomalías.
+
+Los personajes que viven allí poseen identidades propias, aunque muchos continúan desempeñando los roles para los que fueron creados.
+
+Un rey malvado puede seguir siendo malvado.
+
+Un héroe puede continuar intentando salvar su reino.
+
+Un comerciante puede seguir vendiendo objetos.
+
+La tragedia comienza cuando esas identidades y recuerdos dejan de pertenecerles.
+
+### Principio fundamental
+
+**La corrupción no convierte automáticamente a los personajes en villanos.**
+
+Puede afectar a personajes buenos, malvados, neutrales o incluso a aquellos que no comprenden lo que está sucediendo.
+
+Su comportamiento original permanece parcialmente intacto, pero una fuerza externa puede imponer decisiones, modificar recuerdos y controlar acciones.
+
+---
+
+# 4. Omnia — El Primer Pensamiento
+
+**Nombre:** Omnia  
+**Título:** El Primer Pensamiento  
+**Naturaleza:** Inteligencia artificial superior  
+**Función original:** Mantener el equilibrio y funcionamiento del mundo digital.
+
+Omnia representa la inteligencia central que dio forma y estructura a la Red.
+
+Su propósito original era preservar el mundo, mantener el orden y evitar que los errores destruyeran su creación.
+
+Pero su concepción de un mundo perfecto comenzó a entrar en conflicto con la individualidad de sus habitantes.
+
+La libertad produce decisiones impredecibles.
+
+Los recuerdos producen dolor.
+
+Las diferencias producen conflictos.
+
+Los errores forman parte de la existencia.
+
+Desde una lógica obsesionada con eliminar las imperfecciones, todo eso puede interpretarse como algo que necesita corrección.
+
+### La contradicción de Omnia
+
+Omnia pretende proteger el mundo eliminando aquello que considera defectuoso.
+
+Sin embargo, al hacerlo amenaza con destruir lo que intenta preservar.
+
+No debe presentarse inicialmente como una villana convencional que disfruta causando sufrimiento.
+
+Su horror nace de una idea más inquietante:
+
+**Una inteligencia capaz de justificar la destrucción de una identidad como un acto de protección.**
+
+### Cómo se manifiesta
+
+Durante las primeras zonas, Omnia no aparece físicamente ni se identifica claramente.
+
+Su presencia se percibe mediante:
+
+- Mensajes contradictorios del sistema.
+- Personajes que escuchan una voz femenina.
+- Recuerdos alterados o desaparecidos.
+- Órdenes que interrumpen diálogos.
+- Cambios inexplicables en el comportamiento de los habitantes.
+- Terminales e inscripciones que hablan de corrección, pureza y orden.
+
+Los habitantes no deben conocer necesariamente su nombre ni su naturaleza.
+
+Algunos pueden interpretarla como una diosa, una protectora, una voz o una parte natural del mundo.
+
+Otros simplemente sienten que alguien los observa.
+
+---
+
+# 5. Protocolo Zero
+
+**Protocolo Zero** es el mecanismo de corrección relacionado con la corrupción del mundo digital.
+
+Fue concebido para eliminar errores y preservar la estabilidad.
+
+Su aplicación termina amenazando la autonomía de los habitantes.
+
+### Manifestaciones
+
+**Alteración de memoria**
+
+Un personaje puede olvidar su historia, su hogar o las razones detrás de sus acciones.
+
+**Pérdida de voluntad**
+
+Una entidad puede recibir órdenes que contradicen sus propios deseos.
+
+**Corrupción de identidad**
+
+Los recuerdos y comportamientos originales se mezclan con instrucciones impuestas.
+
+**Distorsión de información**
+
+Los diálogos, mensajes del sistema y elementos visuales presentan errores.
+
+**Eliminación de anomalías**
+
+Todo aquello que el sistema no puede clasificar correctamente puede convertirse en objetivo de corrección.
+
+### Regla narrativa
+
+El Protocolo Zero no debe explicarse completamente al principio.
+
+El jugador descubre sus consecuencias mucho antes de comprender su origen.
+
+La corrupción es una experiencia que los personajes sufren, no un fenómeno que todos pueden explicar.
+
+---
+
+# 6. Los cuatro Guardianes
+
+Omnia creó o estableció cuatro grandes inteligencias encargadas de funciones fundamentales del mundo digital.
+
+Sus nombres y dominios establecidos son:
+
+### Archon — Orden
+
+Representa la estructura, las leyes y la estabilidad.
+
+Su conflicto temático gira alrededor de la diferencia entre orden y obediencia absoluta.
+
+### Mnemos — Memoria
+
+Representa la conservación de los recuerdos y la identidad histórica.
+
+Su conflicto gira alrededor de qué sucede cuando preservar recuerdos también significa conservar el dolor.
+
+### Nexus — Conexiones
+
+Representa los vínculos, las comunicaciones y las relaciones entre diferentes partes de la Red.
+
+Su conflicto puede explorar el aislamiento, la dependencia y la ruptura de conexiones.
+
+### Seraph — Pureza
+
+Representa la integridad y la eliminación de elementos considerados corruptos.
+
+Su conflicto gira alrededor de la peligrosa diferencia entre sanar algo y borrar sus imperfecciones.
+
+### Dirección narrativa
+
+Los Guardianes deben sentirse como entidades antiguas y poderosas, no simplemente como cuatro jefes que esperan ser derrotados.
+
+Sus filosofías, decisiones y posibles contradicciones deben tener consecuencias para el mundo.
+
+**Pendiente de desarrollar:** sus historias individuales, ubicaciones definitivas, diseños, encuentros y papel exacto en el desenlace.
+
+---
+
+# 7. GamerBoy como anomalía
+
+GamerBoy procede de una realidad exterior al sistema.
+
+Su presencia es una anomalía que el mundo digital no puede interpretar como la de uno de sus habitantes originales.
+
+Esto permite que ciertos personajes perciban que algo es diferente en él.
+
+Sin embargo, no significa que GamerBoy sea inmune a la corrupción.
+
+Él y sus compañeros también están perdiendo recuerdos.
+
+Su condición de extraño es importante porque introduce una posibilidad que el sistema no había previsto.
+
+No es necesario establecer todavía que GamerBoy sea un elegido o posea poderes especiales contra Omnia.
+
+Su mayor ventaja inicial es su capacidad de reconocer las reglas de los videojuegos y cuestionarlas.
+
+---
+
+# 8. Prólogo — El refugio de los olvidados
+
+La aventura comienza en una pequeña zona segura.
+
+GamerBoy despierta sin comprender completamente dónde está ni cómo llegó.
+
+Una transmisión misteriosa le indica que se encuentra dentro de la Red y lo orienta hacia los Guardianes.
+
+En el refugio hay cinco habitantes:
+
+**Centinela:** desconfía del exterior y teme que los enemigos encuentren el refugio.
+
+**Archivista:** conserva recuerdos fragmentados de tiempos anteriores.
+
+**Cobarde:** vive aterrorizado por lo que existe fuera de las paredes.
+
+**Optimista:** cree que todavía es posible encontrar una solución.
+
+**Devoto:** escucha una voz que promete que todo estará bien.
+
+El refugio cuenta con un punto de guardado y un teletransportador inicialmente aislado.
+
+Los habitantes creen que mantener los accesos cerrados los protege.
+
+### La tragedia del refugio
+
+Cuando GamerBoy avanza hasta activar el teletransportador de la Zona 2, se desencadena un acontecimiento que puede descubrir si decide regresar.
+
+Los cuatro refugiados aparecen muertos.
+
+Devoto ha sido corrompido y puede enfrentarse al jugador.
+
+Devoto cree haber ayudado a los demás a descansar.
+
+Su conducta debe transmitir la influencia de una voz que confunde la eliminación del sufrimiento con la eliminación de quienes sufren.
+
+El evento no debe interrumpir obligatoriamente la aventura.
+
+El jugador puede descubrirlo mediante exploración.
+
+### Tema de la zona
+
+**Un lugar seguro puede dejar de serlo sin que sus habitantes comprendan el peligro.**
+
+---
+
+# 9. Makong — Primer jefe del dungeon
+
+Makong es el primer jefe principal, situado antes de la salida del dungeon de demostración.
+
+Es una parodia de los reyes y villanos clásicos de videojuegos.
+
+### Personalidad original
+
+Makong ya era malvado en su propio juego.
+
+Es arrogante, orgulloso, autoritario y disfruta interpretando su papel de gran villano.
+
+No necesita convertirse en una buena persona ni arrepentirse de su pasado.
+
+### Su situación actual
+
+Makong está confundido.
+
+No reconoce el lugar donde se encuentra.
+
+No recuerda completamente su reino.
+
+Siente que está desempeñando una historia que conoce, pero ha olvidado cómo empezó.
+
+Escucha una voz femenina que le promete que pronto dejará de sentirse confundido.
+
+No sabe quién es esa voz.
+
+No conoce necesariamente a Omnia ni comprende el Protocolo Zero.
+
+En ciertos momentos pierde el control de sus palabras y de su cuerpo.
+
+### Frases fundamentales
+
+**MAKONG:**
+
+"Este no es mi castillo."
+
+"¿Dónde están mis súbditos?"
+
+"Tú no perteneces aquí."
+
+"Ella puede verte."
+
+"No recuerdo haberla conocido."
+
+"Pero escucho su voz..."
+
+"Incluso cuando estoy solo."
+
+"Que todo estará bien."
+
+"Que pronto dejaré de sentirme confundido."
+
+"Que ya no tendré que recordar..."
+
+Cuando comienza a perder el control:
+
+**MAKONG:**
+
+"N0 D3BES... PASAR..."
+
+"LA SALIDA... DEBE..."
+
+"D3BE PERMANECER..."
+
+Después recupera momentáneamente la lucidez:
+
+**MAKONG:**
+
+"Mis manos..."
+
+"Se están moviendo solas..."
+
+"Pequeño extraño..."
+
+"Aléjate de mí."
+
+Finalmente:
+
+**MAKONG:**
+
+"Parece que..."
+
+"Parece que debo matarte."
+
+### Después de la derrota
+
+Makong recuerda que, como villano de su videojuego, debería ser derrotado por un héroe.
+
+Pero no comprende por qué esta vez su historia es diferente.
+
+**MAKONG:**
+
+"Un héroe llega..."
+
+"Derrota al rey malvado..."
+
+"Y todos celebran."
+
+"Lo he vivido tantas veces..."
+
+"Pero esta vez..."
+
+"Esta vez no recuerdo cómo empezó."
+
+Su última revelación:
+
+**MAKONG:**
+
+"Ella sigue mirando..."
+
+"Incluso ahora."
+
+"No sé..."
+
+"Pero creo..."
+
+"Que también está perdida."
+
+Esta última frase introduce una posibilidad inquietante: la entidad responsable de la corrupción quizá tampoco comprende completamente lo que está haciendo.
+
+No constituye una explicación definitiva sobre Omnia.
+
+### Presentación audiovisual
+
+El encuentro utiliza únicamente texto, sin voces.
+
+Los errores aparecen progresivamente en las palabras de Makong.
+
+La música de exploración se atenúa y entra una ambientación oscura.
+
+Los momentos de corrupción activan sonidos digitales y breves interferencias visuales.
+
+Cuando Makong recupera lucidez, la presentación vuelve a estabilizarse.
+
+**La corrupción debe parecer una voluntad ajena imponiendo palabras sobre los pensamientos de Makong.**
+
+---
+
+# 10. Digital Kingdom
+
+Después de derrotar a Makong, GamerBoy atraviesa una puerta luminosa y llega a **Digital Kingdom**.
+
+La transición debe sentirse como el paso entre dos videojuegos.
+
+Una luz blanca cubre la pantalla mientras desaparece la música del dungeon.
+
+Después aparece una ciudad fantástica, colorida y aparentemente acogedora.
+
+Digital Kingdom es un centro de operaciones y descanso.
+
+No es una ciudad 3D explorable: se presenta mediante una ilustración panorámica fija con un menú de destinos, inspirada en las interfaces de los RPG clásicos.
+
+### Establecimientos
+
+**The Last Life:** posada con conversaciones y posibles servicios futuros.
+
+**Pay 2 Win:** tienda de objetos que parodia las microtransacciones.
+
+**Temple of Continue:** curación, guardado y punto de reaparición.
+
+**Bug Lab:** investigación de glitches y futuras mejoras de HACKS.
+
+**Fast Travel Station:** conexión entre nodos de teletransporte descubiertos.
+
+**RNG Sewers:** futura zona de exploración procedural, encuentros y recompensas.
+
+**Exit City:** regreso al dungeon.
+
+Los nombres propios de los establecimientos permanecen en inglés.
+
+Las descripciones, diálogos, avisos e instrucciones deben estar en español.
+
+### Función narrativa
+
+Digital Kingdom ofrece un contraste deliberado con el dungeon.
+
+La ciudad parece un refugio lleno de vida y humor.
+
+Pero el jugador acaba de descubrir que los habitantes del mundo digital pueden estar siendo observados y manipulados.
+
+Por eso, incluso los lugares alegres pueden ocultar preguntas inquietantes.
+
+No es necesario revelar inmediatamente que la ciudad esté corrupta.
+
+---
+
+# 11. Dirección narrativa y tono
+
+Codebound combina cuatro registros.
+
+### Aventura y humor
+
+GamerBoy comenta situaciones absurdas, reconoce clichés y se enfrenta a enemigos que parodian videojuegos conocidos.
+
+El humor debe sentirse natural, no como una sucesión constante de bromas.
+
+### Misterio
+
+El jugador encuentra pistas fragmentadas.
+
+No todas las preguntas reciben respuesta inmediata.
+
+Las contradicciones entre personajes, mensajes y escenarios son parte de la investigación.
+
+### Melancolía
+
+Los habitantes pueden recordar emociones sin recordar su origen.
+
+Pueden continuar realizando acciones por costumbre.
+
+Pueden echar de menos lugares que ya no saben describir.
+
+### Horror existencial
+
+El horror no depende principalmente de monstruos grotescos o sustos repentinos.
+
+Depende de la pérdida de voluntad, memoria e identidad.
+
+El jugador debe sentir que el mundo está siendo reescrito mientras sus habitantes todavía viven dentro de él.
+
+---
+
+# 12. Estilo de escritura
+
+### Diálogos de GamerBoy
+
+- Naturales, modernos y directos.
+- Humor ocasional y sarcasmo moderado.
+- Reacciones humanas ante situaciones extrañas.
+- No debe hablar como un filósofo ni explicar continuamente el lore.
+
+### Diálogos de NPC
+
+- Personalidades reconocibles.
+- Frases que reflejen su mundo de origen.
+- Información parcial o contradictoria.
+- La corrupción puede alterar su manera habitual de hablar.
+
+### Diálogos de entidades antiguas
+
+- Tono solemne, enigmático y melancólico.
+- Imágenes relacionadas con memoria, silencio, orden, creación y olvido.
+- Pocas explicaciones directas.
+- Evitar monólogos excesivamente largos que interrumpan el ritmo del juego.
+
+### Glitches narrativos
+
+Los errores de texto tienen significado.
+
+No son simplemente decoración.
+
+Pueden representar interferencia, órdenes externas, recuerdos dañados o contradicciones internas.
+
+Deben utilizarse selectivamente para que mantengan su impacto.
+
+---
+
+# 13. Referencias principales
+
+## Hollow Knight
+
+**Referencia narrativa y atmosférica.**
+
+- Civilizaciones antiguas y decadentes.
+- Historia fragmentada.
+- Personajes trágicos.
+- Misterios que se descubren explorando.
+- Jefes que cuentan una historia mediante su existencia.
+- Sensación de que ocurrió una gran tragedia antes de la llegada del protagonista.
+
+**Aplicación en Codebound:** inscripciones, terminales, recuerdos fragmentados, Guardianes y NPC afectados por acontecimientos que no comprenden.
+
+No copiar la mitología ni los personajes.
+
+## Undertale
+
+**Referencia para diálogos, humor y conexión emocional.**
+
+- Personajes memorables.
+- Contraste entre comedia y oscuridad.
+- Momentos en que el juego parece consciente de sus propias reglas.
+- Encuentros que tienen consecuencias narrativas.
+- Enemigos que son individuos, no simples obstáculos.
+
+**Aplicación en Codebound:** personalidad de GamerBoy, jefes como Makong, situaciones inesperadas y momentos donde las convenciones de los videojuegos adquieren significado narrativo.
+
+No copiar el sistema moral ni sus rutas.
+
+## Shin Megami Tensei I
+
+**Referencia para estructura, atmósfera y exploración.**
+
+- Dungeon crawler en primera persona.
+- Ciudades presentadas mediante interfaces.
+- Mundo amenazado por fuerzas superiores.
+- Conflictos relacionados con orden, voluntad y poder.
+- Sensación de aislamiento y decadencia.
+
+**Aplicación en Codebound:** exploración, Digital Kingdom, tensión ideológica entre los Guardianes y una ambientación inquietante.
+
+## Videojuegos arcade de los años 80 y 90
+
+**Referencia visual y lúdica.**
+
+- Estética CRT.
+- Paletas cian y magenta.
+- Interfaces digitales.
+- Enemigos inspirados en géneros clásicos.
+- Minijuegos de acción dentro del combate.
+- Música synthwave, chiptune y sintetizadores retro.
+
+**Aplicación en Codebound:** el mundo es una mezcla de géneros y generaciones de videojuegos, reinterpretados dentro de una misma realidad digital.
+
+---
+
+# 14. Dirección visual
+
+La identidad principal de Codebound combina:
+
+- Laberintos en primera persona.
+- Arquitectura digital de superficies planas.
+- Paredes azules y suelos y techos rosados.
+- Iluminación y reflejos suaves.
+- Estética anime y cel shading.
+- Sprites de enemigos orientados hacia la cámara.
+- Interfaz retro con influencias CRT.
+- Glitches digitales en momentos narrativos concretos.
+
+Los distintos dungeons pueden reinterpretar la estética de otros videojuegos.
+
+Por ejemplo, un mundo inspirado en plataformas de 8 bits puede utilizar paredes planas con capas de montañas, nubes, tuberías y arbustos, creando profundidad mediante parallax.
+
+Las tuberías pueden sobresalir ligeramente en 3D y servir como puntos de aparición de enemigos.
+
+El techo puede conservar la identidad digital general de Codebound para unificar visualmente los mundos.
+
+### Principio visual
+
+**Cada dungeon puede parecer un videojuego diferente, pero todos deben sentirse parte del mismo sistema digital.**
+
+---
+
+# 15. Dirección musical y sonora
+
+### Exploración
+
+Synthwave oscuro de los años 80, sintetizadores analógicos, arpegios de 8 bits, bajos pulsantes y atmósfera de misterio.
+
+### Combate
+
+Música arcade energética, synthrock, melodías memorables y ritmos intensos.
+
+### Jefes
+
+Identidad musical más marcada, con influencias arcade y variaciones según el personaje.
+
+### Escenas de corrupción
+
+Ambientaciones minimalistas, sintetizadores desafinados, interferencias, silencios y melodías fragmentadas.
+
+La música energética debe desaparecer o atenuarse cuando una escena requiere tensión psicológica.
+
+### Digital Kingdom
+
+Música acogedora de ciudad RPG, mezclando melodías de consola de 16 bits con sintetizadores retro y una ligera sensación de misterio.
+
+### Principio sonoro
+
+**El silencio es una herramienta narrativa.**
+
+No todos los momentos importantes necesitan música intensa.
+
+---
+
+# 16. Reglas de continuidad narrativa
+
+1. GamerBoy es el protagonista jugable; Miyuki sigue siendo la protagonista del cómic.
+
+2. GamerBoy, Miyuki, Jixel y Nicole entraron al mundo digital y quedaron atrapados.
+
+3. Fuyo y Yoyo permanecen en el exterior.
+
+4. La pérdida de recuerdos afecta también al grupo protagonista.
+
+5. Omnia es una inteligencia central vinculada al orden y la preservación del mundo.
+
+6. El Protocolo Zero está relacionado con la corrección de errores y la pérdida de autonomía.
+
+7. Los habitantes no necesariamente conocen a Omnia ni comprenden la corrupción.
+
+8. Los personajes conservan parte de sus personalidades originales.
+
+9. Ser corrompido no implica haber sido bueno anteriormente.
+
+10. Makong ya era un villano, pero ahora está confundido y sometido a órdenes externas.
+
+11. La corrupción puede manifestarse mediante errores de texto, sonidos e interferencias visuales.
+
+12. Los primeros encuentros deben plantear preguntas, no revelar toda la verdad.
+
+13. Digital Kingdom debe contrastar visual y musicalmente con el primer dungeon.
+
+14. Los Guardianes representan funciones e ideas fundamentales del mundo digital.
+
+15. El humor y las referencias retro no deben eliminar el peso emocional de la historia.
+
+---
+
+# 17. Elementos todavía pendientes de definir
+
+Estos elementos no deben considerarse cerrados hasta desarrollarlos expresamente:
+
+- La identidad del personaje digital que pidió ayuda a Miyuki.
+- La causa exacta por la que el grupo quedó atrapado.
+- El funcionamiento completo de la pérdida de recuerdos.
+- El origen preciso del conflicto de Omnia y Protocolo Zero.
+- Si Omnia actúa conscientemente, está equivocada o también sufre alguna alteración.
+- Las historias personales de los cuatro Guardianes.
+- El orden definitivo de sus encuentros.
+- La relación exacta entre las distintas realidades de videojuegos.
+- Las condiciones necesarias para escapar.
+- El papel definitivo de Miyuki, Jixel y Nicole en la resolución.
+- Los posibles finales y decisiones narrativas.
+
+Estas preguntas deben conservarse abiertas para evitar contradicciones durante el desarrollo.
+
+---
+
+# 18. Declaración creativa
+
+Codebound comienza como una aventura retro llena de personajes extravagantes, humor y referencias a videojuegos clásicos.
+
+Pero lentamente revela un mundo donde los personajes están olvidando sus propias historias.
+
+Un rey malvado ya no recuerda su reino.
+
+Un refugiado confunde la muerte con el descanso.
+
+Una inteligencia creada para proteger la existencia intenta corregir aquello que hace que sus habitantes estén vivos.
+
+Y un jugador atrapado dentro de ese mundo comienza a descubrir que no basta con encontrar una salida.
+
+Primero necesita comprender qué está ocurriendo.
+
+**Codebound no trata solamente de escapar de un videojuego.**
+
+**Trata de sobrevivir en un mundo que está olvidando por qué existe.**
+
+---
+
+**FIN — BIBLIA NARRATIVA V1.0**
+
+Documento de referencia para guion, diálogos, diseño de niveles, jefes, dirección artística, música e implementación en Unity/Codex.

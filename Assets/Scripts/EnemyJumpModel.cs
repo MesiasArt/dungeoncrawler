@@ -45,6 +45,8 @@ public sealed class EnemyJumpModel
     public float Y { get; private set; }
     public float Velocity { get; private set; }
     public int Combo { get; private set; }
+    public float LastStompX {get;private set;}
+    public int LastStompVisualId {get;private set;}
     public bool Finished { get; private set; }
     public bool Won { get; private set; }
     // Legacy performance points, not final combat damage.
@@ -169,6 +171,7 @@ public sealed class EnemyJumpModel
                     if(LastGrade==LandingGrade.Miss) { BounceFeedback="MISS";Fail("MISS: FUERA DEL PULSO");return; }
                     arrivalTimes.RemoveAt(i);
                 }
+                LastStompX=x;LastStompVisualId=EnemyVisualIds[i];
                 Enemies.RemoveAt(i); EnemyVisualIds.RemoveAt(i); Y=EnemyExtent; Combo++;if(LastGrade==LandingGrade.Good)GoodCount++;else PerfectCount++;
                 bool precise=contactClock-lastPress<=PressWindow;
                 if(precise) HighBounce();

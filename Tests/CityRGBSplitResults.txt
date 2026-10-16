@@ -1,0 +1,7 @@
+Permanent RGB pixels: 2
+Glitch RGB pixels: 10
+PASS stronger glitch
+Recovered RGB pixels: 2
+Red/blue changed pixels: 49415
+Green changed pixels: 0
+PASS recovery and GPU channel split

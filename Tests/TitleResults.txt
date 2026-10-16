@@ -1,0 +1,7 @@
+PASS Title uses supplied background and logo
+PASS Title scene does not instantiate dungeon
+PASS Title is first build scene
+PASS New Game starts prologue without duplicate startup menu
+PASS Enter skip request does not skip prologue
+PASS Continue restores without prologue or duplicate menu
+PASS Continue retains location and player level

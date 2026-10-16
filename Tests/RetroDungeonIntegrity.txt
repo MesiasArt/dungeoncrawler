@@ -1,0 +1,15 @@
+PASS Assets\Scenes\SampleScene.unity
+PASS Assets\Scenes\DigitalKingdom.unity
+PASS Assets\Scripts\CombatMath.cs
+PASS Assets\Scripts\DungeonPrototype.Movement.cs
+PASS Assets\Resources\Textures\texturas tipo mario.psd
+PASS Assets\Resources\Exploration\Zones\DungeonRegions.asset
+PASS Assets\Resources\Exploration\Zones\PlanoDungeon-Objetos.asset
+PASS Assets\Resources\Exploration\Zones\PlanoDungeon.asset
+PASS Assets\Resources\Exploration\Zones\00-Zona0\Enemigos.asset
+PASS Assets\Resources\Exploration\Zones\00-Zona0\NucleoPlaceholder.asset
+PASS Assets\Resources\Exploration\Zones\00-Zona0\Refugio.asset
+PASS Assets\Resources\Exploration\Zones\01-Zona1\Enemigos.asset
+PASS Assets\Resources\Exploration\Zones\01.5-PasilloSeguro\Letrero.asset
+PASS Assets\Resources\Exploration\Zones\02-Zona2\Enemigos.asset
+PASS Assets\Resources\Exploration\Zones\99-SinAsignar\Nueva zona.asset

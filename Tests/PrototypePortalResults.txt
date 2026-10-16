@@ -1,0 +1,3 @@
+PASS City exit is a portal component
+PASS No visible sliding door or blocking collider
+PASS No zone sign attached to white portal
