@@ -1,0 +1,7 @@
+Open starts transition: True
+No HACK starts during slide: True
+Outgoing main moves left: True
+Incoming HACK menu comes from left: True
+Settles at zero and accepts input: True
+VOLVER starts inverse slide: True
+VOLVER restores main: True

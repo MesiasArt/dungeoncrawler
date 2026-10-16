@@ -213,3 +213,79 @@ AuditDemoData incluye Baseline/Integrity, CSV y metadatos, Summary.json, SaveChe
 Repetir sin herramientas durante las ventanas de muestreo; conectar Profiler antes del Player, grabar tramos delimitados y detener inmediatamente. En Release usar métricas de presentación externas compatibles, con la misma ruta y equipo. Para memoria usar snapshot inicial/caliente/final cuando se autorice la herramienta adecuada; para VRAM residente usar herramienta de GPU/controlador y diferenciar presupuesto, reservado y residente. No instalar paquetes ni cambiar producción hasta autorización.
 
 **Auditoría cerrada. No se implementaron optimizaciones.**
+
+
+# Actualización — Fase 1: estabilidad de Windows Release
+
+Fecha: 16 de octubre de 2026. Checkpoint de código probado: `d770a89`, publicado en `origin/main` antes del diagnóstico. Incluye la UI de batalla del PSD y selección HACK en los botones del combate. Ese cambio fue autorizado antes de esta fase; no se atribuyen sus diferencias a optimización.
+
+## Configuración y aislamiento
+
+Build Windows x64 Mono, mismas cuatro escenas, arte, CRT, reflejos, luces, shaders y mecánicas. `BuildPlayerOptions.options = None`: sin Development, AllowDebugging, ConnectWithProfiler ni Deep Profile. Editor fuera de Play Mode, Profiler desactivado. El `boot.config` guardado como evidencia no contiene conexión ni espera a depurador. No se añadieron scripts, hooks o paquetes de diagnóstico al Player.
+
+La única diferencia de configuración de producto en la copia de prueba es una identidad de almacenamiento aislada: compañía `CodeboundAuditIsolated20261016`, producto `CodeboundReleasePhase1`. Impide compartir ruta de guardados y preferencias con DefaultCompany/dungeoncrawler. No es una migración y no se copió ninguna partida personal. Se restauraron los bytes originales de ProjectSettings y tres assets URP después de compilar. Unity creó automáticamente un perfil Windows; se copió a Temp y se retiraron únicamente esos archivos nuevos para restaurar el árbol inicial. Resultado final: **2.079 archivos de producción y ocho archivos personales comprobados, sin diferencias**. No se cambió configuración permanente ni se desactivaron efectos.
+
+Build temporal: `C:/Users/soyot/AppData/Local/Temp/CodeboundWindowsPhase1/Release/CodeboundRelease.exe`. Carpeta de datos temporal: `C:/Users/soyot/AppData/LocalLow/CodeboundAuditIsolated20261016/CodeboundReleasePhase1`. Estos archivos quedan locales; no son un paquete de distribución.
+
+## Resultado de compilación
+
+- Resultado: Succeeded; 0 errores, 2 avisos.
+- Tamaño reportado: 469,607,492 bytes (447.85 MiB); duración 100.63 segundos.
+
+Los dos avisos son CS0618 en DungeonWhiteTransition.cs:32. Se conservaron y no se corrigieron en esta fase. El menor tamaño frente a Development no se presenta como optimización del juego.
+
+## Diez arranques consecutivos
+
+Parámetros: 1920×1080, ventana, API por defecto Direct3D 12. No se pasó `-batchmode`, `-nographics`, flags de Profiler ni sustituciones de calidad. Se inició cada proceso con WindowStyle Hidden; **no hay confirmación visual del contenido de la ventana**. Cada intento se observó con 15 muestras espaciadas aproximadamente un segundo. Después se detuvo únicamente ese proceso temporal mediante Stop-Process. No interpretar esa detención programada como crash ni como cierre normal validado.
+
+| Intento | Periodo completo sin salida espontánea | Crash handler en log | Profiler saturado | Máximo working set muestreado MiB |
+|---|---|---|---|---:|
+| 1 | Sí | No | No | 416.16 |
+| 2 | Sí | No | No | 406.10 |
+| 3 | Sí | No | No | 406.24 |
+| 4 | Sí | No | No | 405.37 |
+| 5 | Sí | No | No | 406.47 |
+| 6 | Sí | No | No | 406.14 |
+| 7 | Sí | No | No | 406.16 |
+| 8 | Sí | No | No | 405.54 |
+| 9 | Sí | No | No | 406.16 |
+| 10 | Sí | No | No | 405.43 |
+
+**Resultado acotado: 10/10 procesos completaron la observación sin salida espontánea y sin crash handler en sus logs.** Todos llegaron al marcador UnloadTime después de inicializar motor, gráficos e input. Esto no demuestra que el título se dibujara correctamente: no se inspeccionaron sus píxeles. MainWindowHandle no expuso una ventana principal visible y Responding no pudo evaluarse. No declarar diez partidas jugadas ni diez cierres normales.
+
+Los diez logs incluyen `d3d12: failed to query info queue interface (0x80004002)`. No hubo cierre asociado en esta serie; por sí solo no identifica un fallo fatal. La línea D3D11 de Media Foundation corresponde a decodificación de vídeo y no implica que el render principal cambió de DX12 a DX11.
+
+## Cobertura y mediciones
+
+| Objetivo | Estado verificable |
+|---|---|
+| Release sin Profiler | BuildOptions.None y boot.config comprobados |
+| Diez arranques | Completados como pruebas de vida del proceso y revisión de logs |
+| Título | Arranque desde escena inicial; aspecto y controles no certificados |
+| Nueva partida/carga/exploración/combate | No automatizados fiablemente en el ejecutable en esta fase |
+| Cierre normal del usuario | Pendiente; Stop-Process no lo sustituye |
+| Partidas personales | Ocho hashes idénticos; no copiadas, migradas ni sobrescritas |
+| FPS/frame time/GPU/VRAM | No medidos en Release; no extrapolar desde Editor |
+| Memoria del proceso | Working set muestreado, rango de máximos 405,37–416,16 MiB |
+| CPU del proceso | 34,47–39,83 segundos acumulados de CPU por intento; varios núcleos, sin límite de FPS; no son ms/frame |
+| Fugas/sesión larga | No evaluadas; procesos independientes de corta duración no demuestran ausencia de fuga |
+
+La automatización de Windows mediante computer-use falló al inicializar el kernel: `CreateProcessSecurityEnvironment failed (HRESULT = 0x80070020)`. Se reinició y se repitió una vez, con el mismo resultado. No se usaron entradas a ciegas ni mecanismos alternativos de control para simular cobertura. Por eso la batería termina con las rutas interactivas pendientes; es una limitación explícita de herramientas, no un resultado positivo ficticio.
+
+## Comparación con la auditoría y causa pendiente
+
+La auditoría observó dos cierres nativos en Development con instrumentación y saturación del transporte Profiler. Esta serie Release no reproduce ese cierre durante arranque. **No identifica al Profiler como causa**: también difieren instrumentación, identidad de almacenamiento, duración, condiciones de ejecución y checkpoint de UI. El gameplay posterior al título no fue ejercitado. No se resuelve el stack nativo sin símbolos/dump y una reproducción controlada.
+
+No se comparó DX11: los objetivos autorizan esa comparación únicamente si el diagnóstico la justifica, y no apareció un fallo Release que aislara la API como sospechosa. Los efectos originales permanecieron activos por configuración; falta verificación visual con ventana operativa.
+
+## Recomendaciones concretas y cierre de fase
+
+1. Recuperar el control de ventanas o efectuar una sesión manual observada sobre esta build aislada: título → nueva partida → prólogo → exploración → combate → cargar fixture → cerrar por Windows. Registrar el instante y resultado de cada acción. No usar guardados personales.
+2. Repetir diez arranques **visibles con cierre normal**, registrar exit code y salida completa del motor. Mantener identidad temporal mientras se prueba.
+3. Jugar 45–60 minutos con transiciones y cargas. Si aparece crash, conservar Player.log y el directorio de crash/dump antes de volver a iniciar; registrar escena/acción y API.
+4. Solo entonces comparar DX11/DX12 con la misma ruta si hay indicios de fallo gráfico. Para atribuir costo, medir FPS de presentación del Player con una herramienta externa ya disponible o autorizada, separando medición de estabilidad de instrumentación pesada.
+5. No aplicar correcciones de reinicio, persistencia ni optimizaciones hasta nueva autorización. Los hallazgos D01–D08/R01–R05 de la auditoría siguen abiertos salvo la evidencia acotada nueva de arranque Release.
+
+Evidencias locales: `Docs/WindowsPhase1Data/ReleaseBuild.json`, `ReleaseBootConfig.txt`, `ExecutableSHA256.txt`, `TenStarts.json`, `Integrity.json` y diez `Release-Run-XX.log`. Incluyen resultados y condiciones originales; no se incluyó el ejecutable en Git. La build permanece en Temp para la prueba manual.
+
+**Fase 1 cerrada con cobertura interactiva pendiente. No se certifica todavía la demo como estable ni publicable. No se implementaron correcciones u optimizaciones.**

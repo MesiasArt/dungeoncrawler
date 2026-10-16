@@ -1,0 +1,6 @@
+gfx-enable-gfx-jobs=1
+gfx-threading-mode=6
+wait-for-native-debugger=0
+hdr-display-enabled=0
+gc-max-time-slice=3
+build-guid=8c14e5ce50024866ad22c65e8d691158

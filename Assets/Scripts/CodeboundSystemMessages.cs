@@ -34,11 +34,16 @@ public sealed class CodeboundSystemMessages:MonoBehaviour {
   if(newBattle)r=new Rect(ui.message.x,height+ui.message.y,ui.message.width,ui.message.height);
   if(age<.07f)r.x+=Mathf.Sin(age*400)*3;
   GUI.color=new Color(1,1,1,alpha);if(newBattle)BattleUIArt.Draw(r,"SystemMessage");else{NeonDungeonUI.Solid(r,new Color(.005f,.012f,.035f,.97f));NeonDungeonUI.Outline(r,NeonDungeonUI.Cyan,1);NeonDungeonUI.Solid(new Rect(r.x,r.y,3,r.height),NeonDungeonUI.Pink);}
-  var title=new GUIStyle(GUI.skin.label){fontSize=14};title.normal.textColor=NeonDungeonUI.Cyan;GUI.Label(new Rect(r.x+22,r.y+13,r.width-20,18),"SYSTEM MESSAGE",title);
+  var title=new GUIStyle(GUI.skin.label){fontSize=newBattle?ui.systemTitleFontSize:14};title.normal.textColor=NeonDungeonUI.Cyan;
+  var titleRect=newBattle?new Rect(r.x+ui.systemTitle.x,r.y+ui.systemTitle.y,Mathf.Min(ui.systemTitle.width,r.width-ui.systemTitle.x-28),ui.systemTitle.height):new Rect(r.x+22,r.y+13,r.width-20,18);
+  GUI.Label(titleRect,"SYSTEM MESSAGE",title);
   Color tint=displayed.code==SystemMessageCode.HackFailed||displayed.code==SystemMessageCode.HackInterrupted||displayed.code==SystemMessageCode.Denied||displayed.code==SystemMessageCode.DeniedRed||displayed.warning?new Color(1,.2f,.35f):new Color(.45f,1,.7f);
-  float inset=displayed.icon!=DigitalIcon.None?47:13;if(displayed.icon!=DigitalIcon.None)GUI.DrawTexture(new Rect(r.x+10,r.y+29,28,28),DigitalIcons.Texture(displayed.icon),ScaleMode.ScaleToFit,true);
-  var body=new GUIStyle(GUI.skin.label){fontSize=16,wordWrap=true,padding=new RectOffset(0,0,0,0)};body.normal.textColor=tint;
-  int count=Mathf.Clamp(Mathf.FloorToInt(age*(settings!=null?settings.charactersPerSecond:160)),0,displayed.text.Length);string visible=displayed.text.Substring(0,count);GUI.Label(new Rect(r.x+inset+7,r.y+34,r.width-inset-27,r.height-42),visible,body);
+  float inset=displayed.icon!=DigitalIcon.None?47:13;if(displayed.icon!=DigitalIcon.None){var iconRect=newBattle?new Rect(r.x+ui.systemIcon.x,r.y+ui.systemIcon.y,ui.systemIcon.width,ui.systemIcon.height):new Rect(r.x+10,r.y+29,28,28);GUI.DrawTexture(iconRect,DigitalIcons.Texture(displayed.icon),ScaleMode.ScaleToFit,true);}
+  var body=new GUIStyle(GUI.skin.label){fontSize=newBattle?ui.systemBodyFontSize:16,wordWrap=true,padding=new RectOffset(0,0,0,0)};body.normal.textColor=tint;
+  int count=Mathf.Clamp(Mathf.FloorToInt(age*(settings!=null?settings.charactersPerSecond:160)),0,displayed.text.Length);string visible=displayed.text.Substring(0,count);var bodyRect=newBattle?new Rect(r.x+ui.systemBody.x,r.y+ui.systemBody.y,Mathf.Min(ui.systemBody.width,r.width-ui.systemBody.x-28),ui.systemBody.height):new Rect(r.x+inset+7,r.y+34,r.width-inset-27,r.height-42);
+  if(newBattle&&displayed.icon!=DigitalIcon.None){float shift=ui.systemIcon.xMax+10-ui.systemBody.x;bodyRect.x+=Mathf.Max(0,shift);bodyRect.width-=Mathf.Max(0,shift);}
+  while(newBattle&&body.fontSize>10&&body.CalcHeight(new GUIContent(displayed.text),bodyRect.width)>bodyRect.height)body.fontSize--;
+  GUI.Label(bodyRect,visible,body);
   for(float y=r.y+2;y<r.yMax;y+=4)NeonDungeonUI.Solid(new Rect(r.x+1,y,r.width-2,1),new Color(.2f,.45f,.8f,.035f*alpha));
   GUI.matrix=matrix;GUI.color=color;GUI.depth=-150;
  }

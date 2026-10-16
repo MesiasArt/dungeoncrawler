@@ -141,7 +141,7 @@ public partial class DungeonPrototype
         formationForward=forward.normalized;formationRight=Vector3.Cross(Vector3.up,formationForward);
         view.transform.rotation=Quaternion.LookRotation(formationForward);
         busy=true;StartCoroutine(EnterEncounter());
-        DungeonAudio.Play(DungeonAudio.Cue.Encounter);glitch=.45f;message="Â¡Enemigos a la vista!";Bark(EnemyBarkCategory.CombatStart);
+        DungeonAudio.Play(DungeonAudio.Cue.Encounter);glitch=.45f;message="¡Enemigos a la vista!";Bark(EnemyBarkCategory.CombatStart);
     }
     Vector3 battleCameraHome,formationCenter,formationForward,formationRight;
     float battleCameraFov;

@@ -1,0 +1,12 @@
+{
+  "result": "Succeeded",
+  "errors": 0,
+  "warnings": 2,
+  "bytes": 469607492,
+  "seconds": 100.62562299999999,
+  "options": "None",
+  "messages": [
+    "Assets\\Scripts\\DungeonWhiteTransition.cs(32,95): warning CS0618: 'Object.FindFirstObjectByType<T>()' is obsolete: 'FindFirstObjectByType has been deprecated because it relies on instance ID ordering. Use FindAnyObjectByType instead, which does not depend on ordering.'",
+    "Assets\\Scripts\\DungeonWhiteTransition.cs(32,240): warning CS0618: 'Object.FindFirstObjectByType<T>()' is obsolete: 'FindFirstObjectByType has been deprecated because it relies on instance ID ordering. Use FindAnyObjectByType instead, which does not depend on ordering.'"
+  ]
+}

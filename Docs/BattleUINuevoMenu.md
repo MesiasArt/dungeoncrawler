@@ -13,3 +13,14 @@ Validación Play Mode mediante fixture temporal: menú contiene JUMP/OVERCLOCK/S
 Archivos: BattleUISettings.cs, BattleUIArt.cs, DungeonPrototype.cs, DungeonPrototype.PartySwitch.cs, DungeonPrototype.Enemies.cs, DungeonPrototype.HackUnlocks.cs, CodeboundSystemMessages.cs y texturas/configuración de BattleUI. Respaldo: Backups/BattleUI/20261016-085535.
 
 La Fase 1 de diagnóstico Windows se ejecuta después de este cambio; no se implementaron optimizaciones de rendimiento.
+
+
+## Botones rectangulares y transición HACK
+
+Se exportó la capa `Botton de Hacks` del PSD a `BattleUI/HackButton.png`, conservando el PSD. JUMP, OVERCLOCK, SPEEDRUN y VOLVER utilizan ese marco y texto centrado sin subtítulos ni subrayados.
+
+Al pulsar HACK, los comandos salen por la izquierda; a mitad de transición se sustituye la lista fuera de pantalla y la nueva entra desde la izquierda. VOLVER hace lo mismo hacia el menú principal. La entrada se bloquea durante el deslizamiento; las animaciones usan tiempo sin escala y se cancelan si desaparece el combate o comienza un minijuego/diálogo.
+
+Inspector de `Assets/Resources/UI/BattleUI/Settings.asset`: **Hack Button Size**, **Hack Button Font Size**, **Menu Slide Seconds** (inicial 0,28 segundos para el cambio completo) y **Menu Slide Padding**. No se alteraron costos, daño, desbloqueos ni minijuegos. Las posiciones previamente configuradas se conservan.
+
+Pruebas Play Mode: siete comprobaciones de transición, bloqueo y retorno correctas (`Tests/BattleHackSlideResults.txt`), captura revisada de botones rectangulares e inicio de JUMP confirmado después de la transición. Sin errores de consola. Fixtures temporales sin escritura de partidas personales.

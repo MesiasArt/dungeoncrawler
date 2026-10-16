@@ -17,22 +17,55 @@ MonoBehaviour:
     serializedVersion: 2
     x: 20
     y: 12
-    width: 380
-    height: 140
+    width: 354
+    height: 128.9
   enemy:
     serializedVersion: 2
     x: -180
     y: 18
-    width: 360
-    height: 120
-  commandOffset: {x: 20, y: -120}
+    width: 330
+    height: 100
+  commandOffset: {x: 42.6, y: -20.83}
   commandSize: {x: 220, y: 78}
-  commandGap: 3
+  commandGap: -1.3
   message:
     serializedVersion: 2
-    x: 20
+    x: 374.2
     y: -102
     width: 780
     height: 88
-  commandFontSize: 21
+  commandFontSize: 32
   descriptionFontSize: 13
+  commandTextAnchor: {x: 0.49, y: 0.5}
+  commandTextWidth: 0.46
+  commandTextVerticalOffsets: {x: 0.03, y: -0.04, z: -0.07, w: -0.07}
+  attackTextAngle: 6.08
+  hackTextAngle: -0.09
+  itemTextAngle: -6
+  fleeTextAngle: -11
+  commandTextShear: 0.322
+  commandTextHeight: 0.994
+  systemTitle:
+    serializedVersion: 2
+    x: 47.2
+    y: 0.9
+    width: 700
+    height: 18
+  systemBody:
+    serializedVersion: 2
+    x: 45.8
+    y: 31.3
+    width: 700
+    height: 34
+  systemIcon:
+    serializedVersion: 2
+    x: 34
+    y: 39
+    width: 24
+    height: 24
+  systemTitleFontSize: 14
+  systemBodyFontSize: 20
+  hackButtonSize: {x: 230, y: 66}
+  hackButtonFontSize: 27
+  menuSlideSeconds: 0.28
+  menuSlidePadding: 24

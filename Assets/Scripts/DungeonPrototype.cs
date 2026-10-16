@@ -93,7 +93,7 @@ public partial class DungeonPrototype : MonoBehaviour
     }
     void HandleCombatInput(int direction, bool confirm)
     {
-        if(!battle || busy || lost || IntroductionActive || (combatHack!=null && combatHack.Active)) return;
+        if(battleMenuAnimating || !battle || busy || lost || IntroductionActive || (combatHack!=null && combatHack.Active)) return;
         if(selectingEnemy){if(direction!=0)SelectEnemy(direction);if(confirm)ConfirmEnemyTarget();return;}
         if(!selectingEnemy&&combatMenu==CombatMenu.Main&&SpeedrunInput())return;
         if(direction!=0) { int count=CombatLabels().Length; selectedCombatAction=(selectedCombatAction+(direction>0 ? 1 : -1)+count)%count; return; }
@@ -368,6 +368,7 @@ public partial class DungeonPrototype : MonoBehaviour
     Vector3 World(Vector2Int p) { return new Vector3(p.x*Cell,1.5f,p.y*Cell); }
     void Update()
     {
+        TickBattleMenuSlide();
         UpdateHackSystemSession();
         if(TryCityRespawn())return;
         if(UpdateCityInput())return;
@@ -473,14 +474,15 @@ public partial class DungeonPrototype : MonoBehaviour
     }
     void BackToCombatMenu()
     {
+        if(battleMenuAnimating)return;
         if(selectingEnemy){selectingSpeedrun=false;selectingEnemy=false;pendingTargetHack=null;return;}
         if(busy || lost || (combatHack!=null && combatHack.Active) || combatMenu==CombatMenu.Main) return;
-        selectedCombatAction=combatMenu==CombatMenu.Hacks ? 1 : 2;
-        combatMenu=CombatMenu.Main;
+        if(combatMenu==CombatMenu.Hacks){ChangeBattleMenu(CombatMenu.Main,1);return;}
+        selectedCombatAction=2;combatMenu=CombatMenu.Main;
     }
     void Action(int action)
     {
-        if(IntroductionActive || busy || lost || !battle || (combatHack!=null && combatHack.Active)) return;
+        if(battleMenuAnimating || IntroductionActive || busy || lost || !battle || (combatHack!=null && combatHack.Active)) return;
         if(selectingEnemy){if(selectingSpeedrun){ConfirmEnemyTarget();return;}if(action==(pendingTargetHack!=null?1:0))ConfirmEnemyTarget();return;}
         if(action<0 || action>=CombatLabels().Length) return;
         if(RoutePartyCommand(action))return;
@@ -508,7 +510,7 @@ public partial class DungeonPrototype : MonoBehaviour
             StartCoroutine(ResolveCombatDamage(0,"ITEM")); return;
         }
         if(action==0) { if(encounter.Count>1){pendingTargetHack=null;selectingEnemy=true;message="Elige el objetivo y confirma.";}else {busy=true;StartCoroutine(ResolveCombatDamage(PlayerStrength,"ATTACK"));}return; }
-        if(action==1) { RefreshAvailableHacks();combatMenu=CombatMenu.Hacks;selectedCombatAction=0;return; }
+        if(action==1) { RefreshAvailableHacks();ChangeBattleMenu(CombatMenu.Hacks,0);return; }
         if(action==2) { combatMenu=CombatMenu.Items;selectedCombatAction=0;return; }
         if(RollAttackMiss(100-CombatAccuracySettings.EffectiveFlee(Character.fleePercent,PlayerLuck))){message="No pudiste huir.";busy=true;StartCoroutine(ResolveCombatDamage(0,"HUIR"));return;}
         if(pendingMakongNarrative!=null){busy=true;StartCoroutine(FinishMakongBeforeFlee());return;}
@@ -637,27 +639,29 @@ public partial class DungeonPrototype : MonoBehaviour
             }
             DrawEnemyTargets(scale);
             // SPEEDRUN is selected from the in-battle HACK command list.
-            GUI.enabled=!IntroductionActive&&!busy&&!lost&&!selectingEnemy;
+            GUI.enabled=!battleMenuAnimating&&!IntroductionActive&&!busy&&!lost&&!selectingEnemy;
             string[] labels=CombatLabels();
             if(battleUI!=null&&battleUI.useNewArtwork&&labels.Length>5){
-                var nav=new Rect(battleUI.commandOffset.x,height+battleUI.commandOffset.y-5*(battleUI.commandSize.y+battleUI.commandGap)-26,battleUI.commandSize.x,24);
+                var navSize=combatMenu==CombatMenu.Hacks?battleUI.hackButtonSize:battleUI.commandSize;
+                var nav=new Rect(battleUI.commandOffset.x+battleMenuSlideX,height+battleUI.commandOffset.y-5*(navSize.y+battleUI.commandGap)-26,navSize.x,24);
                 if(GUI.Button(new Rect(nav.x,nav.y,nav.width/2-2,nav.height),"▲"))selectedCombatAction=(selectedCombatAction+labels.Length-1)%labels.Length;
                 if(GUI.Button(new Rect(nav.center.x+2,nav.y,nav.width/2-2,nav.height),"▼"))selectedCombatAction=(selectedCombatAction+1)%labels.Length;
             }
             for(int i=0;i<labels.Length;i++)
             {
                 string caption=i==selectedCombatAction ? "> "+labels[i]+" <" : labels[i];
-                GUI.enabled=!selectingSpeedrun&&!IntroductionActive&&!busy&&!lost&&(!selectingEnemy||i==(pendingTargetHack!=null?1:0)) && (combatMenu!=CombatMenu.Items || i==CombatItemIndices().Count || itemCounts[CombatItemIndices()[i]]>0);
+                GUI.enabled=!battleMenuAnimating&&!selectingSpeedrun&&!IntroductionActive&&!busy&&!lost&&(!selectingEnemy||i==(pendingTargetHack!=null?1:0)) && (combatMenu!=CombatMenu.Items || i==CombatItemIndices().Count || itemCounts[CombatItemIndices()[i]]>0);
                 if(combatMenu==CombatMenu.Hacks&&i==availableHacks.Length)GUI.enabled=GUI.enabled&&PlayerLevel>=SpeedrunUnlockLevel&&SpeedrunTargets().Count>0&&CurrentBits>=SpeedrunBitsCost;
                 bool clicked;
                 if(battleUI!=null&&battleUI.useNewArtwork){
-                    string key=combatMenu==CombatMenu.Main?(i==0?"Attack":i==1?"Hack":i==2?"Item":"Flee"):combatMenu==CombatMenu.Hacks?(i==labels.Length-1?"Flee":"Hack"):"Item";
+                    string key=combatMenu==CombatMenu.Hacks?"HackButton":combatMenu==CombatMenu.Main?(i==0?"Attack":i==1?"Hack":i==2?"Item":"Flee"):combatMenu==CombatMenu.Hacks?(i==labels.Length-1?"Flee":"Hack"):"Item";
                     string title=labels[i],detail="";
                     if(combatMenu==CombatMenu.Main)detail=i==0?"Ataque normal":i==1?"Elegir habilidad":i==2?"Usar objeto":"Intentar escapar";
-                    else if(combatMenu==CombatMenu.Hacks){if(i<availableHacks.Length){title=availableHackDefinitions[i].displayName;detail=availableHackDefinitions[i].bitsCost+" BITS";}else if(i==availableHacks.Length)detail=PlayerLevel<10?"Se desbloquea en NV 10":SpeedrunTargets().Count==0?"Sin objetivo válido":CurrentBits<5?"Faltan Bits":"5 BITS";else detail="Menú de combate";}
+                    else if(combatMenu==CombatMenu.Hacks){if(i<availableHacks.Length){title=availableHackDefinitions[i].displayName+" · "+availableHackDefinitions[i].bitsCost+" BITS";detail="";}else if(i==availableHacks.Length)detail=PlayerLevel<10?"Se desbloquea en NV 10":SpeedrunTargets().Count==0?"Sin objetivo válido":CurrentBits<5?"Faltan Bits":"5 BITS";else detail="Menú de combate";}
                     int visibleRows=Mathf.Min(5,labels.Length);int first=Mathf.Clamp(selectedCombatAction-visibleRows+1,0,Mathf.Max(0,labels.Length-visibleRows));
                     if(i<first||i>=first+visibleRows)continue;
-                    var rect=new Rect(battleUI.commandOffset.x,height+battleUI.commandOffset.y-(visibleRows-(i-first))*(battleUI.commandSize.y+battleUI.commandGap),battleUI.commandSize.x,battleUI.commandSize.y);
+                    var size=combatMenu==CombatMenu.Hacks?battleUI.hackButtonSize:battleUI.commandSize;
+                    var rect=new Rect(battleUI.commandOffset.x+battleMenuSlideX,height+battleUI.commandOffset.y-(visibleRows-(i-first))*(size.y+battleUI.commandGap),size.x,size.y);
                     clicked=BattleUIArt.Command(rect,title,detail,key,i==selectedCombatAction,battleUI);
                 }else clicked=NeonDungeonUI.Action(new Rect(Layout.combatOffset.x,height+Layout.combatOffset.y-(labels.Length-i)*(Layout.combatButtonSize.y+Layout.combatButtonGap),Layout.combatButtonSize.x,Layout.combatButtonSize.y),labels[i],i==selectedCombatAction);
                 if(clicked) { selectedCombatAction=i; Action(i); }
