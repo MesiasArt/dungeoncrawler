@@ -4,8 +4,9 @@ using UnityEngine.InputSystem;
 public partial class DungeonPrototype {
  bool startMenuOpen;int startupSelection;
  bool saveSlotsOpen,loadSlotMode;int saveSlotSelection,overwriteSlot=-1;string slotName="";string slotNotice="";
- void OpenSaveSlots(bool load){loadSlotMode=load;saveSlotsOpen=true;saveSlotSelection=DungeonSaveStore.ActiveSlot;overwriteSlot=-1;slotNotice="";ReadSlotName();SetPause(true);}
- void ReadSlotName(){try{var data=DungeonSaveStore.Read(saveSlotSelection);slotName=data!=null&&!string.IsNullOrEmpty(data.slotName)?data.slotName:"Slot "+(saveSlotSelection+1);}catch{slotName="Slot "+(saveSlotSelection+1);}}
+ DungeonSaveSlotCache saveSlotCache;
+ void OpenSaveSlots(bool load){loadSlotMode=load;saveSlotsOpen=true;saveSlotSelection=DungeonSaveStore.ActiveSlot;overwriteSlot=-1;slotNotice="";if(saveSlotCache==null)saveSlotCache=new DungeonSaveSlotCache(SaveSlotSummary);saveSlotCache.Open(Time.unscaledTime);ReadSlotName();SetPause(true);}
+ void ReadSlotName(){if(saveSlotCache==null)saveSlotCache=new DungeonSaveSlotCache(SaveSlotSummary);saveSlotCache.Refresh(Time.unscaledTime);slotName=saveSlotCache.Name(saveSlotSelection);}
  void CloseSaveSlots(){saveSlotsOpen=false;overwriteSlot=-1;}
  void ShowStartupMenu(){startMenuOpen=true;startupSelection=0;SetPause(true);}
  void StartFreshFromMenu(){StartPlayClock(0);startMenuOpen=false;saveSlotsOpen=false;SetPause(false);VirtualDungeon.GameStartContext.PrepareNewGame();introductionCompleted=false;ArmRefugeWelcome();StartIntroduction();}
@@ -20,7 +21,7 @@ public partial class DungeonPrototype {
   if(DungeonSaveStore.SlotExists(saveSlotSelection)&&overwriteSlot!=saveSlotSelection){overwriteSlot=saveSlotSelection;slotNotice="Este slot ya tiene una partida. Pulsa GUARDAR otra vez para reemplazarla.";return;}
   try{DungeonSaveStore.Write(CaptureDungeonSave(),saveSlotSelection,slotName);DungeonSaveStore.ActiveSlot=saveSlotSelection;overwriteSlot=-1;slotNotice="Partida guardada en "+slotName+".";if(!cityActive)SystemMessages.Show(SystemMessageCode.Saved,"",0,DigitalIcon.Backup);DungeonAudio.Play(DungeonAudio.Cue.Item);foreach(var device in GetComponentsInChildren<RefugeDeviceVisual>())if(!device.portal)device.ShowSaveResult(true);}catch(Exception e){slotNotice="No se pudo guardar: "+e.Message;}
  }
- void DrawSaveSlots(float w,float h){float x=w/2-350,y=h/2-275;NeonDungeonUI.Panel(new Rect(x,y,700,550));NeonDungeonUI.Label(new Rect(x+25,y+15,650,40),loadSlotMode?"CARGAR PARTIDA":"GUARDAR PARTIDA");for(int i=0;i<DungeonSaveStore.SlotCount;i++){string label="Slot "+(i+1)+" — Vacío";try{var data=DungeonSaveStore.Read(i);if(data!=null){label=SaveSlotSummary(data);}}catch{label="Slot "+(i+1)+" — No se puede leer";}if(GUI.Button(new Rect(x+25,y+65+i*48,650,40),(saveSlotSelection==i?"> ":"")+label)){saveSlotSelection=i;overwriteSlot=-1;ReadSlotName();}}
+ void DrawSaveSlots(float w,float h){if(saveSlotCache==null)saveSlotCache=new DungeonSaveSlotCache(SaveSlotSummary);saveSlotCache.Refresh(Time.unscaledTime);float x=w/2-350,y=h/2-275;NeonDungeonUI.Panel(new Rect(x,y,700,550));NeonDungeonUI.Label(new Rect(x+25,y+15,650,40),loadSlotMode?"CARGAR PARTIDA":"GUARDAR PARTIDA");for(int i=0;i<DungeonSaveStore.SlotCount;i++){if(GUI.Button(new Rect(x+25,y+65+i*48,650,40),saveSlotCache.Label(i,saveSlotSelection==i))){saveSlotSelection=i;overwriteSlot=-1;ReadSlotName();}}
   NeonDungeonUI.Label(new Rect(x+25,y+405,650,55),slotNotice);if(GUI.Button(new Rect(x+25,y+470,310,45),loadSlotMode?"CARGAR":"GUARDAR"))UseSaveSlot();if(GUI.Button(new Rect(x+365,y+470,310,45),"VOLVER"))CloseSaveSlots();
  }
 }

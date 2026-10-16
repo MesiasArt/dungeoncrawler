@@ -4,7 +4,7 @@ Fecha: 16 de octubre de 2026. Checkpoint previo a producción: `26c8f93`.
 
 ## Estado antes de Fase 3
 
-Implementadas D01, D03/R02 y R03. La regresión conjunta registró 82 comprobaciones correctas y la prueba adicional del aviso confirmó Enter mediante Input System. La build Windows x64 Release compiló con 0 errores y 2 avisos en 280,58 segundos, 469.680.924 bytes. Su primera ubicación estaba dentro del Temp del Editor aislado y Unity la eliminó al cerrar; esa build no se ofrece como archivo entregable. Se repite la generación en una carpeta persistente y la regresión final de guardado antes de dar por cerrada la fase.
+Implementadas y verificadas D01, D03/R02 y R03, con los límites de cobertura indicados abajo. La regresión conjunta registró 82 comprobaciones correctas y la prueba adicional del aviso confirmó Enter mediante Input System. La primera build temporal se eliminó al cerrar el Editor y no se ofrece como entregable. Se repitió la generación en una carpeta persistente: **E:\\PROJECTO DUNGEON\\Builds\\Codebound-Phase2\\Codebound.exe**, Windows x64 Release, 0 errores, 0 avisos, 469.681.100 bytes, 52,25 segundos. `DemoPhase2Data/PersistentReleaseBuild.json` y `LatestPersistenceChecks.txt` registran la compilación y la última regresión de persistencia. El checkpoint de trabajo previo a las optimizaciones es `7d4df3d`. Cierre funcional de Fase 2; no equivale a certificar estabilidad larga de Release.
 
 ## D01 — Reinicio
 

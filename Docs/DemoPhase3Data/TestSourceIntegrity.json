@@ -1,0 +1,32 @@
+[
+  {
+    "path": "Assets/Scripts/DungeonSaveSlotCache.cs",
+    "identical": true,
+    "scope": "Production source equality"
+  },
+  {
+    "path": "Assets/Scripts/DungeonSaveStore.cs",
+    "identical": false,
+    "scope": "Expected difference: Editor fixture guards and read counter only"
+  },
+  {
+    "path": "Assets/Scripts/DungeonPrototype.SaveSlots.cs",
+    "identical": true,
+    "scope": "Production source equality"
+  },
+  {
+    "path": "Assets/Scripts/DungeonAudio.Playlists.cs",
+    "identical": true,
+    "scope": "Production source equality"
+  },
+  {
+    "path": "Assets/Scripts/HelmetCRTLayerMask.cs",
+    "identical": true,
+    "scope": "Production source equality"
+  },
+  {
+    "path": "Assets/Scripts/DungeonPrototype.cs",
+    "identical": true,
+    "scope": "Production source equality"
+  }
+]

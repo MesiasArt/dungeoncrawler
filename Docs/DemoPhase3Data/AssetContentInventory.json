@@ -1,0 +1,265 @@
+{
+  "files": 332,
+  "bytes": 319010251.0,
+  "identicalContentGroups": [
+    {
+      "copies": 2,
+      "bytesEach": 1559,
+      "paths": [
+        "Assets\\Resources\\RetroDungeonExperiment\\Normals\\Mountains-2-Normal.png",
+        "Assets\\Resources\\RetroDungeonExperiment\\Layers\\Mountains-2.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 188600,
+      "paths": [
+        "Assets\\Resources\\UI\\Overclock\\frame_8.png",
+        "Assets\\Resources\\UI\\Overclock\\frame_1.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 1489057,
+      "paths": [
+        "Assets\\Resources\\UI\\HackArm.png",
+        "Assets\\sprites\\brazo pantalla.png"
+      ]
+    },
+    {
+      "copies": 4,
+      "bytesEach": 1280,
+      "paths": [
+        "Assets\\Resources\\RetroDungeonExperiment\\Normals\\Clouds-7-Normal.png",
+        "Assets\\Resources\\RetroDungeonExperiment\\Normals\\Clouds-5-Normal.png",
+        "Assets\\Resources\\RetroDungeonExperiment\\Layers\\Clouds-7.png",
+        "Assets\\Resources\\RetroDungeonExperiment\\Layers\\Clouds-5.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 120703,
+      "paths": [
+        "Assets\\MapTests\\RetroStyle\\Captures\\C-Neon-Intersection.png",
+        "Assets\\MapTests\\RetroStyle\\Captures\\C-Intersection.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 94838,
+      "paths": [
+        "Assets\\Resources\\Enemies\\Makong\\special_1.png",
+        "Assets\\Resources\\Enemies\\Makong\\jump_1.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 68920,
+      "paths": [
+        "Assets\\Resources\\Enemies\\Makong\\special_2.png",
+        "Assets\\Resources\\Enemies\\Makong\\jump_2.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 83779,
+      "paths": [
+        "Assets\\Resources\\Enemies\\Makong\\death_0.png",
+        "Assets\\Resources\\Enemies\\Makong\\death.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 136693,
+      "paths": [
+        "Assets\\Resources\\Enemies\\Makong\\special_3.png",
+        "Assets\\Resources\\Enemies\\Makong\\jump_3.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 175107,
+      "paths": [
+        "Assets\\Resources\\Enemies\\MakubaLanza\\attack_0.png",
+        "Assets\\Resources\\Enemies\\MakubaLanza\\attack.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 121032,
+      "paths": [
+        "Assets\\MapTests\\RetroStyle\\Captures\\C-Straight.png",
+        "Assets\\MapTests\\RetroStyle\\Captures\\C-Neon-Straight.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 96893,
+      "paths": [
+        "Assets\\Resources\\Enemies\\Makong\\special_4.png",
+        "Assets\\Resources\\Enemies\\Makong\\jump_4.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 1031263,
+      "paths": [
+        "Assets\\Resources\\RetroDungeonExperiment\\Normals\\FrontPipe-Normal.png",
+        "Assets\\Resources\\RetroDungeonExperiment\\Layers\\FrontPipe.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 145650,
+      "paths": [
+        "Assets\\Resources\\Enemies\\MakubaArco\\attack_0.png",
+        "Assets\\Resources\\Enemies\\MakubaArco\\attack.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 1041,
+      "paths": [
+        "Assets\\Resources\\RetroDungeonExperiment\\Normals\\Bushes-3-Normal.png",
+        "Assets\\Resources\\RetroDungeonExperiment\\Layers\\Bushes-3.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 990,
+      "paths": [
+        "Assets\\Resources\\RetroDungeonExperiment\\Normals\\Bushes-11-Normal.png",
+        "Assets\\Resources\\RetroDungeonExperiment\\Layers\\Bushes-11.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 3089810,
+      "paths": [
+        "Assets\\Resources\\placeholder\\Atlas de Recursos Cyberpunk Neón.png",
+        "Assets\\Resources\\Decorations\\Art\\PlaceholderAtlas.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 72900,
+      "paths": [
+        "Assets\\Resources\\Enemies\\Makong\\special_0.png",
+        "Assets\\Resources\\Enemies\\Makong\\jump_0.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 4674560,
+      "paths": [
+        "Assets\\Resources\\Audio\\OST\\region 0 boss battle.mp3",
+        "Assets\\Audio\\Music\\Boss Battle Groove.mp3"
+      ]
+    },
+    {
+      "copies": 3,
+      "bytesEach": 1763,
+      "paths": [
+        "Assets\\MapTests\\RetroStyle\\Captures\\C-Neon-DoorClosed.png",
+        "Assets\\MapTests\\RetroStyle\\Captures\\C-DoorClosed.png",
+        "Assets\\MapTests\\RetroStyle\\Captures\\C-Blocks-DoorClosed.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 105379,
+      "paths": [
+        "Assets\\MapTests\\RetroStyle\\Captures\\C-Neon-DoorOpen.png",
+        "Assets\\MapTests\\RetroStyle\\Captures\\C-DoorOpen.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 148294,
+      "paths": [
+        "Assets\\Resources\\Enemies\\Makong\\attack_0.png",
+        "Assets\\Resources\\Enemies\\Makong\\attack.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 1864,
+      "paths": [
+        "Assets\\Resources\\RetroDungeonExperiment\\Normals\\Pipe-Normal.png",
+        "Assets\\Resources\\RetroDungeonExperiment\\Layers\\Pipe.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 910,
+      "paths": [
+        "Assets\\Resources\\RetroDungeonExperiment\\Normals\\Bushes-10-Normal.png",
+        "Assets\\Resources\\RetroDungeonExperiment\\Layers\\Bushes-10.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 120780,
+      "paths": [
+        "Assets\\MapTests\\RetroStyle\\Captures\\C-Neon-Corner.png",
+        "Assets\\MapTests\\RetroStyle\\Captures\\C-Corner.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 16088,
+      "paths": [
+        "Assets\\Resources\\UI\\BattleUI\\HackButton.png",
+        "Assets\\Resources\\UI\\BattleUI\\Auxiliary.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 748397,
+      "paths": [
+        "Assets\\Resources\\RetroDungeonExperiment\\Normals\\Floor-Normal.png",
+        "Assets\\Resources\\RetroDungeonExperiment\\Layers\\Floor.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 1534,
+      "paths": [
+        "Assets\\Resources\\RetroDungeonExperiment\\Normals\\Clouds-8-Normal.png",
+        "Assets\\Resources\\RetroDungeonExperiment\\Layers\\Clouds-8.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 166331,
+      "paths": [
+        "Assets\\Resources\\Enemies\\GranMakuba\\attack_0.png",
+        "Assets\\Resources\\Enemies\\GranMakuba\\attack.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 262123,
+      "paths": [
+        "Assets\\Resources\\Enemies\\Mimic\\attack_0.png",
+        "Assets\\Resources\\Enemies\\Mimic\\attack.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 992,
+      "paths": [
+        "Assets\\Resources\\RetroDungeonExperiment\\Normals\\Mountains-4-Normal.png",
+        "Assets\\Resources\\RetroDungeonExperiment\\Layers\\Mountains-4.png"
+      ]
+    },
+    {
+      "copies": 2,
+      "bytesEach": 101931,
+      "paths": [
+        "Assets\\MapTests\\RetroStyle\\Captures\\C-WideRoom.png",
+        "Assets\\MapTests\\RetroStyle\\Captures\\C-Neon-WideRoom.png"
+      ]
+    }
+  ]
+}

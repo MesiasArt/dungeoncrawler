@@ -1,0 +1,68 @@
+{
+    "label": "after-slots",
+    "unity": "6000.5.4f1",
+    "gpu": "Radeon RX 580 Series",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "scope": "Isolated Unity Editor; not Release FPS",
+    "allocationMethod": "GC.Alloc Recorder sampleBlockCount filtered to current thread; frame bytes from GC Allocated In Frame",
+    "width": 1920,
+    "height": 1080,
+    "renderers": 3865,
+    "enemies": 9,
+    "fixtureBytes": 43854,
+    "workingSet": 0,
+    "metrics": [
+        {
+            "name": "allocation positive control",
+            "unit": "ms/operation",
+            "mean": 0.101,
+            "p50": 0.0,
+            "p95": 0.0,
+            "allocatedBytes": -1.0,
+            "allocations": 1.0,
+            "operations": 1,
+            "reads": 0,
+            "retainedNativeBytes": 0,
+            "available": true
+        },
+        {
+            "name": "slot panel warm draw",
+            "unit": "ms/draw",
+            "mean": 0.30256400000000008,
+            "p50": 0.0,
+            "p95": 0.0,
+            "allocatedBytes": -1.0,
+            "allocations": 46.0,
+            "operations": 50,
+            "reads": 0,
+            "retainedNativeBytes": 0,
+            "available": true
+        },
+        {
+            "name": "playlist lookup",
+            "unit": "ms/operation",
+            "mean": 0.00046115,
+            "p50": 0.0,
+            "p95": 0.0,
+            "allocatedBytes": -1.0,
+            "allocations": 2.0,
+            "operations": 10000,
+            "reads": 0,
+            "retainedNativeBytes": 0,
+            "available": true
+        },
+        {
+            "name": "CRT mask build",
+            "unit": "ms/operation",
+            "mean": 20.466708333333334,
+            "p50": 0.0,
+            "p95": 0.0,
+            "allocatedBytes": -1.0,
+            "allocations": 3287.0,
+            "operations": 12,
+            "reads": 0,
+            "retainedNativeBytes": 0,
+            "available": true
+        }
+    ]
+}

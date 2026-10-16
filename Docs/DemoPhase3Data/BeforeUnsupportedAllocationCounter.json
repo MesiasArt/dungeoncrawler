@@ -1,0 +1,156 @@
+{
+    "label": "before",
+    "unity": "6000.5.4f1",
+    "gpu": "Radeon RX 580 Series",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "scope": "Isolated Unity Editor; not Release FPS",
+    "width": 1920,
+    "height": 1080,
+    "fixtureBytes": 43852,
+    "workingSet": 0,
+    "metrics": [
+        {
+            "name": "slot panel warm draw",
+            "unit": "ms/draw",
+            "mean": 9.952626000000003,
+            "p50": 0.0,
+            "p95": 0.0,
+            "allocatedBytes": 0.0,
+            "operations": 50,
+            "reads": 300,
+            "available": true
+        },
+        {
+            "name": "playlist lookup",
+            "unit": "ms/operation",
+            "mean": 0.00030416000000000004,
+            "p50": 0.0,
+            "p95": 0.0,
+            "allocatedBytes": 0.0,
+            "operations": 10000,
+            "reads": 0,
+            "available": true
+        },
+        {
+            "name": "CRT mask build",
+            "unit": "ms/operation",
+            "mean": 21.773350000000005,
+            "p50": 0.0,
+            "p95": 0.0,
+            "allocatedBytes": 0.0,
+            "operations": 12,
+            "reads": 0,
+            "available": true
+        },
+        {
+            "name": "reference world CPU PlayerLoop",
+            "unit": "ms",
+            "mean": 34.685431932773109,
+            "p50": 33.1384,
+            "p95": 50.5155,
+            "allocatedBytes": 166579.80833333333,
+            "operations": 119,
+            "reads": 0,
+            "available": true
+        },
+        {
+            "name": "reference world GPU",
+            "unit": "ms",
+            "mean": 31.994124444444439,
+            "p50": 30.27344,
+            "p95": 45.59264,
+            "allocatedBytes": -1.0,
+            "operations": 108,
+            "reads": 0,
+            "available": true
+        },
+        {
+            "name": "reference world Editor frame interval",
+            "unit": "ms",
+            "mean": 37.267140159383419,
+            "p50": 35.482604056596759,
+            "p95": 52.527401596307758,
+            "allocatedBytes": -1.0,
+            "operations": 120,
+            "reads": 0,
+            "available": true
+        },
+        {
+            "name": "URP SRP Batcher alternate CPU PlayerLoop",
+            "unit": "ms",
+            "mean": 48.18724999999999,
+            "p50": 40.3835,
+            "p95": 82.814,
+            "allocatedBytes": 169740.13333333334,
+            "operations": 120,
+            "reads": 0,
+            "available": true
+        },
+        {
+            "name": "URP SRP Batcher alternate GPU",
+            "unit": "ms",
+            "mean": 45.71777357798164,
+            "p50": 36.308,
+            "p95": 77.60064,
+            "allocatedBytes": -1.0,
+            "operations": 109,
+            "reads": 0,
+            "available": true
+        },
+        {
+            "name": "URP SRP Batcher alternate Editor frame interval",
+            "unit": "ms",
+            "mean": 66.08880879357457,
+            "p50": 43.17350313067436,
+            "p95": 92.75619685649872,
+            "allocatedBytes": -1.0,
+            "operations": 120,
+            "reads": 0,
+            "available": true
+        },
+        {
+            "name": "URP restored reference CPU PlayerLoop",
+            "unit": "ms",
+            "mean": 38.43008583333334,
+            "p50": 35.2849,
+            "p95": 57.1132,
+            "allocatedBytes": 167186.71666666668,
+            "operations": 120,
+            "reads": 0,
+            "available": true
+        },
+        {
+            "name": "URP restored reference GPU",
+            "unit": "ms",
+            "mean": 35.69803854545455,
+            "p50": 33.56748,
+            "p95": 47.36796,
+            "allocatedBytes": -1.0,
+            "operations": 110,
+            "reads": 0,
+            "available": true
+        },
+        {
+            "name": "URP restored reference Editor frame interval",
+            "unit": "ms",
+            "mean": 42.69342763970295,
+            "p50": 38.08499872684479,
+            "p95": 63.62440437078476,
+            "allocatedBytes": -1.0,
+            "operations": 120,
+            "reads": 0,
+            "available": true
+        },
+        {
+            "name": "retired owned materials alive",
+            "unit": "objects after 20 restarts",
+            "mean": 100.0,
+            "p50": 0.0,
+            "p95": 0.0,
+            "allocatedBytes": 339520.0,
+            "operations": 20,
+            "reads": 0,
+            "available": true
+        }
+    ]
+}

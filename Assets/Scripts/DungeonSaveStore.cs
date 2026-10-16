@@ -18,10 +18,21 @@ using UnityEngine;
  public List<Vector2Int> explored=new List<Vector2Int>();
 }
 public static class DungeonSaveStore {
+ static readonly int[] revisions=new int[SlotCount];
+ internal static int SlotRevision(int slot){return revisions[slot];}
+ internal static string ContextKey {get{
+  #if UNITY_EDITOR
+  return editorTestPath??"";
+  #else
+  return "";
+  #endif
+ }}
+ internal static string[] CandidatePaths(int slot){var paths=new List<string>();string path=SlotPath(slot);paths.Add(path);for(int i=1;i<=5;i++)paths.Add(path+".bak"+i);if(slot==0&&AllowLegacy)paths.Add(LegacyPath);return paths.ToArray();}
  #if UNITY_EDITOR
  public static string editorTestPath;
  #endif
  [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] static void ResetTestSlot(){
+  Array.Clear(revisions,0,revisions.Length);
  #if UNITY_EDITOR
  editorTestPath=null;
  #endif
@@ -53,7 +64,7 @@ public static class DungeonSaveStore {
     else PreserveDamaged(path);
     File.Replace(temp,path,null);
    }else File.Move(temp,path);
-  }finally{if(File.Exists(temp))File.Delete(temp);}
+  }finally{if(File.Exists(temp))File.Delete(temp);}revisions[slot]++;
  }
  public static DungeonSaveData Read(){return Read(ActiveSlot);}
  public static DungeonSaveData Read(int slot){int backup;return Read(slot,out backup);}
@@ -75,7 +86,7 @@ public static class DungeonSaveStore {
   int backup;var data=Read(slot,out backup);notice="";if(data==null||backup==0)return data;
   notice="Partida recuperada del respaldo "+backup+". Puede contener progreso anterior al último guardado.";
   string path=SlotPath(slot),temp=null;
-  try{temp=PrepareTemporary(path,JsonUtility.ToJson(data,true));if(File.Exists(path)){PreserveDamaged(path);File.Replace(temp,path,null);}else File.Move(temp,path);}
+  try{temp=PrepareTemporary(path,JsonUtility.ToJson(data,true));if(File.Exists(path)){PreserveDamaged(path);File.Replace(temp,path,null);}else File.Move(temp,path);revisions[slot]++;}
   catch(IOException){notice+=" No se pudo reparar el archivo principal; el respaldo sigue intacto.";}
   catch(UnauthorizedAccessException){notice+=" No se pudo reparar el archivo principal; el respaldo sigue intacto.";}
   finally{if(temp!=null&&File.Exists(temp))try{File.Delete(temp);}catch(IOException){}}

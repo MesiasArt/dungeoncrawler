@@ -1,0 +1,13 @@
+PASS: Edit Mode: default personal path is blocked in isolated tests
+PASS: Edit Mode: six slots and selected labels are preserved
+PASS: Edit Mode: unchanged summaries reuse the same data
+PASS: Edit Mode: own writes invalidate without waiting for metadata polling
+PASS: Edit Mode: external writes refresh through metadata
+PASS: Edit Mode: corrupt fixture is reported without throwing in GUI
+PASS: Edit Mode: candidate path remains inside fixture directory
+PASS: Edit Mode: candidate path remains inside fixture directory
+PASS: Edit Mode: candidate path remains inside fixture directory
+PASS: Edit Mode: candidate path remains inside fixture directory
+PASS: Edit Mode: candidate path remains inside fixture directory
+PASS: Edit Mode: candidate path remains inside fixture directory
+PASS: 12 Edit Mode cache checks

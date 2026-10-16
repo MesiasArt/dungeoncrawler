@@ -1,0 +1,534 @@
+[
+  {
+    "path": "ProjectSettings\\XRSettings.asset",
+    "sha256": "71F175773593BA28D42BF1AF0543B2A465E0316D3B8F435AEBF48EA66B31B621"
+  },
+  {
+    "path": "ProjectSettings\\VFXManager.asset",
+    "sha256": "A8950860670C6FA8F83A43E37DEB966BEACFD7B535721C4CD9C2A7E5B46305E8"
+  },
+  {
+    "path": "ProjectSettings\\VersionControlSettings.asset",
+    "sha256": "B693342EB84FB0378D21CD2A4557D900777709AD00C2FF5041C2D8451B6DA246"
+  },
+  {
+    "path": "ProjectSettings\\URPProjectSettings.asset",
+    "sha256": "C7FB928E0AABAB57310310D78F03B61C028A8818EE6F183FC150B8EB6CA249A5"
+  },
+  {
+    "path": "ProjectSettings\\UnityConnectSettings.asset",
+    "sha256": "8CADE828972070A97614D456E62164112BF8D41E437E27AA5D43ED28772D6050"
+  },
+  {
+    "path": "ProjectSettings\\TimeManager.asset",
+    "sha256": "C8537E73E067F8DD1F19060CF703365261967F5396D77CD3474F825C814CBE52"
+  },
+  {
+    "path": "ProjectSettings\\TagManager.asset",
+    "sha256": "7A14B6F084609B7639FBAC8BED702C3516661ECAD739C815A76712C5DE84C0FC"
+  },
+  {
+    "path": "ProjectSettings\\ShaderGraphSettings.asset",
+    "sha256": "CDBA1E5D65BCF6E3269D76ED3E60B6C21F98322002996642C9D74F1EB89F6B91"
+  },
+  {
+    "path": "ProjectSettings\\SceneTemplateSettings.json",
+    "sha256": "BB9098B3BFCDE78D93E264B96F7B77B5430E64E8C57A7AAD7F5A5D9C3945E16A"
+  },
+  {
+    "path": "ProjectSettings\\QualitySettings.asset",
+    "sha256": "DA9D6F588C72F0EB8EA7C33BF3BAF9BF11E296063217B96AEE0D8A9B8FFC1BA6"
+  },
+  {
+    "path": "ProjectSettings\\ProjectSettings.asset",
+    "sha256": "70FE3D9CEB978FE3CFA5C244884EDD7244575B999435052CC782EB4FE631209F"
+  },
+  {
+    "path": "ProjectSettings\\PresetManager.asset",
+    "sha256": "6BA879310E2BE2E5BA18702578CDA93B26B030ECD88E883FEF22AB456A9F9697"
+  },
+  {
+    "path": "ProjectSettings\\PhysicsCoreProjectSettings2D.asset",
+    "sha256": "6356FF823CF80282A698FE03796EA05F52EA16D948027399A638082E07469558"
+  },
+  {
+    "path": "ProjectSettings\\Physics2DSettings.asset",
+    "sha256": "F8853353AAC1BC6A33D1999B08EC2661ABC374402ED4790A0B82EB64585B731E"
+  },
+  {
+    "path": "ProjectSettings\\Packages\\com.unity.probuilder\\Settings.json",
+    "sha256": "51CBFF82449A2DFDE01A8950B72F009584293F1CB0F89C01D9A8C4720E15A93E"
+  },
+  {
+    "path": "ProjectSettings\\PackageManagerSettings.asset",
+    "sha256": "7D02AECEC08CC5170B62DFE79514FA59A0562210403B2B59848841E49CFE3E08"
+  },
+  {
+    "path": "ProjectSettings\\NavMeshAreas.asset",
+    "sha256": "DECA65F3094943A1AF148CF64FD6C0DEB503219D12DE0E172B7F948D07A8E6A8"
+  },
+  {
+    "path": "ProjectSettings\\MultiplayerManager.asset",
+    "sha256": "83DED116CA3ED35A6ACAC9B0FED830F04DFE5C008C185BE50B1C132C88AEA505"
+  },
+  {
+    "path": "ProjectSettings\\MemorySettings.asset",
+    "sha256": "A660CB9890D880DF92F3B80FA40723F183CC5EF2CB3ECC850B366191F05834C7"
+  },
+  {
+    "path": "ProjectSettings\\InputManager.asset",
+    "sha256": "776C8B6C71E1101973E1F3AB569CF9058B857372A8A19210B50B3C1C6A1A42A6"
+  },
+  {
+    "path": "ProjectSettings\\GraphicsSettings.asset",
+    "sha256": "5BFF9CCECCCB3A0CD81BBECA4BA596C7B6644EF79BCC47751C6F13B8F93C249C"
+  },
+  {
+    "path": "ProjectSettings\\EditorSettings.asset",
+    "sha256": "8DB27598FB5A30FC86CCF3D2892E98C53A5C605C2C1CA843AF248EDC89761920"
+  },
+  {
+    "path": "ProjectSettings\\EditorBuildSettings.asset",
+    "sha256": "0890736CE17EE79733CFF2249D3715FC0F4DA0F17E24E184BD7DB4FB25E13FD3"
+  },
+  {
+    "path": "ProjectSettings\\DynamicsManager.asset",
+    "sha256": "7BF32032957EB76DEA137D4521B8F057FFDB55259ACBF130D0954C2D201EEC68"
+  },
+  {
+    "path": "ProjectSettings\\ClusterInputManager.asset",
+    "sha256": "06A192320121E445DCFF1AE8DDAD2A948FF671CA134603C043D9F4E920427EA9"
+  },
+  {
+    "path": "ProjectSettings\\AudioManager.asset",
+    "sha256": "282586EACD02FCA9B7B803B93641647ABEE5A9D1A7369381025546F0C9808CCF"
+  },
+  {
+    "path": "Packages\\packages-lock.json",
+    "sha256": "2F7FB1FE7AA14262F7698B094D96CF060C3E8C52589C5308A04D29724715DA91"
+  },
+  {
+    "path": "Packages\\manifest.json",
+    "sha256": "81BE4615737244E051F8AA3AE1458CC88FF5236158D1E2E8CF63ACC6C6F39027"
+  },
+  {
+    "path": "Assets/Resources\\UI\\Title\\Settings.asset",
+    "sha256": "01EE786346730DDE7C56D8D8A24BFCBEF738BFAE75842D41D87ADAFFCDE8F9E9"
+  },
+  {
+    "path": "Assets/Resources\\UI\\SystemMessageSettings.asset",
+    "sha256": "85A1BC045AFB9452C4B88507211AA9E3FE6D3C7B59A1C0743F61FBD1C302D082"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase6Tests\\SecondaryTable.asset",
+    "sha256": "55FFEA0B83E41693EC2E1BAF2B96F10545D82DD6D514EAC927CAE6FD515D347B"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase6Tests\\FloorBRegions.asset",
+    "sha256": "F2D4513E64A043E4B4E051EA224007227B78F2CAE47A07C880D029F8C2895AC8"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase6Tests\\FloorBObjects.asset",
+    "sha256": "DA09917224D766E75D9406D24B6888E9B053A4E22FB8F291EBD2BF284D6245B7"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase6Tests\\FloorB.asset",
+    "sha256": "4CFADA69F5DBC4929AC8FF8EEB232E48CCA8A04DE542493088B852E7B9CC99A8"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase6Tests\\FloorARegions.asset",
+    "sha256": "2B65839E46D285145B9D8785FB49D736841C162CFFDFA39E2B79EE3D90250120"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase6Tests\\FloorAObjects.asset",
+    "sha256": "9FDFFB846A1E8F0AFC1AE3100E08B9724493490C44BBBB9FD2056589468BEA39"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase6Tests\\FloorA.asset",
+    "sha256": "9773410880672F1316A118C8E3CACCDF292FC20E4E697283C4834E29A16B596E"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase6Tests\\Enemies.asset",
+    "sha256": "0CCCE6DFBDF8DE2A03614803D316D69FB9CAAD03F09E385DB6B8D964D303E401"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase6Tests\\ConditionalTable.asset",
+    "sha256": "8BD8A44F4F19FAAC488294254752D5A3C098DCBC6833C4A5965B2CC2E6D576E4"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase6Tests\\ChestCondition.asset",
+    "sha256": "32FD3E6276279955A5EF47A21251E36D76DF32E44274615CAEA688E7CC33D338"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase6Tests\\BossVictory.asset",
+    "sha256": "AD45E012EBB104C1C0EAEAC66BF5E36782A6A58760F84658D9B7697167394FB3"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase6Tests\\BossProfile.asset",
+    "sha256": "37F2783EB674619D0E7D4BC07BA11A34A046403A822D74679E459C211E3237D2"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase6Tests\\BossHalf.asset",
+    "sha256": "C6BBEF9F7BCB4AFBC4B1BBCDBB31E22AAE7E53CEAFC7CD351A8B00386A69EE1D"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase5Tests\\FloorBRegions.asset",
+    "sha256": "72722E7E56EFD2B72CCA2F789BE8AEB4B94AE3C0F31F931A092A2525AE14F5CC"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase5Tests\\FloorBObjects.asset",
+    "sha256": "0E5CE801F1F067C15D756879CE48467800828A925180FA344759C0463BC65285"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase5Tests\\FloorB.asset",
+    "sha256": "AF58B077758A9EC66A4DEC59375260423DF9550E92A74A731137D35E4981AF84"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase5Tests\\FloorARegions.asset",
+    "sha256": "33B55512D97BAE2C3984A75197820A06300B8E07D95385490FBB99D5269C9B34"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase5Tests\\FloorAObjects.asset",
+    "sha256": "A1B9C681655E6842D905433928A333AF3EF7E149C33E5CE677372FFAFF505CCC"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase5Tests\\FloorA.asset",
+    "sha256": "BF56141254B97EE465722F26AAA0AF945C483E72905BC3665C227C6CB2E041D3"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase5Tests\\Enemies.asset",
+    "sha256": "D287612F3BD88FBEFAE3AB12D4A4B12C953FE33C9C7C5AD5FD39CEABCF7109A7"
+  },
+  {
+    "path": "Assets/Resources\\UI\\DungeonUILayout.asset",
+    "sha256": "0E3FC8F734CA2867FC1D347DEBA81E3A7FBAD138465DEA8616E57E954D0A71B7"
+  },
+  {
+    "path": "Assets/Resources\\UI\\DialogueCorruptionSettings.asset",
+    "sha256": "E0384AECF35963EBEBA5203754BCA3ECDE262845037C23B57521ECB450787E69"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase4Tests\\SwitchGate.asset",
+    "sha256": "624844CD4F95E50283E6C56074584E9FE25731AA2880AA5C76735C2943E3B18D"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase4Tests\\Shortcut.asset",
+    "sha256": "15303E92C8B1F51ABD62C077348AFB3EF7E4F866AF81820846E459C28B527F3C"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase4Tests\\Sequence.asset",
+    "sha256": "A25DB902301DFEA5465E9151C3C54487CF42E290BC3971A2E995CC82BC5ADBEC"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase4Tests\\Remote.asset",
+    "sha256": "F6A959CD2F9D355876C28E8C9249DAC5F31C3D19D595A63AA8E974B87106003C"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase4Tests\\Parent.asset",
+    "sha256": "BC3D91211B96DF9FD5FD68E7E1789609636B2A041E310AD3A51D2E276DD8DB55"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase4Tests\\NpcAdapter.asset",
+    "sha256": "39A76C48560C09A6E9B34A0C33825FABA8AA0AB472A46C43C73D2BE74BF097EC"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase4Tests\\FloorBRegions.asset",
+    "sha256": "33226357EF44C622BC41CE2DD448F1BC09CED994E98FCDDC2D4925FEE6D3D15E"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase4Tests\\FloorBObjects.asset",
+    "sha256": "1AD600FF6961C224D57A0368CF0E484F07BF7C19602F9A90228B2FD82D8198EA"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase4Tests\\FloorB.asset",
+    "sha256": "CC7FC2F1E106A9485A4677F070947B059C74C179FD1C23A49AAA2C92E9A20D39"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase4Tests\\FloorARegions.asset",
+    "sha256": "71A5E523EBBAC9B3E2F63C0804D2E148D20C74809BDEEA85A5E71A2735CAD34E"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase4Tests\\FloorAObjects.asset",
+    "sha256": "95965D4424F10C850882008D2C3B2531B111570F26491414853BF8ABACB2426E"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase4Tests\\FloorA.asset",
+    "sha256": "2AFB04DC7D4672EB2D88BAE0F3B7C347A8A4D5F4747B98B6D03D2661665B9E20"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase4Tests\\Child.asset",
+    "sha256": "9721BD5C15A6919C2C8094D13467B7809F859DAB1A9AAF24F41723DD7C0FD104"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase4Tests\\ChestAdapter.asset",
+    "sha256": "79B1C92F907E2539D77D9CF9FAB5C5860A77A07D588287F3F34E6D9397508CC0"
+  },
+  {
+    "path": "Assets/Resources\\UI\\BattleUI\\Settings.asset",
+    "sha256": "BB76AD4CDCB8DD2EC3BEC0DCEB6A31CB722E7E22A597053BF6E3ED0B2448DF24"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase2Tests\\RegionsB.asset",
+    "sha256": "33E73CA4E4163B710D96F5BEDFC63F2480598E2310B4645F2A6F801F0EBD733A"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase2Tests\\ObjectsB.asset",
+    "sha256": "5AC476D28D70A6E5129CAEF4B487FDFC395A12FDE75056382D34AC84BF58A897"
+  },
+  {
+    "path": "Assets/Resources\\DrpgPhase2Tests\\FloorB.asset",
+    "sha256": "72A29899F99ED095A546E29EB2C142E330A3F1A0700862FC13D549B87D2EA8B0"
+  },
+  {
+    "path": "Assets/Resources\\DigitalSystemsDemo\\Regions.asset",
+    "sha256": "F0FCE5941AECA3BC9CAA627121BB3BAC35CB70F25B3A528A5E8922A9CA0000AC"
+  },
+  {
+    "path": "Assets/Resources\\DigitalSystemsDemo\\Map.asset",
+    "sha256": "7BE86DBC2835CDE919C7E4B61A89881D7E843CF6209E07EDD5191D6D0C1DD52B"
+  },
+  {
+    "path": "Assets/Resources\\DigitalSystemsDemo\\Entities.asset",
+    "sha256": "81E92B3870E2D980AF0D2835B9A0A3FCA52FA84C426EEB2BFC957093AA6A750F"
+  },
+  {
+    "path": "Assets/Resources\\DigitalSystemsDemo\\DoorSettings.asset",
+    "sha256": "6F86A7EE846AFBE752A34D064145B7BBA3EEAF8BEDCEBD84762C2CDEBA31D9C0"
+  },
+  {
+    "path": "Assets/Resources\\DigitalKingdom\\Story.asset",
+    "sha256": "54499999BF00648E4519651B1AC9AD32410DA8FB0EF67605D0E9FBA785953FBB"
+  },
+  {
+    "path": "Assets/Resources\\RetroDungeonExperiment\\CRT.asset",
+    "sha256": "FA2BC2F49E153BCCF0C8694596AB1689E229750672BA19B7E43DBB2A82B526E5"
+  },
+  {
+    "path": "Assets/Resources\\DigitalKingdom\\Locations\\01-city.inn.asset",
+    "sha256": "C254CE7ADEEA2A9A1AE194BC5C9693BAFD7C934B7F178D8AC4DED829B30B2C47"
+  },
+  {
+    "path": "Assets/Resources\\RetroDungeonExperiment\\Audio.asset",
+    "sha256": "D621D702FE2C4AEFE54D7C606524556E29FAD7EF750B6182B6911F6CCC1AEE4A"
+  },
+  {
+    "path": "Assets/Resources\\DigitalKingdom\\CityCRT.asset",
+    "sha256": "89C493872B72030DD67ED2038E03B2EBD5CA66A8CB9895E583DE64BDDD037FDD"
+  },
+  {
+    "path": "Assets/Resources\\DigitalKingdom\\City.asset",
+    "sha256": "4A8E98083BD62CE8171BA775F7D51F44DE04A2CB2E753B96B1174C7B88163C87"
+  },
+  {
+    "path": "Assets/Resources\\MapProviders\\OriginalManual.asset",
+    "sha256": "55B277AF4466154480F969FB332F5E533A6D9CACDFBD7C31F6D0F8F64CD90E34"
+  },
+  {
+    "path": "Assets/Resources\\RetroDungeonExperiment\\UpdatedLayers\\CutoutBounds.json",
+    "sha256": "A51A2E8F8D0DAE36A4C459496D236DCDA091E36AA04E7CFAD2A292C712ACFE73"
+  },
+  {
+    "path": "Assets/Resources\\RetroDungeonExperiment\\Settings.asset",
+    "sha256": "45A5AC229C7FFFCEEC0FF6B797858A7F175706BB3B3425D0C7E5857C2577F515"
+  },
+  {
+    "path": "Assets/Resources\\RetroDungeonExperiment\\Regions.asset",
+    "sha256": "03A3BD8F50F4568D37ABFC6DC81E3C436170213AC51650C864F63250181284F4"
+  },
+  {
+    "path": "Assets/Resources\\RetroDungeonExperiment\\Objects.asset",
+    "sha256": "8FBE214DEA4E6E961D971B912EBE978AAFBAD86DC0FA36B39E655CBEFDEE78B6"
+  },
+  {
+    "path": "Assets/Resources\\HelmetCRT\\Settings.asset",
+    "sha256": "380F781B42A9DECBF77A4238A0339D266E8A148775CE9A410F0DF08F9C7F398D"
+  },
+  {
+    "path": "Assets/Resources\\RetroDungeonExperiment\\Map.asset",
+    "sha256": "212DDBA4EC5EE0EA5D67614C090709816E8DFBF730DC24CD7964E774F4E68116"
+  },
+  {
+    "path": "Assets/Resources\\Decorations\\MainDungeonDecorations.asset",
+    "sha256": "69773949556BCB5E94AFE1F117F6779C59FD1BA0CCF4A8643C19809227BA07E8"
+  },
+  {
+    "path": "Assets/Resources\\Decorations\\Catalog.asset",
+    "sha256": "9D2BDCAB59489E604EF89EB4AA4114B39EA27CA60F1756F7FE853907C2396E2C"
+  },
+  {
+    "path": "Assets/Resources\\RetroDungeonExperiment\\Enemies.asset",
+    "sha256": "6C16789F53818FD2D10C5147A7CAA459AF39D6F8BE95888E433B010BB4F8C076"
+  },
+  {
+    "path": "Assets/Resources\\RetroDungeonExperiment\\Encounters.asset",
+    "sha256": "1CECD99988C9153CE3A56FC152FC0AE69B005BB64A7B3AC5C5326E22C7CE9A77"
+  },
+  {
+    "path": "Assets/Resources\\DigitalKingdom\\Locations\\04-city.lab.asset",
+    "sha256": "3C469C1C2347B1086F5CFC914EE588C4E9EF29287E48ADDB7A1C6B896B1DFEF3"
+  },
+  {
+    "path": "Assets/Resources\\DigitalKingdom\\Locations\\03-city.temple.asset",
+    "sha256": "EDD257E07E98864B5A9DC035351F2C28558C525BE964EF836D3BEA0680D929F7"
+  },
+  {
+    "path": "Assets/Resources\\DigitalKingdom\\Locations\\02-city.shop.asset",
+    "sha256": "E81FCD9B1167B0494DC042B7D6337C3CBF51D28F9B6B298E887039A274471A57"
+  },
+  {
+    "path": "Assets/Resources\\DigitalKingdom\\Locations\\05-city.travel.asset",
+    "sha256": "068BF8E6139ADA424D658BD814574814D91847AE4AE7CC151A0E204BAD76734E"
+  },
+  {
+    "path": "Assets/Resources\\DigitalKingdom\\Locations\\06-city.sewers.asset",
+    "sha256": "83F8E42E0EBEED3594783564F759CBE1878BE0ED0208DBEAF28336A7028B0745"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\EnemySizeSettings.asset",
+    "sha256": "A8F06ABC1FF3C9D9737431575BF33E56A1C61570D5EA02A00AA4A06DF8CBA3D5"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\EnemyEncounterSettings.asset",
+    "sha256": "052244772A415B98866040D17C81FF88A34B0FCD67CA139E107653ECECD22E0B"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\DungeonVisualSettings.asset",
+    "sha256": "E8725977294EBECD9F495F42164491AC060785B4BB954398FD9536DBA5DF4D77"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\DungeonAtmosphereSettings.asset",
+    "sha256": "8D48124E4D088ED0052C02CBE74F11E03D37A0311C3AB1B49C731A3EE3AF321D"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\Zones\\PlanoDungeon.asset",
+    "sha256": "967913EE52532D370FA5E71D52FB8667230275BB4CFCCACECDFA3D9B069F1B80"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\Zones\\PlanoDungeon-Objetos.asset",
+    "sha256": "4D5FD4A0625F0130D937243C8C4A877CBBB46010549EA7068112DBE96D8D6A53"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\Zones\\DungeonRegions.asset",
+    "sha256": "AB3C3E5F6F320733FCDE4F7036274DD3970D512640D692D954C5456E8D82E062"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\Zones\\99-SinAsignar\\Nueva zona.asset",
+    "sha256": "1A7EA59DA11DA04C92FFF2C0DA16199933FFAE7D1BAD98FC6ED1EFD6E4E46093"
+  },
+  {
+    "path": "Assets/Resources\\Combat\\PlayerLevelSettings.asset",
+    "sha256": "BB9BFAFFADA209FD1BB77CA2398A6337D1A158E27E32D4CAF3AC1894D677E2F0"
+  },
+  {
+    "path": "Assets/Resources\\Combat\\PlayerHackCatalog.asset",
+    "sha256": "4AE1D72D70C2A6D86C44FA610695D193E41872433CDE7078890188EB7B4DCC84"
+  },
+  {
+    "path": "Assets/Resources\\Combat\\PlayerCharacterSettings.asset",
+    "sha256": "ABA27A752F29BFC55144FD4F61E82BA4F0EEAFB33A8C52DD7F8759936387BDEE"
+  },
+  {
+    "path": "Assets/Resources\\Combat\\PlayerBitsSettings.asset",
+    "sha256": "9DFC2C1EBA0A56B3E8390CAAB3D47B701760C96E1D931E5B4A04789CFFEB5AE3"
+  },
+  {
+    "path": "Assets/Resources\\Combat\\OverclockSettings.asset",
+    "sha256": "BD2C744C2191A7A25FADA15897193A19A33B5E3BB97FAE51AC8B7FB73344FE50"
+  },
+  {
+    "path": "Assets/Resources\\Combat\\MakongSpecialSettings.asset",
+    "sha256": "6A4C5B946CB911C108163B5FBECA12638B028121A491B320B40F3A84C71691FC"
+  },
+  {
+    "path": "Assets/Resources\\Combat\\MakongPresentation.asset",
+    "sha256": "B9ED1FEDBDE35664167068761EDCCC12A5A835DD65FB05E600B9D0D95DFD21F0"
+  },
+  {
+    "path": "Assets/Resources\\Combat\\GamerBoyProfile.asset",
+    "sha256": "8F5DAB5130F8C9593BB91554390912D72ACBBC99C63BABE4A5861C226161E29C"
+  },
+  {
+    "path": "Assets/Resources\\Combat\\EnemyLevelSettings.asset",
+    "sha256": "44788B36133E2AC5317FB7C78388FCE01CD76A3929CA207A5B9CB04C04B43B74"
+  },
+  {
+    "path": "Assets/Resources\\Combat\\EnemyJumpSettings.asset",
+    "sha256": "227B463CE17741C62B4AE02595CAF7A7AC03355B64310515BBD9E5701D2160BD"
+  },
+  {
+    "path": "Assets/Resources\\Combat\\EnemyCharacterCatalog.asset",
+    "sha256": "364410D836678A7486C71CDDFC1B4C02DF61733C77D9FCA05C7AC0DADC741DA5"
+  },
+  {
+    "path": "Assets/Resources\\Combat\\CombatInventorySettings.asset",
+    "sha256": "2B9D6CEBC51FFEDEC185BA33167E80A96078B1E2A155E87C2E9ACCBCA066CAC2"
+  },
+  {
+    "path": "Assets/Resources\\Combat\\CombatDropSettings.asset",
+    "sha256": "351689D28FD0E5A455C1549418316AF58EF8EF20EB1E05BBF47A1B467AB3B8C3"
+  },
+  {
+    "path": "Assets/Resources\\Combat\\CombatBalanceSettings.asset",
+    "sha256": "0F45B9D156B12E047A18327EB9B254529783D2802A6B1F3938D5FAA903BEF27D"
+  },
+  {
+    "path": "Assets/Resources\\Combat\\CombatAccuracySettings.asset",
+    "sha256": "59E4C9E44BF4B59D7177B613262137B9EF2CF61EEDBF0596F8242EE2D7D37385"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\Zones\\02-Zona2\\Enemigos.asset",
+    "sha256": "2DD7F25E953E8FA06C504B71B3CCE70BA63BDD9BA643BBCB98EBE5FFC1FA3FEB"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\Zones\\01.5-PasilloSeguro\\Letrero.asset",
+    "sha256": "9407602B8382B4DB3157B3D51C5FAD254CE3ADC746AE0A333134D220182A1576"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\Zones\\01-Zona1\\Enemigos.asset",
+    "sha256": "62975E530F9ECACCB7DA4E57227E7FE41C68B6F38B0CEEE38666F2C0877628CE"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\Zones\\00-Zona0\\Refugio.asset",
+    "sha256": "E74A3203E50EDD80F88C7CCCA3A2CE693A5C9FFD5BE80E06F7B6BE5B95115CE8"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\Zones\\00-Zona0\\NucleoPlaceholder.asset",
+    "sha256": "75481DFDB506FF3AF76D67D00B2461BDECDAC9F130B618B2FC9F71AFC53421AA"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\Zones\\00-Zona0\\Enemigos.asset",
+    "sha256": "0FC7022C186168C2EE146BFEF84E609D1B197FE86567C6227714D3682052E7F2"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\RefugeWelcomeDialogue.asset",
+    "sha256": "0610CB32D472DFE0ABC3E0B95DF06A7CAF5690EA0F07622A6EB4AB2FA0C7A3E5"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\RefugeWelcome.asset",
+    "sha256": "06E89F9223C07800F0302CEA5BA4D1DBAB0609A6F98855E9B288451D645B64CA"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\MovementSettings.asset",
+    "sha256": "BE98669746CB04E64B168CBCBEBB102C642AFB69121F61B2814E520CDF108B94"
+  },
+  {
+    "path": "Assets/Resources\\Exploration\\ExitDoorSettings.asset",
+    "sha256": "5A36093473F0B8D2A0CEBA20710FF221D3F11F4D9E651B24F6825692C5988F4A"
+  },
+  {
+    "path": "Assets/Resources\\Combat\\Barks\\EnemyBarkSettings.asset",
+    "sha256": "C6DFB4E28D0B889406B94ED62D804F55E1F8D71DA97C7A49F4F950861698F9B6"
+  },
+  {
+    "path": "Assets/Resources\\Audio\\DungeonAudioSettings.asset",
+    "sha256": "F083540AADC2255C166358A153A08FB160CF71E891FDD26BC5AC6045D1A64B77"
+  },
+  {
+    "path": "Assets/Resources\\DigitalKingdom\\Locations\\07-city.exit.asset",
+    "sha256": "087B183FD3CD9625BB3C6760A1A6F0EEF88ED802A3E4152BFD9C85F526DB13BF"
+  },
+  {
+    "path": "Assets/Resources\\DigitalKingdom\\Locations\\08-city.dungeons.asset",
+    "sha256": "9D7B7CB2E923FFBD883AFEC8BB55B1D84B2F007B71EE41D7EA3DBBFB0DEC315E"
+  }
+]

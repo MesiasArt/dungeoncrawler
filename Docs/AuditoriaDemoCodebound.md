@@ -2,7 +2,7 @@
 
 Fecha: 16 de octubre de 2026. Alcance: análisis, sin implementar optimizaciones.
 
-Actualización de preparación: ver [Fase 2 — correcciones funcionales](DemoPhase2FunctionalFixes.md). D01, D03/R02 y R03 ya tienen implementación y evidencia de pruebas; su cierre final se registra allí. Las secciones originales y la actualización Windows conservan sus conclusiones históricas. La Fase 3 fue autorizada; todavía no se han aplicado sus optimizaciones en este punto de control.
+Actualización de preparación, 16/10/2026: [Fase 2 — correcciones funcionales](DemoPhase2FunctionalFixes.md) registra el cierre funcional de D01, D03/R02 y R03 y su build persistente. [Fase 3 — rendimiento](DemoPhase3Performance.md) recoge las optimizaciones, métricas y límites actuales. Las secciones originales y la actualización Windows siguientes conservan sus conclusiones históricas; sus pendientes de estabilidad Release no se dan por resueltos por estas fases. No se inicia Fase 4.
 
 ## 1. Resumen ejecutivo
 

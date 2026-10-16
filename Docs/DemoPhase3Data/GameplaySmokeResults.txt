@@ -1,0 +1,13 @@
+PASS: Gameplay: map roundtrip preserves explored cells, completed event and reward receipt
+PASS: Gameplay: laboratory enters real combat on the existing scene
+PASS: Gameplay: ATTACK starts its existing turn coroutine
+PASS: Gameplay: ATTACK returns to an actionable combat state
+PASS: Gameplay: HACK submenu opens
+PASS: Gameplay: Jump activates its real UI session and input lock
+PASS: Gameplay: Jump failure resolves and returns control to combat
+PASS: Gameplay: Overclock activates
+PASS: Gameplay: Overclock result returns control to combat
+PASS: Gameplay: ITEM submenu opens
+PASS: Gameplay: potion consumes exactly one fixture item
+PASS: Gameplay: successful flee restores exploration and camera
+PASS: Gameplay: precise stomp still produces a boosted bounce

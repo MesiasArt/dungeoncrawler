@@ -106,7 +106,11 @@ public partial class DungeonPrototype : MonoBehaviour
         enabledInteract = enabledSubmit = false;
     }
     void OnDisable() { CancelRefugeWelcome();EndIntroPresentation(true);ClearMovementInput(); CancelMapReveal(); SetPause(false); ReleaseIntroductionInput(); }
-    void OnDestroy() { if(voidDepthMaterial!=null)Destroy(voidDepthMaterial);EndMakongPresentation();if(battleCeiling!=null)Destroy(battleCeiling);if (floorWallDistance != null) Destroy(floorWallDistance); }
+    void OnDestroy() {
+        if(voidDepthMaterial!=null)Destroy(voidDepthMaterial);EndMakongPresentation();if(battleCeiling!=null)Destroy(battleCeiling);if (floorWallDistance != null) Destroy(floorWallDistance);
+        // These five instances are created by Surface/Glow for this controller only.
+        if(wall!=null)Destroy(wall);if(floor!=null)Destroy(floor);if(ceiling!=null)Destroy(ceiling);if(pink!=null)Destroy(pink);if(blue!=null)Destroy(blue);
+    }
     void RestartNewGame()
     {
         GameStartContext.PrepareNewGame();

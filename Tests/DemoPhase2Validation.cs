@@ -19,6 +19,9 @@ public sealed class DemoPhase2Validation:MonoBehaviour {
  IEnumerator Ready(){float until=Time.realtimeSinceStartup+30;while(Time.realtimeSinceStartup<until){var d=FindAnyObjectByType<DungeonPrototype>();if(d!=null&&d.RetroView!=null&&d.LaboratoryReady)yield break;yield return null;}throw new Exception("Dungeon initialization timeout");}
  IEnumerator Run(){
   yield return Ready();yield return null;yield return new WaitForEndOfFrame();
+  #if DEMO_PHASE3_SMOKE
+  if(File.Exists("phase3-smoke")){yield return DemoPhase3GameplaySmoke.Run(Check);yield break;}
+  #endif
   #if DEMO_PHASE3_BENCHMARK
   if(File.Exists("phase3-label")){yield return DemoPhase3Benchmark.Run(Check);yield break;}
   #endif
