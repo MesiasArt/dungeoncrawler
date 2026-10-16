@@ -1,0 +1,60 @@
+PASS: Phase 3: normal dungeon ready
+PASS: Save: slot 0 version 1 roundtrip
+PASS: Save: slot 0 preserves floor snapshot
+PASS: Save: slot 1 version 2 roundtrip
+PASS: Save: slot 1 preserves floor snapshot
+PASS: Save: slot 2 version 1 roundtrip
+PASS: Save: slot 2 preserves floor snapshot
+PASS: Save: slot 3 version 2 roundtrip
+PASS: Save: slot 3 preserves floor snapshot
+PASS: Save: slot 4 version 1 roundtrip
+PASS: Save: slot 4 preserves floor snapshot
+PASS: Save: slot 5 version 2 roundtrip
+PASS: Save: slot 5 preserves floor snapshot
+PASS: Save: backup rotation 1
+PASS: Save: backup rotation 2
+PASS: Save: backup rotation 3
+PASS: Save: backup rotation 4
+PASS: Save: backup rotation 5
+PASS: Save: truncated principal falls back to first valid backup
+PASS: Save: summary read does not repair or mutate files
+PASS: Save: explicit recovery reports source and possible lost recent progress
+PASS: Save: load repairs principal and archives damaged bytes
+PASS: Save: recovery leaves source backup intact
+PASS: Save: future version never silently downgrades to an old backup
+PASS: Save: valid backup remains usable when principal repair is denied
+PASS: Save: skips invalid recent backup
+PASS: Save: missing principal remains recoverable through slot menu
+PASS: Save: missing principal recreated atomically
+PASS: Save: locked destination fails safely
+PASS: Save: failed replacement retains original and cleans staged write
+PASS: Save: invalid inventory rejected before touching destination
+PASS: Save: abandoned temporary write never supersedes committed principal
+PASS: Save: structurally invalid principal falls back safely
+PASS: Save: no valid candidate fails clearly without deleting evidence
+PASS: Save: minimal version 1 optional fields remain compatible
+PASS: Save: recovery creates a persistent acknowledgement notice
+PASS: Phase 3: GC.Alloc recorder detects the positive control
+PASS: Phase 3: native IMGUI slot warmup completed
+PASS: Phase 3: 50 native IMGUI slot draws measured
+PASS: Cache: initial open reads six fixtures once
+PASS: Cache: repeated GUI refresh does not reread JSON
+PASS: Cache: a write invalidates only its own slot immediately
+PASS: Cache: metadata polling refreshes an externally changed file
+PASS: Cache: unreadable slot displays the existing error label
+PASS: Cache: externally deleted slot becomes empty
+PASS: Cache: backup summaries do not repair the principal
+PASS: Cache: explicit backup recovery invalidates the repaired slot
+PASS: Cache: changing the fixture path cannot expose stale slot data
+PASS: Audio: null filtering and duplicate removal retain their original order
+PASS: Audio: unchanged playlist reuses its list
+PASS: Audio: combat has an independent cached playlist
+PASS: Audio: live in-place Inspector edits invalidate the cache
+PASS: Audio: empty playlist retains legacy fallback track
+PASS: Audio: sequential selection remains unchanged
+PASS: Audio: 100 shuffled selections match the previous candidate-list algorithm exactly
+PASS: Audio: cache and selection do not replace the playing clip or volume
+PASS: Phase 3: mask pixel comparison contains a visible enemy fixture
+PASS: Phase 3: optimized CRT visibility mask matches baseline pixel for pixel
+PASS: Phase 3: URP test restores the reference setting
+PASS: Phase 3: benchmark report written for render-before

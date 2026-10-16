@@ -60,6 +60,9 @@ public sealed class DemoPhase2Validation:MonoBehaviour {
   #if DEMO_PHASE2_TRANSITION
   yield return DemoPhase2TransitionValidation.Run(Check,pixelMap);
   #endif
+  #if DEMO_PHASE3_SMOKE
+  if(File.Exists("phase3-gameplay-after-regression"))yield return DemoPhase3GameplaySmoke.Run(Check);
+  #endif
  }
 }
 #endif

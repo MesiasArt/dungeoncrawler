@@ -50,6 +50,7 @@ public class HelmetCRTWholeFrame:MonoBehaviour {
   Shader.SetGlobalVector("_CodeboundCRTControl",new Vector4(1,s.curvatureAmount,separated?1:controller.WorldBrightness,0));Shader.SetGlobalInt("_FrameCountNum",Time.frameCount);return true;
  }
  void Filter(RenderTexture input,RenderTexture destination){Graphics.Blit(input,a,material,3);Graphics.Blit(a,b,material,0);Graphics.Blit(b,a,material,1);Graphics.Blit(a,destination,material,2);}
+ internal static bool NeedsEnemyMask(float background,float enemy){return background!=enemy;}
  void ProcessSeparated(){
   if(source==null||ui==null)return;
   RenderTexture.active=uiFrame==Time.frameCount?beforeGUI:null;
@@ -57,10 +58,16 @@ public class HelmetCRTWholeFrame:MonoBehaviour {
   bool srgb=GL.sRGBWrite;var previous=RenderTexture.active;
   try{GL.sRGBWrite=false;DrawIllustration();if(!Prepare(true))return;var s=controller.settings;
    if(s.backgroundIntensity>0||s.enemyIntensity>0)Filter(source,output);else Graphics.Blit(source,output);
-   if(layerMask==null)layerMask=GetComponent<HelmetCRTLayerMask>()??gameObject.AddComponent<HelmetCRTLayerMask>();
+   // The mask only selects between these two weights. Equal weights produce the
+   // same pixels for every mask value, so no geometry pass is needed in that case.
+   Texture enemyMask=Texture2D.blackTexture;
+   if(NeedsEnemyMask(s.backgroundIntensity,s.enemyIntensity)){
+    if(layerMask==null)layerMask=GetComponent<HelmetCRTLayerMask>()??gameObject.AddComponent<HelmetCRTLayerMask>();
+    enemyMask=layerMask.Build(cameraView,source.width,source.height);
+   }
    if(composite==null)composite=Make("HelmetCRT/IsolatedComposite");
    if(!CinematicCleanUI&&s.affectUI&&s.uiIntensity>0){if(straight==null)straight=Make("HelmetCRT/Unpremultiply");Graphics.Blit(ui,uiStraight,straight);Filter(uiStraight,uiProcessed);}
-   composite.SetTexture("_CleanWorld",source);composite.SetTexture("_WorldCRT",output);composite.SetTexture("_EnemyMask",layerMask.Build(cameraView,source.width,source.height));composite.SetTexture("_CleanUI",ui);composite.SetTexture("_UICRT",uiProcessed);
+   composite.SetTexture("_CleanWorld",source);composite.SetTexture("_WorldCRT",output);composite.SetTexture("_EnemyMask",enemyMask);composite.SetTexture("_CleanUI",ui);composite.SetTexture("_UICRT",uiProcessed);
    composite.SetVector("_Intensity",new Vector4(s.backgroundIntensity,s.enemyIntensity,!CinematicCleanUI&&s.affectUI?s.uiIntensity:0,0));composite.SetFloat("_Curvature",!CinematicCleanUI&&s.curvature?s.curvatureAmount:0);composite.SetFloat("_CornerMask",!CinematicCleanUI&&s.cornerMask?1:0);composite.SetFloat("_Brightness",controller.WorldBrightness);composite.SetFloat("_WorldGamma",s.worldGamma);composite.SetFloat("_RGBSplitPixels",s.rgbSplitPixels+s.glitchRGBSplitPixels*Mathf.Clamp01(controller.GlitchStrength/Mathf.Max(.001f,s.maximumGlitchIntensity)));
    Graphics.Blit(source,layeredOutput,composite);Present(layeredOutput);
   }finally{GL.sRGBWrite=srgb;RenderTexture.active=previous;}

@@ -1,5 +1,7 @@
 # Codebound — Auditoría de demo pública
 
+Estado más reciente: [continuación de Fase 3 en oficina](DemoPhase3OfficeFollowup.md), pausada por el usuario el 16/10/2026. Optimización CRT medida y regresiones ejecutadas; nueva build Release interrumpida, pendiente de completar. No iniciar Fase 4.
+
 Fecha: 16 de octubre de 2026. Alcance: análisis, sin implementar optimizaciones.
 
 Actualización de preparación, 16/10/2026: [Fase 2 — correcciones funcionales](DemoPhase2FunctionalFixes.md) registra el cierre funcional de D01, D03/R02 y R03 y su build persistente. [Fase 3 — rendimiento](DemoPhase3Performance.md) recoge las optimizaciones, métricas y límites actuales. Las secciones originales y la actualización Windows siguientes conservan sus conclusiones históricas; sus pendientes de estabilidad Release no se dan por resueltos por estas fases. No se inicia Fase 4.

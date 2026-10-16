@@ -52,13 +52,20 @@ public sealed class DemoPhase3Benchmark:MonoBehaviour {
   for(int i=0;i<3;i++)yield return null;
   Measure("CRT mask build",12,()=>mask.Build(camera,1920,1080),2);
   var oldType=Type.GetType("HelmetCRTLayerMaskBaseline");if(oldType!=null){var enemy=GameObject.CreatePrimitive(PrimitiveType.Cube);enemy.name="CRT comparison fixture";enemy.transform.position=camera.transform.position+camera.transform.forward*.7f+camera.transform.right*.15f;enemy.transform.localScale=Vector3.one*.18f;enemy.GetComponent<Collider>().enabled=false;enemy.AddComponent<EnemyCombatStats>();var old=(Component)camera.gameObject.AddComponent(oldType);oldType.GetMethod("Refresh",F).Invoke(old,null);typeof(HelmetCRTLayerMask).GetMethod("Refresh",F).Invoke(mask,null);var build=(Func<Camera,int,int,RenderTexture>)Delegate.CreateDelegate(typeof(Func<Camera,int,int,RenderTexture>),old,oldType.GetMethod("Build"));var expected=build(camera,1920,1080);var expectedPixels=Pixels(expected);var actualPixels=Pixels(mask.Build(camera,1920,1080));check(expectedPixels.Any(p=>p.r>128),"Phase 3: mask pixel comparison contains a visible enemy fixture");int changed=0;for(int i=0;i<expectedPixels.Length;i++)if(!expectedPixels[i].Equals(actualPixels[i]))changed++;check(changed==0,"Phase 3: optimized CRT visibility mask matches baseline pixel for pixel");report.metrics.Add(new Metric{name="CRT mask changed pixels",unit="pixels",mean=changed,operations=expectedPixels.Length});Destroy(old);Destroy(enemy);yield return null;}
+  #if DEMO_PHASE3_RENDER_ELISION
+  yield return DemoPhase3RenderElisionTests.Run(dungeon,check);
+  #endif
   if(File.Exists("phase3-micro-only")){report.width=Screen.width;report.height=Screen.height;File.WriteAllText("phase3-"+report.label+".json",JsonUtility.ToJson(report,true));check(true,"Phase 3: focused group measurements written");yield break;}
   for(int i=0;i<6;i++)DungeonSaveStore.Write(DungeonMapPersistence.Copy(saved),i,"Performance fixture "+i);open.Invoke(dungeon,new object[]{true});dungeon.enabled=true;typeof(DungeonPrototype).GetMethod("SetPause",F).Invoke(dungeon,new object[]{true});
   yield return FrameCase("slots panel",90);
   typeof(DungeonPrototype).GetMethod("CloseSaveSlots",F).Invoke(dungeon,null);typeof(DungeonPrototype).GetMethod("SetPause",F).Invoke(dungeon,new object[]{false});
   yield return FrameCase("reference world",120);
+  if(File.Exists("phase3-office-followup"))yield return FrameCase("moving view with both reflections",120,true);
   var pipeline=UnityEngine.Rendering.GraphicsSettings.currentRenderPipeline as UniversalRenderPipelineAsset;
   if(pipeline!=null){bool prior=pipeline.useSRPBatcher;pipeline.useSRPBatcher=!prior;yield return FrameCase("URP SRP Batcher alternate",120);pipeline.useSRPBatcher=prior;yield return FrameCase("URP restored reference",120);check(pipeline.useSRPBatcher==prior,"Phase 3: URP test restores the reference setting");}
+  #if DEMO_PHASE3_RENDER_ELISION
+  if(File.Exists("phase3-batch-trial")){DemoPhase3BatchTrial.Run(dungeon);yield return FrameCase("experimental static batching",120);yield return FrameCase("experimental batching moving view",120,true);}
+  #endif
   // Ownership is measured directly; Editor resource totals alone cannot prove a leak.
   var retired=new List<Material>();string[] fields={"wall","floor","ceiling","pink","blue"};
   for(int cycle=0;cycle<20;cycle++){dungeon=FindAnyObjectByType<DungeonPrototype>();foreach(string field in fields){var m=(Material)typeof(DungeonPrototype).GetField(field,F).GetValue(dungeon);if(m!=null)retired.Add(m);}typeof(DungeonPrototype).GetMethod("RestartNewGame",F).Invoke(dungeon,null);yield return null;yield return null;yield return new WaitForEndOfFrame();}
@@ -67,10 +74,12 @@ public sealed class DemoPhase3Benchmark:MonoBehaviour {
   File.WriteAllText("phase3-"+report.label+".json",JsonUtility.ToJson(report,true));
   check(true,"Phase 3: benchmark report written for "+report.label);
  }
- IEnumerator FrameCase(string label,int frames){
-  for(int i=0;i<30;i++)yield return null;
+ IEnumerator FrameCase(string label,int frames,bool movingView=false){
+  var view=FindAnyObjectByType<DungeonPrototype>().RetroView;var rotation=view.transform.rotation;
+  for(int i=0;i<30;i++){if(movingView)view.transform.rotation=rotation*Quaternion.Euler(0,Mathf.Sin(i*.08f)*8,0);yield return null;}
   var cpu=Recorder.Get("PlayerLoop");cpu.enabled=true;var gc=ProfilerRecorder.StartNew(ProfilerCategory.Memory,"GC Allocated In Frame");var timings=new FrameTiming[1];var cpuMs=new List<double>();var gpuMs=new List<double>();var elapsed=new List<double>();var gcBytes=new List<double>();
-  for(int i=0;i<frames;i++){yield return new WaitForEndOfFrame();if(cpu.elapsedNanoseconds>0)cpuMs.Add(cpu.elapsedNanoseconds/1000000d);elapsed.Add(Time.unscaledDeltaTime*1000d);if(gc.Valid)gcBytes.Add(gc.LastValue);FrameTimingManager.CaptureFrameTimings();if(FrameTimingManager.GetLatestTimings(1,timings)>0&&timings[0].gpuFrameTime>0)gpuMs.Add(timings[0].gpuFrameTime);}
+  for(int i=0;i<frames;i++){if(movingView)view.transform.rotation=rotation*Quaternion.Euler(0,Mathf.Sin((i+30)*.08f)*8,0);yield return new WaitForEndOfFrame();if(cpu.elapsedNanoseconds>0)cpuMs.Add(cpu.elapsedNanoseconds/1000000d);elapsed.Add(Time.unscaledDeltaTime*1000d);if(gc.Valid)gcBytes.Add(gc.LastValue);FrameTimingManager.CaptureFrameTimings();if(FrameTimingManager.GetLatestTimings(1,timings)>0&&timings[0].gpuFrameTime>0)gpuMs.Add(timings[0].gpuFrameTime);}
+  if(movingView)view.transform.rotation=rotation;
   AddSamples(label+" CPU PlayerLoop",cpuMs,"ms",gcBytes.Count>0?gcBytes.Average():-1);AddSamples(label+" GPU",gpuMs,"ms",-1);AddSamples(label+" Editor frame interval",elapsed,"ms",-1);gc.Dispose();
  }
  void AddSamples(string name,List<double> values,string unit,double allocated){values.Sort();report.metrics.Add(new Metric{name=name,unit=unit,available=values.Count>0,mean=values.Count>0?values.Average():-1,p50=values.Count>0?values[(values.Count-1)/2]:-1,p95=values.Count>0?values[Mathf.Clamp(Mathf.CeilToInt(values.Count*.95f)-1,0,values.Count-1)]:-1,allocatedBytes=allocated,operations=values.Count});}

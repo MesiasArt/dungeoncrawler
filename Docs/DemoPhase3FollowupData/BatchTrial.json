@@ -1,0 +1,11 @@
+{
+    "candidates": 2104,
+    "batched": 2104,
+    "pixels": 2073600,
+    "changedPixels": 0,
+    "maximumChannelDifference": 0,
+    "createdMeshes": 1,
+    "meanChannelDifference": 0.0,
+    "combineMilliseconds": 19.905,
+    "meshBytes": 6145176
+}

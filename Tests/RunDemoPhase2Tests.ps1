@@ -1,7 +1,8 @@
-param([string]$UnityEditorRoot='C:\Program Files\Unity\Hub\Editor\6000.5.4f1\Editor',[switch]$BuildRelease,[switch]$Phase3,[switch]$GameplaySmoke,[string]$BenchmarkLabel='')
+param([string]$UnityEditorRoot='C:\Program Files\Unity\Hub\Editor\6000.5.4f1\Editor',[switch]$BuildRelease,[switch]$Phase3,[switch]$GameplaySmoke,[string]$BenchmarkLabel='',[string]$TestRootPath='',[switch]$RenderElision)
 $ErrorActionPreference='Stop'
 $projectRoot=Split-Path $PSScriptRoot -Parent
-$testRoot=Join-Path $projectRoot 'Temp/DemoPhase2Regression'
+$testRoot=if($TestRootPath){[IO.Path]::GetFullPath($TestRootPath)}else{Join-Path $projectRoot 'Temp/DemoPhase2Regression'}
+if($testRoot.TrimEnd('\','/')-eq$projectRoot.TrimEnd('\','/')){throw 'Test project must be separate from production'}
 New-Item -ItemType Directory -Force $testRoot | Out-Null
 # Copy, never mirror/delete. Unity imports and all fixtures stay in this disposable project.
 foreach($folder in @('Assets','Packages','ProjectSettings','Library/PackageCache')){
@@ -13,12 +14,13 @@ foreach($folder in @('Assets','Packages','ProjectSettings','Library/PackageCache
 foreach($name in @('DemoPhase2Boot','DemoPhase2ReleaseBuild')){Copy-Item "$PSScriptRoot/$name.cs" "$testRoot/Assets/Editor/$name.cs"}
 foreach($name in @('DemoPhase2Validation','DemoPhase2SaveValidation','DemoPhase2TransitionValidation','DemoPhase2DelayedDungeon')){Copy-Item "$PSScriptRoot/$name.cs" "$testRoot/Assets/Scripts/$name.cs"}
 if($Phase3){
- foreach($name in @('DemoPhase3CacheTests','DemoPhase3AudioTests','DemoPhase3Benchmark','DemoPhase3GameplaySmoke','DemoPhase3MaskComparison','DemoPhase3EditValidation')){Copy-Item "$PSScriptRoot/$name.cs" "$testRoot/Assets/Scripts/$name.cs"}
+ foreach($name in @('DemoPhase3CacheTests','DemoPhase3AudioTests','DemoPhase3Benchmark','DemoPhase3GameplaySmoke','DemoPhase3MaskComparison','DemoPhase3EditValidation','DemoPhase3RenderElisionTests','DemoPhase3BatchTrial')){Copy-Item "$PSScriptRoot/$name.cs" "$testRoot/Assets/Scripts/$name.cs"}
  Copy-Item "$PSScriptRoot/DemoPhase3ResourceInventory.cs" "$testRoot/Assets/Editor/DemoPhase3ResourceInventory.cs"
  $baseline=[IO.File]::ReadAllText("$projectRoot/Docs/DemoPhase3Data/HelmetCRTLayerMask.Before.cs.txt").Replace('HelmetCRTLayerMask','HelmetCRTLayerMaskBaseline');[IO.File]::WriteAllText("$testRoot/Assets/Scripts/HelmetCRTLayerMaskBaseline.cs","#if UNITY_EDITOR`n"+$baseline+"`n#endif")
  foreach($path in @("$testRoot/Assets/Editor/DemoPhase2Boot.cs","$testRoot/Assets/Scripts/DemoPhase3EditValidation.cs","$testRoot/Assets/Scripts/DemoPhase2Validation.cs","$testRoot/Assets/Scripts/DemoPhase3Benchmark.cs","$testRoot/Assets/Scripts/DemoPhase3CacheTests.cs","$testRoot/Assets/Scripts/DemoPhase3AudioTests.cs")){
   [IO.File]::WriteAllText($path,"#define DEMO_PHASE3_CACHE`n#define DEMO_PHASE3_AUDIO`n#define DEMO_PHASE3_BENCHMARK`n#define DEMO_PHASE3_SMOKE`n"+[IO.File]::ReadAllText($path))
  }
+ if($RenderElision){foreach($path in @("$testRoot/Assets/Scripts/DemoPhase3Benchmark.cs","$testRoot/Assets/Scripts/DemoPhase3RenderElisionTests.cs","$testRoot/Assets/Scripts/DemoPhase3BatchTrial.cs")){[IO.File]::WriteAllText($path,"#define DEMO_PHASE3_RENDER_ELISION`n"+[IO.File]::ReadAllText($path))}}
  $lab="$testRoot/Assets/Scripts/CombatLaboratory.cs";[IO.File]::WriteAllText($lab,[IO.File]::ReadAllText($lab).Replace('System.IO.Path.Combine(Application.persistentDataPath,"Codebound-laboratory.json")','System.IO.Path.GetFullPath("Temp/Phase3LabFixture/slot.json")'))
 }
 foreach($path in @("$testRoot/Assets/Editor/DemoPhase2Boot.cs","$testRoot/Assets/Scripts/DemoPhase2Validation.cs")){

@@ -1,0 +1,51 @@
+[
+  {
+    "name": "slots panel CPU PlayerLoop",
+    "before": 39.21372808988764,
+    "after": 11.141680898876404,
+    "p95Before": 57.0957,
+    "p95After": 13.0442
+  },
+  {
+    "name": "reference world CPU PlayerLoop",
+    "before": 38.00348999999999,
+    "after": 12.958246666666662,
+    "p95Before": 51.3984,
+    "p95After": 15.2429
+  },
+  {
+    "name": "reference world GPU",
+    "before": 9.139852857142857,
+    "after": 9.9162436036036,
+    "p95Before": 20.5184,
+    "p95After": 14.45216
+  },
+  {
+    "name": "reference world Editor frame interval",
+    "before": 42.27187748377522,
+    "after": 15.36563755168269,
+    "p95Before": 55.954400449991226,
+    "p95After": 18.23190227150917
+  },
+  {
+    "name": "moving view with both reflections CPU PlayerLoop",
+    "before": 47.98935999999999,
+    "after": 24.888632500000003,
+    "p95Before": 56.7968,
+    "p95After": 29.8091
+  },
+  {
+    "name": "moving view with both reflections GPU",
+    "before": 37.24767859649122,
+    "after": 22.940343486238525,
+    "p95Before": 54.18256,
+    "p95After": 30.17552
+  },
+  {
+    "name": "moving view with both reflections Editor frame interval",
+    "before": 50.93485418086251,
+    "after": 27.36356753545503,
+    "p95Before": 59.45420265197754,
+    "p95After": 32.354194670915604
+  }
+]

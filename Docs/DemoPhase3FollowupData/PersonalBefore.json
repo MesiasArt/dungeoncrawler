@@ -1,0 +1,11 @@
+{
+  "scope": "Integrity only; personal saves never used as fixtures",
+  "files": [
+    {
+      "name": "Codebound-slot-1-v1.json",
+      "bytes": 31341,
+      "lastWriteUtcTicks": 639274375740157506,
+      "sha256": "F7F0CE0E092D896D8D2B544D536654CBAE82F581612A6B4B8A896413200695D9"
+    }
+  ]
+}
