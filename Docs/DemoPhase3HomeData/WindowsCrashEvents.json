@@ -1,0 +1,32 @@
+[
+  {
+    "TimeCreated": "2026-10-17T07:13:07.6482804-04:00",
+    "Id": 1000,
+    "Message": "Nombre de aplicación con errores: Codebound.exe, versión: 6000.5.4.20703, marca de tiempo: 0x6a4d427d\r\nNombre del módulo con errores: UnityPlayer.dll, versión: 6000.5.4.20703, marca de tiempo: 0x6a4d4cf1\r\nCódigo de excepción: 0xc0000005\r\nDesplazamiento con errores: 0x000000000010a181\r\nId. de proceso con errores: 0x7FA8\r\nTiempo de inicio de aplicación con errores: 0x1DD5E282E1E109E\r\nRuta de aplicación con errores: E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\Codebound.exe\r\nRuta de módulo con errores: E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll\r\nId. de informe: ff28e742-b19d-4659-bd9a-ef26d0b909e1\r\nNombre completo del paquete con errores: \r\nId. de aplicación relacionado con el paquete con errores: "
+  },
+  {
+    "TimeCreated": "2026-10-17T07:09:45.4731734-04:00",
+    "Id": 1000,
+    "Message": "Nombre de aplicación con errores: Codebound.exe, versión: 6000.5.4.20703, marca de tiempo: 0x6a4d427d\r\nNombre del módulo con errores: UnityPlayer.dll, versión: 6000.5.4.20703, marca de tiempo: 0x6a4d4cf1\r\nCódigo de excepción: 0xc0000005\r\nDesplazamiento con errores: 0x000000000010a181\r\nId. de proceso con errores: 0x76AC\r\nTiempo de inicio de aplicación con errores: 0x1DD5E27CD919DE7\r\nRuta de aplicación con errores: E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\Codebound.exe\r\nRuta de módulo con errores: E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll\r\nId. de informe: c7242bae-98ae-48af-a332-4da068587c43\r\nNombre completo del paquete con errores: \r\nId. de aplicación relacionado con el paquete con errores: "
+  },
+  {
+    "TimeCreated": "2026-10-17T07:09:43.8092733-04:00",
+    "Id": 1000,
+    "Message": "Nombre de aplicación con errores: Codebound.exe, versión: 6000.5.4.20703, marca de tiempo: 0x6a4d427d\r\nNombre del módulo con errores: UnityPlayer.dll, versión: 6000.5.4.20703, marca de tiempo: 0x6a4d4cf1\r\nCódigo de excepción: 0xc0000005\r\nDesplazamiento con errores: 0x0000000000100915\r\nId. de proceso con errores: 0x76AC\r\nTiempo de inicio de aplicación con errores: 0x1DD5E27CD919DE7\r\nRuta de aplicación con errores: E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\Codebound.exe\r\nRuta de módulo con errores: E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll\r\nId. de informe: c05a9c80-e072-45f3-83d6-583dbabf03fe\r\nNombre completo del paquete con errores: \r\nId. de aplicación relacionado con el paquete con errores: "
+  },
+  {
+    "TimeCreated": "2026-10-17T07:05:19.6617591-04:00",
+    "Id": 1000,
+    "Message": "Nombre de aplicación con errores: Codebound.exe, versión: 6000.5.4.20703, marca de tiempo: 0x6a4d427d\r\nNombre del módulo con errores: UnityPlayer.dll, versión: 6000.5.4.20703, marca de tiempo: 0x6a4d4cf1\r\nCódigo de excepción: 0xc0000005\r\nDesplazamiento con errores: 0x000000000010a181\r\nId. de proceso con errores: 0x7048\r\nTiempo de inicio de aplicación con errores: 0x1DD5E260339E1AF\r\nRuta de aplicación con errores: E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\Codebound.exe\r\nRuta de módulo con errores: E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll\r\nId. de informe: b2fba442-208f-404f-b5e6-6502c9b886d3\r\nNombre completo del paquete con errores: \r\nId. de aplicación relacionado con el paquete con errores: "
+  },
+  {
+    "TimeCreated": "2026-10-17T07:05:17.013053-04:00",
+    "Id": 1000,
+    "Message": "Nombre de aplicación con errores: Codebound.exe, versión: 6000.5.4.20703, marca de tiempo: 0x6a4d427d\r\nNombre del módulo con errores: UnityPlayer.dll, versión: 6000.5.4.20703, marca de tiempo: 0x6a4d4cf1\r\nCódigo de excepción: 0xc0000005\r\nDesplazamiento con errores: 0x0000000000100915\r\nId. de proceso con errores: 0x7048\r\nTiempo de inicio de aplicación con errores: 0x1DD5E260339E1AF\r\nRuta de aplicación con errores: E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\Codebound.exe\r\nRuta de módulo con errores: E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll\r\nId. de informe: d4b0b6b4-0d80-4e0a-9ab2-b451cff93a55\r\nNombre completo del paquete con errores: \r\nId. de aplicación relacionado con el paquete con errores: "
+  },
+  {
+    "TimeCreated": "2026-10-17T06:51:14.1363509-04:00",
+    "Id": 1000,
+    "Message": "Nombre de aplicación con errores: Codebound.exe, versión: 6000.5.4.20703, marca de tiempo: 0x6a4d427d\r\nNombre del módulo con errores: UnityPlayer.dll, versión: 6000.5.4.20703, marca de tiempo: 0x6a4d4cf1\r\nCódigo de excepción: 0xc0000005\r\nDesplazamiento con errores: 0x000000000010a181\r\nId. de proceso con errores: 0xD70\r\nTiempo de inicio de aplicación con errores: 0x1DD5E241224C314\r\nRuta de aplicación con errores: E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\Codebound.exe\r\nRuta de módulo con errores: E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll\r\nId. de informe: 7b5b65d3-73ed-4814-bde7-802e27d635ff\r\nNombre completo del paquete con errores: \r\nId. de aplicación relacionado con el paquete con errores: "
+  }
+]

@@ -1,0 +1,8 @@
+{
+    "pixelsPerComparison": 2073600,
+    "comparisons": 3,
+    "changedPixels": 0,
+    "unequalMaskRetained": true,
+    "nearbyUnequalRetained": true,
+    "defaultUsesBlackMask": true
+}

@@ -1,0 +1,6 @@
+{
+    "pairs": 24,
+    "baselineMs": 14.005804166666666,
+    "optimizedMs": 14.198925000000003,
+    "scope": "Alternating old/new mask submissions in the same process; not isolated GPU time"
+}

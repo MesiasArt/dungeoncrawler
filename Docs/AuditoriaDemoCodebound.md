@@ -1,6 +1,6 @@
 # Codebound — Auditoría de demo pública
 
-Estado más reciente: [continuación de Fase 3 en oficina](DemoPhase3OfficeFollowup.md), pausada por el usuario el 16/10/2026. Optimización CRT medida y regresiones ejecutadas; nueva build Release interrumpida, pendiente de completar. No iniciar Fase 4.
+Estado más reciente: [validación local de Fase 3, 17/10/2026](DemoPhase3HomeClosure.md). Release compilada y 95 pruebas de regresión aprobadas; fallo nativo 0xC0000005 al cerrar reproducido desde título en DX12 y DX11. Estabilidad pendiente; no iniciar Fase 4.
 
 Fecha: 16 de octubre de 2026. Alcance: análisis, sin implementar optimizaciones.
 

@@ -1,0 +1,4 @@
+PASS: Forward one grid cell; cell=(17, 3) heading=0 aligned=True
+PASS: Backward restores origin; cell=(17, 2) heading=0 aligned=True
+PASS: Turn exactly 90 degrees; cell=(17, 2) heading=1 aligned=True
+PASS: Opposite turn restores heading; cell=(17, 2) heading=0 aligned=True

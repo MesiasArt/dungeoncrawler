@@ -36,3 +36,7 @@ Para continuar: revisar este commit y los resultados, volver a generar Release y
 La copia de pruebas se trasladó fuera de Temp, a `E:\PROJECTO DUNGEON\Codebound-Performance-Lab`, porque Unity elimina el Temp del proyecto al reiniciar. Es una copia física local no versionada; debe recrearse en casa con `Tests/RunDemoPhase2Tests.ps1 -Phase3 -RenderElision -BenchmarkLabel after -TestRootPath <ruta-separada>`. El marcador `phase3-office-followup` activa el caso de cámara en movimiento. Para la regresión conjunta se usó `phase3-gameplay-after-regression`; la generación usa `phase2-build-after-tests` y `demo-build-output`. Todos los fixtures de guardado están aislados.
 
 Producción modificada en esta continuación: únicamente `Assets/Scripts/HelmetCRTWholeFrame.cs`. Pruebas: `DemoPhase2Validation.cs`, `DemoPhase3Benchmark.cs`, `DemoPhase3MaskComparison.cs`, `RunDemoPhase2Tests.ps1`; añadidos `DemoPhase3RenderElisionTests.cs` y `DemoPhase3BatchTrial.cs`. Documentación y evidencias: este informe, la referencia en la auditoría y `DemoPhase3FollowupData`.
+
+## Reanudación en casa, 17/10/2026
+
+La compilación interrumpida ya se completó en un laboratorio separado: 0 errores y 0 advertencias; regresión 95 PASS/0 FAIL y 12 checks Edit Mode. El resultado actual está en [validación local](DemoPhase3HomeClosure.md). El cierre de Release falla con 0xC0000005 incluso desde el título, en controles individuales DX12 y DX11. La estabilidad sigue abierta y no se inicia Fase 4. El apartado de pausa anterior conserva el estado histórico de oficina.
