@@ -1,6 +1,6 @@
 # Codebound — Auditoría de demo pública
 
-Estado más reciente: [validación local de Fase 3, 17/10/2026](DemoPhase3HomeClosure.md). Release compilada y 95 pruebas de regresión aprobadas; fallo nativo 0xC0000005 al cerrar reproducido desde título en DX12 y DX11. Estabilidad pendiente; no iniciar Fase 4.
+Estado más reciente: [diagnóstico del cierre Release, 17/10/2026](DemoReleaseShutdownDiagnosis.md). Fallo nativo reproducido con X y Application.Quit en DX11/DX12; dumps y símbolos verificados acotan puntos de fallo en accesibilidad/ventana de Unity. Causa raíz y corrección pendientes; sin cambios de producción. Fase 4 bloqueada.
 
 Fecha: 16 de octubre de 2026. Alcance: análisis, sin implementar optimizaciones.
 

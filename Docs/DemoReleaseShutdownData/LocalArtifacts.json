@@ -1,0 +1,57 @@
+[
+  {
+    "path": "E:\\UNITY PRUEBA\\DCG\\Codebound-Shutdown-Lab-20261017\\NativeOriginalDX12\\Fault-1.dmp",
+    "bytes": 232088,
+    "sha256": "93636f939c5bd384b8f4650c18145c8eae539c2e9c18ba413d317b3227aaf418"
+  },
+  {
+    "path": "E:\\UNITY PRUEBA\\DCG\\Codebound-Shutdown-Lab-20261017\\NativeOriginalDX12\\Fault-2.dmp",
+    "bytes": 232088,
+    "sha256": "ee247525d569d5d8c36d99c6b5b582511349eb192071887eee2d0d98b57cb5d5"
+  },
+  {
+    "path": "E:\\UNITY PRUEBA\\DCG\\Codebound-Shutdown-Lab-20261017\\UnityCrashReports\\Crash_2026-10-17_114125206\\crash.dmp",
+    "bytes": 312003,
+    "sha256": "845c38497446e0deb6bbcc03405e94cbca14ada310c7d5b2f914064a861a06c4"
+  },
+  {
+    "path": "E:\\UNITY PRUEBA\\DCG\\Codebound-Shutdown-Lab-20261017\\UnityCrashReports\\Crash_2026-10-17_114224160\\crash.dmp",
+    "bytes": 306314,
+    "sha256": "e2cd4708966efb4f6a6e3f9edbfef3aa6754664c6c30d1682d4f6d7575cb454c"
+  },
+  {
+    "path": "E:\\UNITY PRUEBA\\DCG\\Codebound-Shutdown-Lab-20261017\\Builds\\Neutral\\Codebound.exe",
+    "bytes": 667648,
+    "sha256": "e8bb8f9dfe2a039ce0b2123da1b65f48fe68ff838147361b468a559f43a27a66"
+  },
+  {
+    "path": "E:\\UNITY PRUEBA\\DCG\\Codebound-Shutdown-Lab-20261017\\Builds\\Probe\\Codebound.exe",
+    "bytes": 667648,
+    "sha256": "e8bb8f9dfe2a039ce0b2123da1b65f48fe68ff838147361b468a559f43a27a66"
+  },
+  {
+    "path": "E:\\UNITY PRUEBA\\DCG\\Codebound-Shutdown-Lab-20261017\\Builds\\Probe2\\Codebound.exe",
+    "bytes": 667648,
+    "sha256": "e8bb8f9dfe2a039ce0b2123da1b65f48fe68ff838147361b468a559f43a27a66"
+  },
+  {
+    "path": "E:\\UNITY PRUEBA\\DCG\\Codebound-Shutdown-Lab-20261017\\Builds\\Neutral\\UnityPlayer.dll",
+    "bytes": 37139888,
+    "sha256": "03c2c29cf777f14e7512b491f14af1af570e59cd3fd1f23dffc19bfbe791a248"
+  },
+  {
+    "path": "E:\\UNITY PRUEBA\\DCG\\Codebound-Shutdown-Lab-20261017\\Builds\\Probe\\UnityPlayer.dll",
+    "bytes": 37139888,
+    "sha256": "03c2c29cf777f14e7512b491f14af1af570e59cd3fd1f23dffc19bfbe791a248"
+  },
+  {
+    "path": "E:\\UNITY PRUEBA\\DCG\\Codebound-Shutdown-Lab-20261017\\Builds\\Probe2\\UnityPlayer.dll",
+    "bytes": 37139888,
+    "sha256": "03c2c29cf777f14e7512b491f14af1af570e59cd3fd1f23dffc19bfbe791a248"
+  },
+  {
+    "path": "E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\Codebound.exe",
+    "bytes": 667648,
+    "sha256": "e8bb8f9dfe2a039ce0b2123da1b65f48fe68ff838147361b468a559f43a27a66"
+  }
+]

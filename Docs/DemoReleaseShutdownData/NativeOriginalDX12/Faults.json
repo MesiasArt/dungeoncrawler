@@ -1,0 +1,42 @@
+[
+  {
+    "firstChance": 1,
+    "code": "0xc0000005",
+    "address": "0x7ffade8ea181",
+    "thread": 30692,
+    "operation": 0,
+    "target": "0xe0",
+    "stack": [
+      "0x7ffade8ea181 \\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll+0x10a181",
+      "0x7ffade8ea181 \\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll+0x10a181",
+      "0x7ffae098e840 \\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll+0x21ae840",
+      "0x7ffade8f9530 \\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll+0x119530",
+      "0x2a ?",
+      "0x7ffae098e840 \\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll+0x21ae840",
+      "0x7ffae0a10fd0 \\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll+0x2230fd0",
+      "0x1c30003e810 \\\\?\\C:\\Windows\\System32\\DriverStore\\FileRepository\\u0203304.inf_amd64_a6e5a337568ce3f0\\B026373\\amdenc64.dll+0x1c29e5ae810",
+      "0x66 ?",
+      "0x1c300f9aed0 \\\\?\\C:\\Windows\\System32\\DriverStore\\FileRepository\\u0203304.inf_amd64_a6e5a337568ce3f0\\B026373\\amdenc64.dll+0x1c29f50aed0"
+    ]
+  },
+  {
+    "firstChance": 0,
+    "code": "0xc0000005",
+    "address": "0x7ffade8ea181",
+    "thread": 30692,
+    "operation": 0,
+    "target": "0xe0",
+    "stack": [
+      "0x7ffade8ea181 \\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll+0x10a181",
+      "0x7ffade8ea181 \\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll+0x10a181",
+      "0x7ffae098e840 \\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll+0x21ae840",
+      "0x7ffade8f9530 \\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll+0x119530",
+      "0x2a ?",
+      "0x7ffae098e840 \\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll+0x21ae840",
+      "0x7ffae0a10fd0 \\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll+0x2230fd0",
+      "0x1c30003e810 \\\\?\\C:\\Windows\\System32\\DriverStore\\FileRepository\\u0203304.inf_amd64_a6e5a337568ce3f0\\B026373\\amdenc64.dll+0x1c29e5ae810",
+      "0x66 ?",
+      "0x1c300f9aed0 \\\\?\\C:\\Windows\\System32\\DriverStore\\FileRepository\\u0203304.inf_amd64_a6e5a337568ce3f0\\B026373\\amdenc64.dll+0x1c29f50aed0"
+    ]
+  }
+]

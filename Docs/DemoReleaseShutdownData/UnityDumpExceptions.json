@@ -1,0 +1,26 @@
+[
+  {
+    "folder": "Crash_2026-10-17_114125206",
+    "code": "0xc0000005",
+    "address": "0x7ffadd7b6ab8",
+    "module": [
+      {
+        "path": "E:\\UNITY PRUEBA\\DCG\\Codebound-Shutdown-Lab-20261017\\Builds\\Neutral\\UnityPlayer.dll",
+        "offset": "0x11e6ab8"
+      }
+    ],
+    "matchedPdbSymbol": "PlayerMainWndProc(struct HWND__*, unsigned int, unsigned __int64, __int64)\n??:0:0"
+  },
+  {
+    "folder": "Crash_2026-10-17_114224160",
+    "code": "0xc0000005",
+    "address": "0x7ffadd7b6ab8",
+    "module": [
+      {
+        "path": "E:\\UNITY PRUEBA\\DCG\\Codebound-Shutdown-Lab-20261017\\Builds\\Probe2\\UnityPlayer.dll",
+        "offset": "0x11e6ab8"
+      }
+    ],
+    "matchedPdbSymbol": "PlayerMainWndProc(struct HWND__*, unsigned int, unsigned __int64, __int64)\n??:0:0"
+  }
+]

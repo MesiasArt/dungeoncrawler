@@ -1,0 +1,6 @@
+RuntimeStatic<class PlatformAccessibilityManager, 0>::StaticDestroy(void *)
+??:0:0
+
+PlatformAccessibilityNodeRoot::get_BoundingRectangle(struct UiaRect *)
+??:0:0
+

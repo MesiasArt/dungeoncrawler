@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Untouched-d3d12-1",
+    "pid": 18080,
+    "exitCode": -1073741819,
+    "seconds": 23.5225304,
+    "api": "d3d12",
+    "windowToolConsulted": false
+  },
+  {
+    "name": "Untouched-d3d12-2",
+    "pid": 14512,
+    "exitCode": -1073741819,
+    "seconds": 15.4828937,
+    "api": "d3d12",
+    "windowToolConsulted": false
+  },
+  {
+    "name": "Untouched-d3d12-3",
+    "pid": 8212,
+    "exitCode": -1073741819,
+    "seconds": 15.4686475,
+    "api": "d3d12",
+    "windowToolConsulted": false
+  },
+  {
+    "name": "Untouched-d3d11-1",
+    "pid": 32564,
+    "exitCode": -1073741819,
+    "seconds": 14.5765654,
+    "api": "d3d11",
+    "windowToolConsulted": false
+  },
+  {
+    "name": "Untouched-d3d11-2",
+    "pid": 31292,
+    "exitCode": -1073741819,
+    "seconds": 14.2607433,
+    "api": "d3d11",
+    "windowToolConsulted": false
+  },
+  {
+    "name": "Untouched-d3d11-3",
+    "pid": 27760,
+    "exitCode": -1073741819,
+    "seconds": 14.4606377,
+    "api": "d3d11",
+    "windowToolConsulted": false
+  }
+]

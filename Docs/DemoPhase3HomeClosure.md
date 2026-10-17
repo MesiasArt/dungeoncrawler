@@ -58,3 +58,7 @@ Los primeros intentos ocultos no avanzaron hasta finalizar por timeout. Se conse
 2. Investigar el cierre mínimo desde título con símbolos/dump de UnityPlayer; conservar la build y estos logs antes de nuevos ensayos. Revisar los callbacks de cierre y recursos nativos como hipótesis, sin refactorización ni cambios de paquetes.
 3. Tras resolverlo, repetir cierres normales y sesión de 45–60 minutos; medir Player de forma separada. Los diez arranques históricos no prueban un cierre limpio de esta build.
 4. Mantener Fase 4 sin iniciar. Esta entrega completa la compilación pendiente y registra la validación, pero la estabilidad Release sigue abierta.
+
+## Diagnóstico posterior del cierre
+
+El [diagnóstico dedicado del 17/10/2026](DemoReleaseShutdownDiagnosis.md) conserva nuevos dumps, símbolos verificados y 14 ejecuciones fallidas. No hay corrección de producción ni build pública nueva. Fase 4 continúa bloqueada.

@@ -1,0 +1,42 @@
+Mono path[0] = 'E:/UNITY PRUEBA/DCG/Codebound-Shutdown-Lab-20261017/Builds/Probe/Codebound_Data/Managed'
+Mono config path = 'E:/UNITY PRUEBA/DCG/Codebound-Shutdown-Lab-20261017/Builds/Probe/MonoBleedingEdge/etc'
+CodeReloadManager initialized
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialize engine version: 6000.5.4f1 (d550df8bd089)
+[Subsystems] Discovering subsystems at path E:/UNITY PRUEBA/DCG/Codebound-Shutdown-Lab-20261017/Builds/Probe/Codebound_Data/UnitySubsystems
+Forcing GfxDevice: Direct3D 12
+GfxDevice: creating device client; kGfxThreadingModeSplitJobs
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.2]
+    Renderer:        AMD Radeon RX 7600 XT (ID=0x7480)
+    Vendor:          ATI
+    VRAM:            16325 MB
+    App VRAM Budget: 15557 MB
+    Driver:          32.0.31041.1004
+Begin MonoManager ReloadAssembly
+- Finished resetting the current domain, in  0.206 seconds
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+D3D11 device created for Microsoft Media Foundation video decoding.
+<RI> Initializing input.
+Using Windows.Gaming.Input
+UnloadTime: 28.883500 ms
+SD START mode=baseline route=title isolatedPath=C:/Users/soyot/AppData/LocalLow/CodeboundPhase3HomeIsolated/CodeboundPhase3Home
+SD OBJECTS DungeonAudio:True | ShutdownDiagnosticProbe:True | CodeboundTitleScreen:True | UniversalAdditionalCameraData:True
+SD APPLICATION.QUIT
+SD OnApplicationQuit
+SD OnDisable
+SD OnDestroy
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+CodeReloadManager destroyed

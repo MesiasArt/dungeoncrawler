@@ -1,0 +1,474 @@
+[
+  {
+    "path": "\\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\Codebound.exe",
+    "base": 140695462346752
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\ntdll.dll",
+    "base": 140721823154176
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\kernel32.dll",
+    "base": 140721805983744
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\KernelBase.dll",
+    "base": 140721779900416
+  },
+  {
+    "path": "\\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\UnityPlayer.dll",
+    "base": 140715451351040
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\crypt32.dll",
+    "base": 140721784160256
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\ucrtbase.dll",
+    "base": 140721774854144
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\dwmapi.dll",
+    "base": 140721727930368
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\win32u.dll",
+    "base": 140721778917376
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\user32.dll",
+    "base": 140721817649152
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\user32.dll",
+    "base": 1938101174272
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\ole32.dll",
+    "base": 140721808736256
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\gdi32.dll",
+    "base": 140721791631360
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\msvcp_win.dll",
+    "base": 140721785798656
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\version.dll",
+    "base": 140721548754944
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\msvcrt.dll",
+    "base": 140721811488768
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\combase.dll",
+    "base": 140721802248192
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\gdi32full.dll",
+    "base": 140721776885760
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\rpcrt4.dll",
+    "base": 140721806835712
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\shlwapi.dll",
+    "base": 140721817190400
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\setupapi.dll",
+    "base": 140721786650624
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\SHCore.dll",
+    "base": 140721819680768
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\shell32.dll",
+    "base": 140721794187264
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\oleaut32.dll",
+    "base": 140721793269760
+  },
+  {
+    "path": "\\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\dstorage.dll",
+    "base": 140719790882816
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\imm32.dll",
+    "base": 140721792221184
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\opengl32.dll",
+    "base": 140719293267968
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\winmm.dll",
+    "base": 140721584537600
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\advapi32.dll",
+    "base": 140721815945216
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\advapi32.dll",
+    "base": 1938101174272
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\sechost.dll",
+    "base": 140721808015360
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\ws2_32.dll",
+    "base": 140721815355392
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\IPHLPAPI.DLL",
+    "base": 140721747656704
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\winhttp.dll",
+    "base": 140721650073600
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\bcrypt.dll",
+    "base": 140721773674496
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\hid.dll",
+    "base": 140721744314368
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\d3d11.dll",
+    "base": 140721702371328
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\dxgi.dll",
+    "base": 140721726488576
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\UIAutomationCore.dll",
+    "base": 140720945889280
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\glu32.dll",
+    "base": 140719288221696
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\powrprof.dll",
+    "base": 140721771249664
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\DXCore.dll",
+    "base": 140721726029824
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\umpdc.dll",
+    "base": 140721771118592
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\kernel.appcore.dll",
+    "base": 140721754275840
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\bcryptprimitives.dll",
+    "base": 140721779113984
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\uxtheme.dll",
+    "base": 140721724981248
+  },
+  {
+    "path": "\\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\MonoBleedingEdge\\EmbedRuntime\\mono-2.0-bdwgc.dll",
+    "base": 140715535892480
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\windows.storage.dll",
+    "base": 140721735139328
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\profapi.dll",
+    "base": 140721773871104
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\secur32.dll",
+    "base": 140721722556416
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\sspicli.dll",
+    "base": 140721757159424
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\msctf.dll",
+    "base": 140721821253632
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\ResourcePolicyClient.dll",
+    "base": 140721731665920
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\directxdatabasehelper.dll",
+    "base": 140721657020416
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\cfgmgr32.dll",
+    "base": 140721770397696
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\D3D12.dll",
+    "base": 140720610148352
+  },
+  {
+    "path": "\\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\D3D12\\D3D12Core.dll",
+    "base": 140719531098112
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\DriverStore\\FileRepository\\u0203304.inf_amd64_a6e5a337568ce3f0\\B026373\\amdxc64.dll",
+    "base": 140715720966144
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\DriverStore\\FileRepository\\u0203304.inf_amd64_a6e5a337568ce3f0\\B026373\\amdihk64.dll",
+    "base": 140721579360256
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\D3DSCache.dll",
+    "base": 140719158853632
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\userenv.dll",
+    "base": 140721760894976
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\dxilconv.dll",
+    "base": 140719562883072
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\DriverStore\\FileRepository\\u0203304.inf_amd64_a6e5a337568ce3f0\\B026373\\amdxc64.dll",
+    "base": 140715720966144
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\DriverStore\\FileRepository\\u0203304.inf_amd64_a6e5a337568ce3f0\\B026373\\amdihk64.dll",
+    "base": 140721579360256
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\dxilconv.dll",
+    "base": 140719562883072
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\directml.dll",
+    "base": 140715441061888
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\d3d11on12.dll",
+    "base": 140721109991424
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\clbcatq.dll",
+    "base": 140721792483328
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\MMDevAPI.dll",
+    "base": 140721643913216
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\devobj.dll",
+    "base": 140721770135552
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\AudioSes.dll",
+    "base": 140721532829696
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\ResourcePolicyClient.dll",
+    "base": 140721731665920
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\avrt.dll",
+    "base": 140721654136832
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\DriverStore\\FileRepository\\u0203304.inf_amd64_a6e5a337568ce3f0\\B026373\\amdxx64.dll",
+    "base": 140721589190656
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\atidxx64.dll",
+    "base": 140721583620096
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\apphelp.dll",
+    "base": 140721722884096
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\DriverStore\\FileRepository\\u0203304.inf_amd64_a6e5a337568ce3f0\\B026373\\amdenc64.dll",
+    "base": 1638465536
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\Windows.Gaming.Input.dll",
+    "base": 140721572544512
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\InputHost.dll",
+    "base": 140721274617856
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\CoreMessaging.dll",
+    "base": 140721718296576
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\twinapi.appcore.dll",
+    "base": 140721639849984
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\WinTypes.dll",
+    "base": 140721666392064
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\cryptbase.dll",
+    "base": 140721762664448
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\dcomp.dll",
+    "base": 140721711480832
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\Microsoft.Internal.WarpPal.dll",
+    "base": 140721697325056
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\ApplicationTargetedFeatureDatabase.dll",
+    "base": 140720673521664
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\TextInputFramework.dll",
+    "base": 140720969023488
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\wintrust.dll",
+    "base": 140721776295936
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\msasn1.dll",
+    "base": 140721765089280
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\wbem\\wbemprox.dll",
+    "base": 140721521098752
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\wbemcomn.dll",
+    "base": 140721510154240
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\wbem\\wbemsvc.dll",
+    "base": 140721486299136
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\wbem\\fastprox.dll",
+    "base": 140721487872000
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\amsi.dll",
+    "base": 140721483808768
+  },
+  {
+    "path": "\\\\?\\C:\\Program Files\\Malwarebytes\\Anti-Malware\\mbamsi64.dll",
+    "base": 140720987897856
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\psapi.dll",
+    "base": 140721816797184
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\netapi32.dll",
+    "base": 140721555439616
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\mpr.dll",
+    "base": 140721454645248
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\sfc.dll",
+    "base": 1945705578496
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\authz.dll",
+    "base": 140721748246528
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\sfc.dll",
+    "base": 1945705578496
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\netutils.dll",
+    "base": 140721747263488
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\sfc_os.dll",
+    "base": 140721433739264
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\cryptsp.dll",
+    "base": 140721764630528
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\rsaenh.dll",
+    "base": 140721753620480
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\gpapi.dll",
+    "base": 140721760698368
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\imagehlp.dll",
+    "base": 140721791434752
+  },
+  {
+    "path": "\\\\?\\C:\\Program Files\\Malwarebytes\\Anti-Malware\\offreg.dll",
+    "base": 140721429610496
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\nsi.dll",
+    "base": 140721786519552
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\dhcpcsvc6.dll",
+    "base": 140721657479168
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\dhcpcsvc.dll",
+    "base": 140721646141440
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\mswsock.dll",
+    "base": 140721760174080
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\dnsapi.dll",
+    "base": 140721748639744
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\dsparse.dll",
+    "base": 140721758076928
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\rasadhlp.dll",
+    "base": 140721644634112
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\FWPUCLNT.DLL",
+    "base": 140721583947776
+  },
+  {
+    "path": "\\\\?\\E:\\UNITY PRUEBA\\DCG\\Codebound-Phase3-Home-Lab-20261016\\Builds\\Codebound-Phase3-Home\\Codebound_Data\\Plugins\\x86_64\\lib_burst_generated.dll",
+    "base": 140719563866112
+  },
+  {
+    "path": "\\\\?\\C:\\Windows\\System32\\OneCoreCommonProxyStub.dll",
+    "base": 140721496850432
+  }
+]
